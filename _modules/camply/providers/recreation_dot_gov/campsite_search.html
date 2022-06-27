@@ -108,6 +108,7 @@
                                              <span class="n">RecreationAreaResponse</span><span class="p">)</span>
 <span class="kn">from</span> <span class="nn">camply.providers.base_provider</span> <span class="kn">import</span> <span class="n">BaseProvider</span><span class="p">,</span> <span class="n">ProviderSearchError</span>
 <span class="kn">from</span> <span class="nn">camply.utils</span> <span class="kn">import</span> <span class="n">api_utils</span><span class="p">,</span> <span class="n">logging_utils</span>
+<span class="kn">from</span> <span class="nn">camply.utils.logging_utils</span> <span class="kn">import</span> <span class="n">log_sorted_response</span>
 
 <span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
 
@@ -175,7 +176,7 @@
                 <span class="n">recreation_area</span><span class="o">=</span><span class="n">recreation_area_object</span><span class="p">)</span>
             <span class="k">if</span> <span class="n">recreation_area</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
                 <span class="n">logging_messages</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">recreation_area</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">log_sorted_response</span><span class="p">(</span><span class="n">response_array</span><span class="o">=</span><span class="n">logging_messages</span><span class="p">)</span>
+        <span class="n">log_sorted_response</span><span class="p">(</span><span class="n">response_array</span><span class="o">=</span><span class="n">logging_messages</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">api_response</span></div>
 
 <div class="viewcode-block" id="RecreationDotGov.find_campgrounds"><a class="viewcode-back" href="../../../../api/camply.providers.recreation_dot_gov.campsite_search.html#camply.RecreationDotGov.find_campgrounds">[docs]</a>    <span class="k">def</span> <span class="nf">find_campgrounds</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">search_string</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -248,7 +249,7 @@
             <span class="n">_</span><span class="p">,</span> <span class="n">campground_facility</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">process_facilities_responses</span><span class="p">(</span><span class="n">facility</span><span class="o">=</span><span class="n">facility</span><span class="p">)</span>
             <span class="k">if</span> <span class="n">campground_facility</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
                 <span class="n">campgrounds</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">campground_facility</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">log_sorted_response</span><span class="p">(</span><span class="n">response_array</span><span class="o">=</span><span class="n">campgrounds</span><span class="p">)</span>
+        <span class="n">log_sorted_response</span><span class="p">(</span><span class="n">response_array</span><span class="o">=</span><span class="n">campgrounds</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">campgrounds</span></div>
 
     <span class="k">def</span> <span class="nf">_find_facilities_from_campgrounds</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">campground_id</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]])</span> <span class="o">-&gt;</span> \
@@ -276,7 +277,7 @@
             <span class="k">if</span> <span class="n">campground_facility</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
                 <span class="n">campgrounds</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">campground_facility</span><span class="p">)</span>
         <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">campgrounds</span><span class="p">)</span><span class="si">}</span><span class="s2"> Matching Campgrounds Found&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">log_sorted_response</span><span class="p">(</span><span class="n">response_array</span><span class="o">=</span><span class="n">campgrounds</span><span class="p">)</span>
+        <span class="n">log_sorted_response</span><span class="p">(</span><span class="n">response_array</span><span class="o">=</span><span class="n">campgrounds</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">campgrounds</span>
 
     <span class="k">def</span> <span class="nf">_find_facilities_from_search</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">search</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">dict</span><span class="p">]:</span>
@@ -303,7 +304,7 @@
             <span class="n">_</span><span class="p">,</span> <span class="n">campground_facility</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">process_facilities_responses</span><span class="p">(</span><span class="n">facility</span><span class="o">=</span><span class="n">facility</span><span class="p">)</span>
             <span class="k">if</span> <span class="n">campground_facility</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
                 <span class="n">campgrounds</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">campground_facility</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">log_sorted_response</span><span class="p">(</span><span class="n">response_array</span><span class="o">=</span><span class="n">campgrounds</span><span class="p">)</span>
+        <span class="n">log_sorted_response</span><span class="p">(</span><span class="n">response_array</span><span class="o">=</span><span class="n">campgrounds</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">campgrounds</span>
 
     <span class="nd">@classmethod</span>
@@ -487,47 +488,6 @@
             <span class="k">return</span> <span class="n">recreation_area</span><span class="p">,</span> <span class="n">recreation_area_tuple</span>
         <span class="k">except</span> <span class="ne">IndexError</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">recreation_area</span><span class="p">,</span> <span class="kc">None</span>
-
-    <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">_generate_response_string</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span>
-                                  <span class="n">response</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">CampgroundFacility</span><span class="p">,</span> <span class="n">RecreationArea</span><span class="p">,</span> <span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Generate a formatted string for logging</span>
-
-<span class="sd">        Parameters</span>
-<span class="sd">        ----------</span>
-<span class="sd">        response: Union[CampgroundFacility]</span>
-
-<span class="sd">        Returns</span>
-<span class="sd">        -------</span>
-<span class="sd">        str</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">response</span><span class="p">,</span> <span class="n">CampgroundFacility</span><span class="p">):</span>
-            <span class="k">return</span> <span class="p">(</span><span class="sa">f</span><span class="s2">&quot;⛰  </span><span class="si">{</span><span class="n">response</span><span class="o">.</span><span class="n">recreation_area</span><span class="si">}</span><span class="s2"> (#</span><span class="si">{</span><span class="n">response</span><span class="o">.</span><span class="n">recreation_area_id</span><span class="si">}</span><span class="s2">) - &quot;</span>
-                    <span class="sa">f</span><span class="s2">&quot;🏕  </span><span class="si">{</span><span class="n">response</span><span class="o">.</span><span class="n">facility_name</span><span class="si">}</span><span class="s2"> (#</span><span class="si">{</span><span class="n">response</span><span class="o">.</span><span class="n">facility_id</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
-        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">response</span><span class="p">,</span> <span class="n">RecreationArea</span><span class="p">):</span>
-            <span class="k">return</span> <span class="p">(</span><span class="sa">f</span><span class="s2">&quot;⛰  </span><span class="si">{</span><span class="n">response</span><span class="o">.</span><span class="n">recreation_area</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">response</span><span class="o">.</span><span class="n">recreation_area_location</span><span class="si">}</span><span class="s2"> &quot;</span>
-                    <span class="sa">f</span><span class="s2">&quot;(#</span><span class="si">{</span><span class="n">response</span><span class="o">.</span><span class="n">recreation_area_id</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">response</span>
-
-<div class="viewcode-block" id="RecreationDotGov.log_sorted_response"><a class="viewcode-back" href="../../../../api/camply.providers.recreation_dot_gov.campsite_search.html#camply.RecreationDotGov.log_sorted_response">[docs]</a>    <span class="nd">@staticmethod</span>
-    <span class="k">def</span> <span class="nf">log_sorted_response</span><span class="p">(</span><span class="n">response_array</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">object</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Log Some Statements in a Nice Sorted way</span>
-
-<span class="sd">        Parameters</span>
-<span class="sd">        ----------</span>
-<span class="sd">        response_array: List[str]</span>
-
-<span class="sd">        Returns</span>
-<span class="sd">        -------</span>
-<span class="sd">        None</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">log_array</span> <span class="o">=</span> <span class="p">[</span><span class="n">RecreationDotGov</span><span class="o">.</span><span class="n">_generate_response_string</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span> <span class="k">for</span> <span class="n">obj</span> <span class="ow">in</span> <span class="n">response_array</span><span class="p">]</span>
-        <span class="n">sorted_logs</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">log_array</span><span class="p">)</span>
-        <span class="k">for</span> <span class="n">log_response</span> <span class="ow">in</span> <span class="n">sorted_logs</span><span class="p">:</span>
-            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="n">log_response</span><span class="p">)</span></div>
 
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">_rec_availability_get_endpoint</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">path</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>

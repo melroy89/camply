@@ -85,8 +85,8 @@
 <span class="sd">Yellowstone Lodging Web Searching Utilities</span>
 <span class="sd">&quot;&quot;&quot;</span>
 
-<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">timedelta</span>
 <span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">timedelta</span>
 <span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Set</span><span class="p">,</span> <span class="n">Union</span>
 
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -96,6 +96,7 @@
 <span class="kn">from</span> <span class="nn">camply.providers</span> <span class="kn">import</span> <span class="n">YellowstoneLodging</span>
 <span class="kn">from</span> <span class="nn">camply.search.base_search</span> <span class="kn">import</span> <span class="n">BaseCampingSearch</span><span class="p">,</span> <span class="n">SearchError</span>
 <span class="kn">from</span> <span class="nn">camply.utils</span> <span class="kn">import</span> <span class="n">make_list</span>
+<span class="kn">from</span> <span class="nn">camply.utils.logging_utils</span> <span class="kn">import</span> <span class="n">log_sorted_response</span>
 
 <span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
 
@@ -206,7 +207,14 @@
             <span class="k">return</span> <span class="n">campsites</span>
         <span class="n">matching_campsites</span> <span class="o">=</span> <span class="p">[</span><span class="n">campsite</span> <span class="k">for</span> <span class="n">campsite</span> <span class="ow">in</span> <span class="n">campsites</span> <span class="k">if</span>
                               <span class="n">campsite</span><span class="o">.</span><span class="n">facility_id</span> <span class="ow">in</span> <span class="n">searchable_campgrounds</span><span class="p">]</span>
-        <span class="k">return</span> <span class="n">matching_campsites</span></div>
+        <span class="k">return</span> <span class="n">matching_campsites</span>
+
+<div class="viewcode-block" id="SearchYellowstone.print_campgrounds"><a class="viewcode-back" href="../../../api/camply.search.search_yellowstone.html#camply.SearchYellowstone.print_campgrounds">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">print_campgrounds</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Print the Campgrounds inside of Yellowstone</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">log_sorted_response</span><span class="p">(</span><span class="n">YellowstoneConfig</span><span class="o">.</span><span class="n">YELLOWSTONE_CAMPGROUND_OBJECTS</span><span class="p">)</span></div></div>
 </pre></div>
 
            </div>

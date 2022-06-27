@@ -88,7 +88,8 @@
 <span class="kn">import</span> <span class="nn">logging</span>
 <span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Tuple</span>
 
-<span class="kn">from</span> <span class="nn">.data_columns</span> <span class="kn">import</span> <span class="n">DataColumns</span>
+<span class="kn">from</span> <span class="nn">camply.config.data_columns</span> <span class="kn">import</span> <span class="n">DataColumns</span>
+<span class="kn">from</span> <span class="nn">camply.containers</span> <span class="kn">import</span> <span class="n">CampgroundFacility</span>
 
 <span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
 
@@ -161,7 +162,18 @@
         <span class="s2">&quot;YLYG:RV&quot;</span><span class="p">:</span> <span class="s2">&quot;Grant Campground&quot;</span><span class="p">,</span>
         <span class="s2">&quot;YLYM:RV&quot;</span><span class="p">:</span> <span class="s2">&quot;Madison Campground&quot;</span><span class="p">,</span>
         <span class="s2">&quot;YLYF:RV&quot;</span><span class="p">:</span> <span class="s2">&quot;Fishing Bridge RV Park&quot;</span>
-    <span class="p">}</span></div>
+    <span class="p">}</span>
+
+    <span class="n">YELLOWSTONE_CAMPGROUND_OBJECTS</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">CampgroundFacility</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">YELLOWSTONE_CAMPGROUNDS</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">YELLOWSTONE_CAMPGROUND_OBJECTS</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+            <span class="n">CampgroundFacility</span><span class="p">(</span>
+                <span class="n">recreation_area_id</span><span class="o">=</span><span class="n">YELLOWSTONE_RECREATION_AREA_ID</span><span class="p">,</span>
+                <span class="n">recreation_area</span><span class="o">=</span><span class="n">YELLOWSTONE_RECREATION_AREA_FORMAL_NAME</span><span class="p">,</span>
+                <span class="n">facility_name</span><span class="o">=</span><span class="n">value</span><span class="p">,</span>
+                <span class="n">facility_id</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">key</span><span class="p">),</span>
+            <span class="p">)</span>
+        <span class="p">)</span></div>
 </pre></div>
 
            </div>
