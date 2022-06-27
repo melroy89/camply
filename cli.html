@@ -25,7 +25,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="camply" href="api/modules.html" />
-    <link rel="prev" title="Check Out The ReadTheDocs" href="usage.html" /> 
+    <link rel="prev" title="Check Out The ReadTheDocs" href="README.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -47,14 +47,14 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="usage.html">Check Out The ReadTheDocs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="usage.html#table-of-contents">Table of Contents</a></li>
-<li class="toctree-l1"><a class="reference internal" href="usage.html#installation">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="usage.html#command-line-usage">Command Line Usage</a></li>
-<li class="toctree-l1"><a class="reference internal" href="usage.html#finding-recreation-areas-ids-and-campground-ids-to-search-without-using-the-command-line">Finding Recreation Areas IDs and Campground IDs To Search Without Using the Command Line</a></li>
-<li class="toctree-l1"><a class="reference internal" href="usage.html#object-oriented-usage-python">Object-Oriented Usage (Python)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="usage.html#running-in-docker">Running in Docker</a></li>
-<li class="toctree-l1"><a class="reference internal" href="usage.html#dependencies">Dependencies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="README.html">Check Out The ReadTheDocs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="README.html#table-of-contents">Table of Contents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="README.html#installation">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="README.html#command-line-usage">Command Line Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="README.html#finding-recreation-areas-ids-and-campground-ids-to-search-without-using-the-command-line">Finding Recreation Areas IDs and Campground IDs To Search Without Using the Command Line</a></li>
+<li class="toctree-l1"><a class="reference internal" href="README.html#object-oriented-usage-python">Object-Oriented Usage (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="README.html#running-in-docker">Running in Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="README.html#dependencies">Dependencies</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">camply CLI</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#run-via-docker">Run via Docker</a></li>
@@ -100,8 +100,8 @@
              
   <section id="camply-cli">
 <h1>camply CLI<a class="headerlink" href="#camply-cli" title="Permalink to this headline"></a></h1>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">❯ camply</span>
-<span class="go">2022-04-27 00:48:04,415 [  CAMPLY]: camply, the campsite finder ⛺️</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">❯ camply --help</span>
+<span class="go">[2022-06-22 11:01:43] CAMPLY   camply, the campsite finder ⛺️</span>
 <span class="go">Usage: camply [OPTIONS] COMMAND [ARGS]...</span>
 
 <span class="go">  Welcome to camply, the campsite finder.</span>
@@ -123,9 +123,8 @@
 <span class="go">  campgrounds       Search for Campgrounds (inside of Recreation Areas)...</span>
 <span class="go">  campsites         Find available Campsites using search criteria</span>
 <span class="go">  configure         Set up camply configuration file with an interactive...</span>
-<span class="go">  recreation-areas  Search for Recreation Areas and list them</span>
-
-<span class="go">2022-04-27 00:48:04,416 [  CAMPLY]: Exiting camply 👋</span>
+<span class="go">  recreation-areas  Search for Recreation Areas and list them&#39;</span>
+<span class="go">[2022-06-22 11:01:43] CAMPLY   Exiting camply 👋</span>
 </pre></div>
 </div>
 <section id="installation">
@@ -287,7 +286,7 @@ functionality can be enabled with  <cite>–continuous</cite> and notifications 
 
 <dl class="std option">
 <dt class="sig sig-object std" id="cmdoption-camply-campsites-continuous">
-<span class="sig-name descname"><span class="pre">--continuous</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;continuous&gt;</span></span><a class="headerlink" href="#cmdoption-camply-campsites-continuous" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">--continuous</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-camply-campsites-continuous" title="Permalink to this definition"></a></dt>
 <dd><p>Continuously check for a campsite to become available, and quit once at least one campsite is found.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Default</dt>
@@ -389,7 +388,7 @@ National Parks and National Forests that can contain one or many campgrounds.</p
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="usage.html" class="btn btn-neutral float-left" title="Check Out The ReadTheDocs" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="README.html" class="btn btn-neutral float-left" title="Check Out The ReadTheDocs" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="api/modules.html" class="btn btn-neutral float-right" title="camply" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 

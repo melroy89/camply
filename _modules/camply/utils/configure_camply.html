@@ -44,14 +44,14 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../usage.html">Check Out The ReadTheDocs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../usage.html#table-of-contents">Table of Contents</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../usage.html#installation">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../usage.html#command-line-usage">Command Line Usage</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../usage.html#finding-recreation-areas-ids-and-campground-ids-to-search-without-using-the-command-line">Finding Recreation Areas IDs and Campground IDs To Search Without Using the Command Line</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../usage.html#object-oriented-usage-python">Object-Oriented Usage (Python)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../usage.html#running-in-docker">Running in Docker</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../usage.html#dependencies">Dependencies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../README.html">Check Out The ReadTheDocs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../README.html#table-of-contents">Table of Contents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../README.html#installation">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../README.html#command-line-usage">Command Line Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../README.html#finding-recreation-areas-ids-and-campground-ids-to-search-without-using-the-command-line">Finding Recreation Areas IDs and Campground IDs To Search Without Using the Command Line</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../README.html#object-oriented-usage-python">Object-Oriented Usage (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../README.html#running-in-docker">Running in Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../README.html#dependencies">Dependencies</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../cli.html">camply CLI</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../api/modules.html">API Documentation</a></li>
 </ul>
@@ -152,7 +152,7 @@
                        <span class="sa">f</span><span class="s2">&quot;[bold green]</span><span class="si">{</span><span class="n">field_note</span><span class="si">}</span><span class="s2">[/bold green]&quot;</span><span class="p">)</span>
         <span class="n">message</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Enter value for [bold blue]</span><span class="si">{</span><span class="n">field</span><span class="si">}</span><span class="s2">[/bold blue]&quot;</span>
         <span class="k">if</span> <span class="n">default_value</span> <span class="o">!=</span> <span class="s2">&quot;&quot;</span><span class="p">:</span>
-            <span class="n">message</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot; (default: `[bold purple]</span><span class="si">{</span><span class="n">field</span><span class="si">}</span><span class="s2">[/bold purple]`)&quot;</span>
+            <span class="n">message</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot; (default: `[bold purple]</span><span class="si">{</span><span class="n">default_value</span><span class="si">}</span><span class="s2">[/bold purple]`)&quot;</span>
         <span class="n">logged_input</span> <span class="o">=</span> <span class="n">Prompt</span><span class="o">.</span><span class="n">ask</span><span class="p">(</span><span class="n">prompt</span><span class="o">=</span><span class="n">message</span><span class="p">)</span>
         <span class="n">config_value</span> <span class="o">=</span> <span class="n">logged_input</span> <span class="k">if</span> <span class="n">logged_input</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span> <span class="k">else</span> <span class="n">default_value</span>
         <span class="n">config_dict</span><span class="p">[</span><span class="n">field</span><span class="p">]</span> <span class="o">=</span> <span class="n">config_value</span>

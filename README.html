@@ -50,8 +50,8 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Check Out The ReadTheDocs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="#table-of-contents">Table of Contents</a></li>
 <li class="toctree-l1"><a class="reference internal" href="#installation">Installation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#a-name-pypi-a-pypi"><a name="pypi"></a>PyPI</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#a-name-docker-a-docker"><a name="docker"></a>Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pypi">PyPI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#docker">Docker</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#building-locally">Building Locally</a></li>
 </ul>
 </li>
@@ -148,65 +148,67 @@ becomes available, camply sends you a notification to book your spot!</p>
 <section id="table-of-contents">
 <h1>Table of Contents<a class="headerlink" href="#table-of-contents" title="Permalink to this headline"></a></h1>
 <ul class="simple">
-<li><p><span class="xref myst">Installation</span></p>
+<li><p><a class="reference internal" href="#installation"><span class="std std-doc">Installation</span></a></p>
 <ul>
-<li><p><span class="xref myst">PyPI</span></p></li>
-<li><p><span class="xref myst">Docker</span></p></li>
-<li><p><span class="xref myst">Building Locally</span></p></li>
+<li><p><a class="reference internal" href="#pypi"><span class="std std-doc">PyPI</span></a></p></li>
+<li><p><a class="reference internal" href="#docker"><span class="std std-doc">Docker</span></a></p></li>
+<li><p><a class="reference internal" href="#building-locally"><span class="std std-doc">Building Locally</span></a></p></li>
 </ul>
 </li>
-<li><p><span class="xref myst">Command Line Usage</span></p>
+<li><p><a class="reference internal" href="#command-line-usage"><span class="std std-doc">Command Line Usage</span></a></p>
 <ul>
-<li><p><span class="xref myst"><code class="docutils literal notranslate"><span class="pre">campsites</span></code></span></p></li>
-<li><p><span class="xref myst"><code class="docutils literal notranslate"><span class="pre">recreation-areas</span></code></span></p></li>
-<li><p><span class="xref myst"><code class="docutils literal notranslate"><span class="pre">campgrounds</span></code></span></p></li>
-<li><p><span class="xref myst"><code class="docutils literal notranslate"><span class="pre">configure</span></code></span></p></li>
-<li><p><span class="xref myst">Examples</span></p>
+<li><p><a class="reference internal" href="#campsites"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">campsites</span></code></span></a></p></li>
+<li><p><a class="reference internal" href="#recreation-areas"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">recreation-areas</span></code></span></a></p></li>
+<li><p><a class="reference internal" href="#campgrounds"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">campgrounds</span></code></span></a></p></li>
+<li><p><a class="reference internal" href="#configure"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">configure</span></code></span></a></p></li>
+<li><p><a class="reference internal" href="#examples"><span class="std std-doc">Examples</span></a></p>
 <ul>
-<li><p><span class="xref myst">Searching for a Campsite</span></p></li>
-<li><p><span class="xref myst">Searching for a Campsite by Campground ID</span></p></li>
-<li><p><span class="xref myst">Searching for a Specific Campsite by ID</span></p></li>
-<li><p><span class="xref myst">Continuously Searching for A Campsite</span></p></li>
-<li><p><span class="xref myst">Continue Looking After The First Match Is Found</span></p></li>
-<li><p><span class="xref myst">Send a Push Notification</span></p></li>
-<li><p><span class="xref myst">Send a Notification to Different Services</span></p></li>
-<li><p><span class="xref myst">Look for Weekend Campsite Availabilities</span></p></li>
-<li><p><span class="xref myst">Look for Consecutive Nights at the Same Campsite</span></p></li>
-<li><p><span class="xref myst">Look for a Campsite Inside of Yellowstone</span></p></li>
-<li><p><span class="xref myst">Look for a Campsite Across Multiple Recreation areas</span></p></li>
-<li><p><span class="xref myst">Using a YML Configuration file to search for campsites</span></p></li>
-<li><p><span class="xref myst">Search for Recreation Areas by Query String</span></p></li>
-<li><p><span class="xref myst">Look for Specific Campgrounds Within a Recreation Area</span></p></li>
-<li><p><span class="xref myst">Look for Specific Campgrounds by Query String</span></p></li>
+<li><p><a class="reference internal" href="#searching-for-a-campsite"><span class="std std-doc">Searching for a Campsite</span></a></p></li>
+<li><p><a class="reference internal" href="#searching-for-a-campsite-by-campground-id"><span class="std std-doc">Searching for a Campsite by Campground ID</span></a></p></li>
+<li><p><a class="reference internal" href="#searching-for-a-specific-campsite-by-id"><span class="std std-doc">Searching for a Specific Campsite by ID</span></a></p></li>
+<li><p><a class="reference internal" href="#continuously-searching-for-a-campsite"><span class="std std-doc">Continuously Searching for A Campsite</span></a></p></li>
+<li><p><a class="reference internal" href="#continue-looking-after-the-first-match-is-found"><span class="std std-doc">Continue Looking After The First Match Is Found</span></a></p></li>
+<li><p><a class="reference internal" href="#send-a-push-notification"><span class="std std-doc">Send a Push Notification</span></a></p></li>
+<li><p><a class="reference internal" href="#send-a-notification-to-different-services"><span class="std std-doc">Send a Notification to Different Services</span></a></p></li>
+<li><p><a class="reference internal" href="#look-for-weekend-campsite-availabilities"><span class="std std-doc">Look for Weekend Campsite Availabilities</span></a></p></li>
+<li><p><a class="reference internal" href="#look-for-consecutive-nights-at-the-same-campsite"><span class="std std-doc">Look for Consecutive Nights at the Same Campsite</span></a></p></li>
+<li><p><a class="reference internal" href="#look-for-a-campsite-inside-of-yellowstone"><span class="std std-doc">Look for a Campsite Inside of Yellowstone</span></a></p></li>
+<li><p><a class="reference internal" href="#look-for-a-campsite-across-multiple-recreation-areas"><span class="std std-doc">Look for a Campsite Across Multiple Recreation areas</span></a></p></li>
+<li><p><a class="reference internal" href="#using-a-yml-configuration-file-to-search-for-campsites"><span class="std std-doc">Using a YML Configuration file to search for campsites</span></a></p></li>
+<li><p><a class="reference internal" href="#search-for-recreation-areas-by-query-string"><span class="std std-doc">Search for Recreation Areas by Query String</span></a></p></li>
+<li><p><a class="reference internal" href="#look-for-specific-campgrounds-within-a-recreation-area"><span class="std std-doc">Look for Specific Campgrounds Within a Recreation Area</span></a></p></li>
+<li><p><a class="reference internal" href="#look-for-specific-campgrounds-by-query-string"><span class="std std-doc">Look for Specific Campgrounds by Query String</span></a></p></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><p><span class="xref myst">Finding Recreation Areas IDs and Campground IDs To Search Without Using the Command Line</span></p></li>
-<li><p><span class="xref myst">Object-Oriented Usage (Python)</span></p>
+<li><p><a class="reference internal" href="#finding-recreation-areas-ids-and-campground-ids-to-search-without-using-the-command-line"><span class="std std-doc">Finding Recreation Areas IDs and Campground IDs To Search Without Using the Command Line</span></a></p></li>
+<li><p><a class="reference internal" href="#object-oriented-usage-python"><span class="std std-doc">Object-Oriented Usage (Python)</span></a></p>
 <ul>
-<li><p><span class="xref myst">Search for a Recreation.gov Campsite</span></p></li>
-<li><p><span class="xref myst">Continuously Search for Recreation.gov Campsites</span></p></li>
+<li><p><a class="reference internal" href="#search-for-a-recreation-gov-campsite"><span class="std std-doc">Search for a Recreation.gov Campsite</span></a></p></li>
+<li><p><a class="reference internal" href="#continuously-search-for-recreation-gov-campsites"><span class="std std-doc">Continuously Search for Recreation.gov Campsites</span></a></p></li>
 </ul>
 </li>
-<li><p><span class="xref myst">Running in Docker</span></p></li>
-<li><p><span class="xref myst">Dependencies</span></p></li>
+<li><p><a class="reference internal" href="#running-in-docker"><span class="std std-doc">Running in Docker</span></a></p></li>
+<li><p><a class="reference internal" href="#dependencies"><span class="std std-doc">Dependencies</span></a></p></li>
 </ul>
 </section>
 <section id="installation">
 <h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline"></a></h1>
-<section id="a-name-pypi-a-pypi">
-<h2><a name="pypi"></a><a class="reference external" href="https://pypi.python.org/pypi/camply/">PyPI</a><a class="headerlink" href="#a-name-pypi-a-pypi" title="Permalink to this headline"></a></h2>
+<section id="pypi">
+<h2>PyPI<a class="headerlink" href="#pypi" title="Permalink to this headline"></a></h2>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip install camply
 </pre></div>
 </div>
+<p><a class="reference external" href="https://pypi.python.org/pypi/camply/">PyPI Link</a></p>
 </section>
-<section id="a-name-docker-a-docker">
-<h2><a name="docker"></a><a class="reference external" href="https://hub.docker.com/r/juftin/camply">Docker</a><a class="headerlink" href="#a-name-docker-a-docker" title="Permalink to this headline"></a></h2>
+<section id="docker">
+<h2>Docker<a class="headerlink" href="#docker" title="Permalink to this headline"></a></h2>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>docker pull juftin/camply
 </pre></div>
 </div>
-<p>**<em>see <span class="xref myst">Running in Docker</span> below.</em></p>
+<p><a class="reference external" href="https://hub.docker.com/r/juftin/camply">Docker Hub Link</a></p>
+<p>**<em>see <a class="reference internal" href="#running-in-docker"><span class="std std-doc">Running in Docker</span></a> below.</em></p>
 </section>
 <section id="building-locally">
 <h2>Building Locally<a class="headerlink" href="#building-locally" title="Permalink to this headline"></a></h2>
@@ -267,65 +269,65 @@ and a link to make the booking. Required parameters include <code class="docutil
 <li><p><code class="docutils literal notranslate"><span class="pre">--rec-area</span></code>: <code class="docutils literal notranslate"><span class="pre">RECREATION_AREA_ID</span></code></p>
 <ul>
 <li><p>Add Recreation Areas (comprised of campgrounds) by ID.
-<span class="xref myst">**<em>example</em></span></p></li>
+<a class="reference internal" href="#searching-for-a-campsite"><span class="std std-doc">**<em>example</em></span></a></p></li>
 </ul>
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">--campground</span></code>: <code class="docutils literal notranslate"><span class="pre">CAMPGROUND_ID</span></code></p>
 <ul>
 <li><p>Add individual Campgrounds by ID.
-<span class="xref myst">**<em>example</em></span></p></li>
+<a class="reference internal" href="#searching-for-a-campsite-by-campground-id"><span class="std std-doc">**<em>example</em></span></a></p></li>
 </ul>
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">--campsite</span></code>: <code class="docutils literal notranslate"><span class="pre">CAMPSITE_ID</span></code></p>
 <ul>
 <li><p>Add individual Campsites by ID.
-<span class="xref myst">**<em>example</em></span></p></li>
+<a class="reference internal" href="#searching-for-a-specific-campsite-by-id"><span class="std std-doc">**<em>example</em></span></a></p></li>
 </ul>
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">--start-date</span></code>: <code class="docutils literal notranslate"><span class="pre">START_DATE</span></code></p>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">YYYY-MM-DD</span></code>: Start of Search window. You will be arriving this day.
-<span class="xref myst">**<em>example</em></span></p></li>
+<a class="reference internal" href="#searching-for-a-campsite"><span class="std std-doc">**<em>example</em></span></a></p></li>
 </ul>
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">--end-date</span></code>: <code class="docutils literal notranslate"><span class="pre">END_DATE</span></code></p>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">YYYY-MM-DD</span></code>: End of Search window. You will be checking out this day…
-<span class="xref myst">**<em>example</em></span></p></li>
+<a class="reference internal" href="#searching-for-a-campsite"><span class="std std-doc">**<em>example</em></span></a></p></li>
 </ul>
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">--weekends</span></code></p>
 <ul>
 <li><p>Only search for weekend bookings (Fri/Sat nights).
-<span class="xref myst">**<em>example</em></span></p></li>
+<a class="reference internal" href="#look-for-weekend-campsite-availabilities"><span class="std std-doc">**<em>example</em></span></a></p></li>
 </ul>
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">--nights</span></code></p>
 <ul>
 <li><p>Search for campsite stays with consecutive nights. Defaults to 1 which returns all campsites
 found.
-<span class="xref myst">**<em>example</em></span></p></li>
+<a class="reference internal" href="#look-for-consecutive-nights-at-the-same-campsite"><span class="std std-doc">**<em>example</em></span></a></p></li>
 </ul>
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">--provider</span></code>: <code class="docutils literal notranslate"><span class="pre">PROVIDER</span></code></p>
 <ul>
 <li><p>Camping Search Provider. Options available are ‘Yellowstone’ and ‘RecreationDotGov’. Defaults
 to ‘RecreationDotGov’, not case-sensitive.
-<span class="xref myst">**<em>example</em></span></p></li>
+<a class="reference internal" href="#look-for-a-campsite-inside-of-yellowstone"><span class="std std-doc">**<em>example</em></span></a></p></li>
 </ul>
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">--continuous</span></code></p>
 <ul>
 <li><p>Continuously check for a campsite to become available, and quit once at least one campsite is
 found.
-<span class="xref myst">**<em>example</em></span></p></li>
+<a class="reference internal" href="#continuously-searching-for-a-campsite"><span class="std std-doc">**<em>example</em></span></a></p></li>
 </ul>
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">--polling-interval</span></code>: <code class="docutils literal notranslate"><span class="pre">POLLING_INTERVAL</span></code></p>
 <ul>
 <li><p>If <code class="docutils literal notranslate"><span class="pre">--continuous</span></code> is activated, how often to wait in between checks (in minutes). Defaults to
 10, cannot be less than 5.
-<span class="xref myst">**<em>example</em></span></p></li>
+<a class="reference internal" href="#look-for-weekend-campsite-availabilities"><span class="std std-doc">**<em>example</em></span></a></p></li>
 </ul>
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">--notifications</span></code>: <code class="docutils literal notranslate"><span class="pre">NOTIFICATIONS</span></code></p>
@@ -333,14 +335,14 @@ found.
 <li><p>If <code class="docutils literal notranslate"><span class="pre">--continuous</span></code> is activated, types of notifications to receive. Options available
 are<code class="docutils literal notranslate"><span class="pre">email</span></code>, <code class="docutils literal notranslate"><span class="pre">pushover</span></code>, <code class="docutils literal notranslate"><span class="pre">pushbullet</span></code>, <code class="docutils literal notranslate"><span class="pre">telegram</span></code>, or <code class="docutils literal notranslate"><span class="pre">silent</span></code>. Defaults to <code class="docutils literal notranslate"><span class="pre">silent</span></code> - which just logs
 messages to console.
-<span class="xref myst">**<em>example</em></span></p></li>
+<a class="reference internal" href="#send-a-push-notification"><span class="std std-doc">**<em>example</em></span></a></p></li>
 </ul>
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">--notify-first-try</span></code></p>
 <ul>
 <li><p>If <code class="docutils literal notranslate"><span class="pre">--continuous</span></code> is activated, whether to send all non-silent notifications if more than 5
 matching campsites are found on the first try. Defaults to false which only sends the first5.
-<span class="xref myst">**<em>example</em></span></p></li>
+<a class="reference internal" href="#continuously-searching-for-a-campsite"><span class="std std-doc">**<em>example</em></span></a></p></li>
 </ul>
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">--search-forever</span></code></p>
@@ -348,7 +350,7 @@ matching campsites are found on the first try. Defaults to false which only send
 <li><p>If <code class="docutils literal notranslate"><span class="pre">--continuous</span></code> is activated, this method continues to search after the first availability
 has been found. The one caveat is that it will never notify about the same identical campsite
 for the same booking date.
-<span class="xref myst">**<em>example</em></span></p></li>
+<a class="reference internal" href="#continue-looking-after-the-first-match-is-found"><span class="std std-doc">**<em>example</em></span></a></p></li>
 </ul>
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">--yml-config</span></code></p>
@@ -356,7 +358,7 @@ for the same booking date.
 <li><p>Rather than provide arguments to the command line utility, instead pass a file path to a YAML
 configuration file. See the documentation for more information on how to structure your
 configuration file.
-<span class="xref myst">**<em>example</em></span></p></li>
+<a class="reference internal" href="#using-a-yml-configuration-file-to-search-for-campsites"><span class="std std-doc">**<em>example</em></span></a></p></li>
 </ul>
 </li>
 </ul>
@@ -389,7 +391,7 @@ National Forests that can contain one or many campgrounds.</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>camply recreation-areas --search <span class="s2">&quot;Yosemite National Park&quot;</span>
 </pre></div>
 </div>
-<p>**<em>see the <span class="xref myst">examples</span> for more information</em></p>
+<p>**<em>see the <a class="reference internal" href="#search-for-recreation-areas-by-query-string"><span class="std std-doc">examples</span></a> for more information</em></p>
 </section>
 </section>
 <section id="campgrounds">
@@ -424,7 +426,7 @@ like fire towers or cabins that might only contain a single ‘campsite’ to bo
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>camply campgrounds --search <span class="s2">&quot;Fire Tower Lookout&quot;</span> --state CA
 </pre></div>
 </div>
-<p>**<em>see the <span class="xref myst">examples</span> for more information</em></p>
+<p>**<em>see the <a class="reference internal" href="#look-for-specific-campgrounds-by-query-string"><span class="std std-doc">examples</span></a> for more information</em></p>
 </section>
 </section>
 <section id="configure">
@@ -435,7 +437,7 @@ you need to set up <a class="reference external" href="https://pushover.net">Pus
 , <a class="reference external" href="https://www.pushbullet.com/#settings/account">PushBullet</a>, <a class="reference external" href="https://core.telegram.org/bots">Telegram</a>,
 or Email messages, everything can be done through the <code class="docutils literal notranslate"><span class="pre">configure</span></code> command. The end result is a file called
 <span class="xref myst"><code class="docutils literal notranslate"><span class="pre">.camply</span></code></span> in your home folder. See
-the <span class="xref myst">Running in Docker</span> section to see how you can use environment variables
+the <a class="reference internal" href="#running-in-docker"><span class="std std-doc">Running in Docker</span></a> section to see how you can use environment variables
 instead of a config file.</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>camply configure
 </pre></div>
@@ -638,8 +640,8 @@ arguments will overwrite all <code class="docutils literal notranslate"><span cl
 below <span class="xref myst">YML example file</span> and corresponding camply command:</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">provider</span><span class="p">:</span><span class="w">         </span><span class="l l-Scalar l-Scalar-Plain">RecreationDotGov</span><span class="w">  </span><span class="c1"># RecreationDotGov IF NOT PROVIDED</span><span class="w"></span>
 <span class="nt">recreation_area</span><span class="p">:</span><span class="w">  </span><span class="c1"># (LIST OR SINGLE ENTRY)</span><span class="w"></span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2991</span><span class="w">  </span><span class="c1"># Yosemite National Park, CA (All Campgrounds)</span><span class="w"></span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1074</span><span class="w">  </span><span class="c1"># Sierra National Forest, CA (All Campgrounds)</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2991</span><span class="w">  </span><span class="c1"># Yosemite National Park, CA (All Campgrounds)</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1074</span><span class="w">  </span><span class="c1"># Sierra National Forest, CA (All Campgrounds)</span><span class="w"></span>
 <span class="nt">campgrounds</span><span class="p">:</span><span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">null</span><span class="w">  </span><span class="c1"># ENTIRE FIELD CAN BE OMITTED IF NOT USED - (LIST OR SINGLE ENTRY)</span><span class="w"></span>
 <span class="nt">campsites</span><span class="p">:</span><span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">null</span><span class="w">   </span><span class="c1"># OVERRIDES CAMPGROUNDS / RECREATION AREA - (LIST OR SINGLE ENTRY)</span><span class="w"></span>
 <span class="nt">start_date</span><span class="p">:</span><span class="w">       </span><span class="l l-Scalar l-Scalar-Plain">2022-09-12</span><span class="w">  </span><span class="c1"># YYYY-MM-DD</span><span class="w"></span>
@@ -853,7 +855,7 @@ available.</p>
 </section>
 <section id="dependencies">
 <h1>Dependencies<a class="headerlink" href="#dependencies" title="Permalink to this headline"></a></h1>
-<p><code class="docutils literal notranslate"><span class="pre">camply</span></code> is compatible with any Python version &gt;= <code class="docutils literal notranslate"><span class="pre">3.6</span></code>. Currently, there are six required
+<p><code class="docutils literal notranslate"><span class="pre">camply</span></code> is compatible with any Python version &gt;= <code class="docutils literal notranslate"><span class="pre">3.6</span></code>. Currently, there are eight required
 dependencies:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://docs.python-requests.org/en/master/">click</a></p>

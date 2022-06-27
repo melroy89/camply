@@ -44,14 +44,14 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../usage.html">Check Out The ReadTheDocs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../usage.html#table-of-contents">Table of Contents</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../usage.html#installation">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../usage.html#command-line-usage">Command Line Usage</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../usage.html#finding-recreation-areas-ids-and-campground-ids-to-search-without-using-the-command-line">Finding Recreation Areas IDs and Campground IDs To Search Without Using the Command Line</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../usage.html#object-oriented-usage-python">Object-Oriented Usage (Python)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../usage.html#running-in-docker">Running in Docker</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../usage.html#dependencies">Dependencies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html">Check Out The ReadTheDocs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html#table-of-contents">Table of Contents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html#installation">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html#command-line-usage">Command Line Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html#finding-recreation-areas-ids-and-campground-ids-to-search-without-using-the-command-line">Finding Recreation Areas IDs and Campground IDs To Search Without Using the Command Line</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html#object-oriented-usage-python">Object-Oriented Usage (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html#running-in-docker">Running in Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html#dependencies">Dependencies</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../cli.html">camply CLI</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../api/modules.html">API Documentation</a></li>
 </ul>
@@ -239,7 +239,7 @@
          <span class="s2">&quot;&#39;RecreationDotGov&#39;. Defaults to &#39;RecreationDotGov&#39;, not case-sensitive.&quot;</span><span class="p">)</span>
 <span class="n">continuous_argument</span> <span class="o">=</span> <span class="n">click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span>
     <span class="s2">&quot;--continuous&quot;</span><span class="p">,</span>
-    <span class="n">show_default</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">is_flag</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">show_default</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
     <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Continuously check for a campsite to become available, and quit once &quot;</span>
          <span class="s2">&quot;at least one campsite is found.&quot;</span><span class="p">)</span>
 <span class="n">polling_interval_argument</span> <span class="o">=</span> <span class="n">click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span>
