@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>camply.search.search_recreationdotgov &mdash; camply 0.4.0 documentation</title>
+  <title>camply.search.search_recreationdotgov &mdash; camply 0.4.1 documentation</title>
       <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/autodoc_pydantic.css" type="text/css" />
@@ -33,7 +33,7 @@
             <a href="../../../index.html" class="icon icon-home"> camply
           </a>
               <div class="version">
-                0.4.0
+                0.4.1
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
@@ -44,8 +44,7 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../README.html">Check Out The ReadTheDocs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../README.html#table-of-contents">Table of Contents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../README.html">Table of Contents</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../README.html#installation">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../README.html#command-line-usage">Command Line Usage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../README.html#finding-recreation-areas-ids-and-campground-ids-to-search-without-using-the-command-line">Finding Recreation Areas IDs and Campground IDs To Search Without Using the Command Line</a></li>
@@ -53,6 +52,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../README.html#running-in-docker">Running in Docker</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../README.html#dependencies">Dependencies</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../cli.html">camply CLI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contributing.html">Contributing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../api/modules.html">API Documentation</a></li>
 </ul>
 
@@ -104,13 +104,15 @@
 <span class="sd">    Camping Search Object</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
-                 <span class="n">search_window</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">SearchWindow</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="n">SearchWindow</span><span class="p">]],</span>
-                 <span class="n">recreation_area</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="nb">int</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-                 <span class="n">campgrounds</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="nb">int</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-                 <span class="n">campsites</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="nb">int</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-                 <span class="n">weekends_only</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
-                 <span class="n">nights</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">search_window</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">SearchWindow</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="n">SearchWindow</span><span class="p">]],</span>
+        <span class="n">recreation_area</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="nb">int</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">campgrounds</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="nb">int</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">campsites</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="nb">int</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">weekends_only</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="n">nights</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Initialize with Search Parameters</span>
 
@@ -130,18 +132,25 @@
 <span class="sd">        nights: int</span>
 <span class="sd">            minimum number of consecutive nights to search per campsite,defaults to 1</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">provider</span><span class="o">=</span><span class="n">RecreationDotGov</span><span class="p">(),</span>
-                         <span class="n">search_window</span><span class="o">=</span><span class="n">search_window</span><span class="p">,</span>
-                         <span class="n">weekends_only</span><span class="o">=</span><span class="n">weekends_only</span><span class="p">,</span>
-                         <span class="n">nights</span><span class="o">=</span><span class="n">nights</span><span class="p">)</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="n">provider</span><span class="o">=</span><span class="n">RecreationDotGov</span><span class="p">(),</span>
+            <span class="n">search_window</span><span class="o">=</span><span class="n">search_window</span><span class="p">,</span>
+            <span class="n">weekends_only</span><span class="o">=</span><span class="n">weekends_only</span><span class="p">,</span>
+            <span class="n">nights</span><span class="o">=</span><span class="n">nights</span><span class="p">,</span>
+        <span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_recreation_area_id</span> <span class="o">=</span> <span class="n">make_list</span><span class="p">(</span><span class="n">recreation_area</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_campground_object</span> <span class="o">=</span> <span class="n">campgrounds</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">weekends_only</span> <span class="o">=</span> <span class="n">weekends_only</span>
-        <span class="k">assert</span> <span class="nb">any</span><span class="p">([</span>
-            <span class="n">campsites</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[[],</span> <span class="kc">None</span><span class="p">],</span>
-            <span class="n">campgrounds</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[[],</span> <span class="kc">None</span><span class="p">],</span>
-            <span class="n">recreation_area</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
-        <span class="p">])</span> <span class="ow">is</span> <span class="kc">True</span>
+        <span class="k">assert</span> <span class="p">(</span>
+            <span class="nb">any</span><span class="p">(</span>
+                <span class="p">[</span>
+                    <span class="n">campsites</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[[],</span> <span class="kc">None</span><span class="p">],</span>
+                    <span class="n">campgrounds</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[[],</span> <span class="kc">None</span><span class="p">],</span>
+                    <span class="n">recreation_area</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">,</span>
+                <span class="p">]</span>
+            <span class="p">)</span>
+            <span class="ow">is</span> <span class="kc">True</span>
+        <span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">campsite_finder</span><span class="p">:</span> <span class="n">RecreationDotGov</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">campsites</span> <span class="o">=</span> <span class="n">make_list</span><span class="p">(</span><span class="n">campsites</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">campgrounds</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_searchable_campgrounds</span><span class="p">()</span>
@@ -179,7 +188,9 @@
 <span class="sd">            List of searchable campground IDs</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">campground_list</span> <span class="o">=</span> <span class="n">make_list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_campground_object</span><span class="p">)</span>
-        <span class="n">facilities</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">campsite_finder</span><span class="o">.</span><span class="n">find_campgrounds</span><span class="p">(</span><span class="n">campground_id</span><span class="o">=</span><span class="n">campground_list</span><span class="p">)</span>
+        <span class="n">facilities</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">campsite_finder</span><span class="o">.</span><span class="n">find_campgrounds</span><span class="p">(</span>
+            <span class="n">campground_id</span><span class="o">=</span><span class="n">campground_list</span>
+        <span class="p">)</span>
         <span class="k">return</span> <span class="n">facilities</span>
 
     <span class="k">def</span> <span class="nf">_get_campgrounds_by_campsite_id</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">CampgroundFacility</span><span class="p">]:</span>
@@ -206,7 +217,8 @@
         <span class="n">campgrounds</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
         <span class="k">for</span> <span class="n">rec_area</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_recreation_area_id</span><span class="p">:</span>
             <span class="n">campground_array</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">campsite_finder</span><span class="o">.</span><span class="n">find_facilities_per_recreation_area</span><span class="p">(</span>
-                <span class="n">rec_area_id</span><span class="o">=</span><span class="n">rec_area</span><span class="p">)</span>
+                <span class="n">rec_area_id</span><span class="o">=</span><span class="n">rec_area</span>
+            <span class="p">)</span>
             <span class="n">campgrounds</span> <span class="o">+=</span> <span class="n">campground_array</span>
         <span class="k">return</span> <span class="n">campgrounds</span>
 
@@ -229,27 +241,33 @@
                 <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
                     <span class="sa">f</span><span class="s2">&quot;Searching </span><span class="si">{</span><span class="n">campground</span><span class="o">.</span><span class="n">facility_name</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">campground</span><span class="o">.</span><span class="n">recreation_area</span><span class="si">}</span><span class="s2"> &quot;</span>
                     <span class="sa">f</span><span class="s2">&quot;(</span><span class="si">{</span><span class="n">campground</span><span class="o">.</span><span class="n">facility_id</span><span class="si">}</span><span class="s2">) for availability: &quot;</span>
-                    <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">month</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%B, %Y&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+                    <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">month</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%B, %Y&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
+                <span class="p">)</span>
                 <span class="n">availabilities</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">campsite_finder</span><span class="o">.</span><span class="n">get_recdotgov_data</span><span class="p">(</span>
-                    <span class="n">campground_id</span><span class="o">=</span><span class="n">campground</span><span class="o">.</span><span class="n">facility_id</span><span class="p">,</span> <span class="n">month</span><span class="o">=</span><span class="n">month</span><span class="p">)</span>
+                    <span class="n">campground_id</span><span class="o">=</span><span class="n">campground</span><span class="o">.</span><span class="n">facility_id</span><span class="p">,</span> <span class="n">month</span><span class="o">=</span><span class="n">month</span>
+                <span class="p">)</span>
                 <span class="n">campsites</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">campsite_finder</span><span class="o">.</span><span class="n">process_campsite_availability</span><span class="p">(</span>
                     <span class="n">availability</span><span class="o">=</span><span class="n">availabilities</span><span class="p">,</span>
                     <span class="n">recreation_area</span><span class="o">=</span><span class="n">campground</span><span class="o">.</span><span class="n">recreation_area</span><span class="p">,</span>
                     <span class="n">recreation_area_id</span><span class="o">=</span><span class="n">campground</span><span class="o">.</span><span class="n">recreation_area_id</span><span class="p">,</span>
                     <span class="n">facility_name</span><span class="o">=</span><span class="n">campground</span><span class="o">.</span><span class="n">facility_name</span><span class="p">,</span>
                     <span class="n">facility_id</span><span class="o">=</span><span class="n">campground</span><span class="o">.</span><span class="n">facility_id</span><span class="p">,</span>
-                    <span class="n">month</span><span class="o">=</span><span class="n">month</span><span class="p">)</span>
+                    <span class="n">month</span><span class="o">=</span><span class="n">month</span><span class="p">,</span>
+                <span class="p">)</span>
                 <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">campsites</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="p">[]]:</span>
-                    <span class="n">campsites</span> <span class="o">=</span> <span class="p">[</span><span class="n">campsite_obj</span> <span class="k">for</span> <span class="n">campsite_obj</span> <span class="ow">in</span> <span class="n">campsites</span> <span class="k">if</span>
-                                 <span class="nb">int</span><span class="p">(</span><span class="n">campsite_obj</span><span class="o">.</span><span class="n">campsite_id</span><span class="p">)</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">campsites</span><span class="p">]</span>
+                    <span class="n">campsites</span> <span class="o">=</span> <span class="p">[</span>
+                        <span class="n">campsite_obj</span>
+                        <span class="k">for</span> <span class="n">campsite_obj</span> <span class="ow">in</span> <span class="n">campsites</span>
+                        <span class="k">if</span> <span class="nb">int</span><span class="p">(</span><span class="n">campsite_obj</span><span class="o">.</span><span class="n">campsite_id</span><span class="p">)</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">campsites</span>
+                    <span class="p">]</span>
                 <span class="n">found_campsites</span> <span class="o">+=</span> <span class="n">campsites</span>
                 <span class="k">if</span> <span class="n">index</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">campgrounds</span><span class="p">):</span>
                     <span class="n">sleep</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">uniform</span><span class="p">(</span><span class="o">*</span><span class="n">RecreationBookingConfig</span><span class="o">.</span><span class="n">RATE_LIMITING</span><span class="p">),</span> <span class="mi">2</span><span class="p">))</span>
         <span class="n">campsite_df</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">campsites_to_df</span><span class="p">(</span><span class="n">campsites</span><span class="o">=</span><span class="n">found_campsites</span><span class="p">)</span>
         <span class="n">campsite_df_validated</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_filter_date_overlap</span><span class="p">(</span><span class="n">campsites</span><span class="o">=</span><span class="n">campsite_df</span><span class="p">)</span>
         <span class="n">compiled_campsite_df</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_consolidate_campsites</span><span class="p">(</span>
-            <span class="n">campsite_df</span><span class="o">=</span><span class="n">campsite_df_validated</span><span class="p">,</span>
-            <span class="n">nights</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">nights</span><span class="p">)</span>
+            <span class="n">campsite_df</span><span class="o">=</span><span class="n">campsite_df_validated</span><span class="p">,</span> <span class="n">nights</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">nights</span>
+        <span class="p">)</span>
         <span class="n">compiled_campsites</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">df_to_campsites</span><span class="p">(</span><span class="n">campsite_df</span><span class="o">=</span><span class="n">compiled_campsite_df</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">compiled_campsites</span></div></div>
 </pre></div>

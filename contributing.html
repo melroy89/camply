@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>camply &mdash; camply 0.4.1 documentation</title>
+  <title>Contributing &mdash; camply 0.4.1 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/autodoc_pydantic.css" type="text/css" />
@@ -24,7 +24,8 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Table of Contents" href="README.html" /> 
+    <link rel="next" title="camply" href="api/modules.html" />
+    <link rel="prev" title="camply CLI" href="cli.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -32,7 +33,7 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="#" class="icon icon-home"> camply
+            <a href="index.html" class="icon icon-home"> camply
           </a>
               <div class="version">
                 0.4.1
@@ -45,7 +46,7 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <ul>
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="README.html">Table of Contents</a></li>
 <li class="toctree-l1"><a class="reference internal" href="README.html#installation">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="README.html#command-line-usage">Command Line Usage</a></li>
@@ -54,7 +55,7 @@
 <li class="toctree-l1"><a class="reference internal" href="README.html#running-in-docker">Running in Docker</a></li>
 <li class="toctree-l1"><a class="reference internal" href="README.html#dependencies">Dependencies</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cli.html">camply CLI</a></li>
-<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Contributing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api/modules.html">API Documentation</a></li>
 </ul>
 
@@ -64,15 +65,15 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="#">camply</a>
+          <a href="index.html">camply</a>
       </nav>
 
       <div class="wy-nav-content">
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="#" class="icon icon-home"></a> &raquo;</li>
-      <li><strong>camply</strong></li>
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Contributing</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -81,36 +82,52 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="camply">
-<h1><strong>camply</strong><a class="headerlink" href="#camply" title="Permalink to this headline"></a></h1>
-<a class="reference external image-reference" href="https://github.com/juftin/camply"><img alt="camply" class="align-center" src="https://raw.githubusercontent.com/juftin/camply/main/docs/static/camply.svg" width="400" /></a>
-<p><strong>camply</strong>, the campsite finder ⛺️, is a tool to help you book a campground online. Finding
-reservations at sold out campgrounds can be tough. That’s where camply comes in. It searches the
-APIs of booking services like <a class="reference external" href="https://recreation.gov">https://recreation.gov</a> (which indexes thousands of campgrounds across
-the USA) to continuously check for cancellations and availabilities to pop up. Once a campsite
-becomes available, camply sends you a notification to book your spot!</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="README.html">Table of Contents</a></li>
-<li class="toctree-l1"><a class="reference internal" href="README.html#installation">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="README.html#command-line-usage">Command Line Usage</a></li>
-<li class="toctree-l1"><a class="reference internal" href="README.html#finding-recreation-areas-ids-and-campground-ids-to-search-without-using-the-command-line">Finding Recreation Areas IDs and Campground IDs To Search Without Using the Command Line</a></li>
-<li class="toctree-l1"><a class="reference internal" href="README.html#object-oriented-usage-python">Object-Oriented Usage (Python)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="README.html#running-in-docker">Running in Docker</a></li>
-<li class="toctree-l1"><a class="reference internal" href="README.html#dependencies">Dependencies</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cli.html">camply CLI</a></li>
-<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="api/modules.html">API Documentation</a></li>
-</ul>
+  <section class="tex2jax_ignore mathjax_ignore" id="contributing">
+<h1>Contributing<a class="headerlink" href="#contributing" title="Permalink to this headline"></a></h1>
+<p>Camply makes use of a couple tools to help with contributing: <code class="docutils literal notranslate"><span class="pre">pre-commit</span></code> and <code class="docutils literal notranslate"><span class="pre">tox</span></code></p>
+<div class="highlight-commandline notranslate"><div class="highlight"><pre><span></span>pip install pre-commit
+pip install tox
+
+pre-commit install
+pre-commit run
+tox
+</pre></div>
 </div>
-<a class="reference external image-reference" href="https://github.com/juftin"><img alt="juftin" class="align-center" src="https://raw.githubusercontent.com/juftin/juftin/main/static/juftin.png" style="width: 60px; height: 60px;" /></a>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">pre-commit</span></code></p>
+<ul>
+<li><p><a class="reference external" href="https://pre-commit.com/">pre-commit</a> is a tool to manage git-hooks scripts, which are useful
+for identifying simple issues before submission to code review.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">camply</span></code>’s instance of <code class="docutils literal notranslate"><span class="pre">pre-commit</span></code> uses tools like <a class="reference external" href="https://github.com/psf/black">black</a>
+and
+<a class="reference external" href="https://pycqa.github.io/isort/">isort</a> to format your code in a standardized way</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pre-commit</span></code> can be installed with pip, brew, or conda.</p></li>
+<li><p>After cloning this repo run <code class="docutils literal notranslate"><span class="pre">pre-commit</span> <span class="pre">install</span></code></p></li>
+<li><p>Done, now pre-commit will run automatically on git commit. To run it manually on your changed
+code run <code class="docutils literal notranslate"><span class="pre">pre-commit</span> <span class="pre">run</span></code> on your command line</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tox</span></code></p>
+<ul>
+<li><p><a class="reference external" href="https://tox.wiki/en/latest/">tox</a> is a tool to standardize and manage testing and routines
+using Python virtual environments</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tox</span></code> can be installed with pip</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">camply</span></code>’s instance of <code class="docutils literal notranslate"><span class="pre">tox</span></code> runs Python unit tests, and uses tools like
+<a class="reference external" href="https://github.com/python/mypy">mypy</a> and <a class="reference external" href="https://flake8.pycqa.org/en/latest/pre">flake8</a> to
+format</p></li>
+<li><p>To run all <code class="docutils literal notranslate"><span class="pre">tox</span></code> tests (which get run as part of GitHub Actions) locally, just enter <code class="docutils literal notranslate"><span class="pre">tox</span></code>
+into your command line</p></li>
+</ul>
+</li>
+</ul>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="README.html" class="btn btn-neutral float-right" title="Table of Contents" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="cli.html" class="btn btn-neutral float-left" title="camply CLI" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="api/modules.html" class="btn btn-neutral float-right" title="camply" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

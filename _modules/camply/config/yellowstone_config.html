@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>camply.config.yellowstone_config &mdash; camply 0.4.0 documentation</title>
+  <title>camply.config.yellowstone_config &mdash; camply 0.4.1 documentation</title>
       <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/autodoc_pydantic.css" type="text/css" />
@@ -33,7 +33,7 @@
             <a href="../../../index.html" class="icon icon-home"> camply
           </a>
               <div class="version">
-                0.4.0
+                0.4.1
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
@@ -44,8 +44,7 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../README.html">Check Out The ReadTheDocs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../README.html#table-of-contents">Table of Contents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../README.html">Table of Contents</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../README.html#installation">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../README.html#command-line-usage">Command Line Usage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../README.html#finding-recreation-areas-ids-and-campground-ids-to-search-without-using-the-command-line">Finding Recreation Areas IDs and Campground IDs To Search Without Using the Command Line</a></li>
@@ -53,6 +52,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../README.html#running-in-docker">Running in Docker</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../README.html#dependencies">Dependencies</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../cli.html">camply CLI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contributing.html">Contributing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../api/modules.html">API Documentation</a></li>
 </ul>
 
@@ -106,12 +106,16 @@
     <span class="n">YELLOWSTONE_PARK_PATH</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;yellowstonenationalparklodges&quot;</span>
     <span class="n">YELLOWSTONE_LODGING_PATH</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">LODGING_PATH</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">YELLOWSTONE_PARK_PATH</span><span class="si">}</span><span class="s2">&quot;</span>
     <span class="n">CAMPSITE_AVAILABILITY</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">API_BASE_PATH</span><span class="si">}</span><span class="s2">/availability/rooms&quot;</span>
-    <span class="n">YELLOWSTONE_CAMPSITE_AVAILABILITY</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">CAMPSITE_AVAILABILITY</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">YELLOWSTONE_PARK_PATH</span><span class="si">}</span><span class="s2">&quot;</span>
-    <span class="n">YELLOWSTONE_PROPERTY_INFO</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">API_BASE_PATH</span><span class="si">}</span><span class="s2">/property/rooms/</span><span class="si">{</span><span class="n">YELLOWSTONE_PARK_PATH</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="n">YELLOWSTONE_CAMPSITE_AVAILABILITY</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">CAMPSITE_AVAILABILITY</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">YELLOWSTONE_PARK_PATH</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="p">)</span>
+    <span class="n">YELLOWSTONE_PROPERTY_INFO</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">API_BASE_PATH</span><span class="si">}</span><span class="s2">/property/rooms/</span><span class="si">{</span><span class="n">YELLOWSTONE_PARK_PATH</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="p">)</span>
     <span class="n">API_REFERRERS</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="p">{</span>
         <span class="s2">&quot;Host&quot;</span><span class="p">:</span> <span class="s2">&quot;webapi.xanterra.net&quot;</span><span class="p">,</span>
         <span class="s2">&quot;Origin&quot;</span><span class="p">:</span> <span class="s2">&quot;https://secure.yellowstonenationalparklodges.com&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;Referer&quot;</span><span class="p">:</span> <span class="s2">&quot;https://secure.yellowstonenationalparklodges.com/&quot;</span>
+        <span class="s2">&quot;Referer&quot;</span><span class="p">:</span> <span class="s2">&quot;https://secure.yellowstonenationalparklodges.com/&quot;</span><span class="p">,</span>
     <span class="p">}</span>
 
     <span class="n">LODGING_CAMPGROUND_QUALIFIER</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;:RV&quot;</span>
@@ -151,7 +155,10 @@
     <span class="n">YELLOWSTONE_RECREATION_AREA_FORMAL_NAME</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;Yellowstone National Park, USA&quot;</span>
     <span class="n">YELLOWSTONE_LOOP_NAME</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;N/A&quot;</span>
     <span class="n">CAMPSITE_AVAILABILITY_STATUS</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;Available&quot;</span>
-    <span class="n">YELLOWSTONE_CAMPGROUND_NAME_REPLACE</span><span class="p">:</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;CG Internet Rate&quot;</span><span class="p">,</span> <span class="s2">&quot;Campground&quot;</span><span class="p">)</span>
+    <span class="n">YELLOWSTONE_CAMPGROUND_NAME_REPLACE</span><span class="p">:</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="s2">&quot;CG Internet Rate&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Campground&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
 
     <span class="n">YELLOWSTONE_TIMEZONE</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;America/Denver&quot;</span>
 
@@ -161,7 +168,7 @@
         <span class="s2">&quot;YLYB:RV&quot;</span><span class="p">:</span> <span class="s2">&quot;Bridge Bay Campground&quot;</span><span class="p">,</span>
         <span class="s2">&quot;YLYG:RV&quot;</span><span class="p">:</span> <span class="s2">&quot;Grant Campground&quot;</span><span class="p">,</span>
         <span class="s2">&quot;YLYM:RV&quot;</span><span class="p">:</span> <span class="s2">&quot;Madison Campground&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;YLYF:RV&quot;</span><span class="p">:</span> <span class="s2">&quot;Fishing Bridge RV Park&quot;</span>
+        <span class="s2">&quot;YLYF:RV&quot;</span><span class="p">:</span> <span class="s2">&quot;Fishing Bridge RV Park&quot;</span><span class="p">,</span>
     <span class="p">}</span>
 
     <span class="n">YELLOWSTONE_CAMPGROUND_OBJECTS</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">CampgroundFacility</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>

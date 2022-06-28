@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>camply.utils.logging_utils &mdash; camply 0.4.0 documentation</title>
+  <title>camply.utils.logging_utils &mdash; camply 0.4.1 documentation</title>
       <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/autodoc_pydantic.css" type="text/css" />
@@ -33,7 +33,7 @@
             <a href="../../../index.html" class="icon icon-home"> camply
           </a>
               <div class="version">
-                0.4.0
+                0.4.1
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
@@ -44,8 +44,7 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../README.html">Check Out The ReadTheDocs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../README.html#table-of-contents">Table of Contents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../README.html">Table of Contents</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../README.html#installation">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../README.html#command-line-usage">Command Line Usage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../README.html#finding-recreation-areas-ids-and-campground-ids-to-search-without-using-the-command-line">Finding Recreation Areas IDs and Campground IDs To Search Without Using the Command Line</a></li>
@@ -53,6 +52,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../README.html#running-in-docker">Running in Docker</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../README.html#dependencies">Dependencies</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../cli.html">camply CLI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contributing.html">Contributing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../api/modules.html">API Documentation</a></li>
 </ul>
 
@@ -99,7 +99,7 @@
 
 
 <span class="k">def</span> <span class="nf">_generate_response_string</span><span class="p">(</span>
-        <span class="n">response</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">CampgroundFacility</span><span class="p">,</span> <span class="n">RecreationArea</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span>
+    <span class="n">response</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">CampgroundFacility</span><span class="p">,</span> <span class="n">RecreationArea</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Generate a formatted string for logging</span>
@@ -117,11 +117,15 @@
             <span class="n">facil</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;#</span><span class="si">{</span><span class="n">response</span><span class="o">.</span><span class="n">facility_id</span><span class="si">}</span><span class="s2">&quot;</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">facil</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">facility_id</span>
-        <span class="k">return</span> <span class="p">(</span><span class="sa">f</span><span class="s2">&quot;⛰  </span><span class="si">{</span><span class="n">response</span><span class="o">.</span><span class="n">recreation_area</span><span class="si">}</span><span class="s2"> (#</span><span class="si">{</span><span class="n">response</span><span class="o">.</span><span class="n">recreation_area_id</span><span class="si">}</span><span class="s2">) - &quot;</span>
-                <span class="sa">f</span><span class="s2">&quot;🏕  </span><span class="si">{</span><span class="n">response</span><span class="o">.</span><span class="n">facility_name</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="n">facil</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;⛰  </span><span class="si">{</span><span class="n">response</span><span class="o">.</span><span class="n">recreation_area</span><span class="si">}</span><span class="s2"> (#</span><span class="si">{</span><span class="n">response</span><span class="o">.</span><span class="n">recreation_area_id</span><span class="si">}</span><span class="s2">) - &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;🏕  </span><span class="si">{</span><span class="n">response</span><span class="o">.</span><span class="n">facility_name</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="n">facil</span><span class="si">}</span><span class="s2">)&quot;</span>
+        <span class="p">)</span>
     <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">response</span><span class="p">,</span> <span class="n">RecreationArea</span><span class="p">):</span>
-        <span class="k">return</span> <span class="p">(</span><span class="sa">f</span><span class="s2">&quot;⛰  </span><span class="si">{</span><span class="n">response</span><span class="o">.</span><span class="n">recreation_area</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">response</span><span class="o">.</span><span class="n">recreation_area_location</span><span class="si">}</span><span class="s2"> &quot;</span>
-                <span class="sa">f</span><span class="s2">&quot;(#</span><span class="si">{</span><span class="n">response</span><span class="o">.</span><span class="n">recreation_area_id</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;⛰  </span><span class="si">{</span><span class="n">response</span><span class="o">.</span><span class="n">recreation_area</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">response</span><span class="o">.</span><span class="n">recreation_area_location</span><span class="si">}</span><span class="s2"> &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;(#</span><span class="si">{</span><span class="n">response</span><span class="o">.</span><span class="n">recreation_area_id</span><span class="si">}</span><span class="s2">)&quot;</span>
+        <span class="p">)</span>
     <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">response</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">response</span>
     <span class="k">else</span><span class="p">:</span>
@@ -140,8 +144,7 @@
 <span class="sd">    -------</span>
 <span class="sd">    None</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">log_array</span> <span class="o">=</span> <span class="p">[</span><span class="n">_generate_response_string</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span> <span class="k">for</span> <span class="n">obj</span> <span class="ow">in</span>
-                 <span class="n">response_array</span><span class="p">]</span>
+    <span class="n">log_array</span> <span class="o">=</span> <span class="p">[</span><span class="n">_generate_response_string</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span> <span class="k">for</span> <span class="n">obj</span> <span class="ow">in</span> <span class="n">response_array</span><span class="p">]</span>
     <span class="n">sorted_logs</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">log_array</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">log_response</span> <span class="ow">in</span> <span class="n">sorted_logs</span><span class="p">:</span>
         <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="n">log_response</span><span class="p">)</span></div>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>camply.providers.recreation_dot_gov.campsite_search &mdash; camply 0.4.0 documentation</title>
+  <title>camply.providers.recreation_dot_gov.campsite_search &mdash; camply 0.4.1 documentation</title>
       <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../../../_static/autodoc_pydantic.css" type="text/css" />
@@ -33,7 +33,7 @@
             <a href="../../../../index.html" class="icon icon-home"> camply
           </a>
               <div class="version">
-                0.4.0
+                0.4.1
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
@@ -44,8 +44,7 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../README.html">Check Out The ReadTheDocs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../README.html#table-of-contents">Table of Contents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../README.html">Table of Contents</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../README.html#installation">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../README.html#command-line-usage">Command Line Usage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../README.html#finding-recreation-areas-ids-and-campground-ids-to-search-without-using-the-command-line">Finding Recreation Areas IDs and Campground IDs To Search Without Using the Command Line</a></li>
@@ -53,6 +52,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../README.html#running-in-docker">Running in Docker</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../README.html#dependencies">Dependencies</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../cli.html">camply CLI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../contributing.html">Contributing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../api/modules.html">API Documentation</a></li>
 </ul>
 
@@ -85,27 +85,32 @@
 <span class="sd">Recreation.gov Web Searching Utilities</span>
 <span class="sd">&quot;&quot;&quot;</span>
 
+<span class="kn">import</span> <span class="nn">logging</span>
 <span class="kn">from</span> <span class="nn">base64</span> <span class="kn">import</span> <span class="n">b64decode</span>
 <span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">timedelta</span>
 <span class="kn">from</span> <span class="nn">json</span> <span class="kn">import</span> <span class="n">loads</span>
-<span class="kn">import</span> <span class="nn">logging</span>
 <span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">choice</span>
 <span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">,</span> <span class="n">Union</span>
 <span class="kn">from</span> <span class="nn">urllib</span> <span class="kn">import</span> <span class="n">parse</span>
 
-<span class="kn">from</span> <span class="nn">pydantic</span> <span class="kn">import</span> <span class="n">ValidationError</span>
 <span class="kn">import</span> <span class="nn">requests</span>
 <span class="kn">import</span> <span class="nn">tenacity</span>
+<span class="kn">from</span> <span class="nn">pydantic</span> <span class="kn">import</span> <span class="n">ValidationError</span>
 
-<span class="kn">from</span> <span class="nn">camply.config</span> <span class="kn">import</span> <span class="p">(</span><span class="n">RecreationBookingConfig</span><span class="p">,</span>
-                           <span class="n">RIDBConfig</span><span class="p">,</span>
-                           <span class="n">STANDARD_HEADERS</span><span class="p">,</span>
-                           <span class="n">USER_AGENTS</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">camply.config</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">STANDARD_HEADERS</span><span class="p">,</span>
+    <span class="n">USER_AGENTS</span><span class="p">,</span>
+    <span class="n">RecreationBookingConfig</span><span class="p">,</span>
+    <span class="n">RIDBConfig</span><span class="p">,</span>
+<span class="p">)</span>
 <span class="kn">from</span> <span class="nn">camply.containers</span> <span class="kn">import</span> <span class="n">AvailableCampsite</span><span class="p">,</span> <span class="n">CampgroundFacility</span><span class="p">,</span> <span class="n">RecreationArea</span>
-<span class="kn">from</span> <span class="nn">camply.containers.api_responses</span> <span class="kn">import</span> <span class="p">(</span><span class="n">CampsiteAvailabilityResponse</span><span class="p">,</span>
-                                             <span class="n">CampsiteResponse</span><span class="p">,</span> <span class="n">FacilityResponse</span><span class="p">,</span>
-                                             <span class="n">GenericResponse</span><span class="p">,</span>
-                                             <span class="n">RecreationAreaResponse</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">camply.containers.api_responses</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">CampsiteAvailabilityResponse</span><span class="p">,</span>
+    <span class="n">CampsiteResponse</span><span class="p">,</span>
+    <span class="n">FacilityResponse</span><span class="p">,</span>
+    <span class="n">GenericResponse</span><span class="p">,</span>
+    <span class="n">RecreationAreaResponse</span><span class="p">,</span>
+<span class="p">)</span>
 <span class="kn">from</span> <span class="nn">camply.providers.base_provider</span> <span class="kn">import</span> <span class="n">BaseProvider</span><span class="p">,</span> <span class="n">ProviderSearchError</span>
 <span class="kn">from</span> <span class="nn">camply.utils</span> <span class="kn">import</span> <span class="n">api_utils</span><span class="p">,</span> <span class="n">logging_utils</span>
 <span class="kn">from</span> <span class="nn">camply.utils.logging_utils</span> <span class="kn">import</span> <span class="n">log_sorted_response</span>
@@ -155,11 +160,17 @@
 <span class="sd">            Array of Matching Campsites</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
-            <span class="k">assert</span> <span class="nb">any</span><span class="p">([</span><span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;state&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">,</span>
-                        <span class="n">search_string</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">search_string</span> <span class="o">!=</span> <span class="s2">&quot;&quot;</span><span class="p">])</span>
+            <span class="k">assert</span> <span class="nb">any</span><span class="p">(</span>
+                <span class="p">[</span>
+                    <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;state&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">,</span>
+                    <span class="n">search_string</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">search_string</span> <span class="o">!=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                <span class="p">]</span>
+            <span class="p">)</span>
         <span class="k">except</span> <span class="ne">AssertionError</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;You must provide a search query or state(s) &quot;</span>
-                               <span class="s2">&quot;to find Recreation Areas&quot;</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span>
+                <span class="s2">&quot;You must provide a search query or state(s) &quot;</span>
+                <span class="s2">&quot;to find Recreation Areas&quot;</span>
+            <span class="p">)</span>
         <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Searching for Recreation Areas: &quot;</span><span class="si">{</span><span class="n">search_string</span><span class="si">}</span><span class="s1">&quot;&#39;</span><span class="p">)</span>
         <span class="n">state_arg</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;state&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">state_arg</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
@@ -167,24 +178,28 @@
         <span class="n">params</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">query</span><span class="o">=</span><span class="n">search_string</span><span class="p">,</span> <span class="n">sort</span><span class="o">=</span><span class="s2">&quot;Name&quot;</span><span class="p">,</span> <span class="n">full</span><span class="o">=</span><span class="s2">&quot;true&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">search_string</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">params</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;query&quot;</span><span class="p">)</span>
-        <span class="n">api_response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ridb_get_paginate</span><span class="p">(</span><span class="n">path</span><span class="o">=</span><span class="n">RIDBConfig</span><span class="o">.</span><span class="n">REC_AREA_API_PATH</span><span class="p">,</span>
-                                               <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">)</span>
+        <span class="n">api_response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ridb_get_paginate</span><span class="p">(</span>
+            <span class="n">path</span><span class="o">=</span><span class="n">RIDBConfig</span><span class="o">.</span><span class="n">REC_AREA_API_PATH</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span>
+        <span class="p">)</span>
         <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">api_response</span><span class="p">)</span><span class="si">}</span><span class="s2"> recreation areas found.&quot;</span><span class="p">)</span>
         <span class="n">logging_messages</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
         <span class="k">for</span> <span class="n">recreation_area_object</span> <span class="ow">in</span> <span class="n">api_response</span><span class="p">:</span>
             <span class="n">_</span><span class="p">,</span> <span class="n">recreation_area</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_process_rec_area_response</span><span class="p">(</span>
-                <span class="n">recreation_area</span><span class="o">=</span><span class="n">recreation_area_object</span><span class="p">)</span>
+                <span class="n">recreation_area</span><span class="o">=</span><span class="n">recreation_area_object</span>
+            <span class="p">)</span>
             <span class="k">if</span> <span class="n">recreation_area</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
                 <span class="n">logging_messages</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">recreation_area</span><span class="p">)</span>
         <span class="n">log_sorted_response</span><span class="p">(</span><span class="n">response_array</span><span class="o">=</span><span class="n">logging_messages</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">api_response</span></div>
 
-<div class="viewcode-block" id="RecreationDotGov.find_campgrounds"><a class="viewcode-back" href="../../../../api/camply.providers.recreation_dot_gov.campsite_search.html#camply.RecreationDotGov.find_campgrounds">[docs]</a>    <span class="k">def</span> <span class="nf">find_campgrounds</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">search_string</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-                         <span class="n">rec_area_id</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-                         <span class="n">campground_id</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-                         <span class="n">campsite_id</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-                         <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> \
-            <span class="n">List</span><span class="p">[</span><span class="n">CampgroundFacility</span><span class="p">]:</span>
+<div class="viewcode-block" id="RecreationDotGov.find_campgrounds"><a class="viewcode-back" href="../../../../api/camply.providers.recreation_dot_gov.campsite_search.html#camply.RecreationDotGov.find_campgrounds">[docs]</a>    <span class="k">def</span> <span class="nf">find_campgrounds</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">search_string</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">rec_area_id</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">campground_id</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">campsite_id</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">CampgroundFacility</span><span class="p">]:</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Find Bookable Campgrounds Given a Set of Search Criteria</span>
 
@@ -206,26 +221,34 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="n">campsite_id</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="p">[],</span> <span class="p">()):</span>
             <span class="n">facilities</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_process_specific_campsites_provided</span><span class="p">(</span>
-                <span class="n">campsite_id</span><span class="o">=</span><span class="n">campsite_id</span><span class="p">)</span>
+                <span class="n">campsite_id</span><span class="o">=</span><span class="n">campsite_id</span>
+            <span class="p">)</span>
         <span class="k">elif</span> <span class="n">campground_id</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="p">[],</span> <span class="p">()):</span>
             <span class="n">facilities</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_find_facilities_from_campgrounds</span><span class="p">(</span>
-                <span class="n">campground_id</span><span class="o">=</span><span class="n">campground_id</span><span class="p">)</span>
+                <span class="n">campground_id</span><span class="o">=</span><span class="n">campground_id</span>
+            <span class="p">)</span>
         <span class="k">elif</span> <span class="n">rec_area_id</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="p">[],</span> <span class="p">()):</span>
             <span class="n">facilities</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
             <span class="k">for</span> <span class="n">recreation_area</span> <span class="ow">in</span> <span class="n">rec_area_id</span><span class="p">:</span>
                 <span class="n">facilities</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">find_facilities_per_recreation_area</span><span class="p">(</span>
-                    <span class="n">rec_area_id</span><span class="o">=</span><span class="n">recreation_area</span><span class="p">)</span>
+                    <span class="n">rec_area_id</span><span class="o">=</span><span class="n">recreation_area</span>
+                <span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">state_arg</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;state&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
             <span class="k">if</span> <span class="n">state_arg</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
                 <span class="n">kwargs</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;state&quot;</span><span class="p">:</span> <span class="n">state_arg</span><span class="o">.</span><span class="n">upper</span><span class="p">()})</span>
             <span class="k">if</span> <span class="n">search_string</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">]</span> <span class="ow">and</span> <span class="n">state_arg</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-                <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;You must provide a search query or state to find campsites&quot;</span><span class="p">)</span>
-            <span class="n">facilities</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_find_facilities_from_search</span><span class="p">(</span><span class="n">search</span><span class="o">=</span><span class="n">search_string</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+                <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span>
+                    <span class="s2">&quot;You must provide a search query or state to find campsites&quot;</span>
+                <span class="p">)</span>
+            <span class="n">facilities</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_find_facilities_from_search</span><span class="p">(</span>
+                <span class="n">search</span><span class="o">=</span><span class="n">search_string</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+            <span class="p">)</span>
         <span class="k">return</span> <span class="n">facilities</span></div>
 
-<div class="viewcode-block" id="RecreationDotGov.find_facilities_per_recreation_area"><a class="viewcode-back" href="../../../../api/camply.providers.recreation_dot_gov.campsite_search.html#camply.RecreationDotGov.find_facilities_per_recreation_area">[docs]</a>    <span class="k">def</span> <span class="nf">find_facilities_per_recreation_area</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rec_area_id</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> \
-            <span class="n">List</span><span class="p">[</span><span class="n">CampgroundFacility</span><span class="p">]:</span>
+<div class="viewcode-block" id="RecreationDotGov.find_facilities_per_recreation_area"><a class="viewcode-back" href="../../../../api/camply.providers.recreation_dot_gov.campsite_search.html#camply.RecreationDotGov.find_facilities_per_recreation_area">[docs]</a>    <span class="k">def</span> <span class="nf">find_facilities_per_recreation_area</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">rec_area_id</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">CampgroundFacility</span><span class="p">]:</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Find Matching Campsites Based from Recreation Area</span>
 
@@ -239,21 +262,28 @@
 <span class="sd">        campgrounds: List[CampgroundFacility]</span>
 <span class="sd">            Array of Matching Campsites</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Retrieving Facility Information for Recreation Area ID: `</span><span class="si">{</span><span class="n">rec_area_id</span><span class="si">}</span><span class="s2">`.&quot;</span><span class="p">)</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;Retrieving Facility Information for Recreation Area ID: `</span><span class="si">{</span><span class="n">rec_area_id</span><span class="si">}</span><span class="s2">`.&quot;</span>
+        <span class="p">)</span>
         <span class="n">api_path</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">RIDBConfig</span><span class="o">.</span><span class="n">REC_AREA_API_PATH</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">rec_area_id</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">RIDBConfig</span><span class="o">.</span><span class="n">FACILITIES_API_PATH</span><span class="si">}</span><span class="s2">&quot;</span>
-        <span class="n">api_response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ridb_get_paginate</span><span class="p">(</span><span class="n">path</span><span class="o">=</span><span class="n">api_path</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">full</span><span class="o">=</span><span class="s2">&quot;true&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">))</span>
+        <span class="n">api_response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ridb_get_paginate</span><span class="p">(</span>
+            <span class="n">path</span><span class="o">=</span><span class="n">api_path</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">full</span><span class="o">=</span><span class="s2">&quot;true&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="p">)</span>
         <span class="n">filtered_facilities</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_filter_facilities_responses</span><span class="p">(</span><span class="n">responses</span><span class="o">=</span><span class="n">api_response</span><span class="p">)</span>
         <span class="n">campgrounds</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
         <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">filtered_facilities</span><span class="p">)</span><span class="si">}</span><span class="s2"> Matching Campgrounds Found&quot;</span><span class="p">)</span>
         <span class="k">for</span> <span class="n">facility</span> <span class="ow">in</span> <span class="n">filtered_facilities</span><span class="p">:</span>
-            <span class="n">_</span><span class="p">,</span> <span class="n">campground_facility</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">process_facilities_responses</span><span class="p">(</span><span class="n">facility</span><span class="o">=</span><span class="n">facility</span><span class="p">)</span>
+            <span class="n">_</span><span class="p">,</span> <span class="n">campground_facility</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">process_facilities_responses</span><span class="p">(</span>
+                <span class="n">facility</span><span class="o">=</span><span class="n">facility</span>
+            <span class="p">)</span>
             <span class="k">if</span> <span class="n">campground_facility</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
                 <span class="n">campgrounds</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">campground_facility</span><span class="p">)</span>
         <span class="n">log_sorted_response</span><span class="p">(</span><span class="n">response_array</span><span class="o">=</span><span class="n">campgrounds</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">campgrounds</span></div>
 
-    <span class="k">def</span> <span class="nf">_find_facilities_from_campgrounds</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">campground_id</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]])</span> <span class="o">-&gt;</span> \
-            <span class="n">List</span><span class="p">[</span><span class="n">CampgroundFacility</span><span class="p">]:</span>
+    <span class="k">def</span> <span class="nf">_find_facilities_from_campgrounds</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">campground_id</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]]</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">CampgroundFacility</span><span class="p">]:</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Find Matching Campsites from Campground ID</span>
 
@@ -270,10 +300,14 @@
         <span class="k">for</span> <span class="n">campground_identifier</span> <span class="ow">in</span> <span class="n">campground_id</span><span class="p">:</span>
             <span class="n">facility_data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ridb_get_data</span><span class="p">(</span>
                 <span class="n">path</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">RIDBConfig</span><span class="o">.</span><span class="n">FACILITIES_API_PATH</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">campground_identifier</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
-                <span class="n">params</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">full</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
-            <span class="n">filtered_facility</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_filter_facilities_responses</span><span class="p">(</span><span class="n">responses</span><span class="o">=</span><span class="p">[</span><span class="n">facility_data</span><span class="p">])</span>
+                <span class="n">params</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">full</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
+            <span class="p">)</span>
+            <span class="n">filtered_facility</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_filter_facilities_responses</span><span class="p">(</span>
+                <span class="n">responses</span><span class="o">=</span><span class="p">[</span><span class="n">facility_data</span><span class="p">]</span>
+            <span class="p">)</span>
             <span class="n">_</span><span class="p">,</span> <span class="n">campground_facility</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">process_facilities_responses</span><span class="p">(</span>
-                <span class="n">facility</span><span class="o">=</span><span class="n">filtered_facility</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+                <span class="n">facility</span><span class="o">=</span><span class="n">filtered_facility</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="p">)</span>
             <span class="k">if</span> <span class="n">campground_facility</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
                 <span class="n">campgrounds</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">campground_facility</span><span class="p">)</span>
         <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">campgrounds</span><span class="p">)</span><span class="si">}</span><span class="s2"> Matching Campgrounds Found&quot;</span><span class="p">)</span>
@@ -294,14 +328,19 @@
 <span class="sd">        campgrounds: List[dict]</span>
 <span class="sd">            Array of Matching Campsites</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">facilities_response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ridb_get_paginate</span><span class="p">(</span><span class="n">path</span><span class="o">=</span><span class="n">RIDBConfig</span><span class="o">.</span><span class="n">FACILITIES_API_PATH</span><span class="p">,</span>
-                                                      <span class="n">params</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">query</span><span class="o">=</span><span class="n">search</span><span class="p">,</span> <span class="n">activity</span><span class="o">=</span><span class="s2">&quot;CAMPING&quot;</span><span class="p">,</span>
-                                                                  <span class="n">full</span><span class="o">=</span><span class="s2">&quot;true&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">))</span>
-        <span class="n">filtered_responses</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_filter_facilities_responses</span><span class="p">(</span><span class="n">responses</span><span class="o">=</span><span class="n">facilities_response</span><span class="p">)</span>
+        <span class="n">facilities_response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ridb_get_paginate</span><span class="p">(</span>
+            <span class="n">path</span><span class="o">=</span><span class="n">RIDBConfig</span><span class="o">.</span><span class="n">FACILITIES_API_PATH</span><span class="p">,</span>
+            <span class="n">params</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">query</span><span class="o">=</span><span class="n">search</span><span class="p">,</span> <span class="n">activity</span><span class="o">=</span><span class="s2">&quot;CAMPING&quot;</span><span class="p">,</span> <span class="n">full</span><span class="o">=</span><span class="s2">&quot;true&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">),</span>
+        <span class="p">)</span>
+        <span class="n">filtered_responses</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_filter_facilities_responses</span><span class="p">(</span>
+            <span class="n">responses</span><span class="o">=</span><span class="n">facilities_response</span>
+        <span class="p">)</span>
         <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">filtered_responses</span><span class="p">)</span><span class="si">}</span><span class="s2"> Matching Campgrounds Found&quot;</span><span class="p">)</span>
         <span class="n">campgrounds</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
         <span class="k">for</span> <span class="n">facility</span> <span class="ow">in</span> <span class="n">filtered_responses</span><span class="p">:</span>
-            <span class="n">_</span><span class="p">,</span> <span class="n">campground_facility</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">process_facilities_responses</span><span class="p">(</span><span class="n">facility</span><span class="o">=</span><span class="n">facility</span><span class="p">)</span>
+            <span class="n">_</span><span class="p">,</span> <span class="n">campground_facility</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">process_facilities_responses</span><span class="p">(</span>
+                <span class="n">facility</span><span class="o">=</span><span class="n">facility</span>
+            <span class="p">)</span>
             <span class="k">if</span> <span class="n">campground_facility</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
                 <span class="n">campgrounds</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">campground_facility</span><span class="p">)</span>
         <span class="n">log_sorted_response</span><span class="p">(</span><span class="n">response_array</span><span class="o">=</span><span class="n">campgrounds</span><span class="p">)</span>
@@ -323,15 +362,21 @@
 <span class="sd">            URL for the API Endpoint</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">assert</span> <span class="n">RIDBConfig</span><span class="o">.</span><span class="n">RIDB_BASE_PATH</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)</span>
-        <span class="n">base_url</span> <span class="o">=</span> <span class="n">api_utils</span><span class="o">.</span><span class="n">generate_url</span><span class="p">(</span><span class="n">scheme</span><span class="o">=</span><span class="n">RIDBConfig</span><span class="o">.</span><span class="n">RIDB_SCHEME</span><span class="p">,</span>
-                                          <span class="n">netloc</span><span class="o">=</span><span class="n">RIDBConfig</span><span class="o">.</span><span class="n">RIDB_NET_LOC</span><span class="p">,</span>
-                                          <span class="n">path</span><span class="o">=</span><span class="n">RIDBConfig</span><span class="o">.</span><span class="n">RIDB_BASE_PATH</span><span class="p">)</span>
+        <span class="n">base_url</span> <span class="o">=</span> <span class="n">api_utils</span><span class="o">.</span><span class="n">generate_url</span><span class="p">(</span>
+            <span class="n">scheme</span><span class="o">=</span><span class="n">RIDBConfig</span><span class="o">.</span><span class="n">RIDB_SCHEME</span><span class="p">,</span>
+            <span class="n">netloc</span><span class="o">=</span><span class="n">RIDBConfig</span><span class="o">.</span><span class="n">RIDB_NET_LOC</span><span class="p">,</span>
+            <span class="n">path</span><span class="o">=</span><span class="n">RIDBConfig</span><span class="o">.</span><span class="n">RIDB_BASE_PATH</span><span class="p">,</span>
+        <span class="p">)</span>
         <span class="n">endpoint_url</span> <span class="o">=</span> <span class="n">parse</span><span class="o">.</span><span class="n">urljoin</span><span class="p">(</span><span class="n">base_url</span><span class="p">,</span> <span class="n">path</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">endpoint_url</span>
 
-    <span class="nd">@tenacity</span><span class="o">.</span><span class="n">retry</span><span class="p">(</span><span class="n">wait</span><span class="o">=</span><span class="n">tenacity</span><span class="o">.</span><span class="n">wait_random_exponential</span><span class="p">(</span><span class="n">multiplier</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mi">10</span><span class="p">),</span>
-                    <span class="n">stop</span><span class="o">=</span><span class="n">tenacity</span><span class="o">.</span><span class="n">stop</span><span class="o">.</span><span class="n">stop_after_delay</span><span class="p">(</span><span class="mi">15</span><span class="p">))</span>
-    <span class="k">def</span> <span class="nf">_ridb_get_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">params</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">dict</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="nb">dict</span><span class="p">,</span> <span class="nb">list</span><span class="p">]:</span>
+    <span class="nd">@tenacity</span><span class="o">.</span><span class="n">retry</span><span class="p">(</span>
+        <span class="n">wait</span><span class="o">=</span><span class="n">tenacity</span><span class="o">.</span><span class="n">wait_random_exponential</span><span class="p">(</span><span class="n">multiplier</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mi">10</span><span class="p">),</span>
+        <span class="n">stop</span><span class="o">=</span><span class="n">tenacity</span><span class="o">.</span><span class="n">stop</span><span class="o">.</span><span class="n">stop_after_delay</span><span class="p">(</span><span class="mi">15</span><span class="p">),</span>
+    <span class="p">)</span>
+    <span class="k">def</span> <span class="nf">_ridb_get_data</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">params</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">dict</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="nb">dict</span><span class="p">,</span> <span class="nb">list</span><span class="p">]:</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Find Matching Campsites Based on Search String</span>
 
@@ -349,17 +394,22 @@
         <span class="n">api_endpoint</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ridb_get_endpoint</span><span class="p">(</span><span class="n">path</span><span class="o">=</span><span class="n">path</span><span class="p">)</span>
         <span class="n">headers</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ridb_api_headers</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
         <span class="n">headers</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">choice</span><span class="p">(</span><span class="n">USER_AGENTS</span><span class="p">))</span>
-        <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="n">api_endpoint</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span>
-                                <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+            <span class="n">url</span><span class="o">=</span><span class="n">api_endpoint</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">30</span>
+        <span class="p">)</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="k">assert</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span>
         <span class="k">except</span> <span class="ne">AssertionError</span><span class="p">:</span>
-            <span class="n">error_message</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Receiving bad data from Recreation.gov API: </span><span class="si">{</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="n">error_message</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;Receiving bad data from Recreation.gov API: </span><span class="si">{</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="p">)</span>
             <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="n">error_message</span><span class="p">)</span>
             <span class="k">raise</span> <span class="ne">ConnectionError</span><span class="p">(</span><span class="n">error_message</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">loads</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">_ridb_get_paginate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">params</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">dict</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">dict</span><span class="p">]:</span>
+    <span class="k">def</span> <span class="nf">_ridb_get_paginate</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">params</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">dict</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">dict</span><span class="p">]:</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the Paginated Response from the RIDP</span>
 
@@ -392,8 +442,10 @@
             <span class="n">historical_results</span> <span class="o">+=</span> <span class="n">result_count</span>
             <span class="n">total_count</span> <span class="o">=</span> <span class="n">response_object</span><span class="o">.</span><span class="n">METADATA</span><span class="o">.</span><span class="n">RESULTS</span><span class="o">.</span><span class="n">TOTAL_COUNT</span>
             <span class="k">if</span> <span class="n">offset</span> <span class="o">&gt;=</span> <span class="mi">500</span><span class="p">:</span>
-                <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Too Many Results returned (</span><span class="si">{</span><span class="n">total_count</span><span class="si">}</span><span class="s2">), &quot;</span>
-                            <span class="s2">&quot;try performing a more specific search&quot;</span><span class="p">)</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;Too Many Results returned (</span><span class="si">{</span><span class="n">total_count</span><span class="si">}</span><span class="s2">), &quot;</span>
+                    <span class="s2">&quot;try performing a more specific search&quot;</span>
+                <span class="p">)</span>
                 <span class="n">data_incomplete</span> <span class="o">=</span> <span class="kc">False</span>
             <span class="k">elif</span> <span class="n">historical_results</span> <span class="o">&lt;</span> <span class="n">total_count</span><span class="p">:</span>
                 <span class="n">offset</span> <span class="o">=</span> <span class="n">historical_results</span>
@@ -423,17 +475,21 @@
                 <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="n">possible_match</span><span class="p">)</span>
                 <span class="n">logger</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
                 <span class="k">raise</span> <span class="n">ProviderSearchError</span><span class="p">(</span><span class="s2">&quot;Invalid Campground Facility Returned&quot;</span><span class="p">)</span>
-            <span class="k">if</span> <span class="nb">all</span><span class="p">([</span>
-                <span class="n">facility</span><span class="o">.</span><span class="n">FacilityTypeDescription</span> <span class="o">==</span> <span class="n">RIDBConfig</span><span class="o">.</span><span class="n">CAMPGROUND_FACILITY_FIELD_QUALIFIER</span><span class="p">,</span>
-                <span class="n">facility</span><span class="o">.</span><span class="n">Enabled</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">,</span>
-                <span class="n">facility</span><span class="o">.</span><span class="n">Reservable</span> <span class="ow">is</span> <span class="kc">True</span>
-            <span class="p">]):</span>
+            <span class="k">if</span> <span class="nb">all</span><span class="p">(</span>
+                <span class="p">[</span>
+                    <span class="n">facility</span><span class="o">.</span><span class="n">FacilityTypeDescription</span>
+                    <span class="o">==</span> <span class="n">RIDBConfig</span><span class="o">.</span><span class="n">CAMPGROUND_FACILITY_FIELD_QUALIFIER</span><span class="p">,</span>
+                    <span class="n">facility</span><span class="o">.</span><span class="n">Enabled</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">,</span>
+                    <span class="n">facility</span><span class="o">.</span><span class="n">Reservable</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">,</span>
+                <span class="p">]</span>
+            <span class="p">):</span>
                 <span class="n">filtered_responses</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">possible_match</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">filtered_responses</span>
 
 <div class="viewcode-block" id="RecreationDotGov.process_facilities_responses"><a class="viewcode-back" href="../../../../api/camply.providers.recreation_dot_gov.campsite_search.html#camply.RecreationDotGov.process_facilities_responses">[docs]</a>    <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">process_facilities_responses</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">facility</span><span class="p">:</span> <span class="nb">dict</span><span class="p">)</span> <span class="o">-&gt;</span> \
-            <span class="n">Tuple</span><span class="p">[</span><span class="nb">dict</span><span class="p">,</span> <span class="n">Optional</span><span class="p">[</span><span class="n">CampgroundFacility</span><span class="p">]]:</span>
+    <span class="k">def</span> <span class="nf">process_facilities_responses</span><span class="p">(</span>
+        <span class="bp">cls</span><span class="p">,</span> <span class="n">facility</span><span class="p">:</span> <span class="nb">dict</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">dict</span><span class="p">,</span> <span class="n">Optional</span><span class="p">[</span><span class="n">CampgroundFacility</span><span class="p">]]:</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Process Facilities Responses to be More Usable</span>
 
@@ -458,14 +514,16 @@
                 <span class="n">facility_name</span><span class="o">=</span><span class="n">facility_object</span><span class="o">.</span><span class="n">FacilityName</span><span class="o">.</span><span class="n">title</span><span class="p">(),</span>
                 <span class="n">recreation_area</span><span class="o">=</span><span class="n">formatted_recreation_area</span><span class="p">,</span>
                 <span class="n">facility_id</span><span class="o">=</span><span class="n">facility_object</span><span class="o">.</span><span class="n">FacilityID</span><span class="p">,</span>
-                <span class="n">recreation_area_id</span><span class="o">=</span><span class="n">recreation_area_id</span><span class="p">)</span>
+                <span class="n">recreation_area_id</span><span class="o">=</span><span class="n">recreation_area_id</span><span class="p">,</span>
+            <span class="p">)</span>
             <span class="k">return</span> <span class="n">facility</span><span class="p">,</span> <span class="n">campground_facility</span>
         <span class="k">except</span> <span class="p">(</span><span class="ne">KeyError</span><span class="p">,</span> <span class="ne">IndexError</span><span class="p">):</span>
             <span class="k">return</span> <span class="n">facility</span><span class="p">,</span> <span class="kc">None</span></div>
 
     <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">_process_rec_area_response</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">recreation_area</span><span class="o">=</span><span class="nb">dict</span><span class="p">)</span> <span class="o">-&gt;</span> \
-            <span class="n">Tuple</span><span class="p">[</span><span class="nb">dict</span><span class="p">,</span> <span class="n">Optional</span><span class="p">[</span><span class="n">RecreationArea</span><span class="p">]]:</span>
+    <span class="k">def</span> <span class="nf">_process_rec_area_response</span><span class="p">(</span>
+        <span class="bp">cls</span><span class="p">,</span> <span class="n">recreation_area</span><span class="o">=</span><span class="nb">dict</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">dict</span><span class="p">,</span> <span class="n">Optional</span><span class="p">[</span><span class="n">RecreationArea</span><span class="p">]]:</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Process Rec Area Responses to be More Usable</span>
 
@@ -480,11 +538,13 @@
         <span class="n">rec_area_response</span> <span class="o">=</span> <span class="n">RecreationAreaResponse</span><span class="p">(</span><span class="o">**</span><span class="n">recreation_area</span><span class="p">)</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">recreation_area_location</span> <span class="o">=</span> <span class="n">rec_area_response</span><span class="o">.</span><span class="n">RECAREAADDRESS</span><span class="p">[</span>
-                <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">AddressStateCode</span>
+                <span class="mi">0</span>
+            <span class="p">]</span><span class="o">.</span><span class="n">AddressStateCode</span>
             <span class="n">recreation_area_tuple</span> <span class="o">=</span> <span class="n">RecreationArea</span><span class="p">(</span>
                 <span class="n">recreation_area</span><span class="o">=</span><span class="n">rec_area_response</span><span class="o">.</span><span class="n">RecAreaName</span><span class="p">,</span>
                 <span class="n">recreation_area_id</span><span class="o">=</span><span class="n">rec_area_response</span><span class="o">.</span><span class="n">RecAreaID</span><span class="p">,</span>
-                <span class="n">recreation_area_location</span><span class="o">=</span><span class="n">recreation_area_location</span><span class="p">)</span>
+                <span class="n">recreation_area_location</span><span class="o">=</span><span class="n">recreation_area_location</span><span class="p">,</span>
+            <span class="p">)</span>
             <span class="k">return</span> <span class="n">recreation_area</span><span class="p">,</span> <span class="n">recreation_area_tuple</span>
         <span class="k">except</span> <span class="ne">IndexError</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">recreation_area</span><span class="p">,</span> <span class="kc">None</span>
@@ -504,15 +564,21 @@
 <span class="sd">        endpoint_url: str</span>
 <span class="sd">            URL for the API Endpoint</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">base_url</span> <span class="o">=</span> <span class="n">api_utils</span><span class="o">.</span><span class="n">generate_url</span><span class="p">(</span><span class="n">scheme</span><span class="o">=</span><span class="n">RecreationBookingConfig</span><span class="o">.</span><span class="n">API_SCHEME</span><span class="p">,</span>
-                                          <span class="n">netloc</span><span class="o">=</span><span class="n">RecreationBookingConfig</span><span class="o">.</span><span class="n">API_NET_LOC</span><span class="p">,</span>
-                                          <span class="n">path</span><span class="o">=</span><span class="n">RecreationBookingConfig</span><span class="o">.</span><span class="n">API_BASE_PATH</span><span class="p">)</span>
+        <span class="n">base_url</span> <span class="o">=</span> <span class="n">api_utils</span><span class="o">.</span><span class="n">generate_url</span><span class="p">(</span>
+            <span class="n">scheme</span><span class="o">=</span><span class="n">RecreationBookingConfig</span><span class="o">.</span><span class="n">API_SCHEME</span><span class="p">,</span>
+            <span class="n">netloc</span><span class="o">=</span><span class="n">RecreationBookingConfig</span><span class="o">.</span><span class="n">API_NET_LOC</span><span class="p">,</span>
+            <span class="n">path</span><span class="o">=</span><span class="n">RecreationBookingConfig</span><span class="o">.</span><span class="n">API_BASE_PATH</span><span class="p">,</span>
+        <span class="p">)</span>
         <span class="n">endpoint_url</span> <span class="o">=</span> <span class="n">parse</span><span class="o">.</span><span class="n">urljoin</span><span class="p">(</span><span class="n">base_url</span><span class="p">,</span> <span class="n">path</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">endpoint_url</span>
 
-    <span class="nd">@tenacity</span><span class="o">.</span><span class="n">retry</span><span class="p">(</span><span class="n">wait</span><span class="o">=</span><span class="n">tenacity</span><span class="o">.</span><span class="n">wait_random_exponential</span><span class="p">(</span><span class="n">multiplier</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mi">1800</span><span class="p">),</span>
-                    <span class="n">stop</span><span class="o">=</span><span class="n">tenacity</span><span class="o">.</span><span class="n">stop</span><span class="o">.</span><span class="n">stop_after_delay</span><span class="p">(</span><span class="mi">6000</span><span class="p">))</span>
-    <span class="k">def</span> <span class="nf">_make_recdotgov_request</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">campground_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">month</span><span class="p">:</span> <span class="n">datetime</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">requests</span><span class="o">.</span><span class="n">Response</span><span class="p">:</span>
+    <span class="nd">@tenacity</span><span class="o">.</span><span class="n">retry</span><span class="p">(</span>
+        <span class="n">wait</span><span class="o">=</span><span class="n">tenacity</span><span class="o">.</span><span class="n">wait_random_exponential</span><span class="p">(</span><span class="n">multiplier</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mi">1800</span><span class="p">),</span>
+        <span class="n">stop</span><span class="o">=</span><span class="n">tenacity</span><span class="o">.</span><span class="n">stop</span><span class="o">.</span><span class="n">stop_after_delay</span><span class="p">(</span><span class="mi">6000</span><span class="p">),</span>
+    <span class="p">)</span>
+    <span class="k">def</span> <span class="nf">_make_recdotgov_request</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">campground_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">month</span><span class="p">:</span> <span class="n">datetime</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">requests</span><span class="o">.</span><span class="n">Response</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Make a request to the RecreationDotGov API - Handle Exponential Backoff</span>
 
@@ -528,14 +594,18 @@
         <span class="k">try</span><span class="p">:</span>
             <span class="n">formatted_month</span> <span class="o">=</span> <span class="n">month</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%Y-%m-01T00:00:00.000Z&quot;</span><span class="p">)</span>
             <span class="n">api_endpoint</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_rec_availability_get_endpoint</span><span class="p">(</span>
-                <span class="n">path</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">campground_id</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">RecreationBookingConfig</span><span class="o">.</span><span class="n">API_MONTH_PATH</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+                <span class="n">path</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">campground_id</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">RecreationBookingConfig</span><span class="o">.</span><span class="n">API_MONTH_PATH</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="p">)</span>
             <span class="c1"># BUILD THE HEADERS EXPECTED FROM THE API</span>
             <span class="n">headers</span> <span class="o">=</span> <span class="n">STANDARD_HEADERS</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
             <span class="n">headers</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">choice</span><span class="p">(</span><span class="n">USER_AGENTS</span><span class="p">))</span>
             <span class="n">headers</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">RecreationBookingConfig</span><span class="o">.</span><span class="n">API_REFERRERS</span><span class="p">)</span>
-            <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="n">api_endpoint</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span>
-                                    <span class="n">params</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">start_date</span><span class="o">=</span><span class="n">formatted_month</span><span class="p">),</span>
-                                    <span class="n">timeout</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+            <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+                <span class="n">url</span><span class="o">=</span><span class="n">api_endpoint</span><span class="p">,</span>
+                <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span>
+                <span class="n">params</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">start_date</span><span class="o">=</span><span class="n">formatted_month</span><span class="p">),</span>
+                <span class="n">timeout</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span>
+            <span class="p">)</span>
             <span class="k">assert</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span>
         <span class="k">except</span> <span class="ne">AssertionError</span><span class="p">:</span>
             <span class="n">response_error</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">text</span>
@@ -545,7 +615,9 @@
             <span class="k">raise</span> <span class="ne">ConnectionError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">error_message</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">response_error</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">response</span>
 
-<div class="viewcode-block" id="RecreationDotGov.get_recdotgov_data"><a class="viewcode-back" href="../../../../api/camply.providers.recreation_dot_gov.campsite_search.html#camply.RecreationDotGov.get_recdotgov_data">[docs]</a>    <span class="k">def</span> <span class="nf">get_recdotgov_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">campground_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">month</span><span class="p">:</span> <span class="n">datetime</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="nb">dict</span><span class="p">,</span> <span class="nb">list</span><span class="p">]:</span>
+<div class="viewcode-block" id="RecreationDotGov.get_recdotgov_data"><a class="viewcode-back" href="../../../../api/camply.providers.recreation_dot_gov.campsite_search.html#camply.RecreationDotGov.get_recdotgov_data">[docs]</a>    <span class="k">def</span> <span class="nf">get_recdotgov_data</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">campground_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">month</span><span class="p">:</span> <span class="n">datetime</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="nb">dict</span><span class="p">,</span> <span class="nb">list</span><span class="p">]:</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Find Campsite Availability Data</span>
 
@@ -561,18 +633,26 @@
 <span class="sd">        Union[dict, list]</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
-            <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_recdotgov_request</span><span class="p">(</span><span class="n">campground_id</span><span class="o">=</span><span class="n">campground_id</span><span class="p">,</span>
-                                                    <span class="n">month</span><span class="o">=</span><span class="n">month</span><span class="p">)</span>
+            <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_recdotgov_request</span><span class="p">(</span>
+                <span class="n">campground_id</span><span class="o">=</span><span class="n">campground_id</span><span class="p">,</span> <span class="n">month</span><span class="o">=</span><span class="n">month</span>
+            <span class="p">)</span>
         <span class="k">except</span> <span class="n">tenacity</span><span class="o">.</span><span class="n">RetryError</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;Something went wrong in fetching data from the &quot;</span>
-                               <span class="s2">&quot;RecreationDotGov API.&quot;</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span>
+                <span class="s2">&quot;Something went wrong in fetching data from the &quot;</span>
+                <span class="s2">&quot;RecreationDotGov API.&quot;</span>
+            <span class="p">)</span>
         <span class="k">return</span> <span class="n">loads</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="RecreationDotGov.process_campsite_availability"><a class="viewcode-back" href="../../../../api/camply.providers.recreation_dot_gov.campsite_search.html#camply.RecreationDotGov.process_campsite_availability">[docs]</a>    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">process_campsite_availability</span><span class="p">(</span>
-            <span class="bp">cls</span><span class="p">,</span> <span class="n">availability</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span> <span class="n">recreation_area</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
-            <span class="n">recreation_area_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">facility_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
-            <span class="n">facility_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">month</span><span class="p">:</span> <span class="n">datetime</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Optional</span><span class="p">[</span><span class="n">AvailableCampsite</span><span class="p">]]:</span>
+        <span class="bp">cls</span><span class="p">,</span>
+        <span class="n">availability</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span>
+        <span class="n">recreation_area</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">recreation_area_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+        <span class="n">facility_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">facility_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+        <span class="n">month</span><span class="p">:</span> <span class="n">datetime</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Optional</span><span class="p">[</span><span class="n">AvailableCampsite</span><span class="p">]]:</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Parse the JSON Response and return availabilities</span>
 
@@ -599,9 +679,17 @@
         <span class="n">total_campsite_availability</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Optional</span><span class="p">[</span><span class="n">AvailableCampsite</span><span class="p">]]</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
         <span class="n">campsite_data</span> <span class="o">=</span> <span class="n">CampsiteAvailabilityResponse</span><span class="p">(</span><span class="o">**</span><span class="n">availability</span><span class="p">)</span>
         <span class="k">for</span> <span class="n">campsite_id</span><span class="p">,</span> <span class="n">site_related_data</span> <span class="ow">in</span> <span class="n">campsite_data</span><span class="o">.</span><span class="n">campsites</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-            <span class="k">for</span> <span class="n">matching_date</span><span class="p">,</span> <span class="n">availability_status</span> <span class="ow">in</span> <span class="n">site_related_data</span><span class="o">.</span><span class="n">availabilities</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-                <span class="k">if</span> <span class="n">availability_status</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">RecreationBookingConfig</span><span class="o">.</span><span class="n">CAMPSITE_UNAVAILABLE_STRINGS</span><span class="p">:</span>
-                    <span class="n">booking_url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">RecreationBookingConfig</span><span class="o">.</span><span class="n">CAMPSITE_BOOKING_URL</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">campsite_id</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="k">for</span> <span class="p">(</span>
+                <span class="n">matching_date</span><span class="p">,</span>
+                <span class="n">availability_status</span><span class="p">,</span>
+            <span class="p">)</span> <span class="ow">in</span> <span class="n">site_related_data</span><span class="o">.</span><span class="n">availabilities</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                <span class="k">if</span> <span class="p">(</span>
+                    <span class="n">availability_status</span>
+                    <span class="ow">not</span> <span class="ow">in</span> <span class="n">RecreationBookingConfig</span><span class="o">.</span><span class="n">CAMPSITE_UNAVAILABLE_STRINGS</span>
+                <span class="p">):</span>
+                    <span class="n">booking_url</span> <span class="o">=</span> <span class="p">(</span>
+                        <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">RecreationBookingConfig</span><span class="o">.</span><span class="n">CAMPSITE_BOOKING_URL</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">campsite_id</span><span class="si">}</span><span class="s2">&quot;</span>
+                    <span class="p">)</span>
                     <span class="n">available_campsite</span> <span class="o">=</span> <span class="n">AvailableCampsite</span><span class="p">(</span>
                         <span class="n">campsite_id</span><span class="o">=</span><span class="n">campsite_id</span><span class="p">,</span>
                         <span class="n">booking_date</span><span class="o">=</span><span class="n">matching_date</span><span class="p">,</span>
@@ -610,20 +698,24 @@
                         <span class="n">campsite_site_name</span><span class="o">=</span><span class="n">site_related_data</span><span class="o">.</span><span class="n">site</span><span class="p">,</span>
                         <span class="n">campsite_loop_name</span><span class="o">=</span><span class="n">site_related_data</span><span class="o">.</span><span class="n">loop</span><span class="p">,</span>
                         <span class="n">campsite_type</span><span class="o">=</span><span class="n">site_related_data</span><span class="o">.</span><span class="n">campsite_type</span><span class="p">,</span>
-                        <span class="n">campsite_occupancy</span><span class="o">=</span><span class="p">(</span><span class="n">site_related_data</span><span class="o">.</span><span class="n">min_num_people</span><span class="p">,</span>
-                                            <span class="n">site_related_data</span><span class="o">.</span><span class="n">max_num_people</span><span class="p">),</span>
+                        <span class="n">campsite_occupancy</span><span class="o">=</span><span class="p">(</span>
+                            <span class="n">site_related_data</span><span class="o">.</span><span class="n">min_num_people</span><span class="p">,</span>
+                            <span class="n">site_related_data</span><span class="o">.</span><span class="n">max_num_people</span><span class="p">,</span>
+                        <span class="p">),</span>
                         <span class="n">campsite_use_type</span><span class="o">=</span><span class="n">site_related_data</span><span class="o">.</span><span class="n">type_of_use</span><span class="p">,</span>
                         <span class="n">availability_status</span><span class="o">=</span><span class="n">availability_status</span><span class="p">,</span>
                         <span class="n">recreation_area</span><span class="o">=</span><span class="n">recreation_area</span><span class="p">,</span>
                         <span class="n">recreation_area_id</span><span class="o">=</span><span class="n">recreation_area_id</span><span class="p">,</span>
                         <span class="n">facility_name</span><span class="o">=</span><span class="n">facility_name</span><span class="p">,</span>
                         <span class="n">facility_id</span><span class="o">=</span><span class="n">facility_id</span><span class="p">,</span>
-                        <span class="n">booking_url</span><span class="o">=</span><span class="n">booking_url</span>
+                        <span class="n">booking_url</span><span class="o">=</span><span class="n">booking_url</span><span class="p">,</span>
                     <span class="p">)</span>
                     <span class="n">total_campsite_availability</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">available_campsite</span><span class="p">)</span>
-        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\t</span><span class="si">{</span><span class="n">logging_utils</span><span class="o">.</span><span class="n">get_emoji</span><span class="p">(</span><span class="n">total_campsite_availability</span><span class="p">)</span><span class="si">}</span><span class="se">\t</span><span class="s2">&quot;</span>
-                    <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">total_campsite_availability</span><span class="p">)</span><span class="si">}</span><span class="s2"> total sites found in month of &quot;</span>
-                    <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">month</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%B&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;</span><span class="se">\t</span><span class="si">{</span><span class="n">logging_utils</span><span class="o">.</span><span class="n">get_emoji</span><span class="p">(</span><span class="n">total_campsite_availability</span><span class="p">)</span><span class="si">}</span><span class="se">\t</span><span class="s2">&quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">total_campsite_availability</span><span class="p">)</span><span class="si">}</span><span class="s2"> total sites found in month of &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">month</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%B&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="p">)</span>
         <span class="k">return</span> <span class="n">total_campsite_availability</span></div>
 
 <div class="viewcode-block" id="RecreationDotGov.get_campsite_by_id"><a class="viewcode-back" href="../../../../api/camply.providers.recreation_dot_gov.campsite_search.html#camply.RecreationDotGov.get_campsite_by_id">[docs]</a>    <span class="k">def</span> <span class="nf">get_campsite_by_id</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">campsite_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">CampsiteResponse</span><span class="p">:</span>
@@ -646,7 +738,7 @@
         <span class="k">return</span> <span class="n">response</span></div>
 
 <div class="viewcode-block" id="RecreationDotGov.get_campground_ids_by_campsites"><a class="viewcode-back" href="../../../../api/camply.providers.recreation_dot_gov.campsite_search.html#camply.RecreationDotGov.get_campground_ids_by_campsites">[docs]</a>    <span class="k">def</span> <span class="nf">get_campground_ids_by_campsites</span><span class="p">(</span>
-            <span class="bp">self</span><span class="p">,</span> <span class="n">campsite_ids</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">campsite_ids</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">List</span><span class="p">[</span><span class="n">CampsiteResponse</span><span class="p">]]:</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Retrieve a list of FacilityIDs, and Facilities from a Campsite ID List</span>
@@ -669,8 +761,7 @@
         <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">campground_ids</span><span class="p">)),</span> <span class="nb">list</span><span class="p">(</span><span class="n">campgrounds</span><span class="p">)</span></div>
 
     <span class="k">def</span> <span class="nf">_process_specific_campsites_provided</span><span class="p">(</span>
-            <span class="bp">self</span><span class="p">,</span>
-            <span class="n">campsite_id</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">campsite_id</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">CampgroundFacility</span><span class="p">]:</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Process Requests for Campgrounds into Facilities</span>
@@ -684,16 +775,19 @@
 <span class="sd">        List[CampgroundFacility]</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">facility_ids</span><span class="p">,</span> <span class="n">campsites</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_campground_ids_by_campsites</span><span class="p">(</span>
-            <span class="n">campsite_ids</span><span class="o">=</span><span class="n">campsite_id</span><span class="p">)</span>
+            <span class="n">campsite_ids</span><span class="o">=</span><span class="n">campsite_id</span>
+        <span class="p">)</span>
         <span class="n">facilities</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
         <span class="k">for</span> <span class="n">campsite</span> <span class="ow">in</span> <span class="n">campsites</span><span class="p">:</span>
             <span class="n">facility</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_find_facilities_from_campgrounds</span><span class="p">(</span>
-                <span class="n">campground_id</span><span class="o">=</span><span class="p">[</span><span class="n">campsite</span><span class="o">.</span><span class="n">FacilityID</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span>
+                <span class="n">campground_id</span><span class="o">=</span><span class="p">[</span><span class="n">campsite</span><span class="o">.</span><span class="n">FacilityID</span><span class="p">]</span>
+            <span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
             <span class="n">facilities</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">facility</span><span class="p">)</span>
-            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Searching Specific Campsite: ⛺️ &quot;</span>
-                        <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">campsite</span><span class="o">.</span><span class="n">CampsiteName</span><span class="si">}</span><span class="s2"> (#</span><span class="si">{</span><span class="n">campsite</span><span class="o">.</span><span class="n">CampsiteID</span><span class="si">}</span><span class="s2">) - &quot;</span>
-                        <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">facility</span><span class="o">.</span><span class="n">facility_name</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">facility</span><span class="o">.</span><span class="n">recreation_area</span><span class="si">}</span><span class="s2">&quot;</span>
-                        <span class="p">)</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+                <span class="s2">&quot;Searching Specific Campsite: ⛺️ &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">campsite</span><span class="o">.</span><span class="n">CampsiteName</span><span class="si">}</span><span class="s2"> (#</span><span class="si">{</span><span class="n">campsite</span><span class="o">.</span><span class="n">CampsiteID</span><span class="si">}</span><span class="s2">) - &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">facility</span><span class="o">.</span><span class="n">facility_name</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">facility</span><span class="o">.</span><span class="n">recreation_area</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="p">)</span>
         <span class="k">return</span> <span class="n">facilities</span></div>
 </pre></div>
 

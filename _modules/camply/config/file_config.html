@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>camply.config.file_config &mdash; camply 0.4.0 documentation</title>
+  <title>camply.config.file_config &mdash; camply 0.4.1 documentation</title>
       <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/autodoc_pydantic.css" type="text/css" />
@@ -33,7 +33,7 @@
             <a href="../../../index.html" class="icon icon-home"> camply
           </a>
               <div class="version">
-                0.4.0
+                0.4.1
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
@@ -44,8 +44,7 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../README.html">Check Out The ReadTheDocs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../README.html#table-of-contents">Table of Contents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../README.html">Table of Contents</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../README.html#installation">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../README.html#command-line-usage">Command Line Usage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../README.html#finding-recreation-areas-ids-and-campground-ids-to-search-without-using-the-command-line">Finding Recreation Areas IDs and Campground IDs To Search Without Using the Command Line</a></li>
@@ -53,6 +52,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../README.html#running-in-docker">Running in Docker</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../README.html#dependencies">Dependencies</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../cli.html">camply CLI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contributing.html">Contributing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../api/modules.html">API Documentation</a></li>
 </ul>
 
@@ -107,20 +107,33 @@
         <span class="n">PUSHOVER_PUSH_USER</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">notes</span><span class="o">=</span><span class="s2">&quot;Enables Pushover Notifications&quot;</span><span class="p">),</span>
         <span class="n">PUSHBULLET_API_TOKEN</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">notes</span><span class="o">=</span><span class="s2">&quot;Enables Pushbullet Notifications&quot;</span><span class="p">),</span>
         <span class="n">TELEGRAM_BOT_TOKEN</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">notes</span><span class="o">=</span><span class="s2">&quot;Enables Telegram Notifications&quot;</span><span class="p">),</span>
-        <span class="n">TELEGRAM_CHAT_ID</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">notes</span><span class="o">=</span><span class="s2">&quot;Telegram Notification will be sent here&quot;</span><span class="p">),</span>
-        <span class="n">EMAIL_TO_ADDRESS</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">notes</span><span class="o">=</span><span class="s2">&quot;Email Notifications will be sent here&quot;</span><span class="p">),</span>
+        <span class="n">TELEGRAM_CHAT_ID</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
+            <span class="n">default</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">notes</span><span class="o">=</span><span class="s2">&quot;Telegram Notification will be sent here&quot;</span>
+        <span class="p">),</span>
+        <span class="n">EMAIL_TO_ADDRESS</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
+            <span class="n">default</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">notes</span><span class="o">=</span><span class="s2">&quot;Email Notifications will be sent here&quot;</span>
+        <span class="p">),</span>
         <span class="n">EMAIL_USERNAME</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">notes</span><span class="o">=</span><span class="s2">&quot;Email Authorization Login Username&quot;</span><span class="p">),</span>
         <span class="n">EMAIL_PASSWORD</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">notes</span><span class="o">=</span><span class="s2">&quot;Email Authorization Login Password&quot;</span><span class="p">),</span>
-        <span class="n">EMAIL_SMTP_SERVER</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="s2">&quot;smtp.gmail.com&quot;</span><span class="p">,</span>
-                               <span class="n">notes</span><span class="o">=</span><span class="s2">&quot;Email Authorization SMTP Server Address&quot;</span><span class="p">),</span>
+        <span class="n">EMAIL_SMTP_SERVER</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
+            <span class="n">default</span><span class="o">=</span><span class="s2">&quot;smtp.gmail.com&quot;</span><span class="p">,</span> <span class="n">notes</span><span class="o">=</span><span class="s2">&quot;Email Authorization SMTP Server Address&quot;</span>
+        <span class="p">),</span>
         <span class="n">EMAIL_SMTP_PORT</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="mi">465</span><span class="p">,</span> <span class="n">notes</span><span class="o">=</span><span class="s2">&quot;Email Authorization SMTP Server Port&quot;</span><span class="p">),</span>
-        <span class="n">EMAIL_FROM_ADDRESS</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="s2">&quot;camply@juftin.com&quot;</span><span class="p">,</span>
-                                <span class="n">notes</span><span class="o">=</span><span class="s2">&quot;Email Notifications Will Come From this Email&quot;</span><span class="p">),</span>
-        <span class="n">EMAIL_SUBJECT_LINE</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="s2">&quot;Camply Notification&quot;</span><span class="p">,</span>
-                                <span class="n">notes</span><span class="o">=</span><span class="s2">&quot;Email Notifications Will Have This Subject Line&quot;</span><span class="p">),</span>
-        <span class="n">PUSHOVER_PUSH_TOKEN</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">notes</span><span class="o">=</span><span class="s2">&quot;Pushover Notifications From Your Custom App &quot;</span>
-                                                   <span class="s2">&quot;(not required)&quot;</span><span class="p">),</span>
-        <span class="n">RIDB_API_KEY</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">notes</span><span class="o">=</span><span class="s2">&quot;Personal Recreation.gov API Key (not required)&quot;</span><span class="p">)</span>
+        <span class="n">EMAIL_FROM_ADDRESS</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
+            <span class="n">default</span><span class="o">=</span><span class="s2">&quot;camply@juftin.com&quot;</span><span class="p">,</span>
+            <span class="n">notes</span><span class="o">=</span><span class="s2">&quot;Email Notifications Will Come From this Email&quot;</span><span class="p">,</span>
+        <span class="p">),</span>
+        <span class="n">EMAIL_SUBJECT_LINE</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
+            <span class="n">default</span><span class="o">=</span><span class="s2">&quot;Camply Notification&quot;</span><span class="p">,</span>
+            <span class="n">notes</span><span class="o">=</span><span class="s2">&quot;Email Notifications Will Have This Subject Line&quot;</span><span class="p">,</span>
+        <span class="p">),</span>
+        <span class="n">PUSHOVER_PUSH_TOKEN</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
+            <span class="n">default</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="n">notes</span><span class="o">=</span><span class="s2">&quot;Pushover Notifications From Your Custom App &quot;</span> <span class="s2">&quot;(not required)&quot;</span><span class="p">,</span>
+        <span class="p">),</span>
+        <span class="n">RIDB_API_KEY</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
+            <span class="n">default</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">notes</span><span class="o">=</span><span class="s2">&quot;Personal Recreation.gov API Key (not required)&quot;</span>
+        <span class="p">),</span>
     <span class="p">)</span></div>
 </pre></div>
 

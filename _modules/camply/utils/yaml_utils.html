@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>camply.utils.yaml_utils &mdash; camply 0.4.0 documentation</title>
+  <title>camply.utils.yaml_utils &mdash; camply 0.4.1 documentation</title>
       <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/autodoc_pydantic.css" type="text/css" />
@@ -33,7 +33,7 @@
             <a href="../../../index.html" class="icon icon-home"> camply
           </a>
               <div class="version">
-                0.4.0
+                0.4.1
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
@@ -44,8 +44,7 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../README.html">Check Out The ReadTheDocs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../README.html#table-of-contents">Table of Contents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../README.html">Table of Contents</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../README.html#installation">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../README.html#command-line-usage">Command Line Usage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../README.html#finding-recreation-areas-ids-and-campground-ids-to-search-without-using-the-command-line">Finding Recreation Areas IDs and Campground IDs To Search Without Using the Command Line</a></li>
@@ -53,6 +52,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../README.html#running-in-docker">Running in Docker</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../README.html#dependencies">Dependencies</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../cli.html">camply CLI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contributing.html">Contributing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../api/modules.html">API Documentation</a></li>
 </ul>
 
@@ -85,14 +85,14 @@
 <span class="sd">YAML Utilities for Camply</span>
 <span class="sd">&quot;&quot;&quot;</span>
 
-<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
 <span class="kn">import</span> <span class="nn">logging</span>
 <span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
 <span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
 <span class="kn">from</span> <span class="nn">re</span> <span class="kn">import</span> <span class="nb">compile</span>
 <span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">Tuple</span>
 
-<span class="kn">from</span> <span class="nn">yaml</span> <span class="kn">import</span> <span class="n">load</span><span class="p">,</span> <span class="n">SafeLoader</span>
+<span class="kn">from</span> <span class="nn">yaml</span> <span class="kn">import</span> <span class="n">SafeLoader</span><span class="p">,</span> <span class="n">load</span>
 
 <span class="kn">from</span> <span class="nn">camply.config</span> <span class="kn">import</span> <span class="n">SearchConfig</span>
 <span class="kn">from</span> <span class="nn">camply.containers</span> <span class="kn">import</span> <span class="n">SearchWindow</span>
@@ -145,7 +145,8 @@
             <span class="n">full_value</span> <span class="o">=</span> <span class="n">value</span>
             <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">match</span><span class="p">:</span>
                 <span class="n">full_value</span> <span class="o">=</span> <span class="n">full_value</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span>
-                    <span class="s2">&quot;${{</span><span class="si">{key}</span><span class="s2">}}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="n">item</span><span class="p">),</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="n">item</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="n">item</span><span class="p">))</span>
+                    <span class="s2">&quot;${{</span><span class="si">{key}</span><span class="s2">}}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="n">item</span><span class="p">),</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="n">item</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="n">item</span><span class="p">)</span>
+                <span class="p">)</span>
             <span class="k">return</span> <span class="n">full_value</span>
         <span class="k">return</span> <span class="n">value</span>
 
@@ -154,7 +155,9 @@
         <span class="k">return</span> <span class="n">load</span><span class="p">(</span><span class="n">stream</span><span class="o">=</span><span class="n">conf_data</span><span class="p">,</span> <span class="n">Loader</span><span class="o">=</span><span class="n">safe_loader</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="yaml_file_to_arguments"><a class="viewcode-back" href="../../../api/camply.utils.yaml_utils.html#camply.utils.yaml_utils.yaml_file_to_arguments">[docs]</a><span class="k">def</span> <span class="nf">yaml_file_to_arguments</span><span class="p">(</span><span class="n">file_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">object</span><span class="p">],</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">object</span><span class="p">]]:</span>
+<div class="viewcode-block" id="yaml_file_to_arguments"><a class="viewcode-back" href="../../../api/camply.utils.yaml_utils.html#camply.utils.yaml_utils.yaml_file_to_arguments">[docs]</a><span class="k">def</span> <span class="nf">yaml_file_to_arguments</span><span class="p">(</span>
+    <span class="n">file_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">object</span><span class="p">],</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">object</span><span class="p">]]:</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Convert YAML File into A Dictionary to be used as **kwargs</span>
 
@@ -179,27 +182,32 @@
     <span class="n">campsites</span> <span class="o">=</span> <span class="n">yaml_search</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;campsites&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
     <span class="n">weekends_only</span> <span class="o">=</span> <span class="n">yaml_search</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;weekends&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
     <span class="n">continuous</span> <span class="o">=</span> <span class="n">yaml_search</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;continuous&quot;</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
-    <span class="n">polling_interval</span> <span class="o">=</span> <span class="n">yaml_search</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;polling_interval&quot;</span><span class="p">,</span>
-                                       <span class="n">SearchConfig</span><span class="o">.</span><span class="n">RECOMMENDED_POLLING_INTERVAL</span><span class="p">)</span>
+    <span class="n">polling_interval</span> <span class="o">=</span> <span class="n">yaml_search</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+        <span class="s2">&quot;polling_interval&quot;</span><span class="p">,</span> <span class="n">SearchConfig</span><span class="o">.</span><span class="n">RECOMMENDED_POLLING_INTERVAL</span>
+    <span class="p">)</span>
     <span class="n">notify_first_try</span> <span class="o">=</span> <span class="n">yaml_search</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;notify_first_try&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
     <span class="n">notification_provider</span> <span class="o">=</span> <span class="n">yaml_search</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;notifications&quot;</span><span class="p">,</span> <span class="s2">&quot;silent&quot;</span><span class="p">)</span>
     <span class="n">search_forever</span> <span class="o">=</span> <span class="n">yaml_search</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;search_forever&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
 
     <span class="n">search_window</span> <span class="o">=</span> <span class="n">SearchWindow</span><span class="p">(</span><span class="n">start_date</span><span class="o">=</span><span class="n">start_date</span><span class="p">,</span> <span class="n">end_date</span><span class="o">=</span><span class="n">end_date</span><span class="p">)</span>
 
-    <span class="n">provider_kwargs</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">search_window</span><span class="o">=</span><span class="n">search_window</span><span class="p">,</span>
-                           <span class="n">recreation_area</span><span class="o">=</span><span class="n">recreation_area</span><span class="p">,</span>
-                           <span class="n">campgrounds</span><span class="o">=</span><span class="n">campgrounds</span><span class="p">,</span>
-                           <span class="n">campsites</span><span class="o">=</span><span class="n">campsites</span><span class="p">,</span>
-                           <span class="n">weekends_only</span><span class="o">=</span><span class="n">weekends_only</span><span class="p">,</span>
-                           <span class="n">nights</span><span class="o">=</span><span class="n">nights</span><span class="p">)</span>
+    <span class="n">provider_kwargs</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+        <span class="n">search_window</span><span class="o">=</span><span class="n">search_window</span><span class="p">,</span>
+        <span class="n">recreation_area</span><span class="o">=</span><span class="n">recreation_area</span><span class="p">,</span>
+        <span class="n">campgrounds</span><span class="o">=</span><span class="n">campgrounds</span><span class="p">,</span>
+        <span class="n">campsites</span><span class="o">=</span><span class="n">campsites</span><span class="p">,</span>
+        <span class="n">weekends_only</span><span class="o">=</span><span class="n">weekends_only</span><span class="p">,</span>
+        <span class="n">nights</span><span class="o">=</span><span class="n">nights</span><span class="p">,</span>
+    <span class="p">)</span>
     <span class="n">search_kwargs</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
-        <span class="n">log</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">log</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
         <span class="n">continuous</span><span class="o">=</span><span class="n">continuous</span><span class="p">,</span>
         <span class="n">polling_interval</span><span class="o">=</span><span class="n">polling_interval</span><span class="p">,</span>
         <span class="n">notify_first_try</span><span class="o">=</span><span class="n">notify_first_try</span><span class="p">,</span>
         <span class="n">notification_provider</span><span class="o">=</span><span class="n">notification_provider</span><span class="p">,</span>
-        <span class="n">search_forever</span><span class="o">=</span><span class="n">search_forever</span><span class="p">)</span>
+        <span class="n">search_forever</span><span class="o">=</span><span class="n">search_forever</span><span class="p">,</span>
+    <span class="p">)</span>
     <span class="k">return</span> <span class="n">provider</span><span class="p">,</span> <span class="n">provider_kwargs</span><span class="p">,</span> <span class="n">search_kwargs</span></div>
 </pre></div>
 
