@@ -143,6 +143,13 @@
 </li>
       </ul></li>
       <li>
+    --equipment
+
+      <ul>
+        <li><a href="cli.html#cmdoption-camply-campsites-equipment">camply-campsites command line option</a>
+</li>
+      </ul></li>
+      <li>
     --nights
 
       <ul>
@@ -251,6 +258,8 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/camply.containers.api_responses.html#camply.containers.api_responses.XantPerGuest.a2">a2 (camply.containers.api_responses.XantPerGuest attribute)</a>
 </li>
+      <li><a href="api/camply.containers.api_responses.html#camply.containers.api_responses.RecDotGovCampsite.accessible">accessible (camply.containers.api_responses.RecDotGovCampsite attribute)</a>
+</li>
       <li><a href="api/camply.config.yellowstone_config.html#camply.config.yellowstone_config.YellowstoneConfig.API_BASE_ENDPOINT">API_BASE_ENDPOINT (camply.config.yellowstone_config.YellowstoneConfig attribute)</a>
 
       <ul>
@@ -305,8 +314,6 @@
         <li><a href="api/camply.config.html#camply.config.RecreationBookingConfig.API_MONTH_PATH">(camply.config.RecreationBookingConfig attribute)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/camply.config.api_config.html#camply.config.api_config.RecreationBookingConfig.API_NET_LOC">API_NET_LOC (camply.config.api_config.RecreationBookingConfig attribute)</a>
 
       <ul>
@@ -323,6 +330,8 @@
         <li><a href="api/camply.config.html#camply.config.YellowstoneConfig.API_REFERRERS">(camply.config.YellowstoneConfig attribute)</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/camply.config.api_config.html#camply.config.api_config.RecreationBookingConfig.API_SCHEME">API_SCHEME (camply.config.api_config.RecreationBookingConfig attribute)</a>
 
       <ul>
@@ -345,7 +354,21 @@
         <li><a href="api/camply.search.html#camply.search.BaseCampingSearch.assemble_availabilities">(camply.search.BaseCampingSearch class method)</a>
 </li>
       </ul></li>
+      <li><a href="api/camply.containers.api_responses.html#camply.containers.api_responses.RecDotGovCampsite.asset_id">asset_id (camply.containers.api_responses.RecDotGovCampsite attribute)</a>
+</li>
+      <li><a href="api/camply.containers.api_responses.html#camply.containers.api_responses.RecDotGovCampsite.asset_type">asset_type (camply.containers.api_responses.RecDotGovCampsite attribute)</a>
+</li>
+      <li><a href="api/camply.containers.base_container.html#camply.containers.base_container.RecDotGovAttribute.attribute_category">attribute_category (camply.containers.base_container.RecDotGovAttribute attribute)</a>
+</li>
+      <li><a href="api/camply.containers.base_container.html#camply.containers.base_container.RecDotGovAttribute.attribute_id">attribute_id (camply.containers.base_container.RecDotGovAttribute attribute)</a>
+</li>
+      <li><a href="api/camply.containers.base_container.html#camply.containers.base_container.RecDotGovAttribute.attribute_name">attribute_name (camply.containers.base_container.RecDotGovAttribute attribute)</a>
+</li>
+      <li><a href="api/camply.containers.base_container.html#camply.containers.base_container.RecDotGovAttribute.attribute_value">attribute_value (camply.containers.base_container.RecDotGovAttribute attribute)</a>
+</li>
       <li><a href="api/camply.containers.api_responses.html#camply.containers.api_responses.CampsiteResponse.ATTRIBUTES">ATTRIBUTES (camply.containers.api_responses.CampsiteResponse attribute)</a>
+</li>
+      <li><a href="api/camply.containers.api_responses.html#camply.containers.api_responses.RecDotGovCampsite.attributes">attributes (camply.containers.api_responses.RecDotGovCampsite attribute)</a>
 </li>
       <li><a href="api/camply.containers.api_responses.html#camply.containers.api_responses.XantResortData.availability">availability (camply.containers.api_responses.XantResortData attribute)</a>
 </li>
@@ -364,6 +387,8 @@
 </li>
       </ul></li>
       <li><a href="api/camply.containers.api_responses.html#camply.containers.api_responses.XantRates.available">available (camply.containers.api_responses.XantRates attribute)</a>
+</li>
+      <li><a href="api/camply.containers.api_responses.html#camply.containers.api_responses.RecDotGovCampsite.average_rating">average_rating (camply.containers.api_responses.RecDotGovCampsite attribute)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -537,6 +562,8 @@
         <li><a href="cli.html#cmdoption-camply-campsites-continuous">--continuous</a>
 </li>
         <li><a href="cli.html#cmdoption-camply-campsites-end-date">--end-date</a>
+</li>
+        <li><a href="cli.html#cmdoption-camply-campsites-equipment">--equipment</a>
 </li>
         <li><a href="cli.html#cmdoption-camply-campsites-nights">--nights</a>
 </li>
@@ -730,10 +757,10 @@
 </li>
       </ul></li>
       <li>
-    camply.providers.recreation_dot_gov.campsite_search
+    camply.providers.recreation_dot_gov.recdotgov_provider
 
       <ul>
-        <li><a href="api/camply.providers.recreation_dot_gov.campsite_search.html#module-camply.providers.recreation_dot_gov.campsite_search">module</a>
+        <li><a href="api/camply.providers.recreation_dot_gov.recdotgov_provider.html#module-camply.providers.recreation_dot_gov.recdotgov_provider">module</a>
 </li>
       </ul></li>
       <li>
@@ -757,8 +784,6 @@
         <li><a href="api/camply.search.html#module-camply.search">module</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     camply.search.base_search
 
@@ -773,6 +798,8 @@
         <li><a href="api/camply.search.search_recreationdotgov.html#module-camply.search.search_recreationdotgov">module</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     camply.search.search_yellowstone
 
@@ -834,6 +861,14 @@
         <li><a href="api/camply.config.html#camply.config.RIDBConfig.CAMPSITE_API_PATH">(camply.config.RIDBConfig attribute)</a>
 </li>
       </ul></li>
+      <li><a href="api/camply.html#camply.AvailableCampsite.campsite_attributes">campsite_attributes (camply.AvailableCampsite attribute)</a>
+
+      <ul>
+        <li><a href="api/camply.containers.html#camply.containers.AvailableCampsite.campsite_attributes">(camply.containers.AvailableCampsite attribute)</a>
+</li>
+        <li><a href="api/camply.containers.data_containers.html#camply.containers.data_containers.AvailableCampsite.campsite_attributes">(camply.containers.data_containers.AvailableCampsite attribute)</a>
+</li>
+      </ul></li>
       <li><a href="api/camply.config.yellowstone_config.html#camply.config.yellowstone_config.YellowstoneConfig.CAMPSITE_AVAILABILITY">CAMPSITE_AVAILABILITY (camply.config.yellowstone_config.YellowstoneConfig attribute)</a>
 
       <ul>
@@ -872,9 +907,11 @@
         <li><a href="api/camply.config.data_columns.html#camply.config.data_columns.CampsiteContainerFields.CAMPSITE_ID">(camply.config.data_columns.CampsiteContainerFields attribute)</a>
 </li>
       </ul></li>
-      <li><a href="api/camply.containers.html#camply.containers.AvailableCampsite.campsite_id">campsite_id (camply.containers.AvailableCampsite attribute)</a>
+      <li><a href="api/camply.containers.api_responses.html#camply.containers.api_responses.RecDotGovCampsite.campsite_id">campsite_id (camply.containers.api_responses.RecDotGovCampsite attribute)</a>
 
       <ul>
+        <li><a href="api/camply.containers.html#camply.containers.AvailableCampsite.campsite_id">(camply.containers.AvailableCampsite attribute)</a>
+</li>
         <li><a href="api/camply.containers.data_containers.html#camply.containers.data_containers.AvailableCampsite.campsite_id">(camply.containers.data_containers.AvailableCampsite attribute)</a>
 </li>
       </ul></li>
@@ -918,6 +955,8 @@
         <li><a href="api/camply.config.html#camply.config.DataColumns.CAMPSITE_OCCUPANCY_COLUMN">(camply.config.DataColumns attribute)</a>
 </li>
       </ul></li>
+      <li><a href="api/camply.containers.api_responses.html#camply.containers.api_responses.RecDotGovCampsite.campsite_reserve_type">campsite_reserve_type (camply.containers.api_responses.RecDotGovCampsite attribute)</a>
+</li>
       <li><a href="api/camply.html#camply.AvailableCampsite.campsite_site_name">campsite_site_name (camply.AvailableCampsite attribute)</a>
 
       <ul>
@@ -987,7 +1026,11 @@
       <li><a href="api/camply.containers.api_responses.html#camply.containers.api_responses.CampsiteResponse.CampsiteReservable">CampsiteReservable (camply.containers.api_responses.CampsiteResponse attribute)</a>
 </li>
       <li><a href="api/camply.containers.api_responses.html#camply.containers.api_responses.CampsiteAvailabilityResponse.campsites">campsites (camply.containers.api_responses.CampsiteAvailabilityResponse attribute)</a>
+
+      <ul>
+        <li><a href="api/camply.containers.api_responses.html#camply.containers.api_responses.RecDotGovCampsiteResponse.campsites">(camply.containers.api_responses.RecDotGovCampsiteResponse attribute)</a>
 </li>
+      </ul></li>
       <li><a href="api/camply.search.base_search.html#camply.search.base_search.BaseCampingSearch.campsites_to_df">campsites_to_df() (camply.search.base_search.BaseCampingSearch static method)</a>
 
       <ul>
@@ -1006,9 +1049,13 @@
       </ul></li>
       <li><a href="api/camply.utils.configure_camply.html#camply.utils.configure_camply.check_dot_camply_file">check_dot_camply_file() (in module camply.utils.configure_camply)</a>
 </li>
+      <li><a href="api/camply.containers.api_responses.html#camply.containers.api_responses.RecDotGovCampsite.city">city (camply.containers.api_responses.RecDotGovCampsite attribute)</a>
+</li>
       <li><a href="api/camply.cli.html#camply.cli.cli">cli() (in module camply.cli)</a>
 </li>
       <li><a href="api/camply.containers.api_responses.html#camply.containers.api_responses.XantRates.code">code (camply.containers.api_responses.XantRates attribute)</a>
+</li>
+      <li><a href="api/camply.containers.api_responses.html#camply.containers.api_responses.RecDotGovCampsite.country_code">country_code (camply.containers.api_responses.RecDotGovCampsite attribute)</a>
 </li>
       <li><a href="api/camply.containers.api_responses.html#camply.containers.api_responses.CampsiteResponse.CreatedDate">CreatedDate (camply.containers.api_responses.CampsiteResponse attribute)</a>
 </li>
@@ -1192,6 +1239,8 @@
         <li><a href="api/camply.config.notification_config.html#camply.config.notification_config.EmailConfig.ENVIRONMENT_VARIABLE_NAMES">(camply.config.notification_config.EmailConfig attribute)</a>
 </li>
       </ul></li>
+      <li><a href="api/camply.containers.base_container.html#camply.containers.base_container.RecDotGovEquipment.equipment_name">equipment_name (camply.containers.base_container.RecDotGovEquipment attribute)</a>
+</li>
       <li><a href="api/camply.config.search_config.html#camply.config.search_config.SearchConfig.ERROR_MESSAGE">ERROR_MESSAGE (camply.config.search_config.SearchConfig attribute)</a>
 
       <ul>
@@ -1320,6 +1369,8 @@
 </li>
       <li><a href="api/camply.containers.api_responses.html#camply.containers.api_responses.FacilityResponse.FacilityTypeDescription">FacilityTypeDescription (camply.containers.api_responses.FacilityResponse attribute)</a>
 </li>
+      <li><a href="api/camply.containers.api_responses.html#camply.containers.api_responses.RecDotGovCampsite.fee_templates">fee_templates (camply.containers.api_responses.RecDotGovCampsite attribute)</a>
+</li>
       <li><a href="api/camply.config.html#camply.config.FileConfig">FileConfig (class in camply.config)</a>
 
       <ul>
@@ -1332,7 +1383,7 @@
         <li><a href="api/camply.utils.api_utils.html#camply.utils.api_utils.filter_json">(in module camply.utils.api_utils)</a>
 </li>
       </ul></li>
-      <li><a href="api/camply.providers.recreation_dot_gov.campsite_search.html#camply.providers.recreation_dot_gov.campsite_search.RecreationDotGov.find_campgrounds">find_campgrounds() (camply.providers.recreation_dot_gov.campsite_search.RecreationDotGov method)</a>
+      <li><a href="api/camply.providers.recreation_dot_gov.recdotgov_provider.html#camply.providers.recreation_dot_gov.recdotgov_provider.RecreationDotGov.find_campgrounds">find_campgrounds() (camply.providers.recreation_dot_gov.recdotgov_provider.RecreationDotGov method)</a>
 
       <ul>
         <li><a href="api/camply.providers.html#camply.providers.RecreationDotGov.find_campgrounds">(camply.providers.RecreationDotGov method)</a>
@@ -1340,7 +1391,7 @@
         <li><a href="api/camply.html#camply.RecreationDotGov.find_campgrounds">(camply.RecreationDotGov method)</a>
 </li>
       </ul></li>
-      <li><a href="api/camply.providers.recreation_dot_gov.campsite_search.html#camply.providers.recreation_dot_gov.campsite_search.RecreationDotGov.find_facilities_per_recreation_area">find_facilities_per_recreation_area() (camply.providers.recreation_dot_gov.campsite_search.RecreationDotGov method)</a>
+      <li><a href="api/camply.providers.recreation_dot_gov.recdotgov_provider.html#camply.providers.recreation_dot_gov.recdotgov_provider.RecreationDotGov.find_facilities_per_recreation_area">find_facilities_per_recreation_area() (camply.providers.recreation_dot_gov.recdotgov_provider.RecreationDotGov method)</a>
 
       <ul>
         <li><a href="api/camply.providers.html#camply.providers.RecreationDotGov.find_facilities_per_recreation_area">(camply.providers.RecreationDotGov method)</a>
@@ -1348,7 +1399,7 @@
         <li><a href="api/camply.html#camply.RecreationDotGov.find_facilities_per_recreation_area">(camply.RecreationDotGov method)</a>
 </li>
       </ul></li>
-      <li><a href="api/camply.providers.recreation_dot_gov.campsite_search.html#camply.providers.recreation_dot_gov.campsite_search.RecreationDotGov.find_recreation_areas">find_recreation_areas() (camply.providers.recreation_dot_gov.campsite_search.RecreationDotGov method)</a>
+      <li><a href="api/camply.providers.recreation_dot_gov.recdotgov_provider.html#camply.providers.recreation_dot_gov.recdotgov_provider.RecreationDotGov.find_recreation_areas">find_recreation_areas() (camply.providers.recreation_dot_gov.recdotgov_provider.RecreationDotGov method)</a>
 
       <ul>
         <li><a href="api/camply.providers.html#camply.providers.RecreationDotGov.find_recreation_areas">(camply.providers.RecreationDotGov method)</a>
@@ -1390,7 +1441,7 @@
         <li><a href="api/camply.html#camply.SearchYellowstone.get_all_campsites">(camply.SearchYellowstone method)</a>
 </li>
       </ul></li>
-      <li><a href="api/camply.providers.recreation_dot_gov.campsite_search.html#camply.providers.recreation_dot_gov.campsite_search.RecreationDotGov.get_campground_ids_by_campsites">get_campground_ids_by_campsites() (camply.providers.recreation_dot_gov.campsite_search.RecreationDotGov method)</a>
+      <li><a href="api/camply.providers.recreation_dot_gov.recdotgov_provider.html#camply.providers.recreation_dot_gov.recdotgov_provider.RecreationDotGov.get_campground_ids_by_campsites">get_campground_ids_by_campsites() (camply.providers.recreation_dot_gov.recdotgov_provider.RecreationDotGov method)</a>
 
       <ul>
         <li><a href="api/camply.providers.html#camply.providers.RecreationDotGov.get_campground_ids_by_campsites">(camply.providers.RecreationDotGov method)</a>
@@ -1398,9 +1449,7 @@
         <li><a href="api/camply.html#camply.RecreationDotGov.get_campground_ids_by_campsites">(camply.RecreationDotGov method)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api/camply.providers.recreation_dot_gov.campsite_search.html#camply.providers.recreation_dot_gov.campsite_search.RecreationDotGov.get_campsite_by_id">get_campsite_by_id() (camply.providers.recreation_dot_gov.campsite_search.RecreationDotGov method)</a>
+      <li><a href="api/camply.providers.recreation_dot_gov.recdotgov_provider.html#camply.providers.recreation_dot_gov.recdotgov_provider.RecreationDotGov.get_campsite_by_id">get_campsite_by_id() (camply.providers.recreation_dot_gov.recdotgov_provider.RecreationDotGov method)</a>
 
       <ul>
         <li><a href="api/camply.providers.html#camply.providers.RecreationDotGov.get_campsite_by_id">(camply.providers.RecreationDotGov method)</a>
@@ -1408,6 +1457,8 @@
         <li><a href="api/camply.html#camply.RecreationDotGov.get_campsite_by_id">(camply.RecreationDotGov method)</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/camply.containers.data_containers.html#camply.containers.data_containers.SearchWindow.get_date_range">get_date_range() (camply.containers.data_containers.SearchWindow method)</a>
 
       <ul>
@@ -1418,6 +1469,14 @@
       </ul></li>
       <li><a href="api/camply.utils.logging_utils.html#camply.utils.logging_utils.get_emoji">get_emoji() (in module camply.utils.logging_utils)</a>
 </li>
+      <li><a href="api/camply.providers.recreation_dot_gov.recdotgov_provider.html#camply.providers.recreation_dot_gov.recdotgov_provider.RecreationDotGov.get_internal_campsite_metadata">get_internal_campsite_metadata() (camply.providers.recreation_dot_gov.recdotgov_provider.RecreationDotGov method)</a>
+
+      <ul>
+        <li><a href="api/camply.providers.html#camply.providers.RecreationDotGov.get_internal_campsite_metadata">(camply.providers.RecreationDotGov method)</a>
+</li>
+        <li><a href="api/camply.html#camply.RecreationDotGov.get_internal_campsite_metadata">(camply.RecreationDotGov method)</a>
+</li>
+      </ul></li>
       <li><a href="api/camply.search.base_search.html#camply.search.base_search.BaseCampingSearch.get_matching_campsites">get_matching_campsites() (camply.search.base_search.BaseCampingSearch method)</a>
 
       <ul>
@@ -1432,12 +1491,20 @@
         <li><a href="api/camply.html#camply.YellowstoneLodging.get_monthly_campsites">(camply.YellowstoneLodging method)</a>
 </li>
       </ul></li>
-      <li><a href="api/camply.providers.recreation_dot_gov.campsite_search.html#camply.providers.recreation_dot_gov.campsite_search.RecreationDotGov.get_recdotgov_data">get_recdotgov_data() (camply.providers.recreation_dot_gov.campsite_search.RecreationDotGov method)</a>
+      <li><a href="api/camply.providers.recreation_dot_gov.recdotgov_provider.html#camply.providers.recreation_dot_gov.recdotgov_provider.RecreationDotGov.get_recdotgov_data">get_recdotgov_data() (camply.providers.recreation_dot_gov.recdotgov_provider.RecreationDotGov method)</a>
 
       <ul>
         <li><a href="api/camply.providers.html#camply.providers.RecreationDotGov.get_recdotgov_data">(camply.providers.RecreationDotGov method)</a>
 </li>
         <li><a href="api/camply.html#camply.RecreationDotGov.get_recdotgov_data">(camply.RecreationDotGov method)</a>
+</li>
+      </ul></li>
+      <li><a href="api/camply.providers.recreation_dot_gov.recdotgov_provider.html#camply.providers.recreation_dot_gov.recdotgov_provider.RecreationDotGov.get_ridb_data">get_ridb_data() (camply.providers.recreation_dot_gov.recdotgov_provider.RecreationDotGov method)</a>
+
+      <ul>
+        <li><a href="api/camply.providers.html#camply.providers.RecreationDotGov.get_ridb_data">(camply.providers.RecreationDotGov method)</a>
+</li>
+        <li><a href="api/camply.html#camply.RecreationDotGov.get_ridb_data">(camply.RecreationDotGov method)</a>
 </li>
       </ul></li>
   </ul></td>
@@ -1476,6 +1543,8 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/camply.containers.api_responses.html#camply.containers.api_responses.CampsiteResponse.LastUpdatedDate">LastUpdatedDate (camply.containers.api_responses.CampsiteResponse attribute)</a>
 </li>
+      <li><a href="api/camply.containers.api_responses.html#camply.containers.api_responses.RecDotGovCampsite.latitude">latitude (camply.containers.api_responses.RecDotGovCampsite attribute)</a>
+</li>
       <li><a href="api/camply.config.yellowstone_config.html#camply.config.yellowstone_config.YellowstoneConfig.LODGING_BASE_PRICES">LODGING_BASE_PRICES (camply.config.yellowstone_config.YellowstoneConfig attribute)</a>
 
       <ul>
@@ -1506,14 +1575,14 @@
         <li><a href="api/camply.config.html#camply.config.YellowstoneConfig.LODGING_OCCUPANCY_MAX">(camply.config.YellowstoneConfig attribute)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/camply.config.yellowstone_config.html#camply.config.yellowstone_config.YellowstoneConfig.LODGING_PATH">LODGING_PATH (camply.config.yellowstone_config.YellowstoneConfig attribute)</a>
 
       <ul>
         <li><a href="api/camply.config.html#camply.config.YellowstoneConfig.LODGING_PATH">(camply.config.YellowstoneConfig attribute)</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/camply.config.yellowstone_config.html#camply.config.yellowstone_config.YellowstoneConfig.LODGING_RATES">LODGING_RATES (camply.config.yellowstone_config.YellowstoneConfig attribute)</a>
 
       <ul>
@@ -1540,7 +1609,11 @@
       </ul></li>
       <li><a href="api/camply.utils.logging_utils.html#camply.utils.logging_utils.log_sorted_response">log_sorted_response() (in module camply.utils.logging_utils)</a>
 </li>
+      <li><a href="api/camply.containers.api_responses.html#camply.containers.api_responses.RecDotGovCampsite.longitude">longitude (camply.containers.api_responses.RecDotGovCampsite attribute)</a>
+</li>
       <li><a href="api/camply.containers.api_responses.html#camply.containers.api_responses.CampsiteResponse.Loop">Loop (camply.containers.api_responses.CampsiteResponse attribute)</a>
+</li>
+      <li><a href="api/camply.containers.api_responses.html#camply.containers.api_responses.RecDotGovCampsite.loop">loop (camply.containers.api_responses.RecDotGovCampsite attribute)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -1558,6 +1631,14 @@
         <li><a href="api/camply.utils.general_utils.html#camply.utils.general_utils.make_list">(in module camply.utils.general_utils)</a>
 </li>
       </ul></li>
+      <li><a href="api/camply.providers.recreation_dot_gov.recdotgov_provider.html#camply.providers.recreation_dot_gov.recdotgov_provider.RecreationDotGov.make_recdotgov_request">make_recdotgov_request() (camply.providers.recreation_dot_gov.recdotgov_provider.RecreationDotGov class method)</a>
+
+      <ul>
+        <li><a href="api/camply.providers.html#camply.providers.RecreationDotGov.make_recdotgov_request">(camply.providers.RecreationDotGov class method)</a>
+</li>
+        <li><a href="api/camply.html#camply.RecreationDotGov.make_recdotgov_request">(camply.RecreationDotGov class method)</a>
+</li>
+      </ul></li>
       <li><a href="api/camply.providers.xanterra.yellowstone_lodging.html#camply.providers.xanterra.yellowstone_lodging.YellowstoneLodging.make_yellowstone_request">make_yellowstone_request() (camply.providers.xanterra.yellowstone_lodging.YellowstoneLodging static method)</a>
 
       <ul>
@@ -1567,6 +1648,8 @@
 </li>
       </ul></li>
       <li><a href="api/camply.containers.api_responses.html#camply.containers.api_responses.XantCampgroundDetails.max">max (camply.containers.api_responses.XantCampgroundDetails attribute)</a>
+</li>
+      <li><a href="api/camply.containers.base_container.html#camply.containers.base_container.RecDotGovEquipment.max_length">max_length (camply.containers.base_container.RecDotGovEquipment attribute)</a>
 </li>
       <li><a href="api/camply.config.search_config.html#camply.config.search_config.SearchConfig.MAXIMUM_NOTIFICATION_BATCH_SIZE">MAXIMUM_NOTIFICATION_BATCH_SIZE (camply.config.search_config.SearchConfig attribute)</a>
 
@@ -1652,7 +1735,7 @@
 </li>
         <li><a href="api/camply.providers.recreation_dot_gov.html#module-camply.providers.recreation_dot_gov">camply.providers.recreation_dot_gov</a>
 </li>
-        <li><a href="api/camply.providers.recreation_dot_gov.campsite_search.html#module-camply.providers.recreation_dot_gov.campsite_search">camply.providers.recreation_dot_gov.campsite_search</a>
+        <li><a href="api/camply.providers.recreation_dot_gov.recdotgov_provider.html#module-camply.providers.recreation_dot_gov.recdotgov_provider">camply.providers.recreation_dot_gov.recdotgov_provider</a>
 </li>
         <li><a href="api/camply.providers.xanterra.html#module-camply.providers.xanterra">camply.providers.xanterra</a>
 </li>
@@ -1693,7 +1776,13 @@
 <h2 id="N">N</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/camply.containers.api_responses.html#camply.containers.api_responses.RecDotGovCampsite.name">name (camply.containers.api_responses.RecDotGovCampsite attribute)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/camply.notifications.base_notifications.html#camply.notifications.base_notifications.NotificationError">NotificationError</a>
+</li>
+      <li><a href="api/camply.containers.api_responses.html#camply.containers.api_responses.RecDotGovCampsite.number_of_ratings">number_of_ratings (camply.containers.api_responses.RecDotGovCampsite attribute)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -1708,11 +1797,31 @@
 </li>
       </ul></li>
   </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/camply.containers.api_responses.html#camply.containers.api_responses.RecDotGovCampsite.org_id">org_id (camply.containers.api_responses.RecDotGovCampsite attribute)</a>
+</li>
+      <li><a href="api/camply.containers.api_responses.html#camply.containers.api_responses.RecDotGovCampsite.org_name">org_name (camply.containers.api_responses.RecDotGovCampsite attribute)</a>
+</li>
+  </ul></td>
 </tr></table>
 
 <h2 id="P">P</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/camply.providers.recreation_dot_gov.recdotgov_provider.html#camply.providers.recreation_dot_gov.recdotgov_provider.RecreationDotGov.paginate_recdotgov_campsites">paginate_recdotgov_campsites() (camply.providers.recreation_dot_gov.recdotgov_provider.RecreationDotGov method)</a>
+
+      <ul>
+        <li><a href="api/camply.providers.html#camply.providers.RecreationDotGov.paginate_recdotgov_campsites">(camply.providers.RecreationDotGov method)</a>
+</li>
+        <li><a href="api/camply.html#camply.RecreationDotGov.paginate_recdotgov_campsites">(camply.RecreationDotGov method)</a>
+</li>
+      </ul></li>
+      <li><a href="api/camply.containers.api_responses.html#camply.containers.api_responses.RecDotGovCampsite.parent_asset_id">parent_asset_id (camply.containers.api_responses.RecDotGovCampsite attribute)</a>
+</li>
+      <li><a href="api/camply.containers.api_responses.html#camply.containers.api_responses.RecDotGovCampsite.parent_asset_name">parent_asset_name (camply.containers.api_responses.RecDotGovCampsite attribute)</a>
+</li>
+      <li><a href="api/camply.containers.api_responses.html#camply.containers.api_responses.RecDotGovCampsite.parent_asset_type">parent_asset_type (camply.containers.api_responses.RecDotGovCampsite attribute)</a>
+</li>
       <li><a href="api/camply.containers.api_responses.html#camply.containers.api_responses.XantRates.parse_datetime">parse_datetime() (camply.containers.api_responses.XantRates class method)</a>
 
       <ul>
@@ -1721,6 +1830,16 @@
       </ul></li>
       <li><a href="api/camply.containers.api_responses.html#camply.containers.api_responses.XantCampgroundDetails.perGuests">perGuests (camply.containers.api_responses.XantCampgroundDetails attribute)</a>
 </li>
+      <li><a href="api/camply.html#camply.AvailableCampsite.permitted_equipment">permitted_equipment (camply.AvailableCampsite attribute)</a>
+
+      <ul>
+        <li><a href="api/camply.containers.api_responses.html#camply.containers.api_responses.RecDotGovCampsite.permitted_equipment">(camply.containers.api_responses.RecDotGovCampsite attribute)</a>
+</li>
+        <li><a href="api/camply.containers.html#camply.containers.AvailableCampsite.permitted_equipment">(camply.containers.AvailableCampsite attribute)</a>
+</li>
+        <li><a href="api/camply.containers.data_containers.html#camply.containers.data_containers.AvailableCampsite.permitted_equipment">(camply.containers.data_containers.AvailableCampsite attribute)</a>
+</li>
+      </ul></li>
       <li><a href="api/camply.containers.api_responses.html#camply.containers.api_responses.CampsiteResponse.PERMITTEDEQUIPMENT">PERMITTEDEQUIPMENT (camply.containers.api_responses.CampsiteResponse attribute)</a>
 </li>
       <li><a href="api/camply.config.search_config.html#camply.config.search_config.SearchConfig.POLLING_INTERVAL_MINIMUM">POLLING_INTERVAL_MINIMUM (camply.config.search_config.SearchConfig attribute)</a>
@@ -1729,6 +1848,8 @@
         <li><a href="api/camply.config.html#camply.config.SearchConfig.POLLING_INTERVAL_MINIMUM">(camply.config.SearchConfig attribute)</a>
 </li>
       </ul></li>
+      <li><a href="api/camply.containers.api_responses.html#camply.containers.api_responses.RecDotGovCampsite.preview_image_url">preview_image_url (camply.containers.api_responses.RecDotGovCampsite attribute)</a>
+</li>
       <li><a href="api/camply.search.search_yellowstone.html#camply.search.search_yellowstone.SearchYellowstone.print_campgrounds">print_campgrounds() (camply.search.search_yellowstone.SearchYellowstone static method)</a>
 
       <ul>
@@ -1737,7 +1858,7 @@
         <li><a href="api/camply.html#camply.SearchYellowstone.print_campgrounds">(camply.SearchYellowstone static method)</a>
 </li>
       </ul></li>
-      <li><a href="api/camply.providers.recreation_dot_gov.campsite_search.html#camply.providers.recreation_dot_gov.campsite_search.RecreationDotGov.process_campsite_availability">process_campsite_availability() (camply.providers.recreation_dot_gov.campsite_search.RecreationDotGov class method)</a>
+      <li><a href="api/camply.providers.recreation_dot_gov.recdotgov_provider.html#camply.providers.recreation_dot_gov.recdotgov_provider.RecreationDotGov.process_campsite_availability">process_campsite_availability() (camply.providers.recreation_dot_gov.recdotgov_provider.RecreationDotGov class method)</a>
 
       <ul>
         <li><a href="api/camply.providers.html#camply.providers.RecreationDotGov.process_campsite_availability">(camply.providers.RecreationDotGov class method)</a>
@@ -1745,7 +1866,9 @@
         <li><a href="api/camply.html#camply.RecreationDotGov.process_campsite_availability">(camply.RecreationDotGov class method)</a>
 </li>
       </ul></li>
-      <li><a href="api/camply.providers.recreation_dot_gov.campsite_search.html#camply.providers.recreation_dot_gov.campsite_search.RecreationDotGov.process_facilities_responses">process_facilities_responses() (camply.providers.recreation_dot_gov.campsite_search.RecreationDotGov class method)</a>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/camply.providers.recreation_dot_gov.recdotgov_provider.html#camply.providers.recreation_dot_gov.recdotgov_provider.RecreationDotGov.process_facilities_responses">process_facilities_responses() (camply.providers.recreation_dot_gov.recdotgov_provider.RecreationDotGov class method)</a>
 
       <ul>
         <li><a href="api/camply.providers.html#camply.providers.RecreationDotGov.process_facilities_responses">(camply.providers.RecreationDotGov class method)</a>
@@ -1757,8 +1880,6 @@
 </li>
       <li><a href="api/camply.providers.base_provider.html#camply.providers.base_provider.ProviderSearchError">ProviderSearchError</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/camply.config.notification_config.html#camply.config.notification_config.PushoverConfig.PUSH_TOKEN">PUSH_TOKEN (camply.config.notification_config.PushoverConfig attribute)</a>
 
       <ul>
@@ -1920,10 +2041,12 @@
       <ul>
         <li><a href="api/camply.providers.html#camply.providers.RecreationDotGov">(class in camply.providers)</a>
 </li>
-        <li><a href="api/camply.providers.recreation_dot_gov.campsite_search.html#camply.providers.recreation_dot_gov.campsite_search.RecreationDotGov">(class in camply.providers.recreation_dot_gov.campsite_search)</a>
+        <li><a href="api/camply.providers.recreation_dot_gov.recdotgov_provider.html#camply.providers.recreation_dot_gov.recdotgov_provider.RecreationDotGov">(class in camply.providers.recreation_dot_gov.recdotgov_provider)</a>
 </li>
       </ul></li>
       <li><a href="api/camply.containers.api_responses.html#camply.containers.api_responses.FacilityResponse.Reservable">Reservable (camply.containers.api_responses.FacilityResponse attribute)</a>
+</li>
+      <li><a href="api/camply.containers.api_responses.html#camply.containers.api_responses.RecDotGovCampsite.reservable">reservable (camply.containers.api_responses.RecDotGovCampsite attribute)</a>
 </li>
       <li><a href="api/camply.config.api_config.html#camply.config.api_config.RIDBConfig.RIDB_BASE_PATH">RIDB_BASE_PATH (camply.config.api_config.RIDBConfig attribute)</a>
 
@@ -2051,8 +2174,16 @@
         <li><a href="api/camply.notifications.silent_notifications.html#camply.notifications.silent_notifications.SilentNotifications">(class in camply.notifications.silent_notifications)</a>
 </li>
       </ul></li>
-      <li><a href="api/camply.containers.api_responses.html#camply.containers.api_responses.XantRates.start">start (camply.containers.api_responses.XantRates attribute)</a>
+      <li><a href="api/camply.containers.api_responses.html#camply.containers.api_responses.RecDotGovCampsiteResponse.size">size (camply.containers.api_responses.RecDotGovCampsiteResponse attribute)</a>
 </li>
+      <li><a href="api/camply.containers.api_responses.html#camply.containers.api_responses.RecDotGovCampsiteResponse.spelling_autocorrected">spelling_autocorrected (camply.containers.api_responses.RecDotGovCampsiteResponse attribute)</a>
+</li>
+      <li><a href="api/camply.containers.api_responses.html#camply.containers.api_responses.RecDotGovCampsiteResponse.start">start (camply.containers.api_responses.RecDotGovCampsiteResponse attribute)</a>
+
+      <ul>
+        <li><a href="api/camply.containers.api_responses.html#camply.containers.api_responses.XantRates.start">(camply.containers.api_responses.XantRates attribute)</a>
+</li>
+      </ul></li>
       <li><a href="api/camply.containers.data_containers.html#camply.containers.data_containers.SearchWindow.start_date">start_date (camply.containers.data_containers.SearchWindow attribute)</a>
 
       <ul>
@@ -2061,6 +2192,8 @@
         <li><a href="api/camply.html#camply.SearchWindow.start_date">(camply.SearchWindow attribute)</a>
 </li>
       </ul></li>
+      <li><a href="api/camply.containers.api_responses.html#camply.containers.api_responses.RecDotGovCampsite.state_code">state_code (camply.containers.api_responses.RecDotGovCampsite attribute)</a>
+</li>
       <li><a href="api/camply.containers.api_responses.html#camply.containers.api_responses.XantCampgroundDetails.status">status (camply.containers.api_responses.XantCampgroundDetails attribute)</a>
 </li>
   </ul></td>
@@ -2084,6 +2217,12 @@
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/camply.containers.api_responses.html#camply.containers.api_responses.XantRates.title">title (camply.containers.api_responses.XantRates attribute)</a>
+</li>
+      <li><a href="api/camply.containers.api_responses.html#camply.containers.api_responses.RecDotGovCampsiteResponse.total">total (camply.containers.api_responses.RecDotGovCampsiteResponse attribute)</a>
+</li>
+      <li><a href="api/camply.containers.api_responses.html#camply.containers.api_responses.RecDotGovCampsite.type">type (camply.containers.api_responses.RecDotGovCampsite attribute)</a>
+</li>
+      <li><a href="api/camply.containers.api_responses.html#camply.containers.api_responses.RecDotGovCampsite.type_of_use">type_of_use (camply.containers.api_responses.RecDotGovCampsite attribute)</a>
 </li>
       <li><a href="api/camply.containers.api_responses.html#camply.containers.api_responses.CampsiteResponse.TypeOfUse">TypeOfUse (camply.containers.api_responses.CampsiteResponse attribute)</a>
 </li>

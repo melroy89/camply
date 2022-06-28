@@ -7,7 +7,7 @@ Submodules
 .. toctree::
    :maxdepth: 4
 
-   camply.providers.recreation_dot_gov.campsite_search
+   camply.providers.recreation_dot_gov.recdotgov_provider
 
 Module contents
 ---------------

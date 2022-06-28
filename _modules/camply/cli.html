@@ -321,6 +321,13 @@
     <span class="s2">&quot;pass a file path to a YAML configuration file. See the documentation &quot;</span>
     <span class="s2">&quot;for more information on how to structure your configuration file.&quot;</span><span class="p">,</span>
 <span class="p">)</span>
+<span class="n">equipment_argument</span> <span class="o">=</span> <span class="n">click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span>
+    <span class="s2">&quot;--equipment&quot;</span><span class="p">,</span>
+    <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">multiple</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Search for campsites compatible with your camping equipment. Accepted values &quot;</span>
+    <span class="s2">&quot;are `Tent`, `RV`, and `Trailer`. Defaults to any equipment.&quot;</span><span class="p">,</span>
+<span class="p">)</span>
 
 
 <span class="k">def</span> <span class="nf">_validate_campsites</span><span class="p">(</span>
@@ -368,6 +375,7 @@
 <span class="nd">@polling_interval_argument</span>
 <span class="nd">@continuous_argument</span>
 <span class="nd">@provider_argument</span>
+<span class="nd">@equipment_argument</span>
 <span class="nd">@nights_argument</span>
 <span class="nd">@weekends_argument</span>
 <span class="nd">@end_date_argument</span>
@@ -391,6 +399,7 @@
     <span class="n">notify_first_try</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
     <span class="n">search_forever</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
     <span class="n">yml_config</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">equipment</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Find available Campsites using search criteria</span>
@@ -436,6 +445,7 @@
             <span class="n">campsites</span><span class="o">=</span><span class="n">make_list</span><span class="p">(</span><span class="n">campsite</span><span class="p">),</span>
             <span class="n">weekends_only</span><span class="o">=</span><span class="n">weekends</span><span class="p">,</span>
             <span class="n">nights</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">nights</span><span class="p">),</span>
+            <span class="n">equipment</span><span class="o">=</span><span class="n">make_list</span><span class="p">(</span><span class="n">equipment</span><span class="p">),</span>
         <span class="p">)</span>
         <span class="n">search_kwargs</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
             <span class="n">log</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>

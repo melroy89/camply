@@ -94,6 +94,7 @@
 <span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span>
 <span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Generator</span><span class="p">,</span> <span class="n">Iterable</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Set</span><span class="p">,</span> <span class="n">Union</span>
 
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">tenacity</span>
 <span class="kn">from</span> <span class="nn">pandas</span> <span class="kn">import</span> <span class="n">DataFrame</span><span class="p">,</span> <span class="n">Series</span><span class="p">,</span> <span class="n">Timedelta</span><span class="p">,</span> <span class="n">Timestamp</span><span class="p">,</span> <span class="n">concat</span><span class="p">,</span> <span class="n">date_range</span>
 
@@ -208,17 +209,17 @@
         <span class="p">)</span>
         <span class="k">return</span> <span class="n">intersection</span>
 
-    <span class="k">def</span> <span class="nf">_filter_date_overlap</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">campsites</span><span class="p">:</span> <span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">_filter_date_overlap</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">campsites</span><span class="p">:</span> <span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        See whether a campsite should be returned as found</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
-<span class="sd">        campsites: DataFrame</span>
+<span class="sd">        campsites: pd.DataFrame</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
-<span class="sd">        DataFrame</span>
+<span class="sd">        pd.DataFrame</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">matches</span> <span class="o">=</span> <span class="n">campsites</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span>
             <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_intersection_date_overlap</span><span class="p">(</span>
@@ -699,6 +700,9 @@
 <span class="sd">        -------</span>
 <span class="sd">        DataFrame</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">duplicate_subset</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">dataframe</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span> <span class="o">-</span> <span class="nb">set</span><span class="p">(</span>
+            <span class="n">AvailableCampsite</span><span class="o">.</span><span class="n">__unhashable__</span>
+        <span class="p">)</span>
         <span class="n">dataframe_slice</span> <span class="o">=</span> <span class="n">dataframe</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
         <span class="n">nights_indexes</span> <span class="o">=</span> <span class="n">dataframe_slice</span><span class="o">.</span><span class="n">booking_date</span><span class="o">.</span><span class="n">index</span>
         <span class="n">consecutive_generator</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_consecutive_subseq</span><span class="p">(</span>
@@ -715,7 +719,7 @@
             <span class="n">data_copy</span><span class="o">.</span><span class="n">booking_nights</span> <span class="o">=</span> <span class="p">(</span>
                 <span class="n">data_copy</span><span class="o">.</span><span class="n">booking_end_date</span> <span class="o">-</span> <span class="n">data_copy</span><span class="o">.</span><span class="n">booking_date</span>
             <span class="p">)</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">days</span>
-            <span class="n">data_copy</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="n">data_copy</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">subset</span><span class="o">=</span><span class="n">duplicate_subset</span><span class="p">)</span>
             <span class="n">concatted_data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">data_copy</span><span class="p">)</span>
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">concatted_data</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
             <span class="n">concatted_data</span> <span class="o">=</span> <span class="p">[</span><span class="n">DataFrame</span><span class="p">()]</span>

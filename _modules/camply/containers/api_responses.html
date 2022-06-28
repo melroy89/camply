@@ -93,7 +93,11 @@
 <span class="kn">from</span> <span class="nn">pydantic</span> <span class="kn">import</span> <span class="n">validator</span>
 
 <span class="kn">from</span> <span class="nn">camply.config.api_config</span> <span class="kn">import</span> <span class="n">RecreationBookingConfig</span>
-<span class="kn">from</span> <span class="nn">camply.containers.base_container</span> <span class="kn">import</span> <span class="n">CamplyModel</span>
+<span class="kn">from</span> <span class="nn">camply.containers.base_container</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">CamplyModel</span><span class="p">,</span>
+    <span class="n">RecDotGovAttribute</span><span class="p">,</span>
+    <span class="n">RecDotGovEquipment</span><span class="p">,</span>
+<span class="p">)</span>
 
 
 <span class="k">class</span> <span class="nc">_CampsiteEquipment</span><span class="p">(</span><span class="n">CamplyModel</span><span class="p">):</span>
@@ -324,6 +328,51 @@
             <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="s2">&quot;%m/</span><span class="si">%d</span><span class="s2">/%Y&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">date</span><span class="p">():</span> <span class="n">y</span>
             <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">value</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
         <span class="p">}</span></div></div>
+
+
+<div class="viewcode-block" id="RecDotGovCampsite"><a class="viewcode-back" href="../../../api/camply.containers.api_responses.html#camply.containers.api_responses.RecDotGovCampsite">[docs]</a><span class="k">class</span> <span class="nc">RecDotGovCampsite</span><span class="p">(</span><span class="n">CamplyModel</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Recreation.gov Campsite Object</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">accessible</span><span class="p">:</span> <span class="nb">bool</span>
+    <span class="n">asset_id</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">asset_type</span> <span class="o">=</span> <span class="nb">str</span>
+    <span class="n">attributes</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">RecDotGovAttribute</span><span class="p">]</span>
+    <span class="n">average_rating</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span>
+    <span class="n">campsite_id</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">campsite_reserve_type</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">city</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
+    <span class="n">country_code</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
+    <span class="n">fee_templates</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span>
+    <span class="n">latitude</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span>
+    <span class="n">longitude</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span>
+    <span class="n">loop</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">number_of_ratings</span> <span class="o">=</span> <span class="nb">int</span>
+    <span class="n">org_id</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">org_name</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">parent_asset_id</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">parent_asset_name</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">parent_asset_type</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">permitted_equipment</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">RecDotGovEquipment</span><span class="p">]</span>
+    <span class="n">preview_image_url</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
+    <span class="n">reservable</span><span class="p">:</span> <span class="nb">bool</span>
+    <span class="n">state_code</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
+    <span class="nb">type</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">type_of_use</span><span class="p">:</span> <span class="nb">str</span></div>
+
+
+<div class="viewcode-block" id="RecDotGovCampsiteResponse"><a class="viewcode-back" href="../../../api/camply.containers.api_responses.html#camply.containers.api_responses.RecDotGovCampsiteResponse">[docs]</a><span class="k">class</span> <span class="nc">RecDotGovCampsiteResponse</span><span class="p">(</span><span class="n">CamplyModel</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Parent Response from Campsite Metadata</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">campsites</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">RecDotGovCampsite</span><span class="p">]</span>
+    <span class="n">size</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">spelling_autocorrected</span><span class="p">:</span> <span class="n">Any</span>
+    <span class="n">start</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">total</span><span class="p">:</span> <span class="nb">int</span></div>
 </pre></div>
 
            </div>
