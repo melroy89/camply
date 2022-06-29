@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>camply.config.search_config &mdash; camply 0.4.1 documentation</title>
+  <title>camply.config.search_config &mdash; camply 0.4.2 documentation</title>
       <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/autodoc_pydantic.css" type="text/css" />
@@ -33,7 +33,7 @@
             <a href="../../../index.html" class="icon icon-home"> camply
           </a>
               <div class="version">
-                0.4.1
+                0.4.2
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
@@ -85,8 +85,12 @@
 <span class="sd">Project Configuration for Yellowstone Variables</span>
 <span class="sd">&quot;&quot;&quot;</span>
 
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">OrderedDict</span>
+<span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">Enum</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Dict</span>
 
-<div class="viewcode-block" id="SearchConfig"><a class="viewcode-back" href="../../../api/camply.config.search_config.html#camply.config.SearchConfig">[docs]</a><span class="k">class</span> <span class="nc">SearchConfig</span><span class="p">:</span>
+
+<div class="viewcode-block" id="SearchConfig"><a class="viewcode-back" href="../../../api/camply.config.search_config.html#camply.SearchConfig">[docs]</a><span class="k">class</span> <span class="nc">SearchConfig</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    File Path Storage Class</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -96,6 +100,52 @@
     <span class="n">ERROR_MESSAGE</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;No search days configured. Exiting&quot;</span>
     <span class="n">MINIMUM_CAMPSITES_FIRST_NOTIFY</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">5</span>
     <span class="n">MAXIMUM_NOTIFICATION_BATCH_SIZE</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">20</span></div>
+
+
+<div class="viewcode-block" id="EquipmentOptions"><a class="viewcode-back" href="../../../api/camply.config.search_config.html#camply.EquipmentOptions">[docs]</a><span class="k">class</span> <span class="nc">EquipmentOptions</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">Enum</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Enumeration of the Equipment Options</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">tent</span> <span class="o">=</span> <span class="s2">&quot;tent&quot;</span>
+    <span class="n">rv</span> <span class="o">=</span> <span class="s2">&quot;rv&quot;</span>
+    <span class="n">trailer</span> <span class="o">=</span> <span class="s2">&quot;trailer&quot;</span>
+    <span class="n">vehicle</span> <span class="o">=</span> <span class="s2">&quot;vehicle&quot;</span>
+    <span class="n">other</span> <span class="o">=</span> <span class="s2">&quot;other&quot;</span></div>
+
+
+<div class="viewcode-block" id="EquipmentConfig"><a class="viewcode-back" href="../../../api/camply.config.search_config.html#camply.EquipmentConfig">[docs]</a><span class="k">class</span> <span class="nc">EquipmentConfig</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Campsite Equipment Configuration</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">EQUIPMENT_MAPPING</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">()</span>
+
+    <span class="n">EQUIPMENT_MAPPING</span><span class="p">[</span><span class="n">EquipmentOptions</span><span class="o">.</span><span class="n">tent</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s2">&quot;Tent&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Large Tent Over 9X12&quot;</span><span class="p">,</span>
+        <span class="sa">r</span><span class="s2">&quot;Large Tent Over 9X12`&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Small Tent&quot;</span><span class="p">,</span>
+    <span class="p">]</span>
+    <span class="n">EQUIPMENT_MAPPING</span><span class="p">[</span><span class="n">EquipmentOptions</span><span class="o">.</span><span class="n">rv</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s2">&quot;RV&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Pop up&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Caravan/Camper Van&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;RV/Motorhome&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Fifth Wheel&quot;</span><span class="p">,</span>
+    <span class="p">]</span>
+    <span class="n">EQUIPMENT_MAPPING</span><span class="p">[</span><span class="n">EquipmentOptions</span><span class="o">.</span><span class="n">trailer</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Trailer&quot;</span><span class="p">]</span>
+    <span class="n">EQUIPMENT_MAPPING</span><span class="p">[</span><span class="n">EquipmentOptions</span><span class="o">.</span><span class="n">vehicle</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s2">&quot;Pickup Camper&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Vehicle&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Car&quot;</span><span class="p">,</span>
+    <span class="p">]</span>
+    <span class="n">EQUIPMENT_MAPPING</span><span class="p">[</span><span class="n">EquipmentOptions</span><span class="o">.</span><span class="n">other</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Hammock&quot;</span><span class="p">,</span> <span class="s2">&quot;Horse&quot;</span><span class="p">,</span> <span class="s2">&quot;Boat&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">]</span>
+
+    <span class="n">EQUIPMENT_REVERSE_MAPPING</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">list_of_values</span> <span class="ow">in</span> <span class="n">EQUIPMENT_MAPPING</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">list_of_values</span><span class="p">:</span>
+            <span class="n">EQUIPMENT_REVERSE_MAPPING</span><span class="p">[</span><span class="n">value</span><span class="p">]</span> <span class="o">=</span> <span class="n">key</span></div>
 </pre></div>
 
            </div>

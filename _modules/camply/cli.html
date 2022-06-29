@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>camply.cli &mdash; camply 0.4.1 documentation</title>
+  <title>camply.cli &mdash; camply 0.4.2 documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/autodoc_pydantic.css" type="text/css" />
@@ -33,7 +33,7 @@
             <a href="../../index.html" class="icon icon-home"> camply
           </a>
               <div class="version">
-                0.4.1
+                0.4.2
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
@@ -88,10 +88,9 @@
 <span class="kn">import</span> <span class="nn">logging</span>
 <span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
 <span class="kn">from</span> <span class="nn">os</span> <span class="kn">import</span> <span class="n">getenv</span>
-<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Union</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">,</span> <span class="n">Union</span>
 
 <span class="kn">import</span> <span class="nn">click</span>
-<span class="kn">import</span> <span class="nn">rich.traceback</span>
 <span class="kn">from</span> <span class="nn">rich.logging</span> <span class="kn">import</span> <span class="n">RichHandler</span>
 
 <span class="kn">from</span> <span class="nn">camply</span> <span class="kn">import</span> <span class="n">__camply__</span><span class="p">,</span> <span class="n">__version__</span>
@@ -324,10 +323,30 @@
 <span class="n">equipment_argument</span> <span class="o">=</span> <span class="n">click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span>
     <span class="s2">&quot;--equipment&quot;</span><span class="p">,</span>
     <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">nargs</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
     <span class="n">multiple</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-    <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Search for campsites compatible with your camping equipment. Accepted values &quot;</span>
-    <span class="s2">&quot;are `Tent`, `RV`, and `Trailer`. Defaults to any equipment.&quot;</span><span class="p">,</span>
+    <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Search for campsites compatible with your camping equipment. &quot;</span>
+    <span class="s2">&quot;This argument accepts two options, the equipment name and its length &quot;</span>
+    <span class="s2">&quot;If you don&#39;t want to filter based on length provide a length of 0. Accepted &quot;</span>
+    <span class="s2">&quot;equipment names include `Tent`, `RV`. `Trailer`, `Vehicle` and are &quot;</span>
+    <span class="s2">&quot;not case-sensitive.&quot;</span><span class="p">,</span>
 <span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">_get_equipment</span><span class="p">(</span><span class="n">equipment</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]]]:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Parse Equipment from CLI Args</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">equipment_list</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">equipment_name</span><span class="p">,</span> <span class="n">equipment_length</span><span class="p">)</span> <span class="ow">in</span> <span class="n">equipment</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">equipment_length</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">equipment_length</span><span class="p">),</span> <span class="mi">0</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">equipment_length</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">equipment_length</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+            <span class="n">equipment_length</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="n">equipment_list</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">equipment_name</span><span class="p">,</span> <span class="n">equipment_length</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">equipment_list</span>
 
 
 <span class="k">def</span> <span class="nf">_validate_campsites</span><span class="p">(</span>

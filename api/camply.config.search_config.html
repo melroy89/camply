@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>camply.config.search_config module &mdash; camply 0.4.1 documentation</title>
+  <title>camply.config.search_config module &mdash; camply 0.4.2 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/autodoc_pydantic.css" type="text/css" />
@@ -36,7 +36,7 @@
             <a href="../index.html" class="icon icon-home"> camply
           </a>
               <div class="version">
-                0.4.1
+                0.4.2
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -132,6 +132,70 @@
 <dl class="py attribute">
 <dt class="sig sig-object py" id="camply.config.search_config.SearchConfig.MAXIMUM_NOTIFICATION_BATCH_SIZE">
 <span class="sig-name descname"><span class="pre">MAXIMUM_NOTIFICATION_BATCH_SIZE</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><span class="pre">int</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">20</span></em><a class="headerlink" href="#camply.config.search_config.SearchConfig.MAXIMUM_NOTIFICATION_BATCH_SIZE" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="camply.config.search_config.EquipmentOptions">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">camply.config.search_config.</span></span><span class="sig-name descname"><span class="pre">EquipmentOptions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/camply/config/search_config.html#EquipmentOptions"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#camply.config.search_config.EquipmentOptions" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/enum.html#enum.Enum" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">enum.Enum</span></code></a></p>
+<p>Enumeration of the Equipment Options</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="camply.config.search_config.EquipmentOptions.tent">
+<span class="sig-name descname"><span class="pre">tent</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'tent'</span></em><a class="headerlink" href="#camply.config.search_config.EquipmentOptions.tent" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="camply.config.search_config.EquipmentOptions.rv">
+<span class="sig-name descname"><span class="pre">rv</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'rv'</span></em><a class="headerlink" href="#camply.config.search_config.EquipmentOptions.rv" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="camply.config.search_config.EquipmentOptions.trailer">
+<span class="sig-name descname"><span class="pre">trailer</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'trailer'</span></em><a class="headerlink" href="#camply.config.search_config.EquipmentOptions.trailer" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="camply.config.search_config.EquipmentOptions.vehicle">
+<span class="sig-name descname"><span class="pre">vehicle</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'vehicle'</span></em><a class="headerlink" href="#camply.config.search_config.EquipmentOptions.vehicle" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="camply.config.search_config.EquipmentOptions.other">
+<span class="sig-name descname"><span class="pre">other</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'other'</span></em><a class="headerlink" href="#camply.config.search_config.EquipmentOptions.other" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="camply.config.search_config.EquipmentConfig">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">camply.config.search_config.</span></span><span class="sig-name descname"><span class="pre">EquipmentConfig</span></span><a class="reference internal" href="../_modules/camply/config/search_config.html#EquipmentConfig"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#camply.config.search_config.EquipmentConfig" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Campsite Equipment Configuration</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="camply.config.search_config.EquipmentConfig.EQUIPMENT_MAPPING">
+<span class="sig-name descname"><span class="pre">EQUIPMENT_MAPPING</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{EquipmentOptions.other:</span> <span class="pre">['Hammock',</span> <span class="pre">'Horse',</span> <span class="pre">'Boat',</span> <span class="pre">''],</span> <span class="pre">EquipmentOptions.rv:</span> <span class="pre">['RV',</span> <span class="pre">'Pop</span> <span class="pre">up',</span> <span class="pre">'Caravan/Camper</span> <span class="pre">Van',</span> <span class="pre">'RV/Motorhome',</span> <span class="pre">'Fifth</span> <span class="pre">Wheel'],</span> <span class="pre">EquipmentOptions.tent:</span> <span class="pre">['Tent',</span> <span class="pre">'Large</span> <span class="pre">Tent</span> <span class="pre">Over</span> <span class="pre">9X12',</span> <span class="pre">'Large</span> <span class="pre">Tent</span> <span class="pre">Over</span> <span class="pre">9X12`',</span> <span class="pre">'Small</span> <span class="pre">Tent'],</span> <span class="pre">EquipmentOptions.trailer:</span> <span class="pre">['Trailer'],</span> <span class="pre">EquipmentOptions.vehicle:</span> <span class="pre">['Pickup</span> <span class="pre">Camper',</span> <span class="pre">'Vehicle',</span> <span class="pre">'Car']}</span></em><a class="headerlink" href="#camply.config.search_config.EquipmentConfig.EQUIPMENT_MAPPING" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="camply.config.search_config.EquipmentConfig.EQUIPMENT_REVERSE_MAPPING">
+<span class="sig-name descname"><span class="pre">EQUIPMENT_REVERSE_MAPPING</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'':</span> <span class="pre">EquipmentOptions.other,</span> <span class="pre">'Boat':</span> <span class="pre">EquipmentOptions.other,</span> <span class="pre">'Car':</span> <span class="pre">EquipmentOptions.vehicle,</span> <span class="pre">'Caravan/Camper</span> <span class="pre">Van':</span> <span class="pre">EquipmentOptions.rv,</span> <span class="pre">'Fifth</span> <span class="pre">Wheel':</span> <span class="pre">EquipmentOptions.rv,</span> <span class="pre">'Hammock':</span> <span class="pre">EquipmentOptions.other,</span> <span class="pre">'Horse':</span> <span class="pre">EquipmentOptions.other,</span> <span class="pre">'Large</span> <span class="pre">Tent</span> <span class="pre">Over</span> <span class="pre">9X12':</span> <span class="pre">EquipmentOptions.tent,</span> <span class="pre">'Large</span> <span class="pre">Tent</span> <span class="pre">Over</span> <span class="pre">9X12`':</span> <span class="pre">EquipmentOptions.tent,</span> <span class="pre">'Pickup</span> <span class="pre">Camper':</span> <span class="pre">EquipmentOptions.vehicle,</span> <span class="pre">'Pop</span> <span class="pre">up':</span> <span class="pre">EquipmentOptions.rv,</span> <span class="pre">'RV':</span> <span class="pre">EquipmentOptions.rv,</span> <span class="pre">'RV/Motorhome':</span> <span class="pre">EquipmentOptions.rv,</span> <span class="pre">'Small</span> <span class="pre">Tent':</span> <span class="pre">EquipmentOptions.tent,</span> <span class="pre">'Tent':</span> <span class="pre">EquipmentOptions.tent,</span> <span class="pre">'Trailer':</span> <span class="pre">EquipmentOptions.trailer,</span> <span class="pre">'Vehicle':</span> <span class="pre">EquipmentOptions.vehicle}</span></em><a class="headerlink" href="#camply.config.search_config.EquipmentConfig.EQUIPMENT_REVERSE_MAPPING" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="camply.config.search_config.EquipmentConfig.key">
+<span class="sig-name descname"><span class="pre">key</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'other'</span></em><a class="headerlink" href="#camply.config.search_config.EquipmentConfig.key" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="camply.config.search_config.EquipmentConfig.list_of_values">
+<span class="sig-name descname"><span class="pre">list_of_values</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['Hammock',</span> <span class="pre">'Horse',</span> <span class="pre">'Boat',</span> <span class="pre">'']</span></em><a class="headerlink" href="#camply.config.search_config.EquipmentConfig.list_of_values" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="camply.config.search_config.EquipmentConfig.value">
+<span class="sig-name descname"><span class="pre">value</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">''</span></em><a class="headerlink" href="#camply.config.search_config.EquipmentConfig.value" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 </dd></dl>
