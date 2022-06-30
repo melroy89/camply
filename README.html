@@ -56,7 +56,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="#command-line-usage">Command Line Usage</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#campsites"><code class="docutils literal notranslate"><span class="pre">campsites</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#arguments">Arguments:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#arguments">Arguments</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#recreation-areas"><code class="docutils literal notranslate"><span class="pre">recreation-areas</span></code></a><ul>
@@ -264,7 +264,7 @@ and a link to make the booking. Required parameters include <code class="docutil
 <code class="docutils literal notranslate"><span class="pre">--continuous</span></code> and notifications via Email, Pushover, Pushbullet, and Telegram can be enabled using
 <code class="docutils literal notranslate"><span class="pre">--notifications</span></code>.</p>
 <section id="arguments">
-<h3>Arguments:<a class="headerlink" href="#arguments" title="Permalink to this headline"></a></h3>
+<h3>Arguments<a class="headerlink" href="#arguments" title="Permalink to this headline"></a></h3>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">--rec-area</span></code>: <code class="docutils literal notranslate"><span class="pre">RECREATION_AREA_ID</span></code></p>
 <ul>
@@ -323,11 +323,12 @@ found.
 <a class="reference internal" href="#continuously-searching-for-a-campsite"><span class="std std-doc">**<em>example</em></span></a></p></li>
 </ul>
 </li>
-<li><p><code class="docutils literal notranslate"><span class="pre">--polling-interval</span></code>: <code class="docutils literal notranslate"><span class="pre">POLLING_INTERVAL</span></code></p>
+<li><p><code class="docutils literal notranslate"><span class="pre">--search-forever</span></code></p>
 <ul>
-<li><p>If <code class="docutils literal notranslate"><span class="pre">--continuous</span></code> is activated, how often to wait in between checks (in minutes). Defaults to
-10, cannot be less than 5.
-<a class="reference internal" href="#look-for-weekend-campsite-availabilities"><span class="std std-doc">**<em>example</em></span></a></p></li>
+<li><p>If <code class="docutils literal notranslate"><span class="pre">--continuous</span></code> is activated, this method continues to search after the first availability
+has been found. The one caveat is that it will never notify about the same identical campsite
+for the same booking date.
+<a class="reference internal" href="#continue-looking-after-the-first-match-is-found"><span class="std std-doc">**<em>example</em></span></a></p></li>
 </ul>
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">--notifications</span></code>: <code class="docutils literal notranslate"><span class="pre">NOTIFICATIONS</span></code></p>
@@ -338,6 +339,15 @@ messages to console.
 <a class="reference internal" href="#send-a-push-notification"><span class="std std-doc">**<em>example</em></span></a></p></li>
 </ul>
 </li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--equipment</span></code></p>
+<ul>
+<li><p>Search for campsites compatible with your camping equipment. This argument accepts two
+options, the equipment name and its length If you don’t want to filter based on length provide
+a length of 0. Accepted equipment names include <code class="docutils literal notranslate"><span class="pre">Tent</span></code>, <code class="docutils literal notranslate"><span class="pre">RV</span></code>. <code class="docutils literal notranslate"><span class="pre">Trailer</span></code>, <code class="docutils literal notranslate"><span class="pre">Vehicle</span></code> and are
+not case-sensitive.
+<a class="reference internal" href="#searching-for-a-campsite-that-fits-your-equipment"><span class="std std-doc">**<em>example</em></span></a></p></li>
+</ul>
+</li>
 <li><p><code class="docutils literal notranslate"><span class="pre">--notify-first-try</span></code></p>
 <ul>
 <li><p>If <code class="docutils literal notranslate"><span class="pre">--continuous</span></code> is activated, whether to send all non-silent notifications if more than 5
@@ -345,12 +355,11 @@ matching campsites are found on the first try. Defaults to false which only send
 <a class="reference internal" href="#continuously-searching-for-a-campsite"><span class="std std-doc">**<em>example</em></span></a></p></li>
 </ul>
 </li>
-<li><p><code class="docutils literal notranslate"><span class="pre">--search-forever</span></code></p>
+<li><p><code class="docutils literal notranslate"><span class="pre">--polling-interval</span></code>: <code class="docutils literal notranslate"><span class="pre">POLLING_INTERVAL</span></code></p>
 <ul>
-<li><p>If <code class="docutils literal notranslate"><span class="pre">--continuous</span></code> is activated, this method continues to search after the first availability
-has been found. The one caveat is that it will never notify about the same identical campsite
-for the same booking date.
-<a class="reference internal" href="#continue-looking-after-the-first-match-is-found"><span class="std std-doc">**<em>example</em></span></a></p></li>
+<li><p>If <code class="docutils literal notranslate"><span class="pre">--continuous</span></code> is activated, how often to wait in between checks (in minutes). Defaults to
+10, cannot be less than 5.
+<a class="reference internal" href="#look-for-weekend-campsite-availabilities"><span class="std std-doc">**<em>example</em></span></a></p></li>
 </ul>
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">--yml-config</span></code></p>
@@ -639,7 +648,7 @@ arguments will overwrite all <code class="docutils literal notranslate"><span cl
 <p>Sometimes, using a YAML configuration file is easier to manage all of your search options. See the
 below <span class="xref myst">YML example file</span> and corresponding camply command:</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">provider</span><span class="p">:</span><span class="w">         </span><span class="l l-Scalar l-Scalar-Plain">RecreationDotGov</span><span class="w">  </span><span class="c1"># RecreationDotGov IF NOT PROVIDED</span><span class="w"></span>
-<span class="nt">recreation_area</span><span class="p">:</span><span class="w">  </span><span class="c1"># (LIST OR SINGLE ENTRY)</span><span class="w"></span>
+<span class="nt">recreation_area</span><span class="p">:</span><span class="w"> </span><span class="c1"># (LIST OR SINGLE ENTRY)</span><span class="w"></span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2991</span><span class="w">  </span><span class="c1"># Yosemite National Park, CA (All Campgrounds)</span><span class="w"></span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1074</span><span class="w">  </span><span class="c1"># Sierra National Forest, CA (All Campgrounds)</span><span class="w"></span>
 <span class="nt">campgrounds</span><span class="p">:</span><span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">null</span><span class="w">  </span><span class="c1"># ENTIRE FIELD CAN BE OMITTED IF NOT USED - (LIST OR SINGLE ENTRY)</span><span class="w"></span>
@@ -653,6 +662,7 @@ below <span class="xref myst">YML example file</span> and corresponding camply c
 <span class="nt">notifications</span><span class="p">:</span><span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">email</span><span class="w">  </span><span class="c1"># (silent, email, pushover, pushbullet, and telegram), DEFAULTS TO `silent`</span><span class="w"></span>
 <span class="nt">search_forever</span><span class="p">:</span><span class="w">   </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w">  </span><span class="c1"># FALSE BY DEFAULT</span><span class="w"></span>
 <span class="nt">notify_first_try</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w">  </span><span class="c1"># FALSE BY DEFAULT</span><span class="w"></span>
+<span class="nt">equipment</span><span class="p">:</span><span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">null</span><span class="w"> </span><span class="c1"># Array of Equipment Search Lists - DEFAULTS TO `null`</span><span class="w"></span>
 </pre></div>
 </div>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>camply campsites --yml-config example_search.yml
