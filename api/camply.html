@@ -233,9 +233,13 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="camply.SearchRecreationDotGov.filter_campsites_to_equipment">
 <span class="sig-name descname"><span class="pre">filter_campsites_to_equipment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">campsites</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/camply/search/search_recreationdotgov.html#SearchRecreationDotGov.filter_campsites_to_equipment"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#camply.SearchRecreationDotGov.filter_campsites_to_equipment" title="Permalink to this definition"></a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrame</span></code></p>
+<dd><p>Filter a Campsite DataFrame down to specified equipment</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>campsites</strong> (<em>pd.DataFrame</em>) – </p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>pd.DataFrame</p>
 </dd>
 </dl>
 </dd></dl>
@@ -431,18 +435,14 @@ Yellowstone API doesn’t always return data.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="camply.RecreationDotGov.make_recdotgov_request">
 <em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">make_recdotgov_request</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'GET'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/camply/providers/recreation_dot_gov/recdotgov_provider.html#RecreationDotGov.make_recdotgov_request"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#camply.RecreationDotGov.make_recdotgov_request" title="Permalink to this definition"></a></dt>
-<dd><p>Make a Raw Request to RecreationDotGov
-:type url: <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>
-:param url:
-:type url: str
-:type method: <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>, <em>optional</em>
-:param method:</p>
-<blockquote>
-<div><p><strong>[Default]:</strong> <code class="code docutils literal notranslate"><span class="pre">'GET'</span></code></p>
-</div></blockquote>
+<dd><p>Make a Raw Request to RecreationDotGov</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>params</strong> (<em>Optional</em><em>[</em><em>Dict</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a><em>, </em><em>Any</em><em>]</em><em>]</em>) – <strong>[Default]:</strong> <code class="code docutils literal notranslate"><span class="pre">None</span></code></p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>url</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a>) – </p></li>
+<li><p><strong>method</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a>) – <strong>[Default]:</strong> <code class="code docutils literal notranslate"><span class="pre">'GET'</span></code></p></li>
+<li><p><strong>params</strong> (<em>Optional</em><em>[</em><em>Dict</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a><em>, </em><em>Any</em><em>]</em><em>]</em>) – <strong>[Default]:</strong> <code class="code docutils literal notranslate"><span class="pre">None</span></code></p></li>
+</ul>
 </dd>
 <dt class="field-even">Return type</dt>
 <dd class="field-even"><p>requests.Response</p>

@@ -81,6 +81,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#look-for-a-campsite-inside-of-yellowstone">Look for a Campsite Inside of Yellowstone</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#look-for-a-campsite-across-multiple-recreation-areas">Look for a Campsite Across Multiple Recreation areas</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#using-a-yml-configuration-file-to-search-for-campsites">Using a YML Configuration file to search for campsites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#searching-for-a-campsite-that-fits-your-equipment">Searching for a Campsite That Fits Your Equipment</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#search-for-recreation-areas-by-query-string">Search for Recreation Areas by Query String</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#look-for-specific-campgrounds-within-a-recreation-area">Look for Specific Campgrounds Within a Recreation Area</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#look-for-specific-campgrounds-by-query-string">Look for Specific Campgrounds by Query String</a></li>
@@ -173,6 +174,7 @@ becomes available, camply sends you a notification to book your spot!</p>
 <li><p><a class="reference internal" href="#look-for-a-campsite-inside-of-yellowstone"><span class="std std-doc">Look for a Campsite Inside of Yellowstone</span></a></p></li>
 <li><p><a class="reference internal" href="#look-for-a-campsite-across-multiple-recreation-areas"><span class="std std-doc">Look for a Campsite Across Multiple Recreation areas</span></a></p></li>
 <li><p><a class="reference internal" href="#using-a-yml-configuration-file-to-search-for-campsites"><span class="std std-doc">Using a YML Configuration file to search for campsites</span></a></p></li>
+<li><p><a class="reference internal" href="#searching-for-a-campsite-that-fits-your-equipment"><span class="std std-doc">Searching for a Campsite That Fits Your Equipment</span></a></p></li>
 <li><p><a class="reference internal" href="#search-for-recreation-areas-by-query-string"><span class="std std-doc">Search for Recreation Areas by Query String</span></a></p></li>
 <li><p><a class="reference internal" href="#look-for-specific-campgrounds-within-a-recreation-area"><span class="std std-doc">Look for Specific Campgrounds Within a Recreation Area</span></a></p></li>
 <li><p><a class="reference internal" href="#look-for-specific-campgrounds-by-query-string"><span class="std std-doc">Look for Specific Campgrounds by Query String</span></a></p></li>
@@ -654,6 +656,43 @@ below <span class="xref myst">YML example file</span> and corresponding camply c
 </pre></div>
 </div>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>camply campsites --yml-config example_search.yml
+</pre></div>
+</div>
+</section>
+<section id="searching-for-a-campsite-that-fits-your-equipment">
+<h3>Searching for a Campsite That Fits Your Equipment<a class="headerlink" href="#searching-for-a-campsite-that-fits-your-equipment" title="Permalink to this headline"></a></h3>
+<p>Camply can help you filter campsites to fit your specific equipment, like a Trailer or an RV.
+Most likely, you care that the campsite fits the length of your RV so you can specify that as well.
+To search for specific equipment and its length provide the <code class="docutils literal notranslate"><span class="pre">--equipment</span></code> option with two arguments,
+the equipment name and the equipment length. If you don’t want to filter based on length provide a
+length of zero. If you provide multiple <code class="docutils literal notranslate"><span class="pre">--equipment</span></code> options, sites matching any of your search
+equipment will be returned.</p>
+<p>Current supported equipment names are <code class="docutils literal notranslate"><span class="pre">Vehicle</span></code>, <code class="docutils literal notranslate"><span class="pre">Tent</span></code>, <code class="docutils literal notranslate"><span class="pre">RV</span></code>, and <code class="docutils literal notranslate"><span class="pre">Trailer</span></code>.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>camply campsites <span class="se">\</span>
+    --rec-area <span class="m">2991</span> <span class="se">\</span>
+    --start-date <span class="m">2022</span>-07-09 <span class="se">\</span>
+    --end-date <span class="m">2022</span>-07-17 <span class="se">\</span>
+    --nights <span class="m">5</span> <span class="se">\</span>
+    --equipment RV <span class="m">25</span>
+</pre></div>
+</div>
+<p>Here’s what the above search would look like on a YAML Config:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">recreation_area</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2991</span><span class="w"></span>
+<span class="nt">start_date</span><span class="p">:</span><span class="w">       </span><span class="l l-Scalar l-Scalar-Plain">2022-07-09</span><span class="w"></span>
+<span class="nt">end_date</span><span class="p">:</span><span class="w">         </span><span class="l l-Scalar l-Scalar-Plain">2022-07-17</span><span class="w"></span>
+<span class="nt">nights</span><span class="p">:</span><span class="w">           </span><span class="l l-Scalar l-Scalar-Plain">5</span><span class="w"></span>
+<span class="nt">equipment</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">RV</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">25</span><span class="p p-Indicator">]</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Finally, here’s a search that accommodates trailers of all lengths:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>camply campsites <span class="se">\</span>
+    --rec-area <span class="m">2991</span> <span class="se">\</span>
+    --start-date <span class="m">2022</span>-07-09 <span class="se">\</span>
+    --end-date <span class="m">2022</span>-07-17 <span class="se">\</span>
+    --nights <span class="m">5</span> <span class="se">\</span>
+    --equipment Trailer <span class="m">0</span>
 </pre></div>
 </div>
 </section>
