@@ -677,7 +677,9 @@ To search for specific equipment and its length provide the <code class="docutil
 the equipment name and the equipment length. If you don’t want to filter based on length provide a
 length of zero. If you provide multiple <code class="docutils literal notranslate"><span class="pre">--equipment</span></code> options, sites matching any of your search
 equipment will be returned.</p>
-<p>Current supported equipment names are <code class="docutils literal notranslate"><span class="pre">Vehicle</span></code>, <code class="docutils literal notranslate"><span class="pre">Tent</span></code>, <code class="docutils literal notranslate"><span class="pre">RV</span></code>, and <code class="docutils literal notranslate"><span class="pre">Trailer</span></code>.</p>
+<p>Current supported equipment names are <code class="docutils literal notranslate"><span class="pre">Vehicle</span></code>, <code class="docutils literal notranslate"><span class="pre">Tent</span></code>, <code class="docutils literal notranslate"><span class="pre">RV</span></code>, and <code class="docutils literal notranslate"><span class="pre">Trailer</span></code>. Be careful when
+filtering on <code class="docutils literal notranslate"><span class="pre">Tents</span></code> and <code class="docutils literal notranslate"><span class="pre">Vehicle</span></code> length, sometimes <a class="reference external" href="http://Recreation.gov">Recreation.gov</a> doesn’t provide that information,
+it is safer to set length to 0.</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>camply campsites <span class="se">\</span>
     --rec-area <span class="m">2991</span> <span class="se">\</span>
     --start-date <span class="m">2022</span>-07-09 <span class="se">\</span>
