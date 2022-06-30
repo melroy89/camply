@@ -84,11 +84,12 @@
 <span></span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">Push Notifications Template</span>
 <span class="sd">&quot;&quot;&quot;</span>
-
+<span class="kn">import</span> <span class="nn">datetime</span>
 <span class="kn">import</span> <span class="nn">logging</span>
 <span class="kn">from</span> <span class="nn">abc</span> <span class="kn">import</span> <span class="n">ABC</span><span class="p">,</span> <span class="n">abstractmethod</span>
-<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Tuple</span>
 
+<span class="kn">from</span> <span class="nn">camply.config</span> <span class="kn">import</span> <span class="n">CampsiteContainerFields</span>
 <span class="kn">from</span> <span class="nn">camply.containers</span> <span class="kn">import</span> <span class="n">AvailableCampsite</span>
 
 <span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
@@ -130,7 +131,40 @@
 <span class="sd">        ----------</span>
 <span class="sd">        campsites: List[AvailableCampsite]</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">pass</span></div></div>
+        <span class="k">pass</span></div>
+
+<div class="viewcode-block" id="BaseNotifications.format_standard_campsites"><a class="viewcode-back" href="../../../api/camply.notifications.base_notifications.html#camply.notifications.base_notifications.BaseNotifications.format_standard_campsites">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">format_standard_campsites</span><span class="p">(</span>
+        <span class="bp">cls</span><span class="p">,</span> <span class="n">campsite</span><span class="p">:</span> <span class="n">AvailableCampsite</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Format Standard Message</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+        <span class="n">message_title</span> <span class="o">=</span> <span class="s2">&quot; | &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+            <span class="p">[</span>
+                <span class="n">campsite</span><span class="o">.</span><span class="n">recreation_area</span><span class="p">,</span>
+                <span class="n">campsite</span><span class="o">.</span><span class="n">facility_name</span><span class="p">,</span>
+                <span class="n">campsite</span><span class="o">.</span><span class="n">booking_date</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">),</span>
+            <span class="p">]</span>
+        <span class="p">)</span>
+        <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">campsite</span><span class="o">.</span><span class="n">dict</span><span class="p">()</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">key</span> <span class="ow">in</span> <span class="p">[</span>
+                <span class="n">CampsiteContainerFields</span><span class="o">.</span><span class="n">BOOKING_DATE</span><span class="p">,</span>
+                <span class="n">CampsiteContainerFields</span><span class="o">.</span><span class="n">BOOKING_END_DATE</span><span class="p">,</span>
+            <span class="p">]:</span>
+                <span class="n">value</span><span class="p">:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">date</span>
+                <span class="n">value</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">key</span> <span class="o">==</span> <span class="n">CampsiteContainerFields</span><span class="o">.</span><span class="n">BOOKING_URL</span><span class="p">:</span>
+                <span class="n">key</span> <span class="o">=</span> <span class="s2">&quot;booking_link&quot;</span>
+            <span class="k">elif</span> <span class="n">key</span> <span class="o">==</span> <span class="n">CampsiteContainerFields</span><span class="o">.</span><span class="n">PERMITTED_EQUIPMENT</span><span class="p">:</span>
+                <span class="n">value</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">  - &quot;</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">  - &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+                    <span class="nb">set</span><span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">equipment_name</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">campsite</span><span class="o">.</span><span class="n">permitted_equipment</span><span class="p">)</span>
+                <span class="p">)</span>
+            <span class="k">if</span> <span class="n">key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="n">CampsiteContainerFields</span><span class="o">.</span><span class="n">CAMPSITE_ATTRIBUTES</span><span class="p">]:</span>
+                <span class="n">formatted_key</span> <span class="o">=</span> <span class="n">key</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">,</span> <span class="s2">&quot; &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">title</span><span class="p">()</span>
+                <span class="n">fields</span><span class="p">[</span><span class="n">formatted_key</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+        <span class="k">return</span> <span class="n">message_title</span><span class="p">,</span> <span class="n">fields</span></div></div>
 </pre></div>
 
            </div>
