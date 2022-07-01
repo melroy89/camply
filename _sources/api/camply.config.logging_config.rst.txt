@@ -1,0 +1,7 @@
+camply.config.logging\_config module
+====================================
+
+.. automodule:: camply.config.logging_config
+   :members:
+   :undoc-members:
+   :show-inheritance:

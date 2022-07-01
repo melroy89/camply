@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>camply.cli &mdash; camply 0.4.2 documentation</title>
+  <title>camply.cli &mdash; camply 0.4.3 documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/autodoc_pydantic.css" type="text/css" />
@@ -33,7 +33,7 @@
             <a href="../../index.html" class="icon icon-home"> camply
           </a>
               <div class="version">
-                0.4.2
+                0.4.3
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
@@ -87,15 +87,14 @@
 
 <span class="kn">import</span> <span class="nn">logging</span>
 <span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
-<span class="kn">from</span> <span class="nn">os</span> <span class="kn">import</span> <span class="n">getenv</span>
 <span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">,</span> <span class="n">Union</span>
 
 <span class="kn">import</span> <span class="nn">click</span>
 <span class="kn">from</span> <span class="nn">rich</span> <span class="kn">import</span> <span class="n">traceback</span>
-<span class="kn">from</span> <span class="nn">rich.logging</span> <span class="kn">import</span> <span class="n">RichHandler</span>
 
 <span class="kn">from</span> <span class="nn">camply</span> <span class="kn">import</span> <span class="n">__camply__</span><span class="p">,</span> <span class="n">__version__</span>
 <span class="kn">from</span> <span class="nn">camply.config</span> <span class="kn">import</span> <span class="n">SearchConfig</span>
+<span class="kn">from</span> <span class="nn">camply.config.logging_config</span> <span class="kn">import</span> <span class="n">set_up_logging</span>
 <span class="kn">from</span> <span class="nn">camply.containers</span> <span class="kn">import</span> <span class="n">SearchWindow</span>
 <span class="kn">from</span> <span class="nn">camply.providers</span> <span class="kn">import</span> <span class="n">RecreationDotGov</span>
 <span class="kn">from</span> <span class="nn">camply.search</span> <span class="kn">import</span> <span class="n">CAMPSITE_SEARCH_PROVIDER</span><span class="p">,</span> <span class="n">SearchYellowstone</span>
@@ -487,20 +486,7 @@
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Camply Command Line Utility Wrapper</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">logging_handler</span> <span class="o">=</span> <span class="n">RichHandler</span><span class="p">(</span>
-        <span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">getLevelName</span><span class="p">(</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;LOG_LEVEL&quot;</span><span class="p">,</span> <span class="s2">&quot;INFO&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">upper</span><span class="p">()),</span>
-        <span class="n">rich_tracebacks</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-        <span class="n">omit_repeated_times</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-        <span class="n">show_path</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-    <span class="p">)</span>
-    <span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span>
-        <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">%(message)s</span><span class="s2">&quot;</span><span class="p">,</span>
-        <span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">NOTSET</span><span class="p">,</span>
-        <span class="n">datefmt</span><span class="o">=</span><span class="s2">&quot;[%Y-%m-</span><span class="si">%d</span><span class="s2"> %H:%M:%S]&quot;</span><span class="p">,</span>
-        <span class="n">handlers</span><span class="o">=</span><span class="p">[</span>
-            <span class="n">logging_handler</span><span class="p">,</span>
-        <span class="p">],</span>
-    <span class="p">)</span>
+    <span class="n">set_up_logging</span><span class="p">()</span>
     <span class="n">traceback</span><span class="o">.</span><span class="n">install</span><span class="p">(</span><span class="n">show_locals</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="n">logger</span><span class="o">.</span><span class="n">camply</span><span class="p">(</span><span class="s2">&quot;camply, the campsite finder ⛺️&quot;</span><span class="p">)</span>  <span class="c1"># noqa</span>

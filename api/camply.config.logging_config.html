@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>camply.utils.general_utils module &mdash; camply 0.4.3 documentation</title>
+  <title>camply.config.logging_config module &mdash; camply 0.4.3 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/autodoc_pydantic.css" type="text/css" />
@@ -24,8 +24,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="camply.utils.logging_utils module" href="camply.utils.logging_utils.html" />
-    <link rel="prev" title="camply.utils.configure_camply module" href="camply.utils.configure_camply.html" /> 
+    <link rel="next" title="camply.config.notification_config module" href="camply.config.notification_config.html" />
+    <link rel="prev" title="camply.config.file_config module" href="camply.config.file_config.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -59,12 +59,12 @@
 <li class="toctree-l1 current"><a class="reference internal" href="modules.html">API Documentation</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="camply.html">camply package</a><ul class="current">
 <li class="toctree-l3 current"><a class="reference internal" href="camply.html#subpackages">Subpackages</a><ul class="current">
-<li class="toctree-l4"><a class="reference internal" href="camply.config.html">camply.config package</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="camply.config.html">camply.config package</a></li>
 <li class="toctree-l4"><a class="reference internal" href="camply.containers.html">camply.containers package</a></li>
 <li class="toctree-l4"><a class="reference internal" href="camply.notifications.html">camply.notifications package</a></li>
 <li class="toctree-l4"><a class="reference internal" href="camply.providers.html">camply.providers package</a></li>
 <li class="toctree-l4"><a class="reference internal" href="camply.search.html">camply.search package</a></li>
-<li class="toctree-l4 current"><a class="reference internal" href="camply.utils.html">camply.utils package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="camply.utils.html">camply.utils package</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="camply.html#submodules">Submodules</a></li>
@@ -91,8 +91,8 @@
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="modules.html">camply</a> &raquo;</li>
           <li><a href="camply.html">camply package</a> &raquo;</li>
-          <li><a href="camply.utils.html">camply.utils package</a> &raquo;</li>
-      <li>camply.utils.general_utils module</li>
+          <li><a href="camply.config.html">camply.config package</a> &raquo;</li>
+      <li>camply.config.logging_config module</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -101,22 +101,16 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="module-camply.utils.general_utils">
-<span id="camply-utils-general-utils-module"></span><h1>camply.utils.general_utils module<a class="headerlink" href="#module-camply.utils.general_utils" title="Permalink to this headline"></a></h1>
-<p>Camply General Utilities</p>
+  <section id="module-camply.config.logging_config">
+<span id="camply-config-logging-config-module"></span><h1>camply.config.logging_config module<a class="headerlink" href="#module-camply.config.logging_config" title="Permalink to this headline"></a></h1>
+<p>Dynamic Logging Configuration</p>
 <dl class="py function">
-<dt class="sig sig-object py" id="camply.utils.general_utils.make_list">
-<span class="sig-prename descclassname"><span class="pre">camply.utils.general_utils.</span></span><span class="sig-name descname"><span class="pre">make_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coerce</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/camply/utils/general_utils.html#make_list"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#camply.utils.general_utils.make_list" title="Permalink to this definition"></a></dt>
-<dd><p>Make Anything An Iterable Instance</p>
+<dt class="sig sig-object py" id="camply.config.logging_config.set_up_logging">
+<span class="sig-prename descclassname"><span class="pre">camply.config.logging_config.</span></span><span class="sig-name descname"><span class="pre">set_up_logging</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/camply/config/logging_config.html#set_up_logging"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#camply.config.logging_config.set_up_logging" title="Permalink to this definition"></a></dt>
+<dd><p>Set Up a Root Logger</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.10)"><em>object</em></a>) – </p></li>
-<li><p><strong>coerce</strong> (<em>Callable</em>) – <strong>[Default]:</strong> <code class="code docutils literal notranslate"><span class="pre">None</span></code></p></li>
-</ul>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>List[<a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.10)">object</a>]</p>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -127,8 +121,8 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="camply.utils.configure_camply.html" class="btn btn-neutral float-left" title="camply.utils.configure_camply module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="camply.utils.logging_utils.html" class="btn btn-neutral float-right" title="camply.utils.logging_utils module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="camply.config.file_config.html" class="btn btn-neutral float-left" title="camply.config.file_config module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="camply.config.notification_config.html" class="btn btn-neutral float-right" title="camply.config.notification_config module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
