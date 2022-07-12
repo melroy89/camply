@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>camply.cli &mdash; camply 0.4.5 documentation</title>
+  <title>camply.cli &mdash; camply 0.4.6 documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/autodoc_pydantic.css" type="text/css" />
@@ -33,7 +33,7 @@
             <a href="../../index.html" class="icon icon-home"> camply
           </a>
               <div class="version">
-                0.4.5
+                0.4.6
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
@@ -376,6 +376,14 @@
             <span class="s2">&quot;parameters.&quot;</span>
         <span class="p">)</span>
         <span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;notifications&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="p">[</span><span class="s2">&quot;silent&quot;</span><span class="p">]</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;continuous&quot;</span><span class="p">):</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span>
+            <span class="s2">&quot;To receive notifications about campsites you must search &quot;</span>
+            <span class="s2">&quot;continuously by passing the --continuous option.&quot;</span>
+        <span class="p">)</span>
+        <span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
     <span class="n">mandatory_parameters</span> <span class="o">=</span> <span class="p">[</span><span class="n">start_date</span><span class="p">,</span> <span class="n">end_date</span><span class="p">]</span>
     <span class="n">mandatory_string_parameters</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;--start-date&quot;</span><span class="p">,</span> <span class="s2">&quot;--end-date&quot;</span><span class="p">]</span>
     <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="n">mandatory_parameters</span><span class="p">:</span>
