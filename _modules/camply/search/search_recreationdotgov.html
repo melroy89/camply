@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>camply.search.search_recreationdotgov &mdash; camply 0.4.6 documentation</title>
+  <title>camply.search.search_recreationdotgov &mdash; camply 0.4.7 documentation</title>
       <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/autodoc_pydantic.css" type="text/css" />
@@ -33,7 +33,7 @@
             <a href="../../../index.html" class="icon icon-home"> camply
           </a>
               <div class="version">
-                0.4.6
+                0.4.7
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
@@ -191,7 +191,7 @@
             <span class="n">searchable_campgrounds</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_campgrounds_by_recreation_area_id</span><span class="p">()</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;You must provide a Campground or Recreation Area ID&quot;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">searchable_campgrounds</span>
+        <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">searchable_campgrounds</span><span class="p">))</span>
 
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">_get_searchable_equipment</span><span class="p">(</span>

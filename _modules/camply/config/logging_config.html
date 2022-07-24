@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>camply.config.logging_config &mdash; camply 0.4.6 documentation</title>
+  <title>camply.config.logging_config &mdash; camply 0.4.7 documentation</title>
       <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/autodoc_pydantic.css" type="text/css" />
@@ -33,7 +33,7 @@
             <a href="../../../index.html" class="icon icon-home"> camply
           </a>
               <div class="version">
-                0.4.6
+                0.4.7
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
@@ -88,42 +88,67 @@
 <span class="kn">import</span> <span class="nn">logging</span>
 <span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">from</span> <span class="nn">os</span> <span class="kn">import</span> <span class="n">getenv</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Optional</span>
 
 <span class="kn">from</span> <span class="nn">rich.logging</span> <span class="kn">import</span> <span class="n">RichHandler</span>
 
-<span class="n">log_level</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLevelName</span><span class="p">(</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;LOG_LEVEL&quot;</span><span class="p">,</span> <span class="s2">&quot;INFO&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
 
-<span class="n">rich_handler</span> <span class="o">=</span> <span class="n">RichHandler</span><span class="p">(</span>
-    <span class="n">level</span><span class="o">=</span><span class="n">log_level</span><span class="p">,</span>
-    <span class="n">rich_tracebacks</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-    <span class="n">omit_repeated_times</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-    <span class="n">show_path</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-<span class="p">)</span>
+<div class="viewcode-block" id="get_log_handler"><a class="viewcode-back" href="../../../api/camply.config.logging_config.html#camply.config.logging_config.get_log_handler">[docs]</a><span class="k">def</span> <span class="nf">get_log_handler</span><span class="p">(</span><span class="n">log_level</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">logging</span><span class="o">.</span><span class="n">Handler</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Determine which logging handler should be used</span>
 
-<span class="n">standard_handler</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">StreamHandler</span><span class="p">()</span>
-<span class="n">formatter</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">Formatter</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%(asctime)s</span><span class="s2"> [</span><span class="si">%(levelname)8s</span><span class="s2">]: </span><span class="si">%(message)s</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="n">standard_handler</span><span class="o">.</span><span class="n">setFormatter</span><span class="p">(</span><span class="n">formatter</span><span class="p">)</span>
-<span class="n">standard_handler</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">log_level</span><span class="p">)</span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    log_level: Optional[int]</span>
+<span class="sd">        Which logging level should be used. If none is provided the LOG_LEVEL environment</span>
+<span class="sd">        variable will be used, defaulting to &quot;INFO&quot;.</span>
 
-<span class="n">_log_dict</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;rich&quot;</span><span class="p">:</span> <span class="n">rich_handler</span><span class="p">,</span>
-    <span class="s2">&quot;python&quot;</span><span class="p">:</span> <span class="n">standard_handler</span><span class="p">,</span>
-<span class="p">}</span>
-<span class="n">log_handler_name</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;CAMPLY_LOG_HANDLER&quot;</span><span class="p">,</span> <span class="s2">&quot;rich&quot;</span><span class="p">)</span>
-<span class="n">log_handler</span> <span class="o">=</span> <span class="n">_log_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">log_handler_name</span><span class="o">.</span><span class="n">lower</span><span class="p">(),</span> <span class="n">rich_handler</span><span class="p">)</span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    logging.Handler</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">log_level</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">log_level</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLevelName</span><span class="p">(</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;LOG_LEVEL&quot;</span><span class="p">,</span> <span class="s2">&quot;INFO&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
+
+    <span class="n">rich_handler</span> <span class="o">=</span> <span class="n">RichHandler</span><span class="p">(</span>
+        <span class="n">level</span><span class="o">=</span><span class="n">log_level</span><span class="p">,</span>
+        <span class="n">rich_tracebacks</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">omit_repeated_times</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="n">show_path</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="n">standard_handler</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">StreamHandler</span><span class="p">()</span>
+    <span class="n">formatter</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">Formatter</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%(asctime)s</span><span class="s2"> [</span><span class="si">%(levelname)8s</span><span class="s2">]: </span><span class="si">%(message)s</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">standard_handler</span><span class="o">.</span><span class="n">setFormatter</span><span class="p">(</span><span class="n">formatter</span><span class="p">)</span>
+    <span class="n">standard_handler</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">log_level</span><span class="p">)</span>
+
+    <span class="n">_log_dict</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;rich&quot;</span><span class="p">:</span> <span class="n">rich_handler</span><span class="p">,</span>
+        <span class="s2">&quot;python&quot;</span><span class="p">:</span> <span class="n">standard_handler</span><span class="p">,</span>
+    <span class="p">}</span>
+    <span class="n">log_handler_name</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;CAMPLY_LOG_HANDLER&quot;</span><span class="p">,</span> <span class="s2">&quot;rich&quot;</span><span class="p">)</span>
+    <span class="n">log_handler</span> <span class="o">=</span> <span class="n">_log_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">log_handler_name</span><span class="o">.</span><span class="n">lower</span><span class="p">(),</span> <span class="n">rich_handler</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">log_handler</span><span class="p">,</span> <span class="n">log_level</span></div>
 
 
-<div class="viewcode-block" id="set_up_logging"><a class="viewcode-back" href="../../../api/camply.config.logging_config.html#camply.config.logging_config.set_up_logging">[docs]</a><span class="k">def</span> <span class="nf">set_up_logging</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<div class="viewcode-block" id="set_up_logging"><a class="viewcode-back" href="../../../api/camply.config.logging_config.html#camply.config.logging_config.set_up_logging">[docs]</a><span class="k">def</span> <span class="nf">set_up_logging</span><span class="p">(</span><span class="n">log_level</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Set Up a Root Logger</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    log_level: Optional[int]</span>
+<span class="sd">        Which logging level should be used. If none is provided the LOG_LEVEL environment</span>
+<span class="sd">        variable will be used, defaulting to &quot;INFO&quot;.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">kwargs</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">log_handler</span><span class="p">,</span> <span class="n">handler_level</span> <span class="o">=</span> <span class="n">get_log_handler</span><span class="p">(</span><span class="n">log_level</span><span class="o">=</span><span class="n">log_level</span><span class="p">)</span>
     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">log_handler</span><span class="p">,</span> <span class="n">RichHandler</span><span class="p">):</span>
         <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;datefmt&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;[%Y-%m-</span><span class="si">%d</span><span class="s2"> %H:%M:%S]&quot;</span>
         <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;format&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">%(message)s</span><span class="s2">&quot;</span>
         <span class="n">level</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">NOTSET</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="n">level</span> <span class="o">=</span> <span class="n">log_level</span>
+        <span class="n">level</span> <span class="o">=</span> <span class="n">handler_level</span>
     <span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span>
         <span class="n">level</span><span class="o">=</span><span class="n">level</span><span class="p">,</span>
         <span class="n">handlers</span><span class="o">=</span><span class="p">[</span>

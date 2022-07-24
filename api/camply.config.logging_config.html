@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>camply.config.logging_config module &mdash; camply 0.4.6 documentation</title>
+  <title>camply.config.logging_config module &mdash; camply 0.4.7 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/autodoc_pydantic.css" type="text/css" />
@@ -36,7 +36,7 @@
             <a href="../index.html" class="icon icon-home"> camply
           </a>
               <div class="version">
-                0.4.6
+                0.4.7
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -105,12 +105,33 @@
 <span id="camply-config-logging-config-module"></span><h1>camply.config.logging_config module<a class="headerlink" href="#module-camply.config.logging_config" title="Permalink to this headline"></a></h1>
 <p>Dynamic Logging Configuration</p>
 <dl class="py function">
+<dt class="sig sig-object py" id="camply.config.logging_config.get_log_handler">
+<span class="sig-prename descclassname"><span class="pre">camply.config.logging_config.</span></span><span class="sig-name descname"><span class="pre">get_log_handler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">log_level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/camply/config/logging_config.html#get_log_handler"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#camply.config.logging_config.get_log_handler" title="Permalink to this definition"></a></dt>
+<dd><p>Determine which logging handler should be used</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>log_level</strong> (<em>Optional</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a><em>]</em>) – Which logging level should be used. If none is provided the LOG_LEVEL environment
+variable will be used, defaulting to “INFO”.
+<strong>[Default]:</strong> <code class="code docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/logging.html#logging.Handler" title="(in Python v3.10)">logging.Handler</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
 <dt class="sig sig-object py" id="camply.config.logging_config.set_up_logging">
-<span class="sig-prename descclassname"><span class="pre">camply.config.logging_config.</span></span><span class="sig-name descname"><span class="pre">set_up_logging</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/camply/config/logging_config.html#set_up_logging"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#camply.config.logging_config.set_up_logging" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">camply.config.logging_config.</span></span><span class="sig-name descname"><span class="pre">set_up_logging</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">log_level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/camply/config/logging_config.html#set_up_logging"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#camply.config.logging_config.set_up_logging" title="Permalink to this definition"></a></dt>
 <dd><p>Set Up a Root Logger</p>
 <dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a></p>
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>log_level</strong> (<em>Optional</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a><em>]</em>) – Which logging level should be used. If none is provided the LOG_LEVEL environment
+variable will be used, defaulting to “INFO”.
+<strong>[Default]:</strong> <code class="code docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
