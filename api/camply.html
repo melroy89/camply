@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>camply package &mdash; camply 0.4.8 documentation</title>
+  <title>camply package &mdash; camply 0.4.9 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/autodoc_pydantic.css" type="text/css" />
@@ -18,6 +18,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/clipboard.min.js"></script>
         <script src="../_static/copybutton.js"></script>
@@ -36,7 +37,7 @@
             <a href="../index.html" class="icon icon-home"> camply
           </a>
               <div class="version">
-                0.4.8
+                0.4.9
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -103,9 +104,9 @@
            <div itemprop="articleBody">
              
   <section id="camply-package">
-<h1>camply package<a class="headerlink" href="#camply-package" title="Permalink to this headline"></a></h1>
+<h1>camply package<a class="headerlink" href="#camply-package" title="Permalink to this heading"></a></h1>
 <section id="subpackages">
-<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline"></a></h2>
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this heading"></a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="camply.config.html">camply.config package</a><ul>
@@ -193,7 +194,7 @@
 </div>
 </section>
 <section id="submodules">
-<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline"></a></h2>
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="camply.cli.html">camply.cli module</a></li>
@@ -201,12 +202,12 @@
 </div>
 </section>
 <section id="module-camply">
-<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-camply" title="Permalink to this headline"></a></h2>
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-camply" title="Permalink to this heading"></a></h2>
 <p>camply __init__ file</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="camply.SearchRecreationDotGov">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">camply.</span></span><span class="sig-name descname"><span class="pre">SearchRecreationDotGov</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">search_window</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">recreation_area</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">campgrounds</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">campsites</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weekends_only</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nights</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">equipment</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/camply/search/search_recreationdotgov.html#SearchRecreationDotGov"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#camply.SearchRecreationDotGov" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <a class="reference internal" href="camply.search.base_search.html#camply.search.base_search.BaseCampingSearch" title="camply.search.base_search.BaseCampingSearch"><code class="xref py py-class docutils literal notranslate"><span class="pre">camply.search.base_search.BaseCampingSearch</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="camply.search.base_search.html#camply.search.base_search.BaseCampingSearch" title="camply.search.base_search.BaseCampingSearch"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseCampingSearch</span></code></a></p>
 <p>Camping Search Object</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -250,7 +251,7 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="camply.SearchYellowstone">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">camply.</span></span><span class="sig-name descname"><span class="pre">SearchYellowstone</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">search_window</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weekends_only</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">campgrounds</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nights</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/camply/search/search_yellowstone.html#SearchYellowstone"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#camply.SearchYellowstone" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <a class="reference internal" href="camply.search.base_search.html#camply.search.base_search.BaseCampingSearch" title="camply.search.base_search.BaseCampingSearch"><code class="xref py py-class docutils literal notranslate"><span class="pre">camply.search.base_search.BaseCampingSearch</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="camply.search.base_search.html#camply.search.base_search.BaseCampingSearch" title="camply.search.base_search.BaseCampingSearch"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseCampingSearch</span></code></a></p>
 <p>Camping Search Object</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -288,7 +289,7 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="camply.YellowstoneLodging">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">camply.</span></span><span class="sig-name descname"><span class="pre">YellowstoneLodging</span></span><a class="reference internal" href="../_modules/camply/providers/xanterra/yellowstone_lodging.html#YellowstoneLodging"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#camply.YellowstoneLodging" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <a class="reference internal" href="camply.providers.base_provider.html#camply.providers.base_provider.BaseProvider" title="camply.providers.base_provider.BaseProvider"><code class="xref py py-class docutils literal notranslate"><span class="pre">camply.providers.base_provider.BaseProvider</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="camply.providers.base_provider.html#camply.providers.base_provider.BaseProvider" title="camply.providers.base_provider.BaseProvider"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseProvider</span></code></a></p>
 <p>Scanner for Lodging in Yellowstone</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="camply.YellowstoneLodging.make_yellowstone_request">
@@ -332,7 +333,7 @@ Yellowstone API doesn’t always return data.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="camply.RecreationDotGov">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">camply.</span></span><span class="sig-name descname"><span class="pre">RecreationDotGov</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">api_key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/camply/providers/recreation_dot_gov/recdotgov_provider.html#RecreationDotGov"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#camply.RecreationDotGov" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <a class="reference internal" href="camply.providers.base_provider.html#camply.providers.base_provider.BaseProvider" title="camply.providers.base_provider.BaseProvider"><code class="xref py py-class docutils literal notranslate"><span class="pre">camply.providers.base_provider.BaseProvider</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="camply.providers.base_provider.html#camply.providers.base_provider.BaseProvider" title="camply.providers.base_provider.BaseProvider"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseProvider</span></code></a></p>
 <p>Python Class for Working with Recreation.gov API / NPS APIs</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -569,7 +570,7 @@ Yellowstone API doesn’t always return data.</p>
 <dl class="py class pydantic_model">
 <dt class="sig sig-object py" id="camply.SearchWindow">
 <em class="property"><span class="pre">pydantic</span> <span class="pre">model</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">camply.</span></span><span class="sig-name descname"><span class="pre">SearchWindow</span></span><a class="reference internal" href="../_modules/camply/containers/data_containers.html#SearchWindow"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#camply.SearchWindow" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <a class="reference internal" href="camply.containers.base_container.html#camply.containers.base_container.CamplyModel" title="camply.containers.base_container.CamplyModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">camply.containers.base_container.CamplyModel</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="camply.containers.base_container.html#camply.containers.base_container.CamplyModel" title="camply.containers.base_container.CamplyModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">CamplyModel</span></code></a></p>
 <p>Search Window for Campsite Search</p>
 <dl class="field-list simple">
 <dt class="field-odd">Fields</dt>
@@ -581,12 +582,12 @@ Yellowstone API doesn’t always return data.</p>
 </dl>
 <dl class="py attribute pydantic_field">
 <dt class="sig sig-object py" id="camply.SearchWindow.end_date">
-<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">end_date</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.date" title="(in Python v3.10)"><span class="pre">datetime.date</span></a></em><em class="property"> <span class="pre">[Required]</span></em><a class="headerlink" href="#camply.SearchWindow.end_date" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">end_date</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.date" title="(in Python v3.10)"><span class="pre">date</span></a></em><em class="property"> <span class="pre">[Required]</span></em><a class="headerlink" href="#camply.SearchWindow.end_date" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute pydantic_field">
 <dt class="sig sig-object py" id="camply.SearchWindow.start_date">
-<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">start_date</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.date" title="(in Python v3.10)"><span class="pre">datetime.date</span></a></em><em class="property"> <span class="pre">[Required]</span></em><a class="headerlink" href="#camply.SearchWindow.start_date" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">start_date</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.date" title="(in Python v3.10)"><span class="pre">date</span></a></em><em class="property"> <span class="pre">[Required]</span></em><a class="headerlink" href="#camply.SearchWindow.start_date" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -605,7 +606,7 @@ Yellowstone API doesn’t always return data.</p>
 <dl class="py class pydantic_model">
 <dt class="sig sig-object py" id="camply.AvailableCampsite">
 <em class="property"><span class="pre">pydantic</span> <span class="pre">model</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">camply.</span></span><span class="sig-name descname"><span class="pre">AvailableCampsite</span></span><a class="reference internal" href="../_modules/camply/containers/data_containers.html#AvailableCampsite"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#camply.AvailableCampsite" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <a class="reference internal" href="camply.containers.base_container.html#camply.containers.base_container.CamplyModel" title="camply.containers.base_container.CamplyModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">camply.containers.base_container.CamplyModel</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="camply.containers.base_container.html#camply.containers.base_container.CamplyModel" title="camply.containers.base_container.CamplyModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">CamplyModel</span></code></a></p>
 <p>Campsite Storage</p>
 <p>This container should be universal regardless of API Provider</p>
 <dl class="field-list simple">
@@ -638,12 +639,12 @@ Yellowstone API doesn’t always return data.</p>
 
 <dl class="py attribute pydantic_field">
 <dt class="sig sig-object py" id="camply.AvailableCampsite.booking_date">
-<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">booking_date</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.datetime" title="(in Python v3.10)"><span class="pre">datetime.datetime</span></a></em><em class="property"> <span class="pre">[Required]</span></em><a class="headerlink" href="#camply.AvailableCampsite.booking_date" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">booking_date</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.datetime" title="(in Python v3.10)"><span class="pre">datetime</span></a></em><em class="property"> <span class="pre">[Required]</span></em><a class="headerlink" href="#camply.AvailableCampsite.booking_date" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute pydantic_field">
 <dt class="sig sig-object py" id="camply.AvailableCampsite.booking_end_date">
-<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">booking_end_date</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.datetime" title="(in Python v3.10)"><span class="pre">datetime.datetime</span></a></em><em class="property"> <span class="pre">[Required]</span></em><a class="headerlink" href="#camply.AvailableCampsite.booking_end_date" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">booking_end_date</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.datetime" title="(in Python v3.10)"><span class="pre">datetime</span></a></em><em class="property"> <span class="pre">[Required]</span></em><a class="headerlink" href="#camply.AvailableCampsite.booking_end_date" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute pydantic_field">
@@ -658,12 +659,12 @@ Yellowstone API doesn’t always return data.</p>
 
 <dl class="py attribute pydantic_field">
 <dt class="sig sig-object py" id="camply.AvailableCampsite.campsite_attributes">
-<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">campsite_attributes</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="camply.containers.base_container.html#camply.containers.base_container.RecDotGovAttribute" title="camply.containers.base_container.RecDotGovAttribute"><span class="pre">camply.containers.base_container.RecDotGovAttribute</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#camply.AvailableCampsite.campsite_attributes" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">campsite_attributes</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.10)"><span class="pre">Optional</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.10)"><span class="pre">List</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="camply.containers.base_container.html#camply.containers.base_container.RecDotGovAttribute" title="camply.containers.base_container.RecDotGovAttribute"><span class="pre">RecDotGovAttribute</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#camply.AvailableCampsite.campsite_attributes" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute pydantic_field">
 <dt class="sig sig-object py" id="camply.AvailableCampsite.campsite_id">
-<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">campsite_id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><span class="pre">int</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">[Required]</span></em><a class="headerlink" href="#camply.AvailableCampsite.campsite_id" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">campsite_id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Union" title="(in Python v3.10)"><span class="pre">Union</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><span class="pre">int</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">[Required]</span></em><a class="headerlink" href="#camply.AvailableCampsite.campsite_id" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute pydantic_field">
@@ -673,7 +674,7 @@ Yellowstone API doesn’t always return data.</p>
 
 <dl class="py attribute pydantic_field">
 <dt class="sig sig-object py" id="camply.AvailableCampsite.campsite_occupancy">
-<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">campsite_occupancy</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><span class="pre">int</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><span class="pre">int</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">[Required]</span></em><a class="headerlink" href="#camply.AvailableCampsite.campsite_occupancy" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">campsite_occupancy</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Tuple" title="(in Python v3.10)"><span class="pre">Tuple</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><span class="pre">int</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><span class="pre">int</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">[Required]</span></em><a class="headerlink" href="#camply.AvailableCampsite.campsite_occupancy" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute pydantic_field">
@@ -693,7 +694,7 @@ Yellowstone API doesn’t always return data.</p>
 
 <dl class="py attribute pydantic_field">
 <dt class="sig sig-object py" id="camply.AvailableCampsite.facility_id">
-<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">facility_id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><span class="pre">int</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">[Required]</span></em><a class="headerlink" href="#camply.AvailableCampsite.facility_id" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">facility_id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Union" title="(in Python v3.10)"><span class="pre">Union</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><span class="pre">int</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">[Required]</span></em><a class="headerlink" href="#camply.AvailableCampsite.facility_id" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute pydantic_field">
@@ -703,7 +704,7 @@ Yellowstone API doesn’t always return data.</p>
 
 <dl class="py attribute pydantic_field">
 <dt class="sig sig-object py" id="camply.AvailableCampsite.permitted_equipment">
-<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">permitted_equipment</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="camply.containers.base_container.html#camply.containers.base_container.RecDotGovEquipment" title="camply.containers.base_container.RecDotGovEquipment"><span class="pre">camply.containers.base_container.RecDotGovEquipment</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#camply.AvailableCampsite.permitted_equipment" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">permitted_equipment</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.10)"><span class="pre">Optional</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.10)"><span class="pre">List</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="camply.containers.base_container.html#camply.containers.base_container.RecDotGovEquipment" title="camply.containers.base_container.RecDotGovEquipment"><span class="pre">RecDotGovEquipment</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#camply.AvailableCampsite.permitted_equipment" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute pydantic_field">
@@ -721,7 +722,7 @@ Yellowstone API doesn’t always return data.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="camply.EquipmentOptions">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">camply.</span></span><span class="sig-name descname"><span class="pre">EquipmentOptions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/camply/config/search_config.html#EquipmentOptions"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#camply.EquipmentOptions" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/enum.html#enum.Enum" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">enum.Enum</span></code></a></p>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/enum.html#enum.Enum" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Enum</span></code></a></p>
 <p>Enumeration of the Equipment Options</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="camply.EquipmentOptions.tent">

@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>camply.containers.base_container module &mdash; camply 0.4.8 documentation</title>
+  <title>camply.containers.base_container module &mdash; camply 0.4.9 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/autodoc_pydantic.css" type="text/css" />
@@ -18,6 +18,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/clipboard.min.js"></script>
         <script src="../_static/copybutton.js"></script>
@@ -36,7 +37,7 @@
             <a href="../index.html" class="icon icon-home"> camply
           </a>
               <div class="version">
-                0.4.8
+                0.4.9
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -102,19 +103,19 @@
            <div itemprop="articleBody">
              
   <section id="module-camply.containers.base_container">
-<span id="camply-containers-base-container-module"></span><h1>camply.containers.base_container module<a class="headerlink" href="#module-camply.containers.base_container" title="Permalink to this headline"></a></h1>
+<span id="camply-containers-base-container-module"></span><h1>camply.containers.base_container module<a class="headerlink" href="#module-camply.containers.base_container" title="Permalink to this heading"></a></h1>
 <p>Base Pydantic Object for Containers</p>
 <dl class="py class pydantic_model">
 <dt class="sig sig-object py" id="camply.containers.base_container.CamplyModel">
 <em class="property"><span class="pre">pydantic</span> <span class="pre">model</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">camply.containers.base_container.</span></span><span class="sig-name descname"><span class="pre">CamplyModel</span></span><a class="reference internal" href="../_modules/camply/containers/base_container.html#CamplyModel"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#camply.containers.base_container.CamplyModel" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pydantic.main.BaseModel</span></code></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">BaseModel</span></code></p>
 <p>Hashable Pydantic Model</p>
 </dd></dl>
 
 <dl class="py class pydantic_model">
 <dt class="sig sig-object py" id="camply.containers.base_container.RecDotGovAttribute">
 <em class="property"><span class="pre">pydantic</span> <span class="pre">model</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">camply.containers.base_container.</span></span><span class="sig-name descname"><span class="pre">RecDotGovAttribute</span></span><a class="reference internal" href="../_modules/camply/containers/base_container.html#RecDotGovAttribute"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#camply.containers.base_container.RecDotGovAttribute" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <a class="reference internal" href="#camply.containers.base_container.CamplyModel" title="camply.containers.base_container.CamplyModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">camply.containers.base_container.CamplyModel</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="#camply.containers.base_container.CamplyModel" title="camply.containers.base_container.CamplyModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">CamplyModel</span></code></a></p>
 <p>Attribute Object on the Recreation.gov Campsite</p>
 <dl class="field-list simple">
 <dt class="field-odd">Fields</dt>
@@ -143,7 +144,7 @@
 
 <dl class="py attribute pydantic_field">
 <dt class="sig sig-object py" id="camply.containers.base_container.RecDotGovAttribute.attribute_value">
-<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">attribute_value</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Any</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#camply.containers.base_container.RecDotGovAttribute.attribute_value" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">attribute_value</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.10)"><span class="pre">Any</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#camply.containers.base_container.RecDotGovAttribute.attribute_value" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -151,7 +152,7 @@
 <dl class="py class pydantic_model">
 <dt class="sig sig-object py" id="camply.containers.base_container.RecDotGovEquipment">
 <em class="property"><span class="pre">pydantic</span> <span class="pre">model</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">camply.containers.base_container.</span></span><span class="sig-name descname"><span class="pre">RecDotGovEquipment</span></span><a class="reference internal" href="../_modules/camply/containers/base_container.html#RecDotGovEquipment"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#camply.containers.base_container.RecDotGovEquipment" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <a class="reference internal" href="#camply.containers.base_container.CamplyModel" title="camply.containers.base_container.CamplyModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">camply.containers.base_container.CamplyModel</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="#camply.containers.base_container.CamplyModel" title="camply.containers.base_container.CamplyModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">CamplyModel</span></code></a></p>
 <p>Equipment Object on the Recreation.gov Campsite</p>
 <dl class="field-list simple">
 <dt class="field-odd">Fields</dt>

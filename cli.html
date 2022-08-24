@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>camply CLI &mdash; camply 0.4.8 documentation</title>
+  <title>camply CLI &mdash; camply 0.4.9 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/autodoc_pydantic.css" type="text/css" />
@@ -18,6 +18,7 @@
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
         <script src="_static/clipboard.min.js"></script>
         <script src="_static/copybutton.js"></script>
@@ -36,7 +37,7 @@
             <a href="index.html" class="icon icon-home"> camply
           </a>
               <div class="version">
-                0.4.8
+                0.4.9
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -99,7 +100,7 @@
            <div itemprop="articleBody">
              
   <section id="camply-cli">
-<h1>camply CLI<a class="headerlink" href="#camply-cli" title="Permalink to this headline"></a></h1>
+<h1>camply CLI<a class="headerlink" href="#camply-cli" title="Permalink to this heading"></a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">❯ camply --help</span>
 
 <span class="go">Usage: camply [OPTIONS] COMMAND [ARGS]...</span>
@@ -128,13 +129,13 @@
 </pre></div>
 </div>
 <section id="installation">
-<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline"></a></h2>
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this heading"></a></h2>
 <p>To use camply, first install it using pip:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">pip install camply</span>
 </pre></div>
 </div>
 <section id="run-via-docker">
-<h3>Run via Docker<a class="headerlink" href="#run-via-docker" title="Permalink to this headline"></a></h3>
+<h3>Run via Docker<a class="headerlink" href="#run-via-docker" title="Permalink to this heading"></a></h3>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">docker pull juftin/camply</span>
 </pre></div>
 </div>
@@ -146,9 +147,9 @@
 </section>
 </section>
 <section id="documentation">
-<h2>Documentation<a class="headerlink" href="#documentation" title="Permalink to this headline"></a></h2>
+<h2>Documentation<a class="headerlink" href="#documentation" title="Permalink to this heading"></a></h2>
 <section id="camply">
-<h3>camply<a class="headerlink" href="#camply" title="Permalink to this headline"></a></h3>
+<h3>camply<a class="headerlink" href="#camply" title="Permalink to this heading"></a></h3>
 <p>Welcome to camply, the campsite finder.</p>
 <p>Finding reservations at sold out campgrounds can be
 tough. That’s where camply comes in. It searches the APIs of booking services like
@@ -173,7 +174,7 @@ camply sends you a notification to book your spot!</p>
 </dd></dl>
 
 <section id="camply-campgrounds">
-<h4>campgrounds<a class="headerlink" href="#camply-campgrounds" title="Permalink to this headline"></a></h4>
+<h4>campgrounds<a class="headerlink" href="#camply-campgrounds" title="Permalink to this heading"></a></h4>
 <p>Search for Campgrounds (inside of Recreation Areas) and list them</p>
 <p>Search for Campgrounds and their IDs. Campgrounds are facilities inside of
 Recreation Areas that contain campsites. Most ‘campgrounds’ are areas made up of
@@ -226,7 +227,7 @@ contain a single ‘campsite’ to book.</p>
 
 </section>
 <section id="camply-campsites">
-<h4>campsites<a class="headerlink" href="#camply-campsites" title="Permalink to this headline"></a></h4>
+<h4>campsites<a class="headerlink" href="#camply-campsites" title="Permalink to this heading"></a></h4>
 <p>Find available Campsites using search criteria</p>
 <p>Search for a campsite within camply. Campsites are returned based on the search criteria
 provided. Campsites contain properties like booking date, site type (tent, RV, cabin, etc),
@@ -370,7 +371,7 @@ functionality can be enabled with  <cite>–continuous</cite> and notifications 
 
 </section>
 <section id="camply-configure">
-<h4>configure<a class="headerlink" href="#camply-configure" title="Permalink to this headline"></a></h4>
+<h4>configure<a class="headerlink" href="#camply-configure" title="Permalink to this heading"></a></h4>
 <p>Set up camply configuration file with an interactive console</p>
 <p>In order to send notifications through camply you must set up some authorization values.
 Whether you need to set up pushover notifications (push notifications on your phone,
@@ -382,7 +383,7 @@ home folder.</p>
 </div>
 </section>
 <section id="camply-recreation-areas">
-<h4>recreation-areas<a class="headerlink" href="#camply-recreation-areas" title="Permalink to this headline"></a></h4>
+<h4>recreation-areas<a class="headerlink" href="#camply-recreation-areas" title="Permalink to this heading"></a></h4>
 <p>Search for Recreation Areas and list them</p>
 <p>Search for Recreation Areas and their IDs. Recreation Areas are places like
 National Parks and National Forests that can contain one or many campgrounds.</p>
