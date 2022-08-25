@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Table of Contents &mdash; camply 0.5.0 documentation</title>
+  <title>Table of Contents &mdash; camply 0.5.1 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/autodoc_pydantic.css" type="text/css" />
@@ -37,7 +37,7 @@
             <a href="index.html" class="icon icon-home"> camply
           </a>
               <div class="version">
-                0.5.0
+                0.5.1
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -80,7 +80,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#look-for-consecutive-nights-at-the-same-campsite">Look for Consecutive Nights at the Same Campsite</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#look-for-a-campsite-inside-of-yellowstone">Look for a Campsite Inside of Yellowstone</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#look-for-a-campsite-across-multiple-recreation-areas">Look for a Campsite Across Multiple Recreation areas</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#using-a-yml-configuration-file-to-search-for-campsites">Using a YML Configuration file to search for campsites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#using-a-yaml-configuration-file-to-search-for-campsites">Using a YAML Configuration file to search for campsites</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#searching-for-a-campsite-that-fits-your-equipment">Searching for a Campsite That Fits Your Equipment</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#search-for-recreation-areas-by-query-string">Search for Recreation Areas by Query String</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#look-for-specific-campgrounds-within-a-recreation-area">Look for Specific Campgrounds Within a Recreation Area</a></li>
@@ -129,7 +129,7 @@
              
   <div align="center">
 <a href="https://github.com/juftin/camply">
-  <img src="https://raw.githubusercontent.com/juftin/camply/main/docs/static/camply.svg"
+  <img src="https://raw.githubusercontent.com/juftin/camply/main/docs/source/_static/camply.svg"
     width="400" height="400" alt="camply">
 </a>
 </div>
@@ -143,7 +143,7 @@ becomes available, camply sends you a notification to book your spot!</p>
 <p><a class="reference external" href="https://github.com/juftin/camply"><img alt="PyPI" src="https://img.shields.io/pypi/v/camply?color=blue&amp;label=%E2%9B%BA%EF%B8%8Fcamply" /></a>
 <a class="reference external" href="https://pypi.python.org/pypi/camply/"><img alt="PyPI - Python Version" src="https://img.shields.io/pypi/pyversions/camply" /></a>
 <a class="reference external" href="https://hub.docker.com/r/juftin/camply"><img alt="Docker Image Version" src="https://img.shields.io/docker/v/juftin/camply?color=blue&amp;label=docker&amp;logo=docker" /></a>
-<a class="reference external" href="https://github.com/juftin/camply/actions/workflows/tests.yml"><img alt="Testing Status" src="https://github.com/juftin/camply/actions/workflows/tests.yml/badge.svg?branch=main" /></a>
+<a class="reference external" href="https://github.com/juftin/camply/actions/workflows/tests.yaml"><img alt="Testing Status" src="https://github.com/juftin/camply/actions/workflows/tests.yaml/badge.svg?branch=main" /></a>
 <a class="reference external" href="https://github.com/juftin/camply/blob/main/LICENSE"><img alt="GitHub License" src="https://img.shields.io/github/license/juftin/camply?color=blue&amp;label=License" /></a>
 <span class="xref myst"><img alt="Black Codestyle" src="https://img.shields.io/badge/code%20style-black-000000.svg" /></span></p>
 <section id="table-of-contents">
@@ -175,7 +175,7 @@ becomes available, camply sends you a notification to book your spot!</p>
 <li><p><a class="reference internal" href="#look-for-consecutive-nights-at-the-same-campsite"><span class="std std-doc">Look for Consecutive Nights at the Same Campsite</span></a></p></li>
 <li><p><a class="reference internal" href="#look-for-a-campsite-inside-of-yellowstone"><span class="std std-doc">Look for a Campsite Inside of Yellowstone</span></a></p></li>
 <li><p><a class="reference internal" href="#look-for-a-campsite-across-multiple-recreation-areas"><span class="std std-doc">Look for a Campsite Across Multiple Recreation areas</span></a></p></li>
-<li><p><a class="reference internal" href="#using-a-yml-configuration-file-to-search-for-campsites"><span class="std std-doc">Using a YML Configuration file to search for campsites</span></a></p></li>
+<li><p><a class="reference internal" href="#using-a-yaml-configuration-file-to-search-for-campsites"><span class="std std-doc">Using a YAML Configuration file to search for campsites</span></a></p></li>
 <li><p><a class="reference internal" href="#searching-for-a-campsite-that-fits-your-equipment"><span class="std std-doc">Searching for a Campsite That Fits Your Equipment</span></a></p></li>
 <li><p><a class="reference internal" href="#search-for-recreation-areas-by-query-string"><span class="std std-doc">Search for Recreation Areas by Query String</span></a></p></li>
 <li><p><a class="reference internal" href="#look-for-specific-campgrounds-within-a-recreation-area"><span class="std std-doc">Look for Specific Campgrounds Within a Recreation Area</span></a></p></li>
@@ -360,12 +360,12 @@ matching campsites are found on the first try. Defaults to false which only send
 <a class="reference internal" href="#look-for-weekend-campsite-availabilities"><span class="std std-doc">**<em>example</em></span></a></p></li>
 </ul>
 </li>
-<li><p><code class="docutils literal notranslate"><span class="pre">--yml-config</span></code></p>
+<li><p><code class="docutils literal notranslate"><span class="pre">--yaml-config</span></code></p>
 <ul>
 <li><p>Rather than provide arguments to the command line utility, instead pass a file path to a YAML
 configuration file. See the documentation for more information on how to structure your
 configuration file.
-<a class="reference internal" href="#using-a-yml-configuration-file-to-search-for-campsites"><span class="std std-doc">**<em>example</em></span></a></p></li>
+<a class="reference internal" href="#using-a-yaml-configuration-file-to-search-for-campsites"><span class="std std-doc">**<em>example</em></span></a></p></li>
 </ul>
 </li>
 </ul>
@@ -641,10 +641,10 @@ arguments will overwrite all <code class="docutils literal notranslate"><span cl
 </pre></div>
 </div>
 </section>
-<section id="using-a-yml-configuration-file-to-search-for-campsites">
-<h3>Using a YML Configuration file to search for campsites<a class="headerlink" href="#using-a-yml-configuration-file-to-search-for-campsites" title="Permalink to this heading"></a></h3>
+<section id="using-a-yaml-configuration-file-to-search-for-campsites">
+<h3>Using a YAML Configuration file to search for campsites<a class="headerlink" href="#using-a-yaml-configuration-file-to-search-for-campsites" title="Permalink to this heading"></a></h3>
 <p>Sometimes, using a YAML configuration file is easier to manage all of your search options. See the
-below <span class="xref myst">YML example file</span> and corresponding camply command:</p>
+below <span class="xref myst">YAML example file</span> and corresponding camply command:</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">provider</span><span class="p">:</span><span class="w">         </span><span class="l l-Scalar l-Scalar-Plain">RecreationDotGov</span><span class="w">  </span><span class="c1"># RecreationDotGov IF NOT PROVIDED</span><span class="w"></span>
 <span class="nt">recreation_area</span><span class="p">:</span><span class="w"> </span><span class="c1"># (LIST OR SINGLE ENTRY)</span><span class="w"></span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2991</span><span class="w">  </span><span class="c1"># Yosemite National Park, CA (All Campgrounds)</span><span class="w"></span>
@@ -663,7 +663,7 @@ below <span class="xref myst">YML example file</span> and corresponding camply c
 <span class="nt">equipment</span><span class="p">:</span><span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">null</span><span class="w"> </span><span class="c1"># Array of Equipment Search Lists - DEFAULTS TO `null`</span><span class="w"></span>
 </pre></div>
 </div>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>camply campsites --yml-config example_search.yml
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>camply campsites --yaml-config example_search.yaml
 </pre></div>
 </div>
 </section>
@@ -738,7 +738,7 @@ arguments.</p>
 functionality. Use the below example for a campground within Glacier National Park.</p>
 <p>First, perform your search on <a class="reference external" href="https://recreation.gov">https://recreation.gov</a>.</p>
 <div>
-<img src="https://raw.githubusercontent.com/juftin/camply/main/docs/static/recreation_dot_gov.png"
+<img src="https://raw.githubusercontent.com/juftin/camply/main/docs/source/_static/recreation_dot_gov.png"
     width="500" alt="recreation_dot_gov search">
 </div>
 <p>The above search will take you to a URL like this:
@@ -883,7 +883,7 @@ your <span class="xref myst"><code class="docutils literal notranslate"><span cl
       --notifications email
 </pre></div>
 </div>
-<p>To manage multiple searches (with different notification preferences) I like to use YML
+<p>To manage multiple searches (with different notification preferences) I like to use YAML
 configuration files:</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>docker run -d <span class="se">\</span>
   --name camply-email-example <span class="se">\</span>
@@ -891,13 +891,13 @@ configuration files:</p>
   --env <span class="nv">EMAIL_TO_ADDRESS</span><span class="o">=</span><span class="si">${</span><span class="nv">EMAIL_TO_ADDRESS</span><span class="si">}</span> <span class="se">\</span>
   --env <span class="nv">EMAIL_USERNAME</span><span class="o">=</span><span class="si">${</span><span class="nv">EMAIL_USERNAME</span><span class="si">}</span> <span class="se">\</span>
   --env <span class="nv">EMAIL_PASSWORD</span><span class="o">=</span><span class="si">${</span><span class="nv">EMAIL_PASSWORD</span><span class="si">}</span> <span class="se">\</span>
-  --volume example_search.yml:/home/camply/example_search.yml <span class="se">\</span>
+  --volume example_search.yaml:/home/camply/example_search.yaml <span class="se">\</span>
   juftin/camply:latest <span class="se">\</span>
   camply campsites <span class="se">\</span>
-      --yml-config /home/camply/example_search.yml
+      --yaml-config /home/camply/example_search.yaml
 </pre></div>
 </div>
-<p>A <span class="xref myst">docker-compose example</span> of the above YML Config is also
+<p>A <span class="xref myst">docker-compose example</span> of the above YAML Config is also
 available.</p>
 </section>
 <section id="dependencies">

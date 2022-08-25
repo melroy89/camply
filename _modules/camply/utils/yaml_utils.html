@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>camply.utils.yaml_utils &mdash; camply 0.5.0 documentation</title>
+  <title>camply.utils.yaml_utils &mdash; camply 0.5.1 documentation</title>
       <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/autodoc_pydantic.css" type="text/css" />
@@ -34,7 +34,7 @@
             <a href="../../../index.html" class="icon icon-home"> camply
           </a>
               <div class="version">
-                0.5.0
+                0.5.1
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
@@ -105,7 +105,7 @@
 <span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
 
 
-<div class="viewcode-block" id="read_yml"><a class="viewcode-back" href="../../../api/camply.utils.yaml_utils.html#camply.utils.yaml_utils.read_yml">[docs]</a><span class="k">def</span> <span class="nf">read_yml</span><span class="p">(</span><span class="n">path</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="read_yaml"><a class="viewcode-back" href="../../../api/camply.utils.yaml_utils.html#camply.utils.yaml_utils.read_yaml">[docs]</a><span class="k">def</span> <span class="nf">read_yaml</span><span class="p">(</span><span class="n">path</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Read a YAML File</span>
 
@@ -181,8 +181,8 @@
 <span class="sd">    provider, provider_kwargs, search_kwargs: Tuple[str, Dict[str, object], Dict[str, object]]</span>
 <span class="sd">        Tuple containing provider string, provider **kwargs, and search **kwargs</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">yaml_search</span> <span class="o">=</span> <span class="n">read_yml</span><span class="p">(</span><span class="n">path</span><span class="o">=</span><span class="n">file_path</span><span class="p">)</span>
-    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;YML File Parsed: </span><span class="si">{</span><span class="n">Path</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">yaml_search</span> <span class="o">=</span> <span class="n">read_yaml</span><span class="p">(</span><span class="n">path</span><span class="o">=</span><span class="n">file_path</span><span class="p">)</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;YAML File Parsed: </span><span class="si">{</span><span class="n">Path</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
     <span class="n">provider</span> <span class="o">=</span> <span class="n">yaml_search</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;provider&quot;</span><span class="p">,</span> <span class="s2">&quot;RecreationDotGov&quot;</span><span class="p">)</span>
     <span class="n">start_date</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">yaml_search</span><span class="p">[</span><span class="s2">&quot;start_date&quot;</span><span class="p">]),</span> <span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">)</span>
     <span class="n">end_date</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">yaml_search</span><span class="p">[</span><span class="s2">&quot;end_date&quot;</span><span class="p">]),</span> <span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">)</span>
