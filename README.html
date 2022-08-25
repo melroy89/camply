@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Table of Contents &mdash; camply 0.4.9 documentation</title>
+  <title>Table of Contents &mdash; camply 0.5.0 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/autodoc_pydantic.css" type="text/css" />
@@ -37,7 +37,7 @@
             <a href="index.html" class="icon icon-home"> camply
           </a>
               <div class="version">
-                0.4.9
+                0.5.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -52,7 +52,6 @@
 <li class="toctree-l1"><a class="reference internal" href="#installation">Installation</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#pypi">PyPI</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#docker">Docker</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#building-locally">Building Locally</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="#command-line-usage">Command Line Usage</a><ul>
@@ -98,9 +97,11 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="#running-in-docker">Running in Docker</a></li>
 <li class="toctree-l1"><a class="reference internal" href="#dependencies">Dependencies</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cli.html">camply CLI</a></li>
-<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="api/modules.html">API Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cli.html">Command Line Interface ⌨️</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/modules.html">API Documentation 🤖</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing 👥</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/juftin/camply">GitHub 🛠</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/juftin/camply/releases">Changelog 📝</a></li>
 </ul>
 
         </div>
@@ -152,7 +153,7 @@ becomes available, camply sends you a notification to book your spot!</p>
 <ul>
 <li><p><a class="reference internal" href="#pypi"><span class="std std-doc">PyPI</span></a></p></li>
 <li><p><a class="reference internal" href="#docker"><span class="std std-doc">Docker</span></a></p></li>
-<li><p><a class="reference internal" href="#building-locally"><span class="std std-doc">Building Locally</span></a></p></li>
+<li><p><span class="xref myst">Building Locally</span></p></li>
 </ul>
 </li>
 <li><p><a class="reference internal" href="#command-line-usage"><span class="std std-doc">Command Line Usage</span></a></p>
@@ -198,7 +199,15 @@ becomes available, camply sends you a notification to book your spot!</p>
 <h1>Installation<a class="headerlink" href="#installation" title="Permalink to this heading"></a></h1>
 <section id="pypi">
 <h2>PyPI<a class="headerlink" href="#pypi" title="Permalink to this heading"></a></h2>
+<p>Camply is hosted on PyPI, you can download it directly from tools like
+pip and pipx.</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip install camply
+</pre></div>
+</div>
+<p>If you’re using camply on your command line - it’s recommended that you use a tool
+like <a class="reference external" href="https://github.com/pypa/pipx">pipx</a> to easily manage the application in an isolated
+virtual environment.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pipx install camply
 </pre></div>
 </div>
 <p><a class="reference external" href="https://pypi.python.org/pypi/camply/">PyPI Link</a></p>
@@ -210,14 +219,6 @@ becomes available, camply sends you a notification to book your spot!</p>
 </div>
 <p><a class="reference external" href="https://hub.docker.com/r/juftin/camply">Docker Hub Link</a></p>
 <p>**<em>see <a class="reference internal" href="#running-in-docker"><span class="std std-doc">Running in Docker</span></a> below.</em></p>
-</section>
-<section id="building-locally">
-<h2>Building Locally<a class="headerlink" href="#building-locally" title="Permalink to this heading"></a></h2>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/juftin/camply.git
-<span class="nb">cd</span> camply
-python setup.py install
-</pre></div>
-</div>
 </section>
 </section>
 <section id="command-line-usage">

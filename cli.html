@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>camply CLI &mdash; camply 0.4.9 documentation</title>
+  <title>camply CLI &mdash; camply 0.5.0 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/autodoc_pydantic.css" type="text/css" />
@@ -25,7 +25,7 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Contributing" href="contributing.html" />
+    <link rel="next" title="camply" href="api/modules.html" />
     <link rel="prev" title="Table of Contents" href="README.html" /> 
 </head>
 
@@ -37,7 +37,7 @@
             <a href="index.html" class="icon icon-home"> camply
           </a>
               <div class="version">
-                0.4.9
+                0.5.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -55,7 +55,7 @@
 <li class="toctree-l1"><a class="reference internal" href="README.html#object-oriented-usage-python">Object-Oriented Usage (Python)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="README.html#running-in-docker">Running in Docker</a></li>
 <li class="toctree-l1"><a class="reference internal" href="README.html#dependencies">Dependencies</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">camply CLI</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Command Line Interface ⌨️</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#run-via-docker">Run via Docker</a></li>
 </ul>
@@ -72,8 +72,10 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="api/modules.html">API Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/modules.html">API Documentation 🤖</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing 👥</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/juftin/camply">GitHub 🛠</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/juftin/camply/releases">Changelog 📝</a></li>
 </ul>
 
         </div>
@@ -99,7 +101,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="camply-cli">
+  <section class="tex2jax_ignore mathjax_ignore" id="camply-cli">
 <h1>camply CLI<a class="headerlink" href="#camply-cli" title="Permalink to this heading"></a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">❯ camply --help</span>
 
@@ -131,17 +133,17 @@
 <section id="installation">
 <h2>Installation<a class="headerlink" href="#installation" title="Permalink to this heading"></a></h2>
 <p>To use camply, first install it using pip:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">pip install camply</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip install camply
 </pre></div>
 </div>
 <section id="run-via-docker">
 <h3>Run via Docker<a class="headerlink" href="#run-via-docker" title="Permalink to this heading"></a></h3>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">docker pull juftin/camply</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>docker pull juftin/camply
 </pre></div>
 </div>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">docker run \</span>
-<span class="go">    juftin/camply:latest \</span>
-<span class="go">    camply recreation-areas search --state CO</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>docker run <span class="se">\</span>
+    juftin/camply:latest <span class="se">\</span>
+    camply recreation-areas search --state CO
 </pre></div>
 </div>
 </section>
@@ -405,6 +407,7 @@ National Parks and National Forests that can contain one or many campgrounds.</p
 
 </section>
 </section>
+<p>tox</p>
 </section>
 </section>
 
@@ -413,7 +416,7 @@ National Parks and National Forests that can contain one or many campgrounds.</p
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="README.html" class="btn btn-neutral float-left" title="Table of Contents" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="contributing.html" class="btn btn-neutral float-right" title="Contributing" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="api/modules.html" class="btn btn-neutral float-right" title="camply" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
