@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>camply.providers.recreation_dot_gov package &mdash; camply 0.5.2 documentation</title>
+  <title>camply.notifications.slack module &mdash; camply 0.5.2 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/autodoc_pydantic.css" type="text/css" />
@@ -25,8 +25,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="camply.providers.recreation_dot_gov.recdotgov_provider module" href="camply.providers.recreation_dot_gov.recdotgov_provider.html" />
-    <link rel="prev" title="camply.providers package" href="camply.providers.html" /> 
+    <link rel="next" title="camply.notifications.telegram module" href="camply.notifications.telegram.html" />
+    <link rel="prev" title="camply.notifications.silent_notifications module" href="camply.notifications.silent_notifications.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -61,8 +61,8 @@
 <li class="toctree-l3 current"><a class="reference internal" href="camply.html#subpackages">Subpackages</a><ul class="current">
 <li class="toctree-l4"><a class="reference internal" href="camply.config.html">camply.config package</a></li>
 <li class="toctree-l4"><a class="reference internal" href="camply.containers.html">camply.containers package</a></li>
-<li class="toctree-l4"><a class="reference internal" href="camply.notifications.html">camply.notifications package</a></li>
-<li class="toctree-l4 current"><a class="reference internal" href="camply.providers.html">camply.providers package</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="camply.notifications.html">camply.notifications package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="camply.providers.html">camply.providers package</a></li>
 <li class="toctree-l4"><a class="reference internal" href="camply.search.html">camply.search package</a></li>
 <li class="toctree-l4"><a class="reference internal" href="camply.utils.html">camply.utils package</a></li>
 </ul>
@@ -94,8 +94,8 @@
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="modules.html">camply</a> &raquo;</li>
           <li><a href="camply.html">camply package</a> &raquo;</li>
-          <li><a href="camply.providers.html">camply.providers package</a> &raquo;</li>
-      <li>camply.providers.recreation_dot_gov package</li>
+          <li><a href="camply.notifications.html">camply.notifications package</a> &raquo;</li>
+      <li>camply.notifications.slack module</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -104,28 +104,52 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="camply-providers-recreation-dot-gov-package">
-<h1>camply.providers.recreation_dot_gov package<a class="headerlink" href="#camply-providers-recreation-dot-gov-package" title="Permalink to this heading"></a></h1>
-<section id="submodules">
-<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h2>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="camply.providers.recreation_dot_gov.recdotgov_provider.html">camply.providers.recreation_dot_gov.recdotgov_provider module</a></li>
+  <section id="module-camply.notifications.slack">
+<span id="camply-notifications-slack-module"></span><h1>camply.notifications.slack module<a class="headerlink" href="#module-camply.notifications.slack" title="Permalink to this heading"></a></h1>
+<p>Push Notifications via Slack</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="camply.notifications.slack.SlackNotifications">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">camply.notifications.slack.</span></span><span class="sig-name descname"><span class="pre">SlackNotifications</span></span><a class="reference internal" href="../_modules/camply/notifications/slack.html#SlackNotifications"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#camply.notifications.slack.SlackNotifications" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="camply.notifications.base_notifications.html#camply.notifications.base_notifications.BaseNotifications" title="camply.notifications.base_notifications.BaseNotifications"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseNotifications</span></code></a></p>
+<p>Push Notifications via Slack</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="camply.notifications.slack.SlackNotifications.send_message">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">send_message</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/camply/notifications/slack.html#SlackNotifications.send_message"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#camply.notifications.slack.SlackNotifications.send_message" title="Permalink to this definition"></a></dt>
+<dd><p>Send a message via Slack - if environment variables are configured.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>message</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a>) – </p></li>
+<li><p><strong>blocks</strong> (<em>List</em>) – </p></li>
 </ul>
-</div>
-</section>
-<section id="module-camply.providers.recreation_dot_gov">
-<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-camply.providers.recreation_dot_gov" title="Permalink to this heading"></a></h2>
-<p>RecreationDotGov __init__</p>
-</section>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>requests.Response</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="camply.notifications.slack.SlackNotifications.send_campsites">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">send_campsites</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">campsites</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/camply/notifications/slack.html#SlackNotifications.send_campsites"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#camply.notifications.slack.SlackNotifications.send_campsites" title="Permalink to this definition"></a></dt>
+<dd><p>Send a message with a campsite object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>campsites</strong> (<a class="reference internal" href="camply.html#camply.AvailableCampsite" title="camply.AvailableCampsite"><em>AvailableCampsite</em></a>) – </p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="camply.providers.html" class="btn btn-neutral float-left" title="camply.providers package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="camply.providers.recreation_dot_gov.recdotgov_provider.html" class="btn btn-neutral float-right" title="camply.providers.recreation_dot_gov.recdotgov_provider module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="camply.notifications.silent_notifications.html" class="btn btn-neutral float-left" title="camply.notifications.silent_notifications module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="camply.notifications.telegram.html" class="btn btn-neutral float-right" title="camply.notifications.telegram module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

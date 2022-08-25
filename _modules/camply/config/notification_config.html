@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>camply.config.notification_config &mdash; camply 0.5.1 documentation</title>
+  <title>camply.config.notification_config &mdash; camply 0.5.2 documentation</title>
       <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/autodoc_pydantic.css" type="text/css" />
@@ -34,7 +34,7 @@
             <a href="../../../index.html" class="icon icon-home"> camply
           </a>
               <div class="version">
-                0.5.1
+                0.5.2
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
@@ -152,6 +152,14 @@
     <span class="n">API_HEADERS</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Content-Type&quot;</span><span class="p">:</span> <span class="s2">&quot;application/json&quot;</span><span class="p">}</span>
 
     <span class="n">API_TOKEN</span> <span class="o">=</span> <span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;PUSHBULLET_API_TOKEN&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="SlackConfig"><a class="viewcode-back" href="../../../api/camply.config.notification_config.html#camply.config.SlackConfig">[docs]</a><span class="k">class</span> <span class="nc">SlackConfig</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Slack Notification Config Class</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">SLACK_WEBHOOK</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;SLACK_WEBHOOK&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="TelegramConfig"><a class="viewcode-back" href="../../../api/camply.config.notification_config.html#camply.config.TelegramConfig">[docs]</a><span class="k">class</span> <span class="nc">TelegramConfig</span><span class="p">:</span>

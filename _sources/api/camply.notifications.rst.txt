@@ -13,6 +13,7 @@ Submodules
    camply.notifications.pushbullet
    camply.notifications.pushover
    camply.notifications.silent_notifications
+   camply.notifications.slack
    camply.notifications.telegram
 
 Module contents

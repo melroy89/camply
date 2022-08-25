@@ -1,0 +1,7 @@
+camply.notifications.slack module
+=================================
+
+.. automodule:: camply.notifications.slack
+   :members:
+   :undoc-members:
+   :show-inheritance:

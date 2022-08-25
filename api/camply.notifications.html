@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>camply.notifications package &mdash; camply 0.5.1 documentation</title>
+  <title>camply.notifications package &mdash; camply 0.5.2 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/autodoc_pydantic.css" type="text/css" />
@@ -37,7 +37,7 @@
             <a href="../index.html" class="icon icon-home"> camply
           </a>
               <div class="version">
-                0.5.1
+                0.5.2
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -115,6 +115,7 @@
 <li class="toctree-l1"><a class="reference internal" href="camply.notifications.pushbullet.html">camply.notifications.pushbullet module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="camply.notifications.pushover.html">camply.notifications.pushover module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="camply.notifications.silent_notifications.html">camply.notifications.silent_notifications module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="camply.notifications.slack.html">camply.notifications.slack module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="camply.notifications.telegram.html">camply.notifications.telegram module</a></li>
 </ul>
 </div>
@@ -348,6 +349,41 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>campsites</strong> (<em>List</em><em>[</em><a class="reference internal" href="camply.html#camply.AvailableCampsite" title="camply.AvailableCampsite"><em>AvailableCampsite</em></a><em>]</em>) – </p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="camply.notifications.SlackNotifications">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">camply.notifications.</span></span><span class="sig-name descname"><span class="pre">SlackNotifications</span></span><a class="reference internal" href="../_modules/camply/notifications/slack.html#SlackNotifications"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#camply.notifications.SlackNotifications" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="camply.notifications.base_notifications.html#camply.notifications.base_notifications.BaseNotifications" title="camply.notifications.base_notifications.BaseNotifications"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseNotifications</span></code></a></p>
+<p>Push Notifications via Slack</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="camply.notifications.SlackNotifications.send_message">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">send_message</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/camply/notifications/slack.html#SlackNotifications.send_message"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#camply.notifications.SlackNotifications.send_message" title="Permalink to this definition"></a></dt>
+<dd><p>Send a message via Slack - if environment variables are configured.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>message</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a>) – </p></li>
+<li><p><strong>blocks</strong> (<em>List</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>requests.Response</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="camply.notifications.SlackNotifications.send_campsites">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">send_campsites</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">campsites</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/camply/notifications/slack.html#SlackNotifications.send_campsites"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#camply.notifications.SlackNotifications.send_campsites" title="Permalink to this definition"></a></dt>
+<dd><p>Send a message with a campsite object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>campsites</strong> (<a class="reference internal" href="camply.html#camply.AvailableCampsite" title="camply.AvailableCampsite"><em>AvailableCampsite</em></a>) – </p>
 </dd>
 </dl>
 </dd></dl>
