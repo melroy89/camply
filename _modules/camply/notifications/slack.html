@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>camply.notifications.slack &mdash; camply 0.5.2 documentation</title>
+  <title>camply.notifications.slack &mdash; camply 0.5.4 documentation</title>
       <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/autodoc_pydantic.css" type="text/css" />
@@ -34,7 +34,7 @@
             <a href="../../../index.html" class="icon icon-home"> camply
           </a>
               <div class="version">
-                0.5.2
+                0.5.4
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
@@ -205,10 +205,11 @@
             <span class="p">)</span>
             <span class="c1"># Slack only allows 10 fields (k+v) per section</span>
             <span class="k">for</span> <span class="n">chunk</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">fields</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">):</span>
+                <span class="n">chunk_max</span> <span class="o">=</span> <span class="n">chunk</span> <span class="o">+</span> <span class="mi">10</span>
                 <span class="n">blocks</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
                     <span class="p">{</span>
                         <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;section&quot;</span><span class="p">,</span>
-                        <span class="s2">&quot;fields&quot;</span><span class="p">:</span> <span class="n">fields</span><span class="p">[</span><span class="n">chunk</span><span class="p">:</span> <span class="n">chunk</span> <span class="o">+</span> <span class="mi">10</span><span class="p">],</span>
+                        <span class="s2">&quot;fields&quot;</span><span class="p">:</span> <span class="n">fields</span><span class="p">[</span><span class="n">chunk</span><span class="p">:</span><span class="n">chunk_max</span><span class="p">],</span>
                     <span class="p">}</span>
                 <span class="p">)</span>
             <span class="n">SlackNotifications</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span>
