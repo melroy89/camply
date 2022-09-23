@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Table of Contents &mdash; camply 0.5.7 documentation</title>
+  <title>Table of Contents &mdash; camply 0.5.8 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/autodoc_pydantic.css" type="text/css" />
@@ -37,7 +37,7 @@
             <a href="index.html" class="icon icon-home"> camply
           </a>
               <div class="version">
-                0.5.7
+                0.5.8
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -559,17 +559,8 @@ command) or though environment variables (<code class="docutils literal notransl
 <section id="send-a-notification-to-different-services">
 <h3>Send a Notification to Different Services<a class="headerlink" href="#send-a-notification-to-different-services" title="Permalink to this heading"></a></h3>
 <p>camply supports notifications from different providers. To send notifications to multiple providers
-just separate them with a comma. If you’re adding spaces between the commas make sure to quote
-everything. You can also pass the –notifications parameter multiple times. YAML config entries also
+you can pass the –notifications parameter multiple times. YAML config entries also
 accept an array as well.</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>camply campsites <span class="se">\</span>
-    --rec-area <span class="m">2991</span> <span class="se">\</span>
-    --start-date <span class="m">2023</span>-09-10 <span class="se">\</span>
-    --end-date <span class="m">2023</span>-09-21 <span class="se">\</span>
-    --continuous <span class="se">\</span>
-    --notifications pushover,email
-</pre></div>
-</div>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>camply campsites <span class="se">\</span>
     --rec-area <span class="m">2991</span> <span class="se">\</span>
     --start-date <span class="m">2023</span>-09-10 <span class="se">\</span>
