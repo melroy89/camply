@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>camply.notifications.base_notifications &mdash; camply 0.5.6 documentation</title>
+  <title>camply.notifications.base_notifications &mdash; camply 0.5.7 documentation</title>
       <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/autodoc_pydantic.css" type="text/css" />
@@ -34,7 +34,7 @@
             <a href="../../../index.html" class="icon icon-home"> camply
           </a>
               <div class="version">
-                0.5.6
+                0.5.7
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
@@ -161,8 +161,13 @@
             <span class="k">elif</span> <span class="n">key</span> <span class="o">==</span> <span class="n">CampsiteContainerFields</span><span class="o">.</span><span class="n">BOOKING_URL</span><span class="p">:</span>
                 <span class="n">key</span> <span class="o">=</span> <span class="s2">&quot;booking_link&quot;</span>
             <span class="k">elif</span> <span class="n">key</span> <span class="o">==</span> <span class="n">CampsiteContainerFields</span><span class="o">.</span><span class="n">PERMITTED_EQUIPMENT</span><span class="p">:</span>
+                <span class="n">equipment</span> <span class="o">=</span> <span class="p">(</span>
+                    <span class="p">[]</span>
+                    <span class="k">if</span> <span class="n">campsite</span><span class="o">.</span><span class="n">permitted_equipment</span> <span class="ow">is</span> <span class="kc">None</span>
+                    <span class="k">else</span> <span class="n">campsite</span><span class="o">.</span><span class="n">permitted_equipment</span>
+                <span class="p">)</span>
                 <span class="n">value</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">  - &quot;</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">  - &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
-                    <span class="nb">set</span><span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">equipment_name</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">campsite</span><span class="o">.</span><span class="n">permitted_equipment</span><span class="p">)</span>
+                    <span class="nb">set</span><span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">equipment_name</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">equipment</span><span class="p">)</span>
                 <span class="p">)</span>
             <span class="k">if</span> <span class="n">key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="n">CampsiteContainerFields</span><span class="o">.</span><span class="n">CAMPSITE_ATTRIBUTES</span><span class="p">]:</span>
                 <span class="n">formatted_key</span> <span class="o">=</span> <span class="n">key</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">,</span> <span class="s2">&quot; &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">title</span><span class="p">()</span>

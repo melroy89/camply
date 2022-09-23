@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Table of Contents &mdash; camply 0.5.6 documentation</title>
+  <title>Table of Contents &mdash; camply 0.5.7 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/autodoc_pydantic.css" type="text/css" />
@@ -37,7 +37,7 @@
             <a href="index.html" class="icon icon-home"> camply
           </a>
               <div class="version">
-                0.5.6
+                0.5.7
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -371,8 +371,8 @@ configuration file.
 </ul>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>camply campsites <span class="se">\</span>
     --rec-area <span class="m">2725</span> <span class="se">\</span>
-    --start-date <span class="m">2022</span>-07-10 <span class="se">\</span>
-    --end-date <span class="m">2022</span>-07-18
+    --start-date <span class="m">2023</span>-07-10 <span class="se">\</span>
+    --end-date <span class="m">2023</span>-07-18
 </pre></div>
 </div>
 </section>
@@ -457,28 +457,28 @@ functionality of the different arguments provided to the CLI.</p>
 <section id="searching-for-a-campsite">
 <h3>Searching for a Campsite<a class="headerlink" href="#searching-for-a-campsite" title="Permalink to this heading"></a></h3>
 <p>The below search looks for campsites inside of Recreation Area ID #2725 (Glacier National Park)
-between 2022-07-10 and 2022-07-17. The search will be performed once and any results will be logged
+between 2023-07-10 and 2023-07-17. The search will be performed once and any results will be logged
 to the console. camply searches for campsites inside of search windows in increments of one night.
 <code class="docutils literal notranslate"><span class="pre">--start-date</span></code> and <code class="docutils literal notranslate"><span class="pre">--end-date</span></code> define the bounds of the search window, you will be leaving the day
 after <code class="docutils literal notranslate"><span class="pre">--end-date</span></code>.</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>camply campsites <span class="se">\</span>
     --rec-area <span class="m">2725</span> <span class="se">\</span>
-    --start-date <span class="m">2022</span>-07-10 <span class="se">\</span>
-    --end-date <span class="m">2022</span>-07-18
+    --start-date <span class="m">2023</span>-07-10 <span class="se">\</span>
+    --end-date <span class="m">2023</span>-07-18
 </pre></div>
 </div>
 </section>
 <section id="searching-for-a-campsite-by-campground-id">
 <h3>Searching for a Campsite by Campground ID<a class="headerlink" href="#searching-for-a-campsite-by-campground-id" title="Permalink to this heading"></a></h3>
 <p>The below search looks for across three campgrounds (all inside Glacier National Park)
-between 2022-07-10 and 2022-07-17. Multiple Campgrounds (and Recreation Areas too) can be found by
+between 2023-07-10 and 2023-07-17. Multiple Campgrounds (and Recreation Areas too) can be found by
 supplying the arguments more than once.</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>camply campsites <span class="se">\</span>
     --campground <span class="m">232493</span> <span class="se">\</span>
     --campground <span class="m">251869</span> <span class="se">\</span>
     --campground <span class="m">232492</span> <span class="se">\</span>
-    --start-date <span class="m">2022</span>-07-10 <span class="se">\</span>
-    --end-date <span class="m">2022</span>-07-18
+    --start-date <span class="m">2023</span>-07-10 <span class="se">\</span>
+    --end-date <span class="m">2023</span>-07-18
 </pre></div>
 </div>
 </section>
@@ -495,8 +495,8 @@ times to search for different campsites. Note, <code class="docutils literal not
 or <code class="docutils literal notranslate"><span class="pre">--campground</span></code> parameters provided.</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>camply campsites <span class="se">\</span>
     --campsite <span class="m">98363</span> <span class="se">\</span>
-    --start-date <span class="m">2022</span>-07-10 <span class="se">\</span>
-    --end-date <span class="m">2022</span>-07-18
+    --start-date <span class="m">2023</span>-07-10 <span class="se">\</span>
+    --end-date <span class="m">2023</span>-07-18
 </pre></div>
 </div>
 </section>
@@ -513,8 +513,8 @@ always encouraged to perform an initial online search before setting up a <code 
 this behavior and send all notifications, pass the <code class="docutils literal notranslate"><span class="pre">--notify-first-try</span></code> argument.</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>camply campsites <span class="se">\</span>
     --rec-area <span class="m">2725</span> <span class="se">\</span>
-    --start-date <span class="m">2022</span>-07-12 <span class="se">\</span>
-    --end-date <span class="m">2022</span>-07-13 <span class="se">\</span>
+    --start-date <span class="m">2023</span>-07-12 <span class="se">\</span>
+    --end-date <span class="m">2023</span>-07-13 <span class="se">\</span>
     --continuous <span class="se">\</span>
     --notifications pushover <span class="se">\</span>
     --notify-first-try
@@ -530,8 +530,8 @@ is enabled, so it won’t notify you about the exact same campsite availability 
 problematic when certain campsites become available more than once.</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>camply campsites <span class="se">\</span>
     --rec-area <span class="m">2725</span> <span class="se">\</span>
-    --start-date <span class="m">2022</span>-07-01 <span class="se">\</span>
-    --end-date <span class="m">2022</span>-08-01 <span class="se">\</span>
+    --start-date <span class="m">2023</span>-07-01 <span class="se">\</span>
+    --end-date <span class="m">2023</span>-08-01 <span class="se">\</span>
     --continuous <span class="se">\</span>
     --notifications pushover <span class="se">\</span>
     --search-forever
@@ -549,8 +549,8 @@ through a <span class="xref myst">configuration file</span> (via the <code class
 command) or though environment variables (<code class="docutils literal notranslate"><span class="pre">PUSHBULLET_API_TOKEN</span></code>).</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>camply campsites <span class="se">\</span>
     --rec-area <span class="m">2991</span> <span class="se">\</span>
-    --start-date <span class="m">2022</span>-09-10 <span class="se">\</span>
-    --end-date <span class="m">2022</span>-09-21 <span class="se">\</span>
+    --start-date <span class="m">2023</span>-09-10 <span class="se">\</span>
+    --end-date <span class="m">2023</span>-09-21 <span class="se">\</span>
     --continuous <span class="se">\</span>
     --notifications pushbullet
 </pre></div>
@@ -564,16 +564,16 @@ everything. You can also pass the –notifications parameter multiple times. YAM
 accept an array as well.</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>camply campsites <span class="se">\</span>
     --rec-area <span class="m">2991</span> <span class="se">\</span>
-    --start-date <span class="m">2022</span>-09-10 <span class="se">\</span>
-    --end-date <span class="m">2022</span>-09-21 <span class="se">\</span>
+    --start-date <span class="m">2023</span>-09-10 <span class="se">\</span>
+    --end-date <span class="m">2023</span>-09-21 <span class="se">\</span>
     --continuous <span class="se">\</span>
     --notifications pushover,email
 </pre></div>
 </div>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>camply campsites <span class="se">\</span>
     --rec-area <span class="m">2991</span> <span class="se">\</span>
-    --start-date <span class="m">2022</span>-09-10 <span class="se">\</span>
-    --end-date <span class="m">2022</span>-09-21 <span class="se">\</span>
+    --start-date <span class="m">2023</span>-09-10 <span class="se">\</span>
+    --end-date <span class="m">2023</span>-09-21 <span class="se">\</span>
     --continuous <span class="se">\</span>
     --notifications email <span class="se">\</span>
     --notifications pushover
@@ -587,8 +587,8 @@ on a Friday or Saturday night (<code class="docutils literal notranslate"><span 
 checks every 5 minutes instead of the default 10 minutes.</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>camply campsites <span class="se">\</span>
     --rec-area <span class="m">2991</span> <span class="se">\</span>
-    --start-date <span class="m">2022</span>-05-01 <span class="se">\</span>
-    --end-date <span class="m">2022</span>-08-01 <span class="se">\</span>
+    --start-date <span class="m">2023</span>-05-01 <span class="se">\</span>
+    --end-date <span class="m">2023</span>-08-01 <span class="se">\</span>
     --weekends <span class="se">\</span>
     --continuous <span class="se">\</span>
     --notifications email <span class="se">\</span>
@@ -606,8 +606,8 @@ set the <code class="docutils literal notranslate"><span class="pre">--weekends<
 more than this your <code class="docutils literal notranslate"><span class="pre">--nights</span></code> parameter will be overwritten to 2.</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>camply campsites <span class="se">\</span>
     --rec-area <span class="m">2991</span> <span class="se">\</span>
-    --start-date <span class="m">2022</span>-05-01 <span class="se">\</span>
-    --end-date <span class="m">2022</span>-08-01 <span class="se">\</span>
+    --start-date <span class="m">2023</span>-05-01 <span class="se">\</span>
+    --end-date <span class="m">2023</span>-08-01 <span class="se">\</span>
     --nights <span class="m">4</span>
 </pre></div>
 </div>
@@ -621,8 +621,8 @@ the <code class="docutils literal notranslate"><span class="pre">--provider</spa
 this <a class="reference external" href="https://github.com/juftin/camply/discussions/15#discussioncomment-783657">discussion</a>.</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>camply campsites <span class="se">\</span>
     --provider yellowstone <span class="se">\</span>
-    --start-date <span class="m">2022</span>-07-09 <span class="se">\</span>
-    --end-date <span class="m">2022</span>-07-17 <span class="se">\</span>
+    --start-date <span class="m">2023</span>-07-09 <span class="se">\</span>
+    --end-date <span class="m">2023</span>-07-17 <span class="se">\</span>
     --continuous
 </pre></div>
 </div>
@@ -635,8 +635,8 @@ arguments will overwrite all <code class="docutils literal notranslate"><span cl
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>camply campsites <span class="se">\</span>
     --rec-area <span class="m">2991</span> <span class="se">\</span>
     --rec-area <span class="m">1074</span> <span class="se">\</span>
-    --start-date <span class="m">2022</span>-07-09 <span class="se">\</span>
-    --end-date <span class="m">2022</span>-07-17 <span class="se">\</span>
+    --start-date <span class="m">2023</span>-07-09 <span class="se">\</span>
+    --end-date <span class="m">2023</span>-07-17 <span class="se">\</span>
     --nights <span class="m">5</span>
 </pre></div>
 </div>
@@ -651,8 +651,8 @@ below <span class="xref myst">YAML example file</span> and corresponding camply 
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1074</span><span class="w">  </span><span class="c1"># Sierra National Forest, CA (All Campgrounds)</span><span class="w"></span>
 <span class="nt">campgrounds</span><span class="p">:</span><span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">null</span><span class="w">  </span><span class="c1"># ENTIRE FIELD CAN BE OMITTED IF NOT USED - (LIST OR SINGLE ENTRY)</span><span class="w"></span>
 <span class="nt">campsites</span><span class="p">:</span><span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">null</span><span class="w">   </span><span class="c1"># OVERRIDES CAMPGROUNDS / RECREATION AREA - (LIST OR SINGLE ENTRY)</span><span class="w"></span>
-<span class="nt">start_date</span><span class="p">:</span><span class="w">       </span><span class="l l-Scalar l-Scalar-Plain">2022-09-12</span><span class="w">  </span><span class="c1"># YYYY-MM-DD</span><span class="w"></span>
-<span class="nt">end_date</span><span class="p">:</span><span class="w">         </span><span class="l l-Scalar l-Scalar-Plain">2022-09-13</span><span class="w">  </span><span class="c1"># YYYY-MM-DD</span><span class="w"></span>
+<span class="nt">start_date</span><span class="p">:</span><span class="w">       </span><span class="l l-Scalar l-Scalar-Plain">2023-09-12</span><span class="w">  </span><span class="c1"># YYYY-MM-DD</span><span class="w"></span>
+<span class="nt">end_date</span><span class="p">:</span><span class="w">         </span><span class="l l-Scalar l-Scalar-Plain">2023-09-13</span><span class="w">  </span><span class="c1"># YYYY-MM-DD</span><span class="w"></span>
 <span class="nt">weekends</span><span class="p">:</span><span class="w">         </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w">  </span><span class="c1"># FALSE BY DEFAULT</span><span class="w"></span>
 <span class="nt">nights</span><span class="p">:</span><span class="w">           </span><span class="l l-Scalar l-Scalar-Plain">1</span><span class="w">  </span><span class="c1"># 1 BY DEFAULT</span><span class="w"></span>
 <span class="nt">continuous</span><span class="p">:</span><span class="w">       </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w">  </span><span class="c1"># DEFAULTS TO TRUE</span><span class="w"></span>
@@ -680,8 +680,8 @@ filtering on <code class="docutils literal notranslate"><span class="pre">Tents<
 it is safer to set length to 0.</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>camply campsites <span class="se">\</span>
     --rec-area <span class="m">2991</span> <span class="se">\</span>
-    --start-date <span class="m">2022</span>-07-09 <span class="se">\</span>
-    --end-date <span class="m">2022</span>-07-17 <span class="se">\</span>
+    --start-date <span class="m">2023</span>-07-09 <span class="se">\</span>
+    --end-date <span class="m">2023</span>-07-17 <span class="se">\</span>
     --nights <span class="m">5</span> <span class="se">\</span>
     --equipment RV <span class="m">25</span>
 </pre></div>
@@ -689,8 +689,8 @@ it is safer to set length to 0.</p>
 <p>Here’s what the above search would look like on a YAML Config:</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">recreation_area</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2991</span><span class="w"></span>
-<span class="nt">start_date</span><span class="p">:</span><span class="w">       </span><span class="l l-Scalar l-Scalar-Plain">2022-07-09</span><span class="w"></span>
-<span class="nt">end_date</span><span class="p">:</span><span class="w">         </span><span class="l l-Scalar l-Scalar-Plain">2022-07-17</span><span class="w"></span>
+<span class="nt">start_date</span><span class="p">:</span><span class="w">       </span><span class="l l-Scalar l-Scalar-Plain">2023-07-09</span><span class="w"></span>
+<span class="nt">end_date</span><span class="p">:</span><span class="w">         </span><span class="l l-Scalar l-Scalar-Plain">2023-07-17</span><span class="w"></span>
 <span class="nt">nights</span><span class="p">:</span><span class="w">           </span><span class="l l-Scalar l-Scalar-Plain">5</span><span class="w"></span>
 <span class="nt">equipment</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">RV</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">25</span><span class="p p-Indicator">]</span><span class="w"></span>
@@ -699,8 +699,8 @@ it is safer to set length to 0.</p>
 <p>Finally, here’s a search that accommodates trailers of all lengths:</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>camply campsites <span class="se">\</span>
     --rec-area <span class="m">2991</span> <span class="se">\</span>
-    --start-date <span class="m">2022</span>-07-09 <span class="se">\</span>
-    --end-date <span class="m">2022</span>-07-17 <span class="se">\</span>
+    --start-date <span class="m">2023</span>-07-09 <span class="se">\</span>
+    --end-date <span class="m">2023</span>-07-17 <span class="se">\</span>
     --nights <span class="m">5</span> <span class="se">\</span>
     --equipment Trailer <span class="m">0</span>
 </pre></div>
@@ -833,8 +833,8 @@ container will run detached).</p>
   juftin/camply <span class="se">\</span>
   camply campsites <span class="se">\</span>
       --rec-area <span class="m">2991</span> <span class="se">\</span>
-      --start-date <span class="m">2022</span>-08-01 <span class="se">\</span>
-      --end-date <span class="m">2022</span>-09-01 <span class="se">\</span>
+      --start-date <span class="m">2023</span>-08-01 <span class="se">\</span>
+      --end-date <span class="m">2023</span>-09-01 <span class="se">\</span>
       --continuous <span class="se">\</span>
       --notifications pushover
 </pre></div>
@@ -877,8 +877,8 @@ your <span class="xref myst"><code class="docutils literal notranslate"><span cl
   juftin/camply <span class="se">\</span>
   camply campsites <span class="se">\</span>
       --provider yellowstone <span class="se">\</span>
-      --start-date <span class="m">2022</span>-07-22 <span class="se">\</span>
-      --end-date <span class="m">2022</span>-07-27 <span class="se">\</span>
+      --start-date <span class="m">2023</span>-07-22 <span class="se">\</span>
+      --end-date <span class="m">2023</span>-07-27 <span class="se">\</span>
       --continuous <span class="se">\</span>
       --notifications email
 </pre></div>
