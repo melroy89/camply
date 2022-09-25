@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>camply.search package &mdash; camply 0.5.8 documentation</title>
+  <title>camply.search package &mdash; camply 0.6.0 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/autodoc_pydantic.css" type="text/css" />
@@ -20,6 +20,7 @@
         <script src="../_static/underscore.js"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
         <script src="../_static/clipboard.min.js"></script>
         <script src="../_static/copybutton.js"></script>
     <script src="../_static/js/theme.js"></script>
@@ -37,7 +38,7 @@
             <a href="../index.html" class="icon icon-home"> camply
           </a>
               <div class="version">
-                0.5.8
+                0.6.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -68,7 +69,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="camply.html#submodules">Submodules</a></li>
-<li class="toctree-l3"><a class="reference internal" href="camply.html#module-camply">Module contents</a></li>
+<li class="toctree-l3"><a class="reference internal" href="camply.html#module-contents">Module contents</a></li>
 </ul>
 </li>
 </ul>
@@ -109,16 +110,42 @@
 <h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h2>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="camply.search.base_search.html">camply.search.base_search module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="camply.search.search_recreationdotgov.html">camply.search.search_recreationdotgov module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="camply.search.search_yellowstone.html">camply.search.search_yellowstone module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="camply.search.base_search.html">camply.search.base_search module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="camply.search.base_search.html#camply.search.base_search.SearchError"><code class="docutils literal notranslate"><span class="pre">SearchError</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="camply.search.base_search.html#camply.search.base_search.CampsiteNotFoundError"><code class="docutils literal notranslate"><span class="pre">CampsiteNotFoundError</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="camply.search.base_search.html#camply.search.base_search.BaseCampingSearch"><code class="docutils literal notranslate"><span class="pre">BaseCampingSearch</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="camply.search.base_search.html#camply.search.base_search.BaseCampingSearch.get_all_campsites"><code class="docutils literal notranslate"><span class="pre">BaseCampingSearch.get_all_campsites()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="camply.search.base_search.html#camply.search.base_search.BaseCampingSearch.get_matching_campsites"><code class="docutils literal notranslate"><span class="pre">BaseCampingSearch.get_matching_campsites()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="camply.search.base_search.html#camply.search.base_search.BaseCampingSearch.campsites_to_df"><code class="docutils literal notranslate"><span class="pre">BaseCampingSearch.campsites_to_df()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="camply.search.base_search.html#camply.search.base_search.BaseCampingSearch.df_to_campsites"><code class="docutils literal notranslate"><span class="pre">BaseCampingSearch.df_to_campsites()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="camply.search.base_search.html#camply.search.base_search.BaseCampingSearch.assemble_availabilities"><code class="docutils literal notranslate"><span class="pre">BaseCampingSearch.assemble_availabilities()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="camply.search.search_recreationdotgov.html">camply.search.search_recreationdotgov module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="camply.search.search_recreationdotgov.html#camply.search.search_recreationdotgov.SearchRecreationDotGov"><code class="docutils literal notranslate"><span class="pre">SearchRecreationDotGov</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="camply.search.search_recreationdotgov.html#camply.search.search_recreationdotgov.SearchRecreationDotGov.get_all_campsites"><code class="docutils literal notranslate"><span class="pre">SearchRecreationDotGov.get_all_campsites()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="camply.search.search_recreationdotgov.html#camply.search.search_recreationdotgov.SearchRecreationDotGov.filter_campsites_to_equipment"><code class="docutils literal notranslate"><span class="pre">SearchRecreationDotGov.filter_campsites_to_equipment()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="camply.search.search_yellowstone.html">camply.search.search_yellowstone module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="camply.search.search_yellowstone.html#camply.search.search_yellowstone.SearchYellowstone"><code class="docutils literal notranslate"><span class="pre">SearchYellowstone</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="camply.search.search_yellowstone.html#camply.search.search_yellowstone.SearchYellowstone.get_all_campsites"><code class="docutils literal notranslate"><span class="pre">SearchYellowstone.get_all_campsites()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="camply.search.search_yellowstone.html#camply.search.search_yellowstone.SearchYellowstone.print_campgrounds"><code class="docutils literal notranslate"><span class="pre">SearchYellowstone.print_campgrounds()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </div>
 </section>
-<section id="module-camply.search">
-<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-camply.search" title="Permalink to this heading"></a></h2>
+<section id="module-contents">
+<h2>Module contents<a class="headerlink" href="#module-contents" title="Permalink to this heading"></a></h2>
 <p>camply search __init__ file</p>
-<dl class="py class">
+<span class="target" id="module-camply.search"></span><dl class="py class">
 <dt class="sig sig-object py" id="camply.search.BaseCampingSearch">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">camply.search.</span></span><span class="sig-name descname"><span class="pre">BaseCampingSearch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">provider</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">search_window</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weekends_only</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nights</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/camply/search/base_search.html#BaseCampingSearch"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#camply.search.BaseCampingSearch" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/abc.html#abc.ABC" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ABC</span></code></a></p>

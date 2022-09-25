@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>camply.notifications.multi_provider_notifications &mdash; camply 0.5.8 documentation</title>
+  <title>camply.notifications.multi_provider_notifications &mdash; camply 0.6.0 documentation</title>
       <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/autodoc_pydantic.css" type="text/css" />
@@ -19,6 +19,7 @@
         <script src="../../../_static/underscore.js"></script>
         <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/sphinx_highlight.js"></script>
         <script src="../../../_static/clipboard.min.js"></script>
         <script src="../../../_static/copybutton.js"></script>
     <script src="../../../_static/js/theme.js"></script>
@@ -34,7 +35,7 @@
             <a href="../../../index.html" class="icon icon-home"> camply
           </a>
               <div class="version">
-                0.5.8
+                0.6.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
@@ -99,6 +100,7 @@
 <span class="kn">from</span> <span class="nn">camply.notifications.silent_notifications</span> <span class="kn">import</span> <span class="n">SilentNotifications</span>
 <span class="kn">from</span> <span class="nn">camply.notifications.slack</span> <span class="kn">import</span> <span class="n">SlackNotifications</span>
 <span class="kn">from</span> <span class="nn">camply.notifications.telegram</span> <span class="kn">import</span> <span class="n">TelegramNotifications</span>
+<span class="kn">from</span> <span class="nn">camply.notifications.twilio</span> <span class="kn">import</span> <span class="n">TwilioNotifications</span>
 
 <span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
 
@@ -109,6 +111,7 @@
     <span class="s2">&quot;pushbullet&quot;</span><span class="p">:</span> <span class="n">PushbulletNotifications</span><span class="p">,</span>
     <span class="s2">&quot;slack&quot;</span><span class="p">:</span> <span class="n">SlackNotifications</span><span class="p">,</span>
     <span class="s2">&quot;telegram&quot;</span><span class="p">:</span> <span class="n">TelegramNotifications</span><span class="p">,</span>
+    <span class="s2">&quot;twilio&quot;</span><span class="p">:</span> <span class="n">TwilioNotifications</span><span class="p">,</span>
 <span class="p">}</span>
 
 

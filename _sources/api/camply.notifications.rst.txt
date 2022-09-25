@@ -15,6 +15,7 @@ Submodules
    camply.notifications.silent_notifications
    camply.notifications.slack
    camply.notifications.telegram
+   camply.notifications.twilio
 
 Module contents
 ---------------

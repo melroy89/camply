@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>camply &mdash; camply 0.5.8 documentation</title>
+  <title>camply &mdash; camply 0.6.0 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/autodoc_pydantic.css" type="text/css" />
@@ -20,6 +20,7 @@
         <script src="../_static/underscore.js"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
         <script src="../_static/clipboard.min.js"></script>
         <script src="../_static/copybutton.js"></script>
     <script src="../_static/js/theme.js"></script>
@@ -37,7 +38,7 @@
             <a href="../index.html" class="icon icon-home"> camply
           </a>
               <div class="version">
-                0.5.8
+                0.6.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -96,42 +97,112 @@
 <li class="toctree-l2"><a class="reference internal" href="camply.html#subpackages">Subpackages</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="camply.config.html">camply.config package</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="camply.config.html#submodules">Submodules</a></li>
-<li class="toctree-l4"><a class="reference internal" href="camply.config.html#module-camply.config">Module contents</a></li>
+<li class="toctree-l4"><a class="reference internal" href="camply.config.html#module-contents">Module contents</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="camply.containers.html">camply.containers package</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="camply.containers.html#submodules">Submodules</a></li>
-<li class="toctree-l4"><a class="reference internal" href="camply.containers.html#module-camply.containers">Module contents</a></li>
+<li class="toctree-l4"><a class="reference internal" href="camply.containers.html#module-contents">Module contents</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="camply.notifications.html">camply.notifications package</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="camply.notifications.html#submodules">Submodules</a></li>
-<li class="toctree-l4"><a class="reference internal" href="camply.notifications.html#module-camply.notifications">Module contents</a></li>
+<li class="toctree-l4"><a class="reference internal" href="camply.notifications.html#module-contents">Module contents</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="camply.providers.html">camply.providers package</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="camply.providers.html#subpackages">Subpackages</a></li>
 <li class="toctree-l4"><a class="reference internal" href="camply.providers.html#submodules">Submodules</a></li>
-<li class="toctree-l4"><a class="reference internal" href="camply.providers.html#module-camply.providers">Module contents</a></li>
+<li class="toctree-l4"><a class="reference internal" href="camply.providers.html#module-contents">Module contents</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="camply.search.html">camply.search package</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="camply.search.html#submodules">Submodules</a></li>
-<li class="toctree-l4"><a class="reference internal" href="camply.search.html#module-camply.search">Module contents</a></li>
+<li class="toctree-l4"><a class="reference internal" href="camply.search.html#module-contents">Module contents</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="camply.utils.html">camply.utils package</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="camply.utils.html#submodules">Submodules</a></li>
-<li class="toctree-l4"><a class="reference internal" href="camply.utils.html#module-camply.utils">Module contents</a></li>
+<li class="toctree-l4"><a class="reference internal" href="camply.utils.html#module-contents">Module contents</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="camply.html#submodules">Submodules</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="camply.cli.html">camply.cli module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="camply.cli.html">camply.cli module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="camply.cli.html#camply.cli.cli"><code class="docutils literal notranslate"><span class="pre">cli()</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="camply.html#module-camply">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="camply.html#module-contents">Module contents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="camply.html#camply.SearchRecreationDotGov"><code class="docutils literal notranslate"><span class="pre">SearchRecreationDotGov</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="camply.html#camply.SearchRecreationDotGov.get_all_campsites"><code class="docutils literal notranslate"><span class="pre">SearchRecreationDotGov.get_all_campsites()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="camply.html#camply.SearchRecreationDotGov.filter_campsites_to_equipment"><code class="docutils literal notranslate"><span class="pre">SearchRecreationDotGov.filter_campsites_to_equipment()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="camply.html#camply.SearchYellowstone"><code class="docutils literal notranslate"><span class="pre">SearchYellowstone</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="camply.html#camply.SearchYellowstone.get_all_campsites"><code class="docutils literal notranslate"><span class="pre">SearchYellowstone.get_all_campsites()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="camply.html#camply.SearchYellowstone.print_campgrounds"><code class="docutils literal notranslate"><span class="pre">SearchYellowstone.print_campgrounds()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="camply.html#camply.YellowstoneLodging"><code class="docutils literal notranslate"><span class="pre">YellowstoneLodging</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="camply.html#camply.YellowstoneLodging.make_yellowstone_request"><code class="docutils literal notranslate"><span class="pre">YellowstoneLodging.make_yellowstone_request()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="camply.html#camply.YellowstoneLodging.get_monthly_campsites"><code class="docutils literal notranslate"><span class="pre">YellowstoneLodging.get_monthly_campsites()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="camply.html#camply.RecreationDotGov"><code class="docutils literal notranslate"><span class="pre">RecreationDotGov</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="camply.html#camply.RecreationDotGov.find_recreation_areas"><code class="docutils literal notranslate"><span class="pre">RecreationDotGov.find_recreation_areas()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="camply.html#camply.RecreationDotGov.find_campgrounds"><code class="docutils literal notranslate"><span class="pre">RecreationDotGov.find_campgrounds()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="camply.html#camply.RecreationDotGov.find_facilities_per_recreation_area"><code class="docutils literal notranslate"><span class="pre">RecreationDotGov.find_facilities_per_recreation_area()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="camply.html#camply.RecreationDotGov.get_ridb_data"><code class="docutils literal notranslate"><span class="pre">RecreationDotGov.get_ridb_data()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="camply.html#camply.RecreationDotGov.process_facilities_responses"><code class="docutils literal notranslate"><span class="pre">RecreationDotGov.process_facilities_responses()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="camply.html#camply.RecreationDotGov.make_recdotgov_request"><code class="docutils literal notranslate"><span class="pre">RecreationDotGov.make_recdotgov_request()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="camply.html#camply.RecreationDotGov.make_recdotgov_request_retry"><code class="docutils literal notranslate"><span class="pre">RecreationDotGov.make_recdotgov_request_retry()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="camply.html#camply.RecreationDotGov.paginate_recdotgov_campsites"><code class="docutils literal notranslate"><span class="pre">RecreationDotGov.paginate_recdotgov_campsites()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="camply.html#camply.RecreationDotGov.get_recdotgov_data"><code class="docutils literal notranslate"><span class="pre">RecreationDotGov.get_recdotgov_data()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="camply.html#camply.RecreationDotGov.process_campsite_availability"><code class="docutils literal notranslate"><span class="pre">RecreationDotGov.process_campsite_availability()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="camply.html#camply.RecreationDotGov.get_campsite_by_id"><code class="docutils literal notranslate"><span class="pre">RecreationDotGov.get_campsite_by_id()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="camply.html#camply.RecreationDotGov.get_campground_ids_by_campsites"><code class="docutils literal notranslate"><span class="pre">RecreationDotGov.get_campground_ids_by_campsites()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="camply.html#camply.RecreationDotGov.get_internal_campsite_metadata"><code class="docutils literal notranslate"><span class="pre">RecreationDotGov.get_internal_campsite_metadata()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="camply.html#camply.SearchWindow"><code class="docutils literal notranslate"><span class="pre">SearchWindow</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="camply.html#camply.SearchWindow.end_date"><code class="docutils literal notranslate"><span class="pre">SearchWindow.end_date</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="camply.html#camply.SearchWindow.start_date"><code class="docutils literal notranslate"><span class="pre">SearchWindow.start_date</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="camply.html#camply.SearchWindow.get_date_range"><code class="docutils literal notranslate"><span class="pre">SearchWindow.get_date_range()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="camply.html#camply.AvailableCampsite"><code class="docutils literal notranslate"><span class="pre">AvailableCampsite</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="camply.html#camply.AvailableCampsite.availability_status"><code class="docutils literal notranslate"><span class="pre">AvailableCampsite.availability_status</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="camply.html#camply.AvailableCampsite.booking_date"><code class="docutils literal notranslate"><span class="pre">AvailableCampsite.booking_date</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="camply.html#camply.AvailableCampsite.booking_end_date"><code class="docutils literal notranslate"><span class="pre">AvailableCampsite.booking_end_date</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="camply.html#camply.AvailableCampsite.booking_nights"><code class="docutils literal notranslate"><span class="pre">AvailableCampsite.booking_nights</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="camply.html#camply.AvailableCampsite.booking_url"><code class="docutils literal notranslate"><span class="pre">AvailableCampsite.booking_url</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="camply.html#camply.AvailableCampsite.campsite_attributes"><code class="docutils literal notranslate"><span class="pre">AvailableCampsite.campsite_attributes</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="camply.html#camply.AvailableCampsite.campsite_id"><code class="docutils literal notranslate"><span class="pre">AvailableCampsite.campsite_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="camply.html#camply.AvailableCampsite.campsite_loop_name"><code class="docutils literal notranslate"><span class="pre">AvailableCampsite.campsite_loop_name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="camply.html#camply.AvailableCampsite.campsite_occupancy"><code class="docutils literal notranslate"><span class="pre">AvailableCampsite.campsite_occupancy</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="camply.html#camply.AvailableCampsite.campsite_site_name"><code class="docutils literal notranslate"><span class="pre">AvailableCampsite.campsite_site_name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="camply.html#camply.AvailableCampsite.campsite_type"><code class="docutils literal notranslate"><span class="pre">AvailableCampsite.campsite_type</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="camply.html#camply.AvailableCampsite.campsite_use_type"><code class="docutils literal notranslate"><span class="pre">AvailableCampsite.campsite_use_type</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="camply.html#camply.AvailableCampsite.facility_id"><code class="docutils literal notranslate"><span class="pre">AvailableCampsite.facility_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="camply.html#camply.AvailableCampsite.facility_name"><code class="docutils literal notranslate"><span class="pre">AvailableCampsite.facility_name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="camply.html#camply.AvailableCampsite.permitted_equipment"><code class="docutils literal notranslate"><span class="pre">AvailableCampsite.permitted_equipment</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="camply.html#camply.AvailableCampsite.recreation_area"><code class="docutils literal notranslate"><span class="pre">AvailableCampsite.recreation_area</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="camply.html#camply.AvailableCampsite.recreation_area_id"><code class="docutils literal notranslate"><span class="pre">AvailableCampsite.recreation_area_id</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="camply.html#camply.EquipmentOptions"><code class="docutils literal notranslate"><span class="pre">EquipmentOptions</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="camply.html#camply.EquipmentOptions.tent"><code class="docutils literal notranslate"><span class="pre">EquipmentOptions.tent</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="camply.html#camply.EquipmentOptions.rv"><code class="docutils literal notranslate"><span class="pre">EquipmentOptions.rv</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="camply.html#camply.EquipmentOptions.trailer"><code class="docutils literal notranslate"><span class="pre">EquipmentOptions.trailer</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="camply.html#camply.EquipmentOptions.vehicle"><code class="docutils literal notranslate"><span class="pre">EquipmentOptions.vehicle</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="camply.html#camply.EquipmentOptions.other"><code class="docutils literal notranslate"><span class="pre">EquipmentOptions.other</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>

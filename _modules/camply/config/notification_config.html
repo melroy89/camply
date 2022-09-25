@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>camply.config.notification_config &mdash; camply 0.5.8 documentation</title>
+  <title>camply.config.notification_config &mdash; camply 0.6.0 documentation</title>
       <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/autodoc_pydantic.css" type="text/css" />
@@ -19,6 +19,7 @@
         <script src="../../../_static/underscore.js"></script>
         <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/sphinx_highlight.js"></script>
         <script src="../../../_static/clipboard.min.js"></script>
         <script src="../../../_static/copybutton.js"></script>
     <script src="../../../_static/js/theme.js"></script>
@@ -34,7 +35,7 @@
             <a href="../../../index.html" class="icon icon-home"> camply
           </a>
               <div class="version">
-                0.5.8
+                0.6.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
@@ -152,6 +153,18 @@
     <span class="n">API_HEADERS</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Content-Type&quot;</span><span class="p">:</span> <span class="s2">&quot;application/json&quot;</span><span class="p">}</span>
 
     <span class="n">API_TOKEN</span> <span class="o">=</span> <span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;PUSHBULLET_API_TOKEN&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="TwilioConfig"><a class="viewcode-back" href="../../../api/camply.config.notification_config.html#camply.config.TwilioConfig">[docs]</a><span class="k">class</span> <span class="nc">TwilioConfig</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Twilio Notification Config Class</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">ACCOUNT_SID</span> <span class="o">=</span> <span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;TWILIO_ACCOUNT_SID&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+    <span class="n">AUTH_TOKEN</span> <span class="o">=</span> <span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;TWILIO_AUTH_TOKEN&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+    <span class="n">SOURCE_NUMBER</span> <span class="o">=</span> <span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;TWILIO_SOURCE_NUMBER&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+    <span class="c1"># comma separated set of phone numbers</span>
+    <span class="n">DEST_NUMBERS</span> <span class="o">=</span> <span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;TWILIO_DEST_NUMBERS&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="SlackConfig"><a class="viewcode-back" href="../../../api/camply.config.notification_config.html#camply.config.SlackConfig">[docs]</a><span class="k">class</span> <span class="nc">SlackConfig</span><span class="p">:</span>

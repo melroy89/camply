@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>camply.providers package &mdash; camply 0.5.8 documentation</title>
+  <title>camply.providers package &mdash; camply 0.6.0 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/autodoc_pydantic.css" type="text/css" />
@@ -20,13 +20,14 @@
         <script src="../_static/underscore.js"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
         <script src="../_static/clipboard.min.js"></script>
         <script src="../_static/copybutton.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="camply.providers.recreation_dot_gov package" href="camply.providers.recreation_dot_gov.html" />
-    <link rel="prev" title="camply.notifications.telegram module" href="camply.notifications.telegram.html" /> 
+    <link rel="prev" title="camply.notifications.twilio module" href="camply.notifications.twilio.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -37,7 +38,7 @@
             <a href="../index.html" class="icon icon-home"> camply
           </a>
               <div class="version">
-                0.5.8
+                0.6.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -68,7 +69,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="camply.html#submodules">Submodules</a></li>
-<li class="toctree-l3"><a class="reference internal" href="camply.html#module-camply">Module contents</a></li>
+<li class="toctree-l3"><a class="reference internal" href="camply.html#module-contents">Module contents</a></li>
 </ul>
 </li>
 </ul>
@@ -111,18 +112,24 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="camply.providers.recreation_dot_gov.html">camply.providers.recreation_dot_gov package</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="camply.providers.recreation_dot_gov.html#submodules">Submodules</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="camply.providers.recreation_dot_gov.recdotgov_provider.html">camply.providers.recreation_dot_gov.recdotgov_provider module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="camply.providers.recreation_dot_gov.recdotgov_provider.html">camply.providers.recreation_dot_gov.recdotgov_provider module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="camply.providers.recreation_dot_gov.recdotgov_provider.html#camply.providers.recreation_dot_gov.recdotgov_provider.RecreationDotGov"><code class="docutils literal notranslate"><span class="pre">RecreationDotGov</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="camply.providers.recreation_dot_gov.html#module-camply.providers.recreation_dot_gov">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="camply.providers.recreation_dot_gov.html#module-contents">Module contents</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="camply.providers.xanterra.html">camply.providers.xanterra package</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="camply.providers.xanterra.html#submodules">Submodules</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="camply.providers.xanterra.yellowstone_lodging.html">camply.providers.xanterra.yellowstone_lodging module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="camply.providers.xanterra.yellowstone_lodging.html">camply.providers.xanterra.yellowstone_lodging module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="camply.providers.xanterra.yellowstone_lodging.html#camply.providers.xanterra.yellowstone_lodging.YellowstoneLodging"><code class="docutils literal notranslate"><span class="pre">YellowstoneLodging</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="camply.providers.xanterra.html#module-camply.providers.xanterra">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="camply.providers.xanterra.html#module-contents">Module contents</a></li>
 </ul>
 </li>
 </ul>
@@ -132,14 +139,19 @@
 <h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h2>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="camply.providers.base_provider.html">camply.providers.base_provider module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="camply.providers.base_provider.html">camply.providers.base_provider module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="camply.providers.base_provider.html#camply.providers.base_provider.BaseProvider"><code class="docutils literal notranslate"><span class="pre">BaseProvider</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="camply.providers.base_provider.html#camply.providers.base_provider.ProviderError"><code class="docutils literal notranslate"><span class="pre">ProviderError</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="camply.providers.base_provider.html#camply.providers.base_provider.ProviderSearchError"><code class="docutils literal notranslate"><span class="pre">ProviderSearchError</span></code></a></li>
+</ul>
+</li>
 </ul>
 </div>
 </section>
-<section id="module-camply.providers">
-<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-camply.providers" title="Permalink to this heading"></a></h2>
+<section id="module-contents">
+<h2>Module contents<a class="headerlink" href="#module-contents" title="Permalink to this heading"></a></h2>
 <p>providers __init__ file</p>
-<dl class="py class">
+<span class="target" id="module-camply.providers"></span><dl class="py class">
 <dt class="sig sig-object py" id="camply.providers.BaseProvider">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">camply.providers.</span></span><span class="sig-name descname"><span class="pre">BaseProvider</span></span><a class="reference internal" href="../_modules/camply/providers/base_provider.html#BaseProvider"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#camply.providers.BaseProvider" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
@@ -435,7 +447,7 @@ Yellowstone API doesn’t always return data.</p>
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="camply.notifications.telegram.html" class="btn btn-neutral float-left" title="camply.notifications.telegram module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="camply.notifications.twilio.html" class="btn btn-neutral float-left" title="camply.notifications.twilio module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="camply.providers.recreation_dot_gov.html" class="btn btn-neutral float-right" title="camply.providers.recreation_dot_gov package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 

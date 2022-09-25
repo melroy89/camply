@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>camply.notifications package &mdash; camply 0.5.8 documentation</title>
+  <title>camply.notifications package &mdash; camply 0.6.0 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/autodoc_pydantic.css" type="text/css" />
@@ -20,6 +20,7 @@
         <script src="../_static/underscore.js"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
         <script src="../_static/clipboard.min.js"></script>
         <script src="../_static/copybutton.js"></script>
     <script src="../_static/js/theme.js"></script>
@@ -37,7 +38,7 @@
             <a href="../index.html" class="icon icon-home"> camply
           </a>
               <div class="version">
-                0.5.8
+                0.6.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -68,7 +69,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="camply.html#submodules">Submodules</a></li>
-<li class="toctree-l3"><a class="reference internal" href="camply.html#module-camply">Module contents</a></li>
+<li class="toctree-l3"><a class="reference internal" href="camply.html#module-contents">Module contents</a></li>
 </ul>
 </li>
 </ul>
@@ -109,21 +110,96 @@
 <h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h2>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="camply.notifications.base_notifications.html">camply.notifications.base_notifications module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="camply.notifications.email_notifications.html">camply.notifications.email_notifications module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="camply.notifications.multi_provider_notifications.html">camply.notifications.multi_provider_notifications module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="camply.notifications.pushbullet.html">camply.notifications.pushbullet module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="camply.notifications.pushover.html">camply.notifications.pushover module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="camply.notifications.silent_notifications.html">camply.notifications.silent_notifications module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="camply.notifications.slack.html">camply.notifications.slack module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="camply.notifications.telegram.html">camply.notifications.telegram module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="camply.notifications.base_notifications.html">camply.notifications.base_notifications module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="camply.notifications.base_notifications.html#camply.notifications.base_notifications.NotificationError"><code class="docutils literal notranslate"><span class="pre">NotificationError</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="camply.notifications.base_notifications.html#camply.notifications.base_notifications.BaseNotifications"><code class="docutils literal notranslate"><span class="pre">BaseNotifications</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="camply.notifications.base_notifications.html#camply.notifications.base_notifications.BaseNotifications.send_message"><code class="docutils literal notranslate"><span class="pre">BaseNotifications.send_message()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="camply.notifications.base_notifications.html#camply.notifications.base_notifications.BaseNotifications.send_campsites"><code class="docutils literal notranslate"><span class="pre">BaseNotifications.send_campsites()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="camply.notifications.base_notifications.html#camply.notifications.base_notifications.BaseNotifications.format_standard_campsites"><code class="docutils literal notranslate"><span class="pre">BaseNotifications.format_standard_campsites()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="camply.notifications.email_notifications.html">camply.notifications.email_notifications module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="camply.notifications.email_notifications.html#camply.notifications.email_notifications.EmailNotifications"><code class="docutils literal notranslate"><span class="pre">EmailNotifications</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="camply.notifications.email_notifications.html#camply.notifications.email_notifications.EmailNotifications.email_subject"><code class="docutils literal notranslate"><span class="pre">EmailNotifications.email_subject</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="camply.notifications.email_notifications.html#camply.notifications.email_notifications.EmailNotifications.email_from"><code class="docutils literal notranslate"><span class="pre">EmailNotifications.email_from</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="camply.notifications.email_notifications.html#camply.notifications.email_notifications.EmailNotifications.email_to"><code class="docutils literal notranslate"><span class="pre">EmailNotifications.email_to</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="camply.notifications.email_notifications.html#camply.notifications.email_notifications.EmailNotifications.email_username"><code class="docutils literal notranslate"><span class="pre">EmailNotifications.email_username</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="camply.notifications.email_notifications.html#camply.notifications.email_notifications.EmailNotifications.email_smtp_server"><code class="docutils literal notranslate"><span class="pre">EmailNotifications.email_smtp_server</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="camply.notifications.email_notifications.html#camply.notifications.email_notifications.EmailNotifications.email_smtp_server_port"><code class="docutils literal notranslate"><span class="pre">EmailNotifications.email_smtp_server_port</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="camply.notifications.email_notifications.html#camply.notifications.email_notifications.EmailNotifications.send_message"><code class="docutils literal notranslate"><span class="pre">EmailNotifications.send_message()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="camply.notifications.email_notifications.html#camply.notifications.email_notifications.EmailNotifications.send_campsites"><code class="docutils literal notranslate"><span class="pre">EmailNotifications.send_campsites()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="camply.notifications.multi_provider_notifications.html">camply.notifications.multi_provider_notifications module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="camply.notifications.multi_provider_notifications.html#camply.notifications.multi_provider_notifications.MultiNotifierProvider"><code class="docutils literal notranslate"><span class="pre">MultiNotifierProvider</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="camply.notifications.multi_provider_notifications.html#camply.notifications.multi_provider_notifications.MultiNotifierProvider.send_message"><code class="docutils literal notranslate"><span class="pre">MultiNotifierProvider.send_message()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="camply.notifications.multi_provider_notifications.html#camply.notifications.multi_provider_notifications.MultiNotifierProvider.send_campsites"><code class="docutils literal notranslate"><span class="pre">MultiNotifierProvider.send_campsites()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="camply.notifications.multi_provider_notifications.html#camply.notifications.multi_provider_notifications.MultiNotifierProvider.log_providers"><code class="docutils literal notranslate"><span class="pre">MultiNotifierProvider.log_providers()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="camply.notifications.pushbullet.html">camply.notifications.pushbullet module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="camply.notifications.pushbullet.html#camply.notifications.pushbullet.PushbulletNotifications"><code class="docutils literal notranslate"><span class="pre">PushbulletNotifications</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="camply.notifications.pushbullet.html#camply.notifications.pushbullet.PushbulletNotifications.send_message"><code class="docutils literal notranslate"><span class="pre">PushbulletNotifications.send_message()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="camply.notifications.pushbullet.html#camply.notifications.pushbullet.PushbulletNotifications.send_campsites"><code class="docutils literal notranslate"><span class="pre">PushbulletNotifications.send_campsites()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="camply.notifications.pushover.html">camply.notifications.pushover module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="camply.notifications.pushover.html#camply.notifications.pushover.PushoverNotifications"><code class="docutils literal notranslate"><span class="pre">PushoverNotifications</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="camply.notifications.pushover.html#camply.notifications.pushover.PushoverNotifications.send_message"><code class="docutils literal notranslate"><span class="pre">PushoverNotifications.send_message()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="camply.notifications.pushover.html#camply.notifications.pushover.PushoverNotifications.emit"><code class="docutils literal notranslate"><span class="pre">PushoverNotifications.emit()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="camply.notifications.pushover.html#camply.notifications.pushover.PushoverNotifications.send_campsites"><code class="docutils literal notranslate"><span class="pre">PushoverNotifications.send_campsites()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="camply.notifications.silent_notifications.html">camply.notifications.silent_notifications module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="camply.notifications.silent_notifications.html#camply.notifications.silent_notifications.SilentNotifications"><code class="docutils literal notranslate"><span class="pre">SilentNotifications</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="camply.notifications.silent_notifications.html#camply.notifications.silent_notifications.SilentNotifications.send_message"><code class="docutils literal notranslate"><span class="pre">SilentNotifications.send_message()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="camply.notifications.silent_notifications.html#camply.notifications.silent_notifications.SilentNotifications.send_campsites"><code class="docutils literal notranslate"><span class="pre">SilentNotifications.send_campsites()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="camply.notifications.slack.html">camply.notifications.slack module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="camply.notifications.slack.html#camply.notifications.slack.SlackNotifications"><code class="docutils literal notranslate"><span class="pre">SlackNotifications</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="camply.notifications.slack.html#camply.notifications.slack.SlackNotifications.send_message"><code class="docutils literal notranslate"><span class="pre">SlackNotifications.send_message()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="camply.notifications.slack.html#camply.notifications.slack.SlackNotifications.send_campsites"><code class="docutils literal notranslate"><span class="pre">SlackNotifications.send_campsites()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="camply.notifications.telegram.html">camply.notifications.telegram module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="camply.notifications.telegram.html#camply.notifications.telegram.TelegramNotifications"><code class="docutils literal notranslate"><span class="pre">TelegramNotifications</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="camply.notifications.telegram.html#camply.notifications.telegram.TelegramNotifications.send_message"><code class="docutils literal notranslate"><span class="pre">TelegramNotifications.send_message()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="camply.notifications.telegram.html#camply.notifications.telegram.TelegramNotifications.escape_text"><code class="docutils literal notranslate"><span class="pre">TelegramNotifications.escape_text()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="camply.notifications.telegram.html#camply.notifications.telegram.TelegramNotifications.send_campsites"><code class="docutils literal notranslate"><span class="pre">TelegramNotifications.send_campsites()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="camply.notifications.twilio.html">camply.notifications.twilio module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="camply.notifications.twilio.html#camply.notifications.twilio.TwilioNotifications"><code class="docutils literal notranslate"><span class="pre">TwilioNotifications</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="camply.notifications.twilio.html#camply.notifications.twilio.TwilioNotifications.send_message"><code class="docutils literal notranslate"><span class="pre">TwilioNotifications.send_message()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="camply.notifications.twilio.html#camply.notifications.twilio.TwilioNotifications.send_campsites"><code class="docutils literal notranslate"><span class="pre">TwilioNotifications.send_campsites()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </div>
 </section>
-<section id="module-camply.notifications">
-<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-camply.notifications" title="Permalink to this heading"></a></h2>
+<section id="module-contents">
+<h2>Module contents<a class="headerlink" href="#module-contents" title="Permalink to this heading"></a></h2>
 <p>Notifications __init__ file</p>
-<dl class="py class">
+<span class="target" id="module-camply.notifications"></span><dl class="py class">
 <dt class="sig sig-object py" id="camply.notifications.PushbulletNotifications">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">camply.notifications.</span></span><span class="sig-name descname"><span class="pre">PushbulletNotifications</span></span><a class="reference internal" href="../_modules/camply/notifications/pushbullet.html#PushbulletNotifications"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#camply.notifications.PushbulletNotifications" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="camply.notifications.base_notifications.html#camply.notifications.base_notifications.BaseNotifications" title="camply.notifications.base_notifications.BaseNotifications"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseNotifications</span></code></a></p>
@@ -242,6 +318,35 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="camply.notifications.TelegramNotifications.send_campsites">
 <em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">send_campsites</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">campsites</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/camply/notifications/telegram.html#TelegramNotifications.send_campsites"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#camply.notifications.TelegramNotifications.send_campsites" title="Permalink to this definition"></a></dt>
+<dd><p>Send a message with a campsite object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>campsites</strong> (<a class="reference internal" href="camply.html#camply.AvailableCampsite" title="camply.AvailableCampsite"><em>AvailableCampsite</em></a>) – </p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="camply.notifications.TwilioNotifications">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">camply.notifications.</span></span><span class="sig-name descname"><span class="pre">TwilioNotifications</span></span><a class="reference internal" href="../_modules/camply/notifications/twilio.html#TwilioNotifications"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#camply.notifications.TwilioNotifications" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="camply.notifications.base_notifications.html#camply.notifications.base_notifications.BaseNotifications" title="camply.notifications.base_notifications.BaseNotifications"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseNotifications</span></code></a></p>
+<p>Push Notifications via Twilio</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="camply.notifications.TwilioNotifications.send_message">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">send_message</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/camply/notifications/twilio.html#TwilioNotifications.send_message"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#camply.notifications.TwilioNotifications.send_message" title="Permalink to this definition"></a></dt>
+<dd><p>Send a message via Twilio - if environment variables are configured</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>message</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a>) – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="camply.notifications.TwilioNotifications.send_campsites">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">send_campsites</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">campsites</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/camply/notifications/twilio.html#TwilioNotifications.send_campsites"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#camply.notifications.TwilioNotifications.send_campsites" title="Permalink to this definition"></a></dt>
 <dd><p>Send a message with a campsite object</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
