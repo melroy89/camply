@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Table of Contents &mdash; camply 0.6.0 documentation</title>
+  <title>Table of Contents &mdash; camply 0.6.1 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/autodoc_pydantic.css" type="text/css" />
@@ -38,7 +38,7 @@
             <a href="index.html" class="icon icon-home"> camply
           </a>
               <div class="version">
-                0.6.0
+                0.6.1
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -56,19 +56,19 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="#command-line-usage">Command Line Usage</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#campsites"><code class="docutils literal notranslate"><span class="pre">campsites</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#campsites">campsites</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#arguments">Arguments</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#recreation-areas"><code class="docutils literal notranslate"><span class="pre">recreation-areas</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#recreation-areas">recreation-areas</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#id1">Arguments:</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#campgrounds"><code class="docutils literal notranslate"><span class="pre">campgrounds</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#campgrounds">campgrounds</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#id2">Arguments:</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#configure"><code class="docutils literal notranslate"><span class="pre">configure</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#configure">configure</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#examples">Examples</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#searching-for-a-campsite">Searching for a Campsite</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#searching-for-a-campsite-by-campground-id">Searching for a Campsite by Campground ID</a></li>
@@ -76,6 +76,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#continuously-searching-for-a-campsite">Continuously Searching for A Campsite</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#continue-looking-after-the-first-match-is-found">Continue Looking After The First Match Is Found</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#send-a-push-notification">Send a Push Notification</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#send-a-text-message">Send a Text Message</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#send-a-notification-to-different-services">Send a Notification to Different Services</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#look-for-weekend-campsite-availabilities">Look for Weekend Campsite Availabilities</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#look-for-consecutive-nights-at-the-same-campsite">Look for Consecutive Nights at the Same Campsite</a></li>
@@ -171,6 +172,7 @@ becomes available, camply sends you a notification to book your spot!</p>
 <li><p><a class="reference internal" href="#continuously-searching-for-a-campsite"><span class="std std-doc">Continuously Searching for A Campsite</span></a></p></li>
 <li><p><a class="reference internal" href="#continue-looking-after-the-first-match-is-found"><span class="std std-doc">Continue Looking After The First Match Is Found</span></a></p></li>
 <li><p><a class="reference internal" href="#send-a-push-notification"><span class="std std-doc">Send a Push Notification</span></a></p></li>
+<li><p><a class="reference internal" href="#send-a-text-message"><span class="std std-doc">Send a Text Message</span></a></p></li>
 <li><p><a class="reference internal" href="#send-a-notification-to-different-services"><span class="std std-doc">Send a Notification to Different Services</span></a></p></li>
 <li><p><a class="reference internal" href="#look-for-weekend-campsite-availabilities"><span class="std std-doc">Look for Weekend Campsite Availabilities</span></a></p></li>
 <li><p><a class="reference internal" href="#look-for-consecutive-nights-at-the-same-campsite"><span class="std std-doc">Look for Consecutive Nights at the Same Campsite</span></a></p></li>
@@ -255,7 +257,7 @@ Commands:
 </pre></div>
 </div>
 <section id="campsites">
-<h2><code class="docutils literal notranslate"><span class="pre">campsites</span></code><a class="headerlink" href="#campsites" title="Permalink to this heading"></a></h2>
+<h2>campsites<a class="headerlink" href="#campsites" title="Permalink to this heading"></a></h2>
 <p>Search for a campsite within camply. Campsites are returned based on the search criteria provided.
 Campsites contain properties like booking date, site type (tent, RV, cabin, etc), capacity, price,
 and a link to make the booking. Required parameters include <code class="docutils literal notranslate"><span class="pre">--start-date</span></code>, <code class="docutils literal notranslate"><span class="pre">--end-date</span></code>,
@@ -379,7 +381,7 @@ configuration file.
 </section>
 </section>
 <section id="recreation-areas">
-<h2><code class="docutils literal notranslate"><span class="pre">recreation-areas</span></code><a class="headerlink" href="#recreation-areas" title="Permalink to this heading"></a></h2>
+<h2>recreation-areas<a class="headerlink" href="#recreation-areas" title="Permalink to this heading"></a></h2>
 <p>Search for Recreation Areas and their IDs. Recreation Areas are places like National Parks and
 National Forests that can contain one or many campgrounds.</p>
 <section id="id1">
@@ -403,7 +405,7 @@ National Forests that can contain one or many campgrounds.</p>
 </section>
 </section>
 <section id="campgrounds">
-<h2><code class="docutils literal notranslate"><span class="pre">campgrounds</span></code><a class="headerlink" href="#campgrounds" title="Permalink to this heading"></a></h2>
+<h2>campgrounds<a class="headerlink" href="#campgrounds" title="Permalink to this heading"></a></h2>
 <p>Search for Campgrounds and their IDs. Campgrounds are facilities inside of Recreation Areas that
 contain campsites. Most ‘campgrounds’ are areas made up of multiple campsites, others are facilities
 like fire towers or cabins that might only contain a single ‘campsite’ to book.</p>
@@ -438,7 +440,7 @@ like fire towers or cabins that might only contain a single ‘campsite’ to bo
 </section>
 </section>
 <section id="configure">
-<h2><code class="docutils literal notranslate"><span class="pre">configure</span></code><a class="headerlink" href="#configure" title="Permalink to this heading"></a></h2>
+<h2>configure<a class="headerlink" href="#configure" title="Permalink to this heading"></a></h2>
 <p>Set up <code class="docutils literal notranslate"><span class="pre">camply</span></code> configuration file with an interactive console</p>
 <p>In order to send notifications through <code class="docutils literal notranslate"><span class="pre">camply</span></code> you must set up some authorization values. Whether
 you need to set up <a class="reference external" href="https://pushover.net">Pushover notifications</a>
@@ -554,6 +556,25 @@ command) or though environment variables (<code class="docutils literal notransl
     --end-date <span class="m">2023</span>-09-21 <span class="se">\</span>
     --continuous <span class="se">\</span>
     --notifications pushbullet
+</pre></div>
+</div>
+</section>
+<section id="send-a-text-message">
+<h3>Send a Text Message<a class="headerlink" href="#send-a-text-message" title="Permalink to this heading"></a></h3>
+<p>If you want to sign up for a <a class="reference external" href="https://www.twilio.com/try-twilio">Twilio</a> account, camply also supports
+sending text messages via SMS. You can set up your Twilio configuration via <code class="docutils literal notranslate"><span class="pre">camply</span> <span class="pre">configure</span></code>. You will need
+to set the following config values for Twilio: <code class="docutils literal notranslate"><span class="pre">TWILIO_ACCOUNT_SID</span></code>, <code class="docutils literal notranslate"><span class="pre">TWILIO_AUTH_TOKEN</span></code>,
+<code class="docutils literal notranslate"><span class="pre">TWILIO_SOURCE_NUMBER</span></code>, <code class="docutils literal notranslate"><span class="pre">TWILIO_DEST_NUMBERS</span></code>.</p>
+<p>Sending text messages via Twilio also requires the <code class="docutils literal notranslate"><span class="pre">twilio</span></code> extras:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">camply</span><span class="p">[</span><span class="n">twilio</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>camply campsites <span class="se">\</span>
+    --rec-area <span class="m">2991</span> <span class="se">\</span>
+    --start-date <span class="m">2023</span>-09-10 <span class="se">\</span>
+    --end-date <span class="m">2023</span>-09-21 <span class="se">\</span>
+    --continuous <span class="se">\</span>
+    --notifications twilio
 </pre></div>
 </div>
 </section>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>camply.notifications.slack &mdash; camply 0.6.0 documentation</title>
+  <title>camply.notifications.slack &mdash; camply 0.6.1 documentation</title>
       <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/autodoc_pydantic.css" type="text/css" />
@@ -35,7 +35,7 @@
             <a href="../../../index.html" class="icon icon-home"> camply
           </a>
               <div class="version">
-                0.6.0
+                0.6.1
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
@@ -107,6 +107,8 @@
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">headers</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;Content-Type&quot;</span><span class="p">:</span> <span class="s2">&quot;application/json&quot;</span><span class="p">})</span>
         <span class="k">if</span> <span class="nb">any</span><span class="p">([</span><span class="n">SlackConfig</span><span class="o">.</span><span class="n">SLACK_WEBHOOK</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">,</span> <span class="n">SlackConfig</span><span class="o">.</span><span class="n">SLACK_WEBHOOK</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span><span class="p">]):</span>
             <span class="n">warning_message</span> <span class="o">=</span> <span class="p">(</span>
                 <span class="s2">&quot;Slack is not configured properly. To send Slack messages &quot;</span>
@@ -116,14 +118,7 @@
             <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="n">warning_message</span><span class="p">)</span>
             <span class="k">raise</span> <span class="ne">EnvironmentError</span><span class="p">(</span><span class="n">warning_message</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        String Representation</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="s2">&quot;&lt;SlackNotifications&gt;&quot;</span>
-
-<div class="viewcode-block" id="SlackNotifications.send_message"><a class="viewcode-back" href="../../../api/camply.notifications.slack.html#camply.notifications.SlackNotifications.send_message">[docs]</a>    <span class="nd">@staticmethod</span>
-    <span class="k">def</span> <span class="nf">send_message</span><span class="p">(</span><span class="n">message</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">requests</span><span class="o">.</span><span class="n">Response</span><span class="p">:</span>
+<div class="viewcode-block" id="SlackNotifications.send_message"><a class="viewcode-back" href="../../../api/camply.notifications.slack.html#camply.notifications.SlackNotifications.send_message">[docs]</a>    <span class="k">def</span> <span class="nf">send_message</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">requests</span><span class="o">.</span><span class="n">Response</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Send a message via Slack - if environment variables are configured.</span>
 
@@ -136,8 +131,6 @@
 <span class="sd">        -------</span>
 <span class="sd">        requests.Response</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">slack_headers</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Content-Type&quot;</span><span class="p">:</span> <span class="s2">&quot;application/json&quot;</span><span class="p">}</span>
-
         <span class="n">message_blocks</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;blocks&quot;</span><span class="p">,</span> <span class="p">[])</span>
         <span class="n">message_json</span> <span class="o">=</span> <span class="p">{</span>
             <span class="s2">&quot;text&quot;</span><span class="p">:</span> <span class="n">message</span><span class="p">,</span>
@@ -147,9 +140,8 @@
                 <span class="s2">&quot;blocks&quot;</span><span class="p">:</span> <span class="n">message_blocks</span><span class="p">,</span>
             <span class="p">}</span>
         <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="n">message_json</span><span class="p">)</span>
-        <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
             <span class="n">url</span><span class="o">=</span><span class="n">SlackConfig</span><span class="o">.</span><span class="n">SLACK_WEBHOOK</span><span class="p">,</span>
-            <span class="n">headers</span><span class="o">=</span><span class="n">slack_headers</span><span class="p">,</span>
             <span class="n">json</span><span class="o">=</span><span class="n">message_json</span><span class="p">,</span>
         <span class="p">)</span>
         <span class="k">try</span><span class="p">:</span>
@@ -162,8 +154,7 @@
             <span class="k">raise</span> <span class="ne">ConnectionError</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">he</span>
         <span class="k">return</span> <span class="n">response</span></div>
 
-<div class="viewcode-block" id="SlackNotifications.send_campsites"><a class="viewcode-back" href="../../../api/camply.notifications.slack.html#camply.notifications.SlackNotifications.send_campsites">[docs]</a>    <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">send_campsites</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">campsites</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">AvailableCampsite</span><span class="p">],</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<div class="viewcode-block" id="SlackNotifications.send_campsites"><a class="viewcode-back" href="../../../api/camply.notifications.slack.html#camply.notifications.SlackNotifications.send_campsites">[docs]</a>    <span class="k">def</span> <span class="nf">send_campsites</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">campsites</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">AvailableCampsite</span><span class="p">],</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Send a message with a campsite object</span>
 
@@ -172,7 +163,7 @@
 <span class="sd">        campsites: AvailableCampsite</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">for</span> <span class="n">campsite</span> <span class="ow">in</span> <span class="n">campsites</span><span class="p">:</span>
-            <span class="n">message_title</span><span class="p">,</span> <span class="n">formatted_dict</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">format_standard_campsites</span><span class="p">(</span>
+            <span class="n">message_title</span><span class="p">,</span> <span class="n">formatted_dict</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">format_standard_campsites</span><span class="p">(</span>
                 <span class="n">campsite</span><span class="o">=</span><span class="n">campsite</span><span class="p">,</span>
             <span class="p">)</span>
             <span class="n">fields</span> <span class="o">=</span> <span class="p">[]</span>
@@ -213,7 +204,7 @@
                         <span class="s2">&quot;fields&quot;</span><span class="p">:</span> <span class="n">fields</span><span class="p">[</span><span class="n">chunk</span><span class="p">:</span><span class="n">chunk_max</span><span class="p">],</span>
                     <span class="p">}</span>
                 <span class="p">)</span>
-            <span class="n">SlackNotifications</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span>
                 <span class="n">message</span><span class="o">=</span><span class="n">message_title</span><span class="p">,</span>
                 <span class="n">blocks</span><span class="o">=</span><span class="n">blocks</span><span class="p">,</span>
             <span class="p">)</span></div></div>
