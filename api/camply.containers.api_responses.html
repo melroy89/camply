@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>camply.containers.api_responses module &mdash; camply 0.6.1 documentation</title>
+  <title>camply.containers.api_responses module &mdash; camply 0.6.2 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/autodoc_pydantic.css" type="text/css" />
@@ -38,7 +38,7 @@
             <a href="../index.html" class="icon icon-home"> camply
           </a>
               <div class="version">
-                0.6.1
+                0.6.2
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -290,6 +290,8 @@
 <li><p><a class="reference internal" href="#camply.containers.api_responses.FacilityResponse.FacilityID" title="camply.containers.api_responses.FacilityResponse.FacilityID"><code class="xref py py-obj docutils literal notranslate"><span class="pre">FacilityID</span> <span class="pre">(Union[int,</span> <span class="pre">str])</span></code></a></p></li>
 <li><p><a class="reference internal" href="#camply.containers.api_responses.FacilityResponse.FacilityName" title="camply.containers.api_responses.FacilityResponse.FacilityName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">FacilityName</span> <span class="pre">(str)</span></code></a></p></li>
 <li><p><a class="reference internal" href="#camply.containers.api_responses.FacilityResponse.FacilityTypeDescription" title="camply.containers.api_responses.FacilityResponse.FacilityTypeDescription"><code class="xref py py-obj docutils literal notranslate"><span class="pre">FacilityTypeDescription</span> <span class="pre">(str)</span></code></a></p></li>
+<li><p><a class="reference internal" href="#camply.containers.api_responses.FacilityResponse.ORGANIZATION" title="camply.containers.api_responses.FacilityResponse.ORGANIZATION"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ORGANIZATION</span> <span class="pre">(Optional[List[camply.containers.api_responses._FacilityOrganization]])</span></code></a></p></li>
+<li><p><a class="reference internal" href="#camply.containers.api_responses.FacilityResponse.ParentRecAreaID" title="camply.containers.api_responses.FacilityResponse.ParentRecAreaID"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ParentRecAreaID</span> <span class="pre">(Optional[int])</span></code></a></p></li>
 <li><p><a class="reference internal" href="#camply.containers.api_responses.FacilityResponse.RECAREA" title="camply.containers.api_responses.FacilityResponse.RECAREA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RECAREA</span> <span class="pre">(Optional[List[camply.containers.api_responses._FacilityRecArea]])</span></code></a></p></li>
 <li><p><a class="reference internal" href="#camply.containers.api_responses.FacilityResponse.Reservable" title="camply.containers.api_responses.FacilityResponse.Reservable"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Reservable</span> <span class="pre">(bool)</span></code></a></p></li>
 </ul>
@@ -318,6 +320,16 @@
 <dl class="py attribute pydantic_field">
 <dt class="sig sig-object py" id="camply.containers.api_responses.FacilityResponse.FacilityTypeDescription">
 <em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">FacilityTypeDescription</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></em><em class="property"> <span class="pre">[Required]</span></em><a class="headerlink" href="#camply.containers.api_responses.FacilityResponse.FacilityTypeDescription" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute pydantic_field">
+<dt class="sig sig-object py" id="camply.containers.api_responses.FacilityResponse.ORGANIZATION">
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ORGANIZATION</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.10)"><span class="pre">Optional</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.10)"><span class="pre">List</span></a><span class="p"><span class="pre">[</span></span><span class="pre">_FacilityOrganization</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#camply.containers.api_responses.FacilityResponse.ORGANIZATION" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute pydantic_field">
+<dt class="sig sig-object py" id="camply.containers.api_responses.FacilityResponse.ParentRecAreaID">
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ParentRecAreaID</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.10)"><span class="pre">Optional</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><span class="pre">int</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#camply.containers.api_responses.FacilityResponse.ParentRecAreaID" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute pydantic_field">

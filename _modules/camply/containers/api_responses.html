@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>camply.containers.api_responses &mdash; camply 0.6.1 documentation</title>
+  <title>camply.containers.api_responses &mdash; camply 0.6.2 documentation</title>
       <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/autodoc_pydantic.css" type="text/css" />
@@ -35,7 +35,7 @@
             <a href="../../../index.html" class="icon icon-home"> camply
           </a>
               <div class="version">
-                0.6.1
+                0.6.2
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
@@ -223,6 +223,15 @@
     <span class="n">RecAreaName</span><span class="p">:</span> <span class="nb">str</span>
 
 
+<span class="k">class</span> <span class="nc">_FacilityOrganization</span><span class="p">(</span><span class="n">CamplyModel</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Organization inside of Facility</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">OrgName</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">OrgID</span><span class="p">:</span> <span class="nb">int</span>
+
+
 <div class="viewcode-block" id="FacilityResponse"><a class="viewcode-back" href="../../../api/camply.containers.api_responses.html#camply.containers.api_responses.FacilityResponse">[docs]</a><span class="k">class</span> <span class="nc">FacilityResponse</span><span class="p">(</span><span class="n">CamplyModel</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    /api/v1/facilities/&lt;Facility ID&gt;</span>
@@ -234,7 +243,9 @@
     <span class="n">Enabled</span><span class="p">:</span> <span class="nb">bool</span>
     <span class="n">Reservable</span><span class="p">:</span> <span class="nb">bool</span>
     <span class="n">FACILITYADDRESS</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">_FacilityAddress</span><span class="p">]]</span>
-    <span class="n">RECAREA</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">_FacilityRecArea</span><span class="p">]]</span></div>
+    <span class="n">RECAREA</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">_FacilityRecArea</span><span class="p">]]</span>
+    <span class="n">ORGANIZATION</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">_FacilityOrganization</span><span class="p">]]</span>
+    <span class="n">ParentRecAreaID</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span></div>
 
 
 <span class="k">class</span> <span class="nc">_PaginationCountResponse</span><span class="p">(</span><span class="n">CamplyModel</span><span class="p">):</span>

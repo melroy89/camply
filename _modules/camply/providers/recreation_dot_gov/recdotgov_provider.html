@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>camply.providers.recreation_dot_gov.recdotgov_provider &mdash; camply 0.6.1 documentation</title>
+  <title>camply.providers.recreation_dot_gov.recdotgov_provider &mdash; camply 0.6.2 documentation</title>
       <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../../../_static/autodoc_pydantic.css" type="text/css" />
@@ -35,7 +35,7 @@
             <a href="../../../../index.html" class="icon icon-home"> camply
           </a>
               <div class="version">
-                0.6.1
+                0.6.2
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
@@ -518,9 +518,15 @@
         <span class="k">except</span> <span class="p">(</span><span class="ne">KeyError</span><span class="p">,</span> <span class="ne">IndexError</span><span class="p">):</span>
             <span class="n">facility_state</span> <span class="o">=</span> <span class="s2">&quot;USA&quot;</span>
         <span class="k">try</span><span class="p">:</span>
-            <span class="n">recreation_area</span> <span class="o">=</span> <span class="n">facility_object</span><span class="o">.</span><span class="n">RECAREA</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">RecAreaName</span>
-            <span class="n">recreation_area_id</span> <span class="o">=</span> <span class="n">facility_object</span><span class="o">.</span><span class="n">RECAREA</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">RecAreaID</span>
-            <span class="n">formatted_recreation_area</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">recreation_area</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">facility_state</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">facility_object</span><span class="o">.</span><span class="n">RECAREA</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">recreation_area_id</span> <span class="o">=</span> <span class="n">facility_object</span><span class="o">.</span><span class="n">ParentRecAreaID</span>
+                <span class="n">formatted_recreation_area</span> <span class="o">=</span> <span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">facility_object</span><span class="o">.</span><span class="n">ORGANIZATION</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">OrgName</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">facility_state</span><span class="si">}</span><span class="s2">&quot;</span>
+                <span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">recreation_area</span> <span class="o">=</span> <span class="n">facility_object</span><span class="o">.</span><span class="n">RECAREA</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">RecAreaName</span>
+                <span class="n">recreation_area_id</span> <span class="o">=</span> <span class="n">facility_object</span><span class="o">.</span><span class="n">RECAREA</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">RecAreaID</span>
+                <span class="n">formatted_recreation_area</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">recreation_area</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">facility_state</span><span class="si">}</span><span class="s2">&quot;</span>
             <span class="n">campground_facility</span> <span class="o">=</span> <span class="n">CampgroundFacility</span><span class="p">(</span>
                 <span class="n">facility_name</span><span class="o">=</span><span class="n">facility_object</span><span class="o">.</span><span class="n">FacilityName</span><span class="o">.</span><span class="n">title</span><span class="p">(),</span>
                 <span class="n">recreation_area</span><span class="o">=</span><span class="n">formatted_recreation_area</span><span class="p">,</span>
