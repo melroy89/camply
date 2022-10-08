@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>camply.search.search_yellowstone &mdash; camply 0.6.2 documentation</title>
+  <title>camply.search.search_yellowstone &mdash; camply 0.7.0 documentation</title>
       <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/autodoc_pydantic.css" type="text/css" />
@@ -35,7 +35,7 @@
             <a href="../../../index.html" class="icon icon-home"> camply
           </a>
               <div class="version">
-                0.6.2
+                0.7.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
@@ -117,6 +117,8 @@
         <span class="n">weekends_only</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
         <span class="n">campgrounds</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
         <span class="n">nights</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="n">offline_search</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="n">offline_search_path</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;</span>
@@ -133,12 +135,21 @@
 <span class="sd">            Campground ID or List of Campground IDs</span>
 <span class="sd">        nights: int</span>
 <span class="sd">            minimum number of consecutive nights to search per campsite,defaults to 1</span>
+<span class="sd">        offline_search: bool</span>
+<span class="sd">            When set to True, the campsite search will both save the results of the</span>
+<span class="sd">            campsites it&#39;s found, but also load those campsites before beginning a</span>
+<span class="sd">            search for other campsites.</span>
+<span class="sd">        offline_search_path: Optional[str]</span>
+<span class="sd">            When offline search is set to True, this is the name of the file to be saved/loaded.</span>
+<span class="sd">            When not specified, the filename will default to `camply_campsites.json`</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
             <span class="n">provider</span><span class="o">=</span><span class="n">YellowstoneLodging</span><span class="p">(),</span>
             <span class="n">search_window</span><span class="o">=</span><span class="n">search_window</span><span class="p">,</span>
             <span class="n">weekends_only</span><span class="o">=</span><span class="n">weekends_only</span><span class="p">,</span>
             <span class="n">nights</span><span class="o">=</span><span class="n">nights</span><span class="p">,</span>
+            <span class="n">offline_search</span><span class="o">=</span><span class="n">offline_search</span><span class="p">,</span>
+            <span class="n">offline_search_path</span><span class="o">=</span><span class="n">offline_search_path</span><span class="p">,</span>
         <span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">campgrounds</span> <span class="o">=</span> <span class="n">make_list</span><span class="p">(</span><span class="n">campgrounds</span><span class="p">)</span>
 

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>camply.cli &mdash; camply 0.6.2 documentation</title>
+  <title>camply.cli &mdash; camply 0.7.0 documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/autodoc_pydantic.css" type="text/css" />
@@ -35,7 +35,7 @@
             <a href="../../index.html" class="icon icon-home"> camply
           </a>
               <div class="version">
-                0.6.2
+                0.7.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
@@ -91,6 +91,7 @@
 
 <span class="kn">import</span> <span class="nn">logging</span>
 <span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">from</span> <span class="nn">dataclasses</span> <span class="kn">import</span> <span class="n">dataclass</span>
 <span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
 <span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">,</span> <span class="n">Union</span>
 
@@ -108,14 +109,52 @@
 <span class="n">logging</span><span class="o">.</span><span class="n">Logger</span><span class="o">.</span><span class="n">camply</span> <span class="o">=</span> <span class="n">log_camply</span>
 <span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
 
+<span class="n">DEFAULT_CAMPLY_PROVIDER</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;RecreationDotGov&quot;</span>
+
+
+<div class="viewcode-block" id="CamplyContext"><a class="viewcode-back" href="../../api/camply.cli.html#camply.cli.CamplyContext">[docs]</a><span class="nd">@dataclass</span>
+<span class="k">class</span> <span class="nc">CamplyContext</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Context Object Passed Around Application</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">debug</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">provider</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span></div>
+
+
+<span class="n">provider_argument</span> <span class="o">=</span> <span class="n">click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span>
+    <span class="s2">&quot;--provider&quot;</span><span class="p">,</span>
+    <span class="n">show_default</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Camping Search Provider. Options available are &#39;Yellowstone&#39; and &quot;</span>
+    <span class="s2">&quot;&#39;RecreationDotGov&#39;. Defaults to &#39;RecreationDotGov&#39;, not case-sensitive.&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">debug_option</span> <span class="o">=</span> <span class="n">click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span>
+    <span class="s2">&quot;--debug/--no-debug&quot;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Enable extra debugging output&quot;</span>
+<span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">_set_up_debug</span><span class="p">(</span><span class="n">debug</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Set up the Camply Debugging Mode</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">debug</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">debug</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="k">if</span> <span class="n">debug</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">set_up_logging</span><span class="p">(</span><span class="n">log_level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">)</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Setting up camply debugging&quot;</span><span class="p">)</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Camply Version: </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">__version__</span><span class="p">)</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Python Version: </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">sys</span><span class="o">.</span><span class="n">version</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Platform: </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">sys</span><span class="o">.</span><span class="n">platform</span><span class="p">)</span>
+    <span class="n">traceback</span><span class="o">.</span><span class="n">install</span><span class="p">(</span><span class="n">show_locals</span><span class="o">=</span><span class="n">debug</span><span class="p">)</span>
+
 
 <span class="nd">@click</span><span class="o">.</span><span class="n">group</span><span class="p">()</span>
 <span class="nd">@click</span><span class="o">.</span><span class="n">version_option</span><span class="p">(</span><span class="n">version</span><span class="o">=</span><span class="n">__version__</span><span class="p">,</span> <span class="n">prog_name</span><span class="o">=</span><span class="n">__application__</span><span class="p">)</span>
-<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span>
-    <span class="s2">&quot;--debug/--no-debug&quot;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Enable extra debugging output.&quot;</span>
-<span class="p">)</span>
+<span class="nd">@provider_argument</span>
+<span class="nd">@debug_option</span>
 <span class="nd">@click</span><span class="o">.</span><span class="n">pass_context</span>
-<span class="k">def</span> <span class="nf">camply_command_line</span><span class="p">(</span><span class="n">ctx</span><span class="p">:</span> <span class="n">click</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">Context</span><span class="p">,</span> <span class="n">debug</span><span class="p">:</span> <span class="nb">bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="k">def</span> <span class="nf">camply_command_line</span><span class="p">(</span><span class="n">ctx</span><span class="p">:</span> <span class="n">click</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">Context</span><span class="p">,</span> <span class="n">provider</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">debug</span><span class="p">:</span> <span class="nb">bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Welcome to camply, the campsite finder.</span>
 
@@ -127,20 +166,16 @@
 
 <span class="sd">    visit the camply documentation at https://github.com/juftin/camply</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">ctx</span><span class="o">.</span><span class="n">ensure_object</span><span class="p">(</span><span class="nb">dict</span><span class="p">)</span>
-    <span class="n">ctx</span><span class="o">.</span><span class="n">obj</span><span class="p">[</span><span class="s2">&quot;DEBUG&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">debug</span>
-    <span class="n">set_up_logging</span><span class="p">(</span><span class="n">log_level</span><span class="o">=</span><span class="kc">None</span> <span class="k">if</span> <span class="n">debug</span> <span class="ow">is</span> <span class="kc">False</span> <span class="k">else</span> <span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">)</span>
+    <span class="n">set_up_logging</span><span class="p">(</span><span class="n">log_level</span><span class="o">=</span><span class="kc">None</span> <span class="k">if</span> <span class="n">debug</span> <span class="ow">is</span> <span class="kc">False</span> <span class="k">else</span> <span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">)</span>
     <span class="n">logger</span><span class="o">.</span><span class="n">camply</span><span class="p">(</span><span class="s2">&quot;camply, the campsite finder ⛺️&quot;</span><span class="p">)</span>  <span class="c1"># noqa</span>
-    <span class="k">if</span> <span class="n">debug</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
-        <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Setting up camply debugging&quot;</span><span class="p">)</span>
-        <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Camply Version: </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">__version__</span><span class="p">)</span>
-        <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Python Version: </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">sys</span><span class="o">.</span><span class="n">version</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
-        <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Platform: </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">sys</span><span class="o">.</span><span class="n">platform</span><span class="p">)</span>
-    <span class="n">traceback</span><span class="o">.</span><span class="n">install</span><span class="p">(</span><span class="n">show_locals</span><span class="o">=</span><span class="n">debug</span><span class="p">)</span>
+    <span class="n">ctx</span><span class="o">.</span><span class="n">obj</span> <span class="o">=</span> <span class="n">CamplyContext</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="n">debug</span><span class="p">,</span> <span class="n">provider</span><span class="o">=</span><span class="n">provider</span><span class="p">)</span>
+    <span class="n">_set_up_debug</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="n">debug</span><span class="p">)</span>
 
 
 <span class="nd">@camply_command_line</span><span class="o">.</span><span class="n">command</span><span class="p">()</span>
-<span class="k">def</span> <span class="nf">configure</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="nd">@debug_option</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">pass_obj</span>
+<span class="k">def</span> <span class="nf">configure</span><span class="p">(</span><span class="n">context</span><span class="p">:</span> <span class="n">CamplyContext</span><span class="p">,</span> <span class="n">debug</span><span class="p">:</span> <span class="nb">bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Set up camply configuration file with an interactive console</span>
 
@@ -150,6 +185,9 @@
 <span class="sd">    can be done through the configure command. The end result is a file called .camply in your</span>
 <span class="sd">    home folder.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">context</span><span class="o">.</span><span class="n">debug</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">context</span><span class="o">.</span><span class="n">debug</span> <span class="o">=</span> <span class="n">debug</span>
+        <span class="n">_set_up_debug</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="n">context</span><span class="o">.</span><span class="n">debug</span><span class="p">)</span>
     <span class="n">configure_camply</span><span class="o">.</span><span class="n">generate_dot_camply_file</span><span class="p">()</span>
 
 
@@ -175,25 +213,25 @@
     <span class="n">multiple</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
     <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Add individual Campgrounds by ID.&quot;</span><span class="p">,</span>
 <span class="p">)</span>
-<span class="n">provider_argument</span> <span class="o">=</span> <span class="n">click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span>
-    <span class="s2">&quot;--provider&quot;</span><span class="p">,</span>
-    <span class="n">show_default</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-    <span class="n">default</span><span class="o">=</span><span class="s2">&quot;RecreationDotGov&quot;</span><span class="p">,</span>
-    <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Camping Search Provider. Options available are &#39;Yellowstone&#39; and &quot;</span>
-    <span class="s2">&quot;&#39;RecreationDotGov&#39;. Defaults to &#39;RecreationDotGov&#39;, not case-sensitive.&quot;</span><span class="p">,</span>
-<span class="p">)</span>
 
 
+<span class="nd">@camply_command_line</span><span class="o">.</span><span class="n">command</span><span class="p">()</span>
 <span class="nd">@search_argument</span>
 <span class="nd">@state_argument</span>
-<span class="nd">@camply_command_line</span><span class="o">.</span><span class="n">command</span><span class="p">()</span>
-<span class="k">def</span> <span class="nf">recreation_areas</span><span class="p">(</span><span class="n">search</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">state</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="nd">@debug_option</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">pass_obj</span>
+<span class="k">def</span> <span class="nf">recreation_areas</span><span class="p">(</span>
+    <span class="n">context</span><span class="p">:</span> <span class="n">CamplyContext</span><span class="p">,</span> <span class="n">search</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">state</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">debug</span><span class="p">:</span> <span class="nb">bool</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Search for Recreation Areas and list them</span>
 
 <span class="sd">    Search for Recreation Areas and their IDs. Recreation Areas are places like</span>
 <span class="sd">    National Parks and National Forests that can contain one or many campgrounds.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">context</span><span class="o">.</span><span class="n">debug</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">context</span><span class="o">.</span><span class="n">debug</span> <span class="o">=</span> <span class="n">debug</span>
+        <span class="n">_set_up_debug</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="n">context</span><span class="o">.</span><span class="n">debug</span><span class="p">)</span>
     <span class="k">if</span> <span class="nb">all</span><span class="p">([</span><span class="n">search</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">,</span> <span class="n">state</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">]):</span>
         <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span>
             <span class="s2">&quot;You must add a --search or --state parameter to search &quot;</span>
@@ -207,14 +245,18 @@
     <span class="n">camp_finder</span><span class="o">.</span><span class="n">find_recreation_areas</span><span class="p">(</span><span class="n">search_string</span><span class="o">=</span><span class="n">search</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span><span class="p">)</span>
 
 
+<span class="nd">@camply_command_line</span><span class="o">.</span><span class="n">command</span><span class="p">()</span>
 <span class="nd">@search_argument</span>
 <span class="nd">@state_argument</span>
 <span class="nd">@rec_area_argument</span>
 <span class="nd">@campground_argument</span>
 <span class="nd">@campsite_id_argument</span>
 <span class="nd">@provider_argument</span>
-<span class="nd">@camply_command_line</span><span class="o">.</span><span class="n">command</span><span class="p">()</span>
+<span class="nd">@debug_option</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">pass_obj</span>
 <span class="k">def</span> <span class="nf">campgrounds</span><span class="p">(</span>
+    <span class="n">context</span><span class="p">:</span> <span class="n">CamplyContext</span><span class="p">,</span>
+    <span class="n">debug</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span>
     <span class="n">search</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="n">state</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="n">rec_area</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -230,6 +272,12 @@
 <span class="sd">    multiple campsites, others are facilities like fire towers or cabins that might only</span>
 <span class="sd">    contain a single &#39;campsite&#39; to book.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">context</span><span class="o">.</span><span class="n">debug</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">context</span><span class="o">.</span><span class="n">debug</span> <span class="o">=</span> <span class="n">debug</span>
+        <span class="n">_set_up_debug</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="n">context</span><span class="o">.</span><span class="n">debug</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">context</span><span class="o">.</span><span class="n">provider</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">context</span><span class="o">.</span><span class="n">provider</span> <span class="o">=</span> <span class="n">provider</span>
+    <span class="n">provider</span> <span class="o">=</span> <span class="n">DEFAULT_CAMPLY_PROVIDER</span> <span class="k">if</span> <span class="n">context</span><span class="o">.</span><span class="n">provider</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">context</span><span class="o">.</span><span class="n">provider</span>
     <span class="k">if</span> <span class="n">provider</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;yellowstone&quot;</span><span class="p">:</span>
         <span class="n">SearchYellowstone</span><span class="o">.</span><span class="n">print_campgrounds</span><span class="p">()</span>
         <span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
@@ -349,6 +397,24 @@
     <span class="s2">&quot;equipment names include `Tent`, `RV`. `Trailer`, `Vehicle` and are &quot;</span>
     <span class="s2">&quot;not case-sensitive.&quot;</span><span class="p">,</span>
 <span class="p">)</span>
+<span class="n">offline_search_argument</span> <span class="o">=</span> <span class="n">click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span>
+    <span class="s2">&quot;--offline-search&quot;</span><span class="p">,</span>
+    <span class="n">is_flag</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">show_default</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">default</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">help</span><span class="o">=</span><span class="s2">&quot;When set to True, the campsite search will both save the results of the &quot;</span>
+    <span class="s2">&quot;campsites it&#39;s found, but also load those campsites before beginning a &quot;</span>
+    <span class="s2">&quot;search for other campsites.&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">offline_search_path_argument</span> <span class="o">=</span> <span class="n">click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span>
+    <span class="s2">&quot;--offline-search-path&quot;</span><span class="p">,</span>
+    <span class="n">show_default</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">help</span><span class="o">=</span><span class="s2">&quot;When offline search is set to True, this is the name of the file to be saved/loaded. &quot;</span>
+    <span class="s2">&quot;Campsites can be saved as a serialized pickle file or &quot;</span>
+    <span class="s2">&quot;a JSON file, depending on the file extension. When not specified, &quot;</span>
+    <span class="s2">&quot;the filename will default to `camply_campsites.json`&quot;</span><span class="p">,</span>
+<span class="p">)</span>
 
 
 <span class="k">def</span> <span class="nf">_get_equipment</span><span class="p">(</span><span class="n">equipment</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]]]:</span>
@@ -413,7 +479,10 @@
             <span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 
 
+<span class="nd">@camply_command_line</span><span class="o">.</span><span class="n">command</span><span class="p">()</span>
 <span class="nd">@yaml_config_argument</span>
+<span class="nd">@offline_search_path_argument</span>
+<span class="nd">@offline_search_argument</span>
 <span class="nd">@search_forever_argument</span>
 <span class="nd">@notify_first_try_argument</span>
 <span class="nd">@notifications_argument</span>
@@ -428,8 +497,11 @@
 <span class="nd">@campsite_id_argument</span>
 <span class="nd">@campground_argument</span>
 <span class="nd">@rec_area_argument</span>
-<span class="nd">@camply_command_line</span><span class="o">.</span><span class="n">command</span><span class="p">()</span>
+<span class="nd">@debug_option</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">pass_obj</span>
 <span class="k">def</span> <span class="nf">campsites</span><span class="p">(</span>
+    <span class="n">context</span><span class="p">:</span> <span class="n">CamplyContext</span><span class="p">,</span>
+    <span class="n">debug</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span>
     <span class="n">rec_area</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="n">campground</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="n">campsite</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -445,6 +517,8 @@
     <span class="n">search_forever</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
     <span class="n">yaml_config</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="n">equipment</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">offline_search</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="n">offline_search_path</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Find available Campsites using search criteria</span>
@@ -456,6 +530,12 @@
 <span class="sd">    functionality can be enabled with  `--continuous` and notifications can be enabled using</span>
 <span class="sd">    `--notifications`.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">context</span><span class="o">.</span><span class="n">debug</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">context</span><span class="o">.</span><span class="n">debug</span> <span class="o">=</span> <span class="n">debug</span>
+        <span class="n">_set_up_debug</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="n">context</span><span class="o">.</span><span class="n">debug</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">context</span><span class="o">.</span><span class="n">provider</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">context</span><span class="o">.</span><span class="n">provider</span> <span class="o">=</span> <span class="n">provider</span>
+    <span class="n">provider</span> <span class="o">=</span> <span class="n">DEFAULT_CAMPLY_PROVIDER</span> <span class="k">if</span> <span class="n">context</span><span class="o">.</span><span class="n">provider</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">context</span><span class="o">.</span><span class="n">provider</span>
     <span class="n">notifications</span> <span class="o">=</span> <span class="n">make_list</span><span class="p">(</span><span class="n">notifications</span><span class="p">)</span>
     <span class="n">_validate_campsites</span><span class="p">(</span>
         <span class="n">rec_area</span><span class="o">=</span><span class="n">rec_area</span><span class="p">,</span>
@@ -491,6 +571,8 @@
             <span class="n">weekends_only</span><span class="o">=</span><span class="n">weekends</span><span class="p">,</span>
             <span class="n">nights</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">nights</span><span class="p">),</span>
             <span class="n">equipment</span><span class="o">=</span><span class="n">make_list</span><span class="p">(</span><span class="n">equipment</span><span class="p">),</span>
+            <span class="n">offline_search</span><span class="o">=</span><span class="n">offline_search</span><span class="p">,</span>
+            <span class="n">offline_search_path</span><span class="o">=</span><span class="n">offline_search_path</span><span class="p">,</span>
         <span class="p">)</span>
         <span class="n">search_kwargs</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
             <span class="n">log</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>

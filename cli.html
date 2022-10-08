@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>camply CLI &mdash; camply 0.6.2 documentation</title>
+  <title>camply CLI &mdash; camply 0.7.0 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/autodoc_pydantic.css" type="text/css" />
@@ -38,7 +38,7 @@
             <a href="index.html" class="icon icon-home"> camply
           </a>
               <div class="version">
-                0.6.2
+                0.7.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -121,7 +121,10 @@
 
 <span class="go">Options:</span>
 <span class="go">  --version             Show the version and exit.</span>
-<span class="go">  --debug / --no-debug  Enable extra debugging output.</span>
+<span class="go">  --provider TEXT       Camping Search Provider. Options available are</span>
+<span class="go">                        &#39;Yellowstone&#39; and &#39;RecreationDotGov&#39;. Defaults to</span>
+<span class="go">                        &#39;RecreationDotGov&#39;, not case-sensitive.</span>
+<span class="go">  --debug / --no-debug  Enable extra debugging output</span>
 <span class="go">  --help                Show this message and exit.</span>
 
 <span class="go">Commands:</span>
@@ -171,9 +174,15 @@ camply sends you a notification to book your spot!</p>
 </dd></dl>
 
 <dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-camply-provider">
+<span class="sig-name descname"><span class="pre">--provider</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;provider&gt;</span></span><a class="headerlink" href="#cmdoption-camply-provider" title="Permalink to this definition"></a></dt>
+<dd><p>Camping Search Provider. Options available are ‘Yellowstone’ and ‘RecreationDotGov’. Defaults to ‘RecreationDotGov’, not case-sensitive.</p>
+</dd></dl>
+
+<dl class="std option">
 <dt class="sig sig-object std" id="cmdoption-camply-debug">
 <span id="cmdoption-camply-no-debug"></span><span class="sig-name descname"><span class="pre">--debug</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--no-debug</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-camply-debug" title="Permalink to this definition"></a></dt>
-<dd><p>Enable extra debugging output.</p>
+<dd><p>Enable extra debugging output</p>
 </dd></dl>
 
 <section id="camply-campgrounds">
@@ -188,32 +197,9 @@ contain a single ‘campsite’ to book.</p>
 </div>
 <p class="rubric">Options</p>
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-camply-campgrounds-provider">
-<span class="sig-name descname"><span class="pre">--provider</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;provider&gt;</span></span><a class="headerlink" href="#cmdoption-camply-campgrounds-provider" title="Permalink to this definition"></a></dt>
-<dd><p>Camping Search Provider. Options available are ‘Yellowstone’ and ‘RecreationDotGov’. Defaults to ‘RecreationDotGov’, not case-sensitive.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Default</dt>
-<dd class="field-odd"><p>RecreationDotGov</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-camply-campgrounds-campsite">
-<span class="sig-name descname"><span class="pre">--campsite</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;campsite&gt;</span></span><a class="headerlink" href="#cmdoption-camply-campgrounds-campsite" title="Permalink to this definition"></a></dt>
-<dd><p>Add individual Campsites by ID.</p>
-</dd></dl>
-
-<dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-camply-campgrounds-campground">
-<span class="sig-name descname"><span class="pre">--campground</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;campground&gt;</span></span><a class="headerlink" href="#cmdoption-camply-campgrounds-campground" title="Permalink to this definition"></a></dt>
-<dd><p>Add individual Campgrounds by ID.</p>
-</dd></dl>
-
-<dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-camply-campgrounds-rec-area">
-<span class="sig-name descname"><span class="pre">--rec-area</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;rec_area&gt;</span></span><a class="headerlink" href="#cmdoption-camply-campgrounds-rec-area" title="Permalink to this definition"></a></dt>
-<dd><p>Add Recreation Areas (comprised of campgrounds) by ID.</p>
+<dt class="sig sig-object std" id="cmdoption-camply-campgrounds-search">
+<span class="sig-name descname"><span class="pre">--search</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;search&gt;</span></span><a class="headerlink" href="#cmdoption-camply-campgrounds-search" title="Permalink to this definition"></a></dt>
+<dd><p>Search for Campgrounds or Recreation Areas by search string.</p>
 </dd></dl>
 
 <dl class="std option">
@@ -223,9 +209,33 @@ contain a single ‘campsite’ to book.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-camply-campgrounds-search">
-<span class="sig-name descname"><span class="pre">--search</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;search&gt;</span></span><a class="headerlink" href="#cmdoption-camply-campgrounds-search" title="Permalink to this definition"></a></dt>
-<dd><p>Search for Campgrounds or Recreation Areas by search string.</p>
+<dt class="sig sig-object std" id="cmdoption-camply-campgrounds-rec-area">
+<span class="sig-name descname"><span class="pre">--rec-area</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;rec_area&gt;</span></span><a class="headerlink" href="#cmdoption-camply-campgrounds-rec-area" title="Permalink to this definition"></a></dt>
+<dd><p>Add Recreation Areas (comprised of campgrounds) by ID.</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-camply-campgrounds-campground">
+<span class="sig-name descname"><span class="pre">--campground</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;campground&gt;</span></span><a class="headerlink" href="#cmdoption-camply-campgrounds-campground" title="Permalink to this definition"></a></dt>
+<dd><p>Add individual Campgrounds by ID.</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-camply-campgrounds-campsite">
+<span class="sig-name descname"><span class="pre">--campsite</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;campsite&gt;</span></span><a class="headerlink" href="#cmdoption-camply-campgrounds-campsite" title="Permalink to this definition"></a></dt>
+<dd><p>Add individual Campsites by ID.</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-camply-campgrounds-provider">
+<span class="sig-name descname"><span class="pre">--provider</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;provider&gt;</span></span><a class="headerlink" href="#cmdoption-camply-campgrounds-provider" title="Permalink to this definition"></a></dt>
+<dd><p>Camping Search Provider. Options available are ‘Yellowstone’ and ‘RecreationDotGov’. Defaults to ‘RecreationDotGov’, not case-sensitive.</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-camply-campgrounds-debug">
+<span id="cmdoption-camply-campgrounds-no-debug"></span><span class="sig-name descname"><span class="pre">--debug</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--no-debug</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-camply-campgrounds-debug" title="Permalink to this definition"></a></dt>
+<dd><p>Enable extra debugging output</p>
 </dd></dl>
 
 </section>
@@ -243,111 +253,21 @@ functionality can be enabled with  <cite>–continuous</cite> and notifications 
 </div>
 <p class="rubric">Options</p>
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-camply-campsites-rec-area">
-<span class="sig-name descname"><span class="pre">--rec-area</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;rec_area&gt;</span></span><a class="headerlink" href="#cmdoption-camply-campsites-rec-area" title="Permalink to this definition"></a></dt>
-<dd><p>Add Recreation Areas (comprised of campgrounds) by ID.</p>
+<dt class="sig sig-object std" id="cmdoption-camply-campsites-yaml-config">
+<span id="cmdoption-camply-campsites-yml-config"></span><span class="sig-name descname"><span class="pre">--yaml-config</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--yml-config</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;yaml_config&gt;</span></span><a class="headerlink" href="#cmdoption-camply-campsites-yaml-config" title="Permalink to this definition"></a></dt>
+<dd><p>Rather than provide arguments to the command line utility, instead pass a file path to a YAML configuration file. See the documentation for more information on how to structure your configuration file.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-camply-campsites-campground">
-<span class="sig-name descname"><span class="pre">--campground</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;campground&gt;</span></span><a class="headerlink" href="#cmdoption-camply-campsites-campground" title="Permalink to this definition"></a></dt>
-<dd><p>Add individual Campgrounds by ID.</p>
+<dt class="sig sig-object std" id="cmdoption-camply-campsites-offline-search-path">
+<span class="sig-name descname"><span class="pre">--offline-search-path</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;offline_search_path&gt;</span></span><a class="headerlink" href="#cmdoption-camply-campsites-offline-search-path" title="Permalink to this definition"></a></dt>
+<dd><p>When offline search is set to True, this is the name of the file to be saved/loaded. Campsites can be saved as a serialized pickle file or a JSON file, depending on the file extension. When not specified, the filename will default to <cite>camply_campsites.json</cite></p>
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-camply-campsites-campsite">
-<span class="sig-name descname"><span class="pre">--campsite</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;campsite&gt;</span></span><a class="headerlink" href="#cmdoption-camply-campsites-campsite" title="Permalink to this definition"></a></dt>
-<dd><p>Add individual Campsites by ID.</p>
-</dd></dl>
-
-<dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-camply-campsites-start-date">
-<span class="sig-name descname"><span class="pre">--start-date</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;start_date&gt;</span></span><a class="headerlink" href="#cmdoption-camply-campsites-start-date" title="Permalink to this definition"></a></dt>
-<dd><p>(YYYY-MM-DD) Start of Search window. You will be arriving this day.</p>
-</dd></dl>
-
-<dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-camply-campsites-end-date">
-<span class="sig-name descname"><span class="pre">--end-date</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;end_date&gt;</span></span><a class="headerlink" href="#cmdoption-camply-campsites-end-date" title="Permalink to this definition"></a></dt>
-<dd><p>(YYYY-MM-DD) End of Search window. You will be checking out this day.</p>
-</dd></dl>
-
-<dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-camply-campsites-weekends">
-<span class="sig-name descname"><span class="pre">--weekends</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-camply-campsites-weekends" title="Permalink to this definition"></a></dt>
-<dd><p>Only search for weekend bookings (Fri/Sat nights).</p>
-<dl class="field-list simple">
-<dt class="field-odd">Default</dt>
-<dd class="field-odd"><p>False</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-camply-campsites-nights">
-<span class="sig-name descname"><span class="pre">--nights</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;nights&gt;</span></span><a class="headerlink" href="#cmdoption-camply-campsites-nights" title="Permalink to this definition"></a></dt>
-<dd><p>Search for campsite stays with consecutive nights. Defaults to 1 which returns all campsites found.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Default</dt>
-<dd class="field-odd"><p>1</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-camply-campsites-equipment">
-<span class="sig-name descname"><span class="pre">--equipment</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;equipment&gt;</span></span><a class="headerlink" href="#cmdoption-camply-campsites-equipment" title="Permalink to this definition"></a></dt>
-<dd><p>Search for campsites compatible with your camping equipment. This argument accepts two options, the equipment name and its length If you don’t want to filter based on length provide a length of 0. Accepted equipment names include <cite>Tent</cite>, <cite>RV</cite>. <cite>Trailer</cite>, <cite>Vehicle</cite> and are not case-sensitive.</p>
-</dd></dl>
-
-<dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-camply-campsites-provider">
-<span class="sig-name descname"><span class="pre">--provider</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;provider&gt;</span></span><a class="headerlink" href="#cmdoption-camply-campsites-provider" title="Permalink to this definition"></a></dt>
-<dd><p>Camping Search Provider. Options available are ‘Yellowstone’ and ‘RecreationDotGov’. Defaults to ‘RecreationDotGov’, not case-sensitive.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Default</dt>
-<dd class="field-odd"><p>RecreationDotGov</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-camply-campsites-continuous">
-<span class="sig-name descname"><span class="pre">--continuous</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-camply-campsites-continuous" title="Permalink to this definition"></a></dt>
-<dd><p>Continuously check for a campsite to become available, and quit once at least one campsite is found.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Default</dt>
-<dd class="field-odd"><p>False</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-camply-campsites-polling-interval">
-<span class="sig-name descname"><span class="pre">--polling-interval</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;polling_interval&gt;</span></span><a class="headerlink" href="#cmdoption-camply-campsites-polling-interval" title="Permalink to this definition"></a></dt>
-<dd><p>If –continuous is activated, how often to wait in between checks (in minutes). Defaults to 10, cannot be less than 5.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Default</dt>
-<dd class="field-odd"><p>10</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-camply-campsites-notifications">
-<span class="sig-name descname"><span class="pre">--notifications</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;notifications&gt;</span></span><a class="headerlink" href="#cmdoption-camply-campsites-notifications" title="Permalink to this definition"></a></dt>
-<dd><p>If –continuous is activated, types of notifications to receive. Options available are ‘email’, ‘pushover’, ‘pushbullet’, ‘telegram’, ‘twilio’, or ‘silent’. Defaults to ‘silent’ - which just logs messages to console.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Default</dt>
-<dd class="field-odd"><p>silent</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-camply-campsites-notify-first-try">
-<span class="sig-name descname"><span class="pre">--notify-first-try</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-camply-campsites-notify-first-try" title="Permalink to this definition"></a></dt>
-<dd><p>If –continuous is activated, whether to send all non-silent notifications if more than 5 matching campsites are found on the first try. Defaults to false which only sends the first 5.</p>
+<dt class="sig sig-object std" id="cmdoption-camply-campsites-offline-search">
+<span class="sig-name descname"><span class="pre">--offline-search</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-camply-campsites-offline-search" title="Permalink to this definition"></a></dt>
+<dd><p>When set to True, the campsite search will both save the results of the campsites it’s found, but also load those campsites before beginning a search for other campsites.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Default</dt>
 <dd class="field-odd"><p>False</p>
@@ -367,9 +287,117 @@ functionality can be enabled with  <cite>–continuous</cite> and notifications 
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-camply-campsites-yaml-config">
-<span id="cmdoption-camply-campsites-yml-config"></span><span class="sig-name descname"><span class="pre">--yaml-config</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--yml-config</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;yaml_config&gt;</span></span><a class="headerlink" href="#cmdoption-camply-campsites-yaml-config" title="Permalink to this definition"></a></dt>
-<dd><p>Rather than provide arguments to the command line utility, instead pass a file path to a YAML configuration file. See the documentation for more information on how to structure your configuration file.</p>
+<dt class="sig sig-object std" id="cmdoption-camply-campsites-notify-first-try">
+<span class="sig-name descname"><span class="pre">--notify-first-try</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-camply-campsites-notify-first-try" title="Permalink to this definition"></a></dt>
+<dd><p>If –continuous is activated, whether to send all non-silent notifications if more than 5 matching campsites are found on the first try. Defaults to false which only sends the first 5.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Default</dt>
+<dd class="field-odd"><p>False</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-camply-campsites-notifications">
+<span class="sig-name descname"><span class="pre">--notifications</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;notifications&gt;</span></span><a class="headerlink" href="#cmdoption-camply-campsites-notifications" title="Permalink to this definition"></a></dt>
+<dd><p>If –continuous is activated, types of notifications to receive. Options available are ‘email’, ‘pushover’, ‘pushbullet’, ‘telegram’, ‘twilio’, or ‘silent’. Defaults to ‘silent’ - which just logs messages to console.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Default</dt>
+<dd class="field-odd"><p>silent</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-camply-campsites-polling-interval">
+<span class="sig-name descname"><span class="pre">--polling-interval</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;polling_interval&gt;</span></span><a class="headerlink" href="#cmdoption-camply-campsites-polling-interval" title="Permalink to this definition"></a></dt>
+<dd><p>If –continuous is activated, how often to wait in between checks (in minutes). Defaults to 10, cannot be less than 5.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Default</dt>
+<dd class="field-odd"><p>10</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-camply-campsites-continuous">
+<span class="sig-name descname"><span class="pre">--continuous</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-camply-campsites-continuous" title="Permalink to this definition"></a></dt>
+<dd><p>Continuously check for a campsite to become available, and quit once at least one campsite is found.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Default</dt>
+<dd class="field-odd"><p>False</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-camply-campsites-provider">
+<span class="sig-name descname"><span class="pre">--provider</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;provider&gt;</span></span><a class="headerlink" href="#cmdoption-camply-campsites-provider" title="Permalink to this definition"></a></dt>
+<dd><p>Camping Search Provider. Options available are ‘Yellowstone’ and ‘RecreationDotGov’. Defaults to ‘RecreationDotGov’, not case-sensitive.</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-camply-campsites-equipment">
+<span class="sig-name descname"><span class="pre">--equipment</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;equipment&gt;</span></span><a class="headerlink" href="#cmdoption-camply-campsites-equipment" title="Permalink to this definition"></a></dt>
+<dd><p>Search for campsites compatible with your camping equipment. This argument accepts two options, the equipment name and its length If you don’t want to filter based on length provide a length of 0. Accepted equipment names include <cite>Tent</cite>, <cite>RV</cite>. <cite>Trailer</cite>, <cite>Vehicle</cite> and are not case-sensitive.</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-camply-campsites-nights">
+<span class="sig-name descname"><span class="pre">--nights</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;nights&gt;</span></span><a class="headerlink" href="#cmdoption-camply-campsites-nights" title="Permalink to this definition"></a></dt>
+<dd><p>Search for campsite stays with consecutive nights. Defaults to 1 which returns all campsites found.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Default</dt>
+<dd class="field-odd"><p>1</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-camply-campsites-weekends">
+<span class="sig-name descname"><span class="pre">--weekends</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-camply-campsites-weekends" title="Permalink to this definition"></a></dt>
+<dd><p>Only search for weekend bookings (Fri/Sat nights).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Default</dt>
+<dd class="field-odd"><p>False</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-camply-campsites-end-date">
+<span class="sig-name descname"><span class="pre">--end-date</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;end_date&gt;</span></span><a class="headerlink" href="#cmdoption-camply-campsites-end-date" title="Permalink to this definition"></a></dt>
+<dd><p>(YYYY-MM-DD) End of Search window. You will be checking out this day.</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-camply-campsites-start-date">
+<span class="sig-name descname"><span class="pre">--start-date</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;start_date&gt;</span></span><a class="headerlink" href="#cmdoption-camply-campsites-start-date" title="Permalink to this definition"></a></dt>
+<dd><p>(YYYY-MM-DD) Start of Search window. You will be arriving this day.</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-camply-campsites-campsite">
+<span class="sig-name descname"><span class="pre">--campsite</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;campsite&gt;</span></span><a class="headerlink" href="#cmdoption-camply-campsites-campsite" title="Permalink to this definition"></a></dt>
+<dd><p>Add individual Campsites by ID.</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-camply-campsites-campground">
+<span class="sig-name descname"><span class="pre">--campground</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;campground&gt;</span></span><a class="headerlink" href="#cmdoption-camply-campsites-campground" title="Permalink to this definition"></a></dt>
+<dd><p>Add individual Campgrounds by ID.</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-camply-campsites-rec-area">
+<span class="sig-name descname"><span class="pre">--rec-area</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;rec_area&gt;</span></span><a class="headerlink" href="#cmdoption-camply-campsites-rec-area" title="Permalink to this definition"></a></dt>
+<dd><p>Add Recreation Areas (comprised of campgrounds) by ID.</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-camply-campsites-debug">
+<span id="cmdoption-camply-campsites-no-debug"></span><span class="sig-name descname"><span class="pre">--debug</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--no-debug</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-camply-campsites-debug" title="Permalink to this definition"></a></dt>
+<dd><p>Enable extra debugging output</p>
 </dd></dl>
 
 </section>
@@ -384,6 +412,13 @@ home folder.</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>camply configure <span class="o">[</span>OPTIONS<span class="o">]</span>
 </pre></div>
 </div>
+<p class="rubric">Options</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-camply-configure-debug">
+<span id="cmdoption-camply-configure-no-debug"></span><span class="sig-name descname"><span class="pre">--debug</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--no-debug</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-camply-configure-debug" title="Permalink to this definition"></a></dt>
+<dd><p>Enable extra debugging output</p>
+</dd></dl>
+
 </section>
 <section id="camply-recreation-areas">
 <h4>recreation-areas<a class="headerlink" href="#camply-recreation-areas" title="Permalink to this heading"></a></h4>
@@ -395,15 +430,21 @@ National Parks and National Forests that can contain one or many campgrounds.</p
 </div>
 <p class="rubric">Options</p>
 <dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-camply-recreation-areas-search">
+<span class="sig-name descname"><span class="pre">--search</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;search&gt;</span></span><a class="headerlink" href="#cmdoption-camply-recreation-areas-search" title="Permalink to this definition"></a></dt>
+<dd><p>Search for Campgrounds or Recreation Areas by search string.</p>
+</dd></dl>
+
+<dl class="std option">
 <dt class="sig sig-object std" id="cmdoption-camply-recreation-areas-state">
 <span class="sig-name descname"><span class="pre">--state</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;state&gt;</span></span><a class="headerlink" href="#cmdoption-camply-recreation-areas-state" title="Permalink to this definition"></a></dt>
 <dd><p>Filter by US state code.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-camply-recreation-areas-search">
-<span class="sig-name descname"><span class="pre">--search</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;search&gt;</span></span><a class="headerlink" href="#cmdoption-camply-recreation-areas-search" title="Permalink to this definition"></a></dt>
-<dd><p>Search for Campgrounds or Recreation Areas by search string.</p>
+<dt class="sig sig-object std" id="cmdoption-camply-recreation-areas-debug">
+<span id="cmdoption-camply-recreation-areas-no-debug"></span><span class="sig-name descname"><span class="pre">--debug</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--no-debug</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-camply-recreation-areas-debug" title="Permalink to this definition"></a></dt>
+<dd><p>Enable extra debugging output</p>
 </dd></dl>
 
 </section>

@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Table of Contents &mdash; camply 0.6.2 documentation</title>
+  <title>Table of Contents &mdash; camply 0.7.0 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/autodoc_pydantic.css" type="text/css" />
@@ -38,7 +38,7 @@
             <a href="index.html" class="icon icon-home"> camply
           </a>
               <div class="version">
-                0.6.2
+                0.7.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -84,6 +84,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#look-for-a-campsite-across-multiple-recreation-areas">Look for a Campsite Across Multiple Recreation areas</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#using-a-yaml-configuration-file-to-search-for-campsites">Using a YAML Configuration file to search for campsites</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#searching-for-a-campsite-that-fits-your-equipment">Searching for a Campsite That Fits Your Equipment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#saving-the-results-of-a-search">Saving the Results of a Search</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#search-for-recreation-areas-by-query-string">Search for Recreation Areas by Query String</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#look-for-specific-campgrounds-within-a-recreation-area">Look for Specific Campgrounds Within a Recreation Area</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#look-for-specific-campgrounds-by-query-string">Look for Specific Campgrounds by Query String</a></li>
@@ -180,6 +181,7 @@ becomes available, camply sends you a notification to book your spot!</p>
 <li><p><a class="reference internal" href="#look-for-a-campsite-across-multiple-recreation-areas"><span class="std std-doc">Look for a Campsite Across Multiple Recreation areas</span></a></p></li>
 <li><p><a class="reference internal" href="#using-a-yaml-configuration-file-to-search-for-campsites"><span class="std std-doc">Using a YAML Configuration file to search for campsites</span></a></p></li>
 <li><p><a class="reference internal" href="#searching-for-a-campsite-that-fits-your-equipment"><span class="std std-doc">Searching for a Campsite That Fits Your Equipment</span></a></p></li>
+<li><p><a class="reference internal" href="#saving-the-results-of-a-search"><span class="std std-doc">Saving the Results of a Search</span></a></p></li>
 <li><p><a class="reference internal" href="#search-for-recreation-areas-by-query-string"><span class="std std-doc">Search for Recreation Areas by Query String</span></a></p></li>
 <li><p><a class="reference internal" href="#look-for-specific-campgrounds-within-a-recreation-area"><span class="std std-doc">Look for Specific Campgrounds Within a Recreation Area</span></a></p></li>
 <li><p><a class="reference internal" href="#look-for-specific-campgrounds-by-query-string"><span class="std std-doc">Look for Specific Campgrounds by Query String</span></a></p></li>
@@ -246,7 +248,10 @@ Usage: camply [OPTIONS] COMMAND [ARGS]...
 
 Options:
   --version             Show the version and exit.
-  --debug / --no-debug  Enable extra debugging output.
+  --provider TEXT       Camping Search Provider. Options available are
+                        &#39;Yellowstone&#39; and &#39;RecreationDotGov&#39;. Defaults to
+                        &#39;RecreationDotGov&#39;, not case-sensitive.
+  --debug / --no-debug  Enable extra debugging output
   --help                Show this message and exit.
 
 Commands:
@@ -674,6 +679,8 @@ below <span class="xref myst">YAML example file</span> and corresponding camply 
 <span class="nt">search_forever</span><span class="p">:</span><span class="w">   </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w">  </span><span class="c1"># FALSE BY DEFAULT</span><span class="w"></span>
 <span class="nt">notify_first_try</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w">  </span><span class="c1"># FALSE BY DEFAULT</span><span class="w"></span>
 <span class="nt">equipment</span><span class="p">:</span><span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">null</span><span class="w"> </span><span class="c1"># Array of Equipment Search Lists - DEFAULTS TO `null`</span><span class="w"></span>
+<span class="nt">offline_search</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w">    </span><span class="c1"># FALSE BY DEFAULT</span><span class="w"></span>
+<span class="nt">offline_search_path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">camply_campsites.json</span><span class="w"> </span><span class="c1"># Defaults to `camply_campsites.json`</span><span class="w"></span>
 </pre></div>
 </div>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>camply campsites --yaml-config example_search.yaml
@@ -716,6 +723,36 @@ it is safer to set length to 0.</p>
     --end-date <span class="m">2023</span>-07-17 <span class="se">\</span>
     --nights <span class="m">5</span> <span class="se">\</span>
     --equipment Trailer <span class="m">0</span>
+</pre></div>
+</div>
+</section>
+<section id="saving-the-results-of-a-search">
+<h3>Saving the Results of a Search<a class="headerlink" href="#saving-the-results-of-a-search" title="Permalink to this heading"></a></h3>
+<p>In some cases, you might want to save all the campsites found during one
+search and load them into a new search, so you don’t receive duplicate notifications.
+This can be achieved by passing the <code class="docutils literal notranslate"><span class="pre">--offline-search</span></code> flag. By default, camply will save
+the results in a file called <code class="docutils literal notranslate"><span class="pre">camply_campsites.json</span></code>.</p>
+<p>Optionally, you can also path the <code class="docutils literal notranslate"><span class="pre">--offline-search-path</span></code> flag to specify a certain file
+path to save the results as. When a file path with a <code class="docutils literal notranslate"><span class="pre">.json</span></code> extension is passed
+camply will export the results as a JSON file. When the <code class="docutils literal notranslate"><span class="pre">.pkl</span></code> or <code class="docutils literal notranslate"><span class="pre">.pickle</span></code> extension is
+used, camply will use a serialized Pickle file.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>camply <span class="se">\</span>
+  campsites <span class="se">\</span>
+  --campground <span class="m">232064</span> <span class="se">\</span>
+  --start-date <span class="m">2023</span>-09-01 <span class="se">\</span>
+  --end-date <span class="m">2023</span>-10-01 <span class="se">\</span>
+  --continuous <span class="se">\</span>
+  --offline-search
+</pre></div>
+</div>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>camply <span class="se">\</span>
+  campsites <span class="se">\</span>
+  --campground <span class="m">232064</span> <span class="se">\</span>
+  --start-date <span class="m">2023</span>-09-01 <span class="se">\</span>
+  --end-date <span class="m">2023</span>-10-01 <span class="se">\</span>
+  --continuous <span class="se">\</span>
+  --offline-search <span class="se">\</span>
+  --offline-search-path campsites.pkl
 </pre></div>
 </div>
 </section>

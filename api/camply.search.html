@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>camply.search package &mdash; camply 0.6.2 documentation</title>
+  <title>camply.search package &mdash; camply 0.7.0 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/autodoc_pydantic.css" type="text/css" />
@@ -38,7 +38,7 @@
             <a href="../index.html" class="icon icon-home"> camply
           </a>
               <div class="version">
-                0.6.2
+                0.7.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -69,7 +69,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="camply.html#submodules">Submodules</a></li>
-<li class="toctree-l3"><a class="reference internal" href="camply.html#module-contents">Module contents</a></li>
+<li class="toctree-l3"><a class="reference internal" href="camply.html#module-camply">Module contents</a></li>
 </ul>
 </li>
 </ul>
@@ -111,6 +111,7 @@
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="camply.search.base_search.html">camply.search.base_search module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="camply.search.base_search.html#camply.search.base_search.CamplyError"><code class="docutils literal notranslate"><span class="pre">CamplyError</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="camply.search.base_search.html#camply.search.base_search.SearchError"><code class="docutils literal notranslate"><span class="pre">SearchError</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="camply.search.base_search.html#camply.search.base_search.CampsiteNotFoundError"><code class="docutils literal notranslate"><span class="pre">CampsiteNotFoundError</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="camply.search.base_search.html#camply.search.base_search.BaseCampingSearch"><code class="docutils literal notranslate"><span class="pre">BaseCampingSearch</span></code></a><ul>
@@ -119,6 +120,8 @@
 <li class="toctree-l3"><a class="reference internal" href="camply.search.base_search.html#camply.search.base_search.BaseCampingSearch.campsites_to_df"><code class="docutils literal notranslate"><span class="pre">BaseCampingSearch.campsites_to_df()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="camply.search.base_search.html#camply.search.base_search.BaseCampingSearch.df_to_campsites"><code class="docutils literal notranslate"><span class="pre">BaseCampingSearch.df_to_campsites()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="camply.search.base_search.html#camply.search.base_search.BaseCampingSearch.assemble_availabilities"><code class="docutils literal notranslate"><span class="pre">BaseCampingSearch.assemble_availabilities()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="camply.search.base_search.html#camply.search.base_search.BaseCampingSearch.unload_campsites_to_file"><code class="docutils literal notranslate"><span class="pre">BaseCampingSearch.unload_campsites_to_file()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="camply.search.base_search.html#camply.search.base_search.BaseCampingSearch.load_campsites_from_file"><code class="docutils literal notranslate"><span class="pre">BaseCampingSearch.load_campsites_from_file()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -142,12 +145,12 @@
 </ul>
 </div>
 </section>
-<section id="module-contents">
-<h2>Module contents<a class="headerlink" href="#module-contents" title="Permalink to this heading"></a></h2>
+<section id="module-camply.search">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-camply.search" title="Permalink to this heading"></a></h2>
 <p>camply search __init__ file</p>
-<span class="target" id="module-camply.search"></span><dl class="py class">
+<dl class="py class">
 <dt class="sig sig-object py" id="camply.search.BaseCampingSearch">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">camply.search.</span></span><span class="sig-name descname"><span class="pre">BaseCampingSearch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">provider</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">search_window</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weekends_only</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nights</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/camply/search/base_search.html#BaseCampingSearch"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#camply.search.BaseCampingSearch" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">camply.search.</span></span><span class="sig-name descname"><span class="pre">BaseCampingSearch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">provider</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">search_window</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weekends_only</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nights</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offline_search</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offline_search_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/camply/search/base_search.html#BaseCampingSearch"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#camply.search.BaseCampingSearch" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/abc.html#abc.ABC" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ABC</span></code></a></p>
 <p>Camping Search Object</p>
 <dl class="field-list simple">
@@ -155,6 +158,8 @@
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>weekends_only</strong> (<em>optional</em>) – <strong>[Default]:</strong> <code class="code docutils literal notranslate"><span class="pre">False</span></code></p></li>
 <li><p><strong>nights</strong> (<em>optional</em>) – <strong>[Default]:</strong> <code class="code docutils literal notranslate"><span class="pre">1</span></code></p></li>
+<li><p><strong>offline_search</strong> (<em>optional</em>) – <strong>[Default]:</strong> <code class="code docutils literal notranslate"><span class="pre">False</span></code></p></li>
+<li><p><strong>offline_search_path</strong> (<em>optional</em>) – <strong>[Default]:</strong> <code class="code docutils literal notranslate"><span class="pre">None</span></code></p></li>
 </ul>
 </dd>
 </dl>
@@ -257,11 +262,33 @@ the caveat being that it will never notify about the same campsite.
 </dl>
 </dd></dl>
 
+<dl class="py method">
+<dt class="sig sig-object py" id="camply.search.BaseCampingSearch.unload_campsites_to_file">
+<span class="sig-name descname"><span class="pre">unload_campsites_to_file</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/camply/search/base_search.html#BaseCampingSearch.unload_campsites_to_file"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#camply.search.BaseCampingSearch.unload_campsites_to_file" title="Permalink to this definition"></a></dt>
+<dd><p>Unload a BaseSearch Object’s campsites to a serialized Pickle file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.10)">pathlib.Path</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="camply.search.BaseCampingSearch.load_campsites_from_file">
+<span class="sig-name descname"><span class="pre">load_campsites_from_file</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/camply/search/base_search.html#BaseCampingSearch.load_campsites_from_file"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#camply.search.BaseCampingSearch.load_campsites_from_file" title="Permalink to this definition"></a></dt>
+<dd><p>Load a BaseSearch Object’s campsites from a serialized Pickle file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Set[<a class="reference internal" href="camply.html#camply.AvailableCampsite" title="camply.AvailableCampsite">AvailableCampsite</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="camply.search.SearchYellowstone">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">camply.search.</span></span><span class="sig-name descname"><span class="pre">SearchYellowstone</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">search_window</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weekends_only</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">campgrounds</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nights</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/camply/search/search_yellowstone.html#SearchYellowstone"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#camply.search.SearchYellowstone" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">camply.search.</span></span><span class="sig-name descname"><span class="pre">SearchYellowstone</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">search_window</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weekends_only</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">campgrounds</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nights</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offline_search</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offline_search_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/camply/search/search_yellowstone.html#SearchYellowstone"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#camply.search.SearchYellowstone" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="camply.search.base_search.html#camply.search.base_search.BaseCampingSearch" title="camply.search.base_search.BaseCampingSearch"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseCampingSearch</span></code></a></p>
 <p>Camping Search Object</p>
 <dl class="field-list simple">
@@ -270,6 +297,8 @@ the caveat being that it will never notify about the same campsite.
 <li><p><strong>weekends_only</strong> (<em>optional</em>) – <strong>[Default]:</strong> <code class="code docutils literal notranslate"><span class="pre">False</span></code></p></li>
 <li><p><strong>campgrounds</strong> (<em>optional</em>) – <strong>[Default]:</strong> <code class="code docutils literal notranslate"><span class="pre">None</span></code></p></li>
 <li><p><strong>nights</strong> (<em>optional</em>) – <strong>[Default]:</strong> <code class="code docutils literal notranslate"><span class="pre">1</span></code></p></li>
+<li><p><strong>offline_search</strong> (<em>optional</em>) – <strong>[Default]:</strong> <code class="code docutils literal notranslate"><span class="pre">False</span></code></p></li>
+<li><p><strong>offline_search_path</strong> (<em>optional</em>) – <strong>[Default]:</strong> <code class="code docutils literal notranslate"><span class="pre">None</span></code></p></li>
 </ul>
 </dd>
 </dl>
@@ -299,7 +328,7 @@ the caveat being that it will never notify about the same campsite.
 
 <dl class="py class">
 <dt class="sig sig-object py" id="camply.search.SearchRecreationDotGov">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">camply.search.</span></span><span class="sig-name descname"><span class="pre">SearchRecreationDotGov</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">search_window</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">recreation_area</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">campgrounds</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">campsites</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weekends_only</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nights</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">equipment</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/camply/search/search_recreationdotgov.html#SearchRecreationDotGov"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#camply.search.SearchRecreationDotGov" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">camply.search.</span></span><span class="sig-name descname"><span class="pre">SearchRecreationDotGov</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">search_window</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">recreation_area</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">campgrounds</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">campsites</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weekends_only</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nights</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">equipment</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offline_search</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offline_search_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/camply/search/search_recreationdotgov.html#SearchRecreationDotGov"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#camply.search.SearchRecreationDotGov" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="camply.search.base_search.html#camply.search.base_search.BaseCampingSearch" title="camply.search.base_search.BaseCampingSearch"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseCampingSearch</span></code></a></p>
 <p>Camping Search Object</p>
 <dl class="field-list simple">
@@ -311,6 +340,8 @@ the caveat being that it will never notify about the same campsite.
 <li><p><strong>weekends_only</strong> (<em>optional</em>) – <strong>[Default]:</strong> <code class="code docutils literal notranslate"><span class="pre">False</span></code></p></li>
 <li><p><strong>nights</strong> (<em>optional</em>) – <strong>[Default]:</strong> <code class="code docutils literal notranslate"><span class="pre">1</span></code></p></li>
 <li><p><strong>equipment</strong> (<em>optional</em>) – <strong>[Default]:</strong> <code class="code docutils literal notranslate"><span class="pre">None</span></code></p></li>
+<li><p><strong>offline_search</strong> (<em>optional</em>) – <strong>[Default]:</strong> <code class="code docutils literal notranslate"><span class="pre">False</span></code></p></li>
+<li><p><strong>offline_search_path</strong> (<em>optional</em>) – <strong>[Default]:</strong> <code class="code docutils literal notranslate"><span class="pre">None</span></code></p></li>
 </ul>
 </dd>
 </dl>

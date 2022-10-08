@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>camply.cli module &mdash; camply 0.6.2 documentation</title>
+  <title>camply.cli module &mdash; camply 0.7.0 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/autodoc_pydantic.css" type="text/css" />
@@ -38,7 +38,7 @@
             <a href="../index.html" class="icon icon-home"> camply
           </a>
               <div class="version">
-                0.6.2
+                0.7.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -64,7 +64,7 @@
 <li class="toctree-l4 current"><a class="current reference internal" href="#">camply.cli module</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="camply.html#module-contents">Module contents</a></li>
+<li class="toctree-l3"><a class="reference internal" href="camply.html#module-camply">Module contents</a></li>
 </ul>
 </li>
 </ul>
@@ -99,10 +99,35 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="camply-cli-module">
-<h1>camply.cli module<a class="headerlink" href="#camply-cli-module" title="Permalink to this heading"></a></h1>
+  <section id="module-camply.cli">
+<span id="camply-cli-module"></span><h1>camply.cli module<a class="headerlink" href="#module-camply.cli" title="Permalink to this heading"></a></h1>
 <p>Camply Command Line Interface</p>
-<span class="target" id="module-camply.cli"></span><dl class="py function">
+<dl class="py class">
+<dt class="sig sig-object py" id="camply.cli.CamplyContext">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">camply.cli.</span></span><span class="sig-name descname"><span class="pre">CamplyContext</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">debug</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">provider</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/camply/cli.html#CamplyContext"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#camply.cli.CamplyContext" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Context Object Passed Around Application</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>debug</strong> (<em>optional</em>) – <strong>[Default]:</strong> <code class="code docutils literal notranslate"><span class="pre">None</span></code></p></li>
+<li><p><strong>provider</strong> (<em>optional</em>) – <strong>[Default]:</strong> <code class="code docutils literal notranslate"><span class="pre">None</span></code></p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="camply.cli.CamplyContext.debug">
+<span class="sig-name descname"><span class="pre">debug</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.10)"><span class="pre">Optional</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><span class="pre">bool</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#camply.cli.CamplyContext.debug" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="camply.cli.CamplyContext.provider">
+<span class="sig-name descname"><span class="pre">provider</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.10)"><span class="pre">Optional</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#camply.cli.CamplyContext.provider" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
 <dt class="sig sig-object py" id="camply.cli.cli">
 <span class="sig-prename descclassname"><span class="pre">camply.cli.</span></span><span class="sig-name descname"><span class="pre">cli</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/camply/cli.html#cli"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#camply.cli.cli" title="Permalink to this definition"></a></dt>
 <dd><p>Camply Command Line Utility Wrapper</p>

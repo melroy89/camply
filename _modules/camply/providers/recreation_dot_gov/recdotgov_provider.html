@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>camply.providers.recreation_dot_gov.recdotgov_provider &mdash; camply 0.6.2 documentation</title>
+  <title>camply.providers.recreation_dot_gov.recdotgov_provider &mdash; camply 0.7.0 documentation</title>
       <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../../../_static/autodoc_pydantic.css" type="text/css" />
@@ -35,7 +35,7 @@
             <a href="../../../../index.html" class="icon icon-home"> camply
           </a>
               <div class="version">
-                0.6.2
+                0.7.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
@@ -483,7 +483,7 @@
                 <span class="n">facility</span> <span class="o">=</span> <span class="n">FacilityResponse</span><span class="p">(</span><span class="o">**</span><span class="n">possible_match</span><span class="p">)</span>
             <span class="k">except</span> <span class="n">ValidationError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
                 <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">&quot;That doesn&#39;t look like a valid Campground Facility&quot;</span><span class="p">)</span>
-                <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="n">possible_match</span><span class="p">)</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">possible_match</span><span class="p">))</span>
                 <span class="n">logger</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
                 <span class="k">raise</span> <span class="n">ProviderSearchError</span><span class="p">(</span><span class="s2">&quot;Invalid Campground Facility Returned&quot;</span><span class="p">)</span>
             <span class="k">if</span> <span class="nb">all</span><span class="p">(</span>
