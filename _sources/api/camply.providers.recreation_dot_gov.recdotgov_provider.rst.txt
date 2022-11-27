@@ -1,7 +1,0 @@
-camply.providers.recreation\_dot\_gov.recdotgov\_provider module
-================================================================
-
-.. automodule:: camply.providers.recreation_dot_gov.recdotgov_provider
-   :members:
-   :undoc-members:
-   :show-inheritance:

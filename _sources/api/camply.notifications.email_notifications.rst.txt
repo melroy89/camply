@@ -1,7 +1,0 @@
-camply.notifications.email\_notifications module
-================================================
-
-.. automodule:: camply.notifications.email_notifications
-   :members:
-   :undoc-members:
-   :show-inheritance:

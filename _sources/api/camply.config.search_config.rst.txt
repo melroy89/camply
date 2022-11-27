@@ -1,7 +1,0 @@
-camply.config.search\_config module
-===================================
-
-.. automodule:: camply.config.search_config
-   :members:
-   :undoc-members:
-   :show-inheritance:

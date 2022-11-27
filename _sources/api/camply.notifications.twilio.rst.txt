@@ -1,7 +1,0 @@
-camply.notifications.twilio module
-==================================
-
-.. automodule:: camply.notifications.twilio
-   :members:
-   :undoc-members:
-   :show-inheritance:

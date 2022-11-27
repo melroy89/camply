@@ -1,7 +1,0 @@
-camply.cli module
-=================
-
-.. automodule:: camply.cli
-   :members:
-   :undoc-members:
-   :show-inheritance:

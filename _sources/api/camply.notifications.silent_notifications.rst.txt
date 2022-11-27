@@ -1,7 +1,0 @@
-camply.notifications.silent\_notifications module
-=================================================
-
-.. automodule:: camply.notifications.silent_notifications
-   :members:
-   :undoc-members:
-   :show-inheritance:

@@ -1,0 +1,2726 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="juftin">
+      
+      
+      <link rel="icon" href="../../_static/camply.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
+    
+    
+      
+        <title>config - camply</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.472b142f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.08040f6c.min.css">
+        
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="purple">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#camply.config" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="camply" class="md-header__button md-logo" aria-label="camply" data-md-component="logo">
+      
+  <img src="../../_static/camply.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            camply
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              config
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
+            </label>
+          
+        
+          
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/juftin/camply" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    camply
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="camply" class="md-nav__button md-logo" aria-label="camply" data-md-component="logo">
+      
+  <img src="../../_static/camply.png" alt="logo">
+
+    </a>
+    camply
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/juftin/camply" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    camply
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        camply ⛺
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/" class="md-nav__link">
+        Installation ☀️
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../command_line_usage/" class="md-nav__link">
+        Usage 📝
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recreationdotgov/" class="md-nav__link">
+        Finding Campsites on Recreation.gov 🌲
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/" class="md-nav__link">
+        Object Oriented Usage 🐍
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docker/" class="md-nav__link">
+        Docker ⛴
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cli/" class="md-nav__link">
+        Command Line Interface ⌨️
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8">
+          API Documentation 🤖
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="API Documentation 🤖" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          API Documentation 🤖
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_1" type="checkbox" id="__nav_8_1" checked>
+      
+      
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../">camply</a>
+          
+            <label for="__nav_8_1">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="camply" data-md-level="2">
+        <label class="md-nav__title" for="__nav_8_1">
+          <span class="md-nav__icon md-icon"></span>
+          camply
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../_version/" class="md-nav__link">
+        _version
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cli/" class="md-nav__link">
+        cli
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_1_3" type="checkbox" id="__nav_8_1_3" checked>
+      
+      
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index md-nav__link--active">
+          <a href="./">config</a>
+          
+            <label for="__nav_8_1_3">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="config" data-md-level="3">
+        <label class="md-nav__title" for="__nav_8_1_3">
+          <span class="md-nav__icon md-icon"></span>
+          config
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="api_config/" class="md-nav__link">
+        api_config
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="data_columns/" class="md-nav__link">
+        data_columns
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="file_config/" class="md-nav__link">
+        file_config
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="logging_config/" class="md-nav__link">
+        logging_config
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="notification_config/" class="md-nav__link">
+        notification_config
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="search_config/" class="md-nav__link">
+        search_config
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="yellowstone_config/" class="md-nav__link">
+        yellowstone_config
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_1_4" type="checkbox" id="__nav_8_1_4" >
+      
+      
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../containers/">containers</a>
+          
+            <label for="__nav_8_1_4">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="containers" data-md-level="3">
+        <label class="md-nav__title" for="__nav_8_1_4">
+          <span class="md-nav__icon md-icon"></span>
+          containers
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../containers/api_responses/" class="md-nav__link">
+        api_responses
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../containers/base_container/" class="md-nav__link">
+        base_container
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../containers/data_containers/" class="md-nav__link">
+        data_containers
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_1_5" type="checkbox" id="__nav_8_1_5" >
+      
+      
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../notifications/">notifications</a>
+          
+            <label for="__nav_8_1_5">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="notifications" data-md-level="3">
+        <label class="md-nav__title" for="__nav_8_1_5">
+          <span class="md-nav__icon md-icon"></span>
+          notifications
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notifications/base_notifications/" class="md-nav__link">
+        base_notifications
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notifications/email_notifications/" class="md-nav__link">
+        email_notifications
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notifications/multi_provider_notifications/" class="md-nav__link">
+        multi_provider_notifications
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notifications/pushbullet/" class="md-nav__link">
+        pushbullet
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notifications/pushover/" class="md-nav__link">
+        pushover
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notifications/silent_notifications/" class="md-nav__link">
+        silent_notifications
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notifications/slack/" class="md-nav__link">
+        slack
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notifications/telegram/" class="md-nav__link">
+        telegram
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notifications/twilio/" class="md-nav__link">
+        twilio
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_1_6" type="checkbox" id="__nav_8_1_6" >
+      
+      
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../providers/">providers</a>
+          
+            <label for="__nav_8_1_6">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="providers" data-md-level="3">
+        <label class="md-nav__title" for="__nav_8_1_6">
+          <span class="md-nav__icon md-icon"></span>
+          providers
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../providers/base_provider/" class="md-nav__link">
+        base_provider
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_1_6_2" type="checkbox" id="__nav_8_1_6_2" >
+      
+      
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../providers/recreation_dot_gov/">recreation_dot_gov</a>
+          
+            <label for="__nav_8_1_6_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="recreation_dot_gov" data-md-level="4">
+        <label class="md-nav__title" for="__nav_8_1_6_2">
+          <span class="md-nav__icon md-icon"></span>
+          recreation_dot_gov
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../providers/recreation_dot_gov/recdotgov_provider/" class="md-nav__link">
+        recdotgov_provider
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_1_6_3" type="checkbox" id="__nav_8_1_6_3" >
+      
+      
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../providers/xanterra/">xanterra</a>
+          
+            <label for="__nav_8_1_6_3">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="xanterra" data-md-level="4">
+        <label class="md-nav__title" for="__nav_8_1_6_3">
+          <span class="md-nav__icon md-icon"></span>
+          xanterra
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../providers/xanterra/yellowstone_lodging/" class="md-nav__link">
+        yellowstone_lodging
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_1_7" type="checkbox" id="__nav_8_1_7" >
+      
+      
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../search/">search</a>
+          
+            <label for="__nav_8_1_7">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="search" data-md-level="3">
+        <label class="md-nav__title" for="__nav_8_1_7">
+          <span class="md-nav__icon md-icon"></span>
+          search
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../search/base_search/" class="md-nav__link">
+        base_search
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../search/search_recreationdotgov/" class="md-nav__link">
+        search_recreationdotgov
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../search/search_yellowstone/" class="md-nav__link">
+        search_yellowstone
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_1_8" type="checkbox" id="__nav_8_1_8" >
+      
+      
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../utils/">utils</a>
+          
+            <label for="__nav_8_1_8">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="utils" data-md-level="3">
+        <label class="md-nav__title" for="__nav_8_1_8">
+          <span class="md-nav__icon md-icon"></span>
+          utils
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../utils/api_utils/" class="md-nav__link">
+        api_utils
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../utils/configure_camply/" class="md-nav__link">
+        configure_camply
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../utils/general_utils/" class="md-nav__link">
+        general_utils
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../utils/logging_utils/" class="md-nav__link">
+        logging_utils
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../utils/yaml_utils/" class="md-nav__link">
+        yaml_utils
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dependencies/" class="md-nav__link">
+        Dependencies ♻️
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contributing/" class="md-nav__link">
+        Contributing 👥
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/juftin/camply" class="md-nav__link">
+        GitHub 🛠
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/juftin/camply/releases" class="md-nav__link">
+        Changelog 📝
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#camply.config" class="md-nav__link">
+    camply.config
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#camply.config.CampsiteContainerFields" class="md-nav__link">
+    CampsiteContainerFields
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#camply.config.DataColumns" class="md-nav__link">
+    DataColumns
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#camply.config.EmailConfig" class="md-nav__link">
+    EmailConfig
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#camply.config.EquipmentOptions" class="md-nav__link">
+    EquipmentOptions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#camply.config.FileConfig" class="md-nav__link">
+    FileConfig
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#camply.config.PushbulletConfig" class="md-nav__link">
+    PushbulletConfig
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#camply.config.PushoverConfig" class="md-nav__link">
+    PushoverConfig
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#camply.config.RIDBConfig" class="md-nav__link">
+    RIDBConfig
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#camply.config.RecreationBookingConfig" class="md-nav__link">
+    RecreationBookingConfig
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#camply.config.SearchConfig" class="md-nav__link">
+    SearchConfig
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#camply.config.SlackConfig" class="md-nav__link">
+    SlackConfig
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#camply.config.TelegramConfig" class="md-nav__link">
+    TelegramConfig
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#camply.config.TwilioConfig" class="md-nav__link">
+    TwilioConfig
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#camply.config.YellowstoneConfig" class="md-nav__link">
+    YellowstoneConfig
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  <a href="https://github.com/home/runner/work/camply/camply/camply/config/__init__.py" title="Edit this page" class="md-content__button md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+  </a>
+
+
+  <h1>config</h1>
+
+<div class="doc doc-object doc-module">
+
+
+<a id="camply.config"></a>
+  <div class="doc doc-contents first">
+  
+      <p>Config <strong>init</strong> file</p>
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="camply.config.CampsiteContainerFields" class="doc doc-heading">
+        <code>CampsiteContainerFields</code>
+
+
+<a href="#camply.config.CampsiteContainerFields" class="headerlink" title="Permanent link">#</a></h2>
+
+
+  <div class="doc doc-contents ">
+
+  
+      <p>String Variable Storage Class</p>
+
+
+        <details class="quote">
+          <summary>Source code in <code>camply/config/data_columns.py</code></summary>
+          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-26">26</a></span>
+<span class="normal"><a href="#__codelineno-0-27">27</a></span>
+<span class="normal"><a href="#__codelineno-0-28">28</a></span>
+<span class="normal"><a href="#__codelineno-0-29">29</a></span>
+<span class="normal"><a href="#__codelineno-0-30">30</a></span>
+<span class="normal"><a href="#__codelineno-0-31">31</a></span>
+<span class="normal"><a href="#__codelineno-0-32">32</a></span>
+<span class="normal"><a href="#__codelineno-0-33">33</a></span>
+<span class="normal"><a href="#__codelineno-0-34">34</a></span>
+<span class="normal"><a href="#__codelineno-0-35">35</a></span>
+<span class="normal"><a href="#__codelineno-0-36">36</a></span>
+<span class="normal"><a href="#__codelineno-0-37">37</a></span>
+<span class="normal"><a href="#__codelineno-0-38">38</a></span>
+<span class="normal"><a href="#__codelineno-0-39">39</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-26" name="__codelineno-0-26"></a><span class="k">class</span> <span class="nc">CampsiteContainerFields</span><span class="p">:</span>
+<a id="__codelineno-0-27" name="__codelineno-0-27"></a>    <span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-28" name="__codelineno-0-28"></a><span class="sd">    String Variable Storage Class</span>
+<a id="__codelineno-0-29" name="__codelineno-0-29"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a id="__codelineno-0-30" name="__codelineno-0-30"></a>
+<a id="__codelineno-0-31" name="__codelineno-0-31"></a>    <span class="n">CAMPSITE_ID</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;campsite_id&quot;</span>
+<a id="__codelineno-0-32" name="__codelineno-0-32"></a>    <span class="n">CAMPGROUND_ID</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;facility_id&quot;</span>
+<a id="__codelineno-0-33" name="__codelineno-0-33"></a>    <span class="n">BOOKING_DATE</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;booking_date&quot;</span>
+<a id="__codelineno-0-34" name="__codelineno-0-34"></a>    <span class="n">CAMPSITE_GROUP</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;campsite_group&quot;</span>
+<a id="__codelineno-0-35" name="__codelineno-0-35"></a>    <span class="n">BOOKING_END_DATE</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;booking_end_date&quot;</span>
+<a id="__codelineno-0-36" name="__codelineno-0-36"></a>    <span class="n">BOOKING_URL</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;booking_url&quot;</span>
+<a id="__codelineno-0-37" name="__codelineno-0-37"></a>
+<a id="__codelineno-0-38" name="__codelineno-0-38"></a>    <span class="n">PERMITTED_EQUIPMENT</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;permitted_equipment&quot;</span>
+<a id="__codelineno-0-39" name="__codelineno-0-39"></a>    <span class="n">CAMPSITE_ATTRIBUTES</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;campsite_attributes&quot;</span>
+</code></pre></div></td></tr></table></div>
+        </details>
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="camply.config.DataColumns" class="doc doc-heading">
+        <code>DataColumns</code>
+
+
+<a href="#camply.config.DataColumns" class="headerlink" title="Permanent link">#</a></h2>
+
+
+  <div class="doc doc-contents ">
+
+  
+      <p>Variable Storage Class</p>
+
+
+        <details class="quote">
+          <summary>Source code in <code>camply/config/data_columns.py</code></summary>
+          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-0-10">10</a></span>
+<span class="normal"><a href="#__codelineno-0-11">11</a></span>
+<span class="normal"><a href="#__codelineno-0-12">12</a></span>
+<span class="normal"><a href="#__codelineno-0-13">13</a></span>
+<span class="normal"><a href="#__codelineno-0-14">14</a></span>
+<span class="normal"><a href="#__codelineno-0-15">15</a></span>
+<span class="normal"><a href="#__codelineno-0-16">16</a></span>
+<span class="normal"><a href="#__codelineno-0-17">17</a></span>
+<span class="normal"><a href="#__codelineno-0-18">18</a></span>
+<span class="normal"><a href="#__codelineno-0-19">19</a></span>
+<span class="normal"><a href="#__codelineno-0-20">20</a></span>
+<span class="normal"><a href="#__codelineno-0-21">21</a></span>
+<span class="normal"><a href="#__codelineno-0-22">22</a></span>
+<span class="normal"><a href="#__codelineno-0-23">23</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="k">class</span> <span class="nc">DataColumns</span><span class="p">:</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a>    <span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="sd">    Variable Storage Class</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10"></a>
+<a id="__codelineno-0-11" name="__codelineno-0-11"></a>    <span class="n">CAMPSITE_ID_COLUMN</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;campsite_code&quot;</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12"></a>    <span class="n">BOOKING_DATE_COLUMN</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;booking_date&quot;</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13"></a>    <span class="n">BOOKING_END_DATE_COLUMN</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;booking_end_date&quot;</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14"></a>    <span class="n">BOOKING_NIGHTS_COLUMN</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;booking_nights&quot;</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15"></a>    <span class="n">CAMPSITE_SITE_NAME_COLUMN</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;campsite_title&quot;</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16"></a>    <span class="n">CAMPSITE_TYPE_COLUMN</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;campsite_type&quot;</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17"></a>    <span class="n">CAMPSITE_OCCUPANCY_COLUMN</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;capacity&quot;</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18"></a>    <span class="n">CAMPSITE_USE_TYPE_COLUMN</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;campsite_type&quot;</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19"></a>    <span class="n">AVAILABILITY_STATUS_COLUMN</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;Available&quot;</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20"></a>    <span class="n">RECREATION_AREA_COLUMN</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;recreation_area&quot;</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21"></a>    <span class="n">FACILITY_NAME_COLUMN</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;facility_name&quot;</span>
+<a id="__codelineno-0-22" name="__codelineno-0-22"></a>    <span class="n">FACILITY_ID_COLUMN</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;facility_id&quot;</span>
+<a id="__codelineno-0-23" name="__codelineno-0-23"></a>    <span class="n">BOOKING_URL_COLUMN</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;booking_url&quot;</span>
+</code></pre></div></td></tr></table></div>
+        </details>
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="camply.config.EmailConfig" class="doc doc-heading">
+        <code>EmailConfig</code>
+
+
+<a href="#camply.config.EmailConfig" class="headerlink" title="Permanent link">#</a></h2>
+
+
+  <div class="doc doc-contents ">
+
+  
+      <p>Email Notification Config Class</p>
+
+
+        <details class="quote">
+          <summary>Source code in <code>camply/config/notification_config.py</code></summary>
+          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-30">30</a></span>
+<span class="normal"><a href="#__codelineno-0-31">31</a></span>
+<span class="normal"><a href="#__codelineno-0-32">32</a></span>
+<span class="normal"><a href="#__codelineno-0-33">33</a></span>
+<span class="normal"><a href="#__codelineno-0-34">34</a></span>
+<span class="normal"><a href="#__codelineno-0-35">35</a></span>
+<span class="normal"><a href="#__codelineno-0-36">36</a></span>
+<span class="normal"><a href="#__codelineno-0-37">37</a></span>
+<span class="normal"><a href="#__codelineno-0-38">38</a></span>
+<span class="normal"><a href="#__codelineno-0-39">39</a></span>
+<span class="normal"><a href="#__codelineno-0-40">40</a></span>
+<span class="normal"><a href="#__codelineno-0-41">41</a></span>
+<span class="normal"><a href="#__codelineno-0-42">42</a></span>
+<span class="normal"><a href="#__codelineno-0-43">43</a></span>
+<span class="normal"><a href="#__codelineno-0-44">44</a></span>
+<span class="normal"><a href="#__codelineno-0-45">45</a></span>
+<span class="normal"><a href="#__codelineno-0-46">46</a></span>
+<span class="normal"><a href="#__codelineno-0-47">47</a></span>
+<span class="normal"><a href="#__codelineno-0-48">48</a></span>
+<span class="normal"><a href="#__codelineno-0-49">49</a></span>
+<span class="normal"><a href="#__codelineno-0-50">50</a></span>
+<span class="normal"><a href="#__codelineno-0-51">51</a></span>
+<span class="normal"><a href="#__codelineno-0-52">52</a></span>
+<span class="normal"><a href="#__codelineno-0-53">53</a></span>
+<span class="normal"><a href="#__codelineno-0-54">54</a></span>
+<span class="normal"><a href="#__codelineno-0-55">55</a></span>
+<span class="normal"><a href="#__codelineno-0-56">56</a></span>
+<span class="normal"><a href="#__codelineno-0-57">57</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-30" name="__codelineno-0-30"></a><span class="k">class</span> <span class="nc">EmailConfig</span><span class="p">:</span>
+<a id="__codelineno-0-31" name="__codelineno-0-31"></a>    <span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-32" name="__codelineno-0-32"></a><span class="sd">    Email Notification Config Class</span>
+<a id="__codelineno-0-33" name="__codelineno-0-33"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a id="__codelineno-0-34" name="__codelineno-0-34"></a>
+<a id="__codelineno-0-35" name="__codelineno-0-35"></a>    <span class="n">EMAIL_TO_ADDRESS</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;EMAIL_TO_ADDRESS&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+<a id="__codelineno-0-36" name="__codelineno-0-36"></a>    <span class="n">DEFAULT_FROM_ADDRESS</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;camply@juftin.com&quot;</span>
+<a id="__codelineno-0-37" name="__codelineno-0-37"></a>    <span class="n">EMAIL_FROM_ADDRESS</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;EMAIL_FROM_ADDRESS&quot;</span><span class="p">,</span> <span class="n">DEFAULT_FROM_ADDRESS</span><span class="p">)</span>
+<a id="__codelineno-0-38" name="__codelineno-0-38"></a>    <span class="n">DEFAULT_SUBJECT_LINE</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;Camply Notification&quot;</span>
+<a id="__codelineno-0-39" name="__codelineno-0-39"></a>    <span class="n">EMAIL_SUBJECT_LINE</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;EMAIL_SUBJECT_LINE&quot;</span><span class="p">,</span> <span class="n">DEFAULT_SUBJECT_LINE</span><span class="p">)</span>
+<a id="__codelineno-0-40" name="__codelineno-0-40"></a>    <span class="n">DEFAULT_SMTP_SERVER</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;smtp.gmail.com&quot;</span>
+<a id="__codelineno-0-41" name="__codelineno-0-41"></a>    <span class="n">EMAIL_SMTP_SERVER</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;EMAIL_SMTP_SERVER&quot;</span><span class="p">,</span> <span class="n">DEFAULT_SMTP_SERVER</span><span class="p">)</span>
+<a id="__codelineno-0-42" name="__codelineno-0-42"></a>    <span class="n">EMAIL_USERNAME</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;EMAIL_USERNAME&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+<a id="__codelineno-0-43" name="__codelineno-0-43"></a>    <span class="n">EMAIL_PASSWORD</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;EMAIL_PASSWORD&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+<a id="__codelineno-0-44" name="__codelineno-0-44"></a>    <span class="n">DEFAULT_SMTP_PORT</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">465</span>
+<a id="__codelineno-0-45" name="__codelineno-0-45"></a>    <span class="n">EMAIL_SMTP_PORT</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;EMAIL_SMTP_PORT&quot;</span><span class="p">,</span> <span class="n">DEFAULT_SMTP_PORT</span><span class="p">))</span>
+<a id="__codelineno-0-46" name="__codelineno-0-46"></a>
+<a id="__codelineno-0-47" name="__codelineno-0-47"></a>    <span class="n">ENVIRONMENT_VARIABLE_NAMES</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
+<a id="__codelineno-0-48" name="__codelineno-0-48"></a>        <span class="s2">&quot;EMAIL_TO_ADDRESS&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-49" name="__codelineno-0-49"></a>        <span class="s2">&quot;EMAIL_USERNAME&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-50" name="__codelineno-0-50"></a>        <span class="s2">&quot;EMAIL_PASSWORD&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-51" name="__codelineno-0-51"></a>    <span class="p">]</span>
+<a id="__codelineno-0-52" name="__codelineno-0-52"></a>    <span class="n">OPTIONAL_ENVIRONMENT_VARIABLE</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
+<a id="__codelineno-0-53" name="__codelineno-0-53"></a>        <span class="sa">f</span><span class="s2">&quot;EMAIL_SMTP_SERVER (default: </span><span class="si">{</span><span class="n">DEFAULT_SMTP_SERVER</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-54" name="__codelineno-0-54"></a>        <span class="sa">f</span><span class="s2">&quot;EMAIL_FROM_ADDRESS (default: </span><span class="si">{</span><span class="n">DEFAULT_FROM_ADDRESS</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-55" name="__codelineno-0-55"></a>        <span class="sa">f</span><span class="s1">&#39;EMAIL_SUBJECT_LINE (default: &quot;</span><span class="si">{</span><span class="n">DEFAULT_SUBJECT_LINE</span><span class="si">}</span><span class="s1">&quot;)&#39;</span><span class="p">,</span>
+<a id="__codelineno-0-56" name="__codelineno-0-56"></a>        <span class="sa">f</span><span class="s2">&quot;EMAIL_SMTP_PORT (default: </span><span class="si">{</span><span class="n">DEFAULT_SMTP_PORT</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-57" name="__codelineno-0-57"></a>    <span class="p">]</span>
+</code></pre></div></td></tr></table></div>
+        </details>
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="camply.config.EquipmentOptions" class="doc doc-heading">
+        <code>EquipmentOptions</code>
+
+
+<a href="#camply.config.EquipmentOptions" class="headerlink" title="Permanent link">#</a></h2>
+
+
+  <div class="doc doc-contents ">
+      <p class="doc doc-class-bases">
+        Bases: <code>str</code>, <code><span title="enum.Enum">Enum</span></code></p>
+
+  
+      <p>Enumeration of the Equipment Options</p>
+
+
+        <details class="quote">
+          <summary>Source code in <code>camply/config/search_config.py</code></summary>
+          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-22">22</a></span>
+<span class="normal"><a href="#__codelineno-0-23">23</a></span>
+<span class="normal"><a href="#__codelineno-0-24">24</a></span>
+<span class="normal"><a href="#__codelineno-0-25">25</a></span>
+<span class="normal"><a href="#__codelineno-0-26">26</a></span>
+<span class="normal"><a href="#__codelineno-0-27">27</a></span>
+<span class="normal"><a href="#__codelineno-0-28">28</a></span>
+<span class="normal"><a href="#__codelineno-0-29">29</a></span>
+<span class="normal"><a href="#__codelineno-0-30">30</a></span>
+<span class="normal"><a href="#__codelineno-0-31">31</a></span>
+<span class="normal"><a href="#__codelineno-0-32">32</a></span>
+<span class="normal"><a href="#__codelineno-0-33">33</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-22" name="__codelineno-0-22"></a><span class="k">class</span> <span class="nc">EquipmentOptions</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">Enum</span><span class="p">):</span>
+<a id="__codelineno-0-23" name="__codelineno-0-23"></a>    <span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-24" name="__codelineno-0-24"></a><span class="sd">    Enumeration of the Equipment Options</span>
+<a id="__codelineno-0-25" name="__codelineno-0-25"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a id="__codelineno-0-26" name="__codelineno-0-26"></a>
+<a id="__codelineno-0-27" name="__codelineno-0-27"></a>    <span class="n">tent</span> <span class="o">=</span> <span class="s2">&quot;tent&quot;</span>
+<a id="__codelineno-0-28" name="__codelineno-0-28"></a>    <span class="n">rv</span> <span class="o">=</span> <span class="s2">&quot;rv&quot;</span>
+<a id="__codelineno-0-29" name="__codelineno-0-29"></a>    <span class="n">trailer</span> <span class="o">=</span> <span class="s2">&quot;trailer&quot;</span>
+<a id="__codelineno-0-30" name="__codelineno-0-30"></a>    <span class="n">vehicle</span> <span class="o">=</span> <span class="s2">&quot;vehicle&quot;</span>
+<a id="__codelineno-0-31" name="__codelineno-0-31"></a>    <span class="n">other</span> <span class="o">=</span> <span class="s2">&quot;other&quot;</span>
+<a id="__codelineno-0-32" name="__codelineno-0-32"></a>
+<a id="__codelineno-0-33" name="__codelineno-0-33"></a>    <span class="n">__all_accepted_equipment__</span> <span class="o">=</span> <span class="p">[</span><span class="n">tent</span><span class="p">,</span> <span class="n">rv</span><span class="p">,</span> <span class="n">trailer</span><span class="p">,</span> <span class="n">vehicle</span><span class="p">]</span>
+</code></pre></div></td></tr></table></div>
+        </details>
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="camply.config.FileConfig" class="doc doc-heading">
+        <code>FileConfig</code>
+
+
+<a href="#camply.config.FileConfig" class="headerlink" title="Permanent link">#</a></h2>
+
+
+  <div class="doc doc-contents ">
+
+  
+      <p>File Path Storage Class</p>
+
+
+        <details class="quote">
+          <summary>Source code in <code>camply/config/file_config.py</code></summary>
+          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-10">10</a></span>
+<span class="normal"><a href="#__codelineno-0-11">11</a></span>
+<span class="normal"><a href="#__codelineno-0-12">12</a></span>
+<span class="normal"><a href="#__codelineno-0-13">13</a></span>
+<span class="normal"><a href="#__codelineno-0-14">14</a></span>
+<span class="normal"><a href="#__codelineno-0-15">15</a></span>
+<span class="normal"><a href="#__codelineno-0-16">16</a></span>
+<span class="normal"><a href="#__codelineno-0-17">17</a></span>
+<span class="normal"><a href="#__codelineno-0-18">18</a></span>
+<span class="normal"><a href="#__codelineno-0-19">19</a></span>
+<span class="normal"><a href="#__codelineno-0-20">20</a></span>
+<span class="normal"><a href="#__codelineno-0-21">21</a></span>
+<span class="normal"><a href="#__codelineno-0-22">22</a></span>
+<span class="normal"><a href="#__codelineno-0-23">23</a></span>
+<span class="normal"><a href="#__codelineno-0-24">24</a></span>
+<span class="normal"><a href="#__codelineno-0-25">25</a></span>
+<span class="normal"><a href="#__codelineno-0-26">26</a></span>
+<span class="normal"><a href="#__codelineno-0-27">27</a></span>
+<span class="normal"><a href="#__codelineno-0-28">28</a></span>
+<span class="normal"><a href="#__codelineno-0-29">29</a></span>
+<span class="normal"><a href="#__codelineno-0-30">30</a></span>
+<span class="normal"><a href="#__codelineno-0-31">31</a></span>
+<span class="normal"><a href="#__codelineno-0-32">32</a></span>
+<span class="normal"><a href="#__codelineno-0-33">33</a></span>
+<span class="normal"><a href="#__codelineno-0-34">34</a></span>
+<span class="normal"><a href="#__codelineno-0-35">35</a></span>
+<span class="normal"><a href="#__codelineno-0-36">36</a></span>
+<span class="normal"><a href="#__codelineno-0-37">37</a></span>
+<span class="normal"><a href="#__codelineno-0-38">38</a></span>
+<span class="normal"><a href="#__codelineno-0-39">39</a></span>
+<span class="normal"><a href="#__codelineno-0-40">40</a></span>
+<span class="normal"><a href="#__codelineno-0-41">41</a></span>
+<span class="normal"><a href="#__codelineno-0-42">42</a></span>
+<span class="normal"><a href="#__codelineno-0-43">43</a></span>
+<span class="normal"><a href="#__codelineno-0-44">44</a></span>
+<span class="normal"><a href="#__codelineno-0-45">45</a></span>
+<span class="normal"><a href="#__codelineno-0-46">46</a></span>
+<span class="normal"><a href="#__codelineno-0-47">47</a></span>
+<span class="normal"><a href="#__codelineno-0-48">48</a></span>
+<span class="normal"><a href="#__codelineno-0-49">49</a></span>
+<span class="normal"><a href="#__codelineno-0-50">50</a></span>
+<span class="normal"><a href="#__codelineno-0-51">51</a></span>
+<span class="normal"><a href="#__codelineno-0-52">52</a></span>
+<span class="normal"><a href="#__codelineno-0-53">53</a></span>
+<span class="normal"><a href="#__codelineno-0-54">54</a></span>
+<span class="normal"><a href="#__codelineno-0-55">55</a></span>
+<span class="normal"><a href="#__codelineno-0-56">56</a></span>
+<span class="normal"><a href="#__codelineno-0-57">57</a></span>
+<span class="normal"><a href="#__codelineno-0-58">58</a></span>
+<span class="normal"><a href="#__codelineno-0-59">59</a></span>
+<span class="normal"><a href="#__codelineno-0-60">60</a></span>
+<span class="normal"><a href="#__codelineno-0-61">61</a></span>
+<span class="normal"><a href="#__codelineno-0-62">62</a></span>
+<span class="normal"><a href="#__codelineno-0-63">63</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="k">class</span> <span class="nc">FileConfig</span><span class="p">:</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11"></a>    <span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="sd">    File Path Storage Class</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14"></a>
+<a id="__codelineno-0-15" name="__codelineno-0-15"></a>    <span class="n">HOME_PATH</span> <span class="o">=</span> <span class="n">abspath</span><span class="p">(</span><span class="n">Path</span><span class="o">.</span><span class="n">home</span><span class="p">())</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16"></a>    <span class="n">DOT_CAMPLY_FILE</span> <span class="o">=</span> <span class="n">join</span><span class="p">(</span><span class="n">HOME_PATH</span><span class="p">,</span> <span class="s2">&quot;.camply&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17"></a>    <span class="n">_file_config_file</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">abspath</span><span class="p">(</span><span class="vm">__file__</span><span class="p">))</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18"></a>    <span class="n">_config_dir</span> <span class="o">=</span> <span class="n">_file_config_file</span><span class="o">.</span><span class="n">parent</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19"></a>
+<a id="__codelineno-0-20" name="__codelineno-0-20"></a>    <span class="n">CAMPLY_DIRECTORY</span> <span class="o">=</span> <span class="n">_config_dir</span><span class="o">.</span><span class="n">parent</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21"></a>    <span class="n">ROOT_DIRECTORY</span> <span class="o">=</span> <span class="n">CAMPLY_DIRECTORY</span><span class="o">.</span><span class="n">parent</span>
+<a id="__codelineno-0-22" name="__codelineno-0-22"></a>
+<a id="__codelineno-0-23" name="__codelineno-0-23"></a>    <span class="n">DOT_CAMPLY_FIELDS</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">(</span>
+<a id="__codelineno-0-24" name="__codelineno-0-24"></a>        <span class="n">PUSHOVER_PUSH_USER</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">notes</span><span class="o">=</span><span class="s2">&quot;Enables Pushover Notifications&quot;</span><span class="p">),</span>
+<a id="__codelineno-0-25" name="__codelineno-0-25"></a>        <span class="n">PUSHBULLET_API_TOKEN</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">notes</span><span class="o">=</span><span class="s2">&quot;Enables Pushbullet Notifications&quot;</span><span class="p">),</span>
+<a id="__codelineno-0-26" name="__codelineno-0-26"></a>        <span class="n">SLACK_WEBHOOK</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">notes</span><span class="o">=</span><span class="s2">&quot;Enables Slack Notifications&quot;</span><span class="p">),</span>
+<a id="__codelineno-0-27" name="__codelineno-0-27"></a>        <span class="n">TELEGRAM_BOT_TOKEN</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">notes</span><span class="o">=</span><span class="s2">&quot;Enables Telegram Notifications&quot;</span><span class="p">),</span>
+<a id="__codelineno-0-28" name="__codelineno-0-28"></a>        <span class="n">TELEGRAM_CHAT_ID</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
+<a id="__codelineno-0-29" name="__codelineno-0-29"></a>            <span class="n">default</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">notes</span><span class="o">=</span><span class="s2">&quot;Telegram Notification will be sent here&quot;</span>
+<a id="__codelineno-0-30" name="__codelineno-0-30"></a>        <span class="p">),</span>
+<a id="__codelineno-0-31" name="__codelineno-0-31"></a>        <span class="n">TWILIO_ACCOUNT_SID</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">notes</span><span class="o">=</span><span class="s2">&quot;Twilio Account SID&quot;</span><span class="p">),</span>
+<a id="__codelineno-0-32" name="__codelineno-0-32"></a>        <span class="n">TWILIO_AUTH_TOKEN</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">notes</span><span class="o">=</span><span class="s2">&quot;Twilio Auth Token&quot;</span><span class="p">),</span>
+<a id="__codelineno-0-33" name="__codelineno-0-33"></a>        <span class="n">TWILIO_SOURCE_NUMBER</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
+<a id="__codelineno-0-34" name="__codelineno-0-34"></a>            <span class="n">default</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">notes</span><span class="o">=</span><span class="s2">&quot;Twilio Source number. E.164 format&quot;</span>
+<a id="__codelineno-0-35" name="__codelineno-0-35"></a>        <span class="p">),</span>
+<a id="__codelineno-0-36" name="__codelineno-0-36"></a>        <span class="n">TWILIO_DEST_NUMBERS</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
+<a id="__codelineno-0-37" name="__codelineno-0-37"></a>            <span class="n">default</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">notes</span><span class="o">=</span><span class="s2">&quot;Comma-separated list of phone numbers.&quot;</span>
+<a id="__codelineno-0-38" name="__codelineno-0-38"></a>        <span class="p">),</span>
+<a id="__codelineno-0-39" name="__codelineno-0-39"></a>        <span class="n">EMAIL_TO_ADDRESS</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
+<a id="__codelineno-0-40" name="__codelineno-0-40"></a>            <span class="n">default</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">notes</span><span class="o">=</span><span class="s2">&quot;Email Notifications will be sent here&quot;</span>
+<a id="__codelineno-0-41" name="__codelineno-0-41"></a>        <span class="p">),</span>
+<a id="__codelineno-0-42" name="__codelineno-0-42"></a>        <span class="n">EMAIL_USERNAME</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">notes</span><span class="o">=</span><span class="s2">&quot;Email Authorization Login Username&quot;</span><span class="p">),</span>
+<a id="__codelineno-0-43" name="__codelineno-0-43"></a>        <span class="n">EMAIL_PASSWORD</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">notes</span><span class="o">=</span><span class="s2">&quot;Email Authorization Login Password&quot;</span><span class="p">),</span>
+<a id="__codelineno-0-44" name="__codelineno-0-44"></a>        <span class="n">EMAIL_SMTP_SERVER</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
+<a id="__codelineno-0-45" name="__codelineno-0-45"></a>            <span class="n">default</span><span class="o">=</span><span class="s2">&quot;smtp.gmail.com&quot;</span><span class="p">,</span> <span class="n">notes</span><span class="o">=</span><span class="s2">&quot;Email Authorization SMTP Server Address&quot;</span>
+<a id="__codelineno-0-46" name="__codelineno-0-46"></a>        <span class="p">),</span>
+<a id="__codelineno-0-47" name="__codelineno-0-47"></a>        <span class="n">EMAIL_SMTP_PORT</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="mi">465</span><span class="p">,</span> <span class="n">notes</span><span class="o">=</span><span class="s2">&quot;Email Authorization SMTP Server Port&quot;</span><span class="p">),</span>
+<a id="__codelineno-0-48" name="__codelineno-0-48"></a>        <span class="n">EMAIL_FROM_ADDRESS</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
+<a id="__codelineno-0-49" name="__codelineno-0-49"></a>            <span class="n">default</span><span class="o">=</span><span class="s2">&quot;camply@juftin.com&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-50" name="__codelineno-0-50"></a>            <span class="n">notes</span><span class="o">=</span><span class="s2">&quot;Email Notifications Will Come From this Email&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-51" name="__codelineno-0-51"></a>        <span class="p">),</span>
+<a id="__codelineno-0-52" name="__codelineno-0-52"></a>        <span class="n">EMAIL_SUBJECT_LINE</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
+<a id="__codelineno-0-53" name="__codelineno-0-53"></a>            <span class="n">default</span><span class="o">=</span><span class="s2">&quot;Camply Notification&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-54" name="__codelineno-0-54"></a>            <span class="n">notes</span><span class="o">=</span><span class="s2">&quot;Email Notifications Will Have This Subject Line&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-55" name="__codelineno-0-55"></a>        <span class="p">),</span>
+<a id="__codelineno-0-56" name="__codelineno-0-56"></a>        <span class="n">PUSHOVER_PUSH_TOKEN</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
+<a id="__codelineno-0-57" name="__codelineno-0-57"></a>            <span class="n">default</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-58" name="__codelineno-0-58"></a>            <span class="n">notes</span><span class="o">=</span><span class="s2">&quot;Pushover Notifications From Your Custom App &quot;</span> <span class="s2">&quot;(not required)&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-59" name="__codelineno-0-59"></a>        <span class="p">),</span>
+<a id="__codelineno-0-60" name="__codelineno-0-60"></a>        <span class="n">RIDB_API_KEY</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
+<a id="__codelineno-0-61" name="__codelineno-0-61"></a>            <span class="n">default</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">notes</span><span class="o">=</span><span class="s2">&quot;Personal Recreation.gov API Key (not required)&quot;</span>
+<a id="__codelineno-0-62" name="__codelineno-0-62"></a>        <span class="p">),</span>
+<a id="__codelineno-0-63" name="__codelineno-0-63"></a>    <span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+        </details>
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="camply.config.PushbulletConfig" class="doc doc-heading">
+        <code>PushbulletConfig</code>
+
+
+<a href="#camply.config.PushbulletConfig" class="headerlink" title="Permanent link">#</a></h2>
+
+
+  <div class="doc doc-contents ">
+
+  
+      <p>Pushbullet Notification Config Class</p>
+
+
+        <details class="quote">
+          <summary>Source code in <code>camply/config/notification_config.py</code></summary>
+          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-60">60</a></span>
+<span class="normal"><a href="#__codelineno-0-61">61</a></span>
+<span class="normal"><a href="#__codelineno-0-62">62</a></span>
+<span class="normal"><a href="#__codelineno-0-63">63</a></span>
+<span class="normal"><a href="#__codelineno-0-64">64</a></span>
+<span class="normal"><a href="#__codelineno-0-65">65</a></span>
+<span class="normal"><a href="#__codelineno-0-66">66</a></span>
+<span class="normal"><a href="#__codelineno-0-67">67</a></span>
+<span class="normal"><a href="#__codelineno-0-68">68</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-60" name="__codelineno-0-60"></a><span class="k">class</span> <span class="nc">PushbulletConfig</span><span class="p">:</span>
+<a id="__codelineno-0-61" name="__codelineno-0-61"></a>    <span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-62" name="__codelineno-0-62"></a><span class="sd">    Pushbullet Notification Config Class</span>
+<a id="__codelineno-0-63" name="__codelineno-0-63"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a id="__codelineno-0-64" name="__codelineno-0-64"></a>
+<a id="__codelineno-0-65" name="__codelineno-0-65"></a>    <span class="n">PUSHBULLET_API_ENDPOINT</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;https://api.pushbullet.com/v2/pushes&quot;</span>
+<a id="__codelineno-0-66" name="__codelineno-0-66"></a>    <span class="n">API_HEADERS</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Content-Type&quot;</span><span class="p">:</span> <span class="s2">&quot;application/json&quot;</span><span class="p">}</span>
+<a id="__codelineno-0-67" name="__codelineno-0-67"></a>
+<a id="__codelineno-0-68" name="__codelineno-0-68"></a>    <span class="n">API_TOKEN</span> <span class="o">=</span> <span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;PUSHBULLET_API_TOKEN&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+        </details>
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="camply.config.PushoverConfig" class="doc doc-heading">
+        <code>PushoverConfig</code>
+
+
+<a href="#camply.config.PushoverConfig" class="headerlink" title="Permanent link">#</a></h2>
+
+
+  <div class="doc doc-contents ">
+
+  
+      <p>Pushover Notification Config Class</p>
+
+
+        <details class="quote">
+          <summary>Source code in <code>camply/config/notification_config.py</code></summary>
+          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-17">17</a></span>
+<span class="normal"><a href="#__codelineno-0-18">18</a></span>
+<span class="normal"><a href="#__codelineno-0-19">19</a></span>
+<span class="normal"><a href="#__codelineno-0-20">20</a></span>
+<span class="normal"><a href="#__codelineno-0-21">21</a></span>
+<span class="normal"><a href="#__codelineno-0-22">22</a></span>
+<span class="normal"><a href="#__codelineno-0-23">23</a></span>
+<span class="normal"><a href="#__codelineno-0-24">24</a></span>
+<span class="normal"><a href="#__codelineno-0-25">25</a></span>
+<span class="normal"><a href="#__codelineno-0-26">26</a></span>
+<span class="normal"><a href="#__codelineno-0-27">27</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-17" name="__codelineno-0-17"></a><span class="k">class</span> <span class="nc">PushoverConfig</span><span class="p">:</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18"></a>    <span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19"></a><span class="sd">    Pushover Notification Config Class</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21"></a>
+<a id="__codelineno-0-22" name="__codelineno-0-22"></a>    <span class="n">PUSHOVER_API_ENDPOINT</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;https://api.pushover.net/1/messages.json&quot;</span>
+<a id="__codelineno-0-23" name="__codelineno-0-23"></a>    <span class="n">PUSHOVER_DEFAULT_API_TOKEN</span><span class="p">:</span> <span class="nb">bytes</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&quot;YWpjN3M1a2hhYTRlOG1zYWhncnFnaHduZGdtbmI3&quot;</span>
+<a id="__codelineno-0-24" name="__codelineno-0-24"></a>    <span class="n">API_HEADERS</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Content-Type&quot;</span><span class="p">:</span> <span class="s2">&quot;application/json&quot;</span><span class="p">}</span>
+<a id="__codelineno-0-25" name="__codelineno-0-25"></a>
+<a id="__codelineno-0-26" name="__codelineno-0-26"></a>    <span class="n">PUSH_TOKEN</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;PUSHOVER_PUSH_TOKEN&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+<a id="__codelineno-0-27" name="__codelineno-0-27"></a>    <span class="n">PUSH_USER</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;PUSHOVER_PUSH_USER&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+        </details>
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="camply.config.RIDBConfig" class="doc doc-heading">
+        <code>RIDBConfig</code>
+
+
+<a href="#camply.config.RIDBConfig" class="headerlink" title="Permanent link">#</a></h2>
+
+
+  <div class="doc doc-contents ">
+
+  
+      <p>RIDB API Configuration</p>
+<p><a href="https://ridb.recreation.gov/docs">https://ridb.recreation.gov/docs</a></p>
+
+
+        <details class="quote">
+          <summary>Source code in <code>camply/config/api_config.py</code></summary>
+          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-180">180</a></span>
+<span class="normal"><a href="#__codelineno-0-181">181</a></span>
+<span class="normal"><a href="#__codelineno-0-182">182</a></span>
+<span class="normal"><a href="#__codelineno-0-183">183</a></span>
+<span class="normal"><a href="#__codelineno-0-184">184</a></span>
+<span class="normal"><a href="#__codelineno-0-185">185</a></span>
+<span class="normal"><a href="#__codelineno-0-186">186</a></span>
+<span class="normal"><a href="#__codelineno-0-187">187</a></span>
+<span class="normal"><a href="#__codelineno-0-188">188</a></span>
+<span class="normal"><a href="#__codelineno-0-189">189</a></span>
+<span class="normal"><a href="#__codelineno-0-190">190</a></span>
+<span class="normal"><a href="#__codelineno-0-191">191</a></span>
+<span class="normal"><a href="#__codelineno-0-192">192</a></span>
+<span class="normal"><a href="#__codelineno-0-193">193</a></span>
+<span class="normal"><a href="#__codelineno-0-194">194</a></span>
+<span class="normal"><a href="#__codelineno-0-195">195</a></span>
+<span class="normal"><a href="#__codelineno-0-196">196</a></span>
+<span class="normal"><a href="#__codelineno-0-197">197</a></span>
+<span class="normal"><a href="#__codelineno-0-198">198</a></span>
+<span class="normal"><a href="#__codelineno-0-199">199</a></span>
+<span class="normal"><a href="#__codelineno-0-200">200</a></span>
+<span class="normal"><a href="#__codelineno-0-201">201</a></span>
+<span class="normal"><a href="#__codelineno-0-202">202</a></span>
+<span class="normal"><a href="#__codelineno-0-203">203</a></span>
+<span class="normal"><a href="#__codelineno-0-204">204</a></span>
+<span class="normal"><a href="#__codelineno-0-205">205</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-180" name="__codelineno-0-180"></a><span class="k">class</span> <span class="nc">RIDBConfig</span><span class="p">:</span>
+<a id="__codelineno-0-181" name="__codelineno-0-181"></a>    <span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-182" name="__codelineno-0-182"></a><span class="sd">    RIDB API Configuration</span>
+<a id="__codelineno-0-183" name="__codelineno-0-183"></a>
+<a id="__codelineno-0-184" name="__codelineno-0-184"></a><span class="sd">    https://ridb.recreation.gov/docs</span>
+<a id="__codelineno-0-185" name="__codelineno-0-185"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a id="__codelineno-0-186" name="__codelineno-0-186"></a>
+<a id="__codelineno-0-187" name="__codelineno-0-187"></a>    <span class="n">_camply_ridb_service_account_api_token</span><span class="p">:</span> <span class="nb">bytes</span> <span class="o">=</span> <span class="p">(</span>
+<a id="__codelineno-0-188" name="__codelineno-0-188"></a>        <span class="sa">b</span><span class="s2">&quot;YTc0MTY0NzEtMWI1ZC00YTY0LWFkM2QtYTIzM2U3Y2I1YzQ0&quot;</span>
+<a id="__codelineno-0-189" name="__codelineno-0-189"></a>    <span class="p">)</span>
+<a id="__codelineno-0-190" name="__codelineno-0-190"></a>    <span class="n">_api_key</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">bytes</span><span class="p">]</span> <span class="o">=</span> <span class="n">getenv</span><span class="p">(</span>
+<a id="__codelineno-0-191" name="__codelineno-0-191"></a>        <span class="s2">&quot;RIDB_API_KEY&quot;</span><span class="p">,</span> <span class="n">_camply_ridb_service_account_api_token</span>
+<a id="__codelineno-0-192" name="__codelineno-0-192"></a>    <span class="p">)</span>
+<a id="__codelineno-0-193" name="__codelineno-0-193"></a>    <span class="n">API_KEY</span> <span class="o">=</span> <span class="n">_camply_ridb_service_account_api_token</span> <span class="k">if</span> <span class="n">_api_key</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span> <span class="k">else</span> <span class="n">_api_key</span>
+<a id="__codelineno-0-194" name="__codelineno-0-194"></a>
+<a id="__codelineno-0-195" name="__codelineno-0-195"></a>    <span class="n">RIDB_SCHEME</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;https&quot;</span>
+<a id="__codelineno-0-196" name="__codelineno-0-196"></a>    <span class="n">RIDB_NET_LOC</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;ridb.recreation.gov&quot;</span>
+<a id="__codelineno-0-197" name="__codelineno-0-197"></a>    <span class="n">RIDB_BASE_PATH</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;api/v1/&quot;</span>
+<a id="__codelineno-0-198" name="__codelineno-0-198"></a>
+<a id="__codelineno-0-199" name="__codelineno-0-199"></a>    <span class="c1"># FACILITIES_API_PATH FIELDS</span>
+<a id="__codelineno-0-200" name="__codelineno-0-200"></a>    <span class="n">FACILITIES_API_PATH</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;facilities&quot;</span>
+<a id="__codelineno-0-201" name="__codelineno-0-201"></a>    <span class="n">CAMPGROUND_FACILITY_FIELD_QUALIFIER</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;Campground&quot;</span>
+<a id="__codelineno-0-202" name="__codelineno-0-202"></a>    <span class="c1"># RECREATION AREA FIELDS</span>
+<a id="__codelineno-0-203" name="__codelineno-0-203"></a>    <span class="n">REC_AREA_API_PATH</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;recareas&quot;</span>
+<a id="__codelineno-0-204" name="__codelineno-0-204"></a>    <span class="c1"># CAMPSITE DETAILS</span>
+<a id="__codelineno-0-205" name="__codelineno-0-205"></a>    <span class="n">CAMPSITE_API_PATH</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;campsites&quot;</span>
+</code></pre></div></td></tr></table></div>
+        </details>
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="camply.config.RecreationBookingConfig" class="doc doc-heading">
+        <code>RecreationBookingConfig</code>
+
+
+<a href="#camply.config.RecreationBookingConfig" class="headerlink" title="Permanent link">#</a></h2>
+
+
+  <div class="doc doc-contents ">
+
+  
+      <p>Variable Storage Class for Recreation.gov Booking API</p>
+
+
+        <details class="quote">
+          <summary>Source code in <code>camply/config/api_config.py</code></summary>
+          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-208">208</a></span>
+<span class="normal"><a href="#__codelineno-0-209">209</a></span>
+<span class="normal"><a href="#__codelineno-0-210">210</a></span>
+<span class="normal"><a href="#__codelineno-0-211">211</a></span>
+<span class="normal"><a href="#__codelineno-0-212">212</a></span>
+<span class="normal"><a href="#__codelineno-0-213">213</a></span>
+<span class="normal"><a href="#__codelineno-0-214">214</a></span>
+<span class="normal"><a href="#__codelineno-0-215">215</a></span>
+<span class="normal"><a href="#__codelineno-0-216">216</a></span>
+<span class="normal"><a href="#__codelineno-0-217">217</a></span>
+<span class="normal"><a href="#__codelineno-0-218">218</a></span>
+<span class="normal"><a href="#__codelineno-0-219">219</a></span>
+<span class="normal"><a href="#__codelineno-0-220">220</a></span>
+<span class="normal"><a href="#__codelineno-0-221">221</a></span>
+<span class="normal"><a href="#__codelineno-0-222">222</a></span>
+<span class="normal"><a href="#__codelineno-0-223">223</a></span>
+<span class="normal"><a href="#__codelineno-0-224">224</a></span>
+<span class="normal"><a href="#__codelineno-0-225">225</a></span>
+<span class="normal"><a href="#__codelineno-0-226">226</a></span>
+<span class="normal"><a href="#__codelineno-0-227">227</a></span>
+<span class="normal"><a href="#__codelineno-0-228">228</a></span>
+<span class="normal"><a href="#__codelineno-0-229">229</a></span>
+<span class="normal"><a href="#__codelineno-0-230">230</a></span>
+<span class="normal"><a href="#__codelineno-0-231">231</a></span>
+<span class="normal"><a href="#__codelineno-0-232">232</a></span>
+<span class="normal"><a href="#__codelineno-0-233">233</a></span>
+<span class="normal"><a href="#__codelineno-0-234">234</a></span>
+<span class="normal"><a href="#__codelineno-0-235">235</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-208" name="__codelineno-0-208"></a><span class="k">class</span> <span class="nc">RecreationBookingConfig</span><span class="p">:</span>
+<a id="__codelineno-0-209" name="__codelineno-0-209"></a>    <span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-210" name="__codelineno-0-210"></a><span class="sd">    Variable Storage Class for Recreation.gov Booking API</span>
+<a id="__codelineno-0-211" name="__codelineno-0-211"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a id="__codelineno-0-212" name="__codelineno-0-212"></a>
+<a id="__codelineno-0-213" name="__codelineno-0-213"></a>    <span class="n">API_SCHEME</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;https&quot;</span>
+<a id="__codelineno-0-214" name="__codelineno-0-214"></a>    <span class="n">API_NET_LOC</span> <span class="o">=</span> <span class="s2">&quot;www.recreation.gov&quot;</span>
+<a id="__codelineno-0-215" name="__codelineno-0-215"></a>    <span class="n">API_BASE_PATH</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;api/camps/availability/campground/&quot;</span>
+<a id="__codelineno-0-216" name="__codelineno-0-216"></a>    <span class="n">API_MONTH_PATH</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;month&quot;</span>
+<a id="__codelineno-0-217" name="__codelineno-0-217"></a>    <span class="n">API_REFERRERS</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Referer&quot;</span><span class="p">:</span> <span class="s2">&quot;https://www.recreation.gov/&quot;</span><span class="p">}</span>
+<a id="__codelineno-0-218" name="__codelineno-0-218"></a>
+<a id="__codelineno-0-219" name="__codelineno-0-219"></a>    <span class="n">CAMPSITE_UNAVAILABLE_STRINGS</span><span class="p">:</span> <span class="nb">list</span> <span class="o">=</span> <span class="p">[</span>
+<a id="__codelineno-0-220" name="__codelineno-0-220"></a>        <span class="s2">&quot;Reserved&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-221" name="__codelineno-0-221"></a>        <span class="s2">&quot;Not Available&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-222" name="__codelineno-0-222"></a>        <span class="s2">&quot;Not Reservable&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-223" name="__codelineno-0-223"></a>        <span class="s2">&quot;Not Reservable Management&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-224" name="__codelineno-0-224"></a>        <span class="s2">&quot;Not Available Cutoff&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-225" name="__codelineno-0-225"></a>        <span class="s2">&quot;Lottery&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-226" name="__codelineno-0-226"></a>        <span class="s2">&quot;Open&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-227" name="__codelineno-0-227"></a>        <span class="s2">&quot;NYR&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-228" name="__codelineno-0-228"></a>    <span class="p">]</span>
+<a id="__codelineno-0-229" name="__codelineno-0-229"></a>
+<a id="__codelineno-0-230" name="__codelineno-0-230"></a>    <span class="n">CAMPSITE_LOCATION_LOOP_DEFAULT</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;Default Loop&quot;</span>
+<a id="__codelineno-0-231" name="__codelineno-0-231"></a>    <span class="n">CAMPSITE_LOCATION_SITE_DEFAULT</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;Default Site&quot;</span>
+<a id="__codelineno-0-232" name="__codelineno-0-232"></a>
+<a id="__codelineno-0-233" name="__codelineno-0-233"></a>    <span class="n">CAMPSITE_BOOKING_URL</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;https://www.recreation.gov/camping/campsites&quot;</span>
+<a id="__codelineno-0-234" name="__codelineno-0-234"></a>
+<a id="__codelineno-0-235" name="__codelineno-0-235"></a>    <span class="n">RATE_LIMITING</span> <span class="o">=</span> <span class="p">(</span><span class="mf">1.01</span><span class="p">,</span> <span class="mf">1.51</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+        </details>
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="camply.config.SearchConfig" class="doc doc-heading">
+        <code>SearchConfig</code>
+
+
+<a href="#camply.config.SearchConfig" class="headerlink" title="Permanent link">#</a></h2>
+
+
+  <div class="doc doc-contents ">
+
+  
+      <p>File Path Storage Class</p>
+
+
+        <details class="quote">
+          <summary>Source code in <code>camply/config/search_config.py</code></summary>
+          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-10">10</a></span>
+<span class="normal"><a href="#__codelineno-0-11">11</a></span>
+<span class="normal"><a href="#__codelineno-0-12">12</a></span>
+<span class="normal"><a href="#__codelineno-0-13">13</a></span>
+<span class="normal"><a href="#__codelineno-0-14">14</a></span>
+<span class="normal"><a href="#__codelineno-0-15">15</a></span>
+<span class="normal"><a href="#__codelineno-0-16">16</a></span>
+<span class="normal"><a href="#__codelineno-0-17">17</a></span>
+<span class="normal"><a href="#__codelineno-0-18">18</a></span>
+<span class="normal"><a href="#__codelineno-0-19">19</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="k">class</span> <span class="nc">SearchConfig</span><span class="p">:</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11"></a>    <span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="sd">    File Path Storage Class</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14"></a>
+<a id="__codelineno-0-15" name="__codelineno-0-15"></a>    <span class="n">POLLING_INTERVAL_MINIMUM</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">5</span>  <span class="c1"># 5 MINUTES</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16"></a>    <span class="n">RECOMMENDED_POLLING_INTERVAL</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">10</span>  <span class="c1"># 10 MINUTES</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17"></a>    <span class="n">ERROR_MESSAGE</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;No search days configured. Exiting&quot;</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18"></a>    <span class="n">MINIMUM_CAMPSITES_FIRST_NOTIFY</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">5</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19"></a>    <span class="n">MAXIMUM_NOTIFICATION_BATCH_SIZE</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">20</span>
+</code></pre></div></td></tr></table></div>
+        </details>
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="camply.config.SlackConfig" class="doc doc-heading">
+        <code>SlackConfig</code>
+
+
+<a href="#camply.config.SlackConfig" class="headerlink" title="Permanent link">#</a></h2>
+
+
+  <div class="doc doc-contents ">
+
+  
+      <p>Slack Notification Config Class</p>
+
+
+        <details class="quote">
+          <summary>Source code in <code>camply/config/notification_config.py</code></summary>
+          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-83">83</a></span>
+<span class="normal"><a href="#__codelineno-0-84">84</a></span>
+<span class="normal"><a href="#__codelineno-0-85">85</a></span>
+<span class="normal"><a href="#__codelineno-0-86">86</a></span>
+<span class="normal"><a href="#__codelineno-0-87">87</a></span>
+<span class="normal"><a href="#__codelineno-0-88">88</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-83" name="__codelineno-0-83"></a><span class="k">class</span> <span class="nc">SlackConfig</span><span class="p">:</span>
+<a id="__codelineno-0-84" name="__codelineno-0-84"></a>    <span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-85" name="__codelineno-0-85"></a><span class="sd">    Slack Notification Config Class</span>
+<a id="__codelineno-0-86" name="__codelineno-0-86"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a id="__codelineno-0-87" name="__codelineno-0-87"></a>
+<a id="__codelineno-0-88" name="__codelineno-0-88"></a>    <span class="n">SLACK_WEBHOOK</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;SLACK_WEBHOOK&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+        </details>
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="camply.config.TelegramConfig" class="doc doc-heading">
+        <code>TelegramConfig</code>
+
+
+<a href="#camply.config.TelegramConfig" class="headerlink" title="Permanent link">#</a></h2>
+
+
+  <div class="doc doc-contents ">
+
+  
+      <p>Telegram Notification Config Class</p>
+
+
+        <details class="quote">
+          <summary>Source code in <code>camply/config/notification_config.py</code></summary>
+          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-91"> 91</a></span>
+<span class="normal"><a href="#__codelineno-0-92"> 92</a></span>
+<span class="normal"><a href="#__codelineno-0-93"> 93</a></span>
+<span class="normal"><a href="#__codelineno-0-94"> 94</a></span>
+<span class="normal"><a href="#__codelineno-0-95"> 95</a></span>
+<span class="normal"><a href="#__codelineno-0-96"> 96</a></span>
+<span class="normal"><a href="#__codelineno-0-97"> 97</a></span>
+<span class="normal"><a href="#__codelineno-0-98"> 98</a></span>
+<span class="normal"><a href="#__codelineno-0-99"> 99</a></span>
+<span class="normal"><a href="#__codelineno-0-100">100</a></span>
+<span class="normal"><a href="#__codelineno-0-101">101</a></span>
+<span class="normal"><a href="#__codelineno-0-102">102</a></span>
+<span class="normal"><a href="#__codelineno-0-103">103</a></span>
+<span class="normal"><a href="#__codelineno-0-104">104</a></span>
+<span class="normal"><a href="#__codelineno-0-105">105</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-91" name="__codelineno-0-91"></a><span class="k">class</span> <span class="nc">TelegramConfig</span><span class="p">:</span>
+<a id="__codelineno-0-92" name="__codelineno-0-92"></a>    <span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-93" name="__codelineno-0-93"></a><span class="sd">    Telegram Notification Config Class</span>
+<a id="__codelineno-0-94" name="__codelineno-0-94"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a id="__codelineno-0-95" name="__codelineno-0-95"></a>
+<a id="__codelineno-0-96" name="__codelineno-0-96"></a>    <span class="n">BOT_TOKEN</span> <span class="o">=</span> <span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;TELEGRAM_BOT_TOKEN&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+<a id="__codelineno-0-97" name="__codelineno-0-97"></a>    <span class="n">CHAT_ID</span> <span class="o">=</span> <span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;TELEGRAM_CHAT_ID&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+<a id="__codelineno-0-98" name="__codelineno-0-98"></a>
+<a id="__codelineno-0-99" name="__codelineno-0-99"></a>    <span class="n">API_ENDPOINT</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;https://api.telegram.org/bot</span><span class="si">{</span><span class="n">BOT_TOKEN</span><span class="si">}</span><span class="s2">/sendMessage&quot;</span>
+<a id="__codelineno-0-100" name="__codelineno-0-100"></a>    <span class="n">API_HEADERS</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Content-Type&quot;</span><span class="p">:</span> <span class="s2">&quot;application/json&quot;</span><span class="p">}</span>
+<a id="__codelineno-0-101" name="__codelineno-0-101"></a>    <span class="n">API_CONTENT</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-0-102" name="__codelineno-0-102"></a>        <span class="s2">&quot;chat_id&quot;</span><span class="p">:</span> <span class="n">CHAT_ID</span><span class="p">,</span>
+<a id="__codelineno-0-103" name="__codelineno-0-103"></a>        <span class="s2">&quot;parse_mode&quot;</span><span class="p">:</span> <span class="s2">&quot;MarkdownV2&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-104" name="__codelineno-0-104"></a>        <span class="s2">&quot;disable_web_page_preview&quot;</span><span class="p">:</span> <span class="s2">&quot;true&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-105" name="__codelineno-0-105"></a>    <span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+        </details>
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="camply.config.TwilioConfig" class="doc doc-heading">
+        <code>TwilioConfig</code>
+
+
+<a href="#camply.config.TwilioConfig" class="headerlink" title="Permanent link">#</a></h2>
+
+
+  <div class="doc doc-contents ">
+
+  
+      <p>Twilio Notification Config Class</p>
+
+
+        <details class="quote">
+          <summary>Source code in <code>camply/config/notification_config.py</code></summary>
+          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-71">71</a></span>
+<span class="normal"><a href="#__codelineno-0-72">72</a></span>
+<span class="normal"><a href="#__codelineno-0-73">73</a></span>
+<span class="normal"><a href="#__codelineno-0-74">74</a></span>
+<span class="normal"><a href="#__codelineno-0-75">75</a></span>
+<span class="normal"><a href="#__codelineno-0-76">76</a></span>
+<span class="normal"><a href="#__codelineno-0-77">77</a></span>
+<span class="normal"><a href="#__codelineno-0-78">78</a></span>
+<span class="normal"><a href="#__codelineno-0-79">79</a></span>
+<span class="normal"><a href="#__codelineno-0-80">80</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-71" name="__codelineno-0-71"></a><span class="k">class</span> <span class="nc">TwilioConfig</span><span class="p">:</span>
+<a id="__codelineno-0-72" name="__codelineno-0-72"></a>    <span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-73" name="__codelineno-0-73"></a><span class="sd">    Twilio Notification Config Class</span>
+<a id="__codelineno-0-74" name="__codelineno-0-74"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a id="__codelineno-0-75" name="__codelineno-0-75"></a>
+<a id="__codelineno-0-76" name="__codelineno-0-76"></a>    <span class="n">ACCOUNT_SID</span> <span class="o">=</span> <span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;TWILIO_ACCOUNT_SID&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+<a id="__codelineno-0-77" name="__codelineno-0-77"></a>    <span class="n">AUTH_TOKEN</span> <span class="o">=</span> <span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;TWILIO_AUTH_TOKEN&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+<a id="__codelineno-0-78" name="__codelineno-0-78"></a>    <span class="n">SOURCE_NUMBER</span> <span class="o">=</span> <span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;TWILIO_SOURCE_NUMBER&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+<a id="__codelineno-0-79" name="__codelineno-0-79"></a>    <span class="c1"># comma separated set of phone numbers</span>
+<a id="__codelineno-0-80" name="__codelineno-0-80"></a>    <span class="n">DEST_NUMBERS</span> <span class="o">=</span> <span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;TWILIO_DEST_NUMBERS&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+        </details>
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="camply.config.YellowstoneConfig" class="doc doc-heading">
+        <code>YellowstoneConfig</code>
+
+
+<a href="#camply.config.YellowstoneConfig" class="headerlink" title="Permanent link">#</a></h2>
+
+
+  <div class="doc doc-contents ">
+      <p class="doc doc-class-bases">
+        Bases: <code><a class="autorefs autorefs-internal" title="camply.config.data_columns.DataColumns" href="data_columns/#camply.config.data_columns.DataColumns">DataColumns</a></code></p>
+
+  
+      <p>Variable Storage Class</p>
+
+
+        <details class="quote">
+          <summary>Source code in <code>camply/config/yellowstone_config.py</code></summary>
+          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-14"> 14</a></span>
+<span class="normal"><a href="#__codelineno-0-15"> 15</a></span>
+<span class="normal"><a href="#__codelineno-0-16"> 16</a></span>
+<span class="normal"><a href="#__codelineno-0-17"> 17</a></span>
+<span class="normal"><a href="#__codelineno-0-18"> 18</a></span>
+<span class="normal"><a href="#__codelineno-0-19"> 19</a></span>
+<span class="normal"><a href="#__codelineno-0-20"> 20</a></span>
+<span class="normal"><a href="#__codelineno-0-21"> 21</a></span>
+<span class="normal"><a href="#__codelineno-0-22"> 22</a></span>
+<span class="normal"><a href="#__codelineno-0-23"> 23</a></span>
+<span class="normal"><a href="#__codelineno-0-24"> 24</a></span>
+<span class="normal"><a href="#__codelineno-0-25"> 25</a></span>
+<span class="normal"><a href="#__codelineno-0-26"> 26</a></span>
+<span class="normal"><a href="#__codelineno-0-27"> 27</a></span>
+<span class="normal"><a href="#__codelineno-0-28"> 28</a></span>
+<span class="normal"><a href="#__codelineno-0-29"> 29</a></span>
+<span class="normal"><a href="#__codelineno-0-30"> 30</a></span>
+<span class="normal"><a href="#__codelineno-0-31"> 31</a></span>
+<span class="normal"><a href="#__codelineno-0-32"> 32</a></span>
+<span class="normal"><a href="#__codelineno-0-33"> 33</a></span>
+<span class="normal"><a href="#__codelineno-0-34"> 34</a></span>
+<span class="normal"><a href="#__codelineno-0-35"> 35</a></span>
+<span class="normal"><a href="#__codelineno-0-36"> 36</a></span>
+<span class="normal"><a href="#__codelineno-0-37"> 37</a></span>
+<span class="normal"><a href="#__codelineno-0-38"> 38</a></span>
+<span class="normal"><a href="#__codelineno-0-39"> 39</a></span>
+<span class="normal"><a href="#__codelineno-0-40"> 40</a></span>
+<span class="normal"><a href="#__codelineno-0-41"> 41</a></span>
+<span class="normal"><a href="#__codelineno-0-42"> 42</a></span>
+<span class="normal"><a href="#__codelineno-0-43"> 43</a></span>
+<span class="normal"><a href="#__codelineno-0-44"> 44</a></span>
+<span class="normal"><a href="#__codelineno-0-45"> 45</a></span>
+<span class="normal"><a href="#__codelineno-0-46"> 46</a></span>
+<span class="normal"><a href="#__codelineno-0-47"> 47</a></span>
+<span class="normal"><a href="#__codelineno-0-48"> 48</a></span>
+<span class="normal"><a href="#__codelineno-0-49"> 49</a></span>
+<span class="normal"><a href="#__codelineno-0-50"> 50</a></span>
+<span class="normal"><a href="#__codelineno-0-51"> 51</a></span>
+<span class="normal"><a href="#__codelineno-0-52"> 52</a></span>
+<span class="normal"><a href="#__codelineno-0-53"> 53</a></span>
+<span class="normal"><a href="#__codelineno-0-54"> 54</a></span>
+<span class="normal"><a href="#__codelineno-0-55"> 55</a></span>
+<span class="normal"><a href="#__codelineno-0-56"> 56</a></span>
+<span class="normal"><a href="#__codelineno-0-57"> 57</a></span>
+<span class="normal"><a href="#__codelineno-0-58"> 58</a></span>
+<span class="normal"><a href="#__codelineno-0-59"> 59</a></span>
+<span class="normal"><a href="#__codelineno-0-60"> 60</a></span>
+<span class="normal"><a href="#__codelineno-0-61"> 61</a></span>
+<span class="normal"><a href="#__codelineno-0-62"> 62</a></span>
+<span class="normal"><a href="#__codelineno-0-63"> 63</a></span>
+<span class="normal"><a href="#__codelineno-0-64"> 64</a></span>
+<span class="normal"><a href="#__codelineno-0-65"> 65</a></span>
+<span class="normal"><a href="#__codelineno-0-66"> 66</a></span>
+<span class="normal"><a href="#__codelineno-0-67"> 67</a></span>
+<span class="normal"><a href="#__codelineno-0-68"> 68</a></span>
+<span class="normal"><a href="#__codelineno-0-69"> 69</a></span>
+<span class="normal"><a href="#__codelineno-0-70"> 70</a></span>
+<span class="normal"><a href="#__codelineno-0-71"> 71</a></span>
+<span class="normal"><a href="#__codelineno-0-72"> 72</a></span>
+<span class="normal"><a href="#__codelineno-0-73"> 73</a></span>
+<span class="normal"><a href="#__codelineno-0-74"> 74</a></span>
+<span class="normal"><a href="#__codelineno-0-75"> 75</a></span>
+<span class="normal"><a href="#__codelineno-0-76"> 76</a></span>
+<span class="normal"><a href="#__codelineno-0-77"> 77</a></span>
+<span class="normal"><a href="#__codelineno-0-78"> 78</a></span>
+<span class="normal"><a href="#__codelineno-0-79"> 79</a></span>
+<span class="normal"><a href="#__codelineno-0-80"> 80</a></span>
+<span class="normal"><a href="#__codelineno-0-81"> 81</a></span>
+<span class="normal"><a href="#__codelineno-0-82"> 82</a></span>
+<span class="normal"><a href="#__codelineno-0-83"> 83</a></span>
+<span class="normal"><a href="#__codelineno-0-84"> 84</a></span>
+<span class="normal"><a href="#__codelineno-0-85"> 85</a></span>
+<span class="normal"><a href="#__codelineno-0-86"> 86</a></span>
+<span class="normal"><a href="#__codelineno-0-87"> 87</a></span>
+<span class="normal"><a href="#__codelineno-0-88"> 88</a></span>
+<span class="normal"><a href="#__codelineno-0-89"> 89</a></span>
+<span class="normal"><a href="#__codelineno-0-90"> 90</a></span>
+<span class="normal"><a href="#__codelineno-0-91"> 91</a></span>
+<span class="normal"><a href="#__codelineno-0-92"> 92</a></span>
+<span class="normal"><a href="#__codelineno-0-93"> 93</a></span>
+<span class="normal"><a href="#__codelineno-0-94"> 94</a></span>
+<span class="normal"><a href="#__codelineno-0-95"> 95</a></span>
+<span class="normal"><a href="#__codelineno-0-96"> 96</a></span>
+<span class="normal"><a href="#__codelineno-0-97"> 97</a></span>
+<span class="normal"><a href="#__codelineno-0-98"> 98</a></span>
+<span class="normal"><a href="#__codelineno-0-99"> 99</a></span>
+<span class="normal"><a href="#__codelineno-0-100">100</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="k">class</span> <span class="nc">YellowstoneConfig</span><span class="p">(</span><span class="n">DataColumns</span><span class="p">):</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15"></a>    <span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16"></a><span class="sd">    Variable Storage Class</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18"></a>
+<a id="__codelineno-0-19" name="__codelineno-0-19"></a>    <span class="n">API_SCHEME</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;https&quot;</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20"></a>    <span class="n">API_BASE_ENDPOINT</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;webapi.xanterra.net&quot;</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21"></a>    <span class="n">API_BASE_PATH</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;v1/api&quot;</span>
+<a id="__codelineno-0-22" name="__codelineno-0-22"></a>    <span class="n">LODGING_PATH</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;/</span><span class="si">{</span><span class="n">API_BASE_PATH</span><span class="si">}</span><span class="s2">/availability/hotels&quot;</span>
+<a id="__codelineno-0-23" name="__codelineno-0-23"></a>    <span class="n">YELLOWSTONE_PARK_PATH</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;yellowstonenationalparklodges&quot;</span>
+<a id="__codelineno-0-24" name="__codelineno-0-24"></a>    <span class="n">YELLOWSTONE_LODGING_PATH</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">LODGING_PATH</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">YELLOWSTONE_PARK_PATH</span><span class="si">}</span><span class="s2">&quot;</span>
+<a id="__codelineno-0-25" name="__codelineno-0-25"></a>    <span class="n">CAMPSITE_AVAILABILITY</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">API_BASE_PATH</span><span class="si">}</span><span class="s2">/availability/rooms&quot;</span>
+<a id="__codelineno-0-26" name="__codelineno-0-26"></a>    <span class="n">YELLOWSTONE_CAMPSITE_AVAILABILITY</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="p">(</span>
+<a id="__codelineno-0-27" name="__codelineno-0-27"></a>        <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">CAMPSITE_AVAILABILITY</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">YELLOWSTONE_PARK_PATH</span><span class="si">}</span><span class="s2">&quot;</span>
+<a id="__codelineno-0-28" name="__codelineno-0-28"></a>    <span class="p">)</span>
+<a id="__codelineno-0-29" name="__codelineno-0-29"></a>    <span class="n">YELLOWSTONE_PROPERTY_INFO</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="p">(</span>
+<a id="__codelineno-0-30" name="__codelineno-0-30"></a>        <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">API_BASE_PATH</span><span class="si">}</span><span class="s2">/property/rooms/</span><span class="si">{</span><span class="n">YELLOWSTONE_PARK_PATH</span><span class="si">}</span><span class="s2">&quot;</span>
+<a id="__codelineno-0-31" name="__codelineno-0-31"></a>    <span class="p">)</span>
+<a id="__codelineno-0-32" name="__codelineno-0-32"></a>    <span class="n">API_REFERRERS</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-0-33" name="__codelineno-0-33"></a>        <span class="s2">&quot;Host&quot;</span><span class="p">:</span> <span class="s2">&quot;webapi.xanterra.net&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-34" name="__codelineno-0-34"></a>        <span class="s2">&quot;Origin&quot;</span><span class="p">:</span> <span class="s2">&quot;https://secure.yellowstonenationalparklodges.com&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-35" name="__codelineno-0-35"></a>        <span class="s2">&quot;Referer&quot;</span><span class="p">:</span> <span class="s2">&quot;https://secure.yellowstonenationalparklodges.com/&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-36" name="__codelineno-0-36"></a>    <span class="p">}</span>
+<a id="__codelineno-0-37" name="__codelineno-0-37"></a>
+<a id="__codelineno-0-38" name="__codelineno-0-38"></a>    <span class="n">LODGING_CAMPGROUND_QUALIFIER</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;:RV&quot;</span>
+<a id="__codelineno-0-39" name="__codelineno-0-39"></a>
+<a id="__codelineno-0-40" name="__codelineno-0-40"></a>    <span class="c1"># JSON FILTERING</span>
+<a id="__codelineno-0-41" name="__codelineno-0-41"></a>    <span class="n">BOOKING_AVAILABILITY</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;availability&quot;</span>
+<a id="__codelineno-0-42" name="__codelineno-0-42"></a>
+<a id="__codelineno-0-43" name="__codelineno-0-43"></a>    <span class="c1"># DATAFRAME FILTERING</span>
+<a id="__codelineno-0-44" name="__codelineno-0-44"></a>    <span class="n">FACILITY_ID</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;facility_id&quot;</span>
+<a id="__codelineno-0-45" name="__codelineno-0-45"></a>    <span class="n">FACILITY_STATUS</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;status&quot;</span>
+<a id="__codelineno-0-46" name="__codelineno-0-46"></a>    <span class="n">FACILITY_STATUS_QUALIFIER</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;OPEN&quot;</span>
+<a id="__codelineno-0-47" name="__codelineno-0-47"></a>    <span class="n">FACILITY_ROOMS</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;rooms&quot;</span>
+<a id="__codelineno-0-48" name="__codelineno-0-48"></a>    <span class="n">FACILITY_AVAILABLE_QUALIFIER</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;available&quot;</span>
+<a id="__codelineno-0-49" name="__codelineno-0-49"></a>    <span class="n">FACILITY_HOTEL_CODE</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;hotelCode&quot;</span>
+<a id="__codelineno-0-50" name="__codelineno-0-50"></a>    <span class="n">FACILITY_ROOM_CODE</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;roomCode&quot;</span>
+<a id="__codelineno-0-51" name="__codelineno-0-51"></a>    <span class="n">FACILITY_PRICE</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;price&quot;</span>
+<a id="__codelineno-0-52" name="__codelineno-0-52"></a>    <span class="n">FACILITY_TYPE</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;type&quot;</span>
+<a id="__codelineno-0-53" name="__codelineno-0-53"></a>
+<a id="__codelineno-0-54" name="__codelineno-0-54"></a>    <span class="n">CAMPSITE_DATA_COLUMNS</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;facility_id&quot;</span><span class="p">,</span> <span class="s2">&quot;facility_name&quot;</span><span class="p">,</span> <span class="s2">&quot;booking_url&quot;</span><span class="p">]</span>
+<a id="__codelineno-0-55" name="__codelineno-0-55"></a>
+<a id="__codelineno-0-56" name="__codelineno-0-56"></a>    <span class="n">RATE_CODE</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;INTERNET&quot;</span>
+<a id="__codelineno-0-57" name="__codelineno-0-57"></a>    <span class="n">LODGING_RATES</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;rates&quot;</span>
+<a id="__codelineno-0-58" name="__codelineno-0-58"></a>    <span class="n">LODGING_TITLE</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;title&quot;</span>
+<a id="__codelineno-0-59" name="__codelineno-0-59"></a>    <span class="n">LODGING_BASE_PRICES</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;mins&quot;</span>
+<a id="__codelineno-0-60" name="__codelineno-0-60"></a>    <span class="n">LODGING_OCCUPANCY_BASE</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;occupancyBase&quot;</span>
+<a id="__codelineno-0-61" name="__codelineno-0-61"></a>    <span class="n">LODGING_OCCUPANCY_MAX</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;occupancyMax&quot;</span>
+<a id="__codelineno-0-62" name="__codelineno-0-62"></a>    <span class="n">LODGING_ERROR_MESSAGE</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;message&quot;</span>
+<a id="__codelineno-0-63" name="__codelineno-0-63"></a>
+<a id="__codelineno-0-64" name="__codelineno-0-64"></a>    <span class="n">MINIMUM_POLLING_INTERVAL</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">45</span>
+<a id="__codelineno-0-65" name="__codelineno-0-65"></a>
+<a id="__codelineno-0-66" name="__codelineno-0-66"></a>    <span class="n">WEBUI_ALIAS_ENDPOINT</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;yellowstonenationalparklodges.com&quot;</span>
+<a id="__codelineno-0-67" name="__codelineno-0-67"></a>    <span class="n">WEBUI_BASE_ENDPOINT</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;secure.yellowstonenationalparklodges.com&quot;</span>
+<a id="__codelineno-0-68" name="__codelineno-0-68"></a>    <span class="n">WEBUI_BOOKING_PATH</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;booking/lodging-select&quot;</span>
+<a id="__codelineno-0-69" name="__codelineno-0-69"></a>
+<a id="__codelineno-0-70" name="__codelineno-0-70"></a>    <span class="n">YELLOWSTONE_RECREATION_AREA_ID</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span>
+<a id="__codelineno-0-71" name="__codelineno-0-71"></a>    <span class="n">YELLOWSTONE_RECREATION_AREA_NAME</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;Yellowstone&quot;</span>
+<a id="__codelineno-0-72" name="__codelineno-0-72"></a>    <span class="n">YELLOWSTONE_RECREATION_AREA_FORMAL_NAME</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;Yellowstone National Park, USA&quot;</span>
+<a id="__codelineno-0-73" name="__codelineno-0-73"></a>    <span class="n">YELLOWSTONE_LOOP_NAME</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;N/A&quot;</span>
+<a id="__codelineno-0-74" name="__codelineno-0-74"></a>    <span class="n">CAMPSITE_AVAILABILITY_STATUS</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;Available&quot;</span>
+<a id="__codelineno-0-75" name="__codelineno-0-75"></a>    <span class="n">YELLOWSTONE_CAMPGROUND_NAME_REPLACE</span><span class="p">:</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+<a id="__codelineno-0-76" name="__codelineno-0-76"></a>        <span class="s2">&quot;CG Internet Rate&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-77" name="__codelineno-0-77"></a>        <span class="s2">&quot;Campground&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-78" name="__codelineno-0-78"></a>    <span class="p">)</span>
+<a id="__codelineno-0-79" name="__codelineno-0-79"></a>
+<a id="__codelineno-0-80" name="__codelineno-0-80"></a>    <span class="n">YELLOWSTONE_TIMEZONE</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;America/Denver&quot;</span>
+<a id="__codelineno-0-81" name="__codelineno-0-81"></a>
+<a id="__codelineno-0-82" name="__codelineno-0-82"></a>    <span class="c1"># LODGES:  https://webapi.xanterra.net/v1/api/property/hotels/yellowstonenationalparklodges</span>
+<a id="__codelineno-0-83" name="__codelineno-0-83"></a>    <span class="n">YELLOWSTONE_CAMPGROUNDS</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-0-84" name="__codelineno-0-84"></a>        <span class="s2">&quot;YLYC:RV&quot;</span><span class="p">:</span> <span class="s2">&quot;Canyon Campground&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-85" name="__codelineno-0-85"></a>        <span class="s2">&quot;YLYB:RV&quot;</span><span class="p">:</span> <span class="s2">&quot;Bridge Bay Campground&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-86" name="__codelineno-0-86"></a>        <span class="s2">&quot;YLYG:RV&quot;</span><span class="p">:</span> <span class="s2">&quot;Grant Campground&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-87" name="__codelineno-0-87"></a>        <span class="s2">&quot;YLYM:RV&quot;</span><span class="p">:</span> <span class="s2">&quot;Madison Campground&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-88" name="__codelineno-0-88"></a>        <span class="s2">&quot;YLYF:RV&quot;</span><span class="p">:</span> <span class="s2">&quot;Fishing Bridge RV Park&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-89" name="__codelineno-0-89"></a>    <span class="p">}</span>
+<a id="__codelineno-0-90" name="__codelineno-0-90"></a>
+<a id="__codelineno-0-91" name="__codelineno-0-91"></a>    <span class="n">YELLOWSTONE_CAMPGROUND_OBJECTS</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">CampgroundFacility</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+<a id="__codelineno-0-92" name="__codelineno-0-92"></a>    <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">YELLOWSTONE_CAMPGROUNDS</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+<a id="__codelineno-0-93" name="__codelineno-0-93"></a>        <span class="n">YELLOWSTONE_CAMPGROUND_OBJECTS</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+<a id="__codelineno-0-94" name="__codelineno-0-94"></a>            <span class="n">CampgroundFacility</span><span class="p">(</span>
+<a id="__codelineno-0-95" name="__codelineno-0-95"></a>                <span class="n">recreation_area_id</span><span class="o">=</span><span class="n">YELLOWSTONE_RECREATION_AREA_ID</span><span class="p">,</span>
+<a id="__codelineno-0-96" name="__codelineno-0-96"></a>                <span class="n">recreation_area</span><span class="o">=</span><span class="n">YELLOWSTONE_RECREATION_AREA_FORMAL_NAME</span><span class="p">,</span>
+<a id="__codelineno-0-97" name="__codelineno-0-97"></a>                <span class="n">facility_name</span><span class="o">=</span><span class="n">value</span><span class="p">,</span>
+<a id="__codelineno-0-98" name="__codelineno-0-98"></a>                <span class="n">facility_id</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">key</span><span class="p">),</span>
+<a id="__codelineno-0-99" name="__codelineno-0-99"></a>            <span class="p">)</span>
+<a id="__codelineno-0-100" name="__codelineno-0-100"></a>        <span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+        </details>
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../cli/" class="md-footer__link md-footer__link--prev" aria-label="Previous: cli" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              cli
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="api_config/" class="md-footer__link md-footer__link--next" aria-label="Next: api_config" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              api_config
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2020 Justin Flannery
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tracking", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d6c3db9e.min.js"></script>
+      
+    
+  </body>
+</html>

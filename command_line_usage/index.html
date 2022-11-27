@@ -1,0 +1,2252 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="juftin">
+      
+      
+      <link rel="icon" href="../_static/camply.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
+    
+    
+      
+        <title>Usage 📝 - camply</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.472b142f.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.08040f6c.min.css">
+        
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="purple">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#command-line-usage" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="camply" class="md-header__button md-logo" aria-label="camply" data-md-component="logo">
+      
+  <img src="../_static/camply.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            camply
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Usage 📝
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
+            </label>
+          
+        
+          
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/juftin/camply" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    camply
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="camply" class="md-nav__button md-logo" aria-label="camply" data-md-component="logo">
+      
+  <img src="../_static/camply.png" alt="logo">
+
+    </a>
+    camply
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/juftin/camply" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    camply
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        camply ⛺
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/" class="md-nav__link">
+        Installation ☀️
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Usage 📝
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Usage 📝
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#campsites" class="md-nav__link">
+    campsites
+  </a>
+  
+    <nav class="md-nav" aria-label="campsites">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#arguments" class="md-nav__link">
+    Arguments
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recreation-areas" class="md-nav__link">
+    recreation-areas
+  </a>
+  
+    <nav class="md-nav" aria-label="recreation-areas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#arguments_1" class="md-nav__link">
+    Arguments
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#campgrounds" class="md-nav__link">
+    campgrounds
+  </a>
+  
+    <nav class="md-nav" aria-label="campgrounds">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#arguments_2" class="md-nav__link">
+    Arguments
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configure" class="md-nav__link">
+    configure
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    Examples
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#searching-for-a-campsite" class="md-nav__link">
+    Searching for a Campsite
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#searching-for-a-campsite-by-campground-id" class="md-nav__link">
+    Searching for a Campsite by Campground ID
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#searching-for-a-specific-campsite-by-id" class="md-nav__link">
+    Searching for a Specific Campsite by ID
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#continuously-searching-for-a-campsite" class="md-nav__link">
+    Continuously Searching for A Campsite
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#continue-looking-after-the-first-match-is-found" class="md-nav__link">
+    Continue Looking After The First Match Is Found
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#send-a-push-notification" class="md-nav__link">
+    Send a Push Notification
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#send-a-text-message" class="md-nav__link">
+    Send a Text Message
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#send-a-notification-to-different-services" class="md-nav__link">
+    Send a Notification to Different Services
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#look-for-weekend-campsite-availabilities" class="md-nav__link">
+    Look for Weekend Campsite Availabilities
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#look-for-consecutive-nights-at-the-same-campsite" class="md-nav__link">
+    Look for Consecutive Nights at the Same Campsite
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#look-for-a-campsite-inside-of-yellowstone" class="md-nav__link">
+    Look for a Campsite Inside of Yellowstone
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#look-for-a-campsite-across-multiple-recreation-areas" class="md-nav__link">
+    Look for a Campsite Across Multiple Recreation areas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-a-yaml-configuration-file-to-search-for-campsites" class="md-nav__link">
+    Using a YAML Configuration file to search for campsites
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#searching-for-a-campsite-that-fits-your-equipment" class="md-nav__link">
+    Searching for a Campsite That Fits Your Equipment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#saving-the-results-of-a-search" class="md-nav__link">
+    Saving the Results of a Search
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#search-for-recreation-areas-by-query-string" class="md-nav__link">
+    Search for Recreation Areas by Query String
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#look-for-specific-campgrounds-within-a-recreation-area" class="md-nav__link">
+    Look for Specific Campgrounds Within a Recreation Area
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#look-for-specific-campgrounds-by-query-string" class="md-nav__link">
+    Look for Specific Campgrounds by Query String
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../recreationdotgov/" class="md-nav__link">
+        Finding Campsites on Recreation.gov 🌲
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python/" class="md-nav__link">
+        Object Oriented Usage 🐍
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docker/" class="md-nav__link">
+        Docker ⛴
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cli/" class="md-nav__link">
+        Command Line Interface ⌨️
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8">
+          API Documentation 🤖
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="API Documentation 🤖" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          API Documentation 🤖
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_1" type="checkbox" id="__nav_8_1" >
+      
+      
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../reference/">camply</a>
+          
+            <label for="__nav_8_1">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="camply" data-md-level="2">
+        <label class="md-nav__title" for="__nav_8_1">
+          <span class="md-nav__icon md-icon"></span>
+          camply
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/_version/" class="md-nav__link">
+        _version
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/cli/" class="md-nav__link">
+        cli
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_1_3" type="checkbox" id="__nav_8_1_3" >
+      
+      
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../reference/config/">config</a>
+          
+            <label for="__nav_8_1_3">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="config" data-md-level="3">
+        <label class="md-nav__title" for="__nav_8_1_3">
+          <span class="md-nav__icon md-icon"></span>
+          config
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/config/api_config/" class="md-nav__link">
+        api_config
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/config/data_columns/" class="md-nav__link">
+        data_columns
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/config/file_config/" class="md-nav__link">
+        file_config
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/config/logging_config/" class="md-nav__link">
+        logging_config
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/config/notification_config/" class="md-nav__link">
+        notification_config
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/config/search_config/" class="md-nav__link">
+        search_config
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/config/yellowstone_config/" class="md-nav__link">
+        yellowstone_config
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_1_4" type="checkbox" id="__nav_8_1_4" >
+      
+      
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../reference/containers/">containers</a>
+          
+            <label for="__nav_8_1_4">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="containers" data-md-level="3">
+        <label class="md-nav__title" for="__nav_8_1_4">
+          <span class="md-nav__icon md-icon"></span>
+          containers
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/containers/api_responses/" class="md-nav__link">
+        api_responses
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/containers/base_container/" class="md-nav__link">
+        base_container
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/containers/data_containers/" class="md-nav__link">
+        data_containers
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_1_5" type="checkbox" id="__nav_8_1_5" >
+      
+      
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../reference/notifications/">notifications</a>
+          
+            <label for="__nav_8_1_5">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="notifications" data-md-level="3">
+        <label class="md-nav__title" for="__nav_8_1_5">
+          <span class="md-nav__icon md-icon"></span>
+          notifications
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/notifications/base_notifications/" class="md-nav__link">
+        base_notifications
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/notifications/email_notifications/" class="md-nav__link">
+        email_notifications
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/notifications/multi_provider_notifications/" class="md-nav__link">
+        multi_provider_notifications
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/notifications/pushbullet/" class="md-nav__link">
+        pushbullet
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/notifications/pushover/" class="md-nav__link">
+        pushover
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/notifications/silent_notifications/" class="md-nav__link">
+        silent_notifications
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/notifications/slack/" class="md-nav__link">
+        slack
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/notifications/telegram/" class="md-nav__link">
+        telegram
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/notifications/twilio/" class="md-nav__link">
+        twilio
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_1_6" type="checkbox" id="__nav_8_1_6" >
+      
+      
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../reference/providers/">providers</a>
+          
+            <label for="__nav_8_1_6">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="providers" data-md-level="3">
+        <label class="md-nav__title" for="__nav_8_1_6">
+          <span class="md-nav__icon md-icon"></span>
+          providers
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/providers/base_provider/" class="md-nav__link">
+        base_provider
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_1_6_2" type="checkbox" id="__nav_8_1_6_2" >
+      
+      
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../reference/providers/recreation_dot_gov/">recreation_dot_gov</a>
+          
+            <label for="__nav_8_1_6_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="recreation_dot_gov" data-md-level="4">
+        <label class="md-nav__title" for="__nav_8_1_6_2">
+          <span class="md-nav__icon md-icon"></span>
+          recreation_dot_gov
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/providers/recreation_dot_gov/recdotgov_provider/" class="md-nav__link">
+        recdotgov_provider
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_1_6_3" type="checkbox" id="__nav_8_1_6_3" >
+      
+      
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../reference/providers/xanterra/">xanterra</a>
+          
+            <label for="__nav_8_1_6_3">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="xanterra" data-md-level="4">
+        <label class="md-nav__title" for="__nav_8_1_6_3">
+          <span class="md-nav__icon md-icon"></span>
+          xanterra
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/providers/xanterra/yellowstone_lodging/" class="md-nav__link">
+        yellowstone_lodging
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_1_7" type="checkbox" id="__nav_8_1_7" >
+      
+      
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../reference/search/">search</a>
+          
+            <label for="__nav_8_1_7">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="search" data-md-level="3">
+        <label class="md-nav__title" for="__nav_8_1_7">
+          <span class="md-nav__icon md-icon"></span>
+          search
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/search/base_search/" class="md-nav__link">
+        base_search
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/search/search_recreationdotgov/" class="md-nav__link">
+        search_recreationdotgov
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/search/search_yellowstone/" class="md-nav__link">
+        search_yellowstone
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_1_8" type="checkbox" id="__nav_8_1_8" >
+      
+      
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../reference/utils/">utils</a>
+          
+            <label for="__nav_8_1_8">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="utils" data-md-level="3">
+        <label class="md-nav__title" for="__nav_8_1_8">
+          <span class="md-nav__icon md-icon"></span>
+          utils
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/utils/api_utils/" class="md-nav__link">
+        api_utils
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/utils/configure_camply/" class="md-nav__link">
+        configure_camply
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/utils/general_utils/" class="md-nav__link">
+        general_utils
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/utils/logging_utils/" class="md-nav__link">
+        logging_utils
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/utils/yaml_utils/" class="md-nav__link">
+        yaml_utils
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dependencies/" class="md-nav__link">
+        Dependencies ♻️
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contributing/" class="md-nav__link">
+        Contributing 👥
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/juftin/camply" class="md-nav__link">
+        GitHub 🛠
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/juftin/camply/releases" class="md-nav__link">
+        Changelog 📝
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#campsites" class="md-nav__link">
+    campsites
+  </a>
+  
+    <nav class="md-nav" aria-label="campsites">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#arguments" class="md-nav__link">
+    Arguments
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recreation-areas" class="md-nav__link">
+    recreation-areas
+  </a>
+  
+    <nav class="md-nav" aria-label="recreation-areas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#arguments_1" class="md-nav__link">
+    Arguments
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#campgrounds" class="md-nav__link">
+    campgrounds
+  </a>
+  
+    <nav class="md-nav" aria-label="campgrounds">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#arguments_2" class="md-nav__link">
+    Arguments
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configure" class="md-nav__link">
+    configure
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    Examples
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#searching-for-a-campsite" class="md-nav__link">
+    Searching for a Campsite
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#searching-for-a-campsite-by-campground-id" class="md-nav__link">
+    Searching for a Campsite by Campground ID
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#searching-for-a-specific-campsite-by-id" class="md-nav__link">
+    Searching for a Specific Campsite by ID
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#continuously-searching-for-a-campsite" class="md-nav__link">
+    Continuously Searching for A Campsite
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#continue-looking-after-the-first-match-is-found" class="md-nav__link">
+    Continue Looking After The First Match Is Found
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#send-a-push-notification" class="md-nav__link">
+    Send a Push Notification
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#send-a-text-message" class="md-nav__link">
+    Send a Text Message
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#send-a-notification-to-different-services" class="md-nav__link">
+    Send a Notification to Different Services
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#look-for-weekend-campsite-availabilities" class="md-nav__link">
+    Look for Weekend Campsite Availabilities
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#look-for-consecutive-nights-at-the-same-campsite" class="md-nav__link">
+    Look for Consecutive Nights at the Same Campsite
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#look-for-a-campsite-inside-of-yellowstone" class="md-nav__link">
+    Look for a Campsite Inside of Yellowstone
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#look-for-a-campsite-across-multiple-recreation-areas" class="md-nav__link">
+    Look for a Campsite Across Multiple Recreation areas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-a-yaml-configuration-file-to-search-for-campsites" class="md-nav__link">
+    Using a YAML Configuration file to search for campsites
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#searching-for-a-campsite-that-fits-your-equipment" class="md-nav__link">
+    Searching for a Campsite That Fits Your Equipment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#saving-the-results-of-a-search" class="md-nav__link">
+    Saving the Results of a Search
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#search-for-recreation-areas-by-query-string" class="md-nav__link">
+    Search for Recreation Areas by Query String
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#look-for-specific-campgrounds-within-a-recreation-area" class="md-nav__link">
+    Look for Specific Campgrounds Within a Recreation Area
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#look-for-specific-campgrounds-by-query-string" class="md-nav__link">
+    Look for Specific Campgrounds by Query String
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  <a href="https://github.com/juftin/camply/blob/main/docs/command_line_usage.md" title="Edit this page" class="md-content__button md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+  </a>
+
+
+<h1 id="command-line-usage">Command Line Usage<a class="headerlink" href="#command-line-usage" title="Permanent link">#</a></h1>
+<p>When installed, <code>camply</code>'s command line utility can be invoked with the command, <code>camply</code>. The CLI
+tool accepts one of four sub-arguments: <code>campsites</code>, <code>recreation-areas</code>, <code>campgrounds</code>,
+and <code>configure</code>.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>❯ camply --help
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>Usage: camply [OPTIONS] COMMAND [ARGS]...
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>  Welcome to camply, the campsite finder.
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>  Finding reservations at sold out campgrounds can be tough. That&#39;s where
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>  camply comes in. It searches the APIs of booking services like
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>  https://recreation.gov (which indexes thousands of campgrounds across the
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>  USA) to continuously check for cancellations and availabilities to pop up.
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>  Once a campsite becomes available, camply sends you a notification to book
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>  your spot!
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>  visit the camply documentation at https://github.com/juftin/camply
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>Options:
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>  --version             Show the version and exit.
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>  --provider TEXT       Camping Search Provider. Options available are
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>                        &#39;Yellowstone&#39; and &#39;RecreationDotGov&#39;. Defaults to
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>                        &#39;RecreationDotGov&#39;, not case-sensitive.
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>  --debug / --no-debug  Enable extra debugging output
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>  --help                Show this message and exit.
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>Commands:
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>  campgrounds       Search for Campgrounds (inside of Recreation Areas)...
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>  campsites         Find available Campsites using search criteria
+<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>  configure         Set up camply configuration file with an interactive...
+<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>  recreation-areas  Search for Recreation Areas and list them
+</code></pre></div>
+<h2 id="campsites">campsites<a class="headerlink" href="#campsites" title="Permanent link">#</a></h2>
+<p>Search for a campsite within camply. Campsites are returned based on the search criteria provided.
+Campsites contain properties like booking date, site type (tent, RV, cabin, etc), capacity, price,
+and a link to make the booking. Required parameters include <code>--start-date</code>, <code>--end-date</code>,
+<code>--rec-area</code> / <code>--campground</code> / <code>--campsite</code>. Constant searching functionality can be enabled with
+<code>--continuous</code> and notifications via Email, Pushover, Pushbullet, and Telegram can be enabled using
+<code>--notifications</code>.</p>
+<h3 id="arguments">Arguments<a class="headerlink" href="#arguments" title="Permanent link">#</a></h3>
+<ul>
+<li><code>--rec-area</code>: <code>RECREATION_AREA_ID</code><ul>
+<li>Add Recreation Areas (comprised of campgrounds) by ID.
+  <a href="#searching-for-a-campsite">**<em>example</em></a></li>
+</ul>
+</li>
+<li><code>--campground</code>: <code>CAMPGROUND_ID</code><ul>
+<li>Add individual Campgrounds by ID.
+  <a href="#searching-for-a-campsite-by-campground-id">**<em>example</em></a></li>
+</ul>
+</li>
+<li><code>--campsite</code>: <code>CAMPSITE_ID</code><ul>
+<li>Add individual Campsites by ID.
+  <a href="#searching-for-a-specific-campsite-by-id">**<em>example</em></a></li>
+</ul>
+</li>
+<li><code>--start-date</code>: <code>START_DATE</code><ul>
+<li><code>YYYY-MM-DD</code>: Start of Search window. You will be arriving this day.
+  <a href="#searching-for-a-campsite">**<em>example</em></a></li>
+</ul>
+</li>
+<li><code>--end-date</code>: <code>END_DATE</code><ul>
+<li><code>YYYY-MM-DD</code>: End of Search window. You will be checking out this day..
+  <a href="#searching-for-a-campsite">**<em>example</em></a></li>
+</ul>
+</li>
+<li><code>--weekends</code><ul>
+<li>Only search for weekend bookings (Fri/Sat nights).
+  <a href="#look-for-weekend-campsite-availabilities">**<em>example</em></a></li>
+</ul>
+</li>
+<li><code>--nights</code><ul>
+<li>Search for campsite stays with consecutive nights. Defaults to 1 which returns all campsites
+  found.
+  <a href="#look-for-consecutive-nights-at-the-same-campsite">**<em>example</em></a></li>
+</ul>
+</li>
+<li><code>--provider</code>: <code>PROVIDER</code><ul>
+<li>Camping Search Provider. Options available are 'Yellowstone' and 'RecreationDotGov'. Defaults
+  to 'RecreationDotGov', not case-sensitive.
+  <a href="#look-for-a-campsite-inside-of-yellowstone">**<em>example</em></a></li>
+</ul>
+</li>
+<li><code>--continuous</code><ul>
+<li>Continuously check for a campsite to become available, and quit once at least one campsite is
+  found.
+  <a href="#continuously-searching-for-a-campsite">**<em>example</em></a></li>
+</ul>
+</li>
+<li><code>--search-forever</code><ul>
+<li>If <code>--continuous</code> is activated, this method continues to search after the first availability
+  has been found. The one caveat is that it will never notify about the same identical campsite
+  for the same booking date.
+  <a href="#continue-looking-after-the-first-match-is-found">**<em>example</em></a></li>
+</ul>
+</li>
+<li><code>--notifications</code>: <code>NOTIFICATIONS</code><ul>
+<li>If <code>--continuous</code> is activated, types of notifications to receive. Options available
+  are<code>email</code>, <code>pushover</code>, <code>pushbullet</code>, <code>telegram</code>, or <code>silent</code>. Defaults to <code>silent</code> - which just logs
+  messages to console.
+  <a href="#send-a-push-notification">**<em>example</em></a></li>
+</ul>
+</li>
+<li><code>--equipment</code><ul>
+<li>Search for campsites compatible with your camping equipment. This argument accepts two
+  options, the equipment name and its length If you don't want to filter based on length provide
+  a length of 0. Accepted equipment names include <code>Tent</code>, <code>RV</code>. <code>Trailer</code>, <code>Vehicle</code> and are
+  not case-sensitive.
+  <a href="#searching-for-a-campsite-that-fits-your-equipment">**<em>example</em></a></li>
+</ul>
+</li>
+<li><code>--notify-first-try</code><ul>
+<li>If <code>--continuous</code> is activated, whether to send all non-silent notifications if more than 5
+  matching campsites are found on the first try. Defaults to false which only sends the first5.
+  <a href="#continuously-searching-for-a-campsite">**<em>example</em></a></li>
+</ul>
+</li>
+<li><code>--polling-interval</code>: <code>POLLING_INTERVAL</code><ul>
+<li>If <code>--continuous</code> is activated, how often to wait in between checks (in minutes). Defaults to
+  10, cannot be less than 5.
+  <a href="#look-for-weekend-campsite-availabilities">**<em>example</em></a></li>
+</ul>
+</li>
+<li><code>--yaml-config</code><ul>
+<li>Rather than provide arguments to the command line utility, instead pass a file path to a YAML
+  configuration file. See the documentation for more information on how to structure your
+  configuration file.
+  <a href="#using-a-yaml-configuration-file-to-search-for-campsites">**<em>example</em></a></li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>camply campsites \
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    --rec-area 2725 \
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    --start-date 2023-07-10 \
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    --end-date 2023-07-18
+</code></pre></div>
+<h2 id="recreation-areas">recreation-areas<a class="headerlink" href="#recreation-areas" title="Permanent link">#</a></h2>
+<p>Search for Recreation Areas and their IDs. Recreation Areas are places like National Parks and
+National Forests that can contain one or many campgrounds.</p>
+<h3 id="arguments_1">Arguments<a class="headerlink" href="#arguments_1" title="Permanent link">#</a></h3>
+<ul>
+<li><code>--search</code> <code>SEARCH</code><ul>
+<li>Search for Campgrounds or Recreation Areas by search string.</li>
+</ul>
+</li>
+<li><code>--state</code> <code>STATE</code><ul>
+<li>Filter by US state code.</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>camply recreation-areas --search &quot;Yosemite National Park&quot;
+</code></pre></div>
+<p>**<em>see the <a href="#search-for-recreation-areas-by-query-string">examples</a> for more information</em></p>
+<h2 id="campgrounds">campgrounds<a class="headerlink" href="#campgrounds" title="Permanent link">#</a></h2>
+<p>Search for Campgrounds and their IDs. Campgrounds are facilities inside of Recreation Areas that
+contain campsites. Most 'campgrounds' are areas made up of multiple campsites, others are facilities
+like fire towers or cabins that might only contain a single 'campsite' to book.</p>
+<h3 id="arguments_2">Arguments<a class="headerlink" href="#arguments_2" title="Permanent link">#</a></h3>
+<ul>
+<li><code>--search</code> <code>SEARCH</code><ul>
+<li>Search for Campgrounds or Recreation Areas by search string.</li>
+</ul>
+</li>
+<li><code>--state</code> <code>STATE</code><ul>
+<li>Filter by US state code.</li>
+</ul>
+</li>
+<li><code>--rec-area</code>: <code>RECREATION_AREA_ID</code><ul>
+<li>Add Recreation Areas (comprised of campgrounds) by ID.</li>
+</ul>
+</li>
+<li><code>--campground</code>: <code>CAMPGROUND_ID</code><ul>
+<li>Add individual Campgrounds by ID.</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>camply campgrounds --search &quot;Fire Tower Lookout&quot; --state CA
+</code></pre></div>
+<p>**<em>see the <a href="#look-for-specific-campgrounds-by-query-string">examples</a> for more information</em></p>
+<h2 id="configure">configure<a class="headerlink" href="#configure" title="Permanent link">#</a></h2>
+<p>Set up <code>camply</code> configuration file with an interactive console</p>
+<p>In order to send notifications through <code>camply</code> you must set up some authorization values. Whether
+you need to set up <a href="https://pushover.net">Pushover notifications</a>
+, <a href="https://www.pushbullet.com/#settings/account">PushBullet</a>, <a href="https://core.telegram.org/bots">Telegram</a>,
+or Email messages, everything can be done through the <code>configure</code> command. The end result is a file called
+<a href="../examples/example.camply"><code>.camply</code></a> in your home folder. See
+the <a href="../docker/#running-in-docker">Running in Docker</a> section to see how you can use environment variables
+instead of a config file.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>camply configure
+</code></pre></div>
+<h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">#</a></h2>
+<p>Read through the examples below to get a better understanding of <code>camply</code>, its features, and the
+functionality of the different arguments provided to the CLI.</p>
+<h3 id="searching-for-a-campsite">Searching for a Campsite<a class="headerlink" href="#searching-for-a-campsite" title="Permanent link">#</a></h3>
+<p>The below search looks for campsites inside of Recreation Area ID #2725 (Glacier National Park)
+between 2023-07-10 and 2023-07-17. The search will be performed once and any results will be logged
+to the console. camply searches for campsites inside of search windows in increments of one night.
+<code>--start-date</code> and <code>--end-date</code> define the bounds of the search window, you will be leaving the day
+after <code>--end-date</code>.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>camply campsites \
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>    --rec-area 2725 \
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>    --start-date 2023-07-10 \
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>    --end-date 2023-07-18
+</code></pre></div>
+<h3 id="searching-for-a-campsite-by-campground-id">Searching for a Campsite by Campground ID<a class="headerlink" href="#searching-for-a-campsite-by-campground-id" title="Permanent link">#</a></h3>
+<p>The below search looks for across three campgrounds (all inside Glacier National Park)
+between 2023-07-10 and 2023-07-17. Multiple Campgrounds (and Recreation Areas too) can be found by
+supplying the arguments more than once.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>camply campsites \
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>    --campground 232493 \
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>    --campground 251869 \
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>    --campground 232492 \
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>    --start-date 2023-07-10 \
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>    --end-date 2023-07-18
+</code></pre></div>
+<h3 id="searching-for-a-specific-campsite-by-id">Searching for a Specific Campsite by ID<a class="headerlink" href="#searching-for-a-specific-campsite-by-id" title="Permanent link">#</a></h3>
+<p>Sometimes you have a favorite campsite inside your favorite campground. To search for just a
+specific campsite (and not just all campsites within a campground) you can give its ID to <code>camply</code>
+with the <code>--campsite</code> argument. For example, site <code>R035</code> in Many Glacier Campground, MT is close to
+a trailhead. Its URL
+is <a href="https://www.recreation.gov/camping/campsites/98363">https://www.recreation.gov/camping/campsites/98363</a>
+, here we can see that it's ID is <code>98363</code>. You can search for one or many campsites by ID by
+supplying the <code>--campsite</code> argument. You can provide the <code>--campsite</code> argument once or multiple
+times to search for different campsites. Note, <code>--campsite</code> arguments override any <code>--rec-area</code>
+or <code>--campground</code> parameters provided.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>camply campsites \
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>    --campsite 98363 \
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>    --start-date 2023-07-10 \
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>    --end-date 2023-07-18
+</code></pre></div>
+<h3 id="continuously-searching-for-a-campsite">Continuously Searching for A Campsite<a class="headerlink" href="#continuously-searching-for-a-campsite" title="Permanent link">#</a></h3>
+<p>Sometimes you want to look for campgrounds until an eventual match is found. The below snippet will
+search for matching campsites until it finds a match. It also sends a notification via <code>pushover</code>
+once matches are found. Alternate notification methods are <code>email</code>, <code>pushbullet</code>, <code>telegram</code>, and <code>silent</code> (
+default).</p>
+<p><strong>Important Note</strong>: When <code>camply</code> is told to run <code>--continuous</code> with non-silent notifications set up
+and it finds more than 5 matching campsites on the first try, it will only send notifications for
+the first 5 campsites. This is to prevent thousands of campsites flooding your notifications. It's
+always encouraged to perform an initial online search before setting up a <code>camply</code> search. To bypass
+this behavior and send all notifications, pass the <code>--notify-first-try</code> argument.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>camply campsites \
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>    --rec-area 2725 \
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>    --start-date 2023-07-12 \
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>    --end-date 2023-07-13 \
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>    --continuous \
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>    --notifications pushover \
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>    --notify-first-try
+</code></pre></div>
+<h3 id="continue-looking-after-the-first-match-is-found">Continue Looking After The First Match Is Found<a class="headerlink" href="#continue-looking-after-the-first-match-is-found" title="Permanent link">#</a></h3>
+<p>Sometimes you want to search for all possible matches up until your arrival date. No problem. Add
+the <code>--search-forever</code> and <code>camply</code> won't stop sending notifications after the first match is found.
+One important note, <code>camply</code> will save and store all previous notifications when <code>--search-forever</code>
+is enabled, so it won't notify you about the exact same campsite availability twice. This can be
+problematic when certain campsites become available more than once.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>camply campsites \
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>    --rec-area 2725 \
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>    --start-date 2023-07-01 \
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>    --end-date 2023-08-01 \
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>    --continuous \
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>    --notifications pushover \
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>    --search-forever
+</code></pre></div>
+<h3 id="send-a-push-notification">Send a Push Notification<a class="headerlink" href="#send-a-push-notification" title="Permanent link">#</a></h3>
+<p>camply supports notifications via <code>Pushbullet</code>, <code>Pushover</code>, <code>Telegram</code>, and <code>Email</code>. Pushbullet is a great
+option because it's
+a <a href="https://www.pushbullet.com/#settings/account">free and easy service to sign up for</a>
+and it supports notifications across different devices and operating systems. Similar to <code>Pushover</code>,
+<code>Pushbullet</code> requires that you create an account and an API token, and share that token with camply
+through a <a href="../examples/example.camply">configuration file</a> (via the <code>camply configure</code>
+command) or though environment variables (<code>PUSHBULLET_API_TOKEN</code>).</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>camply campsites \
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>    --rec-area 2991 \
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>    --start-date 2023-09-10 \
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>    --end-date 2023-09-21 \
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>    --continuous \
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>    --notifications pushbullet
+</code></pre></div>
+<h3 id="send-a-text-message">Send a Text Message<a class="headerlink" href="#send-a-text-message" title="Permanent link">#</a></h3>
+<p>If you want to sign up for a <a href="https://www.twilio.com/try-twilio">Twilio</a> account, camply also supports
+sending text messages via SMS. You can set up your Twilio configuration via <code>camply configure</code>. You will need
+to set the following config values for Twilio: <code>TWILIO_ACCOUNT_SID</code>, <code>TWILIO_AUTH_TOKEN</code>,
+<code>TWILIO_SOURCE_NUMBER</code>, <code>TWILIO_DEST_NUMBERS</code>.</p>
+<p>Sending text messages via Twilio also requires the <code>twilio</code> extras:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>pip install camply[twilio]
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>camply campsites \
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>    --rec-area 2991 \
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>    --start-date 2023-09-10 \
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>    --end-date 2023-09-21 \
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>    --continuous \
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>    --notifications twilio
+</code></pre></div>
+<h3 id="send-a-notification-to-different-services">Send a Notification to Different Services<a class="headerlink" href="#send-a-notification-to-different-services" title="Permanent link">#</a></h3>
+<p>camply supports notifications from different providers. To send notifications to multiple providers
+you can pass the --notifications parameter multiple times. YAML config entries also
+accept an array as well.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>camply campsites \
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>    --rec-area 2991 \
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>    --start-date 2023-09-10 \
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>    --end-date 2023-09-21 \
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>    --continuous \
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>    --notifications email \
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>    --notifications pushover
+</code></pre></div>
+<h3 id="look-for-weekend-campsite-availabilities">Look for Weekend Campsite Availabilities<a class="headerlink" href="#look-for-weekend-campsite-availabilities" title="Permanent link">#</a></h3>
+<p>This below search looks across larger periods of time, but only if a campground is available to book
+on a Friday or Saturday night (<code>--weekends</code>). It also uses the <code>--polling-interval</code> argument which
+checks every 5 minutes instead of the default 10 minutes.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>camply campsites \
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>    --rec-area 2991 \
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>    --start-date 2023-05-01 \
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>    --end-date 2023-08-01 \
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>    --weekends \
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>    --continuous \
+<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>    --notifications email \
+<a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>    --polling-interval 5
+</code></pre></div>
+<h3 id="look-for-consecutive-nights-at-the-same-campsite">Look for Consecutive Nights at the Same Campsite<a class="headerlink" href="#look-for-consecutive-nights-at-the-same-campsite" title="Permanent link">#</a></h3>
+<p>A lot of times you need to search for consecutive nights at the same campsite. By default, any and
+all campsites with a single nights booking are returned by camply. To search for campsites with
+consecutive night stays, pass the <code>--nights</code> argument.</p>
+<p>Note, the <code>--nights</code> argument handles issues with improper search parameters. For example, if you
+set the <code>--weekends</code> parameter the maximum number of consecutive nights possible is 2. If you supply
+more than this your <code>--nights</code> parameter will be overwritten to 2.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>camply campsites \
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>    --rec-area 2991 \
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>    --start-date 2023-05-01 \
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>    --end-date 2023-08-01 \
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>    --nights 4
+</code></pre></div>
+<h3 id="look-for-a-campsite-inside-of-yellowstone">Look for a Campsite Inside of Yellowstone<a class="headerlink" href="#look-for-a-campsite-inside-of-yellowstone" title="Permanent link">#</a></h3>
+<p>Yellowstone doesn't use <a href="https://recreation.gov">https://recreation.gov</a> to manage its campgrounds, instead it uses its own
+proprietary system. In order to search the Yellowstone API for campsites, make sure to pass
+the <code>--provider "yellowstone"</code> argument. This flag disables <code>--rec-area</code> argument.</p>
+<p>To learn more about using <code>camply</code> to find campsites at Yellowstone, check out
+this <a href="https://github.com/juftin/camply/discussions/15#discussioncomment-783657">discussion</a>.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>camply campsites \
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>    --provider yellowstone \
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>    --start-date 2023-07-09 \
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>    --end-date 2023-07-17 \
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>    --continuous
+</code></pre></div>
+<h3 id="look-for-a-campsite-across-multiple-recreation-areas">Look for a Campsite Across Multiple Recreation areas<a class="headerlink" href="#look-for-a-campsite-across-multiple-recreation-areas" title="Permanent link">#</a></h3>
+<p>You don't have to confine your search to a single Recreation or Campground ID. Adding multiple
+arguments to the command line will search across multiple IDs. Keep in mind that any <code>--campground</code>
+arguments will overwrite all <code>--rec-area</code> arguments.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>camply campsites \
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>    --rec-area 2991 \
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>    --rec-area 1074 \
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>    --start-date 2023-07-09 \
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>    --end-date 2023-07-17 \
+<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a>    --nights 5
+</code></pre></div>
+<h3 id="using-a-yaml-configuration-file-to-search-for-campsites">Using a YAML Configuration file to search for campsites<a class="headerlink" href="#using-a-yaml-configuration-file-to-search-for-campsites" title="Permanent link">#</a></h3>
+<p>Sometimes, using a YAML configuration file is easier to manage all of your search options. See the
+below <a href="../examples/example_search.yaml">YAML example file</a> and corresponding camply command:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="nt">provider</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RecreationDotGov</span><span class="w">  </span><span class="c1"># RecreationDotGov IF NOT PROVIDED</span><span class="w"></span>
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="nt">recreation_area</span><span class="p">:</span><span class="w"> </span><span class="c1"># (LIST OR SINGLE ENTRY)</span><span class="w"></span>
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2991</span><span class="w">  </span><span class="c1"># Yosemite National Park, CA (All Campgrounds)</span><span class="w"></span>
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1074</span><span class="w">  </span><span class="c1"># Sierra National Forest, CA (All Campgrounds)</span><span class="w"></span>
+<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="nt">campgrounds</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span><span class="w">  </span><span class="c1"># ENTIRE FIELD CAN BE OMITTED IF NOT USED - (LIST OR SINGLE ENTRY)</span><span class="w"></span>
+<a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="nt">campsites</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span><span class="w">   </span><span class="c1"># OVERRIDES CAMPGROUNDS / RECREATION AREA - (LIST OR SINGLE ENTRY)</span><span class="w"></span>
+<a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a><span class="nt">start_date</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2023-09-12</span><span class="w">  </span><span class="c1"># YYYY-MM-DD</span><span class="w"></span>
+<a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a><span class="nt">end_date</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2023-09-13</span><span class="w">  </span><span class="c1"># YYYY-MM-DD</span><span class="w"></span>
+<a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a><span class="nt">weekends</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w">  </span><span class="c1"># FALSE BY DEFAULT</span><span class="w"></span>
+<a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a><span class="nt">nights</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span><span class="w">  </span><span class="c1"># 1 BY DEFAULT</span><span class="w"></span>
+<a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a><span class="nt">continuous</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w">  </span><span class="c1"># DEFAULTS TO TRUE</span><span class="w"></span>
+<a id="__codelineno-18-12" name="__codelineno-18-12" href="#__codelineno-18-12"></a><span class="nt">polling_interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5</span><span class="w">  </span><span class="c1"># DEFAULTS TO 10 , CAN&#39;T BE LESS THAN 5</span><span class="w"></span>
+<a id="__codelineno-18-13" name="__codelineno-18-13" href="#__codelineno-18-13"></a><span class="nt">notifications</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">email</span><span class="w">  </span><span class="c1"># (silent, email, pushover, pushbullet, and telegram), DEFAULTS TO `silent`</span><span class="w"></span>
+<a id="__codelineno-18-14" name="__codelineno-18-14" href="#__codelineno-18-14"></a><span class="nt">search_forever</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w">  </span><span class="c1"># FALSE BY DEFAULT</span><span class="w"></span>
+<a id="__codelineno-18-15" name="__codelineno-18-15" href="#__codelineno-18-15"></a><span class="nt">notify_first_try</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w">  </span><span class="c1"># FALSE BY DEFAULT</span><span class="w"></span>
+<a id="__codelineno-18-16" name="__codelineno-18-16" href="#__codelineno-18-16"></a><span class="nt">equipment</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span><span class="w"> </span><span class="c1"># Array of Equipment Search Lists - DEFAULTS TO `null`</span><span class="w"></span>
+<a id="__codelineno-18-17" name="__codelineno-18-17" href="#__codelineno-18-17"></a><span class="nt">offline_search</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w">    </span><span class="c1"># FALSE BY DEFAULT</span><span class="w"></span>
+<a id="__codelineno-18-18" name="__codelineno-18-18" href="#__codelineno-18-18"></a><span class="nt">offline_search_path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">camply_campsites.json</span><span class="w"> </span><span class="c1"># Defaults to `camply_campsites.json`</span><span class="w"></span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>camply campsites --yaml-config example_search.yaml
+</code></pre></div>
+<h3 id="searching-for-a-campsite-that-fits-your-equipment">Searching for a Campsite That Fits Your Equipment<a class="headerlink" href="#searching-for-a-campsite-that-fits-your-equipment" title="Permanent link">#</a></h3>
+<p>Camply can help you filter campsites to fit your specific equipment, like a Trailer or an RV.
+Most likely, you care that the campsite fits the length of your RV so you can specify that as well.
+To search for specific equipment and its length provide the <code>--equipment</code> option with two arguments,
+the equipment name and the equipment length. If you don't want to filter based on length provide a
+length of zero. If you provide multiple <code>--equipment</code> options, sites matching any of your search
+equipment will be returned.</p>
+<p>Current supported equipment names are <code>Vehicle</code>, <code>Tent</code>, <code>RV</code>, and <code>Trailer</code>. Be careful when
+filtering on <code>Tents</code> and <code>Vehicle</code> length, sometimes Recreation.gov doesn't provide that information,
+it is safer to set length to 0.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>camply campsites \
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>    --rec-area 2991 \
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>    --start-date 2023-07-09 \
+<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>    --end-date 2023-07-17 \
+<a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a>    --nights 5 \
+<a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a>    --equipment RV 25
+</code></pre></div>
+<p>Here's what the above search would look like on a YAML Config:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="nt">recreation_area</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2991</span><span class="w"></span>
+<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="nt">start_date</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2023-07-09</span><span class="w"></span>
+<a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a><span class="nt">end_date</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2023-07-17</span><span class="w"></span>
+<a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a><span class="nt">nights</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5</span><span class="w"></span>
+<a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a><span class="nt">equipment</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">RV</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">25</span><span class="w"> </span><span class="p p-Indicator">]</span><span class="w"></span>
+</code></pre></div>
+<p>Finally, here's a search that accommodates trailers of all lengths:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>camply campsites \
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>    --rec-area 2991 \
+<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>    --start-date 2023-07-09 \
+<a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a>    --end-date 2023-07-17 \
+<a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a>    --nights 5 \
+<a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a>    --equipment Trailer 0
+</code></pre></div>
+<h3 id="saving-the-results-of-a-search">Saving the Results of a Search<a class="headerlink" href="#saving-the-results-of-a-search" title="Permanent link">#</a></h3>
+<p>In some cases, you might want to save all the campsites found during one
+search and load them into a new search, so you don't receive duplicate notifications.
+This can be achieved by passing the <code>--offline-search</code> flag. By default, camply will save
+the results in a file called <code>camply_campsites.json</code>.</p>
+<p>Optionally, you can also path the <code>--offline-search-path</code> flag to specify a certain file
+path to save the results as. When a file path with a <code>.json</code> extension is passed
+camply will export the results as a JSON file. When the <code>.pkl</code> or <code>.pickle</code> extension is
+used, camply will use a serialized Pickle file.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>camply \
+<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>  campsites \
+<a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a>  --campground 232064 \
+<a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a>  --start-date 2023-09-01 \
+<a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a>  --end-date 2023-10-01 \
+<a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a>  --continuous \
+<a id="__codelineno-23-7" name="__codelineno-23-7" href="#__codelineno-23-7"></a>  --offline-search
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>camply \
+<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>  campsites \
+<a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a>  --campground 232064 \
+<a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a>  --start-date 2023-09-01 \
+<a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a>  --end-date 2023-10-01 \
+<a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a>  --continuous \
+<a id="__codelineno-24-7" name="__codelineno-24-7" href="#__codelineno-24-7"></a>  --offline-search \
+<a id="__codelineno-24-8" name="__codelineno-24-8" href="#__codelineno-24-8"></a>  --offline-search-path campsites.pkl
+</code></pre></div>
+<h3 id="search-for-recreation-areas-by-query-string">Search for Recreation Areas by Query String<a class="headerlink" href="#search-for-recreation-areas-by-query-string" title="Permanent link">#</a></h3>
+<p>Just need to find what your local Recreation Area ID number is? This simple command allows you to
+search and list recreation areas. It accepts <code>--search</code> and <code>--state</code> arguments.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>camply recreation-areas --search &quot;Yosemite National Park&quot;
+</code></pre></div>
+<h3 id="look-for-specific-campgrounds-within-a-recreation-area">Look for Specific Campgrounds Within a Recreation Area<a class="headerlink" href="#look-for-specific-campgrounds-within-a-recreation-area" title="Permanent link">#</a></h3>
+<p>Need to get even more specific and search for a particular campground? This search lists campgrounds
+attached to a recreation area id <code>--rec-area</code>. It also accepts <code>--search</code> and <code>--state</code>
+arguments.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>camply campgrounds --rec-area 2991
+</code></pre></div>
+<h3 id="look-for-specific-campgrounds-by-query-string">Look for Specific Campgrounds by Query String<a class="headerlink" href="#look-for-specific-campgrounds-by-query-string" title="Permanent link">#</a></h3>
+<p>The below search looks for Fire Lookout Towers to stay in inside of California.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>camply campgrounds --search &quot;Fire Tower Lookout&quot; --state CA
+</code></pre></div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../installation/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Installation ☀️" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Installation ☀️
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../recreationdotgov/" class="md-footer__link md-footer__link--next" aria-label="Next: Finding Campsites on Recreation.gov 🌲" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Finding Campsites on Recreation.gov 🌲
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2020 Justin Flannery
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tracking", "content.code.annotate"], "search": "../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d6c3db9e.min.js"></script>
+      
+    
+  </body>
+</html>

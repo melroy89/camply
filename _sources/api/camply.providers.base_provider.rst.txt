@@ -1,7 +1,0 @@
-camply.providers.base\_provider module
-======================================
-
-.. automodule:: camply.providers.base_provider
-   :members:
-   :undoc-members:
-   :show-inheritance:

@@ -1,7 +1,0 @@
-camply.config.notification\_config module
-=========================================
-
-.. automodule:: camply.config.notification_config
-   :members:
-   :undoc-members:
-   :show-inheritance:

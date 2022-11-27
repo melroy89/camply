@@ -1,7 +1,0 @@
-camply.containers.data\_containers module
-=========================================
-
-.. automodule:: camply.containers.data_containers
-   :members:
-   :undoc-members:
-   :show-inheritance:

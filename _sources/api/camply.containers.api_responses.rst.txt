@@ -1,7 +1,0 @@
-camply.containers.api\_responses module
-=======================================
-
-.. automodule:: camply.containers.api_responses
-   :members:
-   :undoc-members:
-   :show-inheritance:
