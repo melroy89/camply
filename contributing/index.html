@@ -44,6 +44,18 @@
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
+  
+
+
+  
+  
+
+
+  <script id="__analytics">function __md_analytics(){function n(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],n("js",new Date),n("config","G-J7HWHT1EZN"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&n("event","search",{search_term:this.value})}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");n("event","feedback",{page:t,data:e}),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){n("config","G-J7HWHT1EZN",{page_path:e.pathname})})});var e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=G-J7HWHT1EZN",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
+
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
 
     
     
@@ -1423,84 +1435,63 @@ To get started first install <code>poetry</code>:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>poetry run tox -e mypy
 </code></pre></div>
 <h3 id="releasing">Releasing<a class="headerlink" href="#releasing" title="Permanent link">#</a></h3>
-<p>Releases are triggered entirely by CI/CD via Pull requests being merged into
-the main branch.</p>
-<p>The version bump on each release is decided by the labels placed on the Pull Requests.
-There must be one, and only one, of the following labels on each pull request to the main branch:
-<code>BUMP_MAJOR</code>, <code>BUMP_MINOR</code>, <code>BUMP_PATCH</code>. Pull Requests will be un-mergeable unless the version on
-your <code>pyproject.toml</code> matches the main branch and the proper version labels are applied.</p>
-<p>The Release workflow performs the following automated steps:</p>
-<ul>
-<li>Publish a GitHub Release.</li>
-<li>Apply a version tag to the repository.</li>
-<li>
-<p>Build and upload the package to PyPI.</p>
-</li>
-<li>
-<p>Build and upload the package to Docker Hub.
-Release notes are populated with the titles and authors of merged pull requests.
-You can group the pull requests into separate sections
-by applying labels to them, like this:</p>
-</li>
-</ul>
-<!-- table-release-drafter-sections-begin -->
-
+<p>Releases are handled entirely by CI/CD via Pull requests being merged into
+the main branch. Contributions follow the <a href="https://gitmoji.dev/">gitmoji</a> standards with <a href="https://www.conventionalcommits.org/en/v1.0.0/">conventional commits</a>,
+orchestration is handled by the <a href="https://github.com/semantic-release/semantic-release">semantic-release</a> tool.</p>
+<p>While you can denote other changes on your commit messages with gitmoji, the following
+commit message emoji prefixes are the only ones to trigger new releases:</p>
 <table>
 <thead>
 <tr>
-<th>Pull Request Label</th>
-<th>Section in Release Notes</th>
+<th>Unicode</th>
+<th>Shortcode</th>
+<th>Description</th>
+<th>Semver</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>breaking</code></td>
-<td>💥 Breaking Changes</td>
+<td>💥</td>
+<td>:boom:</td>
+<td>Introduce breaking changes.</td>
+<td>Major</td>
 </tr>
 <tr>
-<td><code>enhancement</code></td>
-<td>🚀 Features</td>
+<td>✨</td>
+<td>:sparkles:</td>
+<td>Introduce new features.</td>
+<td>Minor</td>
 </tr>
 <tr>
-<td><code>removal</code></td>
-<td>🔥 Removals and Deprecations</td>
+<td>🐛</td>
+<td>:bug:</td>
+<td>Fix a bug.</td>
+<td>Patch</td>
 </tr>
 <tr>
-<td><code>bug</code></td>
-<td>🐞 Fixes</td>
+<td>🚑</td>
+<td>:ambulance:</td>
+<td>Critical hotfix.</td>
+<td>Patch</td>
 </tr>
 <tr>
-<td><code>performance</code></td>
-<td>🐎 Performance</td>
-</tr>
-<tr>
-<td><code>testing</code></td>
-<td>🚨 Testing</td>
-</tr>
-<tr>
-<td><code>ci</code></td>
-<td>👷 Continuous Integration</td>
-</tr>
-<tr>
-<td><code>documentation</code></td>
-<td>📚 Documentation</td>
-</tr>
-<tr>
-<td><code>refactoring</code></td>
-<td>🔨 Refactoring</td>
-</tr>
-<tr>
-<td><code>style</code></td>
-<td>💄 Style</td>
-</tr>
-<tr>
-<td><code>dependencies</code></td>
-<td>📦 Dependencies</td>
+<td>🔒</td>
+<td>:lock:</td>
+<td>Fix security issues.</td>
+<td>Patch</td>
 </tr>
 </tbody>
 </table>
-<!-- table-release-drafter-sections-end -->
+<p>The Release workflow performs the following automated steps:</p>
+<ul>
+<li>Publish a GitHub Release.</li>
+<li>Apply a version tag to the repository.</li>
+<li>Build and upload the package to PyPI.</li>
+<li>Build and upload the package to Docker Hub.</li>
+</ul>
 
+
+  
 
 
 
