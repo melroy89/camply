@@ -1636,35 +1636,71 @@ functionality can be enabled with  <code>--continuous</code> and notifications c
 <tr>
 <td><code>--equipment-id</code></td>
 <td>text</td>
-<td>Search for campsites campaitble with specific equipment categories. Going To</td>
-<td></td>
+<td>Search for campsites campaitble with specific equipment categories. Going To Camp uses equipment category IDs for filtering campsites by equipment. Every recreation area has equipment categories unique to it. Use <code>camply equipment-types --provider goingtocamp --rec-area &lt;rec area id&gt;</code> to get a listing of equipment for an area.</td>
+<td>None</td>
 </tr>
 <tr>
-<td>Camp uses equipment category IDs for filtering campsites by equipment. Every</td>
-<td></td>
-<td></td>
-<td></td>
+<td><code>--nights</code></td>
+<td>integer</td>
+<td>Search for campsite stays with consecutive nights. Defaults to 1 which returns all campsites found.</td>
+<td><code>1</code></td>
 </tr>
 <tr>
-<td>recreation area has equipment categories unique to it.</td>
-<td></td>
-<td></td>
-<td></td>
+<td><code>--provider</code></td>
+<td>text</td>
+<td>Camping Search Provider. Options available are 'Yellowstone', 'RecreationDotGov', and 'GoingToCamp'. Defaults to 'RecreationDotGov', not case-sensitive.</td>
+<td>None</td>
+</tr>
+<tr>
+<td><code>--weekends</code></td>
+<td>boolean</td>
+<td>Only search for weekend bookings (Fri/Sat nights).</td>
+<td><code>False</code></td>
+</tr>
+<tr>
+<td><code>--end-date</code></td>
+<td>text</td>
+<td>(YYYY-MM-DD) End of Search window. You will be checking out this day.</td>
+<td>None</td>
+</tr>
+<tr>
+<td><code>--start-date</code></td>
+<td>text</td>
+<td>(YYYY-MM-DD) Start of Search window. You will be arriving this day.</td>
+<td>None</td>
+</tr>
+<tr>
+<td><code>--campsite</code></td>
+<td>text</td>
+<td>Add individual Campsites by ID.</td>
+<td>None</td>
+</tr>
+<tr>
+<td><code>--campground</code></td>
+<td>text</td>
+<td>Add individual Campgrounds by ID.</td>
+<td>None</td>
+</tr>
+<tr>
+<td><code>--rec-area</code></td>
+<td>text</td>
+<td>Add Recreation Areas (comprised of campgrounds) by ID.</td>
+<td>None</td>
+</tr>
+<tr>
+<td><code>--debug</code> / <code>--no-debug</code></td>
+<td>boolean</td>
+<td>Enable extra debugging output</td>
+<td>None</td>
+</tr>
+<tr>
+<td><code>--help</code></td>
+<td>boolean</td>
+<td>Show this message and exit.</td>
+<td><code>False</code></td>
 </tr>
 </tbody>
 </table>
-<p>Use <code>camply equipment-types --provider goingtocamp --rec-area &lt;rec area id&gt;</code>
-to get a listing of equipment for an area. | None |
-| <code>--nights</code> | integer | Search for campsite stays with consecutive nights. Defaults to 1 which returns all campsites found. | <code>1</code> |
-| <code>--provider</code> | text | Camping Search Provider. Options available are 'Yellowstone', 'RecreationDotGov', and 'GoingToCamp'. Defaults to 'RecreationDotGov', not case-sensitive. | None |
-| <code>--weekends</code> | boolean | Only search for weekend bookings (Fri/Sat nights). | <code>False</code> |
-| <code>--end-date</code> | text | (YYYY-MM-DD) End of Search window. You will be checking out this day. | None |
-| <code>--start-date</code> | text | (YYYY-MM-DD) Start of Search window. You will be arriving this day. | None |
-| <code>--campsite</code> | text | Add individual Campsites by ID. | None |
-| <code>--campground</code> | text | Add individual Campgrounds by ID. | None |
-| <code>--rec-area</code> | text | Add Recreation Areas (comprised of campgrounds) by ID. | None |
-| <code>--debug</code> / <code>--no-debug</code> | boolean | Enable extra debugging output | None |
-| <code>--help</code> | boolean | Show this message and exit. | <code>False</code> |</p>
 <h2 id="camply-configure">camply configure<a class="headerlink" href="#camply-configure" title="Permanent link">#</a></h2>
 <p>Set up camply configuration file with an interactive console</p>
 <p>In order to send notifications through camply you must set up some authorization values.

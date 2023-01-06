@@ -1533,7 +1533,7 @@
                 
                   
 
-  <a href="https://github.com/Users/juftin/git/camply/camply/cli.py" title="Edit this page" class="md-content__button md-icon">
+  <a href="https://github.com/home/runner/work/camply/camply/camply/cli.py" title="Edit this page" class="md-content__button md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
@@ -1890,7 +1890,10 @@ functionality can be enabled with  <code>--continuous</code> and notifications c
 
       <details class="quote">
         <summary>Source code in <code>camply/cli.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-510">510</a></span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-507">507</a></span>
+<span class="normal"><a href="#__codelineno-0-508">508</a></span>
+<span class="normal"><a href="#__codelineno-0-509">509</a></span>
+<span class="normal"><a href="#__codelineno-0-510">510</a></span>
 <span class="normal"><a href="#__codelineno-0-511">511</a></span>
 <span class="normal"><a href="#__codelineno-0-512">512</a></span>
 <span class="normal"><a href="#__codelineno-0-513">513</a></span>
@@ -1997,120 +2000,117 @@ functionality can be enabled with  <code>--continuous</code> and notifications c
 <span class="normal"><a href="#__codelineno-0-614">614</a></span>
 <span class="normal"><a href="#__codelineno-0-615">615</a></span>
 <span class="normal"><a href="#__codelineno-0-616">616</a></span>
-<span class="normal"><a href="#__codelineno-0-617">617</a></span>
-<span class="normal"><a href="#__codelineno-0-618">618</a></span>
-<span class="normal"><a href="#__codelineno-0-619">619</a></span>
-<span class="normal"><a href="#__codelineno-0-620">620</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-510" name="__codelineno-0-510"></a><span class="nd">@camply_command_line</span><span class="o">.</span><span class="n">command</span><span class="p">()</span>
-<a id="__codelineno-0-511" name="__codelineno-0-511"></a><span class="nd">@yaml_config_argument</span>
-<a id="__codelineno-0-512" name="__codelineno-0-512"></a><span class="nd">@offline_search_path_argument</span>
-<a id="__codelineno-0-513" name="__codelineno-0-513"></a><span class="nd">@offline_search_argument</span>
-<a id="__codelineno-0-514" name="__codelineno-0-514"></a><span class="nd">@search_forever_argument</span>
-<a id="__codelineno-0-515" name="__codelineno-0-515"></a><span class="nd">@notify_first_try_argument</span>
-<a id="__codelineno-0-516" name="__codelineno-0-516"></a><span class="nd">@notifications_argument</span>
-<a id="__codelineno-0-517" name="__codelineno-0-517"></a><span class="nd">@polling_interval_argument</span>
-<a id="__codelineno-0-518" name="__codelineno-0-518"></a><span class="nd">@continuous_argument</span>
-<a id="__codelineno-0-519" name="__codelineno-0-519"></a><span class="nd">@equipment_argument</span>
-<a id="__codelineno-0-520" name="__codelineno-0-520"></a><span class="nd">@equipment_id_argument</span>
-<a id="__codelineno-0-521" name="__codelineno-0-521"></a><span class="nd">@nights_argument</span>
-<a id="__codelineno-0-522" name="__codelineno-0-522"></a><span class="nd">@provider_argument</span>
-<a id="__codelineno-0-523" name="__codelineno-0-523"></a><span class="nd">@weekends_argument</span>
-<a id="__codelineno-0-524" name="__codelineno-0-524"></a><span class="nd">@end_date_argument</span>
-<a id="__codelineno-0-525" name="__codelineno-0-525"></a><span class="nd">@start_date_argument</span>
-<a id="__codelineno-0-526" name="__codelineno-0-526"></a><span class="nd">@campsite_id_argument</span>
-<a id="__codelineno-0-527" name="__codelineno-0-527"></a><span class="nd">@campground_argument</span>
-<a id="__codelineno-0-528" name="__codelineno-0-528"></a><span class="nd">@rec_area_argument</span>
-<a id="__codelineno-0-529" name="__codelineno-0-529"></a><span class="nd">@debug_option</span>
-<a id="__codelineno-0-530" name="__codelineno-0-530"></a><span class="nd">@click</span><span class="o">.</span><span class="n">pass_obj</span>
-<a id="__codelineno-0-531" name="__codelineno-0-531"></a><span class="k">def</span> <span class="nf">campsites</span><span class="p">(</span>
-<a id="__codelineno-0-532" name="__codelineno-0-532"></a>    <span class="n">context</span><span class="p">:</span> <span class="n">CamplyContext</span><span class="p">,</span>
-<a id="__codelineno-0-533" name="__codelineno-0-533"></a>    <span class="n">debug</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span>
-<a id="__codelineno-0-534" name="__codelineno-0-534"></a>    <span class="n">rec_area</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-<a id="__codelineno-0-535" name="__codelineno-0-535"></a>    <span class="n">campground</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-<a id="__codelineno-0-536" name="__codelineno-0-536"></a>    <span class="n">campsite</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-<a id="__codelineno-0-537" name="__codelineno-0-537"></a>    <span class="n">start_date</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-<a id="__codelineno-0-538" name="__codelineno-0-538"></a>    <span class="n">end_date</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-<a id="__codelineno-0-539" name="__codelineno-0-539"></a>    <span class="n">weekends</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
-<a id="__codelineno-0-540" name="__codelineno-0-540"></a>    <span class="n">nights</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
-<a id="__codelineno-0-541" name="__codelineno-0-541"></a>    <span class="n">provider</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">DEFAULT_CAMPLY_PROVIDER</span><span class="p">,</span>
-<a id="__codelineno-0-542" name="__codelineno-0-542"></a>    <span class="n">continuous</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
-<a id="__codelineno-0-543" name="__codelineno-0-543"></a>    <span class="n">polling_interval</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">SearchConfig</span><span class="o">.</span><span class="n">RECOMMENDED_POLLING_INTERVAL</span><span class="p">,</span>
-<a id="__codelineno-0-544" name="__codelineno-0-544"></a>    <span class="n">notifications</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="s2">&quot;silent&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-545" name="__codelineno-0-545"></a>    <span class="n">notify_first_try</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
-<a id="__codelineno-0-546" name="__codelineno-0-546"></a>    <span class="n">search_forever</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
-<a id="__codelineno-0-547" name="__codelineno-0-547"></a>    <span class="n">yaml_config</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-<a id="__codelineno-0-548" name="__codelineno-0-548"></a>    <span class="n">offline_search</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
-<a id="__codelineno-0-549" name="__codelineno-0-549"></a>    <span class="n">offline_search_path</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-<a id="__codelineno-0-550" name="__codelineno-0-550"></a>    <span class="n">equipment</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-<a id="__codelineno-0-551" name="__codelineno-0-551"></a>    <span class="n">equipment_id</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-<a id="__codelineno-0-552" name="__codelineno-0-552"></a><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<a id="__codelineno-0-553" name="__codelineno-0-553"></a>    <span class="sd">&quot;&quot;&quot;</span>
-<a id="__codelineno-0-554" name="__codelineno-0-554"></a><span class="sd">    Find available Campsites using search criteria</span>
-<a id="__codelineno-0-555" name="__codelineno-0-555"></a>
-<a id="__codelineno-0-556" name="__codelineno-0-556"></a><span class="sd">    Search for a campsite within camply. Campsites are returned based on the search criteria</span>
-<a id="__codelineno-0-557" name="__codelineno-0-557"></a><span class="sd">    provided. Campsites contain properties like booking date, site type (tent, RV, cabin, etc),</span>
-<a id="__codelineno-0-558" name="__codelineno-0-558"></a><span class="sd">    capacity, price, and a link to make the booking. Required parameters include</span>
-<a id="__codelineno-0-559" name="__codelineno-0-559"></a><span class="sd">    `--start-date`, `--end-date`, `--rec-area` / `--campground`. Constant searching</span>
-<a id="__codelineno-0-560" name="__codelineno-0-560"></a><span class="sd">    functionality can be enabled with  `--continuous` and notifications can be enabled using</span>
-<a id="__codelineno-0-561" name="__codelineno-0-561"></a><span class="sd">    `--notifications`.</span>
-<a id="__codelineno-0-562" name="__codelineno-0-562"></a><span class="sd">    &quot;&quot;&quot;</span>
-<a id="__codelineno-0-563" name="__codelineno-0-563"></a>    <span class="n">provider</span> <span class="o">=</span> <span class="n">_preferred_provider</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="n">provider</span><span class="p">)</span>
-<a id="__codelineno-0-564" name="__codelineno-0-564"></a>    <span class="k">if</span> <span class="n">context</span><span class="o">.</span><span class="n">debug</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-<a id="__codelineno-0-565" name="__codelineno-0-565"></a>        <span class="n">context</span><span class="o">.</span><span class="n">debug</span> <span class="o">=</span> <span class="n">debug</span>
-<a id="__codelineno-0-566" name="__codelineno-0-566"></a>        <span class="n">_set_up_debug</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="n">context</span><span class="o">.</span><span class="n">debug</span><span class="p">)</span>
-<a id="__codelineno-0-567" name="__codelineno-0-567"></a>
-<a id="__codelineno-0-568" name="__codelineno-0-568"></a>    <span class="n">notifications</span> <span class="o">=</span> <span class="n">make_list</span><span class="p">(</span><span class="n">notifications</span><span class="p">)</span>
-<a id="__codelineno-0-569" name="__codelineno-0-569"></a>    <span class="n">_validate_campsites</span><span class="p">(</span>
-<a id="__codelineno-0-570" name="__codelineno-0-570"></a>        <span class="n">rec_area</span><span class="o">=</span><span class="n">rec_area</span><span class="p">,</span>
-<a id="__codelineno-0-571" name="__codelineno-0-571"></a>        <span class="n">campground</span><span class="o">=</span><span class="n">campground</span><span class="p">,</span>
-<a id="__codelineno-0-572" name="__codelineno-0-572"></a>        <span class="n">campsite</span><span class="o">=</span><span class="n">campsite</span><span class="p">,</span>
-<a id="__codelineno-0-573" name="__codelineno-0-573"></a>        <span class="n">start_date</span><span class="o">=</span><span class="n">start_date</span><span class="p">,</span>
-<a id="__codelineno-0-574" name="__codelineno-0-574"></a>        <span class="n">end_date</span><span class="o">=</span><span class="n">end_date</span><span class="p">,</span>
-<a id="__codelineno-0-575" name="__codelineno-0-575"></a>        <span class="n">weekends</span><span class="o">=</span><span class="n">weekends</span><span class="p">,</span>
-<a id="__codelineno-0-576" name="__codelineno-0-576"></a>        <span class="n">nights</span><span class="o">=</span><span class="n">nights</span><span class="p">,</span>
-<a id="__codelineno-0-577" name="__codelineno-0-577"></a>        <span class="n">provider</span><span class="o">=</span><span class="n">provider</span><span class="p">,</span>
-<a id="__codelineno-0-578" name="__codelineno-0-578"></a>        <span class="n">continuous</span><span class="o">=</span><span class="n">continuous</span><span class="p">,</span>
-<a id="__codelineno-0-579" name="__codelineno-0-579"></a>        <span class="n">polling_interval</span><span class="o">=</span><span class="n">polling_interval</span><span class="p">,</span>
-<a id="__codelineno-0-580" name="__codelineno-0-580"></a>        <span class="n">notifications</span><span class="o">=</span><span class="n">notifications</span><span class="p">,</span>
-<a id="__codelineno-0-581" name="__codelineno-0-581"></a>        <span class="n">notify_first_try</span><span class="o">=</span><span class="n">notify_first_try</span><span class="p">,</span>
-<a id="__codelineno-0-582" name="__codelineno-0-582"></a>        <span class="n">search_forever</span><span class="o">=</span><span class="n">search_forever</span><span class="p">,</span>
-<a id="__codelineno-0-583" name="__codelineno-0-583"></a>        <span class="n">yaml_config</span><span class="o">=</span><span class="n">yaml_config</span><span class="p">,</span>
-<a id="__codelineno-0-584" name="__codelineno-0-584"></a>    <span class="p">)</span>
-<a id="__codelineno-0-585" name="__codelineno-0-585"></a>    <span class="k">if</span> <span class="n">yaml_config</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<a id="__codelineno-0-586" name="__codelineno-0-586"></a>        <span class="n">provider</span><span class="p">,</span> <span class="n">provider_kwargs</span><span class="p">,</span> <span class="n">search_kwargs</span> <span class="o">=</span> <span class="n">yaml_utils</span><span class="o">.</span><span class="n">yaml_file_to_arguments</span><span class="p">(</span>
-<a id="__codelineno-0-587" name="__codelineno-0-587"></a>            <span class="n">file_path</span><span class="o">=</span><span class="n">yaml_config</span>
-<a id="__codelineno-0-588" name="__codelineno-0-588"></a>        <span class="p">)</span>
-<a id="__codelineno-0-589" name="__codelineno-0-589"></a>        <span class="n">provider</span> <span class="o">=</span> <span class="n">provider</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
-<a id="__codelineno-0-590" name="__codelineno-0-590"></a>    <span class="k">else</span><span class="p">:</span>
-<a id="__codelineno-0-591" name="__codelineno-0-591"></a>        <span class="n">search_window</span> <span class="o">=</span> <span class="n">SearchWindow</span><span class="p">(</span>
-<a id="__codelineno-0-592" name="__codelineno-0-592"></a>            <span class="n">start_date</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">start_date</span><span class="p">,</span> <span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">),</span>
-<a id="__codelineno-0-593" name="__codelineno-0-593"></a>            <span class="n">end_date</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">end_date</span><span class="p">,</span> <span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">),</span>
-<a id="__codelineno-0-594" name="__codelineno-0-594"></a>        <span class="p">)</span>
-<a id="__codelineno-0-595" name="__codelineno-0-595"></a>        <span class="n">provider_kwargs</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
-<a id="__codelineno-0-596" name="__codelineno-0-596"></a>            <span class="n">search_window</span><span class="o">=</span><span class="n">search_window</span><span class="p">,</span>
-<a id="__codelineno-0-597" name="__codelineno-0-597"></a>            <span class="n">recreation_area</span><span class="o">=</span><span class="n">make_list</span><span class="p">(</span><span class="n">rec_area</span><span class="p">),</span>
-<a id="__codelineno-0-598" name="__codelineno-0-598"></a>            <span class="n">campgrounds</span><span class="o">=</span><span class="n">make_list</span><span class="p">(</span><span class="n">campground</span><span class="p">),</span>
-<a id="__codelineno-0-599" name="__codelineno-0-599"></a>            <span class="n">campsites</span><span class="o">=</span><span class="n">make_list</span><span class="p">(</span><span class="n">campsite</span><span class="p">),</span>
-<a id="__codelineno-0-600" name="__codelineno-0-600"></a>            <span class="n">weekends_only</span><span class="o">=</span><span class="n">weekends</span><span class="p">,</span>
-<a id="__codelineno-0-601" name="__codelineno-0-601"></a>            <span class="n">nights</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">nights</span><span class="p">),</span>
-<a id="__codelineno-0-602" name="__codelineno-0-602"></a>            <span class="n">offline_search</span><span class="o">=</span><span class="n">offline_search</span><span class="p">,</span>
-<a id="__codelineno-0-603" name="__codelineno-0-603"></a>            <span class="n">offline_search_path</span><span class="o">=</span><span class="n">offline_search_path</span><span class="p">,</span>
-<a id="__codelineno-0-604" name="__codelineno-0-604"></a>            <span class="n">equipment</span><span class="o">=</span><span class="n">equipment</span><span class="p">,</span>
-<a id="__codelineno-0-605" name="__codelineno-0-605"></a>            <span class="n">equipment_id</span><span class="o">=</span><span class="n">equipment_id</span><span class="p">,</span>
-<a id="__codelineno-0-606" name="__codelineno-0-606"></a>        <span class="p">)</span>
-<a id="__codelineno-0-607" name="__codelineno-0-607"></a>        <span class="n">search_kwargs</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
-<a id="__codelineno-0-608" name="__codelineno-0-608"></a>            <span class="n">log</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-<a id="__codelineno-0-609" name="__codelineno-0-609"></a>            <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-<a id="__codelineno-0-610" name="__codelineno-0-610"></a>            <span class="n">continuous</span><span class="o">=</span><span class="n">continuous</span><span class="p">,</span>
-<a id="__codelineno-0-611" name="__codelineno-0-611"></a>            <span class="n">polling_interval</span><span class="o">=</span><span class="nb">float</span><span class="p">(</span><span class="n">polling_interval</span><span class="p">),</span>
-<a id="__codelineno-0-612" name="__codelineno-0-612"></a>            <span class="n">notify_first_try</span><span class="o">=</span><span class="n">notify_first_try</span><span class="p">,</span>
-<a id="__codelineno-0-613" name="__codelineno-0-613"></a>            <span class="n">notification_provider</span><span class="o">=</span><span class="n">notifications</span><span class="p">,</span>
-<a id="__codelineno-0-614" name="__codelineno-0-614"></a>            <span class="n">search_forever</span><span class="o">=</span><span class="n">search_forever</span><span class="p">,</span>
-<a id="__codelineno-0-615" name="__codelineno-0-615"></a>        <span class="p">)</span>
-<a id="__codelineno-0-616" name="__codelineno-0-616"></a>    <span class="n">provider_class</span> <span class="o">=</span> <span class="p">{</span>
-<a id="__codelineno-0-617" name="__codelineno-0-617"></a>        <span class="n">key</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span> <span class="n">value</span> <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">CAMPSITE_SEARCH_PROVIDER</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
-<a id="__codelineno-0-618" name="__codelineno-0-618"></a>    <span class="p">}[</span><span class="n">provider</span><span class="p">]</span>
-<a id="__codelineno-0-619" name="__codelineno-0-619"></a>    <span class="n">camping_finder</span> <span class="o">=</span> <span class="n">provider_class</span><span class="p">(</span><span class="o">**</span><span class="n">provider_kwargs</span><span class="p">)</span>
-<a id="__codelineno-0-620" name="__codelineno-0-620"></a>    <span class="n">camping_finder</span><span class="o">.</span><span class="n">get_matching_campsites</span><span class="p">(</span><span class="o">**</span><span class="n">search_kwargs</span><span class="p">)</span>
+<span class="normal"><a href="#__codelineno-0-617">617</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-507" name="__codelineno-0-507"></a><span class="nd">@camply_command_line</span><span class="o">.</span><span class="n">command</span><span class="p">()</span>
+<a id="__codelineno-0-508" name="__codelineno-0-508"></a><span class="nd">@yaml_config_argument</span>
+<a id="__codelineno-0-509" name="__codelineno-0-509"></a><span class="nd">@offline_search_path_argument</span>
+<a id="__codelineno-0-510" name="__codelineno-0-510"></a><span class="nd">@offline_search_argument</span>
+<a id="__codelineno-0-511" name="__codelineno-0-511"></a><span class="nd">@search_forever_argument</span>
+<a id="__codelineno-0-512" name="__codelineno-0-512"></a><span class="nd">@notify_first_try_argument</span>
+<a id="__codelineno-0-513" name="__codelineno-0-513"></a><span class="nd">@notifications_argument</span>
+<a id="__codelineno-0-514" name="__codelineno-0-514"></a><span class="nd">@polling_interval_argument</span>
+<a id="__codelineno-0-515" name="__codelineno-0-515"></a><span class="nd">@continuous_argument</span>
+<a id="__codelineno-0-516" name="__codelineno-0-516"></a><span class="nd">@equipment_argument</span>
+<a id="__codelineno-0-517" name="__codelineno-0-517"></a><span class="nd">@equipment_id_argument</span>
+<a id="__codelineno-0-518" name="__codelineno-0-518"></a><span class="nd">@nights_argument</span>
+<a id="__codelineno-0-519" name="__codelineno-0-519"></a><span class="nd">@provider_argument</span>
+<a id="__codelineno-0-520" name="__codelineno-0-520"></a><span class="nd">@weekends_argument</span>
+<a id="__codelineno-0-521" name="__codelineno-0-521"></a><span class="nd">@end_date_argument</span>
+<a id="__codelineno-0-522" name="__codelineno-0-522"></a><span class="nd">@start_date_argument</span>
+<a id="__codelineno-0-523" name="__codelineno-0-523"></a><span class="nd">@campsite_id_argument</span>
+<a id="__codelineno-0-524" name="__codelineno-0-524"></a><span class="nd">@campground_argument</span>
+<a id="__codelineno-0-525" name="__codelineno-0-525"></a><span class="nd">@rec_area_argument</span>
+<a id="__codelineno-0-526" name="__codelineno-0-526"></a><span class="nd">@debug_option</span>
+<a id="__codelineno-0-527" name="__codelineno-0-527"></a><span class="nd">@click</span><span class="o">.</span><span class="n">pass_obj</span>
+<a id="__codelineno-0-528" name="__codelineno-0-528"></a><span class="k">def</span> <span class="nf">campsites</span><span class="p">(</span>
+<a id="__codelineno-0-529" name="__codelineno-0-529"></a>    <span class="n">context</span><span class="p">:</span> <span class="n">CamplyContext</span><span class="p">,</span>
+<a id="__codelineno-0-530" name="__codelineno-0-530"></a>    <span class="n">debug</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span>
+<a id="__codelineno-0-531" name="__codelineno-0-531"></a>    <span class="n">rec_area</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<a id="__codelineno-0-532" name="__codelineno-0-532"></a>    <span class="n">campground</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<a id="__codelineno-0-533" name="__codelineno-0-533"></a>    <span class="n">campsite</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<a id="__codelineno-0-534" name="__codelineno-0-534"></a>    <span class="n">start_date</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<a id="__codelineno-0-535" name="__codelineno-0-535"></a>    <span class="n">end_date</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<a id="__codelineno-0-536" name="__codelineno-0-536"></a>    <span class="n">weekends</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+<a id="__codelineno-0-537" name="__codelineno-0-537"></a>    <span class="n">nights</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+<a id="__codelineno-0-538" name="__codelineno-0-538"></a>    <span class="n">provider</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">DEFAULT_CAMPLY_PROVIDER</span><span class="p">,</span>
+<a id="__codelineno-0-539" name="__codelineno-0-539"></a>    <span class="n">continuous</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+<a id="__codelineno-0-540" name="__codelineno-0-540"></a>    <span class="n">polling_interval</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">SearchConfig</span><span class="o">.</span><span class="n">RECOMMENDED_POLLING_INTERVAL</span><span class="p">,</span>
+<a id="__codelineno-0-541" name="__codelineno-0-541"></a>    <span class="n">notifications</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="s2">&quot;silent&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-542" name="__codelineno-0-542"></a>    <span class="n">notify_first_try</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+<a id="__codelineno-0-543" name="__codelineno-0-543"></a>    <span class="n">search_forever</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+<a id="__codelineno-0-544" name="__codelineno-0-544"></a>    <span class="n">yaml_config</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<a id="__codelineno-0-545" name="__codelineno-0-545"></a>    <span class="n">offline_search</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+<a id="__codelineno-0-546" name="__codelineno-0-546"></a>    <span class="n">offline_search_path</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<a id="__codelineno-0-547" name="__codelineno-0-547"></a>    <span class="n">equipment</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<a id="__codelineno-0-548" name="__codelineno-0-548"></a>    <span class="n">equipment_id</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<a id="__codelineno-0-549" name="__codelineno-0-549"></a><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<a id="__codelineno-0-550" name="__codelineno-0-550"></a>    <span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-551" name="__codelineno-0-551"></a><span class="sd">    Find available Campsites using search criteria</span>
+<a id="__codelineno-0-552" name="__codelineno-0-552"></a>
+<a id="__codelineno-0-553" name="__codelineno-0-553"></a><span class="sd">    Search for a campsite within camply. Campsites are returned based on the search criteria</span>
+<a id="__codelineno-0-554" name="__codelineno-0-554"></a><span class="sd">    provided. Campsites contain properties like booking date, site type (tent, RV, cabin, etc),</span>
+<a id="__codelineno-0-555" name="__codelineno-0-555"></a><span class="sd">    capacity, price, and a link to make the booking. Required parameters include</span>
+<a id="__codelineno-0-556" name="__codelineno-0-556"></a><span class="sd">    `--start-date`, `--end-date`, `--rec-area` / `--campground`. Constant searching</span>
+<a id="__codelineno-0-557" name="__codelineno-0-557"></a><span class="sd">    functionality can be enabled with  `--continuous` and notifications can be enabled using</span>
+<a id="__codelineno-0-558" name="__codelineno-0-558"></a><span class="sd">    `--notifications`.</span>
+<a id="__codelineno-0-559" name="__codelineno-0-559"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a id="__codelineno-0-560" name="__codelineno-0-560"></a>    <span class="n">provider</span> <span class="o">=</span> <span class="n">_preferred_provider</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="n">provider</span><span class="p">)</span>
+<a id="__codelineno-0-561" name="__codelineno-0-561"></a>    <span class="k">if</span> <span class="n">context</span><span class="o">.</span><span class="n">debug</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<a id="__codelineno-0-562" name="__codelineno-0-562"></a>        <span class="n">context</span><span class="o">.</span><span class="n">debug</span> <span class="o">=</span> <span class="n">debug</span>
+<a id="__codelineno-0-563" name="__codelineno-0-563"></a>        <span class="n">_set_up_debug</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="n">context</span><span class="o">.</span><span class="n">debug</span><span class="p">)</span>
+<a id="__codelineno-0-564" name="__codelineno-0-564"></a>
+<a id="__codelineno-0-565" name="__codelineno-0-565"></a>    <span class="n">notifications</span> <span class="o">=</span> <span class="n">make_list</span><span class="p">(</span><span class="n">notifications</span><span class="p">)</span>
+<a id="__codelineno-0-566" name="__codelineno-0-566"></a>    <span class="n">_validate_campsites</span><span class="p">(</span>
+<a id="__codelineno-0-567" name="__codelineno-0-567"></a>        <span class="n">rec_area</span><span class="o">=</span><span class="n">rec_area</span><span class="p">,</span>
+<a id="__codelineno-0-568" name="__codelineno-0-568"></a>        <span class="n">campground</span><span class="o">=</span><span class="n">campground</span><span class="p">,</span>
+<a id="__codelineno-0-569" name="__codelineno-0-569"></a>        <span class="n">campsite</span><span class="o">=</span><span class="n">campsite</span><span class="p">,</span>
+<a id="__codelineno-0-570" name="__codelineno-0-570"></a>        <span class="n">start_date</span><span class="o">=</span><span class="n">start_date</span><span class="p">,</span>
+<a id="__codelineno-0-571" name="__codelineno-0-571"></a>        <span class="n">end_date</span><span class="o">=</span><span class="n">end_date</span><span class="p">,</span>
+<a id="__codelineno-0-572" name="__codelineno-0-572"></a>        <span class="n">weekends</span><span class="o">=</span><span class="n">weekends</span><span class="p">,</span>
+<a id="__codelineno-0-573" name="__codelineno-0-573"></a>        <span class="n">nights</span><span class="o">=</span><span class="n">nights</span><span class="p">,</span>
+<a id="__codelineno-0-574" name="__codelineno-0-574"></a>        <span class="n">provider</span><span class="o">=</span><span class="n">provider</span><span class="p">,</span>
+<a id="__codelineno-0-575" name="__codelineno-0-575"></a>        <span class="n">continuous</span><span class="o">=</span><span class="n">continuous</span><span class="p">,</span>
+<a id="__codelineno-0-576" name="__codelineno-0-576"></a>        <span class="n">polling_interval</span><span class="o">=</span><span class="n">polling_interval</span><span class="p">,</span>
+<a id="__codelineno-0-577" name="__codelineno-0-577"></a>        <span class="n">notifications</span><span class="o">=</span><span class="n">notifications</span><span class="p">,</span>
+<a id="__codelineno-0-578" name="__codelineno-0-578"></a>        <span class="n">notify_first_try</span><span class="o">=</span><span class="n">notify_first_try</span><span class="p">,</span>
+<a id="__codelineno-0-579" name="__codelineno-0-579"></a>        <span class="n">search_forever</span><span class="o">=</span><span class="n">search_forever</span><span class="p">,</span>
+<a id="__codelineno-0-580" name="__codelineno-0-580"></a>        <span class="n">yaml_config</span><span class="o">=</span><span class="n">yaml_config</span><span class="p">,</span>
+<a id="__codelineno-0-581" name="__codelineno-0-581"></a>    <span class="p">)</span>
+<a id="__codelineno-0-582" name="__codelineno-0-582"></a>    <span class="k">if</span> <span class="n">yaml_config</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<a id="__codelineno-0-583" name="__codelineno-0-583"></a>        <span class="n">provider</span><span class="p">,</span> <span class="n">provider_kwargs</span><span class="p">,</span> <span class="n">search_kwargs</span> <span class="o">=</span> <span class="n">yaml_utils</span><span class="o">.</span><span class="n">yaml_file_to_arguments</span><span class="p">(</span>
+<a id="__codelineno-0-584" name="__codelineno-0-584"></a>            <span class="n">file_path</span><span class="o">=</span><span class="n">yaml_config</span>
+<a id="__codelineno-0-585" name="__codelineno-0-585"></a>        <span class="p">)</span>
+<a id="__codelineno-0-586" name="__codelineno-0-586"></a>        <span class="n">provider</span> <span class="o">=</span> <span class="n">provider</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+<a id="__codelineno-0-587" name="__codelineno-0-587"></a>    <span class="k">else</span><span class="p">:</span>
+<a id="__codelineno-0-588" name="__codelineno-0-588"></a>        <span class="n">search_window</span> <span class="o">=</span> <span class="n">SearchWindow</span><span class="p">(</span>
+<a id="__codelineno-0-589" name="__codelineno-0-589"></a>            <span class="n">start_date</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">start_date</span><span class="p">,</span> <span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">),</span>
+<a id="__codelineno-0-590" name="__codelineno-0-590"></a>            <span class="n">end_date</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">end_date</span><span class="p">,</span> <span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">),</span>
+<a id="__codelineno-0-591" name="__codelineno-0-591"></a>        <span class="p">)</span>
+<a id="__codelineno-0-592" name="__codelineno-0-592"></a>        <span class="n">provider_kwargs</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+<a id="__codelineno-0-593" name="__codelineno-0-593"></a>            <span class="n">search_window</span><span class="o">=</span><span class="n">search_window</span><span class="p">,</span>
+<a id="__codelineno-0-594" name="__codelineno-0-594"></a>            <span class="n">recreation_area</span><span class="o">=</span><span class="n">make_list</span><span class="p">(</span><span class="n">rec_area</span><span class="p">),</span>
+<a id="__codelineno-0-595" name="__codelineno-0-595"></a>            <span class="n">campgrounds</span><span class="o">=</span><span class="n">make_list</span><span class="p">(</span><span class="n">campground</span><span class="p">),</span>
+<a id="__codelineno-0-596" name="__codelineno-0-596"></a>            <span class="n">campsites</span><span class="o">=</span><span class="n">make_list</span><span class="p">(</span><span class="n">campsite</span><span class="p">),</span>
+<a id="__codelineno-0-597" name="__codelineno-0-597"></a>            <span class="n">weekends_only</span><span class="o">=</span><span class="n">weekends</span><span class="p">,</span>
+<a id="__codelineno-0-598" name="__codelineno-0-598"></a>            <span class="n">nights</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">nights</span><span class="p">),</span>
+<a id="__codelineno-0-599" name="__codelineno-0-599"></a>            <span class="n">offline_search</span><span class="o">=</span><span class="n">offline_search</span><span class="p">,</span>
+<a id="__codelineno-0-600" name="__codelineno-0-600"></a>            <span class="n">offline_search_path</span><span class="o">=</span><span class="n">offline_search_path</span><span class="p">,</span>
+<a id="__codelineno-0-601" name="__codelineno-0-601"></a>            <span class="n">equipment</span><span class="o">=</span><span class="n">equipment</span><span class="p">,</span>
+<a id="__codelineno-0-602" name="__codelineno-0-602"></a>            <span class="n">equipment_id</span><span class="o">=</span><span class="n">equipment_id</span><span class="p">,</span>
+<a id="__codelineno-0-603" name="__codelineno-0-603"></a>        <span class="p">)</span>
+<a id="__codelineno-0-604" name="__codelineno-0-604"></a>        <span class="n">search_kwargs</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+<a id="__codelineno-0-605" name="__codelineno-0-605"></a>            <span class="n">log</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<a id="__codelineno-0-606" name="__codelineno-0-606"></a>            <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<a id="__codelineno-0-607" name="__codelineno-0-607"></a>            <span class="n">continuous</span><span class="o">=</span><span class="n">continuous</span><span class="p">,</span>
+<a id="__codelineno-0-608" name="__codelineno-0-608"></a>            <span class="n">polling_interval</span><span class="o">=</span><span class="nb">float</span><span class="p">(</span><span class="n">polling_interval</span><span class="p">),</span>
+<a id="__codelineno-0-609" name="__codelineno-0-609"></a>            <span class="n">notify_first_try</span><span class="o">=</span><span class="n">notify_first_try</span><span class="p">,</span>
+<a id="__codelineno-0-610" name="__codelineno-0-610"></a>            <span class="n">notification_provider</span><span class="o">=</span><span class="n">notifications</span><span class="p">,</span>
+<a id="__codelineno-0-611" name="__codelineno-0-611"></a>            <span class="n">search_forever</span><span class="o">=</span><span class="n">search_forever</span><span class="p">,</span>
+<a id="__codelineno-0-612" name="__codelineno-0-612"></a>        <span class="p">)</span>
+<a id="__codelineno-0-613" name="__codelineno-0-613"></a>    <span class="n">provider_class</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-0-614" name="__codelineno-0-614"></a>        <span class="n">key</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span> <span class="n">value</span> <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">CAMPSITE_SEARCH_PROVIDER</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+<a id="__codelineno-0-615" name="__codelineno-0-615"></a>    <span class="p">}[</span><span class="n">provider</span><span class="p">]</span>
+<a id="__codelineno-0-616" name="__codelineno-0-616"></a>    <span class="n">camping_finder</span> <span class="o">=</span> <span class="n">provider_class</span><span class="p">(</span><span class="o">**</span><span class="n">provider_kwargs</span><span class="p">)</span>
+<a id="__codelineno-0-617" name="__codelineno-0-617"></a>    <span class="n">camping_finder</span><span class="o">.</span><span class="n">get_matching_campsites</span><span class="p">(</span><span class="o">**</span><span class="n">search_kwargs</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
       </details>
   </div>
@@ -2133,25 +2133,25 @@ functionality can be enabled with  <code>--continuous</code> and notifications c
 
       <details class="quote">
         <summary>Source code in <code>camply/cli.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-623">623</a></span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-620">620</a></span>
+<span class="normal"><a href="#__codelineno-0-621">621</a></span>
+<span class="normal"><a href="#__codelineno-0-622">622</a></span>
+<span class="normal"><a href="#__codelineno-0-623">623</a></span>
 <span class="normal"><a href="#__codelineno-0-624">624</a></span>
 <span class="normal"><a href="#__codelineno-0-625">625</a></span>
 <span class="normal"><a href="#__codelineno-0-626">626</a></span>
 <span class="normal"><a href="#__codelineno-0-627">627</a></span>
 <span class="normal"><a href="#__codelineno-0-628">628</a></span>
-<span class="normal"><a href="#__codelineno-0-629">629</a></span>
-<span class="normal"><a href="#__codelineno-0-630">630</a></span>
-<span class="normal"><a href="#__codelineno-0-631">631</a></span>
-<span class="normal"><a href="#__codelineno-0-632">632</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-623" name="__codelineno-0-623"></a><span class="k">def</span> <span class="nf">cli</span><span class="p">():</span>
-<a id="__codelineno-0-624" name="__codelineno-0-624"></a>    <span class="sd">&quot;&quot;&quot;</span>
-<a id="__codelineno-0-625" name="__codelineno-0-625"></a><span class="sd">    Camply Command Line Utility Wrapper</span>
-<a id="__codelineno-0-626" name="__codelineno-0-626"></a><span class="sd">    &quot;&quot;&quot;</span>
-<a id="__codelineno-0-627" name="__codelineno-0-627"></a>    <span class="k">try</span><span class="p">:</span>
-<a id="__codelineno-0-628" name="__codelineno-0-628"></a>        <span class="n">camply_command_line</span><span class="p">()</span>
-<a id="__codelineno-0-629" name="__codelineno-0-629"></a>    <span class="k">except</span> <span class="ne">KeyboardInterrupt</span><span class="p">:</span>
-<a id="__codelineno-0-630" name="__codelineno-0-630"></a>        <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Handling Exit Request&quot;</span><span class="p">)</span>
-<a id="__codelineno-0-631" name="__codelineno-0-631"></a>    <span class="k">finally</span><span class="p">:</span>
-<a id="__codelineno-0-632" name="__codelineno-0-632"></a>        <span class="n">logger</span><span class="o">.</span><span class="n">camply</span><span class="p">(</span><span class="s2">&quot;Exiting camply 👋&quot;</span><span class="p">)</span>  <span class="c1"># noqa</span>
+<span class="normal"><a href="#__codelineno-0-629">629</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-620" name="__codelineno-0-620"></a><span class="k">def</span> <span class="nf">cli</span><span class="p">():</span>
+<a id="__codelineno-0-621" name="__codelineno-0-621"></a>    <span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-622" name="__codelineno-0-622"></a><span class="sd">    Camply Command Line Utility Wrapper</span>
+<a id="__codelineno-0-623" name="__codelineno-0-623"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a id="__codelineno-0-624" name="__codelineno-0-624"></a>    <span class="k">try</span><span class="p">:</span>
+<a id="__codelineno-0-625" name="__codelineno-0-625"></a>        <span class="n">camply_command_line</span><span class="p">()</span>
+<a id="__codelineno-0-626" name="__codelineno-0-626"></a>    <span class="k">except</span> <span class="ne">KeyboardInterrupt</span><span class="p">:</span>
+<a id="__codelineno-0-627" name="__codelineno-0-627"></a>        <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Handling Exit Request&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-628" name="__codelineno-0-628"></a>    <span class="k">finally</span><span class="p">:</span>
+<a id="__codelineno-0-629" name="__codelineno-0-629"></a>        <span class="n">logger</span><span class="o">.</span><span class="n">camply</span><span class="p">(</span><span class="s2">&quot;Exiting camply 👋&quot;</span><span class="p">)</span>  <span class="c1"># noqa</span>
 </code></pre></div></td></tr></table></div>
       </details>
   </div>
