@@ -279,8 +279,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../command_line_usage/" class="md-nav__link">
-        Usage 📝
+      <a href="../../providers/" class="md-nav__link">
+        Providers 🏕
       </a>
     </li>
   
@@ -294,8 +294,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../providers/" class="md-nav__link">
-        Providers 🏕
+      <a href="../../command_line_usage/" class="md-nav__link">
+        Usage 📝
       </a>
     </li>
   
@@ -989,8 +989,36 @@
   
   
     <li class="md-nav__item">
+      <a href="../providers/recreation_dot_gov/recdotgov_camps/" class="md-nav__link">
+        recdotgov_camps
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../providers/recreation_dot_gov/recdotgov_provider/" class="md-nav__link">
         recdotgov_provider
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../providers/recreation_dot_gov/recdotgov_tours/" class="md-nav__link">
+        recdotgov_tours
       </a>
     </li>
   
@@ -1767,7 +1795,7 @@
 
   <div class="doc doc-contents ">
       <p class="doc doc-class-bases">
-        Bases: <code>str</code>, <code><span title="enum.Enum">Enum</span></code></p>
+        Bases: <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>, <code><a class="autorefs autorefs-external" title="enum.Enum" href="https://docs.python.org/3/library/enum.html#enum.Enum">Enum</a></code></p>
 
   
       <p>Enumeration of the Equipment Options</p>
@@ -2137,7 +2165,11 @@
 <span class="normal"><a href="#__codelineno-0-202">202</a></span>
 <span class="normal"><a href="#__codelineno-0-203">203</a></span>
 <span class="normal"><a href="#__codelineno-0-204">204</a></span>
-<span class="normal"><a href="#__codelineno-0-205">205</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-180" name="__codelineno-0-180"></a><span class="k">class</span> <span class="nc">RIDBConfig</span><span class="p">:</span>
+<span class="normal"><a href="#__codelineno-0-205">205</a></span>
+<span class="normal"><a href="#__codelineno-0-206">206</a></span>
+<span class="normal"><a href="#__codelineno-0-207">207</a></span>
+<span class="normal"><a href="#__codelineno-0-208">208</a></span>
+<span class="normal"><a href="#__codelineno-0-209">209</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-180" name="__codelineno-0-180"></a><span class="k">class</span> <span class="nc">RIDBConfig</span><span class="p">:</span>
 <a id="__codelineno-0-181" name="__codelineno-0-181"></a>    <span class="sd">&quot;&quot;&quot;</span>
 <a id="__codelineno-0-182" name="__codelineno-0-182"></a><span class="sd">    RIDB API Configuration</span>
 <a id="__codelineno-0-183" name="__codelineno-0-183"></a>
@@ -2159,10 +2191,14 @@
 <a id="__codelineno-0-199" name="__codelineno-0-199"></a>    <span class="c1"># FACILITIES_API_PATH FIELDS</span>
 <a id="__codelineno-0-200" name="__codelineno-0-200"></a>    <span class="n">FACILITIES_API_PATH</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;facilities&quot;</span>
 <a id="__codelineno-0-201" name="__codelineno-0-201"></a>    <span class="n">CAMPGROUND_FACILITY_FIELD_QUALIFIER</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;Campground&quot;</span>
-<a id="__codelineno-0-202" name="__codelineno-0-202"></a>    <span class="c1"># RECREATION AREA FIELDS</span>
-<a id="__codelineno-0-203" name="__codelineno-0-203"></a>    <span class="n">REC_AREA_API_PATH</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;recareas&quot;</span>
-<a id="__codelineno-0-204" name="__codelineno-0-204"></a>    <span class="c1"># CAMPSITE DETAILS</span>
-<a id="__codelineno-0-205" name="__codelineno-0-205"></a>    <span class="n">CAMPSITE_API_PATH</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;campsites&quot;</span>
+<a id="__codelineno-0-202" name="__codelineno-0-202"></a>    <span class="n">TICKET_FACILITY_FIELD_QUALIFIER</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;Ticket Facility&quot;</span>
+<a id="__codelineno-0-203" name="__codelineno-0-203"></a>    <span class="n">TIMED_ENTRY_FACILITY_FIELD_QUALIFIER</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;Timed Entry&quot;</span>
+<a id="__codelineno-0-204" name="__codelineno-0-204"></a>    <span class="c1"># RECREATION AREA FIELDS</span>
+<a id="__codelineno-0-205" name="__codelineno-0-205"></a>    <span class="n">REC_AREA_API_PATH</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;recareas&quot;</span>
+<a id="__codelineno-0-206" name="__codelineno-0-206"></a>    <span class="c1"># CAMPSITE DETAILS</span>
+<a id="__codelineno-0-207" name="__codelineno-0-207"></a>    <span class="n">CAMPSITE_API_PATH</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;campsites&quot;</span>
+<a id="__codelineno-0-208" name="__codelineno-0-208"></a>    <span class="c1"># TOUR DETAILS</span>
+<a id="__codelineno-0-209" name="__codelineno-0-209"></a>    <span class="n">TOUR_API_PATH</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;tours&quot;</span>
 </code></pre></div></td></tr></table></div>
         </details>
 
@@ -2205,11 +2241,7 @@
 
         <details class="quote">
           <summary>Source code in <code>camply/config/api_config.py</code></summary>
-          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-208">208</a></span>
-<span class="normal"><a href="#__codelineno-0-209">209</a></span>
-<span class="normal"><a href="#__codelineno-0-210">210</a></span>
-<span class="normal"><a href="#__codelineno-0-211">211</a></span>
-<span class="normal"><a href="#__codelineno-0-212">212</a></span>
+          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-212">212</a></span>
 <span class="normal"><a href="#__codelineno-0-213">213</a></span>
 <span class="normal"><a href="#__codelineno-0-214">214</a></span>
 <span class="normal"><a href="#__codelineno-0-215">215</a></span>
@@ -2232,34 +2264,38 @@
 <span class="normal"><a href="#__codelineno-0-232">232</a></span>
 <span class="normal"><a href="#__codelineno-0-233">233</a></span>
 <span class="normal"><a href="#__codelineno-0-234">234</a></span>
-<span class="normal"><a href="#__codelineno-0-235">235</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-208" name="__codelineno-0-208"></a><span class="k">class</span> <span class="nc">RecreationBookingConfig</span><span class="p">:</span>
-<a id="__codelineno-0-209" name="__codelineno-0-209"></a>    <span class="sd">&quot;&quot;&quot;</span>
-<a id="__codelineno-0-210" name="__codelineno-0-210"></a><span class="sd">    Variable Storage Class for Recreation.gov Booking API</span>
-<a id="__codelineno-0-211" name="__codelineno-0-211"></a><span class="sd">    &quot;&quot;&quot;</span>
-<a id="__codelineno-0-212" name="__codelineno-0-212"></a>
-<a id="__codelineno-0-213" name="__codelineno-0-213"></a>    <span class="n">API_SCHEME</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;https&quot;</span>
-<a id="__codelineno-0-214" name="__codelineno-0-214"></a>    <span class="n">API_NET_LOC</span> <span class="o">=</span> <span class="s2">&quot;www.recreation.gov&quot;</span>
-<a id="__codelineno-0-215" name="__codelineno-0-215"></a>    <span class="n">API_BASE_PATH</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;api/camps/availability/campground/&quot;</span>
-<a id="__codelineno-0-216" name="__codelineno-0-216"></a>    <span class="n">API_MONTH_PATH</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;month&quot;</span>
-<a id="__codelineno-0-217" name="__codelineno-0-217"></a>    <span class="n">API_REFERRERS</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Referer&quot;</span><span class="p">:</span> <span class="s2">&quot;https://www.recreation.gov/&quot;</span><span class="p">}</span>
-<a id="__codelineno-0-218" name="__codelineno-0-218"></a>
-<a id="__codelineno-0-219" name="__codelineno-0-219"></a>    <span class="n">CAMPSITE_UNAVAILABLE_STRINGS</span><span class="p">:</span> <span class="nb">list</span> <span class="o">=</span> <span class="p">[</span>
-<a id="__codelineno-0-220" name="__codelineno-0-220"></a>        <span class="s2">&quot;Reserved&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-221" name="__codelineno-0-221"></a>        <span class="s2">&quot;Not Available&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-222" name="__codelineno-0-222"></a>        <span class="s2">&quot;Not Reservable&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-223" name="__codelineno-0-223"></a>        <span class="s2">&quot;Not Reservable Management&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-224" name="__codelineno-0-224"></a>        <span class="s2">&quot;Not Available Cutoff&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-225" name="__codelineno-0-225"></a>        <span class="s2">&quot;Lottery&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-226" name="__codelineno-0-226"></a>        <span class="s2">&quot;Open&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-227" name="__codelineno-0-227"></a>        <span class="s2">&quot;NYR&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-228" name="__codelineno-0-228"></a>    <span class="p">]</span>
-<a id="__codelineno-0-229" name="__codelineno-0-229"></a>
-<a id="__codelineno-0-230" name="__codelineno-0-230"></a>    <span class="n">CAMPSITE_LOCATION_LOOP_DEFAULT</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;Default Loop&quot;</span>
-<a id="__codelineno-0-231" name="__codelineno-0-231"></a>    <span class="n">CAMPSITE_LOCATION_SITE_DEFAULT</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;Default Site&quot;</span>
-<a id="__codelineno-0-232" name="__codelineno-0-232"></a>
-<a id="__codelineno-0-233" name="__codelineno-0-233"></a>    <span class="n">CAMPSITE_BOOKING_URL</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;https://www.recreation.gov/camping/campsites&quot;</span>
-<a id="__codelineno-0-234" name="__codelineno-0-234"></a>
-<a id="__codelineno-0-235" name="__codelineno-0-235"></a>    <span class="n">RATE_LIMITING</span> <span class="o">=</span> <span class="p">(</span><span class="mf">1.01</span><span class="p">,</span> <span class="mf">1.51</span><span class="p">)</span>
+<span class="normal"><a href="#__codelineno-0-235">235</a></span>
+<span class="normal"><a href="#__codelineno-0-236">236</a></span>
+<span class="normal"><a href="#__codelineno-0-237">237</a></span>
+<span class="normal"><a href="#__codelineno-0-238">238</a></span>
+<span class="normal"><a href="#__codelineno-0-239">239</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-212" name="__codelineno-0-212"></a><span class="k">class</span> <span class="nc">RecreationBookingConfig</span><span class="p">:</span>
+<a id="__codelineno-0-213" name="__codelineno-0-213"></a>    <span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-214" name="__codelineno-0-214"></a><span class="sd">    Variable Storage Class for Recreation.gov Booking API</span>
+<a id="__codelineno-0-215" name="__codelineno-0-215"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a id="__codelineno-0-216" name="__codelineno-0-216"></a>
+<a id="__codelineno-0-217" name="__codelineno-0-217"></a>    <span class="n">API_SCHEME</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;https&quot;</span>
+<a id="__codelineno-0-218" name="__codelineno-0-218"></a>    <span class="n">API_NET_LOC</span> <span class="o">=</span> <span class="s2">&quot;www.recreation.gov&quot;</span>
+<a id="__codelineno-0-219" name="__codelineno-0-219"></a>    <span class="n">API_BASE_PATH</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;api/camps/availability/campground/&quot;</span>
+<a id="__codelineno-0-220" name="__codelineno-0-220"></a>    <span class="n">API_MONTH_PATH</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;month&quot;</span>
+<a id="__codelineno-0-221" name="__codelineno-0-221"></a>    <span class="n">API_REFERRERS</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Referer&quot;</span><span class="p">:</span> <span class="s2">&quot;https://www.recreation.gov/&quot;</span><span class="p">}</span>
+<a id="__codelineno-0-222" name="__codelineno-0-222"></a>
+<a id="__codelineno-0-223" name="__codelineno-0-223"></a>    <span class="n">CAMPSITE_UNAVAILABLE_STRINGS</span><span class="p">:</span> <span class="nb">list</span> <span class="o">=</span> <span class="p">[</span>
+<a id="__codelineno-0-224" name="__codelineno-0-224"></a>        <span class="s2">&quot;Reserved&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-225" name="__codelineno-0-225"></a>        <span class="s2">&quot;Not Available&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-226" name="__codelineno-0-226"></a>        <span class="s2">&quot;Not Reservable&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-227" name="__codelineno-0-227"></a>        <span class="s2">&quot;Not Reservable Management&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-228" name="__codelineno-0-228"></a>        <span class="s2">&quot;Not Available Cutoff&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-229" name="__codelineno-0-229"></a>        <span class="s2">&quot;Lottery&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-230" name="__codelineno-0-230"></a>        <span class="s2">&quot;Open&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-231" name="__codelineno-0-231"></a>        <span class="s2">&quot;NYR&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-232" name="__codelineno-0-232"></a>    <span class="p">]</span>
+<a id="__codelineno-0-233" name="__codelineno-0-233"></a>
+<a id="__codelineno-0-234" name="__codelineno-0-234"></a>    <span class="n">CAMPSITE_LOCATION_LOOP_DEFAULT</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;Default Loop&quot;</span>
+<a id="__codelineno-0-235" name="__codelineno-0-235"></a>    <span class="n">CAMPSITE_LOCATION_SITE_DEFAULT</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;Default Site&quot;</span>
+<a id="__codelineno-0-236" name="__codelineno-0-236"></a>
+<a id="__codelineno-0-237" name="__codelineno-0-237"></a>    <span class="n">CAMPSITE_BOOKING_URL</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;https://www.recreation.gov/camping/campsites&quot;</span>
+<a id="__codelineno-0-238" name="__codelineno-0-238"></a>
+<a id="__codelineno-0-239" name="__codelineno-0-239"></a>    <span class="n">RATE_LIMITING</span> <span class="o">=</span> <span class="p">(</span><span class="mf">1.01</span><span class="p">,</span> <span class="mf">1.51</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
         </details>
 
@@ -2636,7 +2672,8 @@
 <span class="normal"><a href="#__codelineno-0-97"> 97</a></span>
 <span class="normal"><a href="#__codelineno-0-98"> 98</a></span>
 <span class="normal"><a href="#__codelineno-0-99"> 99</a></span>
-<span class="normal"><a href="#__codelineno-0-100">100</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="k">class</span> <span class="nc">YellowstoneConfig</span><span class="p">(</span><span class="n">DataColumns</span><span class="p">):</span>
+<span class="normal"><a href="#__codelineno-0-100">100</a></span>
+<span class="normal"><a href="#__codelineno-0-101">101</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="k">class</span> <span class="nc">YellowstoneConfig</span><span class="p">(</span><span class="n">DataColumns</span><span class="p">):</span>
 <a id="__codelineno-0-15" name="__codelineno-0-15"></a>    <span class="sd">&quot;&quot;&quot;</span>
 <a id="__codelineno-0-16" name="__codelineno-0-16"></a><span class="sd">    Variable Storage Class</span>
 <a id="__codelineno-0-17" name="__codelineno-0-17"></a><span class="sd">    &quot;&quot;&quot;</span>
@@ -2694,35 +2731,36 @@
 <a id="__codelineno-0-69" name="__codelineno-0-69"></a>
 <a id="__codelineno-0-70" name="__codelineno-0-70"></a>    <span class="n">YELLOWSTONE_RECREATION_AREA_ID</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span>
 <a id="__codelineno-0-71" name="__codelineno-0-71"></a>    <span class="n">YELLOWSTONE_RECREATION_AREA_NAME</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;Yellowstone&quot;</span>
-<a id="__codelineno-0-72" name="__codelineno-0-72"></a>    <span class="n">YELLOWSTONE_RECREATION_AREA_FORMAL_NAME</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;Yellowstone National Park, USA&quot;</span>
-<a id="__codelineno-0-73" name="__codelineno-0-73"></a>    <span class="n">YELLOWSTONE_LOOP_NAME</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;N/A&quot;</span>
-<a id="__codelineno-0-74" name="__codelineno-0-74"></a>    <span class="n">CAMPSITE_AVAILABILITY_STATUS</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;Available&quot;</span>
-<a id="__codelineno-0-75" name="__codelineno-0-75"></a>    <span class="n">YELLOWSTONE_CAMPGROUND_NAME_REPLACE</span><span class="p">:</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
-<a id="__codelineno-0-76" name="__codelineno-0-76"></a>        <span class="s2">&quot;CG Internet Rate&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-77" name="__codelineno-0-77"></a>        <span class="s2">&quot;Campground&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-78" name="__codelineno-0-78"></a>    <span class="p">)</span>
-<a id="__codelineno-0-79" name="__codelineno-0-79"></a>
-<a id="__codelineno-0-80" name="__codelineno-0-80"></a>    <span class="n">YELLOWSTONE_TIMEZONE</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;America/Denver&quot;</span>
-<a id="__codelineno-0-81" name="__codelineno-0-81"></a>
-<a id="__codelineno-0-82" name="__codelineno-0-82"></a>    <span class="c1"># LODGES:  https://webapi.xanterra.net/v1/api/property/hotels/yellowstonenationalparklodges</span>
-<a id="__codelineno-0-83" name="__codelineno-0-83"></a>    <span class="n">YELLOWSTONE_CAMPGROUNDS</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
-<a id="__codelineno-0-84" name="__codelineno-0-84"></a>        <span class="s2">&quot;YLYC:RV&quot;</span><span class="p">:</span> <span class="s2">&quot;Canyon Campground&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-85" name="__codelineno-0-85"></a>        <span class="s2">&quot;YLYB:RV&quot;</span><span class="p">:</span> <span class="s2">&quot;Bridge Bay Campground&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-86" name="__codelineno-0-86"></a>        <span class="s2">&quot;YLYG:RV&quot;</span><span class="p">:</span> <span class="s2">&quot;Grant Campground&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-87" name="__codelineno-0-87"></a>        <span class="s2">&quot;YLYM:RV&quot;</span><span class="p">:</span> <span class="s2">&quot;Madison Campground&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-88" name="__codelineno-0-88"></a>        <span class="s2">&quot;YLYF:RV&quot;</span><span class="p">:</span> <span class="s2">&quot;Fishing Bridge RV Park&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-89" name="__codelineno-0-89"></a>    <span class="p">}</span>
-<a id="__codelineno-0-90" name="__codelineno-0-90"></a>
-<a id="__codelineno-0-91" name="__codelineno-0-91"></a>    <span class="n">YELLOWSTONE_CAMPGROUND_OBJECTS</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">CampgroundFacility</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
-<a id="__codelineno-0-92" name="__codelineno-0-92"></a>    <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">YELLOWSTONE_CAMPGROUNDS</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-<a id="__codelineno-0-93" name="__codelineno-0-93"></a>        <span class="n">YELLOWSTONE_CAMPGROUND_OBJECTS</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
-<a id="__codelineno-0-94" name="__codelineno-0-94"></a>            <span class="n">CampgroundFacility</span><span class="p">(</span>
-<a id="__codelineno-0-95" name="__codelineno-0-95"></a>                <span class="n">recreation_area_id</span><span class="o">=</span><span class="n">YELLOWSTONE_RECREATION_AREA_ID</span><span class="p">,</span>
-<a id="__codelineno-0-96" name="__codelineno-0-96"></a>                <span class="n">recreation_area</span><span class="o">=</span><span class="n">YELLOWSTONE_RECREATION_AREA_FORMAL_NAME</span><span class="p">,</span>
-<a id="__codelineno-0-97" name="__codelineno-0-97"></a>                <span class="n">facility_name</span><span class="o">=</span><span class="n">value</span><span class="p">,</span>
-<a id="__codelineno-0-98" name="__codelineno-0-98"></a>                <span class="n">facility_id</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">key</span><span class="p">),</span>
-<a id="__codelineno-0-99" name="__codelineno-0-99"></a>            <span class="p">)</span>
-<a id="__codelineno-0-100" name="__codelineno-0-100"></a>        <span class="p">)</span>
+<a id="__codelineno-0-72" name="__codelineno-0-72"></a>    <span class="n">YELLOWSTONE_RECREATION_AREA_FULL_NAME</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;Yellowstone National Park&quot;</span>
+<a id="__codelineno-0-73" name="__codelineno-0-73"></a>    <span class="n">YELLOWSTONE_RECREATION_AREA_FORMAL_NAME</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;Yellowstone National Park, USA&quot;</span>
+<a id="__codelineno-0-74" name="__codelineno-0-74"></a>    <span class="n">YELLOWSTONE_LOOP_NAME</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;N/A&quot;</span>
+<a id="__codelineno-0-75" name="__codelineno-0-75"></a>    <span class="n">CAMPSITE_AVAILABILITY_STATUS</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;Available&quot;</span>
+<a id="__codelineno-0-76" name="__codelineno-0-76"></a>    <span class="n">YELLOWSTONE_CAMPGROUND_NAME_REPLACE</span><span class="p">:</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+<a id="__codelineno-0-77" name="__codelineno-0-77"></a>        <span class="s2">&quot;CG Internet Rate&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-78" name="__codelineno-0-78"></a>        <span class="s2">&quot;Campground&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-79" name="__codelineno-0-79"></a>    <span class="p">)</span>
+<a id="__codelineno-0-80" name="__codelineno-0-80"></a>
+<a id="__codelineno-0-81" name="__codelineno-0-81"></a>    <span class="n">YELLOWSTONE_TIMEZONE</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;America/Denver&quot;</span>
+<a id="__codelineno-0-82" name="__codelineno-0-82"></a>
+<a id="__codelineno-0-83" name="__codelineno-0-83"></a>    <span class="c1"># LODGES:  https://webapi.xanterra.net/v1/api/property/hotels/yellowstonenationalparklodges</span>
+<a id="__codelineno-0-84" name="__codelineno-0-84"></a>    <span class="n">YELLOWSTONE_CAMPGROUNDS</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-0-85" name="__codelineno-0-85"></a>        <span class="s2">&quot;YLYC:RV&quot;</span><span class="p">:</span> <span class="s2">&quot;Canyon Campground&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-86" name="__codelineno-0-86"></a>        <span class="s2">&quot;YLYB:RV&quot;</span><span class="p">:</span> <span class="s2">&quot;Bridge Bay Campground&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-87" name="__codelineno-0-87"></a>        <span class="s2">&quot;YLYG:RV&quot;</span><span class="p">:</span> <span class="s2">&quot;Grant Campground&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-88" name="__codelineno-0-88"></a>        <span class="s2">&quot;YLYM:RV&quot;</span><span class="p">:</span> <span class="s2">&quot;Madison Campground&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-89" name="__codelineno-0-89"></a>        <span class="s2">&quot;YLYF:RV&quot;</span><span class="p">:</span> <span class="s2">&quot;Fishing Bridge RV Park&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-90" name="__codelineno-0-90"></a>    <span class="p">}</span>
+<a id="__codelineno-0-91" name="__codelineno-0-91"></a>
+<a id="__codelineno-0-92" name="__codelineno-0-92"></a>    <span class="n">YELLOWSTONE_CAMPGROUND_OBJECTS</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">CampgroundFacility</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+<a id="__codelineno-0-93" name="__codelineno-0-93"></a>    <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">YELLOWSTONE_CAMPGROUNDS</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+<a id="__codelineno-0-94" name="__codelineno-0-94"></a>        <span class="n">YELLOWSTONE_CAMPGROUND_OBJECTS</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+<a id="__codelineno-0-95" name="__codelineno-0-95"></a>            <span class="n">CampgroundFacility</span><span class="p">(</span>
+<a id="__codelineno-0-96" name="__codelineno-0-96"></a>                <span class="n">recreation_area_id</span><span class="o">=</span><span class="n">YELLOWSTONE_RECREATION_AREA_ID</span><span class="p">,</span>
+<a id="__codelineno-0-97" name="__codelineno-0-97"></a>                <span class="n">recreation_area</span><span class="o">=</span><span class="n">YELLOWSTONE_RECREATION_AREA_FORMAL_NAME</span><span class="p">,</span>
+<a id="__codelineno-0-98" name="__codelineno-0-98"></a>                <span class="n">facility_name</span><span class="o">=</span><span class="n">value</span><span class="p">,</span>
+<a id="__codelineno-0-99" name="__codelineno-0-99"></a>                <span class="n">facility_id</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">key</span><span class="p">),</span>
+<a id="__codelineno-0-100" name="__codelineno-0-100"></a>            <span class="p">)</span>
+<a id="__codelineno-0-101" name="__codelineno-0-101"></a>        <span class="p">)</span>
 </code></pre></div></td></tr></table></div>
         </details>
 

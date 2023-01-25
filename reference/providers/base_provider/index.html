@@ -279,8 +279,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../command_line_usage/" class="md-nav__link">
-        Usage 📝
+      <a href="../../../providers/" class="md-nav__link">
+        Providers 🏕
       </a>
     </li>
   
@@ -294,8 +294,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../providers/" class="md-nav__link">
-        Providers 🏕
+      <a href="../../../command_line_usage/" class="md-nav__link">
+        Usage 📝
       </a>
     </li>
   
@@ -931,6 +931,19 @@
     BaseProvider
   </a>
   
+    <nav class="md-nav" aria-label="BaseProvider">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#camply.providers.base_provider.BaseProvider.get_search_months" class="md-nav__link">
+    get_search_months()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1047,8 +1060,36 @@
   
   
     <li class="md-nav__item">
+      <a href="../recreation_dot_gov/recdotgov_camps/" class="md-nav__link">
+        recdotgov_camps
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../recreation_dot_gov/recdotgov_provider/" class="md-nav__link">
         recdotgov_provider
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../recreation_dot_gov/recdotgov_tours/" class="md-nav__link">
+        recdotgov_tours
       </a>
     </li>
   
@@ -1435,6 +1476,19 @@
     BaseProvider
   </a>
   
+    <nav class="md-nav" aria-label="BaseProvider">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#camply.providers.base_provider.BaseProvider.get_search_months" class="md-nav__link">
+    get_search_months()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1504,27 +1558,173 @@
 
 
   <div class="doc doc-contents ">
+      <p class="doc doc-class-bases">
+        Bases: <code><a class="autorefs autorefs-external" title="abc.ABC" href="https://docs.python.org/3/library/abc.html#abc.ABC">ABC</a></code></p>
 
   
       <p>Base Provider Class</p>
-<p>This should ideally be an AbstractBaseClass</p>
 
 
         <details class="quote">
           <summary>Source code in <code>camply/providers/base_provider.py</code></summary>
-          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-10">10</a></span>
-<span class="normal"><a href="#__codelineno-0-11">11</a></span>
-<span class="normal"><a href="#__codelineno-0-12">12</a></span>
-<span class="normal"><a href="#__codelineno-0-13">13</a></span>
-<span class="normal"><a href="#__codelineno-0-14">14</a></span>
-<span class="normal"><a href="#__codelineno-0-15">15</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="k">class</span> <span class="nc">BaseProvider</span><span class="p">:</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11"></a>    <span class="sd">&quot;&quot;&quot;</span>
-<a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="sd">    Base Provider Class</span>
-<a id="__codelineno-0-13" name="__codelineno-0-13"></a>
-<a id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="sd">    This should ideally be an AbstractBaseClass</span>
-<a id="__codelineno-0-15" name="__codelineno-0-15"></a><span class="sd">    &quot;&quot;&quot;</span>
+          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-15">15</a></span>
+<span class="normal"><a href="#__codelineno-0-16">16</a></span>
+<span class="normal"><a href="#__codelineno-0-17">17</a></span>
+<span class="normal"><a href="#__codelineno-0-18">18</a></span>
+<span class="normal"><a href="#__codelineno-0-19">19</a></span>
+<span class="normal"><a href="#__codelineno-0-20">20</a></span>
+<span class="normal"><a href="#__codelineno-0-21">21</a></span>
+<span class="normal"><a href="#__codelineno-0-22">22</a></span>
+<span class="normal"><a href="#__codelineno-0-23">23</a></span>
+<span class="normal"><a href="#__codelineno-0-24">24</a></span>
+<span class="normal"><a href="#__codelineno-0-25">25</a></span>
+<span class="normal"><a href="#__codelineno-0-26">26</a></span>
+<span class="normal"><a href="#__codelineno-0-27">27</a></span>
+<span class="normal"><a href="#__codelineno-0-28">28</a></span>
+<span class="normal"><a href="#__codelineno-0-29">29</a></span>
+<span class="normal"><a href="#__codelineno-0-30">30</a></span>
+<span class="normal"><a href="#__codelineno-0-31">31</a></span>
+<span class="normal"><a href="#__codelineno-0-32">32</a></span>
+<span class="normal"><a href="#__codelineno-0-33">33</a></span>
+<span class="normal"><a href="#__codelineno-0-34">34</a></span>
+<span class="normal"><a href="#__codelineno-0-35">35</a></span>
+<span class="normal"><a href="#__codelineno-0-36">36</a></span>
+<span class="normal"><a href="#__codelineno-0-37">37</a></span>
+<span class="normal"><a href="#__codelineno-0-38">38</a></span>
+<span class="normal"><a href="#__codelineno-0-39">39</a></span>
+<span class="normal"><a href="#__codelineno-0-40">40</a></span>
+<span class="normal"><a href="#__codelineno-0-41">41</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-15" name="__codelineno-0-15"></a><span class="k">class</span> <span class="nc">BaseProvider</span><span class="p">(</span><span class="n">ABC</span><span class="p">):</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16"></a>    <span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17"></a><span class="sd">    Base Provider Class</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19"></a>
+<a id="__codelineno-0-20" name="__codelineno-0-20"></a>    <span class="nd">@classmethod</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21"></a>    <span class="k">def</span> <span class="nf">get_search_months</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">search_days</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">datetime</span><span class="p">]:</span>
+<a id="__codelineno-0-22" name="__codelineno-0-22"></a>        <span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-23" name="__codelineno-0-23"></a><span class="sd">        Get the Unique Months that need to be Searched</span>
+<a id="__codelineno-0-24" name="__codelineno-0-24"></a>
+<a id="__codelineno-0-25" name="__codelineno-0-25"></a><span class="sd">        Returns</span>
+<a id="__codelineno-0-26" name="__codelineno-0-26"></a><span class="sd">        -------</span>
+<a id="__codelineno-0-27" name="__codelineno-0-27"></a><span class="sd">        search_months: List[datetime]</span>
+<a id="__codelineno-0-28" name="__codelineno-0-28"></a><span class="sd">            Datetime Months to search for reservations</span>
+<a id="__codelineno-0-29" name="__codelineno-0-29"></a><span class="sd">        &quot;&quot;&quot;</span>
+<a id="__codelineno-0-30" name="__codelineno-0-30"></a>        <span class="n">truncated_months</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="n">day</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">day</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">day</span> <span class="ow">in</span> <span class="n">search_days</span><span class="p">])</span>
+<a id="__codelineno-0-31" name="__codelineno-0-31"></a>        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">truncated_months</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+<a id="__codelineno-0-32" name="__codelineno-0-32"></a>            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+<a id="__codelineno-0-33" name="__codelineno-0-33"></a>                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">truncated_months</span><span class="p">)</span><span class="si">}</span><span class="s2"> different months selected for search, &quot;</span>
+<a id="__codelineno-0-34" name="__codelineno-0-34"></a>                <span class="sa">f</span><span class="s2">&quot;ranging from </span><span class="si">{</span><span class="nb">min</span><span class="p">(</span><span class="n">search_days</span><span class="p">)</span><span class="si">}</span><span class="s2"> to </span><span class="si">{</span><span class="nb">max</span><span class="p">(</span><span class="n">search_days</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
+<a id="__codelineno-0-35" name="__codelineno-0-35"></a>            <span class="p">)</span>
+<a id="__codelineno-0-36" name="__codelineno-0-36"></a>            <span class="k">return</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">truncated_months</span><span class="p">))</span>
+<a id="__codelineno-0-37" name="__codelineno-0-37"></a>        <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">truncated_months</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<a id="__codelineno-0-38" name="__codelineno-0-38"></a>            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="n">SearchConfig</span><span class="o">.</span><span class="n">ERROR_MESSAGE</span><span class="p">)</span>
+<a id="__codelineno-0-39" name="__codelineno-0-39"></a>            <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="n">SearchConfig</span><span class="o">.</span><span class="n">ERROR_MESSAGE</span><span class="p">)</span>
+<a id="__codelineno-0-40" name="__codelineno-0-40"></a>        <span class="k">else</span><span class="p">:</span>
+<a id="__codelineno-0-41" name="__codelineno-0-41"></a>            <span class="k">return</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">truncated_months</span><span class="p">))</span>
 </code></pre></div></td></tr></table></div>
         </details>
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="camply.providers.base_provider.BaseProvider.get_search_months" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">get_search_months</span><span class="p">(</span><span class="n">search_days</span><span class="p">)</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-classmethod"><code>classmethod</code></small>
+  </span>
+
+<a href="#camply.providers.base_provider.BaseProvider.get_search_months" class="headerlink" title="Permanent link">#</a></h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Get the Unique Months that need to be Searched</p>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>search_months</code></td>          <td>
+                <code><a class="autorefs autorefs-external" title="typing.List" href="https://docs.python.org/3/library/typing.html#typing.List">List</a>[<a class="autorefs autorefs-external" title="datetime.datetime" href="https://docs.python.org/3/library/datetime.html#datetime.datetime">datetime</a>]</code>
+          </td>
+          <td><p>Datetime Months to search for reservations</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+      <details class="quote">
+        <summary>Source code in <code>camply/providers/base_provider.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-20">20</a></span>
+<span class="normal"><a href="#__codelineno-0-21">21</a></span>
+<span class="normal"><a href="#__codelineno-0-22">22</a></span>
+<span class="normal"><a href="#__codelineno-0-23">23</a></span>
+<span class="normal"><a href="#__codelineno-0-24">24</a></span>
+<span class="normal"><a href="#__codelineno-0-25">25</a></span>
+<span class="normal"><a href="#__codelineno-0-26">26</a></span>
+<span class="normal"><a href="#__codelineno-0-27">27</a></span>
+<span class="normal"><a href="#__codelineno-0-28">28</a></span>
+<span class="normal"><a href="#__codelineno-0-29">29</a></span>
+<span class="normal"><a href="#__codelineno-0-30">30</a></span>
+<span class="normal"><a href="#__codelineno-0-31">31</a></span>
+<span class="normal"><a href="#__codelineno-0-32">32</a></span>
+<span class="normal"><a href="#__codelineno-0-33">33</a></span>
+<span class="normal"><a href="#__codelineno-0-34">34</a></span>
+<span class="normal"><a href="#__codelineno-0-35">35</a></span>
+<span class="normal"><a href="#__codelineno-0-36">36</a></span>
+<span class="normal"><a href="#__codelineno-0-37">37</a></span>
+<span class="normal"><a href="#__codelineno-0-38">38</a></span>
+<span class="normal"><a href="#__codelineno-0-39">39</a></span>
+<span class="normal"><a href="#__codelineno-0-40">40</a></span>
+<span class="normal"><a href="#__codelineno-0-41">41</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-20" name="__codelineno-0-20"></a><span class="nd">@classmethod</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21"></a><span class="k">def</span> <span class="nf">get_search_months</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">search_days</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">datetime</span><span class="p">]:</span>
+<a id="__codelineno-0-22" name="__codelineno-0-22"></a>    <span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-23" name="__codelineno-0-23"></a><span class="sd">    Get the Unique Months that need to be Searched</span>
+<a id="__codelineno-0-24" name="__codelineno-0-24"></a>
+<a id="__codelineno-0-25" name="__codelineno-0-25"></a><span class="sd">    Returns</span>
+<a id="__codelineno-0-26" name="__codelineno-0-26"></a><span class="sd">    -------</span>
+<a id="__codelineno-0-27" name="__codelineno-0-27"></a><span class="sd">    search_months: List[datetime]</span>
+<a id="__codelineno-0-28" name="__codelineno-0-28"></a><span class="sd">        Datetime Months to search for reservations</span>
+<a id="__codelineno-0-29" name="__codelineno-0-29"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a id="__codelineno-0-30" name="__codelineno-0-30"></a>    <span class="n">truncated_months</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="n">day</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">day</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">day</span> <span class="ow">in</span> <span class="n">search_days</span><span class="p">])</span>
+<a id="__codelineno-0-31" name="__codelineno-0-31"></a>    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">truncated_months</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+<a id="__codelineno-0-32" name="__codelineno-0-32"></a>        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+<a id="__codelineno-0-33" name="__codelineno-0-33"></a>            <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">truncated_months</span><span class="p">)</span><span class="si">}</span><span class="s2"> different months selected for search, &quot;</span>
+<a id="__codelineno-0-34" name="__codelineno-0-34"></a>            <span class="sa">f</span><span class="s2">&quot;ranging from </span><span class="si">{</span><span class="nb">min</span><span class="p">(</span><span class="n">search_days</span><span class="p">)</span><span class="si">}</span><span class="s2"> to </span><span class="si">{</span><span class="nb">max</span><span class="p">(</span><span class="n">search_days</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
+<a id="__codelineno-0-35" name="__codelineno-0-35"></a>        <span class="p">)</span>
+<a id="__codelineno-0-36" name="__codelineno-0-36"></a>        <span class="k">return</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">truncated_months</span><span class="p">))</span>
+<a id="__codelineno-0-37" name="__codelineno-0-37"></a>    <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">truncated_months</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<a id="__codelineno-0-38" name="__codelineno-0-38"></a>        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="n">SearchConfig</span><span class="o">.</span><span class="n">ERROR_MESSAGE</span><span class="p">)</span>
+<a id="__codelineno-0-39" name="__codelineno-0-39"></a>        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="n">SearchConfig</span><span class="o">.</span><span class="n">ERROR_MESSAGE</span><span class="p">)</span>
+<a id="__codelineno-0-40" name="__codelineno-0-40"></a>    <span class="k">else</span><span class="p">:</span>
+<a id="__codelineno-0-41" name="__codelineno-0-41"></a>        <span class="k">return</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">truncated_months</span><span class="p">))</span>
+</code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div>
+
+
+
+  </div>
 
   </div>
 
@@ -1543,7 +1743,7 @@
 
   <div class="doc doc-contents ">
       <p class="doc doc-class-bases">
-        Bases: <code>Exception</code></p>
+        Bases: <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/exceptions.html#Exception">Exception</a></code></p>
 
   
       <p>General Provider Error</p>
@@ -1551,13 +1751,13 @@
 
         <details class="quote">
           <summary>Source code in <code>camply/providers/base_provider.py</code></summary>
-          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-18">18</a></span>
-<span class="normal"><a href="#__codelineno-0-19">19</a></span>
-<span class="normal"><a href="#__codelineno-0-20">20</a></span>
-<span class="normal"><a href="#__codelineno-0-21">21</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-18" name="__codelineno-0-18"></a><span class="k">class</span> <span class="nc">ProviderError</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
-<a id="__codelineno-0-19" name="__codelineno-0-19"></a>    <span class="sd">&quot;&quot;&quot;</span>
-<a id="__codelineno-0-20" name="__codelineno-0-20"></a><span class="sd">    General Provider Error</span>
-<a id="__codelineno-0-21" name="__codelineno-0-21"></a><span class="sd">    &quot;&quot;&quot;</span>
+          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-44">44</a></span>
+<span class="normal"><a href="#__codelineno-0-45">45</a></span>
+<span class="normal"><a href="#__codelineno-0-46">46</a></span>
+<span class="normal"><a href="#__codelineno-0-47">47</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-44" name="__codelineno-0-44"></a><span class="k">class</span> <span class="nc">ProviderError</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+<a id="__codelineno-0-45" name="__codelineno-0-45"></a>    <span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-46" name="__codelineno-0-46"></a><span class="sd">    General Provider Error</span>
+<a id="__codelineno-0-47" name="__codelineno-0-47"></a><span class="sd">    &quot;&quot;&quot;</span>
 </code></pre></div></td></tr></table></div>
         </details>
 
@@ -1586,13 +1786,13 @@
 
         <details class="quote">
           <summary>Source code in <code>camply/providers/base_provider.py</code></summary>
-          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-24">24</a></span>
-<span class="normal"><a href="#__codelineno-0-25">25</a></span>
-<span class="normal"><a href="#__codelineno-0-26">26</a></span>
-<span class="normal"><a href="#__codelineno-0-27">27</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-24" name="__codelineno-0-24"></a><span class="k">class</span> <span class="nc">ProviderSearchError</span><span class="p">(</span><span class="n">ProviderError</span><span class="p">):</span>
-<a id="__codelineno-0-25" name="__codelineno-0-25"></a>    <span class="sd">&quot;&quot;&quot;</span>
-<a id="__codelineno-0-26" name="__codelineno-0-26"></a><span class="sd">    Searching Error</span>
-<a id="__codelineno-0-27" name="__codelineno-0-27"></a><span class="sd">    &quot;&quot;&quot;</span>
+          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-50">50</a></span>
+<span class="normal"><a href="#__codelineno-0-51">51</a></span>
+<span class="normal"><a href="#__codelineno-0-52">52</a></span>
+<span class="normal"><a href="#__codelineno-0-53">53</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-50" name="__codelineno-0-50"></a><span class="k">class</span> <span class="nc">ProviderSearchError</span><span class="p">(</span><span class="n">ProviderError</span><span class="p">):</span>
+<a id="__codelineno-0-51" name="__codelineno-0-51"></a>    <span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-52" name="__codelineno-0-52"></a><span class="sd">    Searching Error</span>
+<a id="__codelineno-0-53" name="__codelineno-0-53"></a><span class="sd">    &quot;&quot;&quot;</span>
 </code></pre></div></td></tr></table></div>
         </details>
 

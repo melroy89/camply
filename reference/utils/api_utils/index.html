@@ -279,8 +279,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../command_line_usage/" class="md-nav__link">
-        Usage 📝
+      <a href="../../../providers/" class="md-nav__link">
+        Providers 🏕
       </a>
     </li>
   
@@ -294,8 +294,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../providers/" class="md-nav__link">
-        Providers 🏕
+      <a href="../../../command_line_usage/" class="md-nav__link">
+        Usage 📝
       </a>
     </li>
   
@@ -987,8 +987,36 @@
   
   
     <li class="md-nav__item">
+      <a href="../../providers/recreation_dot_gov/recdotgov_camps/" class="md-nav__link">
+        recdotgov_camps
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../providers/recreation_dot_gov/recdotgov_provider/" class="md-nav__link">
         recdotgov_provider
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../providers/recreation_dot_gov/recdotgov_tours/" class="md-nav__link">
+        recdotgov_tours
       </a>
     </li>
   
@@ -1238,52 +1266,12 @@
     filter_json()
   </a>
   
-    <nav class="md-nav" aria-label="filter_json()">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#camply.utils.api_utils.filter_json--parameters" class="md-nav__link">
-    Parameters
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#camply.utils.api_utils.filter_json--returns" class="md-nav__link">
-    Returns
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
   <a href="#camply.utils.api_utils.generate_url" class="md-nav__link">
     generate_url()
   </a>
-  
-    <nav class="md-nav" aria-label="generate_url()">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#camply.utils.api_utils.generate_url--parameters" class="md-nav__link">
-    Parameters
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#camply.utils.api_utils.generate_url--returns" class="md-nav__link">
-    Returns
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1468,52 +1456,12 @@
     filter_json()
   </a>
   
-    <nav class="md-nav" aria-label="filter_json()">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#camply.utils.api_utils.filter_json--parameters" class="md-nav__link">
-    Parameters
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#camply.utils.api_utils.filter_json--returns" class="md-nav__link">
-    Returns
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
   <a href="#camply.utils.api_utils.generate_url" class="md-nav__link">
     generate_url()
   </a>
-  
-    <nav class="md-nav" aria-label="generate_url()">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#camply.utils.api_utils.generate_url--parameters" class="md-nav__link">
-    Parameters
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#camply.utils.api_utils.generate_url--returns" class="md-nav__link">
-    Returns
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1572,15 +1520,59 @@
   <div class="doc doc-contents ">
   
       <p>Extension Method to Dictionaries, allows easy filtering</p>
-<h4 id="camply.utils.api_utils.filter_json--parameters">Parameters<a class="headerlink" href="#camply.utils.api_utils.filter_json--parameters" title="Permanent link">#</a></h4>
-<p>json
-filters</p>
-<h4 id="camply.utils.api_utils.filter_json--returns">Returns<a class="headerlink" href="#camply.utils.api_utils.filter_json--returns" title="Permanent link">#</a></h4>
 
-<details class="filtered_object">
-  <summary>object</summary>
-  <p>Resulting JSON Filtered Object</p>
-</details>
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>json</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a></code>
+          </td>
+          <td></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>filters</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <a class="autorefs autorefs-external" title="typing.List" href="https://docs.python.org/3/library/typing.html#typing.List">List</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>]]</code>
+          </td>
+          <td></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>filtered_object</code></td>          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#object">object</a></code>
+          </td>
+          <td><p>Resulting JSON Filtered Object</p></td>
+        </tr>
+    </tbody>
+  </table>
+
       <details class="quote">
         <summary>Source code in <code>camply/utils/api_utils.py</code></summary>
         <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-54">54</a></span>
@@ -1659,33 +1651,99 @@ filters</p>
   <div class="doc doc-contents ">
   
       <p>Build a URL</p>
-<h4 id="camply.utils.api_utils.generate_url--parameters">Parameters<a class="headerlink" href="#camply.utils.api_utils.generate_url--parameters" title="Permanent link">#</a></h4>
 
-<details class="scheme">
-  <summary>str</summary>
-  <p>URL scheme specifier</p>
-</details>
-<details class="netloc">
-  <summary>str</summary>
-  <p>Network location part</p>
-</details>
-<details class="path">
-  <summary>str</summary>
-  <p>Hierarchical path</p>
-</details>
-<details class="query">
-  <summary>str</summary>
-  <p>Query component</p>
-</details>
-<details class="fragment">
-  <summary>str</summary>
-  <p>Fragment identifier</p>
-</details>      <h4 id="camply.utils.api_utils.generate_url--returns">Returns<a class="headerlink" href="#camply.utils.api_utils.generate_url--returns" title="Permanent link">#</a></h4>
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>scheme</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
+          </td>
+          <td><p>URL scheme specifier</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>netloc</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
+          </td>
+          <td><p>Network location part</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>path</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
+          </td>
+          <td><p>Hierarchical path</p></td>
+          <td>
+                <code>&#39;&#39;</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>params</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
+          </td>
+          <td><p>Parameters for last path element</p></td>
+          <td>
+                <code>&#39;&#39;</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>query</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
+          </td>
+          <td><p>Query component</p></td>
+          <td>
+                <code>&#39;&#39;</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>fragment</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
+          </td>
+          <td><p>Fragment identifier</p></td>
+          <td>
+                <code>&#39;&#39;</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
 
-<details class="url">
-  <summary>str</summary>
-  <p>Compiled URL</p>
-</details>
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>url</code></td>          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
+          </td>
+          <td><p>Compiled URL</p></td>
+        </tr>
+    </tbody>
+  </table>
+
       <details class="quote">
         <summary>Source code in <code>camply/utils/api_utils.py</code></summary>
         <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-12">12</a></span>

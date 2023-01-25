@@ -279,8 +279,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../command_line_usage/" class="md-nav__link">
-        Usage 📝
+      <a href="../../../providers/" class="md-nav__link">
+        Providers 🏕
       </a>
     </li>
   
@@ -294,8 +294,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../providers/" class="md-nav__link">
-        Providers 🏕
+      <a href="../../../command_line_usage/" class="md-nav__link">
+        Usage 📝
       </a>
     </li>
   
@@ -1047,8 +1047,36 @@
   
   
     <li class="md-nav__item">
+      <a href="../../providers/recreation_dot_gov/recdotgov_camps/" class="md-nav__link">
+        recdotgov_camps
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../providers/recreation_dot_gov/recdotgov_provider/" class="md-nav__link">
         recdotgov_provider
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../providers/recreation_dot_gov/recdotgov_tours/" class="md-nav__link">
+        recdotgov_tours
       </a>
     </li>
   
@@ -1542,7 +1570,14 @@
 <span class="normal"><a href="#__codelineno-0-64">64</a></span>
 <span class="normal"><a href="#__codelineno-0-65">65</a></span>
 <span class="normal"><a href="#__codelineno-0-66">66</a></span>
-<span class="normal"><a href="#__codelineno-0-67">67</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-36" name="__codelineno-0-36"></a><span class="k">class</span> <span class="nc">EquipmentConfig</span><span class="p">:</span>
+<span class="normal"><a href="#__codelineno-0-67">67</a></span>
+<span class="normal"><a href="#__codelineno-0-68">68</a></span>
+<span class="normal"><a href="#__codelineno-0-69">69</a></span>
+<span class="normal"><a href="#__codelineno-0-70">70</a></span>
+<span class="normal"><a href="#__codelineno-0-71">71</a></span>
+<span class="normal"><a href="#__codelineno-0-72">72</a></span>
+<span class="normal"><a href="#__codelineno-0-73">73</a></span>
+<span class="normal"><a href="#__codelineno-0-74">74</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-36" name="__codelineno-0-36"></a><span class="k">class</span> <span class="nc">EquipmentConfig</span><span class="p">:</span>
 <a id="__codelineno-0-37" name="__codelineno-0-37"></a>    <span class="sd">&quot;&quot;&quot;</span>
 <a id="__codelineno-0-38" name="__codelineno-0-38"></a><span class="sd">    Campsite Equipment Configuration</span>
 <a id="__codelineno-0-39" name="__codelineno-0-39"></a><span class="sd">    &quot;&quot;&quot;</span>
@@ -1574,6 +1609,13 @@
 <a id="__codelineno-0-65" name="__codelineno-0-65"></a>    <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">list_of_values</span> <span class="ow">in</span> <span class="n">EQUIPMENT_MAPPING</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
 <a id="__codelineno-0-66" name="__codelineno-0-66"></a>        <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">list_of_values</span><span class="p">:</span>
 <a id="__codelineno-0-67" name="__codelineno-0-67"></a>            <span class="n">EQUIPMENT_REVERSE_MAPPING</span><span class="p">[</span><span class="n">value</span><span class="p">]</span> <span class="o">=</span> <span class="n">key</span>
+<a id="__codelineno-0-68" name="__codelineno-0-68"></a>
+<a id="__codelineno-0-69" name="__codelineno-0-69"></a>    <span class="n">TIMESTAMP_EQUIPMENT</span> <span class="o">=</span> <span class="p">[]</span>
+<a id="__codelineno-0-70" name="__codelineno-0-70"></a>    <span class="k">for</span> <span class="n">hour</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">24</span><span class="p">):</span>
+<a id="__codelineno-0-71" name="__codelineno-0-71"></a>        <span class="n">hour_str</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">hour</span><span class="p">)</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<a id="__codelineno-0-72" name="__codelineno-0-72"></a>        <span class="k">for</span> <span class="n">minute</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">60</span><span class="p">):</span>
+<a id="__codelineno-0-73" name="__codelineno-0-73"></a>            <span class="n">minute_str</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">minute</span><span class="p">)</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<a id="__codelineno-0-74" name="__codelineno-0-74"></a>            <span class="n">TIMESTAMP_EQUIPMENT</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">hour_str</span> <span class="o">+</span> <span class="n">minute_str</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
         </details>
 
@@ -1610,7 +1652,7 @@
 
   <div class="doc doc-contents ">
       <p class="doc doc-class-bases">
-        Bases: <code>str</code>, <code><span title="enum.Enum">Enum</span></code></p>
+        Bases: <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>, <code><a class="autorefs autorefs-external" title="enum.Enum" href="https://docs.python.org/3/library/enum.html#enum.Enum">Enum</a></code></p>
 
   
       <p>Enumeration of the Equipment Options</p>

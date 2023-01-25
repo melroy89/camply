@@ -277,21 +277,6 @@
 
   
   
-  
-    <li class="md-nav__item">
-      <a href="../command_line_usage/" class="md-nav__link">
-        Usage 📝
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
     
   
   
@@ -348,10 +333,52 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#recreationgov-tickets-tours-timed-entry" class="md-nav__link">
+    Recreation.gov Tickets, Tours, &amp; Timed-Entry
+  </a>
+  
+    <nav class="md-nav" aria-label="Recreation.gov Tickets, Tours, &amp; Timed-Entry">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tours-tickets" class="md-nav__link">
+    Tours &amp; Tickets
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#timed-entry" class="md-nav__link">
+    Timed Entry
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
       
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../command_line_usage/" class="md-nav__link">
+        Usage 📝
+      </a>
     </li>
   
 
@@ -1038,8 +1065,36 @@
   
   
     <li class="md-nav__item">
+      <a href="../reference/providers/recreation_dot_gov/recdotgov_camps/" class="md-nav__link">
+        recdotgov_camps
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../reference/providers/recreation_dot_gov/recdotgov_provider/" class="md-nav__link">
         recdotgov_provider
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/providers/recreation_dot_gov/recdotgov_tours/" class="md-nav__link">
+        recdotgov_tours
       </a>
     </li>
   
@@ -1437,6 +1492,33 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#recreationgov-tickets-tours-timed-entry" class="md-nav__link">
+    Recreation.gov Tickets, Tours, &amp; Timed-Entry
+  </a>
+  
+    <nav class="md-nav" aria-label="Recreation.gov Tickets, Tours, &amp; Timed-Entry">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tours-tickets" class="md-nav__link">
+    Tours &amp; Tickets
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#timed-entry" class="md-nav__link">
+    Timed Entry
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1459,7 +1541,7 @@
 
 <h1 id="providers">Providers<a class="headerlink" href="#providers" title="Permanent link">#</a></h1>
 <p>camply works with a number of providers. A "provider" is an Online Booking
-Service that lists campsite and recreation inventory.</p>
+Service that lists camping and recreation inventory.</p>
 <h2 id="recreationgov">Recreation.gov<a class="headerlink" href="#recreationgov" title="Permanent link">#</a></h2>
 <p><img alt="" class="center" src="../_static/recreation_dot_gov_logo.png" /></p>
 <p><a href="https://recreation.gov">Recreation.gov</a> is (so far) the largest and most widely supported
@@ -1515,6 +1597,25 @@ areas:</p>
 <li><a href="../command_line_usage/#look-for-a-campsite-from-goingtocamp">Look for a Campsite from GoingToCamp</a></li>
 <li><a href="../command_line_usage/#searching-goingtocamp-using-equipment">Searching GoingToCamp Using Equipment</a></li>
 </ul>
+<h2 id="recreationgov-tickets-tours-timed-entry">Recreation.gov Tickets, Tours, &amp; Timed-Entry<a class="headerlink" href="#recreationgov-tickets-tours-timed-entry" title="Permanent link">#</a></h2>
+<p><img alt="" class="center" src="../_static/recreation_dot_gov_logo.png" /></p>
+<p>Apart from reservations for campsites, Recreation.gov also supports reserving tickets &amp; tours
+- there are thousands of tickets and tours options available around the USA.</p>
+<p><a href="https://www.recreation.gov/search?inventory_type=tours">Search for Tickets, Tours, &amp; Timed-Entry Online</a></p>
+<h3 id="tours-tickets">Tours &amp; Tickets<a class="headerlink" href="#tours-tickets" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>camply campgrounds --provider RecreationDotGovTicket --state HI
+</code></pre></div>
+<h3 id="timed-entry">Timed Entry<a class="headerlink" href="#timed-entry" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>camply campgrounds --provider RecreationDotGovTimedEntry --state OR
+</code></pre></div>
+<ul>
+<li><a href="../command_line_usage/#searching-for-tickets-and-timed-entries">Searching for Tickets and Timed Entries</a><ul>
+<li><a href="../command_line_usage/#tickets-tours">Tickets + Tours</a></li>
+<li><a href="../command_line_usage/#timed-entry">Timed Entry</a></li>
+<li><a href="../command_line_usage/#using-the-daily-providers">Using the Daily Providers</a></li>
+</ul>
+</li>
+</ul>
 
 
   
@@ -1537,7 +1638,7 @@ areas:</p>
     <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
-        <a href="../command_line_usage/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Usage 📝" rel="prev">
+        <a href="../installation/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Installation ☀️" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -1546,20 +1647,20 @@ areas:</p>
               <span class="md-footer__direction">
                 Previous
               </span>
-              Usage 📝
+              Installation ☀️
             </div>
           </div>
         </a>
       
       
         
-        <a href="../recreationdotgov/" class="md-footer__link md-footer__link--next" aria-label="Next: Finding Campsites on Recreation.gov 🌲" rel="next">
+        <a href="../command_line_usage/" class="md-footer__link md-footer__link--next" aria-label="Next: Usage 📝" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Finding Campsites on Recreation.gov 🌲
+              Usage 📝
             </div>
           </div>
           <div class="md-footer__button md-icon">

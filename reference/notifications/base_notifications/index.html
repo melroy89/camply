@@ -279,8 +279,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../command_line_usage/" class="md-nav__link">
-        Usage 📝
+      <a href="../../../providers/" class="md-nav__link">
+        Providers 🏕
       </a>
     </li>
   
@@ -294,8 +294,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../providers/" class="md-nav__link">
-        Providers 🏕
+      <a href="../../../command_line_usage/" class="md-nav__link">
+        Usage 📝
       </a>
     </li>
   
@@ -795,38 +795,12 @@
     send_campsites()
   </a>
   
-    <nav class="md-nav" aria-label="send_campsites()">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#camply.notifications.base_notifications.BaseNotifications.send_campsites--parameters" class="md-nav__link">
-    Parameters
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
         
           <li class="md-nav__item">
   <a href="#camply.notifications.base_notifications.BaseNotifications.send_message" class="md-nav__link">
     send_message()
   </a>
-  
-    <nav class="md-nav" aria-label="send_message()">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#camply.notifications.base_notifications.BaseNotifications.send_message--parameters" class="md-nav__link">
-    Parameters
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -1107,8 +1081,36 @@
   
   
     <li class="md-nav__item">
+      <a href="../../providers/recreation_dot_gov/recdotgov_camps/" class="md-nav__link">
+        recdotgov_camps
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../providers/recreation_dot_gov/recdotgov_provider/" class="md-nav__link">
         recdotgov_provider
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../providers/recreation_dot_gov/recdotgov_tours/" class="md-nav__link">
+        recdotgov_tours
       </a>
     </li>
   
@@ -1524,38 +1526,12 @@
     send_campsites()
   </a>
   
-    <nav class="md-nav" aria-label="send_campsites()">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#camply.notifications.base_notifications.BaseNotifications.send_campsites--parameters" class="md-nav__link">
-    Parameters
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
         
           <li class="md-nav__item">
   <a href="#camply.notifications.base_notifications.BaseNotifications.send_message" class="md-nav__link">
     send_message()
   </a>
-  
-    <nav class="md-nav" aria-label="send_message()">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#camply.notifications.base_notifications.BaseNotifications.send_message--parameters" class="md-nav__link">
-    Parameters
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -1625,7 +1601,7 @@
 
   <div class="doc doc-contents ">
       <p class="doc doc-class-bases">
-        Bases: <code><span title="abc.ABC">ABC</span></code></p>
+        Bases: <code><a class="autorefs autorefs-external" title="abc.ABC" href="https://docs.python.org/3/library/abc.html#abc.ABC">ABC</a></code></p>
 
   
       <p>Base Notifications</p>
@@ -1983,8 +1959,30 @@
   <div class="doc doc-contents ">
   
       <p>Send a message with a campsite object</p>
-<h5 id="camply.notifications.base_notifications.BaseNotifications.send_campsites--parameters">Parameters<a class="headerlink" href="#camply.notifications.base_notifications.BaseNotifications.send_campsites--parameters" title="Permanent link">#</a></h5>
-<p>campsites: List[AvailableCampsite]</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>campsites</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.List" href="https://docs.python.org/3/library/typing.html#typing.List">List</a>[<a class="autorefs autorefs-internal" title="camply.containers.AvailableCampsite" href="../../containers/#camply.containers.AvailableCampsite">AvailableCampsite</a>]</code>
+          </td>
+          <td></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
 
       <details class="quote">
         <summary>Source code in <code>camply/notifications/base_notifications.py</code></summary>
@@ -2030,13 +2028,39 @@
   <div class="doc doc-contents ">
   
       <p>Send a message</p>
-<h5 id="camply.notifications.base_notifications.BaseNotifications.send_message--parameters">Parameters<a class="headerlink" href="#camply.notifications.base_notifications.BaseNotifications.send_message--parameters" title="Permanent link">#</a></h5>
 
-<details class="message">
-  <summary>str</summary>
-  <p>Message Text</p>
-</details>      <p>**kwargs
-    All kwargs passed to underlying notification method</p>
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>message</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
+          </td>
+          <td><p>Message Text</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>**kwargs</code></td>
+          <td>
+          </td>
+          <td><p>All kwargs passed to underlying notification method</p></td>
+          <td>
+                <code>{}</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
 
       <details class="quote">
         <summary>Source code in <code>camply/notifications/base_notifications.py</code></summary>
@@ -2092,7 +2116,7 @@
 
   <div class="doc doc-contents ">
       <p class="doc doc-class-bases">
-        Bases: <code>Exception</code></p>
+        Bases: <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/exceptions.html#Exception">Exception</a></code></p>
 
   
       <p>Notification Exceptions</p>
