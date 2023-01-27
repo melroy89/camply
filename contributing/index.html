@@ -46,18 +46,6 @@
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
-  
-
-
-  
-  
-
-
-  <script id="__analytics">function __md_analytics(){function n(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],n("js",new Date),n("config","G-J7HWHT1EZN"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&n("event","search",{search_term:this.value})}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");n("event","feedback",{page:t,data:e}),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){n("config","G-J7HWHT1EZN",{page_path:e.pathname})})});var e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=G-J7HWHT1EZN",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
-
-  
-    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
-  
 
     
     
@@ -1515,7 +1503,7 @@
 
 <h1 id="contributing">Contributing<a class="headerlink" href="#contributing" title="Permanent link">#</a></h1>
 <h3 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">#</a></h3>
-<p>camply uses <a href="https://python-poetry.org/">Poetry</a> to  manage its Python environment.
+<p>camply uses <a href="https://python-poetry.org/">Poetry</a> to manage its Python environment.
 To get started first install <code>poetry</code>:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>pipx install poetry
 </code></pre></div>
@@ -1523,17 +1511,17 @@ To get started first install <code>poetry</code>:</p>
 <h3 id="coding">Coding<a class="headerlink" href="#coding" title="Permanent link">#</a></h3>
 <p>camply makes use of a couple tools to help with contributing via
 <a href="https://pre-commit.com/">pre-commit</a>. <code>pre-commit</code> is a tool to manage git-hooks scripts, which are useful
-  for identifying simple issues before submission to code review.</p>
+for identifying simple issues before submission to code review.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>pipx install pre-commit
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>pre-commit install
 </code></pre></div>
 <ul>
 <li><code>camply</code>'s instance of <code>pre-commit</code> uses tools like <a href="https://github.com/psf/black">black</a>
-  and
-  <a href="https://pycqa.github.io/isort/">isort</a> to format your code in a standardized way.</li>
+    and
+    <a href="https://pycqa.github.io/isort/">isort</a> to format your code in a standardized way.</li>
 <li>After cloning this repo run <code>pre-commit install</code>.</li>
 <li>Done, now pre-commit will run automatically on git commit. To run it manually on your changed
-  code run <code>pre-commit run</code> on your command line.</li>
+    code run <code>pre-commit run</code> on your command line.</li>
 </ul>
 <h3 id="running">Running<a class="headerlink" href="#running" title="Permanent link">#</a></h3>
 <p>Run the command-line interface from the source tree:</p>
@@ -1547,12 +1535,12 @@ To get started first install <code>poetry</code>:</p>
 <h3 id="testing">Testing<a class="headerlink" href="#testing" title="Permanent link">#</a></h3>
 <ul>
 <li><a href="https://tox.wiki/en/latest/">tox</a> is a tool to standardize and manage testing and routines
-  using Python virtual environments</li>
+    using Python virtual environments</li>
 <li><code>camply</code>'s instance of <code>tox</code> runs Python unit tests, and uses tools like
-  <a href="https://github.com/python/mypy">mypy</a> and <a href="https://flake8.pycqa.org/en/latest/pre">flake8</a> to
-  format.</li>
+    <a href="https://github.com/python/mypy">mypy</a> and <a href="https://flake8.pycqa.org/en/latest/pre">flake8</a> to
+    format.</li>
 <li>To run all <code>tox</code> tests (which get run as part of GitHub Actions) locally, just enter <code>tox</code>
-  into your command line or use poetry.</li>
+    into your command line or use poetry.</li>
 </ul>
 <p>Run the Full Test Suite:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>poetry run tox
@@ -1616,8 +1604,6 @@ commit message emoji prefixes are the only ones to trigger new releases:</p>
 <li>Build and upload the package to Docker Hub.</li>
 </ul>
 
-
-  
 
 
 

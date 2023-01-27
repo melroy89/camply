@@ -46,18 +46,6 @@
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
-  
-
-
-  
-  
-
-
-  <script id="__analytics">function __md_analytics(){function n(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],n("js",new Date),n("config","G-J7HWHT1EZN"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&n("event","search",{search_term:this.value})}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");n("event","feedback",{page:t,data:e}),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){n("config","G-J7HWHT1EZN",{page_path:e.pathname})})});var e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=G-J7HWHT1EZN",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
-
-  
-    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
-  
 
     
     
@@ -1996,101 +1984,101 @@ and a link to make the booking. Required parameters include <code>--start-date</
 <ul>
 <li><code>--rec-area</code>: <code>RECREATION_AREA_ID</code><ul>
 <li>Add Recreation Areas (comprised of campgrounds) by ID.
-  <a href="#searching-for-a-campsite">**<em>example</em></a></li>
+    <a href="#searching-for-a-campsite">**<em>example</em></a></li>
 </ul>
 </li>
 <li><code>--campground</code>: <code>CAMPGROUND_ID</code><ul>
 <li>Add individual Campgrounds by ID.
-  <a href="#searching-for-a-campsite-by-campground-id">**<em>example</em></a></li>
+    <a href="#searching-for-a-campsite-by-campground-id">**<em>example</em></a></li>
 </ul>
 </li>
 <li><code>--campsite</code>: <code>CAMPSITE_ID</code><ul>
 <li>Add individual Campsites by ID.
-  <a href="#searching-for-a-specific-campsite-by-id">**<em>example</em></a></li>
+    <a href="#searching-for-a-specific-campsite-by-id">**<em>example</em></a></li>
 </ul>
 </li>
 <li><code>--start-date</code>: <code>START_DATE</code><ul>
 <li><code>YYYY-MM-DD</code>: Start of Search window. You will be arriving this day.
-  <a href="#searching-for-a-campsite">**<em>example</em></a></li>
+    <a href="#searching-for-a-campsite">**<em>example</em></a></li>
 </ul>
 </li>
 <li><code>--end-date</code>: <code>END_DATE</code><ul>
 <li><code>YYYY-MM-DD</code>: End of Search window. You will be checking out this day..
-  <a href="#searching-for-a-campsite">**<em>example</em></a></li>
+    <a href="#searching-for-a-campsite">**<em>example</em></a></li>
 </ul>
 </li>
 <li><code>--weekends</code><ul>
 <li>Only search for weekend bookings (Fri/Sat nights).
-  <a href="#look-for-weekend-campsite-availabilities">**<em>example</em></a></li>
+    <a href="#look-for-weekend-campsite-availabilities">**<em>example</em></a></li>
 </ul>
 </li>
 <li><code>--nights</code><ul>
 <li>Search for campsite stays with consecutive nights. Defaults to 1 which returns all campsites
-  found.
-  <a href="#look-for-consecutive-nights-at-the-same-campsite">**<em>example</em></a></li>
+    found.
+    <a href="#look-for-consecutive-nights-at-the-same-campsite">**<em>example</em></a></li>
 </ul>
 </li>
 <li><code>--provider</code>: <code>PROVIDER</code><ul>
 <li>Camping Search Provider. Defaults to 'RecreationDotGov', not case-sensitive. Options include:
-  <a href="#searching-for-a-campsite">RecreationDotGov</a>, <a href="#look-for-a-campsite-inside-of-yellowstone">Yellowstone</a>,
-  <a href="#look-for-a-campsite-from-goingtocamp">GoingToCamp</a>, <a href="#tickets-tours">RecreationDotGovDailyTicket</a>,
-  <a href="#timed-entry">RecreationDotGovDailyTimedEntry</a>, <a href="#tickets-tours">RecreationDotGovTicket</a>,
-  <a href="#timed-entry">RecreationDotGovTimedEntry</a>.
-  <a href="#look-for-a-campsite-inside-of-yellowstone">**<em>example</em></a></li>
+    <a href="#searching-for-a-campsite">RecreationDotGov</a>, <a href="#look-for-a-campsite-inside-of-yellowstone">Yellowstone</a>,
+    <a href="#look-for-a-campsite-from-goingtocamp">GoingToCamp</a>, <a href="#tickets-tours">RecreationDotGovDailyTicket</a>,
+    <a href="#timed-entry">RecreationDotGovDailyTimedEntry</a>, <a href="#tickets-tours">RecreationDotGovTicket</a>,
+    <a href="#timed-entry">RecreationDotGovTimedEntry</a>.
+    <a href="#look-for-a-campsite-inside-of-yellowstone">**<em>example</em></a></li>
 </ul>
 </li>
 <li><code>--continuous</code><ul>
 <li>Continuously check for a campsite to become available, and quit once at least one campsite is
-  found.
-  <a href="#continuously-searching-for-a-campsite">**<em>example</em></a></li>
+    found.
+    <a href="#continuously-searching-for-a-campsite">**<em>example</em></a></li>
 </ul>
 </li>
 <li><code>--search-forever</code><ul>
 <li>If <code>--continuous</code> is activated, this method continues to search after the first availability
-  has been found. The one caveat is that it will never notify about the same identical campsite
-  for the same booking date.
-  <a href="#continue-looking-after-the-first-match-is-found">**<em>example</em></a></li>
+    has been found. The one caveat is that it will never notify about the same identical campsite
+    for the same booking date.
+    <a href="#continue-looking-after-the-first-match-is-found">**<em>example</em></a></li>
 </ul>
 </li>
 <li><code>--notifications</code>: <code>NOTIFICATIONS</code><ul>
 <li>If <code>--continuous</code> is activated, types of notifications to receive. Options available
-  are<code>email</code>, <code>pushover</code>, <code>pushbullet</code>, <code>telegram</code>, or <code>silent</code>. Defaults to <code>silent</code> - which just logs
-  messages to console.
-  <a href="#send-a-push-notification">**<em>example</em></a></li>
+    are<code>email</code>, <code>pushover</code>, <code>pushbullet</code>, <code>telegram</code>, or <code>silent</code>. Defaults to <code>silent</code> - which just logs
+    messages to console.
+    <a href="#send-a-push-notification">**<em>example</em></a></li>
 </ul>
 </li>
 <li><code>--equipment</code><ul>
 <li>Search for campsites compatible with your camping equipment. This argument accepts two
-  options, the equipment name and its length If you don't want to filter based on length provide
-  a length of 0. Accepted equipment names include <code>Tent</code>, <code>RV</code>. <code>Trailer</code>, <code>Vehicle</code> and are
-  not case-sensitive.
-  <a href="#searching-for-a-campsite-that-fits-your-equipment">**<em>example</em></a></li>
+    options, the equipment name and its length If you don't want to filter based on length provide
+    a length of 0. Accepted equipment names include <code>Tent</code>, <code>RV</code>. <code>Trailer</code>, <code>Vehicle</code> and are
+    not case-sensitive.
+    <a href="#searching-for-a-campsite-that-fits-your-equipment">**<em>example</em></a></li>
 </ul>
 </li>
 <li><code>--equipment-id</code><ul>
 <li>Search for campsites campaitble with specific equipment categories. Going To Camp
-  uses equipment category IDs for filtering campsites by equipment. Every recreation
-  area has equipment categories unique to it.
-  <a href="#searching-goingtocamp-using-equipment">**<em>example</em></a></li>
+    uses equipment category IDs for filtering campsites by equipment. Every recreation
+    area has equipment categories unique to it.
+    <a href="#searching-goingtocamp-using-equipment">**<em>example</em></a></li>
 </ul>
 </li>
 <li><code>--notify-first-try</code><ul>
 <li>If <code>--continuous</code> is activated, whether to send all non-silent notifications if more than 5
-  matching campsites are found on the first try. Defaults to false which only sends the first5.
-  <a href="#continuously-searching-for-a-campsite">**<em>example</em></a></li>
+    matching campsites are found on the first try. Defaults to false which only sends the first5.
+    <a href="#continuously-searching-for-a-campsite">**<em>example</em></a></li>
 </ul>
 </li>
 <li><code>--polling-interval</code>: <code>POLLING_INTERVAL</code><ul>
 <li>If <code>--continuous</code> is activated, how often to wait in between checks (in minutes). Defaults to
-  10, cannot be less than 5.
-  <a href="#look-for-weekend-campsite-availabilities">**<em>example</em></a></li>
+    10, cannot be less than 5.
+    <a href="#look-for-weekend-campsite-availabilities">**<em>example</em></a></li>
 </ul>
 </li>
 <li><code>--yaml-config</code><ul>
 <li>Rather than provide arguments to the command line utility, instead pass a file path to a YAML
-  configuration file. See the documentation for more information on how to structure your
-  configuration file.
-  <a href="#using-a-yaml-configuration-file-to-search-for-campsites">**<em>example</em></a></li>
+    configuration file. See the documentation for more information on how to structure your
+    configuration file.
+    <a href="#using-a-yaml-configuration-file-to-search-for-campsites">**<em>example</em></a></li>
 </ul>
 </li>
 </ul>
@@ -2357,23 +2345,23 @@ arguments will overwrite all <code>--rec-area</code> arguments.</p>
 <h3 id="using-a-yaml-configuration-file-to-search-for-campsites">Using a YAML Configuration file to search for campsites<a class="headerlink" href="#using-a-yaml-configuration-file-to-search-for-campsites" title="Permanent link">#</a></h3>
 <p>Sometimes, using a YAML configuration file is easier to manage all of your search options. See the
 below <a href="../examples/example_search.yaml">YAML example file</a> and corresponding camply command:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="nt">provider</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RecreationDotGov</span><span class="w">  </span><span class="c1"># RecreationDotGov IF NOT PROVIDED</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="nt">provider</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RecreationDotGov</span><span class="w"> </span><span class="c1"># RecreationDotGov IF NOT PROVIDED</span><span class="w"></span>
 <a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="nt">recreation_area</span><span class="p">:</span><span class="w"> </span><span class="c1"># (LIST OR SINGLE ENTRY)</span><span class="w"></span>
-<a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2991</span><span class="w">  </span><span class="c1"># Yosemite National Park, CA (All Campgrounds)</span><span class="w"></span>
-<a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1074</span><span class="w">  </span><span class="c1"># Sierra National Forest, CA (All Campgrounds)</span><span class="w"></span>
-<a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a><span class="nt">campgrounds</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span><span class="w">  </span><span class="c1"># ENTIRE FIELD CAN BE OMITTED IF NOT USED - (LIST OR SINGLE ENTRY)</span><span class="w"></span>
-<a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a><span class="nt">campsites</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span><span class="w">   </span><span class="c1"># OVERRIDES CAMPGROUNDS / RECREATION AREA - (LIST OR SINGLE ENTRY)</span><span class="w"></span>
-<a id="__codelineno-23-7" name="__codelineno-23-7" href="#__codelineno-23-7"></a><span class="nt">start_date</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2023-09-12</span><span class="w">  </span><span class="c1"># YYYY-MM-DD</span><span class="w"></span>
-<a id="__codelineno-23-8" name="__codelineno-23-8" href="#__codelineno-23-8"></a><span class="nt">end_date</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2023-09-13</span><span class="w">  </span><span class="c1"># YYYY-MM-DD</span><span class="w"></span>
-<a id="__codelineno-23-9" name="__codelineno-23-9" href="#__codelineno-23-9"></a><span class="nt">weekends</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w">  </span><span class="c1"># FALSE BY DEFAULT</span><span class="w"></span>
-<a id="__codelineno-23-10" name="__codelineno-23-10" href="#__codelineno-23-10"></a><span class="nt">nights</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span><span class="w">  </span><span class="c1"># 1 BY DEFAULT</span><span class="w"></span>
-<a id="__codelineno-23-11" name="__codelineno-23-11" href="#__codelineno-23-11"></a><span class="nt">continuous</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w">  </span><span class="c1"># DEFAULTS TO TRUE</span><span class="w"></span>
-<a id="__codelineno-23-12" name="__codelineno-23-12" href="#__codelineno-23-12"></a><span class="nt">polling_interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5</span><span class="w">  </span><span class="c1"># DEFAULTS TO 10 , CAN&#39;T BE LESS THAN 5</span><span class="w"></span>
-<a id="__codelineno-23-13" name="__codelineno-23-13" href="#__codelineno-23-13"></a><span class="nt">notifications</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">email</span><span class="w">  </span><span class="c1"># (silent, email, pushover, pushbullet, and telegram), DEFAULTS TO `silent`</span><span class="w"></span>
-<a id="__codelineno-23-14" name="__codelineno-23-14" href="#__codelineno-23-14"></a><span class="nt">search_forever</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w">  </span><span class="c1"># FALSE BY DEFAULT</span><span class="w"></span>
-<a id="__codelineno-23-15" name="__codelineno-23-15" href="#__codelineno-23-15"></a><span class="nt">notify_first_try</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w">  </span><span class="c1"># FALSE BY DEFAULT</span><span class="w"></span>
+<a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2991</span><span class="w"> </span><span class="c1"># Yosemite National Park, CA (All Campgrounds)</span><span class="w"></span>
+<a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1074</span><span class="w"> </span><span class="c1"># Sierra National Forest, CA (All Campgrounds)</span><span class="w"></span>
+<a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a><span class="nt">campgrounds</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span><span class="w"> </span><span class="c1"># ENTIRE FIELD CAN BE OMITTED IF NOT USED - (LIST OR SINGLE ENTRY)</span><span class="w"></span>
+<a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a><span class="nt">campsites</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span><span class="w"> </span><span class="c1"># OVERRIDES CAMPGROUNDS / RECREATION AREA - (LIST OR SINGLE ENTRY)</span><span class="w"></span>
+<a id="__codelineno-23-7" name="__codelineno-23-7" href="#__codelineno-23-7"></a><span class="nt">start_date</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2023-09-12</span><span class="w"> </span><span class="c1"># YYYY-MM-DD</span><span class="w"></span>
+<a id="__codelineno-23-8" name="__codelineno-23-8" href="#__codelineno-23-8"></a><span class="nt">end_date</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2023-09-13</span><span class="w"> </span><span class="c1"># YYYY-MM-DD</span><span class="w"></span>
+<a id="__codelineno-23-9" name="__codelineno-23-9" href="#__codelineno-23-9"></a><span class="nt">weekends</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"> </span><span class="c1"># FALSE BY DEFAULT</span><span class="w"></span>
+<a id="__codelineno-23-10" name="__codelineno-23-10" href="#__codelineno-23-10"></a><span class="nt">nights</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span><span class="w"> </span><span class="c1"># 1 BY DEFAULT</span><span class="w"></span>
+<a id="__codelineno-23-11" name="__codelineno-23-11" href="#__codelineno-23-11"></a><span class="nt">continuous</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"> </span><span class="c1"># DEFAULTS TO TRUE</span><span class="w"></span>
+<a id="__codelineno-23-12" name="__codelineno-23-12" href="#__codelineno-23-12"></a><span class="nt">polling_interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5</span><span class="w"> </span><span class="c1"># DEFAULTS TO 10 , CAN&#39;T BE LESS THAN 5</span><span class="w"></span>
+<a id="__codelineno-23-13" name="__codelineno-23-13" href="#__codelineno-23-13"></a><span class="nt">notifications</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">email</span><span class="w"> </span><span class="c1"># (silent, email, pushover, pushbullet, and telegram), DEFAULTS TO `silent`</span><span class="w"></span>
+<a id="__codelineno-23-14" name="__codelineno-23-14" href="#__codelineno-23-14"></a><span class="nt">search_forever</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"> </span><span class="c1"># FALSE BY DEFAULT</span><span class="w"></span>
+<a id="__codelineno-23-15" name="__codelineno-23-15" href="#__codelineno-23-15"></a><span class="nt">notify_first_try</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"> </span><span class="c1"># FALSE BY DEFAULT</span><span class="w"></span>
 <a id="__codelineno-23-16" name="__codelineno-23-16" href="#__codelineno-23-16"></a><span class="nt">equipment</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span><span class="w"> </span><span class="c1"># Array of Equipment Search Lists - DEFAULTS TO `null`</span><span class="w"></span>
-<a id="__codelineno-23-17" name="__codelineno-23-17" href="#__codelineno-23-17"></a><span class="nt">offline_search</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w">    </span><span class="c1"># FALSE BY DEFAULT</span><span class="w"></span>
+<a id="__codelineno-23-17" name="__codelineno-23-17" href="#__codelineno-23-17"></a><span class="nt">offline_search</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"> </span><span class="c1"># FALSE BY DEFAULT</span><span class="w"></span>
 <a id="__codelineno-23-18" name="__codelineno-23-18" href="#__codelineno-23-18"></a><span class="nt">offline_search_path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">camply_campsites.json</span><span class="w"> </span><span class="c1"># Defaults to `camply_campsites.json`</span><span class="w"></span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>camply campsites --yaml-config example_search.yaml
@@ -2397,12 +2385,12 @@ it is safer to set length to 0.</p>
 </code></pre></div>
 <p>Here's what the above search would look like on a YAML Config:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="nt">recreation_area</span><span class="p">:</span><span class="w"></span>
-<a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2991</span><span class="w"></span>
+<a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2991</span><span class="w"></span>
 <a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a><span class="nt">start_date</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2023-07-09</span><span class="w"></span>
 <a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a><span class="nt">end_date</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2023-07-17</span><span class="w"></span>
 <a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a><span class="nt">nights</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5</span><span class="w"></span>
 <a id="__codelineno-26-6" name="__codelineno-26-6" href="#__codelineno-26-6"></a><span class="nt">equipment</span><span class="p">:</span><span class="w"></span>
-<a id="__codelineno-26-7" name="__codelineno-26-7" href="#__codelineno-26-7"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">RV</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">25</span><span class="w"> </span><span class="p p-Indicator">]</span><span class="w"></span>
+<a id="__codelineno-26-7" name="__codelineno-26-7" href="#__codelineno-26-7"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">RV</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">25</span><span class="p p-Indicator">]</span><span class="w"></span>
 </code></pre></div>
 <p>Finally, here's a search that accommodates trailers of all lengths:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>camply campsites \
@@ -2542,8 +2530,6 @@ their 8:00AM-5:00PM time slot:</p>
 <a id="__codelineno-40-6" name="__codelineno-40-6" href="#__codelineno-40-6"></a>  --equipment 0800 0
 </code></pre></div>
 
-
-  
 
 
 
