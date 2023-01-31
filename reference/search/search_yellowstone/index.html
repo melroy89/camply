@@ -1776,7 +1776,7 @@
 <a id="__codelineno-0-76" name="__codelineno-0-76"></a><span class="sd">        -------</span>
 <a id="__codelineno-0-77" name="__codelineno-0-77"></a><span class="sd">        List[AvailableCampsite]</span>
 <a id="__codelineno-0-78" name="__codelineno-0-78"></a><span class="sd">        &quot;&quot;&quot;</span>
-<a id="__codelineno-0-79" name="__codelineno-0-79"></a>        <span class="n">all_campsites</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+<a id="__codelineno-0-79" name="__codelineno-0-79"></a>        <span class="n">all_campsites</span> <span class="o">=</span> <span class="p">[]</span>
 <a id="__codelineno-0-80" name="__codelineno-0-80"></a>        <span class="n">searchable_campgrounds</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_searchable_campgrounds</span><span class="p">()</span>
 <a id="__codelineno-0-81" name="__codelineno-0-81"></a>        <span class="n">this_month</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">date</span><span class="p">()</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">day</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <a id="__codelineno-0-82" name="__codelineno-0-82"></a>        <span class="k">for</span> <span class="n">month</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">search_months</span><span class="p">:</span>
@@ -2171,7 +2171,7 @@ When not specified, the filename will default to <code>camply_campsites.json</co
 <a id="__codelineno-0-76" name="__codelineno-0-76"></a><span class="sd">    -------</span>
 <a id="__codelineno-0-77" name="__codelineno-0-77"></a><span class="sd">    List[AvailableCampsite]</span>
 <a id="__codelineno-0-78" name="__codelineno-0-78"></a><span class="sd">    &quot;&quot;&quot;</span>
-<a id="__codelineno-0-79" name="__codelineno-0-79"></a>    <span class="n">all_campsites</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+<a id="__codelineno-0-79" name="__codelineno-0-79"></a>    <span class="n">all_campsites</span> <span class="o">=</span> <span class="p">[]</span>
 <a id="__codelineno-0-80" name="__codelineno-0-80"></a>    <span class="n">searchable_campgrounds</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_searchable_campgrounds</span><span class="p">()</span>
 <a id="__codelineno-0-81" name="__codelineno-0-81"></a>    <span class="n">this_month</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">date</span><span class="p">()</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">day</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <a id="__codelineno-0-82" name="__codelineno-0-82"></a>    <span class="k">for</span> <span class="n">month</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">search_months</span><span class="p">:</span>

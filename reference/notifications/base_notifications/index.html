@@ -1724,7 +1724,7 @@
 <a id="__codelineno-0-69" name="__codelineno-0-69"></a>        <span class="sd">&quot;&quot;&quot;</span>
 <a id="__codelineno-0-70" name="__codelineno-0-70"></a><span class="sd">        Format Standard Message</span>
 <a id="__codelineno-0-71" name="__codelineno-0-71"></a><span class="sd">        &quot;&quot;&quot;</span>
-<a id="__codelineno-0-72" name="__codelineno-0-72"></a>        <span class="n">fields</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+<a id="__codelineno-0-72" name="__codelineno-0-72"></a>        <span class="n">fields</span> <span class="o">=</span> <span class="p">{}</span>
 <a id="__codelineno-0-73" name="__codelineno-0-73"></a>        <span class="n">message_title</span> <span class="o">=</span> <span class="s2">&quot; | &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
 <a id="__codelineno-0-74" name="__codelineno-0-74"></a>            <span class="p">[</span>
 <a id="__codelineno-0-75" name="__codelineno-0-75"></a>                <span class="n">campsite</span><span class="o">.</span><span class="n">recreation_area</span><span class="p">,</span>
@@ -1748,7 +1748,7 @@
 <a id="__codelineno-0-93" name="__codelineno-0-93"></a>                    <span class="k">else</span> <span class="n">campsite</span><span class="o">.</span><span class="n">permitted_equipment</span>
 <a id="__codelineno-0-94" name="__codelineno-0-94"></a>                <span class="p">)</span>
 <a id="__codelineno-0-95" name="__codelineno-0-95"></a>                <span class="n">value</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">  - &quot;</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">  - &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
-<a id="__codelineno-0-96" name="__codelineno-0-96"></a>                    <span class="nb">set</span><span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">equipment_name</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">equipment</span><span class="p">)</span>
+<a id="__codelineno-0-96" name="__codelineno-0-96"></a>                    <span class="p">{</span><span class="n">item</span><span class="o">.</span><span class="n">equipment_name</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">equipment</span><span class="p">}</span>
 <a id="__codelineno-0-97" name="__codelineno-0-97"></a>                <span class="p">)</span>
 <a id="__codelineno-0-98" name="__codelineno-0-98"></a>            <span class="k">if</span> <span class="n">key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="n">CampsiteContainerFields</span><span class="o">.</span><span class="n">CAMPSITE_ATTRIBUTES</span><span class="p">]:</span>
 <a id="__codelineno-0-99" name="__codelineno-0-99"></a>                <span class="n">formatted_key</span> <span class="o">=</span> <span class="n">key</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">,</span> <span class="s2">&quot; &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">title</span><span class="p">()</span>
@@ -1894,7 +1894,7 @@
 <a id="__codelineno-0-69" name="__codelineno-0-69"></a>    <span class="sd">&quot;&quot;&quot;</span>
 <a id="__codelineno-0-70" name="__codelineno-0-70"></a><span class="sd">    Format Standard Message</span>
 <a id="__codelineno-0-71" name="__codelineno-0-71"></a><span class="sd">    &quot;&quot;&quot;</span>
-<a id="__codelineno-0-72" name="__codelineno-0-72"></a>    <span class="n">fields</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+<a id="__codelineno-0-72" name="__codelineno-0-72"></a>    <span class="n">fields</span> <span class="o">=</span> <span class="p">{}</span>
 <a id="__codelineno-0-73" name="__codelineno-0-73"></a>    <span class="n">message_title</span> <span class="o">=</span> <span class="s2">&quot; | &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
 <a id="__codelineno-0-74" name="__codelineno-0-74"></a>        <span class="p">[</span>
 <a id="__codelineno-0-75" name="__codelineno-0-75"></a>            <span class="n">campsite</span><span class="o">.</span><span class="n">recreation_area</span><span class="p">,</span>
@@ -1918,7 +1918,7 @@
 <a id="__codelineno-0-93" name="__codelineno-0-93"></a>                <span class="k">else</span> <span class="n">campsite</span><span class="o">.</span><span class="n">permitted_equipment</span>
 <a id="__codelineno-0-94" name="__codelineno-0-94"></a>            <span class="p">)</span>
 <a id="__codelineno-0-95" name="__codelineno-0-95"></a>            <span class="n">value</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">  - &quot;</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">  - &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
-<a id="__codelineno-0-96" name="__codelineno-0-96"></a>                <span class="nb">set</span><span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">equipment_name</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">equipment</span><span class="p">)</span>
+<a id="__codelineno-0-96" name="__codelineno-0-96"></a>                <span class="p">{</span><span class="n">item</span><span class="o">.</span><span class="n">equipment_name</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">equipment</span><span class="p">}</span>
 <a id="__codelineno-0-97" name="__codelineno-0-97"></a>            <span class="p">)</span>
 <a id="__codelineno-0-98" name="__codelineno-0-98"></a>        <span class="k">if</span> <span class="n">key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="n">CampsiteContainerFields</span><span class="o">.</span><span class="n">CAMPSITE_ATTRIBUTES</span><span class="p">]:</span>
 <a id="__codelineno-0-99" name="__codelineno-0-99"></a>            <span class="n">formatted_key</span> <span class="o">=</span> <span class="n">key</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">,</span> <span class="s2">&quot; &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">title</span><span class="p">()</span>

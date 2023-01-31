@@ -1616,10 +1616,10 @@
 <a id="__codelineno-0-22" name="__codelineno-0-22"></a>        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
 <a id="__codelineno-0-23" name="__codelineno-0-23"></a>        <span class="k">try</span><span class="p">:</span>
 <a id="__codelineno-0-24" name="__codelineno-0-24"></a>            <span class="kn">from</span> <span class="nn">twilio.rest</span> <span class="kn">import</span> <span class="n">Client</span>
-<a id="__codelineno-0-25" name="__codelineno-0-25"></a>        <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+<a id="__codelineno-0-25" name="__codelineno-0-25"></a>        <span class="k">except</span> <span class="ne">ImportError</span> <span class="k">as</span> <span class="n">ie</span><span class="p">:</span>
 <a id="__codelineno-0-26" name="__codelineno-0-26"></a>            <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span>
 <a id="__codelineno-0-27" name="__codelineno-0-27"></a>                <span class="s2">&quot;Looks like `twilio` isn&#39;t installed. Install it with `pip install camply[twilio]`&quot;</span>
-<a id="__codelineno-0-28" name="__codelineno-0-28"></a>            <span class="p">)</span>
+<a id="__codelineno-0-28" name="__codelineno-0-28"></a>            <span class="p">)</span> <span class="kn">from</span> <span class="nn">ie</span>
 <a id="__codelineno-0-29" name="__codelineno-0-29"></a>
 <a id="__codelineno-0-30" name="__codelineno-0-30"></a>        <span class="k">if</span> <span class="nb">any</span><span class="p">(</span>
 <a id="__codelineno-0-31" name="__codelineno-0-31"></a>            <span class="p">[</span>
