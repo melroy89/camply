@@ -1454,7 +1454,7 @@ tough. That's where camply comes in. It searches the APIs of booking services li
 <a href="https://recreation.gov">https://recreation.gov</a> (which indexes thousands of campgrounds across the USA) to continuously
 check for cancellations and availabilities to pop up. Once a campsite becomes available,
 camply sends you a notification to book your spot!</p>
-<p>visit the camply documentation at <a href="https://github.com/juftin/camply">https://github.com/juftin/camply</a></p>
+<p>visit the camply documentation at <a href="https://juftin.com/camply">https://juftin.com/camply</a></p>
 <p><strong>Usage:</strong></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>camply [OPTIONS] COMMAND [ARGS]...
 </code></pre></div>
@@ -1483,8 +1483,8 @@ camply sends you a notification to book your spot!</p>
 </tr>
 <tr>
 <td><code>--provider</code></td>
-<td>choice (<code>RecreationDotGov</code> &#x7C; <code>Yellowstone</code> &#x7C; <code>GoingToCamp</code> &#x7C; <code>RecreationDotGovDailyTicket</code> &#x7C; <code>RecreationDotGovDailyTimedEntry</code> &#x7C; <code>RecreationDotGovTicket</code> &#x7C; <code>RecreationDotGovTimedEntry</code>)</td>
-<td>Camping Search Provider. Defaults to 'RecreationDotGov', not case-sensitive.</td>
+<td>choice (<code>RecreationDotGov</code> &#x7C; <code>Yellowstone</code> &#x7C; <code>GoingToCamp</code> &#x7C; <code>RecreationDotGovTicket</code> &#x7C; <code>RecreationDotGovTimedEntry</code> &#x7C; <code>RecreationDotGovDailyTicket</code> &#x7C; <code>RecreationDotGovDailyTimedEntry</code>)</td>
+<td>Camping Search Provider. Defaults to 'RecreationDotGov'</td>
 <td>None</td>
 </tr>
 <tr>
@@ -1501,6 +1501,7 @@ camply sends you a notification to book your spot!</p>
 <li><em><a href="#camply-campsites">campsites</a></em>: </li>
 <li><em><a href="#camply-configure">configure</a></em>: </li>
 <li><em><a href="#camply-equipment-types">equipment-types</a></em>: </li>
+<li><em><a href="#camply-providers">providers</a></em>: </li>
 <li><em><a href="#camply-recreation-areas">recreation-areas</a></em>: </li>
 </ul>
 <h2 id="camply-campgrounds">camply campgrounds<a class="headerlink" href="#camply-campgrounds" title="Permanent link">#</a></h2>
@@ -1555,8 +1556,8 @@ contain a single 'campsite' to book.</p>
 </tr>
 <tr>
 <td><code>--provider</code></td>
-<td>choice (<code>RecreationDotGov</code> &#x7C; <code>Yellowstone</code> &#x7C; <code>GoingToCamp</code> &#x7C; <code>RecreationDotGovDailyTicket</code> &#x7C; <code>RecreationDotGovDailyTimedEntry</code> &#x7C; <code>RecreationDotGovTicket</code> &#x7C; <code>RecreationDotGovTimedEntry</code>)</td>
-<td>Camping Search Provider. Defaults to 'RecreationDotGov', not case-sensitive.</td>
+<td>choice (<code>RecreationDotGov</code> &#x7C; <code>Yellowstone</code> &#x7C; <code>GoingToCamp</code> &#x7C; <code>RecreationDotGovTicket</code> &#x7C; <code>RecreationDotGovTimedEntry</code> &#x7C; <code>RecreationDotGovDailyTicket</code> &#x7C; <code>RecreationDotGovDailyTimedEntry</code>)</td>
+<td>Camping Search Provider. Defaults to 'RecreationDotGov'</td>
 <td>None</td>
 </tr>
 <tr>
@@ -1574,7 +1575,7 @@ contain a single 'campsite' to book.</p>
 </tbody>
 </table>
 <h2 id="camply-campsites">camply campsites<a class="headerlink" href="#camply-campsites" title="Permanent link">#</a></h2>
-<p>Find available Campsites using search criteria</p>
+<p>Find Available Campsites with Custom Search Criteria</p>
 <p>Search for a campsite within camply. Campsites are returned based on the search criteria
 provided. Campsites contain properties like booking date, site type (tent, RV, cabin, etc),
 capacity, price, and a link to make the booking. Required parameters include
@@ -1597,14 +1598,14 @@ functionality can be enabled with  <code>--continuous</code> and notifications c
 <tbody>
 <tr>
 <td><code>--yaml-config</code>, <code>--yml-config</code></td>
-<td>text</td>
+<td>file</td>
 <td>Rather than provide arguments to the command line utility, instead pass a file path to a YAML configuration file. See the documentation for more information on how to structure your configuration file.</td>
 <td>None</td>
 </tr>
 <tr>
 <td><code>--offline-search-path</code></td>
-<td>text</td>
-<td>When offline search is set to True, this is the name of the file to be saved/loaded. Campsites can be saved as a serialized pickle file or a JSON file, depending on the file extension. When not specified, the filename will default to <code>camply_campsites.json</code></td>
+<td>file</td>
+<td>Enables offline search. This is the name of the file to be saved/loaded. Campsites can be saved as a serialized pickle file or a JSON file, depending on the file extension. When not specified, the filename will default to <code>camply_campsites.json</code></td>
 <td>None</td>
 </tr>
 <tr>
@@ -1615,27 +1616,27 @@ functionality can be enabled with  <code>--continuous</code> and notifications c
 </tr>
 <tr>
 <td><code>--search-forever</code></td>
-<td>boolean</td>
-<td>If --continuous is activated, this method continues to search after the first availability has been found. The one caveat is that it will never notify about the same identical campsite for the same booking date.</td>
+<td>text</td>
+<td>Enables continuous searching. This method continues to search after the first availability has been found. The one caveat is that it will never notify about the same identical campsite for the same booking date.</td>
 <td><code>False</code></td>
 </tr>
 <tr>
 <td><code>--notify-first-try</code></td>
-<td>boolean</td>
-<td>If --continuous is activated, whether to send all non-silent notifications if more than 5 matching campsites are found on the first try. Defaults to false which only sends the first 5.</td>
+<td>text</td>
+<td>Enables continuous searching. Whether to send all non-silent notifications if more than 5 matching campsites are found on the first try. Defaults to False which only sends the first 5.</td>
 <td><code>False</code></td>
 </tr>
 <tr>
 <td><code>--notifications</code></td>
 <td>text</td>
-<td>If --continuous is activated, types of notifications to receive. Options available are 'email', 'pushover', 'pushbullet', 'telegram', 'twilio', or 'silent'. Defaults to 'silent' - which just logs messages to console.</td>
-<td><code>['silent']</code></td>
+<td>Enables continuous searching. Types of notifications to receive. Options available are 'email', 'pushover', 'pushbullet', 'telegram', 'twilio', or 'silent'. Defaults to 'silent' - which just logs messages to console.</td>
+<td><code>[]</code></td>
 </tr>
 <tr>
 <td><code>--polling-interval</code></td>
 <td>integer</td>
-<td>If --continuous is activated, how often to wait in between checks (in minutes). Defaults to 10, cannot be less than 5.</td>
-<td><code>10</code></td>
+<td>Enables continuous searching. How often to wait in between checks (in minutes). Defaults to 10, cannot be less than 5.</td>
+<td>None</td>
 </tr>
 <tr>
 <td><code>--continuous</code></td>
@@ -1652,7 +1653,7 @@ functionality can be enabled with  <code>--continuous</code> and notifications c
 <tr>
 <td><code>--equipment-id</code></td>
 <td>text</td>
-<td>Search for campsites campaitble with specific equipment categories. Going To Camp uses equipment category IDs for filtering campsites by equipment. Every recreation area has equipment categories unique to it. Use <code>camply equipment-types --provider goingtocamp --rec-area &lt;rec area id&gt;</code> to get a listing of equipment for an area.</td>
+<td>Search for campsites compatible with specific equipment categories. Going To Camp uses equipment category IDs for filtering campsites by equipment. Every recreation area has equipment categories unique to it. Use <code>camply equipment-types --provider GoingToCamp --rec-area &lt;rec area id&gt;</code> to get a listing of equipment for an area.</td>
 <td>None</td>
 </tr>
 <tr>
@@ -1663,8 +1664,8 @@ functionality can be enabled with  <code>--continuous</code> and notifications c
 </tr>
 <tr>
 <td><code>--provider</code></td>
-<td>choice (<code>RecreationDotGov</code> &#x7C; <code>Yellowstone</code> &#x7C; <code>GoingToCamp</code> &#x7C; <code>RecreationDotGovDailyTicket</code> &#x7C; <code>RecreationDotGovDailyTimedEntry</code> &#x7C; <code>RecreationDotGovTicket</code> &#x7C; <code>RecreationDotGovTimedEntry</code>)</td>
-<td>Camping Search Provider. Defaults to 'RecreationDotGov', not case-sensitive.</td>
+<td>choice (<code>RecreationDotGov</code> &#x7C; <code>Yellowstone</code> &#x7C; <code>GoingToCamp</code> &#x7C; <code>RecreationDotGovTicket</code> &#x7C; <code>RecreationDotGovTimedEntry</code> &#x7C; <code>RecreationDotGovDailyTicket</code> &#x7C; <code>RecreationDotGovDailyTimedEntry</code>)</td>
+<td>Camping Search Provider. Defaults to 'RecreationDotGov'</td>
 <td>None</td>
 </tr>
 <tr>
@@ -1753,8 +1754,9 @@ home folder.</p>
 </tbody>
 </table>
 <h2 id="camply-equipment-types">camply equipment-types<a class="headerlink" href="#camply-equipment-types" title="Permanent link">#</a></h2>
-<p>Retrieve a list of equipment supported by the current provider/recreaton area</p>
-<p>Equipment are camping equipment that can be used at a campsite. Different providers
+<p>Get a list of supported equipment</p>
+<p>This command returns supported equipment for the current provider/recreation area.
+Equipment are camping equipment that can be used at a campsite. Different providers
 and recreation areas have different types of equipment for which reservations can be made.</p>
 <p><strong>Usage:</strong></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>camply equipment-types [OPTIONS]
@@ -1778,8 +1780,38 @@ and recreation areas have different types of equipment for which reservations ca
 </tr>
 <tr>
 <td><code>--provider</code></td>
-<td>choice (<code>RecreationDotGov</code> &#x7C; <code>Yellowstone</code> &#x7C; <code>GoingToCamp</code> &#x7C; <code>RecreationDotGovDailyTicket</code> &#x7C; <code>RecreationDotGovDailyTimedEntry</code> &#x7C; <code>RecreationDotGovTicket</code> &#x7C; <code>RecreationDotGovTimedEntry</code>)</td>
-<td>Camping Search Provider. Defaults to 'RecreationDotGov', not case-sensitive.</td>
+<td>choice (<code>RecreationDotGov</code> &#x7C; <code>Yellowstone</code> &#x7C; <code>GoingToCamp</code> &#x7C; <code>RecreationDotGovTicket</code> &#x7C; <code>RecreationDotGovTimedEntry</code> &#x7C; <code>RecreationDotGovDailyTicket</code> &#x7C; <code>RecreationDotGovDailyTimedEntry</code>)</td>
+<td>Camping Search Provider. Defaults to 'RecreationDotGov'</td>
+<td>None</td>
+</tr>
+<tr>
+<td><code>--help</code></td>
+<td>boolean</td>
+<td>Show this message and exit.</td>
+<td><code>False</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="camply-providers">camply providers<a class="headerlink" href="#camply-providers" title="Permanent link">#</a></h2>
+<p>List the different camply providers</p>
+<p><strong>Usage:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>camply providers [OPTIONS]
+</code></pre></div>
+<p><strong>Options:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--debug</code> / <code>--no-debug</code></td>
+<td>boolean</td>
+<td>Enable extra debugging output</td>
 <td>None</td>
 </tr>
 <tr>
@@ -1795,7 +1827,7 @@ and recreation areas have different types of equipment for which reservations ca
 <p>Search for Recreation Areas and their IDs. Recreation Areas are places like
 National Parks and National Forests that can contain one or many campgrounds.</p>
 <p><strong>Usage:</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>camply recreation-areas [OPTIONS]
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>camply recreation-areas [OPTIONS]
 </code></pre></div>
 <p><strong>Options:</strong></p>
 <table>
@@ -1828,8 +1860,8 @@ National Parks and National Forests that can contain one or many campgrounds.</p
 </tr>
 <tr>
 <td><code>--provider</code></td>
-<td>choice (<code>RecreationDotGov</code> &#x7C; <code>Yellowstone</code> &#x7C; <code>GoingToCamp</code> &#x7C; <code>RecreationDotGovDailyTicket</code> &#x7C; <code>RecreationDotGovDailyTimedEntry</code> &#x7C; <code>RecreationDotGovTicket</code> &#x7C; <code>RecreationDotGovTimedEntry</code>)</td>
-<td>Camping Search Provider. Defaults to 'RecreationDotGov', not case-sensitive.</td>
+<td>choice (<code>RecreationDotGov</code> &#x7C; <code>Yellowstone</code> &#x7C; <code>GoingToCamp</code> &#x7C; <code>RecreationDotGovTicket</code> &#x7C; <code>RecreationDotGovTimedEntry</code> &#x7C; <code>RecreationDotGovDailyTicket</code> &#x7C; <code>RecreationDotGovDailyTimedEntry</code>)</td>
+<td>Camping Search Provider. Defaults to 'RecreationDotGov'</td>
 <td>None</td>
 </tr>
 <tr>
