@@ -719,6 +719,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../containers/reserve_california/" class="md-nav__link">
+        reserve_california
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -1102,7 +1116,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../providers/xanterra/">xanterra</a>
+          <a href="../../providers/reserve_california/">reserve_california</a>
           
             <label for="__nav_9_1_7_4">
               <span class="md-nav__icon md-icon"></span>
@@ -1110,8 +1124,61 @@
           
         </div>
       
-      <nav class="md-nav" aria-label="xanterra" data-md-level="4">
+      <nav class="md-nav" aria-label="reserve_california" data-md-level="4">
         <label class="md-nav__title" for="__nav_9_1_7_4">
+          <span class="md-nav__icon md-icon"></span>
+          reserve_california
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../providers/reserve_california/reserve_california/" class="md-nav__link">
+        reserve_california
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_1_7_5" type="checkbox" id="__nav_9_1_7_5" >
+      
+      
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../providers/xanterra/">xanterra</a>
+          
+            <label for="__nav_9_1_7_5">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="xanterra" data-md-level="4">
+        <label class="md-nav__title" for="__nav_9_1_7_5">
           <span class="md-nav__icon md-icon"></span>
           xanterra
         </label>
@@ -1213,6 +1280,20 @@
     <li class="md-nav__item">
       <a href="../../search/search_recreationdotgov/" class="md-nav__link">
         search_recreationdotgov
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../search/search_reserve_california/" class="md-nav__link">
+        search_reserve_california
       </a>
     </li>
   
@@ -1601,7 +1682,11 @@ variable will be used, defaulting to "INFO".</p></td>
 <span class="normal"><a href="#__codelineno-0-44">44</a></span>
 <span class="normal"><a href="#__codelineno-0-45">45</a></span>
 <span class="normal"><a href="#__codelineno-0-46">46</a></span>
-<span class="normal"><a href="#__codelineno-0-47">47</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="k">def</span> <span class="nf">get_log_handler</span><span class="p">(</span>
+<span class="normal"><a href="#__codelineno-0-47">47</a></span>
+<span class="normal"><a href="#__codelineno-0-48">48</a></span>
+<span class="normal"><a href="#__codelineno-0-49">49</a></span>
+<span class="normal"><a href="#__codelineno-0-50">50</a></span>
+<span class="normal"><a href="#__codelineno-0-51">51</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="k">def</span> <span class="nf">get_log_handler</span><span class="p">(</span>
 <a id="__codelineno-0-15" name="__codelineno-0-15"></a>    <span class="n">log_level</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
 <a id="__codelineno-0-16" name="__codelineno-0-16"></a><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">logging</span><span class="o">.</span><span class="n">Handler</span><span class="p">,</span> <span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]:</span>
 <a id="__codelineno-0-17" name="__codelineno-0-17"></a>    <span class="sd">&quot;&quot;&quot;</span>
@@ -1633,8 +1718,12 @@ variable will be used, defaulting to "INFO".</p></td>
 <a id="__codelineno-0-43" name="__codelineno-0-43"></a>        <span class="s2">&quot;rich&quot;</span><span class="p">:</span> <span class="n">rich_handler</span><span class="p">,</span>
 <a id="__codelineno-0-44" name="__codelineno-0-44"></a>        <span class="s2">&quot;python&quot;</span><span class="p">:</span> <span class="n">python_handler</span><span class="p">,</span>
 <a id="__codelineno-0-45" name="__codelineno-0-45"></a>    <span class="p">}</span>
-<a id="__codelineno-0-46" name="__codelineno-0-46"></a>    <span class="n">log_handler</span><span class="p">:</span> <span class="n">logging</span><span class="o">.</span><span class="n">Handler</span> <span class="o">=</span> <span class="n">_log_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">LOG_HANDLER</span><span class="p">,</span> <span class="n">rich_handler</span><span class="p">)</span>
-<a id="__codelineno-0-47" name="__codelineno-0-47"></a>    <span class="k">return</span> <span class="n">log_handler</span><span class="p">,</span> <span class="n">log_level</span>
+<a id="__codelineno-0-46" name="__codelineno-0-46"></a>    <span class="k">if</span> <span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;PYTEST_CURRENT_TEST&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<a id="__codelineno-0-47" name="__codelineno-0-47"></a>        <span class="n">handler</span> <span class="o">=</span> <span class="s2">&quot;python&quot;</span>
+<a id="__codelineno-0-48" name="__codelineno-0-48"></a>    <span class="k">else</span><span class="p">:</span>
+<a id="__codelineno-0-49" name="__codelineno-0-49"></a>        <span class="n">handler</span> <span class="o">=</span> <span class="n">LOG_HANDLER</span>
+<a id="__codelineno-0-50" name="__codelineno-0-50"></a>    <span class="n">log_handler</span><span class="p">:</span> <span class="n">logging</span><span class="o">.</span><span class="n">Handler</span> <span class="o">=</span> <span class="n">_log_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">handler</span><span class="p">,</span> <span class="n">rich_handler</span><span class="p">)</span>
+<a id="__codelineno-0-51" name="__codelineno-0-51"></a>    <span class="k">return</span> <span class="n">log_handler</span><span class="p">,</span> <span class="n">log_level</span>
 </code></pre></div></td></tr></table></div>
       </details>
   </div>
@@ -1682,11 +1771,7 @@ variable will be used, defaulting to "INFO".</p></td>
 
       <details class="quote">
         <summary>Source code in <code>camply/config/logging_config.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-50">50</a></span>
-<span class="normal"><a href="#__codelineno-0-51">51</a></span>
-<span class="normal"><a href="#__codelineno-0-52">52</a></span>
-<span class="normal"><a href="#__codelineno-0-53">53</a></span>
-<span class="normal"><a href="#__codelineno-0-54">54</a></span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-54">54</a></span>
 <span class="normal"><a href="#__codelineno-0-55">55</a></span>
 <span class="normal"><a href="#__codelineno-0-56">56</a></span>
 <span class="normal"><a href="#__codelineno-0-57">57</a></span>
@@ -1700,25 +1785,29 @@ variable will be used, defaulting to "INFO".</p></td>
 <span class="normal"><a href="#__codelineno-0-65">65</a></span>
 <span class="normal"><a href="#__codelineno-0-66">66</a></span>
 <span class="normal"><a href="#__codelineno-0-67">67</a></span>
-<span class="normal"><a href="#__codelineno-0-68">68</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-50" name="__codelineno-0-50"></a><span class="k">def</span> <span class="nf">set_up_logging</span><span class="p">(</span><span class="n">log_level</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<a id="__codelineno-0-51" name="__codelineno-0-51"></a>    <span class="sd">&quot;&quot;&quot;</span>
-<a id="__codelineno-0-52" name="__codelineno-0-52"></a><span class="sd">    Set Up a Root Logger</span>
-<a id="__codelineno-0-53" name="__codelineno-0-53"></a>
-<a id="__codelineno-0-54" name="__codelineno-0-54"></a><span class="sd">    Parameters</span>
-<a id="__codelineno-0-55" name="__codelineno-0-55"></a><span class="sd">    ----------</span>
-<a id="__codelineno-0-56" name="__codelineno-0-56"></a><span class="sd">    log_level: Optional[int]</span>
-<a id="__codelineno-0-57" name="__codelineno-0-57"></a><span class="sd">        Which logging level should be used. If none is provided the LOG_LEVEL environment</span>
-<a id="__codelineno-0-58" name="__codelineno-0-58"></a><span class="sd">        variable will be used, defaulting to &quot;INFO&quot;.</span>
-<a id="__codelineno-0-59" name="__codelineno-0-59"></a><span class="sd">    &quot;&quot;&quot;</span>
-<a id="__codelineno-0-60" name="__codelineno-0-60"></a>    <span class="n">log_handler</span><span class="p">,</span> <span class="n">level_to_log</span> <span class="o">=</span> <span class="n">get_log_handler</span><span class="p">(</span><span class="n">log_level</span><span class="o">=</span><span class="n">log_level</span><span class="p">)</span>
-<a id="__codelineno-0-61" name="__codelineno-0-61"></a>    <span class="n">logging</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">handlers</span> <span class="o">=</span> <span class="p">[</span><span class="n">log_handler</span><span class="p">]</span>
-<a id="__codelineno-0-62" name="__codelineno-0-62"></a>    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">log_handler</span><span class="p">,</span> <span class="n">RichHandler</span><span class="p">):</span>
-<a id="__codelineno-0-63" name="__codelineno-0-63"></a>        <span class="n">rich_formatter</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">Formatter</span><span class="p">(</span>
-<a id="__codelineno-0-64" name="__codelineno-0-64"></a>            <span class="n">datefmt</span><span class="o">=</span><span class="s2">&quot;[%Y-%m-</span><span class="si">%d</span><span class="s2"> %H:%M:%S]&quot;</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">%(message)s</span><span class="s2">&quot;</span>
-<a id="__codelineno-0-65" name="__codelineno-0-65"></a>        <span class="p">)</span>
-<a id="__codelineno-0-66" name="__codelineno-0-66"></a>        <span class="n">logging</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">handlers</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">setFormatter</span><span class="p">(</span><span class="n">rich_formatter</span><span class="p">)</span>
-<a id="__codelineno-0-67" name="__codelineno-0-67"></a>        <span class="n">level_to_log</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">NOTSET</span>
-<a id="__codelineno-0-68" name="__codelineno-0-68"></a>    <span class="n">logging</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">level_to_log</span><span class="p">)</span>
+<span class="normal"><a href="#__codelineno-0-68">68</a></span>
+<span class="normal"><a href="#__codelineno-0-69">69</a></span>
+<span class="normal"><a href="#__codelineno-0-70">70</a></span>
+<span class="normal"><a href="#__codelineno-0-71">71</a></span>
+<span class="normal"><a href="#__codelineno-0-72">72</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-54" name="__codelineno-0-54"></a><span class="k">def</span> <span class="nf">set_up_logging</span><span class="p">(</span><span class="n">log_level</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<a id="__codelineno-0-55" name="__codelineno-0-55"></a>    <span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-56" name="__codelineno-0-56"></a><span class="sd">    Set Up a Root Logger</span>
+<a id="__codelineno-0-57" name="__codelineno-0-57"></a>
+<a id="__codelineno-0-58" name="__codelineno-0-58"></a><span class="sd">    Parameters</span>
+<a id="__codelineno-0-59" name="__codelineno-0-59"></a><span class="sd">    ----------</span>
+<a id="__codelineno-0-60" name="__codelineno-0-60"></a><span class="sd">    log_level: Optional[int]</span>
+<a id="__codelineno-0-61" name="__codelineno-0-61"></a><span class="sd">        Which logging level should be used. If none is provided the LOG_LEVEL environment</span>
+<a id="__codelineno-0-62" name="__codelineno-0-62"></a><span class="sd">        variable will be used, defaulting to &quot;INFO&quot;.</span>
+<a id="__codelineno-0-63" name="__codelineno-0-63"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a id="__codelineno-0-64" name="__codelineno-0-64"></a>    <span class="n">log_handler</span><span class="p">,</span> <span class="n">level_to_log</span> <span class="o">=</span> <span class="n">get_log_handler</span><span class="p">(</span><span class="n">log_level</span><span class="o">=</span><span class="n">log_level</span><span class="p">)</span>
+<a id="__codelineno-0-65" name="__codelineno-0-65"></a>    <span class="n">logging</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">handlers</span> <span class="o">=</span> <span class="p">[</span><span class="n">log_handler</span><span class="p">]</span>
+<a id="__codelineno-0-66" name="__codelineno-0-66"></a>    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">log_handler</span><span class="p">,</span> <span class="n">RichHandler</span><span class="p">):</span>
+<a id="__codelineno-0-67" name="__codelineno-0-67"></a>        <span class="n">rich_formatter</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">Formatter</span><span class="p">(</span>
+<a id="__codelineno-0-68" name="__codelineno-0-68"></a>            <span class="n">datefmt</span><span class="o">=</span><span class="s2">&quot;[%Y-%m-</span><span class="si">%d</span><span class="s2"> %H:%M:%S]&quot;</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">%(message)s</span><span class="s2">&quot;</span>
+<a id="__codelineno-0-69" name="__codelineno-0-69"></a>        <span class="p">)</span>
+<a id="__codelineno-0-70" name="__codelineno-0-70"></a>        <span class="n">logging</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">handlers</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">setFormatter</span><span class="p">(</span><span class="n">rich_formatter</span><span class="p">)</span>
+<a id="__codelineno-0-71" name="__codelineno-0-71"></a>        <span class="n">level_to_log</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">NOTSET</span>
+<a id="__codelineno-0-72" name="__codelineno-0-72"></a>    <span class="n">logging</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">level_to_log</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
       </details>
   </div>
