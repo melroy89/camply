@@ -297,6 +297,21 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../../how_to_run/" class="md-nav__link">
+        How To Run Camply 🏃
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../../recreationdotgov/" class="md-nav__link">
         Finding Campsites on Recreation.gov 🌲
       </a>
@@ -314,21 +329,6 @@
     <li class="md-nav__item">
       <a href="../../../../python/" class="md-nav__link">
         Object Oriented Usage 🐍
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../docker/" class="md-nav__link">
-        Docker ⛴
       </a>
     </li>
   
@@ -2151,7 +2151,7 @@
 <span class="normal"><a href="#__codelineno-0-520">520</a></span>
 <span class="normal"><a href="#__codelineno-0-521">521</a></span>
 <span class="normal"><a href="#__codelineno-0-522">522</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-38" name="__codelineno-0-38"></a><span class="k">class</span> <span class="nc">ReserveCalifornia</span><span class="p">(</span><span class="n">BaseProvider</span><span class="p">):</span>
-<a id="__codelineno-0-39" name="__codelineno-0-39"></a>    <span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-39" name="__codelineno-0-39"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <a id="__codelineno-0-40" name="__codelineno-0-40"></a><span class="sd">    Camply Provider for Reserve California</span>
 <a id="__codelineno-0-41" name="__codelineno-0-41"></a><span class="sd">    &quot;&quot;&quot;</span>
 <a id="__codelineno-0-42" name="__codelineno-0-42"></a>
@@ -2165,7 +2165,7 @@
 <a id="__codelineno-0-50" name="__codelineno-0-50"></a>    <span class="n">offline_cache_dir</span> <span class="o">=</span> <span class="n">FileConfig</span><span class="o">.</span><span class="n">RESERVE_CALIFORNIA_PROVIDER</span>
 <a id="__codelineno-0-51" name="__codelineno-0-51"></a>
 <a id="__codelineno-0-52" name="__codelineno-0-52"></a>    <span class="k">def</span> <span class="nf">refresh_metadata</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<a id="__codelineno-0-53" name="__codelineno-0-53"></a>        <span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-53" name="__codelineno-0-53"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <a id="__codelineno-0-54" name="__codelineno-0-54"></a><span class="sd">        Refresh All the Campground Metadata</span>
 <a id="__codelineno-0-55" name="__codelineno-0-55"></a>
 <a id="__codelineno-0-56" name="__codelineno-0-56"></a><span class="sd">        This is the way that this provider caches all of its metadata</span>
@@ -2193,7 +2193,7 @@
 <a id="__codelineno-0-78" name="__codelineno-0-78"></a>        <span class="n">query</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
 <a id="__codelineno-0-79" name="__codelineno-0-79"></a>        <span class="n">state</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;CA&quot;</span><span class="p">,</span>
 <a id="__codelineno-0-80" name="__codelineno-0-80"></a>    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">RecreationArea</span><span class="p">]:</span>
-<a id="__codelineno-0-81" name="__codelineno-0-81"></a>        <span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-81" name="__codelineno-0-81"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <a id="__codelineno-0-82" name="__codelineno-0-82"></a><span class="sd">        Retrieve Recreation Areas</span>
 <a id="__codelineno-0-83" name="__codelineno-0-83"></a>
 <a id="__codelineno-0-84" name="__codelineno-0-84"></a><span class="sd">        Parameters</span>
@@ -2230,7 +2230,7 @@
 <a id="__codelineno-0-115" name="__codelineno-0-115"></a>        <span class="n">campground_id</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
 <a id="__codelineno-0-116" name="__codelineno-0-116"></a>        <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
 <a id="__codelineno-0-117" name="__codelineno-0-117"></a>    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">CampgroundFacility</span><span class="p">]:</span>
-<a id="__codelineno-0-118" name="__codelineno-0-118"></a>        <span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-118" name="__codelineno-0-118"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <a id="__codelineno-0-119" name="__codelineno-0-119"></a><span class="sd">        Search A Facility via Offline Metadata</span>
 <a id="__codelineno-0-120" name="__codelineno-0-120"></a>
 <a id="__codelineno-0-121" name="__codelineno-0-121"></a><span class="sd">        Parameters</span>
@@ -2277,7 +2277,7 @@
 <a id="__codelineno-0-162" name="__codelineno-0-162"></a>        <span class="n">rec_area_id</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]],</span>
 <a id="__codelineno-0-163" name="__codelineno-0-163"></a>        <span class="n">search_string</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span>
 <a id="__codelineno-0-164" name="__codelineno-0-164"></a>    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">CampgroundFacility</span><span class="p">]:</span>
-<a id="__codelineno-0-165" name="__codelineno-0-165"></a>        <span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-165" name="__codelineno-0-165"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <a id="__codelineno-0-166" name="__codelineno-0-166"></a><span class="sd">        Filter a campground array</span>
 <a id="__codelineno-0-167" name="__codelineno-0-167"></a>
 <a id="__codelineno-0-168" name="__codelineno-0-168"></a><span class="sd">        Parameters</span>
@@ -2331,7 +2331,7 @@
 <a id="__codelineno-0-216" name="__codelineno-0-216"></a>        <span class="n">unit_sort</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;orderby&quot;</span><span class="p">,</span>
 <a id="__codelineno-0-217" name="__codelineno-0-217"></a>        <span class="n">in_season_only</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
 <a id="__codelineno-0-218" name="__codelineno-0-218"></a>    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">AvailableCampsite</span><span class="p">]:</span>
-<a id="__codelineno-0-219" name="__codelineno-0-219"></a>        <span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-219" name="__codelineno-0-219"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <a id="__codelineno-0-220" name="__codelineno-0-220"></a><span class="sd">        Get Campsites from ReserveCalifornia</span>
 <a id="__codelineno-0-221" name="__codelineno-0-221"></a>
 <a id="__codelineno-0-222" name="__codelineno-0-222"></a><span class="sd">        Parameters</span>
@@ -2408,7 +2408,7 @@
 <a id="__codelineno-0-293" name="__codelineno-0-293"></a>        <span class="n">availability_response</span><span class="p">:</span> <span class="n">ReserveCaliforniaAvailabilityResponse</span><span class="p">,</span>
 <a id="__codelineno-0-294" name="__codelineno-0-294"></a>        <span class="n">unit</span><span class="p">:</span> <span class="n">ReserveCaliforniaAvailabilityUnit</span><span class="p">,</span>
 <a id="__codelineno-0-295" name="__codelineno-0-295"></a>    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">AvailableCampsite</span><span class="p">:</span>
-<a id="__codelineno-0-296" name="__codelineno-0-296"></a>        <span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-296" name="__codelineno-0-296"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <a id="__codelineno-0-297" name="__codelineno-0-297"></a><span class="sd">        Create an AvailableCampsite Object from the Availability Grid Response</span>
 <a id="__codelineno-0-298" name="__codelineno-0-298"></a>
 <a id="__codelineno-0-299" name="__codelineno-0-299"></a><span class="sd">        Parameters</span>
@@ -2462,7 +2462,7 @@
 <a id="__codelineno-0-347" name="__codelineno-0-347"></a>    <span class="k">def</span> <span class="nf">_fetch_metadata_from_disk</span><span class="p">(</span>
 <a id="__codelineno-0-348" name="__codelineno-0-348"></a>        <span class="bp">self</span><span class="p">,</span> <span class="n">file_path</span><span class="p">:</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span>
 <a id="__codelineno-0-349" name="__codelineno-0-349"></a>    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="n">Any</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span> <span class="n">List</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="n">Any</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]]]:</span>
-<a id="__codelineno-0-350" name="__codelineno-0-350"></a>        <span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-350" name="__codelineno-0-350"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <a id="__codelineno-0-351" name="__codelineno-0-351"></a><span class="sd">        Cache Metadata Locally and Invalidate after a day</span>
 <a id="__codelineno-0-352" name="__codelineno-0-352"></a>
 <a id="__codelineno-0-353" name="__codelineno-0-353"></a><span class="sd">        Parameters</span>
@@ -2493,7 +2493,7 @@
 <a id="__codelineno-0-378" name="__codelineno-0-378"></a>        <span class="k">return</span> <span class="n">data</span>
 <a id="__codelineno-0-379" name="__codelineno-0-379"></a>
 <a id="__codelineno-0-380" name="__codelineno-0-380"></a>    <span class="k">def</span> <span class="nf">_get_campground_metadata</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ReserveCaliforniaMetadata</span><span class="p">:</span>
-<a id="__codelineno-0-381" name="__codelineno-0-381"></a>        <span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-381" name="__codelineno-0-381"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <a id="__codelineno-0-382" name="__codelineno-0-382"></a><span class="sd">        Return Metadata for Campgrounds</span>
 <a id="__codelineno-0-383" name="__codelineno-0-383"></a>
 <a id="__codelineno-0-384" name="__codelineno-0-384"></a><span class="sd">        Returns</span>
@@ -2519,7 +2519,7 @@
 <a id="__codelineno-0-404" name="__codelineno-0-404"></a>        <span class="k">return</span> <span class="n">data</span>
 <a id="__codelineno-0-405" name="__codelineno-0-405"></a>
 <a id="__codelineno-0-406" name="__codelineno-0-406"></a>    <span class="k">def</span> <span class="nf">_get_city_parks</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">ReserveCaliforniaCityPark</span><span class="p">]:</span>
-<a id="__codelineno-0-407" name="__codelineno-0-407"></a>        <span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-407" name="__codelineno-0-407"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <a id="__codelineno-0-408" name="__codelineno-0-408"></a><span class="sd">        Fetch Metadata On Every CityPark</span>
 <a id="__codelineno-0-409" name="__codelineno-0-409"></a>
 <a id="__codelineno-0-410" name="__codelineno-0-410"></a><span class="sd">        Returns</span>
@@ -2541,7 +2541,7 @@
 <a id="__codelineno-0-426" name="__codelineno-0-426"></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">reserve_california_city_parks</span>
 <a id="__codelineno-0-427" name="__codelineno-0-427"></a>
 <a id="__codelineno-0-428" name="__codelineno-0-428"></a>    <span class="k">def</span> <span class="nf">_get_places</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">ReserveCaliforniaDetailedPlace</span><span class="p">]:</span>
-<a id="__codelineno-0-429" name="__codelineno-0-429"></a>        <span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-429" name="__codelineno-0-429"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <a id="__codelineno-0-430" name="__codelineno-0-430"></a><span class="sd">        Fetch Metadata On Every Place</span>
 <a id="__codelineno-0-431" name="__codelineno-0-431"></a>
 <a id="__codelineno-0-432" name="__codelineno-0-432"></a><span class="sd">        Returns</span>
@@ -2577,7 +2577,7 @@
 <a id="__codelineno-0-462" name="__codelineno-0-462"></a>        <span class="k">return</span> <span class="n">places_data_validated</span>
 <a id="__codelineno-0-463" name="__codelineno-0-463"></a>
 <a id="__codelineno-0-464" name="__codelineno-0-464"></a>    <span class="k">def</span> <span class="nf">_get_facilities</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">ReserveCaliforniaFacilityMetadata</span><span class="p">]:</span>
-<a id="__codelineno-0-465" name="__codelineno-0-465"></a>        <span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-465" name="__codelineno-0-465"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <a id="__codelineno-0-466" name="__codelineno-0-466"></a><span class="sd">        Fetch Metadata On Every Facility</span>
 <a id="__codelineno-0-467" name="__codelineno-0-467"></a>
 <a id="__codelineno-0-468" name="__codelineno-0-468"></a><span class="sd">        Returns</span>
@@ -2620,7 +2620,7 @@
 <a id="__codelineno-0-505" name="__codelineno-0-505"></a>
 <a id="__codelineno-0-506" name="__codelineno-0-506"></a>    <span class="nd">@classmethod</span>
 <a id="__codelineno-0-507" name="__codelineno-0-507"></a>    <span class="k">def</span> <span class="nf">_search_camply_model</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">query</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">model</span><span class="p">:</span> <span class="n">CamplyModel</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-<a id="__codelineno-0-508" name="__codelineno-0-508"></a>        <span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-508" name="__codelineno-0-508"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <a id="__codelineno-0-509" name="__codelineno-0-509"></a><span class="sd">        Search a Camply Model</span>
 <a id="__codelineno-0-510" name="__codelineno-0-510"></a>
 <a id="__codelineno-0-511" name="__codelineno-0-511"></a><span class="sd">        Parameters</span>
@@ -2795,7 +2795,7 @@
 <a id="__codelineno-0-115" name="__codelineno-0-115"></a>    <span class="n">campground_id</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
 <a id="__codelineno-0-116" name="__codelineno-0-116"></a>    <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
 <a id="__codelineno-0-117" name="__codelineno-0-117"></a><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">CampgroundFacility</span><span class="p">]:</span>
-<a id="__codelineno-0-118" name="__codelineno-0-118"></a>    <span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-118" name="__codelineno-0-118"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <a id="__codelineno-0-119" name="__codelineno-0-119"></a><span class="sd">    Search A Facility via Offline Metadata</span>
 <a id="__codelineno-0-120" name="__codelineno-0-120"></a>
 <a id="__codelineno-0-121" name="__codelineno-0-121"></a><span class="sd">    Parameters</span>
@@ -3100,7 +3100,7 @@
 <a id="__codelineno-0-216" name="__codelineno-0-216"></a>    <span class="n">unit_sort</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;orderby&quot;</span><span class="p">,</span>
 <a id="__codelineno-0-217" name="__codelineno-0-217"></a>    <span class="n">in_season_only</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
 <a id="__codelineno-0-218" name="__codelineno-0-218"></a><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">AvailableCampsite</span><span class="p">]:</span>
-<a id="__codelineno-0-219" name="__codelineno-0-219"></a>    <span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-219" name="__codelineno-0-219"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <a id="__codelineno-0-220" name="__codelineno-0-220"></a><span class="sd">    Get Campsites from ReserveCalifornia</span>
 <a id="__codelineno-0-221" name="__codelineno-0-221"></a>
 <a id="__codelineno-0-222" name="__codelineno-0-222"></a><span class="sd">    Parameters</span>
@@ -3242,7 +3242,7 @@ as JSON alongside the provider code itself (calirdr.usedirect.com):</p>
 <span class="normal"><a href="#__codelineno-0-72">72</a></span>
 <span class="normal"><a href="#__codelineno-0-73">73</a></span>
 <span class="normal"><a href="#__codelineno-0-74">74</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-52" name="__codelineno-0-52"></a><span class="k">def</span> <span class="nf">refresh_metadata</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<a id="__codelineno-0-53" name="__codelineno-0-53"></a>    <span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-53" name="__codelineno-0-53"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <a id="__codelineno-0-54" name="__codelineno-0-54"></a><span class="sd">    Refresh All the Campground Metadata</span>
 <a id="__codelineno-0-55" name="__codelineno-0-55"></a>
 <a id="__codelineno-0-56" name="__codelineno-0-56"></a><span class="sd">    This is the way that this provider caches all of its metadata</span>
@@ -3374,7 +3374,7 @@ as JSON alongside the provider code itself (calirdr.usedirect.com):</p>
 <a id="__codelineno-0-78" name="__codelineno-0-78"></a>    <span class="n">query</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
 <a id="__codelineno-0-79" name="__codelineno-0-79"></a>    <span class="n">state</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;CA&quot;</span><span class="p">,</span>
 <a id="__codelineno-0-80" name="__codelineno-0-80"></a><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">RecreationArea</span><span class="p">]:</span>
-<a id="__codelineno-0-81" name="__codelineno-0-81"></a>    <span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-81" name="__codelineno-0-81"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <a id="__codelineno-0-82" name="__codelineno-0-82"></a><span class="sd">    Retrieve Recreation Areas</span>
 <a id="__codelineno-0-83" name="__codelineno-0-83"></a>
 <a id="__codelineno-0-84" name="__codelineno-0-84"></a><span class="sd">    Parameters</span>

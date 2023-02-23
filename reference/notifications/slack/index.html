@@ -297,6 +297,21 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../how_to_run/" class="md-nav__link">
+        How To Run Camply 🏃
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../recreationdotgov/" class="md-nav__link">
         Finding Campsites on Recreation.gov 🌲
       </a>
@@ -314,21 +329,6 @@
     <li class="md-nav__item">
       <a href="../../../python/" class="md-nav__link">
         Object Oriented Usage 🐍
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../docker/" class="md-nav__link">
-        Docker ⛴
       </a>
     </li>
   
@@ -1742,7 +1742,7 @@
 <span class="normal"><a href="#__codelineno-0-120">120</a></span>
 <span class="normal"><a href="#__codelineno-0-121">121</a></span>
 <span class="normal"><a href="#__codelineno-0-122">122</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-17" name="__codelineno-0-17"></a><span class="k">class</span> <span class="nc">SlackNotifications</span><span class="p">(</span><span class="n">BaseNotifications</span><span class="p">):</span>
-<a id="__codelineno-0-18" name="__codelineno-0-18"></a>    <span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <a id="__codelineno-0-19" name="__codelineno-0-19"></a><span class="sd">    Push Notifications via Slack</span>
 <a id="__codelineno-0-20" name="__codelineno-0-20"></a><span class="sd">    &quot;&quot;&quot;</span>
 <a id="__codelineno-0-21" name="__codelineno-0-21"></a>
@@ -1759,7 +1759,7 @@
 <a id="__codelineno-0-32" name="__codelineno-0-32"></a>            <span class="k">raise</span> <span class="ne">EnvironmentError</span><span class="p">(</span><span class="n">warning_message</span><span class="p">)</span>
 <a id="__codelineno-0-33" name="__codelineno-0-33"></a>
 <a id="__codelineno-0-34" name="__codelineno-0-34"></a>    <span class="k">def</span> <span class="nf">send_message</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">requests</span><span class="o">.</span><span class="n">Response</span><span class="p">:</span>
-<a id="__codelineno-0-35" name="__codelineno-0-35"></a>        <span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-35" name="__codelineno-0-35"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <a id="__codelineno-0-36" name="__codelineno-0-36"></a><span class="sd">        Send a message via Slack - if environment variables are configured.</span>
 <a id="__codelineno-0-37" name="__codelineno-0-37"></a>
 <a id="__codelineno-0-38" name="__codelineno-0-38"></a><span class="sd">        Parameters</span>
@@ -1794,7 +1794,7 @@
 <a id="__codelineno-0-67" name="__codelineno-0-67"></a>        <span class="k">return</span> <span class="n">response</span>
 <a id="__codelineno-0-68" name="__codelineno-0-68"></a>
 <a id="__codelineno-0-69" name="__codelineno-0-69"></a>    <span class="k">def</span> <span class="nf">send_campsites</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">campsites</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">AvailableCampsite</span><span class="p">],</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-<a id="__codelineno-0-70" name="__codelineno-0-70"></a>        <span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-70" name="__codelineno-0-70"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <a id="__codelineno-0-71" name="__codelineno-0-71"></a><span class="sd">        Send a message with a campsite object</span>
 <a id="__codelineno-0-72" name="__codelineno-0-72"></a>
 <a id="__codelineno-0-73" name="__codelineno-0-73"></a><span class="sd">        Parameters</span>
@@ -1956,7 +1956,7 @@
 <span class="normal"><a href="#__codelineno-0-120">120</a></span>
 <span class="normal"><a href="#__codelineno-0-121">121</a></span>
 <span class="normal"><a href="#__codelineno-0-122">122</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-69" name="__codelineno-0-69"></a><span class="k">def</span> <span class="nf">send_campsites</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">campsites</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">AvailableCampsite</span><span class="p">],</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-<a id="__codelineno-0-70" name="__codelineno-0-70"></a>    <span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-70" name="__codelineno-0-70"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <a id="__codelineno-0-71" name="__codelineno-0-71"></a><span class="sd">    Send a message with a campsite object</span>
 <a id="__codelineno-0-72" name="__codelineno-0-72"></a>
 <a id="__codelineno-0-73" name="__codelineno-0-73"></a><span class="sd">    Parameters</span>
@@ -2107,7 +2107,7 @@
 <span class="normal"><a href="#__codelineno-0-65">65</a></span>
 <span class="normal"><a href="#__codelineno-0-66">66</a></span>
 <span class="normal"><a href="#__codelineno-0-67">67</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-34" name="__codelineno-0-34"></a><span class="k">def</span> <span class="nf">send_message</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">requests</span><span class="o">.</span><span class="n">Response</span><span class="p">:</span>
-<a id="__codelineno-0-35" name="__codelineno-0-35"></a>    <span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-35" name="__codelineno-0-35"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <a id="__codelineno-0-36" name="__codelineno-0-36"></a><span class="sd">    Send a message via Slack - if environment variables are configured.</span>
 <a id="__codelineno-0-37" name="__codelineno-0-37"></a>
 <a id="__codelineno-0-38" name="__codelineno-0-38"></a><span class="sd">    Parameters</span>

@@ -297,6 +297,21 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../how_to_run/" class="md-nav__link">
+        How To Run Camply 🏃
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../recreationdotgov/" class="md-nav__link">
         Finding Campsites on Recreation.gov 🌲
       </a>
@@ -314,21 +329,6 @@
     <li class="md-nav__item">
       <a href="../../../python/" class="md-nav__link">
         Object Oriented Usage 🐍
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../docker/" class="md-nav__link">
-        Docker ⛴
       </a>
     </li>
   
@@ -1758,7 +1758,7 @@
 <span class="normal"><a href="#__codelineno-0-122">122</a></span>
 <span class="normal"><a href="#__codelineno-0-123">123</a></span>
 <span class="normal"><a href="#__codelineno-0-124">124</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-17" name="__codelineno-0-17"></a><span class="k">class</span> <span class="nc">TelegramNotifications</span><span class="p">(</span><span class="n">BaseNotifications</span><span class="p">):</span>
-<a id="__codelineno-0-18" name="__codelineno-0-18"></a>    <span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <a id="__codelineno-0-19" name="__codelineno-0-19"></a><span class="sd">    Push Notifications via Telegram</span>
 <a id="__codelineno-0-20" name="__codelineno-0-20"></a><span class="sd">    &quot;&quot;&quot;</span>
 <a id="__codelineno-0-21" name="__codelineno-0-21"></a>
@@ -1782,7 +1782,7 @@
 <a id="__codelineno-0-39" name="__codelineno-0-39"></a>            <span class="k">raise</span> <span class="ne">EnvironmentError</span><span class="p">(</span><span class="n">warning_message</span><span class="p">)</span>
 <a id="__codelineno-0-40" name="__codelineno-0-40"></a>
 <a id="__codelineno-0-41" name="__codelineno-0-41"></a>    <span class="k">def</span> <span class="nf">send_message</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">escaped</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">requests</span><span class="o">.</span><span class="n">Response</span><span class="p">:</span>
-<a id="__codelineno-0-42" name="__codelineno-0-42"></a>        <span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-42" name="__codelineno-0-42"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <a id="__codelineno-0-43" name="__codelineno-0-43"></a><span class="sd">        Send a message via Telegram - if environment variables are configured</span>
 <a id="__codelineno-0-44" name="__codelineno-0-44"></a>
 <a id="__codelineno-0-45" name="__codelineno-0-45"></a><span class="sd">        Parameters</span>
@@ -1812,7 +1812,7 @@
 <a id="__codelineno-0-69" name="__codelineno-0-69"></a>
 <a id="__codelineno-0-70" name="__codelineno-0-70"></a>    <span class="nd">@staticmethod</span>
 <a id="__codelineno-0-71" name="__codelineno-0-71"></a>    <span class="k">def</span> <span class="nf">escape_text</span><span class="p">(</span><span class="n">message</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-<a id="__codelineno-0-72" name="__codelineno-0-72"></a>        <span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-72" name="__codelineno-0-72"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <a id="__codelineno-0-73" name="__codelineno-0-73"></a><span class="sd">        Escape a message for use in Telegram</span>
 <a id="__codelineno-0-74" name="__codelineno-0-74"></a>
 <a id="__codelineno-0-75" name="__codelineno-0-75"></a><span class="sd">        Parameters</span>
@@ -1848,7 +1848,7 @@
 <a id="__codelineno-0-105" name="__codelineno-0-105"></a>        <span class="k">return</span> <span class="n">message</span>
 <a id="__codelineno-0-106" name="__codelineno-0-106"></a>
 <a id="__codelineno-0-107" name="__codelineno-0-107"></a>    <span class="k">def</span> <span class="nf">send_campsites</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">campsites</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">AvailableCampsite</span><span class="p">],</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-<a id="__codelineno-0-108" name="__codelineno-0-108"></a>        <span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-108" name="__codelineno-0-108"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <a id="__codelineno-0-109" name="__codelineno-0-109"></a><span class="sd">        Send a message with a campsite object</span>
 <a id="__codelineno-0-110" name="__codelineno-0-110"></a>
 <a id="__codelineno-0-111" name="__codelineno-0-111"></a><span class="sd">        Parameters</span>
@@ -1979,7 +1979,7 @@
 <span class="normal"><a href="#__codelineno-0-104">104</a></span>
 <span class="normal"><a href="#__codelineno-0-105">105</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-70" name="__codelineno-0-70"></a><span class="nd">@staticmethod</span>
 <a id="__codelineno-0-71" name="__codelineno-0-71"></a><span class="k">def</span> <span class="nf">escape_text</span><span class="p">(</span><span class="n">message</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-<a id="__codelineno-0-72" name="__codelineno-0-72"></a>    <span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-72" name="__codelineno-0-72"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <a id="__codelineno-0-73" name="__codelineno-0-73"></a><span class="sd">    Escape a message for use in Telegram</span>
 <a id="__codelineno-0-74" name="__codelineno-0-74"></a>
 <a id="__codelineno-0-75" name="__codelineno-0-75"></a><span class="sd">    Parameters</span>
@@ -2077,7 +2077,7 @@
 <span class="normal"><a href="#__codelineno-0-122">122</a></span>
 <span class="normal"><a href="#__codelineno-0-123">123</a></span>
 <span class="normal"><a href="#__codelineno-0-124">124</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-107" name="__codelineno-0-107"></a><span class="k">def</span> <span class="nf">send_campsites</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">campsites</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">AvailableCampsite</span><span class="p">],</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-<a id="__codelineno-0-108" name="__codelineno-0-108"></a>    <span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-108" name="__codelineno-0-108"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <a id="__codelineno-0-109" name="__codelineno-0-109"></a><span class="sd">    Send a message with a campsite object</span>
 <a id="__codelineno-0-110" name="__codelineno-0-110"></a>
 <a id="__codelineno-0-111" name="__codelineno-0-111"></a><span class="sd">    Parameters</span>
@@ -2195,7 +2195,7 @@
 <span class="normal"><a href="#__codelineno-0-66">66</a></span>
 <span class="normal"><a href="#__codelineno-0-67">67</a></span>
 <span class="normal"><a href="#__codelineno-0-68">68</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-41" name="__codelineno-0-41"></a><span class="k">def</span> <span class="nf">send_message</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">escaped</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">requests</span><span class="o">.</span><span class="n">Response</span><span class="p">:</span>
-<a id="__codelineno-0-42" name="__codelineno-0-42"></a>    <span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-42" name="__codelineno-0-42"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <a id="__codelineno-0-43" name="__codelineno-0-43"></a><span class="sd">    Send a message via Telegram - if environment variables are configured</span>
 <a id="__codelineno-0-44" name="__codelineno-0-44"></a>
 <a id="__codelineno-0-45" name="__codelineno-0-45"></a><span class="sd">    Parameters</span>

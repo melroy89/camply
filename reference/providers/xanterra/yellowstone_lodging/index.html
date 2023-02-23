@@ -297,6 +297,21 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../../how_to_run/" class="md-nav__link">
+        How To Run Camply 🏃
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../../recreationdotgov/" class="md-nav__link">
         Finding Campsites on Recreation.gov 🌲
       </a>
@@ -314,21 +329,6 @@
     <li class="md-nav__item">
       <a href="../../../../python/" class="md-nav__link">
         Object Oriented Usage 🐍
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../docker/" class="md-nav__link">
-        Docker ⛴
       </a>
     </li>
   
@@ -2180,7 +2180,7 @@
 <span class="normal"><a href="#__codelineno-0-538">538</a></span>
 <span class="normal"><a href="#__codelineno-0-539">539</a></span>
 <span class="normal"><a href="#__codelineno-0-540">540</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-27" name="__codelineno-0-27"></a><span class="k">class</span> <span class="nc">YellowstoneLodging</span><span class="p">(</span><span class="n">BaseProvider</span><span class="p">):</span>
-<a id="__codelineno-0-28" name="__codelineno-0-28"></a>    <span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-28" name="__codelineno-0-28"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <a id="__codelineno-0-29" name="__codelineno-0-29"></a><span class="sd">    Scanner for Lodging in Yellowstone</span>
 <a id="__codelineno-0-30" name="__codelineno-0-30"></a><span class="sd">    &quot;&quot;&quot;</span>
 <a id="__codelineno-0-31" name="__codelineno-0-31"></a>
@@ -2191,7 +2191,7 @@
 <a id="__codelineno-0-36" name="__codelineno-0-36"></a>    <span class="p">)</span>
 <a id="__codelineno-0-37" name="__codelineno-0-37"></a>
 <a id="__codelineno-0-38" name="__codelineno-0-38"></a>    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<a id="__codelineno-0-39" name="__codelineno-0-39"></a>        <span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-39" name="__codelineno-0-39"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <a id="__codelineno-0-40" name="__codelineno-0-40"></a><span class="sd">        String Representation</span>
 <a id="__codelineno-0-41" name="__codelineno-0-41"></a>
 <a id="__codelineno-0-42" name="__codelineno-0-42"></a><span class="sd">        Returns</span>
@@ -2201,7 +2201,7 @@
 <a id="__codelineno-0-46" name="__codelineno-0-46"></a>        <span class="k">return</span> <span class="s2">&quot;&lt;YellowstoneLodging&gt;&quot;</span>
 <a id="__codelineno-0-47" name="__codelineno-0-47"></a>
 <a id="__codelineno-0-48" name="__codelineno-0-48"></a>    <span class="k">def</span> <span class="nf">_get_monthly_availability</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">month</span><span class="p">:</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">nights</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
-<a id="__codelineno-0-49" name="__codelineno-0-49"></a>        <span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-49" name="__codelineno-0-49"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <a id="__codelineno-0-50" name="__codelineno-0-50"></a><span class="sd">        Check All Lodging in Yellowstone for Campground Data</span>
 <a id="__codelineno-0-51" name="__codelineno-0-51"></a>
 <a id="__codelineno-0-52" name="__codelineno-0-52"></a><span class="sd">        Returns</span>
@@ -2233,7 +2233,7 @@
 <a id="__codelineno-0-78" name="__codelineno-0-78"></a>        <span class="n">stop</span><span class="o">=</span><span class="n">tenacity</span><span class="o">.</span><span class="n">stop</span><span class="o">.</span><span class="n">stop_after_delay</span><span class="p">(</span><span class="mi">6000</span><span class="p">),</span>
 <a id="__codelineno-0-79" name="__codelineno-0-79"></a>    <span class="p">)</span>
 <a id="__codelineno-0-80" name="__codelineno-0-80"></a>    <span class="k">def</span> <span class="nf">_try_retry_get_data</span><span class="p">(</span><span class="n">endpoint</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">params</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">dict</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
-<a id="__codelineno-0-81" name="__codelineno-0-81"></a>        <span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-81" name="__codelineno-0-81"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <a id="__codelineno-0-82" name="__codelineno-0-82"></a><span class="sd">        Try and Retry Fetching Data from the Yellowstone API.</span>
 <a id="__codelineno-0-83" name="__codelineno-0-83"></a>
 <a id="__codelineno-0-84" name="__codelineno-0-84"></a><span class="sd">        Unfortunately this is a required method to request the data since the</span>
@@ -2271,7 +2271,7 @@
 <a id="__codelineno-0-116" name="__codelineno-0-116"></a>
 <a id="__codelineno-0-117" name="__codelineno-0-117"></a>    <span class="nd">@staticmethod</span>
 <a id="__codelineno-0-118" name="__codelineno-0-118"></a>    <span class="k">def</span> <span class="nf">make_yellowstone_request</span><span class="p">(</span><span class="n">endpoint</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">params</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">dict</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
-<a id="__codelineno-0-119" name="__codelineno-0-119"></a>        <span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-119" name="__codelineno-0-119"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <a id="__codelineno-0-120" name="__codelineno-0-120"></a><span class="sd">        Try and Retry Fetching Data from the Yellowstone API.</span>
 <a id="__codelineno-0-121" name="__codelineno-0-121"></a>
 <a id="__codelineno-0-122" name="__codelineno-0-122"></a><span class="sd">        Unfortunately this is a required method to request the data since the</span>
@@ -2297,7 +2297,7 @@
 <a id="__codelineno-0-142" name="__codelineno-0-142"></a>
 <a id="__codelineno-0-143" name="__codelineno-0-143"></a>    <span class="nd">@classmethod</span>
 <a id="__codelineno-0-144" name="__codelineno-0-144"></a>    <span class="k">def</span> <span class="nf">_get_api_endpoint</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">url_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">query</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">dict</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-<a id="__codelineno-0-145" name="__codelineno-0-145"></a>        <span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-145" name="__codelineno-0-145"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <a id="__codelineno-0-146" name="__codelineno-0-146"></a><span class="sd">        Build the API Endpoint for All Yellowstone Lodging</span>
 <a id="__codelineno-0-147" name="__codelineno-0-147"></a><span class="sd">        &quot;&quot;&quot;</span>
 <a id="__codelineno-0-148" name="__codelineno-0-148"></a>        <span class="k">if</span> <span class="n">query</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
@@ -2319,7 +2319,7 @@
 <a id="__codelineno-0-164" name="__codelineno-0-164"></a>    <span class="k">def</span> <span class="nf">_return_lodging_url</span><span class="p">(</span>
 <a id="__codelineno-0-165" name="__codelineno-0-165"></a>        <span class="bp">cls</span><span class="p">,</span> <span class="n">lodging_code</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">month</span><span class="p">:</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">params</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">dict</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
 <a id="__codelineno-0-166" name="__codelineno-0-166"></a>    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-<a id="__codelineno-0-167" name="__codelineno-0-167"></a>        <span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-167" name="__codelineno-0-167"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <a id="__codelineno-0-168" name="__codelineno-0-168"></a><span class="sd">        Return a Browser Loadable URL to book from</span>
 <a id="__codelineno-0-169" name="__codelineno-0-169"></a>
 <a id="__codelineno-0-170" name="__codelineno-0-170"></a><span class="sd">        Parameters</span>
@@ -2361,7 +2361,7 @@
 <a id="__codelineno-0-206" name="__codelineno-0-206"></a>    <span class="k">def</span> <span class="nf">_compile_campground_availabilities</span><span class="p">(</span>
 <a id="__codelineno-0-207" name="__codelineno-0-207"></a>        <span class="bp">cls</span><span class="p">,</span> <span class="n">availability</span><span class="p">:</span> <span class="n">XantResortData</span>
 <a id="__codelineno-0-208" name="__codelineno-0-208"></a>    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">dict</span><span class="p">]:</span>
-<a id="__codelineno-0-209" name="__codelineno-0-209"></a>        <span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-209" name="__codelineno-0-209"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <a id="__codelineno-0-210" name="__codelineno-0-210"></a><span class="sd">        Gather Data about campground availabilities within a JSON Availability Objet</span>
 <a id="__codelineno-0-211" name="__codelineno-0-211"></a>
 <a id="__codelineno-0-212" name="__codelineno-0-212"></a><span class="sd">        Parameters</span>
@@ -2416,7 +2416,7 @@
 <a id="__codelineno-0-261" name="__codelineno-0-261"></a>        <span class="n">month</span><span class="p">:</span> <span class="n">datetime</span><span class="p">,</span>
 <a id="__codelineno-0-262" name="__codelineno-0-262"></a>        <span class="n">nights</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
 <a id="__codelineno-0-263" name="__codelineno-0-263"></a>    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">dict</span><span class="p">]:</span>
-<a id="__codelineno-0-264" name="__codelineno-0-264"></a>        <span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-264" name="__codelineno-0-264"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <a id="__codelineno-0-265" name="__codelineno-0-265"></a><span class="sd">        Get campsite extra information</span>
 <a id="__codelineno-0-266" name="__codelineno-0-266"></a>
 <a id="__codelineno-0-267" name="__codelineno-0-267"></a><span class="sd">        Given a DataFrame of campsite availability, return updated Data with details</span>
@@ -2465,7 +2465,7 @@
 <a id="__codelineno-0-310" name="__codelineno-0-310"></a>    <span class="k">def</span> <span class="nf">_process_daily_availability</span><span class="p">(</span>
 <a id="__codelineno-0-311" name="__codelineno-0-311"></a>        <span class="bp">cls</span><span class="p">,</span> <span class="n">booking_dates</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">campsite_availability</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span> <span class="n">facility_id</span><span class="p">:</span> <span class="nb">str</span>
 <a id="__codelineno-0-312" name="__codelineno-0-312"></a>    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">dict</span><span class="p">]:</span>
-<a id="__codelineno-0-313" name="__codelineno-0-313"></a>        <span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-313" name="__codelineno-0-313"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <a id="__codelineno-0-314" name="__codelineno-0-314"></a><span class="sd">        Process Monthly Availability</span>
 <a id="__codelineno-0-315" name="__codelineno-0-315"></a>
 <a id="__codelineno-0-316" name="__codelineno-0-316"></a><span class="sd">        Parameters</span>
@@ -2507,7 +2507,7 @@
 <a id="__codelineno-0-352" name="__codelineno-0-352"></a>        <span class="k">return</span> <span class="n">daily_availabilities</span>
 <a id="__codelineno-0-353" name="__codelineno-0-353"></a>
 <a id="__codelineno-0-354" name="__codelineno-0-354"></a>    <span class="k">def</span> <span class="nf">_get_property_information</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">available_rooms</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">dict</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">dict</span><span class="p">]:</span>
-<a id="__codelineno-0-355" name="__codelineno-0-355"></a>        <span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-355" name="__codelineno-0-355"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <a id="__codelineno-0-356" name="__codelineno-0-356"></a><span class="sd">        Gather Information About All Campgrounds / Hotels within Yellowstone</span>
 <a id="__codelineno-0-357" name="__codelineno-0-357"></a>
 <a id="__codelineno-0-358" name="__codelineno-0-358"></a><span class="sd">        Parameters</span>
@@ -2554,7 +2554,7 @@
 <a id="__codelineno-0-399" name="__codelineno-0-399"></a>    <span class="k">def</span> <span class="nf">get_monthly_campsites</span><span class="p">(</span>
 <a id="__codelineno-0-400" name="__codelineno-0-400"></a>        <span class="bp">self</span><span class="p">,</span> <span class="n">month</span><span class="p">:</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">nights</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
 <a id="__codelineno-0-401" name="__codelineno-0-401"></a>    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">AvailableCampsite</span><span class="p">]:</span>
-<a id="__codelineno-0-402" name="__codelineno-0-402"></a>        <span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-402" name="__codelineno-0-402"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <a id="__codelineno-0-403" name="__codelineno-0-403"></a><span class="sd">        Return All Campsites Available in a Given Month</span>
 <a id="__codelineno-0-404" name="__codelineno-0-404"></a>
 <a id="__codelineno-0-405" name="__codelineno-0-405"></a><span class="sd">        Parameters</span>
@@ -2630,7 +2630,7 @@
 <a id="__codelineno-0-475" name="__codelineno-0-475"></a>
 <a id="__codelineno-0-476" name="__codelineno-0-476"></a>    <span class="nd">@classmethod</span>
 <a id="__codelineno-0-477" name="__codelineno-0-477"></a>    <span class="k">def</span> <span class="nf">_df_to_campsites</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">campsite_df</span><span class="p">:</span> <span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">AvailableCampsite</span><span class="p">]:</span>
-<a id="__codelineno-0-478" name="__codelineno-0-478"></a>        <span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-478" name="__codelineno-0-478"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <a id="__codelineno-0-479" name="__codelineno-0-479"></a><span class="sd">        Transform a DataFrame into an array of AvailableCampsites</span>
 <a id="__codelineno-0-480" name="__codelineno-0-480"></a>
 <a id="__codelineno-0-481" name="__codelineno-0-481"></a><span class="sd">        Parameters</span>
@@ -2665,7 +2665,7 @@
 <a id="__codelineno-0-510" name="__codelineno-0-510"></a>
 <a id="__codelineno-0-511" name="__codelineno-0-511"></a>    <span class="nd">@classmethod</span>
 <a id="__codelineno-0-512" name="__codelineno-0-512"></a>    <span class="k">def</span> <span class="nf">_ensure_current_month</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">month</span><span class="p">:</span> <span class="n">datetime</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">datetime</span><span class="p">:</span>
-<a id="__codelineno-0-513" name="__codelineno-0-513"></a>        <span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-513" name="__codelineno-0-513"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <a id="__codelineno-0-514" name="__codelineno-0-514"></a><span class="sd">        Ensure That We Never Give the Yellowstone API Dates in the past.</span>
 <a id="__codelineno-0-515" name="__codelineno-0-515"></a>
 <a id="__codelineno-0-516" name="__codelineno-0-516"></a><span class="sd">        Parameters</span>
@@ -2688,7 +2688,7 @@
 <a id="__codelineno-0-533" name="__codelineno-0-533"></a>        <span class="k">return</span> <span class="n">month</span>
 <a id="__codelineno-0-534" name="__codelineno-0-534"></a>
 <a id="__codelineno-0-535" name="__codelineno-0-535"></a>    <span class="k">def</span> <span class="nf">find_campgrounds</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">CampgroundFacility</span><span class="p">]:</span>
-<a id="__codelineno-0-536" name="__codelineno-0-536"></a>        <span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-536" name="__codelineno-0-536"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <a id="__codelineno-0-537" name="__codelineno-0-537"></a><span class="sd">        Print the Campgrounds inside of Yellowstone</span>
 <a id="__codelineno-0-538" name="__codelineno-0-538"></a><span class="sd">        &quot;&quot;&quot;</span>
 <a id="__codelineno-0-539" name="__codelineno-0-539"></a>        <span class="n">log_sorted_response</span><span class="p">(</span><span class="n">YellowstoneConfig</span><span class="o">.</span><span class="n">YELLOWSTONE_CAMPGROUND_OBJECTS</span><span class="p">)</span>
@@ -2751,7 +2751,7 @@
 <span class="normal"><a href="#__codelineno-0-44">44</a></span>
 <span class="normal"><a href="#__codelineno-0-45">45</a></span>
 <span class="normal"><a href="#__codelineno-0-46">46</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-38" name="__codelineno-0-38"></a><span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<a id="__codelineno-0-39" name="__codelineno-0-39"></a>    <span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-39" name="__codelineno-0-39"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <a id="__codelineno-0-40" name="__codelineno-0-40"></a><span class="sd">    String Representation</span>
 <a id="__codelineno-0-41" name="__codelineno-0-41"></a>
 <a id="__codelineno-0-42" name="__codelineno-0-42"></a><span class="sd">    Returns</span>
@@ -2787,7 +2787,7 @@
 <span class="normal"><a href="#__codelineno-0-538">538</a></span>
 <span class="normal"><a href="#__codelineno-0-539">539</a></span>
 <span class="normal"><a href="#__codelineno-0-540">540</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-535" name="__codelineno-0-535"></a><span class="k">def</span> <span class="nf">find_campgrounds</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">CampgroundFacility</span><span class="p">]:</span>
-<a id="__codelineno-0-536" name="__codelineno-0-536"></a>    <span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-536" name="__codelineno-0-536"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <a id="__codelineno-0-537" name="__codelineno-0-537"></a><span class="sd">    Print the Campgrounds inside of Yellowstone</span>
 <a id="__codelineno-0-538" name="__codelineno-0-538"></a><span class="sd">    &quot;&quot;&quot;</span>
 <a id="__codelineno-0-539" name="__codelineno-0-539"></a>    <span class="n">log_sorted_response</span><span class="p">(</span><span class="n">YellowstoneConfig</span><span class="o">.</span><span class="n">YELLOWSTONE_CAMPGROUND_OBJECTS</span><span class="p">)</span>
@@ -2944,7 +2944,7 @@
 <span class="normal"><a href="#__codelineno-0-474">474</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-399" name="__codelineno-0-399"></a><span class="k">def</span> <span class="nf">get_monthly_campsites</span><span class="p">(</span>
 <a id="__codelineno-0-400" name="__codelineno-0-400"></a>    <span class="bp">self</span><span class="p">,</span> <span class="n">month</span><span class="p">:</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">nights</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
 <a id="__codelineno-0-401" name="__codelineno-0-401"></a><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">AvailableCampsite</span><span class="p">]:</span>
-<a id="__codelineno-0-402" name="__codelineno-0-402"></a>    <span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-402" name="__codelineno-0-402"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <a id="__codelineno-0-403" name="__codelineno-0-403"></a><span class="sd">    Return All Campsites Available in a Given Month</span>
 <a id="__codelineno-0-404" name="__codelineno-0-404"></a>
 <a id="__codelineno-0-405" name="__codelineno-0-405"></a><span class="sd">    Parameters</span>
@@ -3123,7 +3123,7 @@ Yellowstone API doesn't always return data.</p>
 <span class="normal"><a href="#__codelineno-0-140">140</a></span>
 <span class="normal"><a href="#__codelineno-0-141">141</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-117" name="__codelineno-0-117"></a><span class="nd">@staticmethod</span>
 <a id="__codelineno-0-118" name="__codelineno-0-118"></a><span class="k">def</span> <span class="nf">make_yellowstone_request</span><span class="p">(</span><span class="n">endpoint</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">params</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">dict</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
-<a id="__codelineno-0-119" name="__codelineno-0-119"></a>    <span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-119" name="__codelineno-0-119"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <a id="__codelineno-0-120" name="__codelineno-0-120"></a><span class="sd">    Try and Retry Fetching Data from the Yellowstone API.</span>
 <a id="__codelineno-0-121" name="__codelineno-0-121"></a>
 <a id="__codelineno-0-122" name="__codelineno-0-122"></a><span class="sd">    Unfortunately this is a required method to request the data since the</span>

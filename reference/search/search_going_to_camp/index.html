@@ -297,6 +297,21 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../how_to_run/" class="md-nav__link">
+        How To Run Camply 🏃
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../recreationdotgov/" class="md-nav__link">
         Finding Campsites on Recreation.gov 🌲
       </a>
@@ -314,21 +329,6 @@
     <li class="md-nav__item">
       <a href="../../../python/" class="md-nav__link">
         Object Oriented Usage 🐍
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../docker/" class="md-nav__link">
-        Docker ⛴
       </a>
     </li>
   
@@ -1874,7 +1874,7 @@
 <span class="normal"><a href="#__codelineno-0-245">245</a></span>
 <span class="normal"><a href="#__codelineno-0-246">246</a></span>
 <span class="normal"><a href="#__codelineno-0-247">247</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-24" name="__codelineno-0-24"></a><span class="k">class</span> <span class="nc">SearchGoingToCamp</span><span class="p">(</span><span class="n">BaseCampingSearch</span><span class="p">):</span>
-<a id="__codelineno-0-25" name="__codelineno-0-25"></a>    <span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-25" name="__codelineno-0-25"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <a id="__codelineno-0-26" name="__codelineno-0-26"></a><span class="sd">    Searches on GoingToCamp.com for Campsites</span>
 <a id="__codelineno-0-27" name="__codelineno-0-27"></a><span class="sd">    &quot;&quot;&quot;</span>
 <a id="__codelineno-0-28" name="__codelineno-0-28"></a>
@@ -1884,7 +1884,7 @@
 <a id="__codelineno-0-32" name="__codelineno-0-32"></a>    <span class="k">def</span> <span class="nf">find_recreation_areas</span><span class="p">(</span>
 <a id="__codelineno-0-33" name="__codelineno-0-33"></a>        <span class="bp">cls</span><span class="p">,</span> <span class="n">search_string</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
 <a id="__codelineno-0-34" name="__codelineno-0-34"></a>    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">RecreationArea</span><span class="p">]:</span>
-<a id="__codelineno-0-35" name="__codelineno-0-35"></a>        <span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-35" name="__codelineno-0-35"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <a id="__codelineno-0-36" name="__codelineno-0-36"></a><span class="sd">        Return the GoingToCamp Recreation Areas</span>
 <a id="__codelineno-0-37" name="__codelineno-0-37"></a><span class="sd">        &quot;&quot;&quot;</span>
 <a id="__codelineno-0-38" name="__codelineno-0-38"></a>        <span class="k">return</span> <span class="n">GoingToCampProvider</span><span class="o">.</span><span class="n">find_recreation_areas</span><span class="p">(</span><span class="n">search_string</span><span class="o">=</span><span class="n">search_string</span><span class="p">)</span>
@@ -1901,7 +1901,7 @@
 <a id="__codelineno-0-49" name="__codelineno-0-49"></a>        <span class="n">nights</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
 <a id="__codelineno-0-50" name="__codelineno-0-50"></a>        <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
 <a id="__codelineno-0-51" name="__codelineno-0-51"></a>    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<a id="__codelineno-0-52" name="__codelineno-0-52"></a>        <span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-52" name="__codelineno-0-52"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <a id="__codelineno-0-53" name="__codelineno-0-53"></a><span class="sd">        Initialize with Search Parameters</span>
 <a id="__codelineno-0-54" name="__codelineno-0-54"></a>
 <a id="__codelineno-0-55" name="__codelineno-0-55"></a><span class="sd">        Parameters</span>
@@ -1976,7 +1976,7 @@
 <a id="__codelineno-0-124" name="__codelineno-0-124"></a>            <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 <a id="__codelineno-0-125" name="__codelineno-0-125"></a>
 <a id="__codelineno-0-126" name="__codelineno-0-126"></a>    <span class="k">def</span> <span class="nf">get_all_campsites</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">AvailableCampsite</span><span class="p">]:</span>
-<a id="__codelineno-0-127" name="__codelineno-0-127"></a>        <span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-127" name="__codelineno-0-127"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <a id="__codelineno-0-128" name="__codelineno-0-128"></a><span class="sd">        Search for all campsites matching search criteria.</span>
 <a id="__codelineno-0-129" name="__codelineno-0-129"></a>
 <a id="__codelineno-0-130" name="__codelineno-0-130"></a><span class="sd">        Because Going To Camp has no efficient way of filtering</span>
@@ -2060,7 +2060,7 @@
 <a id="__codelineno-0-208" name="__codelineno-0-208"></a>        <span class="k">return</span> <span class="n">available_sites</span>
 <a id="__codelineno-0-209" name="__codelineno-0-209"></a>
 <a id="__codelineno-0-210" name="__codelineno-0-210"></a>    <span class="k">def</span> <span class="nf">_get_searchable_campgrounds</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">CampgroundFacility</span><span class="p">]:</span>
-<a id="__codelineno-0-211" name="__codelineno-0-211"></a>        <span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-211" name="__codelineno-0-211"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <a id="__codelineno-0-212" name="__codelineno-0-212"></a><span class="sd">        Return a List of Campgrounds to search</span>
 <a id="__codelineno-0-213" name="__codelineno-0-213"></a>
 <a id="__codelineno-0-214" name="__codelineno-0-214"></a><span class="sd">        Returns</span>
@@ -2082,7 +2082,7 @@
 <a id="__codelineno-0-230" name="__codelineno-0-230"></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_campgrounds_by_recreation_area_id</span><span class="p">()</span>
 <a id="__codelineno-0-231" name="__codelineno-0-231"></a>
 <a id="__codelineno-0-232" name="__codelineno-0-232"></a>    <span class="k">def</span> <span class="nf">_get_campgrounds_by_recreation_area_id</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">CampgroundFacility</span><span class="p">]:</span>
-<a id="__codelineno-0-233" name="__codelineno-0-233"></a>        <span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-233" name="__codelineno-0-233"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <a id="__codelineno-0-234" name="__codelineno-0-234"></a><span class="sd">        Return a List of Campgrounds to search when provided with Recreation Area IDs</span>
 <a id="__codelineno-0-235" name="__codelineno-0-235"></a>
 <a id="__codelineno-0-236" name="__codelineno-0-236"></a><span class="sd">        Returns</span>
@@ -2260,7 +2260,7 @@ Saturday nights)</p></td>
 <a id="__codelineno-0-49" name="__codelineno-0-49"></a>    <span class="n">nights</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
 <a id="__codelineno-0-50" name="__codelineno-0-50"></a>    <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
 <a id="__codelineno-0-51" name="__codelineno-0-51"></a><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<a id="__codelineno-0-52" name="__codelineno-0-52"></a>    <span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-52" name="__codelineno-0-52"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <a id="__codelineno-0-53" name="__codelineno-0-53"></a><span class="sd">    Initialize with Search Parameters</span>
 <a id="__codelineno-0-54" name="__codelineno-0-54"></a>
 <a id="__codelineno-0-55" name="__codelineno-0-55"></a><span class="sd">    Parameters</span>
@@ -2341,7 +2341,7 @@ Saturday nights)</p></td>
 <a id="__codelineno-0-32" name="__codelineno-0-32"></a><span class="k">def</span> <span class="nf">find_recreation_areas</span><span class="p">(</span>
 <a id="__codelineno-0-33" name="__codelineno-0-33"></a>    <span class="bp">cls</span><span class="p">,</span> <span class="n">search_string</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
 <a id="__codelineno-0-34" name="__codelineno-0-34"></a><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">RecreationArea</span><span class="p">]:</span>
-<a id="__codelineno-0-35" name="__codelineno-0-35"></a>    <span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-35" name="__codelineno-0-35"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <a id="__codelineno-0-36" name="__codelineno-0-36"></a><span class="sd">    Return the GoingToCamp Recreation Areas</span>
 <a id="__codelineno-0-37" name="__codelineno-0-37"></a><span class="sd">    &quot;&quot;&quot;</span>
 <a id="__codelineno-0-38" name="__codelineno-0-38"></a>    <span class="k">return</span> <span class="n">GoingToCampProvider</span><span class="o">.</span><span class="n">find_recreation_areas</span><span class="p">(</span><span class="n">search_string</span><span class="o">=</span><span class="n">search_string</span><span class="p">)</span>
@@ -2472,7 +2472,7 @@ all campgrounds would likely lead to abuse complaints.</p>
 <span class="normal"><a href="#__codelineno-0-206">206</a></span>
 <span class="normal"><a href="#__codelineno-0-207">207</a></span>
 <span class="normal"><a href="#__codelineno-0-208">208</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-126" name="__codelineno-0-126"></a><span class="k">def</span> <span class="nf">get_all_campsites</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">AvailableCampsite</span><span class="p">]:</span>
-<a id="__codelineno-0-127" name="__codelineno-0-127"></a>    <span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-127" name="__codelineno-0-127"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <a id="__codelineno-0-128" name="__codelineno-0-128"></a><span class="sd">    Search for all campsites matching search criteria.</span>
 <a id="__codelineno-0-129" name="__codelineno-0-129"></a>
 <a id="__codelineno-0-130" name="__codelineno-0-130"></a><span class="sd">    Because Going To Camp has no efficient way of filtering</span>
