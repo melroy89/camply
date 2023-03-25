@@ -658,6 +658,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../containers/examples/" class="md-nav__link">
+        examples
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../containers/gtc_api_responses/" class="md-nav__link">
         gtc_api_responses
       </a>
@@ -1885,7 +1899,14 @@ app:
 <span class="normal"><a href="#__codelineno-0-142">142</a></span>
 <span class="normal"><a href="#__codelineno-0-143">143</a></span>
 <span class="normal"><a href="#__codelineno-0-144">144</a></span>
-<span class="normal"><a href="#__codelineno-0-145">145</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-81" name="__codelineno-0-81"></a><span class="k">def</span> <span class="nf">yaml_file_to_arguments</span><span class="p">(</span>
+<span class="normal"><a href="#__codelineno-0-145">145</a></span>
+<span class="normal"><a href="#__codelineno-0-146">146</a></span>
+<span class="normal"><a href="#__codelineno-0-147">147</a></span>
+<span class="normal"><a href="#__codelineno-0-148">148</a></span>
+<span class="normal"><a href="#__codelineno-0-149">149</a></span>
+<span class="normal"><a href="#__codelineno-0-150">150</a></span>
+<span class="normal"><a href="#__codelineno-0-151">151</a></span>
+<span class="normal"><a href="#__codelineno-0-152">152</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-81" name="__codelineno-0-81"></a><span class="k">def</span> <span class="nf">yaml_file_to_arguments</span><span class="p">(</span>
 <a id="__codelineno-0-82" name="__codelineno-0-82"></a>    <span class="n">file_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
 <a id="__codelineno-0-83" name="__codelineno-0-83"></a><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">object</span><span class="p">],</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">object</span><span class="p">]]:</span>
 <a id="__codelineno-0-84" name="__codelineno-0-84"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
@@ -1912,44 +1933,51 @@ app:
 <a id="__codelineno-0-105" name="__codelineno-0-105"></a>    <span class="n">recreation_area</span> <span class="o">=</span> <span class="n">yaml_search</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;recreation_area&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
 <a id="__codelineno-0-106" name="__codelineno-0-106"></a>    <span class="n">campgrounds</span> <span class="o">=</span> <span class="n">yaml_search</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;campgrounds&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
 <a id="__codelineno-0-107" name="__codelineno-0-107"></a>    <span class="n">campsites</span> <span class="o">=</span> <span class="n">yaml_search</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;campsites&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
-<a id="__codelineno-0-108" name="__codelineno-0-108"></a>    <span class="n">weekends_only</span> <span class="o">=</span> <span class="n">yaml_search</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;weekends&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
-<a id="__codelineno-0-109" name="__codelineno-0-109"></a>    <span class="n">continuous</span> <span class="o">=</span> <span class="n">yaml_search</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;continuous&quot;</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
-<a id="__codelineno-0-110" name="__codelineno-0-110"></a>    <span class="n">polling_interval</span> <span class="o">=</span> <span class="n">yaml_search</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
-<a id="__codelineno-0-111" name="__codelineno-0-111"></a>        <span class="s2">&quot;polling_interval&quot;</span><span class="p">,</span> <span class="n">SearchConfig</span><span class="o">.</span><span class="n">RECOMMENDED_POLLING_INTERVAL</span>
-<a id="__codelineno-0-112" name="__codelineno-0-112"></a>    <span class="p">)</span>
-<a id="__codelineno-0-113" name="__codelineno-0-113"></a>    <span class="n">notify_first_try</span> <span class="o">=</span> <span class="n">yaml_search</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;notify_first_try&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
-<a id="__codelineno-0-114" name="__codelineno-0-114"></a>    <span class="n">notification_provider</span> <span class="o">=</span> <span class="n">yaml_search</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;notifications&quot;</span><span class="p">,</span> <span class="s2">&quot;silent&quot;</span><span class="p">)</span>
-<a id="__codelineno-0-115" name="__codelineno-0-115"></a>    <span class="n">search_forever</span> <span class="o">=</span> <span class="n">yaml_search</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;search_forever&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
-<a id="__codelineno-0-116" name="__codelineno-0-116"></a>    <span class="n">search_once</span> <span class="o">=</span> <span class="n">yaml_search</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;search_once&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
-<a id="__codelineno-0-117" name="__codelineno-0-117"></a>    <span class="n">equipment</span> <span class="o">=</span> <span class="n">yaml_search</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;equipment&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
-<a id="__codelineno-0-118" name="__codelineno-0-118"></a>    <span class="n">equipment</span> <span class="o">=</span> <span class="n">make_list</span><span class="p">(</span><span class="n">equipment</span><span class="p">)</span>
-<a id="__codelineno-0-119" name="__codelineno-0-119"></a>    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">equipment</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
-<a id="__codelineno-0-120" name="__codelineno-0-120"></a>        <span class="n">equipment</span> <span class="o">=</span> <span class="p">[</span><span class="nb">tuple</span><span class="p">(</span><span class="n">equip</span><span class="p">)</span> <span class="k">for</span> <span class="n">equip</span> <span class="ow">in</span> <span class="n">equipment</span><span class="p">]</span>
-<a id="__codelineno-0-121" name="__codelineno-0-121"></a>    <span class="n">offline_search</span> <span class="o">=</span> <span class="n">yaml_search</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;offline_search&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
-<a id="__codelineno-0-122" name="__codelineno-0-122"></a>    <span class="n">offline_search_path</span> <span class="o">=</span> <span class="n">yaml_search</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;offline_search_path&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
-<a id="__codelineno-0-123" name="__codelineno-0-123"></a>
-<a id="__codelineno-0-124" name="__codelineno-0-124"></a>    <span class="n">provider_kwargs</span> <span class="o">=</span> <span class="p">{</span>
-<a id="__codelineno-0-125" name="__codelineno-0-125"></a>        <span class="s2">&quot;search_window&quot;</span><span class="p">:</span> <span class="n">search_window</span><span class="p">,</span>
-<a id="__codelineno-0-126" name="__codelineno-0-126"></a>        <span class="s2">&quot;recreation_area&quot;</span><span class="p">:</span> <span class="n">recreation_area</span><span class="p">,</span>
-<a id="__codelineno-0-127" name="__codelineno-0-127"></a>        <span class="s2">&quot;campgrounds&quot;</span><span class="p">:</span> <span class="n">campgrounds</span><span class="p">,</span>
-<a id="__codelineno-0-128" name="__codelineno-0-128"></a>        <span class="s2">&quot;campsites&quot;</span><span class="p">:</span> <span class="n">campsites</span><span class="p">,</span>
-<a id="__codelineno-0-129" name="__codelineno-0-129"></a>        <span class="s2">&quot;weekends_only&quot;</span><span class="p">:</span> <span class="n">weekends_only</span><span class="p">,</span>
-<a id="__codelineno-0-130" name="__codelineno-0-130"></a>        <span class="s2">&quot;nights&quot;</span><span class="p">:</span> <span class="n">nights</span><span class="p">,</span>
-<a id="__codelineno-0-131" name="__codelineno-0-131"></a>        <span class="s2">&quot;equipment&quot;</span><span class="p">:</span> <span class="n">equipment</span><span class="p">,</span>
-<a id="__codelineno-0-132" name="__codelineno-0-132"></a>        <span class="s2">&quot;offline_search&quot;</span><span class="p">:</span> <span class="n">offline_search</span><span class="p">,</span>
-<a id="__codelineno-0-133" name="__codelineno-0-133"></a>        <span class="s2">&quot;offline_search_path&quot;</span><span class="p">:</span> <span class="n">offline_search_path</span><span class="p">,</span>
-<a id="__codelineno-0-134" name="__codelineno-0-134"></a>    <span class="p">}</span>
-<a id="__codelineno-0-135" name="__codelineno-0-135"></a>    <span class="n">search_kwargs</span> <span class="o">=</span> <span class="p">{</span>
-<a id="__codelineno-0-136" name="__codelineno-0-136"></a>        <span class="s2">&quot;log&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
-<a id="__codelineno-0-137" name="__codelineno-0-137"></a>        <span class="s2">&quot;verbose&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
-<a id="__codelineno-0-138" name="__codelineno-0-138"></a>        <span class="s2">&quot;continuous&quot;</span><span class="p">:</span> <span class="n">continuous</span><span class="p">,</span>
-<a id="__codelineno-0-139" name="__codelineno-0-139"></a>        <span class="s2">&quot;polling_interval&quot;</span><span class="p">:</span> <span class="n">polling_interval</span><span class="p">,</span>
-<a id="__codelineno-0-140" name="__codelineno-0-140"></a>        <span class="s2">&quot;notify_first_try&quot;</span><span class="p">:</span> <span class="n">notify_first_try</span><span class="p">,</span>
-<a id="__codelineno-0-141" name="__codelineno-0-141"></a>        <span class="s2">&quot;notification_provider&quot;</span><span class="p">:</span> <span class="n">notification_provider</span><span class="p">,</span>
-<a id="__codelineno-0-142" name="__codelineno-0-142"></a>        <span class="s2">&quot;search_forever&quot;</span><span class="p">:</span> <span class="n">search_forever</span><span class="p">,</span>
-<a id="__codelineno-0-143" name="__codelineno-0-143"></a>        <span class="s2">&quot;search_once&quot;</span><span class="p">:</span> <span class="n">search_once</span><span class="p">,</span>
-<a id="__codelineno-0-144" name="__codelineno-0-144"></a>    <span class="p">}</span>
-<a id="__codelineno-0-145" name="__codelineno-0-145"></a>    <span class="k">return</span> <span class="n">provider</span><span class="p">,</span> <span class="n">provider_kwargs</span><span class="p">,</span> <span class="n">search_kwargs</span>
+<a id="__codelineno-0-108" name="__codelineno-0-108"></a>    <span class="n">days_of_the_week</span> <span class="o">=</span> <span class="n">yaml_search</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;days&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+<a id="__codelineno-0-109" name="__codelineno-0-109"></a>    <span class="k">if</span> <span class="n">days_of_the_week</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<a id="__codelineno-0-110" name="__codelineno-0-110"></a>        <span class="n">lower_mapping</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-0-111" name="__codelineno-0-111"></a>            <span class="n">key</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span> <span class="n">value</span> <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">days_of_the_week_mapping</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+<a id="__codelineno-0-112" name="__codelineno-0-112"></a>        <span class="p">}</span>
+<a id="__codelineno-0-113" name="__codelineno-0-113"></a>        <span class="n">days_of_the_week</span> <span class="o">=</span> <span class="p">[</span><span class="n">lower_mapping</span><span class="p">[</span><span class="n">item</span><span class="o">.</span><span class="n">lower</span><span class="p">()]</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">days_of_the_week</span><span class="p">]</span>
+<a id="__codelineno-0-114" name="__codelineno-0-114"></a>    <span class="n">weekends_only</span> <span class="o">=</span> <span class="n">yaml_search</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;weekends&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+<a id="__codelineno-0-115" name="__codelineno-0-115"></a>    <span class="n">continuous</span> <span class="o">=</span> <span class="n">yaml_search</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;continuous&quot;</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+<a id="__codelineno-0-116" name="__codelineno-0-116"></a>    <span class="n">polling_interval</span> <span class="o">=</span> <span class="n">yaml_search</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+<a id="__codelineno-0-117" name="__codelineno-0-117"></a>        <span class="s2">&quot;polling_interval&quot;</span><span class="p">,</span> <span class="n">SearchConfig</span><span class="o">.</span><span class="n">RECOMMENDED_POLLING_INTERVAL</span>
+<a id="__codelineno-0-118" name="__codelineno-0-118"></a>    <span class="p">)</span>
+<a id="__codelineno-0-119" name="__codelineno-0-119"></a>    <span class="n">notify_first_try</span> <span class="o">=</span> <span class="n">yaml_search</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;notify_first_try&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+<a id="__codelineno-0-120" name="__codelineno-0-120"></a>    <span class="n">notification_provider</span> <span class="o">=</span> <span class="n">yaml_search</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;notifications&quot;</span><span class="p">,</span> <span class="s2">&quot;silent&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-121" name="__codelineno-0-121"></a>    <span class="n">search_forever</span> <span class="o">=</span> <span class="n">yaml_search</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;search_forever&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+<a id="__codelineno-0-122" name="__codelineno-0-122"></a>    <span class="n">search_once</span> <span class="o">=</span> <span class="n">yaml_search</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;search_once&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+<a id="__codelineno-0-123" name="__codelineno-0-123"></a>    <span class="n">equipment</span> <span class="o">=</span> <span class="n">yaml_search</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;equipment&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+<a id="__codelineno-0-124" name="__codelineno-0-124"></a>    <span class="n">equipment</span> <span class="o">=</span> <span class="n">make_list</span><span class="p">(</span><span class="n">equipment</span><span class="p">)</span>
+<a id="__codelineno-0-125" name="__codelineno-0-125"></a>    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">equipment</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+<a id="__codelineno-0-126" name="__codelineno-0-126"></a>        <span class="n">equipment</span> <span class="o">=</span> <span class="p">[</span><span class="nb">tuple</span><span class="p">(</span><span class="n">equip</span><span class="p">)</span> <span class="k">for</span> <span class="n">equip</span> <span class="ow">in</span> <span class="n">equipment</span><span class="p">]</span>
+<a id="__codelineno-0-127" name="__codelineno-0-127"></a>    <span class="n">offline_search</span> <span class="o">=</span> <span class="n">yaml_search</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;offline_search&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+<a id="__codelineno-0-128" name="__codelineno-0-128"></a>    <span class="n">offline_search_path</span> <span class="o">=</span> <span class="n">yaml_search</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;offline_search_path&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+<a id="__codelineno-0-129" name="__codelineno-0-129"></a>
+<a id="__codelineno-0-130" name="__codelineno-0-130"></a>    <span class="n">provider_kwargs</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-0-131" name="__codelineno-0-131"></a>        <span class="s2">&quot;search_window&quot;</span><span class="p">:</span> <span class="n">search_window</span><span class="p">,</span>
+<a id="__codelineno-0-132" name="__codelineno-0-132"></a>        <span class="s2">&quot;recreation_area&quot;</span><span class="p">:</span> <span class="n">recreation_area</span><span class="p">,</span>
+<a id="__codelineno-0-133" name="__codelineno-0-133"></a>        <span class="s2">&quot;campgrounds&quot;</span><span class="p">:</span> <span class="n">campgrounds</span><span class="p">,</span>
+<a id="__codelineno-0-134" name="__codelineno-0-134"></a>        <span class="s2">&quot;campsites&quot;</span><span class="p">:</span> <span class="n">campsites</span><span class="p">,</span>
+<a id="__codelineno-0-135" name="__codelineno-0-135"></a>        <span class="s2">&quot;weekends_only&quot;</span><span class="p">:</span> <span class="n">weekends_only</span><span class="p">,</span>
+<a id="__codelineno-0-136" name="__codelineno-0-136"></a>        <span class="s2">&quot;days_of_the_week&quot;</span><span class="p">:</span> <span class="n">days_of_the_week</span><span class="p">,</span>
+<a id="__codelineno-0-137" name="__codelineno-0-137"></a>        <span class="s2">&quot;nights&quot;</span><span class="p">:</span> <span class="n">nights</span><span class="p">,</span>
+<a id="__codelineno-0-138" name="__codelineno-0-138"></a>        <span class="s2">&quot;equipment&quot;</span><span class="p">:</span> <span class="n">equipment</span><span class="p">,</span>
+<a id="__codelineno-0-139" name="__codelineno-0-139"></a>        <span class="s2">&quot;offline_search&quot;</span><span class="p">:</span> <span class="n">offline_search</span><span class="p">,</span>
+<a id="__codelineno-0-140" name="__codelineno-0-140"></a>        <span class="s2">&quot;offline_search_path&quot;</span><span class="p">:</span> <span class="n">offline_search_path</span><span class="p">,</span>
+<a id="__codelineno-0-141" name="__codelineno-0-141"></a>    <span class="p">}</span>
+<a id="__codelineno-0-142" name="__codelineno-0-142"></a>    <span class="n">search_kwargs</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-0-143" name="__codelineno-0-143"></a>        <span class="s2">&quot;log&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+<a id="__codelineno-0-144" name="__codelineno-0-144"></a>        <span class="s2">&quot;verbose&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+<a id="__codelineno-0-145" name="__codelineno-0-145"></a>        <span class="s2">&quot;continuous&quot;</span><span class="p">:</span> <span class="n">continuous</span><span class="p">,</span>
+<a id="__codelineno-0-146" name="__codelineno-0-146"></a>        <span class="s2">&quot;polling_interval&quot;</span><span class="p">:</span> <span class="n">polling_interval</span><span class="p">,</span>
+<a id="__codelineno-0-147" name="__codelineno-0-147"></a>        <span class="s2">&quot;notify_first_try&quot;</span><span class="p">:</span> <span class="n">notify_first_try</span><span class="p">,</span>
+<a id="__codelineno-0-148" name="__codelineno-0-148"></a>        <span class="s2">&quot;notification_provider&quot;</span><span class="p">:</span> <span class="n">notification_provider</span><span class="p">,</span>
+<a id="__codelineno-0-149" name="__codelineno-0-149"></a>        <span class="s2">&quot;search_forever&quot;</span><span class="p">:</span> <span class="n">search_forever</span><span class="p">,</span>
+<a id="__codelineno-0-150" name="__codelineno-0-150"></a>        <span class="s2">&quot;search_once&quot;</span><span class="p">:</span> <span class="n">search_once</span><span class="p">,</span>
+<a id="__codelineno-0-151" name="__codelineno-0-151"></a>    <span class="p">}</span>
+<a id="__codelineno-0-152" name="__codelineno-0-152"></a>    <span class="k">return</span> <span class="n">provider</span><span class="p">,</span> <span class="n">provider_kwargs</span><span class="p">,</span> <span class="n">search_kwargs</span>
 </code></pre></div></td></tr></table></div>
       </details>
   </div>

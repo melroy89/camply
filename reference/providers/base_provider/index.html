@@ -658,6 +658,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../containers/examples/" class="md-nav__link">
+        examples
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../containers/gtc_api_responses/" class="md-nav__link">
         gtc_api_responses
       </a>
@@ -1755,7 +1769,7 @@
 <a id="__codelineno-0-50" name="__codelineno-0-50"></a>            <span class="p">)</span>
 <a id="__codelineno-0-51" name="__codelineno-0-51"></a>            <span class="k">return</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">truncated_months</span><span class="p">)</span>
 <a id="__codelineno-0-52" name="__codelineno-0-52"></a>        <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">truncated_months</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-<a id="__codelineno-0-53" name="__codelineno-0-53"></a>            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="n">SearchConfig</span><span class="o">.</span><span class="n">ERROR_MESSAGE</span><span class="p">)</span>
+<a id="__codelineno-0-53" name="__codelineno-0-53"></a>            <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="n">SearchConfig</span><span class="o">.</span><span class="n">ERROR_MESSAGE</span><span class="p">)</span>
 <a id="__codelineno-0-54" name="__codelineno-0-54"></a>            <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="n">SearchConfig</span><span class="o">.</span><span class="n">ERROR_MESSAGE</span><span class="p">)</span>
 <a id="__codelineno-0-55" name="__codelineno-0-55"></a>        <span class="k">else</span><span class="p">:</span>
 <a id="__codelineno-0-56" name="__codelineno-0-56"></a>            <span class="k">return</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">truncated_months</span><span class="p">)</span>
@@ -1933,7 +1947,7 @@
 <a id="__codelineno-0-50" name="__codelineno-0-50"></a>        <span class="p">)</span>
 <a id="__codelineno-0-51" name="__codelineno-0-51"></a>        <span class="k">return</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">truncated_months</span><span class="p">)</span>
 <a id="__codelineno-0-52" name="__codelineno-0-52"></a>    <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">truncated_months</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-<a id="__codelineno-0-53" name="__codelineno-0-53"></a>        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="n">SearchConfig</span><span class="o">.</span><span class="n">ERROR_MESSAGE</span><span class="p">)</span>
+<a id="__codelineno-0-53" name="__codelineno-0-53"></a>        <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="n">SearchConfig</span><span class="o">.</span><span class="n">ERROR_MESSAGE</span><span class="p">)</span>
 <a id="__codelineno-0-54" name="__codelineno-0-54"></a>        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="n">SearchConfig</span><span class="o">.</span><span class="n">ERROR_MESSAGE</span><span class="p">)</span>
 <a id="__codelineno-0-55" name="__codelineno-0-55"></a>    <span class="k">else</span><span class="p">:</span>
 <a id="__codelineno-0-56" name="__codelineno-0-56"></a>        <span class="k">return</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">truncated_months</span><span class="p">)</span>

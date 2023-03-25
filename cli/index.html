@@ -695,6 +695,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../reference/containers/examples/" class="md-nav__link">
+        examples
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../reference/containers/gtc_api_responses/" class="md-nav__link">
         gtc_api_responses
       </a>
@@ -1598,6 +1612,7 @@ camply sends you a notification to book your spot!</p>
 <li><em><a href="#camply-equipment-types">equipment-types</a></em>: </li>
 <li><em><a href="#camply-providers">providers</a></em>: </li>
 <li><em><a href="#camply-recreation-areas">recreation-areas</a></em>: </li>
+<li><em><a href="#camply-test-notifications">test-notifications</a></em>: </li>
 </ul>
 <h2 id="camply-campgrounds">camply campgrounds<a class="headerlink" href="#camply-campgrounds" title="Permanent link">#</a></h2>
 <p>Search for Campgrounds (inside of Recreation Areas) and list them</p>
@@ -1774,6 +1789,12 @@ functionality can be enabled with  <code>--continuous</code> and notifications c
 <td>boolean</td>
 <td>Only search for weekend bookings (Fri/Sat nights).</td>
 <td><code>False</code></td>
+</tr>
+<tr>
+<td><code>--day</code></td>
+<td>choice (<code>Monday</code> &#x7C; <code>Tuesday</code> &#x7C; <code>Wednesday</code> &#x7C; <code>Thursday</code> &#x7C; <code>Friday</code> &#x7C; <code>Saturday</code> &#x7C; <code>Sunday</code> &#x7C; <code>MON</code> &#x7C; <code>TUE</code> &#x7C; <code>TUES</code> &#x7C; <code>WED</code> &#x7C; <code>THU</code> &#x7C; <code>THUR</code> &#x7C; <code>THURS</code> &#x7C; <code>FRI</code> &#x7C; <code>SAT</code> &#x7C; <code>SUN</code>)</td>
+<td>Day(s) of the Week to search.</td>
+<td>None</td>
 </tr>
 <tr>
 <td><code>--end-date</code></td>
@@ -1964,6 +1985,42 @@ National Parks and National Forests that can contain one or many campgrounds.</p
 <td>choice (<code>RecreationDotGov</code> &#x7C; <code>Yellowstone</code> &#x7C; <code>GoingToCamp</code> &#x7C; <code>ReserveCalifornia</code> &#x7C; <code>RecreationDotGovTicket</code> &#x7C; <code>RecreationDotGovTimedEntry</code> &#x7C; <code>RecreationDotGovDailyTicket</code> &#x7C; <code>RecreationDotGovDailyTimedEntry</code>)</td>
 <td>Camping Search Provider. Defaults to 'RecreationDotGov'</td>
 <td>None</td>
+</tr>
+<tr>
+<td><code>--help</code></td>
+<td>boolean</td>
+<td>Show this message and exit.</td>
+<td><code>False</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="camply-test-notifications">camply test-notifications<a class="headerlink" href="#camply-test-notifications" title="Permanent link">#</a></h2>
+<p>Test your notification provider setup</p>
+<p><strong>Usage:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>camply test-notifications [OPTIONS]
+</code></pre></div>
+<p><strong>Options:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--debug</code> / <code>--no-debug</code></td>
+<td>boolean</td>
+<td>Enable extra debugging output</td>
+<td>None</td>
+</tr>
+<tr>
+<td><code>--notifications</code></td>
+<td>text</td>
+<td>Types of notifications to receive. Options available are 'email', 'pushover', 'pushbullet', 'telegram', 'twilio', or 'silent'. Defaults to 'silent' - which just logs messages to console.</td>
+<td>_required</td>
 </tr>
 <tr>
 <td><code>--help</code></td>
