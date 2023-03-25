@@ -1373,6 +1373,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#camply.utils.general_utils.handle_search_windows" class="md-nav__link">
+    handle_search_windows()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#camply.utils.general_utils.make_list" class="md-nav__link">
     make_list()
   </a>
@@ -1528,6 +1535,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#camply.utils.general_utils.handle_search_windows" class="md-nav__link">
+    handle_search_windows()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#camply.utils.general_utils.make_list" class="md-nav__link">
     make_list()
   </a>
@@ -1575,6 +1589,85 @@
 
 
 
+
+<div class="doc doc-object doc-function">
+
+
+
+<h2 id="camply.utils.general_utils.handle_search_windows" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">handle_search_windows</span><span class="p">(</span><span class="n">start_date</span><span class="p">,</span> <span class="n">end_date</span><span class="p">)</span></code>
+
+<a href="#camply.utils.general_utils.handle_search_windows" class="headerlink" title="Permanent link">#</a></h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Handle Multiple Search Windows by the CLI</p>
+
+      <details class="quote">
+        <summary>Source code in <code>camply/utils/general_utils.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-42">42</a></span>
+<span class="normal"><a href="#__codelineno-0-43">43</a></span>
+<span class="normal"><a href="#__codelineno-0-44">44</a></span>
+<span class="normal"><a href="#__codelineno-0-45">45</a></span>
+<span class="normal"><a href="#__codelineno-0-46">46</a></span>
+<span class="normal"><a href="#__codelineno-0-47">47</a></span>
+<span class="normal"><a href="#__codelineno-0-48">48</a></span>
+<span class="normal"><a href="#__codelineno-0-49">49</a></span>
+<span class="normal"><a href="#__codelineno-0-50">50</a></span>
+<span class="normal"><a href="#__codelineno-0-51">51</a></span>
+<span class="normal"><a href="#__codelineno-0-52">52</a></span>
+<span class="normal"><a href="#__codelineno-0-53">53</a></span>
+<span class="normal"><a href="#__codelineno-0-54">54</a></span>
+<span class="normal"><a href="#__codelineno-0-55">55</a></span>
+<span class="normal"><a href="#__codelineno-0-56">56</a></span>
+<span class="normal"><a href="#__codelineno-0-57">57</a></span>
+<span class="normal"><a href="#__codelineno-0-58">58</a></span>
+<span class="normal"><a href="#__codelineno-0-59">59</a></span>
+<span class="normal"><a href="#__codelineno-0-60">60</a></span>
+<span class="normal"><a href="#__codelineno-0-61">61</a></span>
+<span class="normal"><a href="#__codelineno-0-62">62</a></span>
+<span class="normal"><a href="#__codelineno-0-63">63</a></span>
+<span class="normal"><a href="#__codelineno-0-64">64</a></span>
+<span class="normal"><a href="#__codelineno-0-65">65</a></span>
+<span class="normal"><a href="#__codelineno-0-66">66</a></span>
+<span class="normal"><a href="#__codelineno-0-67">67</a></span>
+<span class="normal"><a href="#__codelineno-0-68">68</a></span>
+<span class="normal"><a href="#__codelineno-0-69">69</a></span>
+<span class="normal"><a href="#__codelineno-0-70">70</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-42" name="__codelineno-0-42"></a><span class="k">def</span> <span class="nf">handle_search_windows</span><span class="p">(</span>
+<a id="__codelineno-0-43" name="__codelineno-0-43"></a>    <span class="n">start_date</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">Iterable</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="nb">str</span><span class="p">],</span> <span class="n">end_date</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">Iterable</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="nb">str</span><span class="p">]</span>
+<a id="__codelineno-0-44" name="__codelineno-0-44"></a><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">SearchWindow</span><span class="p">],</span> <span class="n">SearchWindow</span><span class="p">]:</span>
+<a id="__codelineno-0-45" name="__codelineno-0-45"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-46" name="__codelineno-0-46"></a><span class="sd">    Handle Multiple Search Windows by the CLI</span>
+<a id="__codelineno-0-47" name="__codelineno-0-47"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a id="__codelineno-0-48" name="__codelineno-0-48"></a>    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">start_date</span><span class="p">,</span> <span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">date</span><span class="p">)):</span>
+<a id="__codelineno-0-49" name="__codelineno-0-49"></a>        <span class="n">start_date</span> <span class="o">=</span> <span class="p">(</span><span class="n">start_date</span><span class="p">,)</span>
+<a id="__codelineno-0-50" name="__codelineno-0-50"></a>        <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">end_date</span><span class="p">,</span> <span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">date</span><span class="p">))</span>
+<a id="__codelineno-0-51" name="__codelineno-0-51"></a>        <span class="n">end_date</span> <span class="o">=</span> <span class="p">(</span><span class="n">end_date</span><span class="p">,)</span>
+<a id="__codelineno-0-52" name="__codelineno-0-52"></a>    <span class="n">search_windows</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">SearchWindow</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+<a id="__codelineno-0-53" name="__codelineno-0-53"></a>    <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="p">[</span><span class="n">start_date</span><span class="p">,</span> <span class="n">end_date</span><span class="p">]:</span>
+<a id="__codelineno-0-54" name="__codelineno-0-54"></a>        <span class="k">if</span> <span class="n">field</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">field</span><span class="p">,</span> <span class="p">(</span><span class="nb">tuple</span><span class="p">,</span> <span class="nb">list</span><span class="p">))</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">field</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">):</span>
+<a id="__codelineno-0-55" name="__codelineno-0-55"></a>            <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">&quot;Campsite searches require a `start_date` and an `end_date`&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-56" name="__codelineno-0-56"></a>            <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<a id="__codelineno-0-57" name="__codelineno-0-57"></a>    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">start_date</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="n">end_date</span><span class="p">):</span>
+<a id="__codelineno-0-58" name="__codelineno-0-58"></a>        <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span>
+<a id="__codelineno-0-59" name="__codelineno-0-59"></a>            <span class="s2">&quot;When searching multiple date windows, you must provide the same amount &quot;</span>
+<a id="__codelineno-0-60" name="__codelineno-0-60"></a>            <span class="s2">&quot;of `--start-dates` as `--end-dates`&quot;</span>
+<a id="__codelineno-0-61" name="__codelineno-0-61"></a>        <span class="p">)</span>
+<a id="__codelineno-0-62" name="__codelineno-0-62"></a>        <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<a id="__codelineno-0-63" name="__codelineno-0-63"></a>    <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">date_str</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">start_date</span><span class="p">):</span>
+<a id="__codelineno-0-64" name="__codelineno-0-64"></a>        <span class="n">search_windows</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+<a id="__codelineno-0-65" name="__codelineno-0-65"></a>            <span class="n">SearchWindow</span><span class="p">(</span><span class="n">start_date</span><span class="o">=</span><span class="n">date_str</span><span class="p">,</span> <span class="n">end_date</span><span class="o">=</span><span class="n">end_date</span><span class="p">[</span><span class="n">index</span><span class="p">])</span>
+<a id="__codelineno-0-66" name="__codelineno-0-66"></a>        <span class="p">)</span>
+<a id="__codelineno-0-67" name="__codelineno-0-67"></a>    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">search_windows</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+<a id="__codelineno-0-68" name="__codelineno-0-68"></a>        <span class="k">return</span> <span class="n">search_windows</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<a id="__codelineno-0-69" name="__codelineno-0-69"></a>    <span class="k">else</span><span class="p">:</span>
+<a id="__codelineno-0-70" name="__codelineno-0-70"></a>        <span class="k">return</span> <span class="n">search_windows</span>
+</code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div>
 
 <div class="doc doc-object doc-function">
 
@@ -1643,10 +1736,7 @@
 
       <details class="quote">
         <summary>Source code in <code>camply/utils/general_utils.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-13">13</a></span>
-<span class="normal"><a href="#__codelineno-0-14">14</a></span>
-<span class="normal"><a href="#__codelineno-0-15">15</a></span>
-<span class="normal"><a href="#__codelineno-0-16">16</a></span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-16">16</a></span>
 <span class="normal"><a href="#__codelineno-0-17">17</a></span>
 <span class="normal"><a href="#__codelineno-0-18">18</a></span>
 <span class="normal"><a href="#__codelineno-0-19">19</a></span>
@@ -1666,30 +1756,33 @@
 <span class="normal"><a href="#__codelineno-0-33">33</a></span>
 <span class="normal"><a href="#__codelineno-0-34">34</a></span>
 <span class="normal"><a href="#__codelineno-0-35">35</a></span>
-<span class="normal"><a href="#__codelineno-0-36">36</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="k">def</span> <span class="nf">make_list</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">coerce</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Callable</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">Any</span><span class="p">]]:</span>
-<a id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<a id="__codelineno-0-15" name="__codelineno-0-15"></a><span class="sd">    Make Anything An Iterable Instance</span>
-<a id="__codelineno-0-16" name="__codelineno-0-16"></a>
-<a id="__codelineno-0-17" name="__codelineno-0-17"></a><span class="sd">    Parameters</span>
-<a id="__codelineno-0-18" name="__codelineno-0-18"></a><span class="sd">    ----------</span>
-<a id="__codelineno-0-19" name="__codelineno-0-19"></a><span class="sd">    obj: object</span>
-<a id="__codelineno-0-20" name="__codelineno-0-20"></a><span class="sd">    coerce: Callable</span>
-<a id="__codelineno-0-21" name="__codelineno-0-21"></a>
-<a id="__codelineno-0-22" name="__codelineno-0-22"></a><span class="sd">    Returns</span>
-<a id="__codelineno-0-23" name="__codelineno-0-23"></a><span class="sd">    -------</span>
-<a id="__codelineno-0-24" name="__codelineno-0-24"></a><span class="sd">    List[object]</span>
-<a id="__codelineno-0-25" name="__codelineno-0-25"></a><span class="sd">    &quot;&quot;&quot;</span>
-<a id="__codelineno-0-26" name="__codelineno-0-26"></a>    <span class="k">if</span> <span class="n">obj</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-<a id="__codelineno-0-27" name="__codelineno-0-27"></a>        <span class="k">return</span> <span class="kc">None</span>
-<a id="__codelineno-0-28" name="__codelineno-0-28"></a>    <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">CamplyModel</span><span class="p">):</span>
-<a id="__codelineno-0-29" name="__codelineno-0-29"></a>        <span class="k">return</span> <span class="p">[</span><span class="n">coerce</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span> <span class="k">if</span> <span class="n">coerce</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">obj</span><span class="p">]</span>
-<a id="__codelineno-0-30" name="__codelineno-0-30"></a>    <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="p">(</span><span class="nb">set</span><span class="p">,</span> <span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)):</span>
-<a id="__codelineno-0-31" name="__codelineno-0-31"></a>        <span class="k">if</span> <span class="n">coerce</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
-<a id="__codelineno-0-32" name="__codelineno-0-32"></a>            <span class="k">return</span> <span class="p">[</span><span class="n">coerce</span><span class="p">(</span><span class="n">item</span><span class="p">)</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">obj</span><span class="p">]</span>
-<a id="__codelineno-0-33" name="__codelineno-0-33"></a>        <span class="k">else</span><span class="p">:</span>
-<a id="__codelineno-0-34" name="__codelineno-0-34"></a>            <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
-<a id="__codelineno-0-35" name="__codelineno-0-35"></a>    <span class="k">else</span><span class="p">:</span>
-<a id="__codelineno-0-36" name="__codelineno-0-36"></a>        <span class="k">return</span> <span class="p">[</span><span class="n">coerce</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span> <span class="k">if</span> <span class="n">coerce</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">obj</span><span class="p">]</span>
+<span class="normal"><a href="#__codelineno-0-36">36</a></span>
+<span class="normal"><a href="#__codelineno-0-37">37</a></span>
+<span class="normal"><a href="#__codelineno-0-38">38</a></span>
+<span class="normal"><a href="#__codelineno-0-39">39</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-16" name="__codelineno-0-16"></a><span class="k">def</span> <span class="nf">make_list</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">coerce</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Callable</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">Any</span><span class="p">]]:</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18"></a><span class="sd">    Make Anything An Iterable Instance</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19"></a>
+<a id="__codelineno-0-20" name="__codelineno-0-20"></a><span class="sd">    Parameters</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21"></a><span class="sd">    ----------</span>
+<a id="__codelineno-0-22" name="__codelineno-0-22"></a><span class="sd">    obj: object</span>
+<a id="__codelineno-0-23" name="__codelineno-0-23"></a><span class="sd">    coerce: Callable</span>
+<a id="__codelineno-0-24" name="__codelineno-0-24"></a>
+<a id="__codelineno-0-25" name="__codelineno-0-25"></a><span class="sd">    Returns</span>
+<a id="__codelineno-0-26" name="__codelineno-0-26"></a><span class="sd">    -------</span>
+<a id="__codelineno-0-27" name="__codelineno-0-27"></a><span class="sd">    List[object]</span>
+<a id="__codelineno-0-28" name="__codelineno-0-28"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a id="__codelineno-0-29" name="__codelineno-0-29"></a>    <span class="k">if</span> <span class="n">obj</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<a id="__codelineno-0-30" name="__codelineno-0-30"></a>        <span class="k">return</span> <span class="kc">None</span>
+<a id="__codelineno-0-31" name="__codelineno-0-31"></a>    <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">CamplyModel</span><span class="p">):</span>
+<a id="__codelineno-0-32" name="__codelineno-0-32"></a>        <span class="k">return</span> <span class="p">[</span><span class="n">coerce</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span> <span class="k">if</span> <span class="n">coerce</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">obj</span><span class="p">]</span>
+<a id="__codelineno-0-33" name="__codelineno-0-33"></a>    <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="p">(</span><span class="nb">set</span><span class="p">,</span> <span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)):</span>
+<a id="__codelineno-0-34" name="__codelineno-0-34"></a>        <span class="k">if</span> <span class="n">coerce</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
+<a id="__codelineno-0-35" name="__codelineno-0-35"></a>            <span class="k">return</span> <span class="p">[</span><span class="n">coerce</span><span class="p">(</span><span class="n">item</span><span class="p">)</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">obj</span><span class="p">]</span>
+<a id="__codelineno-0-36" name="__codelineno-0-36"></a>        <span class="k">else</span><span class="p">:</span>
+<a id="__codelineno-0-37" name="__codelineno-0-37"></a>            <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+<a id="__codelineno-0-38" name="__codelineno-0-38"></a>    <span class="k">else</span><span class="p">:</span>
+<a id="__codelineno-0-39" name="__codelineno-0-39"></a>        <span class="k">return</span> <span class="p">[</span><span class="n">coerce</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span> <span class="k">if</span> <span class="n">coerce</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">obj</span><span class="p">]</span>
 </code></pre></div></td></tr></table></div>
       </details>
   </div>
