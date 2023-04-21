@@ -1765,7 +1765,8 @@
 <span class="normal"><a href="#__codelineno-0-79">79</a></span>
 <span class="normal"><a href="#__codelineno-0-80">80</a></span>
 <span class="normal"><a href="#__codelineno-0-81">81</a></span>
-<span class="normal"><a href="#__codelineno-0-82">82</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-55" name="__codelineno-0-55"></a><span class="k">class</span> <span class="nc">RecreationBookingConfig</span><span class="p">:</span>
+<span class="normal"><a href="#__codelineno-0-82">82</a></span>
+<span class="normal"><a href="#__codelineno-0-83">83</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-55" name="__codelineno-0-55"></a><span class="k">class</span> <span class="nc">RecreationBookingConfig</span><span class="p">:</span>
 <a id="__codelineno-0-56" name="__codelineno-0-56"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <a id="__codelineno-0-57" name="__codelineno-0-57"></a><span class="sd">    Variable Storage Class for Recreation.gov Booking API</span>
 <a id="__codelineno-0-58" name="__codelineno-0-58"></a><span class="sd">    &quot;&quot;&quot;</span>
@@ -1785,14 +1786,15 @@
 <a id="__codelineno-0-72" name="__codelineno-0-72"></a>        <span class="s2">&quot;Lottery&quot;</span><span class="p">,</span>
 <a id="__codelineno-0-73" name="__codelineno-0-73"></a>        <span class="s2">&quot;Open&quot;</span><span class="p">,</span>
 <a id="__codelineno-0-74" name="__codelineno-0-74"></a>        <span class="s2">&quot;NYR&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-75" name="__codelineno-0-75"></a>    <span class="p">]</span>
-<a id="__codelineno-0-76" name="__codelineno-0-76"></a>
-<a id="__codelineno-0-77" name="__codelineno-0-77"></a>    <span class="n">CAMPSITE_LOCATION_LOOP_DEFAULT</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;Default Loop&quot;</span>
-<a id="__codelineno-0-78" name="__codelineno-0-78"></a>    <span class="n">CAMPSITE_LOCATION_SITE_DEFAULT</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;Default Site&quot;</span>
-<a id="__codelineno-0-79" name="__codelineno-0-79"></a>
-<a id="__codelineno-0-80" name="__codelineno-0-80"></a>    <span class="n">CAMPSITE_BOOKING_URL</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;https://www.recreation.gov/camping/campsites&quot;</span>
-<a id="__codelineno-0-81" name="__codelineno-0-81"></a>
-<a id="__codelineno-0-82" name="__codelineno-0-82"></a>    <span class="n">RATE_LIMITING</span> <span class="o">=</span> <span class="p">(</span><span class="mf">1.01</span><span class="p">,</span> <span class="mf">1.51</span><span class="p">)</span>
+<a id="__codelineno-0-75" name="__codelineno-0-75"></a>        <span class="s2">&quot;Closed&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-76" name="__codelineno-0-76"></a>    <span class="p">]</span>
+<a id="__codelineno-0-77" name="__codelineno-0-77"></a>
+<a id="__codelineno-0-78" name="__codelineno-0-78"></a>    <span class="n">CAMPSITE_LOCATION_LOOP_DEFAULT</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;Default Loop&quot;</span>
+<a id="__codelineno-0-79" name="__codelineno-0-79"></a>    <span class="n">CAMPSITE_LOCATION_SITE_DEFAULT</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;Default Site&quot;</span>
+<a id="__codelineno-0-80" name="__codelineno-0-80"></a>
+<a id="__codelineno-0-81" name="__codelineno-0-81"></a>    <span class="n">CAMPSITE_BOOKING_URL</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;https://www.recreation.gov/camping/campsites&quot;</span>
+<a id="__codelineno-0-82" name="__codelineno-0-82"></a>
+<a id="__codelineno-0-83" name="__codelineno-0-83"></a>    <span class="n">RATE_LIMITING</span> <span class="o">=</span> <span class="p">(</span><span class="mf">1.01</span><span class="p">,</span> <span class="mf">1.51</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
         </details>
 
@@ -1835,8 +1837,7 @@
 
         <details class="quote">
           <summary>Source code in <code>camply/config/api_config.py</code></summary>
-          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-85"> 85</a></span>
-<span class="normal"><a href="#__codelineno-0-86"> 86</a></span>
+          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-86"> 86</a></span>
 <span class="normal"><a href="#__codelineno-0-87"> 87</a></span>
 <span class="normal"><a href="#__codelineno-0-88"> 88</a></span>
 <span class="normal"><a href="#__codelineno-0-89"> 89</a></span>
@@ -1851,23 +1852,24 @@
 <span class="normal"><a href="#__codelineno-0-98"> 98</a></span>
 <span class="normal"><a href="#__codelineno-0-99"> 99</a></span>
 <span class="normal"><a href="#__codelineno-0-100">100</a></span>
-<span class="normal"><a href="#__codelineno-0-101">101</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-85" name="__codelineno-0-85"></a><span class="k">class</span> <span class="nc">ReserveCaliforniaConfig</span><span class="p">:</span>
-<a id="__codelineno-0-86" name="__codelineno-0-86"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<a id="__codelineno-0-87" name="__codelineno-0-87"></a><span class="sd">    Reserve California API Configuration</span>
-<a id="__codelineno-0-88" name="__codelineno-0-88"></a><span class="sd">    &quot;&quot;&quot;</span>
-<a id="__codelineno-0-89" name="__codelineno-0-89"></a>
-<a id="__codelineno-0-90" name="__codelineno-0-90"></a>    <span class="n">BASE_URL</span> <span class="o">=</span> <span class="s2">&quot;https://calirdr.usedirect.com&quot;</span>
-<a id="__codelineno-0-91" name="__codelineno-0-91"></a>    <span class="n">RDR_PREFIX</span> <span class="o">=</span> <span class="s2">&quot;rdr/rdr&quot;</span>
-<a id="__codelineno-0-92" name="__codelineno-0-92"></a>    <span class="n">SEARCH_PREFIX</span> <span class="o">=</span> <span class="s2">&quot;search&quot;</span>
-<a id="__codelineno-0-93" name="__codelineno-0-93"></a>    <span class="n">CITYPARK_ENDPOINT</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">RDR_PREFIX</span><span class="si">}</span><span class="s2">/fd/citypark&quot;</span>
-<a id="__codelineno-0-94" name="__codelineno-0-94"></a>    <span class="n">LIST_PLACES_ENDPOINT</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">RDR_PREFIX</span><span class="si">}</span><span class="s2">/fd/places&quot;</span>
-<a id="__codelineno-0-95" name="__codelineno-0-95"></a>    <span class="n">LIST_FACILITIES_ENDPOINT</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">RDR_PREFIX</span><span class="si">}</span><span class="s2">/fd/facilities&quot;</span>
-<a id="__codelineno-0-96" name="__codelineno-0-96"></a>    <span class="n">SEARCH_ENDPOINT</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">CITYPARK_ENDPOINT</span><span class="si">}</span><span class="s2">/namecontains&quot;</span>
-<a id="__codelineno-0-97" name="__codelineno-0-97"></a>    <span class="n">METADATA_PREFIX</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">RDR_PREFIX</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">SEARCH_PREFIX</span><span class="si">}</span><span class="s2">/filters&quot;</span>
-<a id="__codelineno-0-98" name="__codelineno-0-98"></a>    <span class="n">PLACE_ENDPOINT</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">RDR_PREFIX</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">SEARCH_PREFIX</span><span class="si">}</span><span class="s2">/place&quot;</span>
-<a id="__codelineno-0-99" name="__codelineno-0-99"></a>    <span class="n">AVAILABILITY_ENDPOINT</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">RDR_PREFIX</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">SEARCH_PREFIX</span><span class="si">}</span><span class="s2">/grid&quot;</span>
-<a id="__codelineno-0-100" name="__codelineno-0-100"></a>    <span class="n">DATE_FORMAT</span> <span class="o">=</span> <span class="s2">&quot;%m-</span><span class="si">%d</span><span class="s2">-%Y&quot;</span>
-<a id="__codelineno-0-101" name="__codelineno-0-101"></a>    <span class="n">CAMPGROUND_URL</span> <span class="o">=</span> <span class="s2">&quot;https://www.reservecalifornia.com&quot;</span>
+<span class="normal"><a href="#__codelineno-0-101">101</a></span>
+<span class="normal"><a href="#__codelineno-0-102">102</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-86" name="__codelineno-0-86"></a><span class="k">class</span> <span class="nc">ReserveCaliforniaConfig</span><span class="p">:</span>
+<a id="__codelineno-0-87" name="__codelineno-0-87"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-88" name="__codelineno-0-88"></a><span class="sd">    Reserve California API Configuration</span>
+<a id="__codelineno-0-89" name="__codelineno-0-89"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a id="__codelineno-0-90" name="__codelineno-0-90"></a>
+<a id="__codelineno-0-91" name="__codelineno-0-91"></a>    <span class="n">BASE_URL</span> <span class="o">=</span> <span class="s2">&quot;https://calirdr.usedirect.com&quot;</span>
+<a id="__codelineno-0-92" name="__codelineno-0-92"></a>    <span class="n">RDR_PREFIX</span> <span class="o">=</span> <span class="s2">&quot;rdr/rdr&quot;</span>
+<a id="__codelineno-0-93" name="__codelineno-0-93"></a>    <span class="n">SEARCH_PREFIX</span> <span class="o">=</span> <span class="s2">&quot;search&quot;</span>
+<a id="__codelineno-0-94" name="__codelineno-0-94"></a>    <span class="n">CITYPARK_ENDPOINT</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">RDR_PREFIX</span><span class="si">}</span><span class="s2">/fd/citypark&quot;</span>
+<a id="__codelineno-0-95" name="__codelineno-0-95"></a>    <span class="n">LIST_PLACES_ENDPOINT</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">RDR_PREFIX</span><span class="si">}</span><span class="s2">/fd/places&quot;</span>
+<a id="__codelineno-0-96" name="__codelineno-0-96"></a>    <span class="n">LIST_FACILITIES_ENDPOINT</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">RDR_PREFIX</span><span class="si">}</span><span class="s2">/fd/facilities&quot;</span>
+<a id="__codelineno-0-97" name="__codelineno-0-97"></a>    <span class="n">SEARCH_ENDPOINT</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">CITYPARK_ENDPOINT</span><span class="si">}</span><span class="s2">/namecontains&quot;</span>
+<a id="__codelineno-0-98" name="__codelineno-0-98"></a>    <span class="n">METADATA_PREFIX</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">RDR_PREFIX</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">SEARCH_PREFIX</span><span class="si">}</span><span class="s2">/filters&quot;</span>
+<a id="__codelineno-0-99" name="__codelineno-0-99"></a>    <span class="n">PLACE_ENDPOINT</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">RDR_PREFIX</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">SEARCH_PREFIX</span><span class="si">}</span><span class="s2">/place&quot;</span>
+<a id="__codelineno-0-100" name="__codelineno-0-100"></a>    <span class="n">AVAILABILITY_ENDPOINT</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">RDR_PREFIX</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">SEARCH_PREFIX</span><span class="si">}</span><span class="s2">/grid&quot;</span>
+<a id="__codelineno-0-101" name="__codelineno-0-101"></a>    <span class="n">DATE_FORMAT</span> <span class="o">=</span> <span class="s2">&quot;%m-</span><span class="si">%d</span><span class="s2">-%Y&quot;</span>
+<a id="__codelineno-0-102" name="__codelineno-0-102"></a>    <span class="n">CAMPGROUND_URL</span> <span class="o">=</span> <span class="s2">&quot;https://www.reservecalifornia.com&quot;</span>
 </code></pre></div></td></tr></table></div>
         </details>
 
