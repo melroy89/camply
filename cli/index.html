@@ -1610,6 +1610,7 @@ camply sends you a notification to book your spot!</p>
 <li><em><a href="#camply-campsites">campsites</a></em>: </li>
 <li><em><a href="#camply-configure">configure</a></em>: </li>
 <li><em><a href="#camply-equipment-types">equipment-types</a></em>: </li>
+<li><em><a href="#camply-list-campsites">list-campsites</a></em>: </li>
 <li><em><a href="#camply-providers">providers</a></em>: </li>
 <li><em><a href="#camply-recreation-areas">recreation-areas</a></em>: </li>
 <li><em><a href="#camply-test-notifications">test-notifications</a></em>: </li>
@@ -1914,10 +1915,58 @@ and recreation areas have different types of equipment for which reservations ca
 </tr>
 </tbody>
 </table>
+<h2 id="camply-list-campsites">camply list-campsites<a class="headerlink" href="#camply-list-campsites" title="Permanent link">#</a></h2>
+<p>List campsite IDs for a given campground or recreation area</p>
+<p><strong>Usage:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>camply list-campsites [OPTIONS]
+</code></pre></div>
+<p><strong>Options:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--debug</code> / <code>--no-debug</code></td>
+<td>boolean</td>
+<td>Enable extra debugging output</td>
+<td>None</td>
+</tr>
+<tr>
+<td><code>--campground</code></td>
+<td>text</td>
+<td>Add individual Campgrounds by ID.</td>
+<td>None</td>
+</tr>
+<tr>
+<td><code>--rec-area</code></td>
+<td>text</td>
+<td>Add Recreation Areas (comprised of campgrounds) by ID.</td>
+<td>None</td>
+</tr>
+<tr>
+<td><code>--provider</code></td>
+<td>choice (<code>RecreationDotGov</code> &#x7C; <code>Yellowstone</code> &#x7C; <code>GoingToCamp</code> &#x7C; <code>ReserveCalifornia</code> &#x7C; <code>RecreationDotGovTicket</code> &#x7C; <code>RecreationDotGovTimedEntry</code> &#x7C; <code>RecreationDotGovDailyTicket</code> &#x7C; <code>RecreationDotGovDailyTimedEntry</code>)</td>
+<td>Camping Search Provider. Defaults to 'RecreationDotGov'</td>
+<td>None</td>
+</tr>
+<tr>
+<td><code>--help</code></td>
+<td>boolean</td>
+<td>Show this message and exit.</td>
+<td><code>False</code></td>
+</tr>
+</tbody>
+</table>
 <h2 id="camply-providers">camply providers<a class="headerlink" href="#camply-providers" title="Permanent link">#</a></h2>
 <p>List the different camply providers</p>
 <p><strong>Usage:</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>camply providers [OPTIONS]
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>camply providers [OPTIONS]
 </code></pre></div>
 <p><strong>Options:</strong></p>
 <table>
@@ -1949,7 +1998,7 @@ and recreation areas have different types of equipment for which reservations ca
 <p>Search for Recreation Areas and their IDs. Recreation Areas are places like
 National Parks and National Forests that can contain one or many campgrounds.</p>
 <p><strong>Usage:</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>camply recreation-areas [OPTIONS]
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>camply recreation-areas [OPTIONS]
 </code></pre></div>
 <p><strong>Options:</strong></p>
 <table>
@@ -1997,7 +2046,7 @@ National Parks and National Forests that can contain one or many campgrounds.</p
 <h2 id="camply-test-notifications">camply test-notifications<a class="headerlink" href="#camply-test-notifications" title="Permanent link">#</a></h2>
 <p>Test your notification provider setup</p>
 <p><strong>Usage:</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>camply test-notifications [OPTIONS]
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>camply test-notifications [OPTIONS]
 </code></pre></div>
 <p><strong>Options:</strong></p>
 <table>

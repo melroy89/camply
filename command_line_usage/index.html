@@ -404,6 +404,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#list-campsites" class="md-nav__link">
+    list-campsites
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#examples" class="md-nav__link">
     Examples
   </a>
@@ -1912,6 +1919,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#list-campsites" class="md-nav__link">
+    list-campsites
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#examples" class="md-nav__link">
     Examples
   </a>
@@ -2421,6 +2435,26 @@ command is for you. See the <a href="#send-a-push-notification">Send a Push Noti
 section for more details on how to set up the notification provider of your choice.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>camply test-notifications --notifications email
 </code></pre></div>
+<h2 id="list-campsites">list-campsites<a class="headerlink" href="#list-campsites" title="Permanent link">#</a></h2>
+<p>When <a href="#searching-for-a-specific-campsite-by-id">searching for a specific campsite by ID</a>, it can be useful
+to list the campsites that were found. This command will list the campsites that were found given specific
+camground / recreation area ID.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>camply list-campsites --campground 598 --provider ReserveCalifornia
+</code></pre></div>
+<p>That search above would tell you that <code>Premium Campsite #88</code> has ID #43473. Using that information you can then
+search for that specific campsite by ID:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>camply campsites \
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>  --provider ReserveCalifornia \
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>  --campground 598 \
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>  --campsite 43473 \
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>  --start-date 2023-07-13 \
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>  --end-date 2023-07-14
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Some providers require that you pass a campsite ID <strong>and</strong> and a campground ID, while
+others only require a campsite ID.</p>
+</div>
 <h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">#</a></h2>
 <p>Read through the examples below to get a better understanding of <code>camply</code>, its features, and the
 functionality of the different arguments provided to the CLI.</p>
@@ -2430,21 +2464,21 @@ between 2023-07-10 and 2023-07-17. The search will be performed once and any res
 to the console. camply searches for campsites inside of search windows in increments of one night.
 <code>--start-date</code> and <code>--end-date</code> define the bounds of the search window, you will be leaving the day
 after <code>--end-date</code>.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>camply campsites \
-<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>    --rec-area 2725 \
-<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>    --start-date 2023-07-10 \
-<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>    --end-date 2023-07-18
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>camply campsites \
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>    --rec-area 2725 \
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>    --start-date 2023-07-10 \
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>    --end-date 2023-07-18
 </code></pre></div>
 <h3 id="searching-for-a-campsite-by-campground-id">Searching for a Campsite by Campground ID<a class="headerlink" href="#searching-for-a-campsite-by-campground-id" title="Permanent link">#</a></h3>
 <p>The below search looks for across three campgrounds (all inside Glacier National Park)
 between 2023-07-10 and 2023-07-17. Multiple Campgrounds (and Recreation Areas too) can be found by
 supplying the arguments more than once.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>camply campsites \
-<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>    --campground 232493 \
-<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>    --campground 251869 \
-<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>    --campground 232492 \
-<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>    --start-date 2023-07-10 \
-<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>    --end-date 2023-07-18
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>camply campsites \
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>    --campground 232493 \
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>    --campground 251869 \
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>    --campground 232492 \
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>    --start-date 2023-07-10 \
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>    --end-date 2023-07-18
 </code></pre></div>
 <h3 id="searching-for-a-specific-campsite-by-id">Searching for a Specific Campsite by ID<a class="headerlink" href="#searching-for-a-specific-campsite-by-id" title="Permanent link">#</a></h3>
 <p>Sometimes you have a favorite campsite inside your favorite campground. To search for just a
@@ -2457,13 +2491,15 @@ supplying the <code>--campsite</code> argument. You can provide the <code>--camp
 times to search for different campsites.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p><strong><code>--campsite</code></strong> arguments override any <strong><code>--rec-area</code></strong> or <strong><code>--campground</code></strong> options
+<p>For <strong>RecreationDotGov</strong>, <strong><code>--campsite</code></strong> arguments override any <strong><code>--rec-area</code></strong> or <strong><code>--campground</code></strong> options
 provided. And <strong><code>--campground</code></strong> will override the <strong><code>--rec-area</code></strong> option.</p>
+<p>However other providers may need you to provide both a <strong><code>--campground</code></strong> and <strong><code>--campsite</code></strong> ID.
+See the <a href="#list-campsites">list-campsites</a> example for more information.</p>
 </div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>camply campsites \
-<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>    --campsite 98363 \
-<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>    --start-date 2023-07-10 \
-<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>    --end-date 2023-07-18
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>camply campsites \
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>    --campsite 98363 \
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>    --start-date 2023-07-10 \
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>    --end-date 2023-07-18
 </code></pre></div>
 <h3 id="continuously-searching-for-a-campsite">Continuously Searching for A Campsite<a class="headerlink" href="#continuously-searching-for-a-campsite" title="Permanent link">#</a></h3>
 <p>Most of the time you want to look for campgrounds until an eventual match is found. The below snippet will
@@ -2477,13 +2513,13 @@ Continuous searching is enabled when any of the following options are provided:
 <strong><code>--continuous</code></strong>, <strong><code>--notifications</code></strong>, <strong><code>--search-forever</code></strong>,
 <strong><code>--polling-interval</code></strong>, <strong><code>--notify-first-try</code></strong>.</p>
 </div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>camply campsites \
-<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>    --rec-area 2725 \
-<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>    --start-date 2023-07-12 \
-<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>    --end-date 2023-07-13 \
-<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>    --continuous \
-<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>    --notifications pushover \
-<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>    --notify-first-try
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>camply campsites \
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>    --rec-area 2725 \
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>    --start-date 2023-07-12 \
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>    --end-date 2023-07-13 \
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>    --continuous \
+<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>    --notifications pushover \
+<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>    --notify-first-try
 </code></pre></div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -2504,14 +2540,14 @@ is that ordering matters. If you provide multiple start dates and multiple end
 dates the first end date will correspond to the first start date, and so on
 and so forth.</p>
 </div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>camply campsites \
-<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>    --rec-area 2725 \
-<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>    --start-date 2023-07-12 \
-<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>    --end-date 2023-07-13 \
-<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>    --start-date 2023-07-19 \
-<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>    --end-date 2023-07-20 \
-<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>    --start-date 2023-07-26 \
-<a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>    --end-date 2023-07-27
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>camply campsites \
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>    --rec-area 2725 \
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>    --start-date 2023-07-12 \
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>    --end-date 2023-07-13 \
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>    --start-date 2023-07-19 \
+<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>    --end-date 2023-07-20 \
+<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a>    --start-date 2023-07-26 \
+<a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a>    --end-date 2023-07-27
 </code></pre></div>
 <h3 id="continue-looking-after-the-first-match-is-found">Continue Looking After The First Match Is Found<a class="headerlink" href="#continue-looking-after-the-first-match-is-found" title="Permanent link">#</a></h3>
 <p>Sometimes you want to search for all possible matches up until your arrival date. No problem. Add
@@ -2523,12 +2559,12 @@ the <code>--search-forever</code> and <code>camply</code> won't stop sending not
 campsite availability twice. This can be problematic when certain campsites become
 available more than once.</p>
 </div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>camply campsites \
-<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>    --rec-area 2725 \
-<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>    --start-date 2023-07-01 \
-<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>    --end-date 2023-08-01 \
-<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>    --notifications pushover \
-<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>    --search-forever
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>camply campsites \
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>    --rec-area 2725 \
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>    --start-date 2023-07-01 \
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>    --end-date 2023-08-01 \
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>    --notifications pushover \
+<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a>    --search-forever
 </code></pre></div>
 <h3 id="send-a-push-notification">Send a Push Notification<a class="headerlink" href="#send-a-push-notification" title="Permanent link">#</a></h3>
 <p>camply supports notifications via a number of services:</p>
@@ -2540,11 +2576,11 @@ available more than once.</p>
 <li><code>Slack</code></li>
 <li><code>Twilio</code> (SMS)</li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>camply campsites \
-<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>    --rec-area 2991 \
-<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>    --start-date 2023-09-10 \
-<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>    --end-date 2023-09-21 \
-<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>    --notifications pushover
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>camply campsites \
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>    --rec-area 2991 \
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>    --start-date 2023-09-10 \
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>    --end-date 2023-09-21 \
+<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>    --notifications pushover
 </code></pre></div>
 <p>Like all providers, <code>Pushover</code> requires that you share credentials/authentication - for <code>Pushover</code> this involves
 sharing your "Pushover User Key" with camply through a <a href="../examples/example.camply">configuration file</a>
@@ -2569,24 +2605,24 @@ sending text messages via SMS. You can set up your Twilio configuration via <cod
 to set the following config values for Twilio: <code>TWILIO_ACCOUNT_SID</code>, <code>TWILIO_AUTH_TOKEN</code>,
 <code>TWILIO_SOURCE_NUMBER</code>, <code>TWILIO_DEST_NUMBERS</code>.</p>
 <p>Sending text messages via Twilio also requires the <code>twilio</code> extras:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>pip install camply[twilio]
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>pip install camply[twilio]
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>camply campsites \
-<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>    --rec-area 2991 \
-<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>    --start-date 2023-09-10 \
-<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>    --end-date 2023-09-21 \
-<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>    --notifications twilio
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>camply campsites \
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>    --rec-area 2991 \
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>    --start-date 2023-09-10 \
+<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>    --end-date 2023-09-21 \
+<a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a>    --notifications twilio
 </code></pre></div>
 <h3 id="send-a-notification-to-different-services">Send a Notification to Different Services<a class="headerlink" href="#send-a-notification-to-different-services" title="Permanent link">#</a></h3>
 <p>camply supports notifications from different providers. To send notifications to multiple providers
 you can pass the --notifications parameter multiple times. YAML config entries also
 accept an array as well.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>camply campsites \
-<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>    --rec-area 2991 \
-<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>    --start-date 2023-09-10 \
-<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>    --end-date 2023-09-21 \
-<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a>    --notifications email \
-<a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a>    --notifications pushover
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>camply campsites \
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>    --rec-area 2991 \
+<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>    --start-date 2023-09-10 \
+<a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>    --end-date 2023-09-21 \
+<a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a>    --notifications email \
+<a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a>    --notifications pushover
 </code></pre></div>
 <h3 id="searching-for-specific-weekdays">Searching for Specific Weekdays<a class="headerlink" href="#searching-for-specific-weekdays" title="Permanent link">#</a></h3>
 <p>The below search spans across a three-month time window, but it only looks for campsites that
@@ -2595,24 +2631,24 @@ are available on a Tuesday or Wednesday night.</p>
 <p class="admonition-title">Note</p>
 <p>You can use the day's full spelling or an abbreviation - and neither is case sensitive.</p>
 </div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>camply campsites \
-<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>    --campground 232446 \
-<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>    --start-date 2023-05-01 \
-<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>    --end-date 2023-08-01 \
-<a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a>    --day Tuesday \
-<a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a>    --day Wednesday
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>camply campsites \
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>    --campground 232446 \
+<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>    --start-date 2023-05-01 \
+<a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a>    --end-date 2023-08-01 \
+<a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a>    --day Tuesday \
+<a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a>    --day Wednesday
 </code></pre></div>
 <h3 id="look-for-weekend-campsite-availabilities">Look for Weekend Campsite Availabilities<a class="headerlink" href="#look-for-weekend-campsite-availabilities" title="Permanent link">#</a></h3>
 <p>This below search looks across larger periods of time, but only if a campground is available to book
 on a Friday or Saturday night (<code>--weekends</code>). It also uses the <code>--polling-interval</code> argument which
 checks every 5 minutes instead of the default 10 minutes.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>camply campsites \
-<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>    --rec-area 2991 \
-<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>    --start-date 2023-05-01 \
-<a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>    --end-date 2023-08-01 \
-<a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a>    --weekends \
-<a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a>    --notifications email \
-<a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a>    --polling-interval 5
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>camply campsites \
+<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>    --rec-area 2991 \
+<a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a>    --start-date 2023-05-01 \
+<a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a>    --end-date 2023-08-01 \
+<a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a>    --weekends \
+<a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a>    --notifications email \
+<a id="__codelineno-23-7" name="__codelineno-23-7" href="#__codelineno-23-7"></a>    --polling-interval 5
 </code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -2629,11 +2665,11 @@ consecutive night stays, pass the <code>--nights</code> argument.</p>
 set the <strong><code>--weekends</code></strong> parameter the maximum number of consecutive nights possible is 2. If you supply
 more than this your <strong><code>--nights</code></strong> parameter will be overwritten to 2.</p>
 </div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>camply campsites \
-<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>    --rec-area 2991 \
-<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>    --start-date 2023-05-01 \
-<a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a>    --end-date 2023-08-01 \
-<a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a>    --nights 4
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>camply campsites \
+<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>    --rec-area 2991 \
+<a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a>    --start-date 2023-05-01 \
+<a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a>    --end-date 2023-08-01 \
+<a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a>    --nights 4
 </code></pre></div>
 <h3 id="look-for-a-campsite-inside-of-yellowstone">Look for a Campsite Inside of Yellowstone<a class="headerlink" href="#look-for-a-campsite-inside-of-yellowstone" title="Permanent link">#</a></h3>
 <p>Yellowstone doesn't use <a href="https://recreation.gov">https://recreation.gov</a> to manage its campgrounds, instead it uses its own
@@ -2641,86 +2677,86 @@ proprietary system. In order to search the Yellowstone API for campsites, make s
 the <code>--provider "yellowstone"</code> argument. This flag disables <code>--rec-area</code> argument.</p>
 <p>To learn more about using <code>camply</code> to find campsites at Yellowstone, check out
 this <a href="https://github.com/juftin/camply/discussions/15#discussioncomment-783657">discussion</a>.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>camply campsites \
-<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>    --provider yellowstone \
-<a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a>    --start-date 2023-07-09 \
-<a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a>    --end-date 2023-07-17 \
-<a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a>    --continuous
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>camply campsites \
+<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>    --provider yellowstone \
+<a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a>    --start-date 2023-07-09 \
+<a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a>    --end-date 2023-07-17 \
+<a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a>    --continuous
 </code></pre></div>
 <h3 id="look-for-a-campsite-from-goingtocamp">Look for a Campsite from GoingToCamp<a class="headerlink" href="#look-for-a-campsite-from-goingtocamp" title="Permanent link">#</a></h3>
 <p>The <code>GoingToCamp</code> provider requires that you specify both a Recreation Area and a
 Campground in your search. First you'll need to find your Recreation Area ID:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>camply recreation-areas --provider goingtocamp
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>camply recreation-areas --provider goingtocamp
 </code></pre></div>
 <p>For this example we'll search Washington State Parks which corresponds to Recreation Area ID #4.
 Next we'll list the Campgrounds within the Recreation Area:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>camply campgrounds --provider goingtocamp --rec-area 4
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>camply campgrounds --provider goingtocamp --rec-area 4
 </code></pre></div>
 <p>The above command will list all of the campgrounds within our Recreation Area.
 For the next example we'll search for an availability at Bay Bridge State Park,
 which is in our Recreation Area and corresponds to Campground ID #-2147483645
 (GoingToCamp regularly uses negative ID numbers).</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>camply campsites \
-<a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a>  --provider goingtocamp \
-<a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a>  --rec-area 4 \
-<a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a>  --campground -2147483645 \
-<a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a>  --start-date 2023-09-01 \
-<a id="__codelineno-26-6" name="__codelineno-26-6" href="#__codelineno-26-6"></a>  --end-date 2023-09-02
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>camply campsites \
+<a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a>  --provider goingtocamp \
+<a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a>  --rec-area 4 \
+<a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a>  --campground -2147483645 \
+<a id="__codelineno-28-5" name="__codelineno-28-5" href="#__codelineno-28-5"></a>  --start-date 2023-09-01 \
+<a id="__codelineno-28-6" name="__codelineno-28-6" href="#__codelineno-28-6"></a>  --end-date 2023-09-02
 </code></pre></div>
 <h3 id="searching-goingtocamp-using-equipment">Searching GoingToCamp Using Equipment<a class="headerlink" href="#searching-goingtocamp-using-equipment" title="Permanent link">#</a></h3>
 <p>In the <a href="#look-for-a-campsite-from-goingtocamp">previous GoingToCamp example</a> we were searching
 Recreation Area ID #4 and Campground ID #-2147483645. GoingToCamp also allows
 us to search for campsites using equipment filters. In order to find the corresponding equipment
 IDs, you'll use the <code>equipment-types</code> command and pass in the Recreation Area ID:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>camply equipment-types --provider goingtocamp --rec-area 4
+<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>camply equipment-types --provider goingtocamp --rec-area 4
 </code></pre></div>
 <p>The previous command will list all of the Equipment IDs for your Recreation Area.
 For our example we will use Equipment ID #-32763 which corresponds to an <code>RV/Trailer up to 25'</code>.
 Next we can use that Equipment ID in our search:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>camply campsites \
-<a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a>  --provider goingtocamp \
-<a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a>  --rec-area 4 \
-<a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a>  --campground -2147483645 \
-<a id="__codelineno-28-5" name="__codelineno-28-5" href="#__codelineno-28-5"></a>  --start-date 2023-09-01 \
-<a id="__codelineno-28-6" name="__codelineno-28-6" href="#__codelineno-28-6"></a>  --end-date 2023-09-02 \
-<a id="__codelineno-28-7" name="__codelineno-28-7" href="#__codelineno-28-7"></a>  --equipment-id -32763
+<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>camply campsites \
+<a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a>  --provider goingtocamp \
+<a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a>  --rec-area 4 \
+<a id="__codelineno-30-4" name="__codelineno-30-4" href="#__codelineno-30-4"></a>  --campground -2147483645 \
+<a id="__codelineno-30-5" name="__codelineno-30-5" href="#__codelineno-30-5"></a>  --start-date 2023-09-01 \
+<a id="__codelineno-30-6" name="__codelineno-30-6" href="#__codelineno-30-6"></a>  --end-date 2023-09-02 \
+<a id="__codelineno-30-7" name="__codelineno-30-7" href="#__codelineno-30-7"></a>  --equipment-id -32763
 </code></pre></div>
 <h3 id="look-for-a-campsite-across-multiple-recreation-areas">Look for a Campsite Across Multiple Recreation areas<a class="headerlink" href="#look-for-a-campsite-across-multiple-recreation-areas" title="Permanent link">#</a></h3>
 <p>You don't have to confine your search to a single Recreation or Campground ID. Adding multiple
 arguments to the command line will search across multiple IDs. Keep in mind that any <code>--campground</code>
 arguments will overwrite all <code>--rec-area</code> arguments.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>camply campsites \
-<a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a>    --rec-area 2991 \
-<a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a>    --rec-area 1074 \
-<a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a>    --start-date 2023-07-09 \
-<a id="__codelineno-29-5" name="__codelineno-29-5" href="#__codelineno-29-5"></a>    --end-date 2023-07-17 \
-<a id="__codelineno-29-6" name="__codelineno-29-6" href="#__codelineno-29-6"></a>    --nights 5
+<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a>camply campsites \
+<a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a>    --rec-area 2991 \
+<a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a>    --rec-area 1074 \
+<a id="__codelineno-31-4" name="__codelineno-31-4" href="#__codelineno-31-4"></a>    --start-date 2023-07-09 \
+<a id="__codelineno-31-5" name="__codelineno-31-5" href="#__codelineno-31-5"></a>    --end-date 2023-07-17 \
+<a id="__codelineno-31-6" name="__codelineno-31-6" href="#__codelineno-31-6"></a>    --nights 5
 </code></pre></div>
 <h3 id="using-a-yaml-configuration-file-to-search-for-campsites">Using a YAML Configuration file to search for campsites<a class="headerlink" href="#using-a-yaml-configuration-file-to-search-for-campsites" title="Permanent link">#</a></h3>
 <p>Sometimes, using a YAML configuration file is easier to manage all of your search options. See the
 below <a href="../examples/example_search.yaml">YAML example file</a> and corresponding camply command:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="nt">provider</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RecreationDotGov</span><span class="w"> </span><span class="c1"># RecreationDotGov IF NOT PROVIDED</span>
-<a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a><span class="nt">recreation_area</span><span class="p">:</span><span class="w"> </span><span class="c1"># (LIST OR SINGLE ENTRY)</span>
-<a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2991</span><span class="w"> </span><span class="c1"># Yosemite National Park, CA (All Campgrounds)</span>
-<a id="__codelineno-30-4" name="__codelineno-30-4" href="#__codelineno-30-4"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1074</span><span class="w"> </span><span class="c1"># Sierra National Forest, CA (All Campgrounds)</span>
-<a id="__codelineno-30-5" name="__codelineno-30-5" href="#__codelineno-30-5"></a><span class="nt">campgrounds</span><span class="p">:</span><span class="w"> </span><span class="c1"># ENTIRE FIELD CAN BE OMITTED IF NOT USED - (LIST OR SINGLE ENTRY)</span>
-<a id="__codelineno-30-6" name="__codelineno-30-6" href="#__codelineno-30-6"></a><span class="nt">campsites</span><span class="p">:</span><span class="w"> </span><span class="c1"># OVERRIDES CAMPGROUNDS / RECREATION AREA - (LIST OR SINGLE ENTRY)</span>
-<a id="__codelineno-30-7" name="__codelineno-30-7" href="#__codelineno-30-7"></a><span class="nt">start_date</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2023-09-12</span><span class="w"> </span><span class="c1"># YYYY-MM-DD - (LIST OR SINGLE ENTRY)</span>
-<a id="__codelineno-30-8" name="__codelineno-30-8" href="#__codelineno-30-8"></a><span class="nt">end_date</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2023-09-13</span><span class="w"> </span><span class="c1"># YYYY-MM-DD - (LIST OR SINGLE ENTRY)</span>
-<a id="__codelineno-30-9" name="__codelineno-30-9" href="#__codelineno-30-9"></a><span class="nt">days</span><span class="p">:</span><span class="w"> </span><span class="c1"># Array of day names - DEFAULTS TO `null`</span>
-<a id="__codelineno-30-10" name="__codelineno-30-10" href="#__codelineno-30-10"></a><span class="nt">weekends</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"> </span><span class="c1"># FALSE BY DEFAULT</span>
-<a id="__codelineno-30-11" name="__codelineno-30-11" href="#__codelineno-30-11"></a><span class="nt">nights</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span><span class="w"> </span><span class="c1"># 1 BY DEFAULT</span>
-<a id="__codelineno-30-12" name="__codelineno-30-12" href="#__codelineno-30-12"></a><span class="nt">continuous</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"> </span><span class="c1"># DEFAULTS TO TRUE</span>
-<a id="__codelineno-30-13" name="__codelineno-30-13" href="#__codelineno-30-13"></a><span class="nt">polling_interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5</span><span class="w"> </span><span class="c1"># DEFAULTS TO 10 , CAN&#39;T BE LESS THAN 5</span>
-<a id="__codelineno-30-14" name="__codelineno-30-14" href="#__codelineno-30-14"></a><span class="nt">notifications</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">email</span><span class="w"> </span><span class="c1"># (silent, email, pushover, pushbullet, and telegram), DEFAULTS TO `silent`</span>
-<a id="__codelineno-30-15" name="__codelineno-30-15" href="#__codelineno-30-15"></a><span class="nt">search_forever</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"> </span><span class="c1"># FALSE BY DEFAULT</span>
-<a id="__codelineno-30-16" name="__codelineno-30-16" href="#__codelineno-30-16"></a><span class="nt">search_once</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"> </span><span class="c1"># FALSE BY DEFAULT</span>
-<a id="__codelineno-30-17" name="__codelineno-30-17" href="#__codelineno-30-17"></a><span class="nt">notify_first_try</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"> </span><span class="c1"># FALSE BY DEFAULT</span>
-<a id="__codelineno-30-18" name="__codelineno-30-18" href="#__codelineno-30-18"></a><span class="nt">equipment</span><span class="p">:</span><span class="w"> </span><span class="c1"># Array of Equipment Search Lists - DEFAULTS TO `null`</span>
-<a id="__codelineno-30-19" name="__codelineno-30-19" href="#__codelineno-30-19"></a><span class="nt">offline_search</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"> </span><span class="c1"># FALSE BY DEFAULT</span>
-<a id="__codelineno-30-20" name="__codelineno-30-20" href="#__codelineno-30-20"></a><span class="nt">offline_search_path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">camply_campsites.json</span><span class="w"> </span><span class="c1"># Defaults to `camply_campsites.json`</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="nt">provider</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RecreationDotGov</span><span class="w"> </span><span class="c1"># RecreationDotGov IF NOT PROVIDED</span>
+<a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a><span class="nt">recreation_area</span><span class="p">:</span><span class="w"> </span><span class="c1"># (LIST OR SINGLE ENTRY)</span>
+<a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2991</span><span class="w"> </span><span class="c1"># Yosemite National Park, CA (All Campgrounds)</span>
+<a id="__codelineno-32-4" name="__codelineno-32-4" href="#__codelineno-32-4"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1074</span><span class="w"> </span><span class="c1"># Sierra National Forest, CA (All Campgrounds)</span>
+<a id="__codelineno-32-5" name="__codelineno-32-5" href="#__codelineno-32-5"></a><span class="nt">campgrounds</span><span class="p">:</span><span class="w"> </span><span class="c1"># ENTIRE FIELD CAN BE OMITTED IF NOT USED - (LIST OR SINGLE ENTRY)</span>
+<a id="__codelineno-32-6" name="__codelineno-32-6" href="#__codelineno-32-6"></a><span class="nt">campsites</span><span class="p">:</span><span class="w"> </span><span class="c1"># OVERRIDES CAMPGROUNDS / RECREATION AREA - (LIST OR SINGLE ENTRY)</span>
+<a id="__codelineno-32-7" name="__codelineno-32-7" href="#__codelineno-32-7"></a><span class="nt">start_date</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2023-09-12</span><span class="w"> </span><span class="c1"># YYYY-MM-DD - (LIST OR SINGLE ENTRY)</span>
+<a id="__codelineno-32-8" name="__codelineno-32-8" href="#__codelineno-32-8"></a><span class="nt">end_date</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2023-09-13</span><span class="w"> </span><span class="c1"># YYYY-MM-DD - (LIST OR SINGLE ENTRY)</span>
+<a id="__codelineno-32-9" name="__codelineno-32-9" href="#__codelineno-32-9"></a><span class="nt">days</span><span class="p">:</span><span class="w"> </span><span class="c1"># Array of day names - DEFAULTS TO `null`</span>
+<a id="__codelineno-32-10" name="__codelineno-32-10" href="#__codelineno-32-10"></a><span class="nt">weekends</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"> </span><span class="c1"># FALSE BY DEFAULT</span>
+<a id="__codelineno-32-11" name="__codelineno-32-11" href="#__codelineno-32-11"></a><span class="nt">nights</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span><span class="w"> </span><span class="c1"># 1 BY DEFAULT</span>
+<a id="__codelineno-32-12" name="__codelineno-32-12" href="#__codelineno-32-12"></a><span class="nt">continuous</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"> </span><span class="c1"># DEFAULTS TO TRUE</span>
+<a id="__codelineno-32-13" name="__codelineno-32-13" href="#__codelineno-32-13"></a><span class="nt">polling_interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5</span><span class="w"> </span><span class="c1"># DEFAULTS TO 10 , CAN&#39;T BE LESS THAN 5</span>
+<a id="__codelineno-32-14" name="__codelineno-32-14" href="#__codelineno-32-14"></a><span class="nt">notifications</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">email</span><span class="w"> </span><span class="c1"># (silent, email, pushover, pushbullet, and telegram), DEFAULTS TO `silent`</span>
+<a id="__codelineno-32-15" name="__codelineno-32-15" href="#__codelineno-32-15"></a><span class="nt">search_forever</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"> </span><span class="c1"># FALSE BY DEFAULT</span>
+<a id="__codelineno-32-16" name="__codelineno-32-16" href="#__codelineno-32-16"></a><span class="nt">search_once</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"> </span><span class="c1"># FALSE BY DEFAULT</span>
+<a id="__codelineno-32-17" name="__codelineno-32-17" href="#__codelineno-32-17"></a><span class="nt">notify_first_try</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"> </span><span class="c1"># FALSE BY DEFAULT</span>
+<a id="__codelineno-32-18" name="__codelineno-32-18" href="#__codelineno-32-18"></a><span class="nt">equipment</span><span class="p">:</span><span class="w"> </span><span class="c1"># Array of Equipment Search Lists - DEFAULTS TO `null`</span>
+<a id="__codelineno-32-19" name="__codelineno-32-19" href="#__codelineno-32-19"></a><span class="nt">offline_search</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"> </span><span class="c1"># FALSE BY DEFAULT</span>
+<a id="__codelineno-32-20" name="__codelineno-32-20" href="#__codelineno-32-20"></a><span class="nt">offline_search_path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">camply_campsites.json</span><span class="w"> </span><span class="c1"># Defaults to `camply_campsites.json`</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a>camply campsites --yaml-config example_search.yaml
+<div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a>camply campsites --yaml-config example_search.yaml
 </code></pre></div>
 <h3 id="searching-for-a-campsite-that-fits-your-equipment">Searching for a Campsite That Fits Your Equipment<a class="headerlink" href="#searching-for-a-campsite-that-fits-your-equipment" title="Permanent link">#</a></h3>
 <p>Camply can help you filter campsites to fit your specific equipment, like a Trailer or an RV.
@@ -2732,29 +2768,29 @@ equipment will be returned.</p>
 <p>Current supported equipment names are <code>Vehicle</code>, <code>Tent</code>, <code>RV</code>, and <code>Trailer</code>. Be careful when
 filtering on <code>Tents</code> and <code>Vehicle</code> length, sometimes Recreation.gov doesn't provide that information,
 it is safer to set length to 0.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a>camply campsites \
-<a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a>    --rec-area 2991 \
-<a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a>    --start-date 2023-07-09 \
-<a id="__codelineno-32-4" name="__codelineno-32-4" href="#__codelineno-32-4"></a>    --end-date 2023-07-17 \
-<a id="__codelineno-32-5" name="__codelineno-32-5" href="#__codelineno-32-5"></a>    --nights 5 \
-<a id="__codelineno-32-6" name="__codelineno-32-6" href="#__codelineno-32-6"></a>    --equipment RV 25
-</code></pre></div>
-<p>Here's what the above search would look like on a YAML Config:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="nt">recreation_area</span><span class="p">:</span>
-<a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2991</span>
-<a id="__codelineno-33-3" name="__codelineno-33-3" href="#__codelineno-33-3"></a><span class="nt">start_date</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2023-07-09</span>
-<a id="__codelineno-33-4" name="__codelineno-33-4" href="#__codelineno-33-4"></a><span class="nt">end_date</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2023-07-17</span>
-<a id="__codelineno-33-5" name="__codelineno-33-5" href="#__codelineno-33-5"></a><span class="nt">nights</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5</span>
-<a id="__codelineno-33-6" name="__codelineno-33-6" href="#__codelineno-33-6"></a><span class="nt">equipment</span><span class="p">:</span>
-<a id="__codelineno-33-7" name="__codelineno-33-7" href="#__codelineno-33-7"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">RV</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">25</span><span class="p p-Indicator">]</span>
-</code></pre></div>
-<p>Finally, here's a search that accommodates trailers of all lengths:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a>camply campsites \
 <a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a>    --rec-area 2991 \
 <a id="__codelineno-34-3" name="__codelineno-34-3" href="#__codelineno-34-3"></a>    --start-date 2023-07-09 \
 <a id="__codelineno-34-4" name="__codelineno-34-4" href="#__codelineno-34-4"></a>    --end-date 2023-07-17 \
 <a id="__codelineno-34-5" name="__codelineno-34-5" href="#__codelineno-34-5"></a>    --nights 5 \
-<a id="__codelineno-34-6" name="__codelineno-34-6" href="#__codelineno-34-6"></a>    --equipment Trailer 0
+<a id="__codelineno-34-6" name="__codelineno-34-6" href="#__codelineno-34-6"></a>    --equipment RV 25
+</code></pre></div>
+<p>Here's what the above search would look like on a YAML Config:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="nt">recreation_area</span><span class="p">:</span>
+<a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2991</span>
+<a id="__codelineno-35-3" name="__codelineno-35-3" href="#__codelineno-35-3"></a><span class="nt">start_date</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2023-07-09</span>
+<a id="__codelineno-35-4" name="__codelineno-35-4" href="#__codelineno-35-4"></a><span class="nt">end_date</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2023-07-17</span>
+<a id="__codelineno-35-5" name="__codelineno-35-5" href="#__codelineno-35-5"></a><span class="nt">nights</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5</span>
+<a id="__codelineno-35-6" name="__codelineno-35-6" href="#__codelineno-35-6"></a><span class="nt">equipment</span><span class="p">:</span>
+<a id="__codelineno-35-7" name="__codelineno-35-7" href="#__codelineno-35-7"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">RV</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">25</span><span class="p p-Indicator">]</span>
+</code></pre></div>
+<p>Finally, here's a search that accommodates trailers of all lengths:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a>camply campsites \
+<a id="__codelineno-36-2" name="__codelineno-36-2" href="#__codelineno-36-2"></a>    --rec-area 2991 \
+<a id="__codelineno-36-3" name="__codelineno-36-3" href="#__codelineno-36-3"></a>    --start-date 2023-07-09 \
+<a id="__codelineno-36-4" name="__codelineno-36-4" href="#__codelineno-36-4"></a>    --end-date 2023-07-17 \
+<a id="__codelineno-36-5" name="__codelineno-36-5" href="#__codelineno-36-5"></a>    --nights 5 \
+<a id="__codelineno-36-6" name="__codelineno-36-6" href="#__codelineno-36-6"></a>    --equipment Trailer 0
 </code></pre></div>
 <h3 id="saving-the-results-of-a-search">Saving the Results of a Search<a class="headerlink" href="#saving-the-results-of-a-search" title="Permanent link">#</a></h3>
 <p>In some cases, you might want to save all the campsites found during one
@@ -2765,36 +2801,36 @@ the results in a file called <code>camply_campsites.json</code>.</p>
 path to save the results as. When a file path with a <code>.json</code> extension is passed
 camply will export the results as a JSON file. When the <code>.pkl</code> or <code>.pickle</code> extension is
 used, camply will use a serialized Pickle file.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a>camply \
-<a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a>  campsites \
-<a id="__codelineno-35-3" name="__codelineno-35-3" href="#__codelineno-35-3"></a>  --campground 232064 \
-<a id="__codelineno-35-4" name="__codelineno-35-4" href="#__codelineno-35-4"></a>  --start-date 2023-09-01 \
-<a id="__codelineno-35-5" name="__codelineno-35-5" href="#__codelineno-35-5"></a>  --end-date 2023-10-01 \
-<a id="__codelineno-35-6" name="__codelineno-35-6" href="#__codelineno-35-6"></a>  --continuous \
-<a id="__codelineno-35-7" name="__codelineno-35-7" href="#__codelineno-35-7"></a>  --offline-search
+<div class="highlight"><pre><span></span><code><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a>camply \
+<a id="__codelineno-37-2" name="__codelineno-37-2" href="#__codelineno-37-2"></a>  campsites \
+<a id="__codelineno-37-3" name="__codelineno-37-3" href="#__codelineno-37-3"></a>  --campground 232064 \
+<a id="__codelineno-37-4" name="__codelineno-37-4" href="#__codelineno-37-4"></a>  --start-date 2023-09-01 \
+<a id="__codelineno-37-5" name="__codelineno-37-5" href="#__codelineno-37-5"></a>  --end-date 2023-10-01 \
+<a id="__codelineno-37-6" name="__codelineno-37-6" href="#__codelineno-37-6"></a>  --continuous \
+<a id="__codelineno-37-7" name="__codelineno-37-7" href="#__codelineno-37-7"></a>  --offline-search
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a>camply \
-<a id="__codelineno-36-2" name="__codelineno-36-2" href="#__codelineno-36-2"></a>  campsites \
-<a id="__codelineno-36-3" name="__codelineno-36-3" href="#__codelineno-36-3"></a>  --campground 232064 \
-<a id="__codelineno-36-4" name="__codelineno-36-4" href="#__codelineno-36-4"></a>  --start-date 2023-09-01 \
-<a id="__codelineno-36-5" name="__codelineno-36-5" href="#__codelineno-36-5"></a>  --end-date 2023-10-01 \
-<a id="__codelineno-36-6" name="__codelineno-36-6" href="#__codelineno-36-6"></a>  --continuous \
-<a id="__codelineno-36-7" name="__codelineno-36-7" href="#__codelineno-36-7"></a>  --offline-search-path campsites.pkl
+<div class="highlight"><pre><span></span><code><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a>camply \
+<a id="__codelineno-38-2" name="__codelineno-38-2" href="#__codelineno-38-2"></a>  campsites \
+<a id="__codelineno-38-3" name="__codelineno-38-3" href="#__codelineno-38-3"></a>  --campground 232064 \
+<a id="__codelineno-38-4" name="__codelineno-38-4" href="#__codelineno-38-4"></a>  --start-date 2023-09-01 \
+<a id="__codelineno-38-5" name="__codelineno-38-5" href="#__codelineno-38-5"></a>  --end-date 2023-10-01 \
+<a id="__codelineno-38-6" name="__codelineno-38-6" href="#__codelineno-38-6"></a>  --continuous \
+<a id="__codelineno-38-7" name="__codelineno-38-7" href="#__codelineno-38-7"></a>  --offline-search-path campsites.pkl
 </code></pre></div>
 <h3 id="search-for-recreation-areas-by-query-string">Search for Recreation Areas by Query String<a class="headerlink" href="#search-for-recreation-areas-by-query-string" title="Permanent link">#</a></h3>
 <p>Just need to find what your local Recreation Area ID number is? This simple command allows you to
 search and list recreation areas. It accepts <code>--search</code> and <code>--state</code> arguments.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a>camply recreation-areas --search &quot;Yosemite National Park&quot;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a>camply recreation-areas --search &quot;Yosemite National Park&quot;
 </code></pre></div>
 <h3 id="look-for-specific-campgrounds-within-a-recreation-area">Look for Specific Campgrounds Within a Recreation Area<a class="headerlink" href="#look-for-specific-campgrounds-within-a-recreation-area" title="Permanent link">#</a></h3>
 <p>Need to get even more specific and search for a particular campground? This search lists campgrounds
 attached to a recreation area id <code>--rec-area</code>. It also accepts <code>--search</code> and <code>--state</code>
 arguments.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a>camply campgrounds --rec-area 2991
+<div class="highlight"><pre><span></span><code><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a>camply campgrounds --rec-area 2991
 </code></pre></div>
 <h3 id="look-for-specific-campgrounds-by-query-string">Look for Specific Campgrounds by Query String<a class="headerlink" href="#look-for-specific-campgrounds-by-query-string" title="Permanent link">#</a></h3>
 <p>The below search looks for Fire Lookout Towers to stay in inside of California.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a>camply campgrounds --search &quot;Fire Tower Lookout&quot; --state CA
+<div class="highlight"><pre><span></span><code><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a>camply campgrounds --search &quot;Fire Tower Lookout&quot; --state CA
 </code></pre></div>
 <h3 id="searching-for-tickets-and-timed-entries">Searching for Tickets and Timed Entries<a class="headerlink" href="#searching-for-tickets-and-timed-entries" title="Permanent link">#</a></h3>
 <p>The <a href="../providers/#recreationgov-tickets-tours--timed-entry">Recreation.gov Tickets, Tours, &amp; Timed-Entry Providers</a>
@@ -2802,37 +2838,37 @@ support "campgrounds" that are actually resources like timed entry appointments 
 to recreation activities.</p>
 <h4 id="tickets-tours">Tickets + Tours<a class="headerlink" href="#tickets-tours" title="Permanent link">#</a></h4>
 <p>Let's say you're going on vacation in Hawaii and you're interested in what hiking tickets are available:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a>camply campgrounds \
-<a id="__codelineno-40-2" name="__codelineno-40-2" href="#__codelineno-40-2"></a>    --provider RecreationDotGovTicket \
-<a id="__codelineno-40-3" name="__codelineno-40-3" href="#__codelineno-40-3"></a>    --state HI
+<div class="highlight"><pre><span></span><code><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a>camply campgrounds \
+<a id="__codelineno-42-2" name="__codelineno-42-2" href="#__codelineno-42-2"></a>    --provider RecreationDotGovTicket \
+<a id="__codelineno-42-3" name="__codelineno-42-3" href="#__codelineno-42-3"></a>    --state HI
 </code></pre></div>
 <p>Nice, there are some great options there. Let's say we've decided on
 the <a href="https://www.recreation.gov/ticket/facility/253731">Haleakala National Park Summit Sunrise Reservations</a>.
 This "campground" has ID #253731. These reservations are hard to snag but they do pop up!</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a>camply campsites \
-<a id="__codelineno-41-2" name="__codelineno-41-2" href="#__codelineno-41-2"></a>  --provider RecreationDotGovTicket \
-<a id="__codelineno-41-3" name="__codelineno-41-3" href="#__codelineno-41-3"></a>  --start-date 2023-06-09 \
-<a id="__codelineno-41-4" name="__codelineno-41-4" href="#__codelineno-41-4"></a>  --end-date 2023-06-10 \
-<a id="__codelineno-41-5" name="__codelineno-41-5" href="#__codelineno-41-5"></a>  --campground 253731 \
-<a id="__codelineno-41-6" name="__codelineno-41-6" href="#__codelineno-41-6"></a>  --search-forever \
-<a id="__codelineno-41-7" name="__codelineno-41-7" href="#__codelineno-41-7"></a>  --notifications email
+<div class="highlight"><pre><span></span><code><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a>camply campsites \
+<a id="__codelineno-43-2" name="__codelineno-43-2" href="#__codelineno-43-2"></a>  --provider RecreationDotGovTicket \
+<a id="__codelineno-43-3" name="__codelineno-43-3" href="#__codelineno-43-3"></a>  --start-date 2023-06-09 \
+<a id="__codelineno-43-4" name="__codelineno-43-4" href="#__codelineno-43-4"></a>  --end-date 2023-06-10 \
+<a id="__codelineno-43-5" name="__codelineno-43-5" href="#__codelineno-43-5"></a>  --campground 253731 \
+<a id="__codelineno-43-6" name="__codelineno-43-6" href="#__codelineno-43-6"></a>  --search-forever \
+<a id="__codelineno-43-7" name="__codelineno-43-7" href="#__codelineno-43-7"></a>  --notifications email
 </code></pre></div>
 <h4 id="timed-entry">Timed Entry<a class="headerlink" href="#timed-entry" title="Permanent link">#</a></h4>
 <p>Let's say you're visiting Oregon and wanting to visit
 the <a href="https://www.recreation.gov/timed-entry/10089508">Lava River Cave</a>. They've recently implemented a Timed Reservation
 System - so we'd use the <code>RecreationDotGovTimedEntry</code> provider:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a>camply campgrounds \
-<a id="__codelineno-42-2" name="__codelineno-42-2" href="#__codelineno-42-2"></a>    --provider RecreationDotGovTimedEntry \
-<a id="__codelineno-42-3" name="__codelineno-42-3" href="#__codelineno-42-3"></a>    --state OR
+<div class="highlight"><pre><span></span><code><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a>camply campgrounds \
+<a id="__codelineno-44-2" name="__codelineno-44-2" href="#__codelineno-44-2"></a>    --provider RecreationDotGovTimedEntry \
+<a id="__codelineno-44-3" name="__codelineno-44-3" href="#__codelineno-44-3"></a>    --state OR
 </code></pre></div>
 <p>Using the above command we can see that the campground ID we want is #10089508:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a>camply campsites \
-<a id="__codelineno-43-2" name="__codelineno-43-2" href="#__codelineno-43-2"></a>  --provider RecreationDotGovTimedEntry \
-<a id="__codelineno-43-3" name="__codelineno-43-3" href="#__codelineno-43-3"></a>  --start-date 2023-06-09 \
-<a id="__codelineno-43-4" name="__codelineno-43-4" href="#__codelineno-43-4"></a>  --end-date 2023-06-10 \
-<a id="__codelineno-43-5" name="__codelineno-43-5" href="#__codelineno-43-5"></a>  --campground 10089508 \
-<a id="__codelineno-43-6" name="__codelineno-43-6" href="#__codelineno-43-6"></a>  --search-forever \
-<a id="__codelineno-43-7" name="__codelineno-43-7" href="#__codelineno-43-7"></a>  --notifications email
+<div class="highlight"><pre><span></span><code><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a>camply campsites \
+<a id="__codelineno-45-2" name="__codelineno-45-2" href="#__codelineno-45-2"></a>  --provider RecreationDotGovTimedEntry \
+<a id="__codelineno-45-3" name="__codelineno-45-3" href="#__codelineno-45-3"></a>  --start-date 2023-06-09 \
+<a id="__codelineno-45-4" name="__codelineno-45-4" href="#__codelineno-45-4"></a>  --end-date 2023-06-10 \
+<a id="__codelineno-45-5" name="__codelineno-45-5" href="#__codelineno-45-5"></a>  --campground 10089508 \
+<a id="__codelineno-45-6" name="__codelineno-45-6" href="#__codelineno-45-6"></a>  --search-forever \
+<a id="__codelineno-45-7" name="__codelineno-45-7" href="#__codelineno-45-7"></a>  --notifications email
 </code></pre></div>
 <h4 id="using-the-daily-providers">Using the Daily Providers<a class="headerlink" href="#using-the-daily-providers" title="Permanent link">#</a></h4>
 <p>You'll also notice that there are alternative daily providers for our tours
@@ -2851,53 +2887,53 @@ functionality, then you should use the daily provider.</p>
 <p>In the following scenario we'll search for tickets to a great attraction,
 the <a href="https://www.recreation.gov/ticket/300004/ticket/1040">Keys Ranch Tour</a>, in Joshua Tree National Park.</p>
 <p>Here's how you could search for that and retrieve its campground ID, #300004:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a>camply campgrounds \
-<a id="__codelineno-44-2" name="__codelineno-44-2" href="#__codelineno-44-2"></a>    --provider RecreationDotGovDailyTicket \
-<a id="__codelineno-44-3" name="__codelineno-44-3" href="#__codelineno-44-3"></a>    --search &quot;Keys Ranch Tour&quot;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a>camply campgrounds \
+<a id="__codelineno-46-2" name="__codelineno-46-2" href="#__codelineno-46-2"></a>    --provider RecreationDotGovDailyTicket \
+<a id="__codelineno-46-3" name="__codelineno-46-3" href="#__codelineno-46-3"></a>    --search &quot;Keys Ranch Tour&quot;
 </code></pre></div>
 <p>Great, now let's search:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a>camply campsites \
-<a id="__codelineno-45-2" name="__codelineno-45-2" href="#__codelineno-45-2"></a>  --provider RecreationDotGovDailyTicket \
-<a id="__codelineno-45-3" name="__codelineno-45-3" href="#__codelineno-45-3"></a>  --start-date 2023-07-06 \
-<a id="__codelineno-45-4" name="__codelineno-45-4" href="#__codelineno-45-4"></a>  --end-date 2023-07-07 \
-<a id="__codelineno-45-5" name="__codelineno-45-5" href="#__codelineno-45-5"></a>  --campground 300004
+<div class="highlight"><pre><span></span><code><a id="__codelineno-47-1" name="__codelineno-47-1" href="#__codelineno-47-1"></a>camply campsites \
+<a id="__codelineno-47-2" name="__codelineno-47-2" href="#__codelineno-47-2"></a>  --provider RecreationDotGovDailyTicket \
+<a id="__codelineno-47-3" name="__codelineno-47-3" href="#__codelineno-47-3"></a>  --start-date 2023-07-06 \
+<a id="__codelineno-47-4" name="__codelineno-47-4" href="#__codelineno-47-4"></a>  --end-date 2023-07-07 \
+<a id="__codelineno-47-5" name="__codelineno-47-5" href="#__codelineno-47-5"></a>  --campground 300004
 </code></pre></div>
 <p>Let's take it even a step further, let's say you need 4 spots in their 1:00PM time slot. In this case we can search
 for that timeslot using the <code>--equipment</code> option and providing the time and minimum spots needed (<code>1300</code> and <code>4</code>):</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a>camply campsites \
-<a id="__codelineno-46-2" name="__codelineno-46-2" href="#__codelineno-46-2"></a>  --provider RecreationDotGovDailyTicket \
-<a id="__codelineno-46-3" name="__codelineno-46-3" href="#__codelineno-46-3"></a>  --start-date 2023-07-06 \
-<a id="__codelineno-46-4" name="__codelineno-46-4" href="#__codelineno-46-4"></a>  --end-date 2023-07-07 \
-<a id="__codelineno-46-5" name="__codelineno-46-5" href="#__codelineno-46-5"></a>  --campground 300004 \
-<a id="__codelineno-46-6" name="__codelineno-46-6" href="#__codelineno-46-6"></a>  --equipment 1300 4
+<div class="highlight"><pre><span></span><code><a id="__codelineno-48-1" name="__codelineno-48-1" href="#__codelineno-48-1"></a>camply campsites \
+<a id="__codelineno-48-2" name="__codelineno-48-2" href="#__codelineno-48-2"></a>  --provider RecreationDotGovDailyTicket \
+<a id="__codelineno-48-3" name="__codelineno-48-3" href="#__codelineno-48-3"></a>  --start-date 2023-07-06 \
+<a id="__codelineno-48-4" name="__codelineno-48-4" href="#__codelineno-48-4"></a>  --end-date 2023-07-07 \
+<a id="__codelineno-48-5" name="__codelineno-48-5" href="#__codelineno-48-5"></a>  --campground 300004 \
+<a id="__codelineno-48-6" name="__codelineno-48-6" href="#__codelineno-48-6"></a>  --equipment 1300 4
 </code></pre></div>
 <p>Here's another example of searching for a specific time, this time for the timed-entry
 <a href="https://www.recreation.gov/timed-entry/10089462">Tuweep Area Day Use Passes</a> in Grand Canyon
 National Park (ID #10089462). In this example we're looking for any number of spots in
 their 8:00AM-5:00PM time slot:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-47-1" name="__codelineno-47-1" href="#__codelineno-47-1"></a>camply campsites \
-<a id="__codelineno-47-2" name="__codelineno-47-2" href="#__codelineno-47-2"></a>  --provider RecreationDotGovDailyTimedEntry \
-<a id="__codelineno-47-3" name="__codelineno-47-3" href="#__codelineno-47-3"></a>  --start-date 2023-07-06 \
-<a id="__codelineno-47-4" name="__codelineno-47-4" href="#__codelineno-47-4"></a>  --end-date 2023-07-07 \
-<a id="__codelineno-47-5" name="__codelineno-47-5" href="#__codelineno-47-5"></a>  --campground 10089462 \
-<a id="__codelineno-47-6" name="__codelineno-47-6" href="#__codelineno-47-6"></a>  --equipment 0800 0
+<div class="highlight"><pre><span></span><code><a id="__codelineno-49-1" name="__codelineno-49-1" href="#__codelineno-49-1"></a>camply campsites \
+<a id="__codelineno-49-2" name="__codelineno-49-2" href="#__codelineno-49-2"></a>  --provider RecreationDotGovDailyTimedEntry \
+<a id="__codelineno-49-3" name="__codelineno-49-3" href="#__codelineno-49-3"></a>  --start-date 2023-07-06 \
+<a id="__codelineno-49-4" name="__codelineno-49-4" href="#__codelineno-49-4"></a>  --end-date 2023-07-07 \
+<a id="__codelineno-49-5" name="__codelineno-49-5" href="#__codelineno-49-5"></a>  --campground 10089462 \
+<a id="__codelineno-49-6" name="__codelineno-49-6" href="#__codelineno-49-6"></a>  --equipment 0800 0
 </code></pre></div>
 <h3 id="search-reservecalifornia">Search ReserveCalifornia<a class="headerlink" href="#search-reservecalifornia" title="Permanent link">#</a></h3>
 <p><a href="../providers/#reservecalifornia">ReserveCalifornia</a> is the online booking provider for California State Parks
 and it works a lot like <code>RecreationDotGov</code>.</p>
 <p>If you wanted to look for recreation areas (groupings of campgrounds):</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-48-1" name="__codelineno-48-1" href="#__codelineno-48-1"></a>camply recreation-areas --provider ReserveCalifornia --search &quot;Los Angeles&quot;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-50-1" name="__codelineno-50-1" href="#__codelineno-50-1"></a>camply recreation-areas --provider ReserveCalifornia --search &quot;Los Angeles&quot;
 </code></pre></div>
 <p>If you want to look for more specific campgrounds to search:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-49-1" name="__codelineno-49-1" href="#__codelineno-49-1"></a>camply campgrounds --provider ReserveCalifornia --search &quot;Sonoma Coast&quot;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-51-1" name="__codelineno-51-1" href="#__codelineno-51-1"></a>camply campgrounds --provider ReserveCalifornia --search &quot;Sonoma Coast&quot;
 </code></pre></div>
 <p>And finally, searching for a campsite is very similar to <a href="#searching-for-a-campsite">RecreationDotGov</a>:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-50-1" name="__codelineno-50-1" href="#__codelineno-50-1"></a>camply campsites \
-<a id="__codelineno-50-2" name="__codelineno-50-2" href="#__codelineno-50-2"></a>    --provider ReserveCalifornia \
-<a id="__codelineno-50-3" name="__codelineno-50-3" href="#__codelineno-50-3"></a>    --start-date 2023-07-01 \
-<a id="__codelineno-50-4" name="__codelineno-50-4" href="#__codelineno-50-4"></a>    --end-date 2023-08-01 \
-<a id="__codelineno-50-5" name="__codelineno-50-5" href="#__codelineno-50-5"></a>    --rec-area 718 \
-<a id="__codelineno-50-6" name="__codelineno-50-6" href="#__codelineno-50-6"></a>    --weekends
+<div class="highlight"><pre><span></span><code><a id="__codelineno-52-1" name="__codelineno-52-1" href="#__codelineno-52-1"></a>camply campsites \
+<a id="__codelineno-52-2" name="__codelineno-52-2" href="#__codelineno-52-2"></a>    --provider ReserveCalifornia \
+<a id="__codelineno-52-3" name="__codelineno-52-3" href="#__codelineno-52-3"></a>    --start-date 2023-07-01 \
+<a id="__codelineno-52-4" name="__codelineno-52-4" href="#__codelineno-52-4"></a>    --end-date 2023-08-01 \
+<a id="__codelineno-52-5" name="__codelineno-52-5" href="#__codelineno-52-5"></a>    --rec-area 718 \
+<a id="__codelineno-52-6" name="__codelineno-52-6" href="#__codelineno-52-6"></a>    --weekends
 </code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -2911,13 +2947,13 @@ which enables continuous searching functionality (like sending notifications) wi
 actually searching continuously.</p>
 <p>Make sure to save your search results offline if running camply as a CRON job, this allows
 camply to save any campsites it finds between searches so that it only sends you a notification once:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-51-1" name="__codelineno-51-1" href="#__codelineno-51-1"></a>camply campsites \
-<a id="__codelineno-51-2" name="__codelineno-51-2" href="#__codelineno-51-2"></a>    --rec-area 2725 \
-<a id="__codelineno-51-3" name="__codelineno-51-3" href="#__codelineno-51-3"></a>    --start-date 2023-07-10 \
-<a id="__codelineno-51-4" name="__codelineno-51-4" href="#__codelineno-51-4"></a>    --end-date 2023-07-18 \
-<a id="__codelineno-51-5" name="__codelineno-51-5" href="#__codelineno-51-5"></a>    --notifications email \
-<a id="__codelineno-51-6" name="__codelineno-51-6" href="#__codelineno-51-6"></a>    --search-once \
-<a id="__codelineno-51-7" name="__codelineno-51-7" href="#__codelineno-51-7"></a>    --offline-search
+<div class="highlight"><pre><span></span><code><a id="__codelineno-53-1" name="__codelineno-53-1" href="#__codelineno-53-1"></a>camply campsites \
+<a id="__codelineno-53-2" name="__codelineno-53-2" href="#__codelineno-53-2"></a>    --rec-area 2725 \
+<a id="__codelineno-53-3" name="__codelineno-53-3" href="#__codelineno-53-3"></a>    --start-date 2023-07-10 \
+<a id="__codelineno-53-4" name="__codelineno-53-4" href="#__codelineno-53-4"></a>    --end-date 2023-07-18 \
+<a id="__codelineno-53-5" name="__codelineno-53-5" href="#__codelineno-53-5"></a>    --notifications email \
+<a id="__codelineno-53-6" name="__codelineno-53-6" href="#__codelineno-53-6"></a>    --search-once \
+<a id="__codelineno-53-7" name="__codelineno-53-7" href="#__codelineno-53-7"></a>    --offline-search
 </code></pre></div>
 
 
