@@ -844,6 +844,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../reference/notifications/ntfy/" class="md-nav__link">
+        ntfy
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../reference/notifications/pushbullet/" class="md-nav__link">
         pushbullet
       </a>
@@ -1762,8 +1776,8 @@ functionality can be enabled with  <code>--continuous</code> and notifications c
 </tr>
 <tr>
 <td><code>--notifications</code></td>
-<td>text</td>
-<td>Enables continuous searching. Types of notifications to receive. Options available are 'email', 'pushover', 'pushbullet', 'telegram', 'twilio', or 'silent'. Defaults to 'silent' - which just logs messages to console.</td>
+<td>choice (<code>pushover</code> &#x7C; <code>email</code> &#x7C; <code>ntfy</code> &#x7C; <code>pushbullet</code> &#x7C; <code>slack</code> &#x7C; <code>telegram</code> &#x7C; <code>twilio</code> &#x7C; <code>silent</code>)</td>
+<td>Enables continuous searching. Types of notifications to receive. Options available are <code>pushover</code>, <code>email</code>, <code>ntfy</code>, <code>pushbullet</code>, <code>slack</code>, <code>telegram</code>, <code>twilio</code>, <code>silent</code>. Defaults to <code>silent</code> - which just logs messages to console.</td>
 <td><code>[]</code></td>
 </tr>
 <tr>
@@ -2084,8 +2098,8 @@ National Parks and National Forests that can contain one or many campgrounds.</p
 </tr>
 <tr>
 <td><code>--notifications</code></td>
-<td>text</td>
-<td>Types of notifications to receive. Options available are 'email', 'pushover', 'pushbullet', 'telegram', 'twilio', or 'silent'. Defaults to 'silent' - which just logs messages to console.</td>
+<td>choice (<code>pushover</code> &#x7C; <code>email</code> &#x7C; <code>ntfy</code> &#x7C; <code>pushbullet</code> &#x7C; <code>slack</code> &#x7C; <code>telegram</code> &#x7C; <code>twilio</code> &#x7C; <code>silent</code>)</td>
+<td>Types of notifications to receive. Options available are <code>pushover</code>, <code>email</code>, <code>ntfy</code>, <code>pushbullet</code>, <code>slack</code>, <code>telegram</code>, <code>twilio</code>, <code>silent</code>. Defaults to <code>silent</code> - which just logs messages to console.</td>
 <td>_required</td>
 </tr>
 <tr>
@@ -2132,7 +2146,7 @@ National Parks and National Forests that can contain one or many campgrounds.</p
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tracking", "content.code.annotate"], "search": "../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tracking", "content.code.annotate", "content.code.copy"], "search": "../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../assets/javascripts/bundle.51198bba.min.js"></script>

@@ -591,6 +591,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#camply.config.notification_config.NtfyConfig" class="md-nav__link">
+    NtfyConfig
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#camply.config.notification_config.PushbulletConfig" class="md-nav__link">
     PushbulletConfig
   </a>
@@ -876,6 +883,20 @@
     <li class="md-nav__item">
       <a href="../../notifications/multi_provider_notifications/" class="md-nav__link">
         multi_provider_notifications
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notifications/ntfy/" class="md-nav__link">
+        ntfy
       </a>
     </li>
   
@@ -1603,6 +1624,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#camply.config.notification_config.NtfyConfig" class="md-nav__link">
+    NtfyConfig
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#camply.config.notification_config.PushbulletConfig" class="md-nav__link">
     PushbulletConfig
   </a>
@@ -1777,6 +1805,61 @@
 
 
 
+<h2 id="camply.config.notification_config.NtfyConfig" class="doc doc-heading">
+        <code>NtfyConfig</code>
+
+
+<a href="#camply.config.notification_config.NtfyConfig" class="headerlink" title="Permanent link">#</a></h2>
+
+
+  <div class="doc doc-contents ">
+
+  
+      <p>Ntfy Notification Config Class</p>
+
+
+        <details class="quote">
+          <summary>Source code in <code>camply/config/notification_config.py</code></summary>
+          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-60">60</a></span>
+<span class="normal"><a href="#__codelineno-0-61">61</a></span>
+<span class="normal"><a href="#__codelineno-0-62">62</a></span>
+<span class="normal"><a href="#__codelineno-0-63">63</a></span>
+<span class="normal"><a href="#__codelineno-0-64">64</a></span>
+<span class="normal"><a href="#__codelineno-0-65">65</a></span>
+<span class="normal"><a href="#__codelineno-0-66">66</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-60" name="__codelineno-0-60"></a><span class="k">class</span> <span class="nc">NtfyConfig</span><span class="p">:</span>
+<a id="__codelineno-0-61" name="__codelineno-0-61"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-62" name="__codelineno-0-62"></a><span class="sd">    Ntfy Notification Config Class</span>
+<a id="__codelineno-0-63" name="__codelineno-0-63"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a id="__codelineno-0-64" name="__codelineno-0-64"></a>
+<a id="__codelineno-0-65" name="__codelineno-0-65"></a>    <span class="n">NTFY_API_ENDPOINT</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;https://ntfy.sh/&quot;</span>
+<a id="__codelineno-0-66" name="__codelineno-0-66"></a>    <span class="n">NTFY_TOPIC</span> <span class="o">=</span> <span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;NTFY_TOPIC&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+        </details>
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
 <h2 id="camply.config.notification_config.PushbulletConfig" class="doc doc-heading">
         <code>PushbulletConfig</code>
 
@@ -1792,23 +1875,23 @@
 
         <details class="quote">
           <summary>Source code in <code>camply/config/notification_config.py</code></summary>
-          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-60">60</a></span>
-<span class="normal"><a href="#__codelineno-0-61">61</a></span>
-<span class="normal"><a href="#__codelineno-0-62">62</a></span>
-<span class="normal"><a href="#__codelineno-0-63">63</a></span>
-<span class="normal"><a href="#__codelineno-0-64">64</a></span>
-<span class="normal"><a href="#__codelineno-0-65">65</a></span>
-<span class="normal"><a href="#__codelineno-0-66">66</a></span>
-<span class="normal"><a href="#__codelineno-0-67">67</a></span>
-<span class="normal"><a href="#__codelineno-0-68">68</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-60" name="__codelineno-0-60"></a><span class="k">class</span> <span class="nc">PushbulletConfig</span><span class="p">:</span>
-<a id="__codelineno-0-61" name="__codelineno-0-61"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<a id="__codelineno-0-62" name="__codelineno-0-62"></a><span class="sd">    Pushbullet Notification Config Class</span>
-<a id="__codelineno-0-63" name="__codelineno-0-63"></a><span class="sd">    &quot;&quot;&quot;</span>
-<a id="__codelineno-0-64" name="__codelineno-0-64"></a>
-<a id="__codelineno-0-65" name="__codelineno-0-65"></a>    <span class="n">PUSHBULLET_API_ENDPOINT</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;https://api.pushbullet.com/v2/pushes&quot;</span>
-<a id="__codelineno-0-66" name="__codelineno-0-66"></a>    <span class="n">API_HEADERS</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Content-Type&quot;</span><span class="p">:</span> <span class="s2">&quot;application/json&quot;</span><span class="p">}</span>
-<a id="__codelineno-0-67" name="__codelineno-0-67"></a>
-<a id="__codelineno-0-68" name="__codelineno-0-68"></a>    <span class="n">API_TOKEN</span> <span class="o">=</span> <span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;PUSHBULLET_API_TOKEN&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-69">69</a></span>
+<span class="normal"><a href="#__codelineno-0-70">70</a></span>
+<span class="normal"><a href="#__codelineno-0-71">71</a></span>
+<span class="normal"><a href="#__codelineno-0-72">72</a></span>
+<span class="normal"><a href="#__codelineno-0-73">73</a></span>
+<span class="normal"><a href="#__codelineno-0-74">74</a></span>
+<span class="normal"><a href="#__codelineno-0-75">75</a></span>
+<span class="normal"><a href="#__codelineno-0-76">76</a></span>
+<span class="normal"><a href="#__codelineno-0-77">77</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-69" name="__codelineno-0-69"></a><span class="k">class</span> <span class="nc">PushbulletConfig</span><span class="p">:</span>
+<a id="__codelineno-0-70" name="__codelineno-0-70"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-71" name="__codelineno-0-71"></a><span class="sd">    Pushbullet Notification Config Class</span>
+<a id="__codelineno-0-72" name="__codelineno-0-72"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a id="__codelineno-0-73" name="__codelineno-0-73"></a>
+<a id="__codelineno-0-74" name="__codelineno-0-74"></a>    <span class="n">PUSHBULLET_API_ENDPOINT</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;https://api.pushbullet.com/v2/pushes&quot;</span>
+<a id="__codelineno-0-75" name="__codelineno-0-75"></a>    <span class="n">API_HEADERS</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Content-Type&quot;</span><span class="p">:</span> <span class="s2">&quot;application/json&quot;</span><span class="p">}</span>
+<a id="__codelineno-0-76" name="__codelineno-0-76"></a>
+<a id="__codelineno-0-77" name="__codelineno-0-77"></a>    <span class="n">API_TOKEN</span> <span class="o">=</span> <span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;PUSHBULLET_API_TOKEN&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
         </details>
 
@@ -1914,17 +1997,17 @@
 
         <details class="quote">
           <summary>Source code in <code>camply/config/notification_config.py</code></summary>
-          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-83">83</a></span>
-<span class="normal"><a href="#__codelineno-0-84">84</a></span>
-<span class="normal"><a href="#__codelineno-0-85">85</a></span>
-<span class="normal"><a href="#__codelineno-0-86">86</a></span>
-<span class="normal"><a href="#__codelineno-0-87">87</a></span>
-<span class="normal"><a href="#__codelineno-0-88">88</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-83" name="__codelineno-0-83"></a><span class="k">class</span> <span class="nc">SlackConfig</span><span class="p">:</span>
-<a id="__codelineno-0-84" name="__codelineno-0-84"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<a id="__codelineno-0-85" name="__codelineno-0-85"></a><span class="sd">    Slack Notification Config Class</span>
-<a id="__codelineno-0-86" name="__codelineno-0-86"></a><span class="sd">    &quot;&quot;&quot;</span>
-<a id="__codelineno-0-87" name="__codelineno-0-87"></a>
-<a id="__codelineno-0-88" name="__codelineno-0-88"></a>    <span class="n">SLACK_WEBHOOK</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;SLACK_WEBHOOK&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-92">92</a></span>
+<span class="normal"><a href="#__codelineno-0-93">93</a></span>
+<span class="normal"><a href="#__codelineno-0-94">94</a></span>
+<span class="normal"><a href="#__codelineno-0-95">95</a></span>
+<span class="normal"><a href="#__codelineno-0-96">96</a></span>
+<span class="normal"><a href="#__codelineno-0-97">97</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-92" name="__codelineno-0-92"></a><span class="k">class</span> <span class="nc">SlackConfig</span><span class="p">:</span>
+<a id="__codelineno-0-93" name="__codelineno-0-93"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-94" name="__codelineno-0-94"></a><span class="sd">    Slack Notification Config Class</span>
+<a id="__codelineno-0-95" name="__codelineno-0-95"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a id="__codelineno-0-96" name="__codelineno-0-96"></a>
+<a id="__codelineno-0-97" name="__codelineno-0-97"></a>    <span class="n">SLACK_WEBHOOK</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;SLACK_WEBHOOK&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
         </details>
 
@@ -1967,35 +2050,35 @@
 
         <details class="quote">
           <summary>Source code in <code>camply/config/notification_config.py</code></summary>
-          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-91"> 91</a></span>
-<span class="normal"><a href="#__codelineno-0-92"> 92</a></span>
-<span class="normal"><a href="#__codelineno-0-93"> 93</a></span>
-<span class="normal"><a href="#__codelineno-0-94"> 94</a></span>
-<span class="normal"><a href="#__codelineno-0-95"> 95</a></span>
-<span class="normal"><a href="#__codelineno-0-96"> 96</a></span>
-<span class="normal"><a href="#__codelineno-0-97"> 97</a></span>
-<span class="normal"><a href="#__codelineno-0-98"> 98</a></span>
-<span class="normal"><a href="#__codelineno-0-99"> 99</a></span>
-<span class="normal"><a href="#__codelineno-0-100">100</a></span>
+          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-100">100</a></span>
 <span class="normal"><a href="#__codelineno-0-101">101</a></span>
 <span class="normal"><a href="#__codelineno-0-102">102</a></span>
 <span class="normal"><a href="#__codelineno-0-103">103</a></span>
 <span class="normal"><a href="#__codelineno-0-104">104</a></span>
-<span class="normal"><a href="#__codelineno-0-105">105</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-91" name="__codelineno-0-91"></a><span class="k">class</span> <span class="nc">TelegramConfig</span><span class="p">:</span>
-<a id="__codelineno-0-92" name="__codelineno-0-92"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<a id="__codelineno-0-93" name="__codelineno-0-93"></a><span class="sd">    Telegram Notification Config Class</span>
-<a id="__codelineno-0-94" name="__codelineno-0-94"></a><span class="sd">    &quot;&quot;&quot;</span>
-<a id="__codelineno-0-95" name="__codelineno-0-95"></a>
-<a id="__codelineno-0-96" name="__codelineno-0-96"></a>    <span class="n">BOT_TOKEN</span> <span class="o">=</span> <span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;TELEGRAM_BOT_TOKEN&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
-<a id="__codelineno-0-97" name="__codelineno-0-97"></a>    <span class="n">CHAT_ID</span> <span class="o">=</span> <span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;TELEGRAM_CHAT_ID&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
-<a id="__codelineno-0-98" name="__codelineno-0-98"></a>
-<a id="__codelineno-0-99" name="__codelineno-0-99"></a>    <span class="n">API_ENDPOINT</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;https://api.telegram.org/bot</span><span class="si">{</span><span class="n">BOT_TOKEN</span><span class="si">}</span><span class="s2">/sendMessage&quot;</span>
-<a id="__codelineno-0-100" name="__codelineno-0-100"></a>    <span class="n">API_HEADERS</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Content-Type&quot;</span><span class="p">:</span> <span class="s2">&quot;application/json&quot;</span><span class="p">}</span>
-<a id="__codelineno-0-101" name="__codelineno-0-101"></a>    <span class="n">API_CONTENT</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="p">{</span>
-<a id="__codelineno-0-102" name="__codelineno-0-102"></a>        <span class="s2">&quot;chat_id&quot;</span><span class="p">:</span> <span class="n">CHAT_ID</span><span class="p">,</span>
-<a id="__codelineno-0-103" name="__codelineno-0-103"></a>        <span class="s2">&quot;parse_mode&quot;</span><span class="p">:</span> <span class="s2">&quot;MarkdownV2&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-104" name="__codelineno-0-104"></a>        <span class="s2">&quot;disable_web_page_preview&quot;</span><span class="p">:</span> <span class="s2">&quot;true&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-105" name="__codelineno-0-105"></a>    <span class="p">}</span>
+<span class="normal"><a href="#__codelineno-0-105">105</a></span>
+<span class="normal"><a href="#__codelineno-0-106">106</a></span>
+<span class="normal"><a href="#__codelineno-0-107">107</a></span>
+<span class="normal"><a href="#__codelineno-0-108">108</a></span>
+<span class="normal"><a href="#__codelineno-0-109">109</a></span>
+<span class="normal"><a href="#__codelineno-0-110">110</a></span>
+<span class="normal"><a href="#__codelineno-0-111">111</a></span>
+<span class="normal"><a href="#__codelineno-0-112">112</a></span>
+<span class="normal"><a href="#__codelineno-0-113">113</a></span>
+<span class="normal"><a href="#__codelineno-0-114">114</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-100" name="__codelineno-0-100"></a><span class="k">class</span> <span class="nc">TelegramConfig</span><span class="p">:</span>
+<a id="__codelineno-0-101" name="__codelineno-0-101"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-102" name="__codelineno-0-102"></a><span class="sd">    Telegram Notification Config Class</span>
+<a id="__codelineno-0-103" name="__codelineno-0-103"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a id="__codelineno-0-104" name="__codelineno-0-104"></a>
+<a id="__codelineno-0-105" name="__codelineno-0-105"></a>    <span class="n">BOT_TOKEN</span> <span class="o">=</span> <span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;TELEGRAM_BOT_TOKEN&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+<a id="__codelineno-0-106" name="__codelineno-0-106"></a>    <span class="n">CHAT_ID</span> <span class="o">=</span> <span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;TELEGRAM_CHAT_ID&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+<a id="__codelineno-0-107" name="__codelineno-0-107"></a>
+<a id="__codelineno-0-108" name="__codelineno-0-108"></a>    <span class="n">API_ENDPOINT</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;https://api.telegram.org/bot</span><span class="si">{</span><span class="n">BOT_TOKEN</span><span class="si">}</span><span class="s2">/sendMessage&quot;</span>
+<a id="__codelineno-0-109" name="__codelineno-0-109"></a>    <span class="n">API_HEADERS</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Content-Type&quot;</span><span class="p">:</span> <span class="s2">&quot;application/json&quot;</span><span class="p">}</span>
+<a id="__codelineno-0-110" name="__codelineno-0-110"></a>    <span class="n">API_CONTENT</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-0-111" name="__codelineno-0-111"></a>        <span class="s2">&quot;chat_id&quot;</span><span class="p">:</span> <span class="n">CHAT_ID</span><span class="p">,</span>
+<a id="__codelineno-0-112" name="__codelineno-0-112"></a>        <span class="s2">&quot;parse_mode&quot;</span><span class="p">:</span> <span class="s2">&quot;MarkdownV2&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-113" name="__codelineno-0-113"></a>        <span class="s2">&quot;disable_web_page_preview&quot;</span><span class="p">:</span> <span class="s2">&quot;true&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-114" name="__codelineno-0-114"></a>    <span class="p">}</span>
 </code></pre></div></td></tr></table></div>
         </details>
 
@@ -2038,25 +2121,25 @@
 
         <details class="quote">
           <summary>Source code in <code>camply/config/notification_config.py</code></summary>
-          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-71">71</a></span>
-<span class="normal"><a href="#__codelineno-0-72">72</a></span>
-<span class="normal"><a href="#__codelineno-0-73">73</a></span>
-<span class="normal"><a href="#__codelineno-0-74">74</a></span>
-<span class="normal"><a href="#__codelineno-0-75">75</a></span>
-<span class="normal"><a href="#__codelineno-0-76">76</a></span>
-<span class="normal"><a href="#__codelineno-0-77">77</a></span>
-<span class="normal"><a href="#__codelineno-0-78">78</a></span>
-<span class="normal"><a href="#__codelineno-0-79">79</a></span>
-<span class="normal"><a href="#__codelineno-0-80">80</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-71" name="__codelineno-0-71"></a><span class="k">class</span> <span class="nc">TwilioConfig</span><span class="p">:</span>
-<a id="__codelineno-0-72" name="__codelineno-0-72"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<a id="__codelineno-0-73" name="__codelineno-0-73"></a><span class="sd">    Twilio Notification Config Class</span>
-<a id="__codelineno-0-74" name="__codelineno-0-74"></a><span class="sd">    &quot;&quot;&quot;</span>
-<a id="__codelineno-0-75" name="__codelineno-0-75"></a>
-<a id="__codelineno-0-76" name="__codelineno-0-76"></a>    <span class="n">ACCOUNT_SID</span> <span class="o">=</span> <span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;TWILIO_ACCOUNT_SID&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
-<a id="__codelineno-0-77" name="__codelineno-0-77"></a>    <span class="n">AUTH_TOKEN</span> <span class="o">=</span> <span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;TWILIO_AUTH_TOKEN&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
-<a id="__codelineno-0-78" name="__codelineno-0-78"></a>    <span class="n">SOURCE_NUMBER</span> <span class="o">=</span> <span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;TWILIO_SOURCE_NUMBER&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
-<a id="__codelineno-0-79" name="__codelineno-0-79"></a>    <span class="c1"># comma separated set of phone numbers</span>
-<a id="__codelineno-0-80" name="__codelineno-0-80"></a>    <span class="n">DEST_NUMBERS</span> <span class="o">=</span> <span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;TWILIO_DEST_NUMBERS&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-80">80</a></span>
+<span class="normal"><a href="#__codelineno-0-81">81</a></span>
+<span class="normal"><a href="#__codelineno-0-82">82</a></span>
+<span class="normal"><a href="#__codelineno-0-83">83</a></span>
+<span class="normal"><a href="#__codelineno-0-84">84</a></span>
+<span class="normal"><a href="#__codelineno-0-85">85</a></span>
+<span class="normal"><a href="#__codelineno-0-86">86</a></span>
+<span class="normal"><a href="#__codelineno-0-87">87</a></span>
+<span class="normal"><a href="#__codelineno-0-88">88</a></span>
+<span class="normal"><a href="#__codelineno-0-89">89</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-80" name="__codelineno-0-80"></a><span class="k">class</span> <span class="nc">TwilioConfig</span><span class="p">:</span>
+<a id="__codelineno-0-81" name="__codelineno-0-81"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-82" name="__codelineno-0-82"></a><span class="sd">    Twilio Notification Config Class</span>
+<a id="__codelineno-0-83" name="__codelineno-0-83"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a id="__codelineno-0-84" name="__codelineno-0-84"></a>
+<a id="__codelineno-0-85" name="__codelineno-0-85"></a>    <span class="n">ACCOUNT_SID</span> <span class="o">=</span> <span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;TWILIO_ACCOUNT_SID&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+<a id="__codelineno-0-86" name="__codelineno-0-86"></a>    <span class="n">AUTH_TOKEN</span> <span class="o">=</span> <span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;TWILIO_AUTH_TOKEN&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+<a id="__codelineno-0-87" name="__codelineno-0-87"></a>    <span class="n">SOURCE_NUMBER</span> <span class="o">=</span> <span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;TWILIO_SOURCE_NUMBER&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+<a id="__codelineno-0-88" name="__codelineno-0-88"></a>    <span class="c1"># comma separated set of phone numbers</span>
+<a id="__codelineno-0-89" name="__codelineno-0-89"></a>    <span class="n">DEST_NUMBERS</span> <span class="o">=</span> <span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;TWILIO_DEST_NUMBERS&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
         </details>
 
@@ -2124,7 +2207,7 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tracking", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tracking", "content.code.annotate", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../../assets/javascripts/bundle.51198bba.min.js"></script>

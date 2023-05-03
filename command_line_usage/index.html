@@ -1147,6 +1147,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../reference/notifications/ntfy/" class="md-nav__link">
+        ntfy
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../reference/notifications/pushbullet/" class="md-nav__link">
         pushbullet
       </a>
@@ -2257,8 +2271,8 @@ campgrounds, and campsites listed on <a href="https://recreation.gov">https://re
 Campsites contain properties like booking date, site type (tent, RV, cabin, etc), capacity, price,
 and a link to make the booking. Required parameters include <code>--start-date</code>, <code>--end-date</code>,
 <code>--rec-area</code> / <code>--campground</code> / <code>--campsite</code>. Constant searching functionality can be enabled with
-<code>--continuous</code> and notifications via Email, Pushover, Pushbullet, Twilio, Slack, and Telegram can
-be enabled using <code>--notifications</code>.</p>
+<code>--continuous</code> and notifications can be enabled using <code>--notifications</code> (see the
+<a href="#send-a-push-notification">Send a Push Notification</a> section for more information).</p>
 <h3 id="arguments">Arguments<a class="headerlink" href="#arguments" title="Permanent link">#</a></h3>
 <ul>
 <li><code>--rec-area</code>: <code>RECREATION_AREA_ID</code><ul>
@@ -2326,8 +2340,8 @@ be enabled using <code>--notifications</code>.</p>
 </li>
 <li><code>--notifications</code>: <code>NOTIFICATIONS</code><ul>
 <li>Enables continuous searching. Types of notifications to receive. Options available
-    are<code>email</code>, <code>pushover</code>, <code>pushbullet</code>, <code>telegram</code>, or <code>silent</code>. Defaults to <code>silent</code> - which just logs
-    messages to console.
+    are <code>pushover</code>, <code>email</code>, <code>ntfy</code>, <code>pushbullet</code>, <code>slack</code>, <code>telegram</code>, <code>twilio</code>, <code>silent</code>.
+    Defaults to <code>silent</code> - which just logs messages to console.
     <a href="#send-a-push-notification">**<em>example</em></a></li>
 </ul>
 </li>
@@ -2587,12 +2601,14 @@ available more than once.</p>
 <h3 id="send-a-push-notification">Send a Push Notification<a class="headerlink" href="#send-a-push-notification" title="Permanent link">#</a></h3>
 <p>camply supports notifications via a number of services:</p>
 <ul>
-<li><code>Email</code></li>
-<li><code>Pushover</code></li>
-<li><code>Pushbullet</code></li>
-<li><code>Telegram</code></li>
-<li><code>Slack</code></li>
-<li><code>Twilio</code> (SMS)</li>
+<li><a href="https://pushover.net">Pushover</a></li>
+<li>Email</li>
+<li><a href="https://ntfy.sh">Ntfy</a></li>
+<li><a href="https://www.pushbullet.com/#settings/account">Pushbullet</a></li>
+<li><a href="https://slack.com">Slack</a></li>
+<li><a href="https://core.telegram.org/bots">Telegram</a></li>
+<li><a href="https://www.twilio.com">Twilio (SMS)</a></li>
+<li>Silent</li>
 </ul>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>camply campsites \
 <a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>    --rec-area 2991 \
@@ -2615,7 +2631,7 @@ provider simply prints logs to your console when matching campsites are found.</
 <p class="admonition-title">Note</p>
 <p>I personally use <a href="https://pushover.net">Pushover</a> notifications - it's built for push notifications, easy to set up,
 and includes a 30-day trial and a one-time fee of $5 after that to unlock lifetime programmatic push notifications.
-There are other notification providers like <code>Slack</code> and <code>Email</code> that are free to use if that's more your style.</p>
+There are other notification providers like <code>Ntfy</code>, <code>Slack</code> and <code>Email</code> that are free to use if that's more your style.</p>
 </div>
 <h3 id="send-a-text-message">Send a Text Message<a class="headerlink" href="#send-a-text-message" title="Permanent link">#</a></h3>
 <p>If you want to sign up for a <a href="https://www.twilio.com/try-twilio">Twilio</a> account, camply also supports
@@ -3009,7 +3025,7 @@ camply to save any campsites it finds between searches so that it only sends you
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tracking", "content.code.annotate"], "search": "../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tracking", "content.code.annotate", "content.code.copy"], "search": "../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../assets/javascripts/bundle.51198bba.min.js"></script>
