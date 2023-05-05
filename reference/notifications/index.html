@@ -14,7 +14,7 @@
         <link rel="prev" href="../exceptions/">
       
       
-        <link rel="next" href="base_notifications/">
+        <link rel="next" href="apprise/">
       
       <link rel="icon" href="../../_static/camply.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.7">
@@ -760,6 +760,20 @@
           notifications
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="apprise/" class="md-nav__link">
+        apprise
+      </a>
+    </li>
+  
+
+            
           
             
               
@@ -1531,6 +1545,33 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#camply.notifications.AppriseNotifications" class="md-nav__link">
+    AppriseNotifications
+  </a>
+  
+    <nav class="md-nav" aria-label="AppriseNotifications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#camply.notifications.apprise.AppriseNotifications.send_campsites" class="md-nav__link">
+    send_campsites()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#camply.notifications.apprise.AppriseNotifications.send_message" class="md-nav__link">
+    send_message()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#camply.notifications.EmailNotifications" class="md-nav__link">
     EmailNotifications
   </a>
@@ -1819,6 +1860,325 @@
 
 
 
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="camply.notifications.AppriseNotifications" class="doc doc-heading">
+        <code>AppriseNotifications</code>
+
+
+<a href="#camply.notifications.AppriseNotifications" class="headerlink" title="Permanent link">#</a></h2>
+
+
+  <div class="doc doc-contents ">
+      <p class="doc doc-class-bases">
+        Bases: <code><a class="autorefs autorefs-internal" title="camply.notifications.base_notifications.BaseNotifications" href="base_notifications/#camply.notifications.base_notifications.BaseNotifications">BaseNotifications</a></code></p>
+
+  
+      <p>Push Notifications via Apprise</p>
+
+
+        <details class="quote">
+          <summary>Source code in <code>camply/notifications/apprise.py</code></summary>
+          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-16">16</a></span>
+<span class="normal"><a href="#__codelineno-0-17">17</a></span>
+<span class="normal"><a href="#__codelineno-0-18">18</a></span>
+<span class="normal"><a href="#__codelineno-0-19">19</a></span>
+<span class="normal"><a href="#__codelineno-0-20">20</a></span>
+<span class="normal"><a href="#__codelineno-0-21">21</a></span>
+<span class="normal"><a href="#__codelineno-0-22">22</a></span>
+<span class="normal"><a href="#__codelineno-0-23">23</a></span>
+<span class="normal"><a href="#__codelineno-0-24">24</a></span>
+<span class="normal"><a href="#__codelineno-0-25">25</a></span>
+<span class="normal"><a href="#__codelineno-0-26">26</a></span>
+<span class="normal"><a href="#__codelineno-0-27">27</a></span>
+<span class="normal"><a href="#__codelineno-0-28">28</a></span>
+<span class="normal"><a href="#__codelineno-0-29">29</a></span>
+<span class="normal"><a href="#__codelineno-0-30">30</a></span>
+<span class="normal"><a href="#__codelineno-0-31">31</a></span>
+<span class="normal"><a href="#__codelineno-0-32">32</a></span>
+<span class="normal"><a href="#__codelineno-0-33">33</a></span>
+<span class="normal"><a href="#__codelineno-0-34">34</a></span>
+<span class="normal"><a href="#__codelineno-0-35">35</a></span>
+<span class="normal"><a href="#__codelineno-0-36">36</a></span>
+<span class="normal"><a href="#__codelineno-0-37">37</a></span>
+<span class="normal"><a href="#__codelineno-0-38">38</a></span>
+<span class="normal"><a href="#__codelineno-0-39">39</a></span>
+<span class="normal"><a href="#__codelineno-0-40">40</a></span>
+<span class="normal"><a href="#__codelineno-0-41">41</a></span>
+<span class="normal"><a href="#__codelineno-0-42">42</a></span>
+<span class="normal"><a href="#__codelineno-0-43">43</a></span>
+<span class="normal"><a href="#__codelineno-0-44">44</a></span>
+<span class="normal"><a href="#__codelineno-0-45">45</a></span>
+<span class="normal"><a href="#__codelineno-0-46">46</a></span>
+<span class="normal"><a href="#__codelineno-0-47">47</a></span>
+<span class="normal"><a href="#__codelineno-0-48">48</a></span>
+<span class="normal"><a href="#__codelineno-0-49">49</a></span>
+<span class="normal"><a href="#__codelineno-0-50">50</a></span>
+<span class="normal"><a href="#__codelineno-0-51">51</a></span>
+<span class="normal"><a href="#__codelineno-0-52">52</a></span>
+<span class="normal"><a href="#__codelineno-0-53">53</a></span>
+<span class="normal"><a href="#__codelineno-0-54">54</a></span>
+<span class="normal"><a href="#__codelineno-0-55">55</a></span>
+<span class="normal"><a href="#__codelineno-0-56">56</a></span>
+<span class="normal"><a href="#__codelineno-0-57">57</a></span>
+<span class="normal"><a href="#__codelineno-0-58">58</a></span>
+<span class="normal"><a href="#__codelineno-0-59">59</a></span>
+<span class="normal"><a href="#__codelineno-0-60">60</a></span>
+<span class="normal"><a href="#__codelineno-0-61">61</a></span>
+<span class="normal"><a href="#__codelineno-0-62">62</a></span>
+<span class="normal"><a href="#__codelineno-0-63">63</a></span>
+<span class="normal"><a href="#__codelineno-0-64">64</a></span>
+<span class="normal"><a href="#__codelineno-0-65">65</a></span>
+<span class="normal"><a href="#__codelineno-0-66">66</a></span>
+<span class="normal"><a href="#__codelineno-0-67">67</a></span>
+<span class="normal"><a href="#__codelineno-0-68">68</a></span>
+<span class="normal"><a href="#__codelineno-0-69">69</a></span>
+<span class="normal"><a href="#__codelineno-0-70">70</a></span>
+<span class="normal"><a href="#__codelineno-0-71">71</a></span>
+<span class="normal"><a href="#__codelineno-0-72">72</a></span>
+<span class="normal"><a href="#__codelineno-0-73">73</a></span>
+<span class="normal"><a href="#__codelineno-0-74">74</a></span>
+<span class="normal"><a href="#__codelineno-0-75">75</a></span>
+<span class="normal"><a href="#__codelineno-0-76">76</a></span>
+<span class="normal"><a href="#__codelineno-0-77">77</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-16" name="__codelineno-0-16"></a><span class="k">class</span> <span class="nc">AppriseNotifications</span><span class="p">(</span><span class="n">BaseNotifications</span><span class="p">):</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18"></a><span class="sd">    Push Notifications via Apprise</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20"></a>
+<a id="__codelineno-0-21" name="__codelineno-0-21"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-0-22" name="__codelineno-0-22"></a>        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+<a id="__codelineno-0-23" name="__codelineno-0-23"></a>        <span class="k">try</span><span class="p">:</span>
+<a id="__codelineno-0-24" name="__codelineno-0-24"></a>            <span class="kn">import</span> <span class="nn">apprise</span>
+<a id="__codelineno-0-25" name="__codelineno-0-25"></a>        <span class="k">except</span> <span class="ne">ImportError</span> <span class="k">as</span> <span class="n">ie</span><span class="p">:</span>
+<a id="__codelineno-0-26" name="__codelineno-0-26"></a>            <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span>
+<a id="__codelineno-0-27" name="__codelineno-0-27"></a>                <span class="s2">&quot;Looks like `apprise` isn&#39;t installed. Install it with `pip install camply[apprise]`&quot;</span>
+<a id="__codelineno-0-28" name="__codelineno-0-28"></a>            <span class="p">)</span> <span class="kn">from</span> <span class="nn">ie</span>
+<a id="__codelineno-0-29" name="__codelineno-0-29"></a>
+<a id="__codelineno-0-30" name="__codelineno-0-30"></a>        <span class="k">if</span> <span class="nb">any</span><span class="p">(</span>
+<a id="__codelineno-0-31" name="__codelineno-0-31"></a>            <span class="p">[</span>
+<a id="__codelineno-0-32" name="__codelineno-0-32"></a>                <span class="n">AppriseConfig</span><span class="o">.</span><span class="n">APPRISE_URL</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">,</span>
+<a id="__codelineno-0-33" name="__codelineno-0-33"></a>            <span class="p">]</span>
+<a id="__codelineno-0-34" name="__codelineno-0-34"></a>        <span class="p">):</span>
+<a id="__codelineno-0-35" name="__codelineno-0-35"></a>            <span class="n">warning_message</span> <span class="o">=</span> <span class="p">(</span>
+<a id="__codelineno-0-36" name="__codelineno-0-36"></a>                <span class="s2">&quot;Apprise is not configured properly. To send Apprise notifications &quot;</span>
+<a id="__codelineno-0-37" name="__codelineno-0-37"></a>                <span class="s2">&quot;make sure to run `camply configure` or set the &quot;</span>
+<a id="__codelineno-0-38" name="__codelineno-0-38"></a>                <span class="s2">&quot;proper environment variable: `APPRISE_URL`.&quot;</span>
+<a id="__codelineno-0-39" name="__codelineno-0-39"></a>            <span class="p">)</span>
+<a id="__codelineno-0-40" name="__codelineno-0-40"></a>            <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="n">warning_message</span><span class="p">)</span>
+<a id="__codelineno-0-41" name="__codelineno-0-41"></a>            <span class="k">raise</span> <span class="ne">EnvironmentError</span><span class="p">(</span><span class="n">warning_message</span><span class="p">)</span>
+<a id="__codelineno-0-42" name="__codelineno-0-42"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">client</span> <span class="o">=</span> <span class="n">apprise</span><span class="o">.</span><span class="n">Apprise</span><span class="p">()</span>
+<a id="__codelineno-0-43" name="__codelineno-0-43"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">AppriseConfig</span><span class="o">.</span><span class="n">APPRISE_URL</span><span class="p">)</span>
+<a id="__codelineno-0-44" name="__codelineno-0-44"></a>        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Apprise: will notify specified URL&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-45" name="__codelineno-0-45"></a>
+<a id="__codelineno-0-46" name="__codelineno-0-46"></a>    <span class="k">def</span> <span class="nf">send_message</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<a id="__codelineno-0-47" name="__codelineno-0-47"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-48" name="__codelineno-0-48"></a><span class="sd">        Send a message via Apprise - if environment variables are configured</span>
+<a id="__codelineno-0-49" name="__codelineno-0-49"></a>
+<a id="__codelineno-0-50" name="__codelineno-0-50"></a><span class="sd">        Parameters</span>
+<a id="__codelineno-0-51" name="__codelineno-0-51"></a><span class="sd">        ----------</span>
+<a id="__codelineno-0-52" name="__codelineno-0-52"></a><span class="sd">        message: str</span>
+<a id="__codelineno-0-53" name="__codelineno-0-53"></a><span class="sd">        &quot;&quot;&quot;</span>
+<a id="__codelineno-0-54" name="__codelineno-0-54"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">notify</span><span class="p">(</span>
+<a id="__codelineno-0-55" name="__codelineno-0-55"></a>            <span class="n">body</span><span class="o">=</span><span class="n">message</span><span class="p">,</span>
+<a id="__codelineno-0-56" name="__codelineno-0-56"></a>            <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Camply Notification&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-57" name="__codelineno-0-57"></a>        <span class="p">)</span>
+<a id="__codelineno-0-58" name="__codelineno-0-58"></a>
+<a id="__codelineno-0-59" name="__codelineno-0-59"></a>    <span class="k">def</span> <span class="nf">send_campsites</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">campsites</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">AvailableCampsite</span><span class="p">],</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<a id="__codelineno-0-60" name="__codelineno-0-60"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-61" name="__codelineno-0-61"></a><span class="sd">        Send a message with a campsite object</span>
+<a id="__codelineno-0-62" name="__codelineno-0-62"></a>
+<a id="__codelineno-0-63" name="__codelineno-0-63"></a><span class="sd">        Parameters</span>
+<a id="__codelineno-0-64" name="__codelineno-0-64"></a><span class="sd">        ----------</span>
+<a id="__codelineno-0-65" name="__codelineno-0-65"></a><span class="sd">        campsites: AvailableCampsite</span>
+<a id="__codelineno-0-66" name="__codelineno-0-66"></a><span class="sd">        &quot;&quot;&quot;</span>
+<a id="__codelineno-0-67" name="__codelineno-0-67"></a>        <span class="k">for</span> <span class="n">campsite</span> <span class="ow">in</span> <span class="n">campsites</span><span class="p">:</span>
+<a id="__codelineno-0-68" name="__codelineno-0-68"></a>            <span class="n">message_title</span><span class="p">,</span> <span class="n">formatted_dict</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">format_standard_campsites</span><span class="p">(</span>
+<a id="__codelineno-0-69" name="__codelineno-0-69"></a>                <span class="n">campsite</span><span class="o">=</span><span class="n">campsite</span><span class="p">,</span>
+<a id="__codelineno-0-70" name="__codelineno-0-70"></a>            <span class="p">)</span>
+<a id="__codelineno-0-71" name="__codelineno-0-71"></a>            <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;🏕</span><span class="si">{</span><span class="n">message_title</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">]</span>
+<a id="__codelineno-0-72" name="__codelineno-0-72"></a>            <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">formatted_dict</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+<a id="__codelineno-0-73" name="__codelineno-0-73"></a>                <span class="n">fields</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-74" name="__codelineno-0-74"></a>            <span class="n">fields</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-75" name="__codelineno-0-75"></a>            <span class="n">fields</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;camply, the campsite finder ⛺️&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-76" name="__codelineno-0-76"></a>            <span class="n">composed_message</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">fields</span><span class="p">)</span>
+<a id="__codelineno-0-77" name="__codelineno-0-77"></a>            <span class="bp">self</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span><span class="n">message</span><span class="o">=</span><span class="n">composed_message</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+        </details>
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="camply.notifications.apprise.AppriseNotifications.send_campsites" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">send_campsites</span><span class="p">(</span><span class="n">campsites</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+<a href="#camply.notifications.apprise.AppriseNotifications.send_campsites" class="headerlink" title="Permanent link">#</a></h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Send a message with a campsite object</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>campsites</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.List" href="https://docs.python.org/3/library/typing.html#typing.List">List</a>[<a class="autorefs autorefs-internal" title="camply.containers.AvailableCampsite" href="../containers/#camply.containers.AvailableCampsite">AvailableCampsite</a>]</code>
+          </td>
+          <td></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+      <details class="quote">
+        <summary>Source code in <code>camply/notifications/apprise.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-59">59</a></span>
+<span class="normal"><a href="#__codelineno-0-60">60</a></span>
+<span class="normal"><a href="#__codelineno-0-61">61</a></span>
+<span class="normal"><a href="#__codelineno-0-62">62</a></span>
+<span class="normal"><a href="#__codelineno-0-63">63</a></span>
+<span class="normal"><a href="#__codelineno-0-64">64</a></span>
+<span class="normal"><a href="#__codelineno-0-65">65</a></span>
+<span class="normal"><a href="#__codelineno-0-66">66</a></span>
+<span class="normal"><a href="#__codelineno-0-67">67</a></span>
+<span class="normal"><a href="#__codelineno-0-68">68</a></span>
+<span class="normal"><a href="#__codelineno-0-69">69</a></span>
+<span class="normal"><a href="#__codelineno-0-70">70</a></span>
+<span class="normal"><a href="#__codelineno-0-71">71</a></span>
+<span class="normal"><a href="#__codelineno-0-72">72</a></span>
+<span class="normal"><a href="#__codelineno-0-73">73</a></span>
+<span class="normal"><a href="#__codelineno-0-74">74</a></span>
+<span class="normal"><a href="#__codelineno-0-75">75</a></span>
+<span class="normal"><a href="#__codelineno-0-76">76</a></span>
+<span class="normal"><a href="#__codelineno-0-77">77</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-59" name="__codelineno-0-59"></a><span class="k">def</span> <span class="nf">send_campsites</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">campsites</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">AvailableCampsite</span><span class="p">],</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<a id="__codelineno-0-60" name="__codelineno-0-60"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-61" name="__codelineno-0-61"></a><span class="sd">    Send a message with a campsite object</span>
+<a id="__codelineno-0-62" name="__codelineno-0-62"></a>
+<a id="__codelineno-0-63" name="__codelineno-0-63"></a><span class="sd">    Parameters</span>
+<a id="__codelineno-0-64" name="__codelineno-0-64"></a><span class="sd">    ----------</span>
+<a id="__codelineno-0-65" name="__codelineno-0-65"></a><span class="sd">    campsites: AvailableCampsite</span>
+<a id="__codelineno-0-66" name="__codelineno-0-66"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a id="__codelineno-0-67" name="__codelineno-0-67"></a>    <span class="k">for</span> <span class="n">campsite</span> <span class="ow">in</span> <span class="n">campsites</span><span class="p">:</span>
+<a id="__codelineno-0-68" name="__codelineno-0-68"></a>        <span class="n">message_title</span><span class="p">,</span> <span class="n">formatted_dict</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">format_standard_campsites</span><span class="p">(</span>
+<a id="__codelineno-0-69" name="__codelineno-0-69"></a>            <span class="n">campsite</span><span class="o">=</span><span class="n">campsite</span><span class="p">,</span>
+<a id="__codelineno-0-70" name="__codelineno-0-70"></a>        <span class="p">)</span>
+<a id="__codelineno-0-71" name="__codelineno-0-71"></a>        <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;🏕</span><span class="si">{</span><span class="n">message_title</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">]</span>
+<a id="__codelineno-0-72" name="__codelineno-0-72"></a>        <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">formatted_dict</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+<a id="__codelineno-0-73" name="__codelineno-0-73"></a>            <span class="n">fields</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-74" name="__codelineno-0-74"></a>        <span class="n">fields</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-75" name="__codelineno-0-75"></a>        <span class="n">fields</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;camply, the campsite finder ⛺️&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-76" name="__codelineno-0-76"></a>        <span class="n">composed_message</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">fields</span><span class="p">)</span>
+<a id="__codelineno-0-77" name="__codelineno-0-77"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span><span class="n">message</span><span class="o">=</span><span class="n">composed_message</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="camply.notifications.apprise.AppriseNotifications.send_message" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">send_message</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+<a href="#camply.notifications.apprise.AppriseNotifications.send_message" class="headerlink" title="Permanent link">#</a></h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Send a message via Apprise - if environment variables are configured</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>message</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
+          </td>
+          <td></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+      <details class="quote">
+        <summary>Source code in <code>camply/notifications/apprise.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-46">46</a></span>
+<span class="normal"><a href="#__codelineno-0-47">47</a></span>
+<span class="normal"><a href="#__codelineno-0-48">48</a></span>
+<span class="normal"><a href="#__codelineno-0-49">49</a></span>
+<span class="normal"><a href="#__codelineno-0-50">50</a></span>
+<span class="normal"><a href="#__codelineno-0-51">51</a></span>
+<span class="normal"><a href="#__codelineno-0-52">52</a></span>
+<span class="normal"><a href="#__codelineno-0-53">53</a></span>
+<span class="normal"><a href="#__codelineno-0-54">54</a></span>
+<span class="normal"><a href="#__codelineno-0-55">55</a></span>
+<span class="normal"><a href="#__codelineno-0-56">56</a></span>
+<span class="normal"><a href="#__codelineno-0-57">57</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-46" name="__codelineno-0-46"></a><span class="k">def</span> <span class="nf">send_message</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<a id="__codelineno-0-47" name="__codelineno-0-47"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-48" name="__codelineno-0-48"></a><span class="sd">    Send a message via Apprise - if environment variables are configured</span>
+<a id="__codelineno-0-49" name="__codelineno-0-49"></a>
+<a id="__codelineno-0-50" name="__codelineno-0-50"></a><span class="sd">    Parameters</span>
+<a id="__codelineno-0-51" name="__codelineno-0-51"></a><span class="sd">    ----------</span>
+<a id="__codelineno-0-52" name="__codelineno-0-52"></a><span class="sd">    message: str</span>
+<a id="__codelineno-0-53" name="__codelineno-0-53"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a id="__codelineno-0-54" name="__codelineno-0-54"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">notify</span><span class="p">(</span>
+<a id="__codelineno-0-55" name="__codelineno-0-55"></a>        <span class="n">body</span><span class="o">=</span><span class="n">message</span><span class="p">,</span>
+<a id="__codelineno-0-56" name="__codelineno-0-56"></a>        <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Camply Notification&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-57" name="__codelineno-0-57"></a>    <span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+</div>
 
 <div class="doc doc-object doc-class">
 
@@ -2426,9 +2786,7 @@
 
         <details class="quote">
           <summary>Source code in <code>camply/notifications/multi_provider_notifications.py</code></summary>
-          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-33"> 33</a></span>
-<span class="normal"><a href="#__codelineno-0-34"> 34</a></span>
-<span class="normal"><a href="#__codelineno-0-35"> 35</a></span>
+          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-35"> 35</a></span>
 <span class="normal"><a href="#__codelineno-0-36"> 36</a></span>
 <span class="normal"><a href="#__codelineno-0-37"> 37</a></span>
 <span class="normal"><a href="#__codelineno-0-38"> 38</a></span>
@@ -2498,79 +2856,81 @@
 <span class="normal"><a href="#__codelineno-0-102">102</a></span>
 <span class="normal"><a href="#__codelineno-0-103">103</a></span>
 <span class="normal"><a href="#__codelineno-0-104">104</a></span>
-<span class="normal"><a href="#__codelineno-0-105">105</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-33" name="__codelineno-0-33"></a><span class="k">class</span> <span class="nc">MultiNotifierProvider</span><span class="p">(</span><span class="n">BaseNotifications</span><span class="p">):</span>
-<a id="__codelineno-0-34" name="__codelineno-0-34"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<a id="__codelineno-0-35" name="__codelineno-0-35"></a><span class="sd">    Notifications Supported from Multiple Providers</span>
-<a id="__codelineno-0-36" name="__codelineno-0-36"></a><span class="sd">    &quot;&quot;&quot;</span>
-<a id="__codelineno-0-37" name="__codelineno-0-37"></a>
-<a id="__codelineno-0-38" name="__codelineno-0-38"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">provider</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">BaseNotifications</span><span class="p">,</span> <span class="kc">None</span><span class="p">]):</span>
-<a id="__codelineno-0-39" name="__codelineno-0-39"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<a id="__codelineno-0-40" name="__codelineno-0-40"></a><span class="sd">        Initialize with a Notifier Class Object, a string or list of strings</span>
-<a id="__codelineno-0-41" name="__codelineno-0-41"></a>
-<a id="__codelineno-0-42" name="__codelineno-0-42"></a><span class="sd">        Parameters</span>
-<a id="__codelineno-0-43" name="__codelineno-0-43"></a><span class="sd">        ----------</span>
-<a id="__codelineno-0-44" name="__codelineno-0-44"></a><span class="sd">        provider: Union[str, List[str], BaseNotifications, None]</span>
-<a id="__codelineno-0-45" name="__codelineno-0-45"></a><span class="sd">            Provider String, Comma Separated Provider String, or list of provider</span>
-<a id="__codelineno-0-46" name="__codelineno-0-46"></a><span class="sd">            strings</span>
-<a id="__codelineno-0-47" name="__codelineno-0-47"></a><span class="sd">        &quot;&quot;&quot;</span>
-<a id="__codelineno-0-48" name="__codelineno-0-48"></a>        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
-<a id="__codelineno-0-49" name="__codelineno-0-49"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">providers</span> <span class="o">=</span> <span class="p">[</span><span class="n">SilentNotifications</span><span class="p">()]</span>
-<a id="__codelineno-0-50" name="__codelineno-0-50"></a>        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">provider</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
-<a id="__codelineno-0-51" name="__codelineno-0-51"></a>            <span class="n">provider</span> <span class="o">=</span> <span class="p">[</span><span class="n">prov_string</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">prov_string</span> <span class="ow">in</span> <span class="n">provider</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)]</span>
-<a id="__codelineno-0-52" name="__codelineno-0-52"></a>        <span class="k">for</span> <span class="n">notifier_object</span> <span class="ow">in</span> <span class="n">provider</span><span class="p">:</span>
-<a id="__codelineno-0-53" name="__codelineno-0-53"></a>            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">notifier_object</span><span class="p">,</span> <span class="n">BaseNotifications</span><span class="p">):</span>
-<a id="__codelineno-0-54" name="__codelineno-0-54"></a>                <span class="n">notifier</span> <span class="o">=</span> <span class="n">notifier_object</span>
-<a id="__codelineno-0-55" name="__codelineno-0-55"></a>            <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">notifier_object</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
-<a id="__codelineno-0-56" name="__codelineno-0-56"></a>                <span class="n">notifier</span> <span class="o">=</span> <span class="n">CAMPSITE_NOTIFICATIONS</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">notifier_object</span><span class="o">.</span><span class="n">lower</span><span class="p">(),</span> <span class="kc">None</span><span class="p">)()</span>
-<a id="__codelineno-0-57" name="__codelineno-0-57"></a>            <span class="k">elif</span> <span class="n">notifier_object</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-<a id="__codelineno-0-58" name="__codelineno-0-58"></a>                <span class="n">notifier</span> <span class="o">=</span> <span class="kc">None</span>
-<a id="__codelineno-0-59" name="__codelineno-0-59"></a>            <span class="k">else</span><span class="p">:</span>
-<a id="__codelineno-0-60" name="__codelineno-0-60"></a>                <span class="k">raise</span> <span class="n">NotificationError</span><span class="p">(</span>
-<a id="__codelineno-0-61" name="__codelineno-0-61"></a>                    <span class="s2">&quot;You must provide a proper Notification Identifier&quot;</span>
-<a id="__codelineno-0-62" name="__codelineno-0-62"></a>                <span class="p">)</span>
-<a id="__codelineno-0-63" name="__codelineno-0-63"></a>            <span class="k">if</span> <span class="n">notifier</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">notifier</span><span class="p">,</span> <span class="n">SilentNotifications</span><span class="p">):</span>
-<a id="__codelineno-0-64" name="__codelineno-0-64"></a>                <span class="bp">self</span><span class="o">.</span><span class="n">providers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">notifier</span><span class="p">)</span>
-<a id="__codelineno-0-65" name="__codelineno-0-65"></a>
-<a id="__codelineno-0-66" name="__codelineno-0-66"></a>    <span class="k">def</span> <span class="nf">send_message</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-<a id="__codelineno-0-67" name="__codelineno-0-67"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<a id="__codelineno-0-68" name="__codelineno-0-68"></a><span class="sd">        Send a message</span>
-<a id="__codelineno-0-69" name="__codelineno-0-69"></a>
-<a id="__codelineno-0-70" name="__codelineno-0-70"></a><span class="sd">        Parameters</span>
-<a id="__codelineno-0-71" name="__codelineno-0-71"></a><span class="sd">        ----------</span>
-<a id="__codelineno-0-72" name="__codelineno-0-72"></a><span class="sd">        message: str</span>
-<a id="__codelineno-0-73" name="__codelineno-0-73"></a><span class="sd">            Message Text</span>
-<a id="__codelineno-0-74" name="__codelineno-0-74"></a><span class="sd">        **kwargs</span>
-<a id="__codelineno-0-75" name="__codelineno-0-75"></a><span class="sd">            All kwargs passed to underlying notification method</span>
-<a id="__codelineno-0-76" name="__codelineno-0-76"></a><span class="sd">        &quot;&quot;&quot;</span>
-<a id="__codelineno-0-77" name="__codelineno-0-77"></a>        <span class="k">for</span> <span class="n">provider</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">providers</span><span class="p">:</span>
-<a id="__codelineno-0-78" name="__codelineno-0-78"></a>            <span class="n">provider</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span><span class="n">message</span><span class="o">=</span><span class="n">message</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<a id="__codelineno-0-79" name="__codelineno-0-79"></a>
-<a id="__codelineno-0-80" name="__codelineno-0-80"></a>    <span class="k">def</span> <span class="nf">send_campsites</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">campsites</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">AvailableCampsite</span><span class="p">],</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-<a id="__codelineno-0-81" name="__codelineno-0-81"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<a id="__codelineno-0-82" name="__codelineno-0-82"></a><span class="sd">        Send a message with a campsite object</span>
-<a id="__codelineno-0-83" name="__codelineno-0-83"></a>
-<a id="__codelineno-0-84" name="__codelineno-0-84"></a><span class="sd">        Parameters</span>
-<a id="__codelineno-0-85" name="__codelineno-0-85"></a><span class="sd">        ----------</span>
-<a id="__codelineno-0-86" name="__codelineno-0-86"></a><span class="sd">        campsites: List[AvailableCampsite]</span>
-<a id="__codelineno-0-87" name="__codelineno-0-87"></a><span class="sd">        &quot;&quot;&quot;</span>
-<a id="__codelineno-0-88" name="__codelineno-0-88"></a>        <span class="k">for</span> <span class="n">provider</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">providers</span><span class="p">:</span>
-<a id="__codelineno-0-89" name="__codelineno-0-89"></a>            <span class="n">provider</span><span class="o">.</span><span class="n">send_campsites</span><span class="p">(</span><span class="n">campsites</span><span class="o">=</span><span class="n">campsites</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<a id="__codelineno-0-90" name="__codelineno-0-90"></a>
-<a id="__codelineno-0-91" name="__codelineno-0-91"></a>    <span class="k">def</span> <span class="nf">log_providers</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<a id="__codelineno-0-92" name="__codelineno-0-92"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<a id="__codelineno-0-93" name="__codelineno-0-93"></a><span class="sd">        Log All Providers</span>
-<a id="__codelineno-0-94" name="__codelineno-0-94"></a>
-<a id="__codelineno-0-95" name="__codelineno-0-95"></a><span class="sd">        Returns</span>
-<a id="__codelineno-0-96" name="__codelineno-0-96"></a><span class="sd">        -------</span>
-<a id="__codelineno-0-97" name="__codelineno-0-97"></a><span class="sd">        None</span>
-<a id="__codelineno-0-98" name="__codelineno-0-98"></a><span class="sd">        &quot;&quot;&quot;</span>
-<a id="__codelineno-0-99" name="__codelineno-0-99"></a>        <span class="n">provider_names</span> <span class="o">=</span> <span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">provider</span><span class="p">)</span> <span class="k">for</span> <span class="n">provider</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">providers</span><span class="p">]</span>
-<a id="__codelineno-0-100" name="__codelineno-0-100"></a>        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Notifications active via: </span><span class="si">{</span><span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">provider_names</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<a id="__codelineno-0-101" name="__codelineno-0-101"></a>        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">providers</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-<a id="__codelineno-0-102" name="__codelineno-0-102"></a>            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
-<a id="__codelineno-0-103" name="__codelineno-0-103"></a>                <span class="sa">f</span><span class="s2">&quot;Only </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">providers</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> enabled. &quot;</span>
-<a id="__codelineno-0-104" name="__codelineno-0-104"></a>                <span class="s2">&quot;I hope you&#39;re watching these logs.&quot;</span>
-<a id="__codelineno-0-105" name="__codelineno-0-105"></a>            <span class="p">)</span>
+<span class="normal"><a href="#__codelineno-0-105">105</a></span>
+<span class="normal"><a href="#__codelineno-0-106">106</a></span>
+<span class="normal"><a href="#__codelineno-0-107">107</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-35" name="__codelineno-0-35"></a><span class="k">class</span> <span class="nc">MultiNotifierProvider</span><span class="p">(</span><span class="n">BaseNotifications</span><span class="p">):</span>
+<a id="__codelineno-0-36" name="__codelineno-0-36"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-37" name="__codelineno-0-37"></a><span class="sd">    Notifications Supported from Multiple Providers</span>
+<a id="__codelineno-0-38" name="__codelineno-0-38"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a id="__codelineno-0-39" name="__codelineno-0-39"></a>
+<a id="__codelineno-0-40" name="__codelineno-0-40"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">provider</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">BaseNotifications</span><span class="p">,</span> <span class="kc">None</span><span class="p">]):</span>
+<a id="__codelineno-0-41" name="__codelineno-0-41"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-42" name="__codelineno-0-42"></a><span class="sd">        Initialize with a Notifier Class Object, a string or list of strings</span>
+<a id="__codelineno-0-43" name="__codelineno-0-43"></a>
+<a id="__codelineno-0-44" name="__codelineno-0-44"></a><span class="sd">        Parameters</span>
+<a id="__codelineno-0-45" name="__codelineno-0-45"></a><span class="sd">        ----------</span>
+<a id="__codelineno-0-46" name="__codelineno-0-46"></a><span class="sd">        provider: Union[str, List[str], BaseNotifications, None]</span>
+<a id="__codelineno-0-47" name="__codelineno-0-47"></a><span class="sd">            Provider String, Comma Separated Provider String, or list of provider</span>
+<a id="__codelineno-0-48" name="__codelineno-0-48"></a><span class="sd">            strings</span>
+<a id="__codelineno-0-49" name="__codelineno-0-49"></a><span class="sd">        &quot;&quot;&quot;</span>
+<a id="__codelineno-0-50" name="__codelineno-0-50"></a>        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+<a id="__codelineno-0-51" name="__codelineno-0-51"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">providers</span> <span class="o">=</span> <span class="p">[</span><span class="n">SilentNotifications</span><span class="p">()]</span>
+<a id="__codelineno-0-52" name="__codelineno-0-52"></a>        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">provider</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+<a id="__codelineno-0-53" name="__codelineno-0-53"></a>            <span class="n">provider</span> <span class="o">=</span> <span class="p">[</span><span class="n">prov_string</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">prov_string</span> <span class="ow">in</span> <span class="n">provider</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)]</span>
+<a id="__codelineno-0-54" name="__codelineno-0-54"></a>        <span class="k">for</span> <span class="n">notifier_object</span> <span class="ow">in</span> <span class="n">provider</span><span class="p">:</span>
+<a id="__codelineno-0-55" name="__codelineno-0-55"></a>            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">notifier_object</span><span class="p">,</span> <span class="n">BaseNotifications</span><span class="p">):</span>
+<a id="__codelineno-0-56" name="__codelineno-0-56"></a>                <span class="n">notifier</span> <span class="o">=</span> <span class="n">notifier_object</span>
+<a id="__codelineno-0-57" name="__codelineno-0-57"></a>            <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">notifier_object</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+<a id="__codelineno-0-58" name="__codelineno-0-58"></a>                <span class="n">notifier</span> <span class="o">=</span> <span class="n">CAMPSITE_NOTIFICATIONS</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">notifier_object</span><span class="o">.</span><span class="n">lower</span><span class="p">(),</span> <span class="kc">None</span><span class="p">)()</span>
+<a id="__codelineno-0-59" name="__codelineno-0-59"></a>            <span class="k">elif</span> <span class="n">notifier_object</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<a id="__codelineno-0-60" name="__codelineno-0-60"></a>                <span class="n">notifier</span> <span class="o">=</span> <span class="kc">None</span>
+<a id="__codelineno-0-61" name="__codelineno-0-61"></a>            <span class="k">else</span><span class="p">:</span>
+<a id="__codelineno-0-62" name="__codelineno-0-62"></a>                <span class="k">raise</span> <span class="n">NotificationError</span><span class="p">(</span>
+<a id="__codelineno-0-63" name="__codelineno-0-63"></a>                    <span class="s2">&quot;You must provide a proper Notification Identifier&quot;</span>
+<a id="__codelineno-0-64" name="__codelineno-0-64"></a>                <span class="p">)</span>
+<a id="__codelineno-0-65" name="__codelineno-0-65"></a>            <span class="k">if</span> <span class="n">notifier</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">notifier</span><span class="p">,</span> <span class="n">SilentNotifications</span><span class="p">):</span>
+<a id="__codelineno-0-66" name="__codelineno-0-66"></a>                <span class="bp">self</span><span class="o">.</span><span class="n">providers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">notifier</span><span class="p">)</span>
+<a id="__codelineno-0-67" name="__codelineno-0-67"></a>
+<a id="__codelineno-0-68" name="__codelineno-0-68"></a>    <span class="k">def</span> <span class="nf">send_message</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<a id="__codelineno-0-69" name="__codelineno-0-69"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-70" name="__codelineno-0-70"></a><span class="sd">        Send a message</span>
+<a id="__codelineno-0-71" name="__codelineno-0-71"></a>
+<a id="__codelineno-0-72" name="__codelineno-0-72"></a><span class="sd">        Parameters</span>
+<a id="__codelineno-0-73" name="__codelineno-0-73"></a><span class="sd">        ----------</span>
+<a id="__codelineno-0-74" name="__codelineno-0-74"></a><span class="sd">        message: str</span>
+<a id="__codelineno-0-75" name="__codelineno-0-75"></a><span class="sd">            Message Text</span>
+<a id="__codelineno-0-76" name="__codelineno-0-76"></a><span class="sd">        **kwargs</span>
+<a id="__codelineno-0-77" name="__codelineno-0-77"></a><span class="sd">            All kwargs passed to underlying notification method</span>
+<a id="__codelineno-0-78" name="__codelineno-0-78"></a><span class="sd">        &quot;&quot;&quot;</span>
+<a id="__codelineno-0-79" name="__codelineno-0-79"></a>        <span class="k">for</span> <span class="n">provider</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">providers</span><span class="p">:</span>
+<a id="__codelineno-0-80" name="__codelineno-0-80"></a>            <span class="n">provider</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span><span class="n">message</span><span class="o">=</span><span class="n">message</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<a id="__codelineno-0-81" name="__codelineno-0-81"></a>
+<a id="__codelineno-0-82" name="__codelineno-0-82"></a>    <span class="k">def</span> <span class="nf">send_campsites</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">campsites</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">AvailableCampsite</span><span class="p">],</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<a id="__codelineno-0-83" name="__codelineno-0-83"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-84" name="__codelineno-0-84"></a><span class="sd">        Send a message with a campsite object</span>
+<a id="__codelineno-0-85" name="__codelineno-0-85"></a>
+<a id="__codelineno-0-86" name="__codelineno-0-86"></a><span class="sd">        Parameters</span>
+<a id="__codelineno-0-87" name="__codelineno-0-87"></a><span class="sd">        ----------</span>
+<a id="__codelineno-0-88" name="__codelineno-0-88"></a><span class="sd">        campsites: List[AvailableCampsite]</span>
+<a id="__codelineno-0-89" name="__codelineno-0-89"></a><span class="sd">        &quot;&quot;&quot;</span>
+<a id="__codelineno-0-90" name="__codelineno-0-90"></a>        <span class="k">for</span> <span class="n">provider</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">providers</span><span class="p">:</span>
+<a id="__codelineno-0-91" name="__codelineno-0-91"></a>            <span class="n">provider</span><span class="o">.</span><span class="n">send_campsites</span><span class="p">(</span><span class="n">campsites</span><span class="o">=</span><span class="n">campsites</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<a id="__codelineno-0-92" name="__codelineno-0-92"></a>
+<a id="__codelineno-0-93" name="__codelineno-0-93"></a>    <span class="k">def</span> <span class="nf">log_providers</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<a id="__codelineno-0-94" name="__codelineno-0-94"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-95" name="__codelineno-0-95"></a><span class="sd">        Log All Providers</span>
+<a id="__codelineno-0-96" name="__codelineno-0-96"></a>
+<a id="__codelineno-0-97" name="__codelineno-0-97"></a><span class="sd">        Returns</span>
+<a id="__codelineno-0-98" name="__codelineno-0-98"></a><span class="sd">        -------</span>
+<a id="__codelineno-0-99" name="__codelineno-0-99"></a><span class="sd">        None</span>
+<a id="__codelineno-0-100" name="__codelineno-0-100"></a><span class="sd">        &quot;&quot;&quot;</span>
+<a id="__codelineno-0-101" name="__codelineno-0-101"></a>        <span class="n">provider_names</span> <span class="o">=</span> <span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">provider</span><span class="p">)</span> <span class="k">for</span> <span class="n">provider</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">providers</span><span class="p">]</span>
+<a id="__codelineno-0-102" name="__codelineno-0-102"></a>        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Notifications active via: </span><span class="si">{</span><span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">provider_names</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-103" name="__codelineno-0-103"></a>        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">providers</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+<a id="__codelineno-0-104" name="__codelineno-0-104"></a>            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+<a id="__codelineno-0-105" name="__codelineno-0-105"></a>                <span class="sa">f</span><span class="s2">&quot;Only </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">providers</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> enabled. &quot;</span>
+<a id="__codelineno-0-106" name="__codelineno-0-106"></a>                <span class="s2">&quot;I hope you&#39;re watching these logs.&quot;</span>
+<a id="__codelineno-0-107" name="__codelineno-0-107"></a>            <span class="p">)</span>
 </code></pre></div></td></tr></table></div>
         </details>
 
@@ -2627,9 +2987,7 @@ strings</p></td>
 
       <details class="quote">
         <summary>Source code in <code>camply/notifications/multi_provider_notifications.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-38">38</a></span>
-<span class="normal"><a href="#__codelineno-0-39">39</a></span>
-<span class="normal"><a href="#__codelineno-0-40">40</a></span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-40">40</a></span>
 <span class="normal"><a href="#__codelineno-0-41">41</a></span>
 <span class="normal"><a href="#__codelineno-0-42">42</a></span>
 <span class="normal"><a href="#__codelineno-0-43">43</a></span>
@@ -2653,33 +3011,35 @@ strings</p></td>
 <span class="normal"><a href="#__codelineno-0-61">61</a></span>
 <span class="normal"><a href="#__codelineno-0-62">62</a></span>
 <span class="normal"><a href="#__codelineno-0-63">63</a></span>
-<span class="normal"><a href="#__codelineno-0-64">64</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-38" name="__codelineno-0-38"></a><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">provider</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">BaseNotifications</span><span class="p">,</span> <span class="kc">None</span><span class="p">]):</span>
-<a id="__codelineno-0-39" name="__codelineno-0-39"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<a id="__codelineno-0-40" name="__codelineno-0-40"></a><span class="sd">    Initialize with a Notifier Class Object, a string or list of strings</span>
-<a id="__codelineno-0-41" name="__codelineno-0-41"></a>
-<a id="__codelineno-0-42" name="__codelineno-0-42"></a><span class="sd">    Parameters</span>
-<a id="__codelineno-0-43" name="__codelineno-0-43"></a><span class="sd">    ----------</span>
-<a id="__codelineno-0-44" name="__codelineno-0-44"></a><span class="sd">    provider: Union[str, List[str], BaseNotifications, None]</span>
-<a id="__codelineno-0-45" name="__codelineno-0-45"></a><span class="sd">        Provider String, Comma Separated Provider String, or list of provider</span>
-<a id="__codelineno-0-46" name="__codelineno-0-46"></a><span class="sd">        strings</span>
-<a id="__codelineno-0-47" name="__codelineno-0-47"></a><span class="sd">    &quot;&quot;&quot;</span>
-<a id="__codelineno-0-48" name="__codelineno-0-48"></a>    <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
-<a id="__codelineno-0-49" name="__codelineno-0-49"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">providers</span> <span class="o">=</span> <span class="p">[</span><span class="n">SilentNotifications</span><span class="p">()]</span>
-<a id="__codelineno-0-50" name="__codelineno-0-50"></a>    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">provider</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
-<a id="__codelineno-0-51" name="__codelineno-0-51"></a>        <span class="n">provider</span> <span class="o">=</span> <span class="p">[</span><span class="n">prov_string</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">prov_string</span> <span class="ow">in</span> <span class="n">provider</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)]</span>
-<a id="__codelineno-0-52" name="__codelineno-0-52"></a>    <span class="k">for</span> <span class="n">notifier_object</span> <span class="ow">in</span> <span class="n">provider</span><span class="p">:</span>
-<a id="__codelineno-0-53" name="__codelineno-0-53"></a>        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">notifier_object</span><span class="p">,</span> <span class="n">BaseNotifications</span><span class="p">):</span>
-<a id="__codelineno-0-54" name="__codelineno-0-54"></a>            <span class="n">notifier</span> <span class="o">=</span> <span class="n">notifier_object</span>
-<a id="__codelineno-0-55" name="__codelineno-0-55"></a>        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">notifier_object</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
-<a id="__codelineno-0-56" name="__codelineno-0-56"></a>            <span class="n">notifier</span> <span class="o">=</span> <span class="n">CAMPSITE_NOTIFICATIONS</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">notifier_object</span><span class="o">.</span><span class="n">lower</span><span class="p">(),</span> <span class="kc">None</span><span class="p">)()</span>
-<a id="__codelineno-0-57" name="__codelineno-0-57"></a>        <span class="k">elif</span> <span class="n">notifier_object</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-<a id="__codelineno-0-58" name="__codelineno-0-58"></a>            <span class="n">notifier</span> <span class="o">=</span> <span class="kc">None</span>
-<a id="__codelineno-0-59" name="__codelineno-0-59"></a>        <span class="k">else</span><span class="p">:</span>
-<a id="__codelineno-0-60" name="__codelineno-0-60"></a>            <span class="k">raise</span> <span class="n">NotificationError</span><span class="p">(</span>
-<a id="__codelineno-0-61" name="__codelineno-0-61"></a>                <span class="s2">&quot;You must provide a proper Notification Identifier&quot;</span>
-<a id="__codelineno-0-62" name="__codelineno-0-62"></a>            <span class="p">)</span>
-<a id="__codelineno-0-63" name="__codelineno-0-63"></a>        <span class="k">if</span> <span class="n">notifier</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">notifier</span><span class="p">,</span> <span class="n">SilentNotifications</span><span class="p">):</span>
-<a id="__codelineno-0-64" name="__codelineno-0-64"></a>            <span class="bp">self</span><span class="o">.</span><span class="n">providers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">notifier</span><span class="p">)</span>
+<span class="normal"><a href="#__codelineno-0-64">64</a></span>
+<span class="normal"><a href="#__codelineno-0-65">65</a></span>
+<span class="normal"><a href="#__codelineno-0-66">66</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-40" name="__codelineno-0-40"></a><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">provider</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">BaseNotifications</span><span class="p">,</span> <span class="kc">None</span><span class="p">]):</span>
+<a id="__codelineno-0-41" name="__codelineno-0-41"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-42" name="__codelineno-0-42"></a><span class="sd">    Initialize with a Notifier Class Object, a string or list of strings</span>
+<a id="__codelineno-0-43" name="__codelineno-0-43"></a>
+<a id="__codelineno-0-44" name="__codelineno-0-44"></a><span class="sd">    Parameters</span>
+<a id="__codelineno-0-45" name="__codelineno-0-45"></a><span class="sd">    ----------</span>
+<a id="__codelineno-0-46" name="__codelineno-0-46"></a><span class="sd">    provider: Union[str, List[str], BaseNotifications, None]</span>
+<a id="__codelineno-0-47" name="__codelineno-0-47"></a><span class="sd">        Provider String, Comma Separated Provider String, or list of provider</span>
+<a id="__codelineno-0-48" name="__codelineno-0-48"></a><span class="sd">        strings</span>
+<a id="__codelineno-0-49" name="__codelineno-0-49"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a id="__codelineno-0-50" name="__codelineno-0-50"></a>    <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+<a id="__codelineno-0-51" name="__codelineno-0-51"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">providers</span> <span class="o">=</span> <span class="p">[</span><span class="n">SilentNotifications</span><span class="p">()]</span>
+<a id="__codelineno-0-52" name="__codelineno-0-52"></a>    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">provider</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+<a id="__codelineno-0-53" name="__codelineno-0-53"></a>        <span class="n">provider</span> <span class="o">=</span> <span class="p">[</span><span class="n">prov_string</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">prov_string</span> <span class="ow">in</span> <span class="n">provider</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)]</span>
+<a id="__codelineno-0-54" name="__codelineno-0-54"></a>    <span class="k">for</span> <span class="n">notifier_object</span> <span class="ow">in</span> <span class="n">provider</span><span class="p">:</span>
+<a id="__codelineno-0-55" name="__codelineno-0-55"></a>        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">notifier_object</span><span class="p">,</span> <span class="n">BaseNotifications</span><span class="p">):</span>
+<a id="__codelineno-0-56" name="__codelineno-0-56"></a>            <span class="n">notifier</span> <span class="o">=</span> <span class="n">notifier_object</span>
+<a id="__codelineno-0-57" name="__codelineno-0-57"></a>        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">notifier_object</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+<a id="__codelineno-0-58" name="__codelineno-0-58"></a>            <span class="n">notifier</span> <span class="o">=</span> <span class="n">CAMPSITE_NOTIFICATIONS</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">notifier_object</span><span class="o">.</span><span class="n">lower</span><span class="p">(),</span> <span class="kc">None</span><span class="p">)()</span>
+<a id="__codelineno-0-59" name="__codelineno-0-59"></a>        <span class="k">elif</span> <span class="n">notifier_object</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<a id="__codelineno-0-60" name="__codelineno-0-60"></a>            <span class="n">notifier</span> <span class="o">=</span> <span class="kc">None</span>
+<a id="__codelineno-0-61" name="__codelineno-0-61"></a>        <span class="k">else</span><span class="p">:</span>
+<a id="__codelineno-0-62" name="__codelineno-0-62"></a>            <span class="k">raise</span> <span class="n">NotificationError</span><span class="p">(</span>
+<a id="__codelineno-0-63" name="__codelineno-0-63"></a>                <span class="s2">&quot;You must provide a proper Notification Identifier&quot;</span>
+<a id="__codelineno-0-64" name="__codelineno-0-64"></a>            <span class="p">)</span>
+<a id="__codelineno-0-65" name="__codelineno-0-65"></a>        <span class="k">if</span> <span class="n">notifier</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">notifier</span><span class="p">,</span> <span class="n">SilentNotifications</span><span class="p">):</span>
+<a id="__codelineno-0-66" name="__codelineno-0-66"></a>            <span class="bp">self</span><span class="o">.</span><span class="n">providers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">notifier</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
       </details>
   </div>
@@ -2720,9 +3080,7 @@ strings</p></td>
 
       <details class="quote">
         <summary>Source code in <code>camply/notifications/multi_provider_notifications.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-91"> 91</a></span>
-<span class="normal"><a href="#__codelineno-0-92"> 92</a></span>
-<span class="normal"><a href="#__codelineno-0-93"> 93</a></span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-93"> 93</a></span>
 <span class="normal"><a href="#__codelineno-0-94"> 94</a></span>
 <span class="normal"><a href="#__codelineno-0-95"> 95</a></span>
 <span class="normal"><a href="#__codelineno-0-96"> 96</a></span>
@@ -2734,21 +3092,23 @@ strings</p></td>
 <span class="normal"><a href="#__codelineno-0-102">102</a></span>
 <span class="normal"><a href="#__codelineno-0-103">103</a></span>
 <span class="normal"><a href="#__codelineno-0-104">104</a></span>
-<span class="normal"><a href="#__codelineno-0-105">105</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-91" name="__codelineno-0-91"></a><span class="k">def</span> <span class="nf">log_providers</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<a id="__codelineno-0-92" name="__codelineno-0-92"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<a id="__codelineno-0-93" name="__codelineno-0-93"></a><span class="sd">    Log All Providers</span>
-<a id="__codelineno-0-94" name="__codelineno-0-94"></a>
-<a id="__codelineno-0-95" name="__codelineno-0-95"></a><span class="sd">    Returns</span>
-<a id="__codelineno-0-96" name="__codelineno-0-96"></a><span class="sd">    -------</span>
-<a id="__codelineno-0-97" name="__codelineno-0-97"></a><span class="sd">    None</span>
-<a id="__codelineno-0-98" name="__codelineno-0-98"></a><span class="sd">    &quot;&quot;&quot;</span>
-<a id="__codelineno-0-99" name="__codelineno-0-99"></a>    <span class="n">provider_names</span> <span class="o">=</span> <span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">provider</span><span class="p">)</span> <span class="k">for</span> <span class="n">provider</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">providers</span><span class="p">]</span>
-<a id="__codelineno-0-100" name="__codelineno-0-100"></a>    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Notifications active via: </span><span class="si">{</span><span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">provider_names</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<a id="__codelineno-0-101" name="__codelineno-0-101"></a>    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">providers</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-<a id="__codelineno-0-102" name="__codelineno-0-102"></a>        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
-<a id="__codelineno-0-103" name="__codelineno-0-103"></a>            <span class="sa">f</span><span class="s2">&quot;Only </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">providers</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> enabled. &quot;</span>
-<a id="__codelineno-0-104" name="__codelineno-0-104"></a>            <span class="s2">&quot;I hope you&#39;re watching these logs.&quot;</span>
-<a id="__codelineno-0-105" name="__codelineno-0-105"></a>        <span class="p">)</span>
+<span class="normal"><a href="#__codelineno-0-105">105</a></span>
+<span class="normal"><a href="#__codelineno-0-106">106</a></span>
+<span class="normal"><a href="#__codelineno-0-107">107</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-93" name="__codelineno-0-93"></a><span class="k">def</span> <span class="nf">log_providers</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<a id="__codelineno-0-94" name="__codelineno-0-94"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-95" name="__codelineno-0-95"></a><span class="sd">    Log All Providers</span>
+<a id="__codelineno-0-96" name="__codelineno-0-96"></a>
+<a id="__codelineno-0-97" name="__codelineno-0-97"></a><span class="sd">    Returns</span>
+<a id="__codelineno-0-98" name="__codelineno-0-98"></a><span class="sd">    -------</span>
+<a id="__codelineno-0-99" name="__codelineno-0-99"></a><span class="sd">    None</span>
+<a id="__codelineno-0-100" name="__codelineno-0-100"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a id="__codelineno-0-101" name="__codelineno-0-101"></a>    <span class="n">provider_names</span> <span class="o">=</span> <span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">provider</span><span class="p">)</span> <span class="k">for</span> <span class="n">provider</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">providers</span><span class="p">]</span>
+<a id="__codelineno-0-102" name="__codelineno-0-102"></a>    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Notifications active via: </span><span class="si">{</span><span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">provider_names</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-103" name="__codelineno-0-103"></a>    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">providers</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+<a id="__codelineno-0-104" name="__codelineno-0-104"></a>        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+<a id="__codelineno-0-105" name="__codelineno-0-105"></a>            <span class="sa">f</span><span class="s2">&quot;Only </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">providers</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> enabled. &quot;</span>
+<a id="__codelineno-0-106" name="__codelineno-0-106"></a>            <span class="s2">&quot;I hope you&#39;re watching these logs.&quot;</span>
+<a id="__codelineno-0-107" name="__codelineno-0-107"></a>        <span class="p">)</span>
 </code></pre></div></td></tr></table></div>
       </details>
   </div>
@@ -2795,25 +3155,25 @@ strings</p></td>
 
       <details class="quote">
         <summary>Source code in <code>camply/notifications/multi_provider_notifications.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-80">80</a></span>
-<span class="normal"><a href="#__codelineno-0-81">81</a></span>
-<span class="normal"><a href="#__codelineno-0-82">82</a></span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-82">82</a></span>
 <span class="normal"><a href="#__codelineno-0-83">83</a></span>
 <span class="normal"><a href="#__codelineno-0-84">84</a></span>
 <span class="normal"><a href="#__codelineno-0-85">85</a></span>
 <span class="normal"><a href="#__codelineno-0-86">86</a></span>
 <span class="normal"><a href="#__codelineno-0-87">87</a></span>
 <span class="normal"><a href="#__codelineno-0-88">88</a></span>
-<span class="normal"><a href="#__codelineno-0-89">89</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-80" name="__codelineno-0-80"></a><span class="k">def</span> <span class="nf">send_campsites</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">campsites</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">AvailableCampsite</span><span class="p">],</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-<a id="__codelineno-0-81" name="__codelineno-0-81"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<a id="__codelineno-0-82" name="__codelineno-0-82"></a><span class="sd">    Send a message with a campsite object</span>
-<a id="__codelineno-0-83" name="__codelineno-0-83"></a>
-<a id="__codelineno-0-84" name="__codelineno-0-84"></a><span class="sd">    Parameters</span>
-<a id="__codelineno-0-85" name="__codelineno-0-85"></a><span class="sd">    ----------</span>
-<a id="__codelineno-0-86" name="__codelineno-0-86"></a><span class="sd">    campsites: List[AvailableCampsite]</span>
-<a id="__codelineno-0-87" name="__codelineno-0-87"></a><span class="sd">    &quot;&quot;&quot;</span>
-<a id="__codelineno-0-88" name="__codelineno-0-88"></a>    <span class="k">for</span> <span class="n">provider</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">providers</span><span class="p">:</span>
-<a id="__codelineno-0-89" name="__codelineno-0-89"></a>        <span class="n">provider</span><span class="o">.</span><span class="n">send_campsites</span><span class="p">(</span><span class="n">campsites</span><span class="o">=</span><span class="n">campsites</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="normal"><a href="#__codelineno-0-89">89</a></span>
+<span class="normal"><a href="#__codelineno-0-90">90</a></span>
+<span class="normal"><a href="#__codelineno-0-91">91</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-82" name="__codelineno-0-82"></a><span class="k">def</span> <span class="nf">send_campsites</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">campsites</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">AvailableCampsite</span><span class="p">],</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<a id="__codelineno-0-83" name="__codelineno-0-83"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-84" name="__codelineno-0-84"></a><span class="sd">    Send a message with a campsite object</span>
+<a id="__codelineno-0-85" name="__codelineno-0-85"></a>
+<a id="__codelineno-0-86" name="__codelineno-0-86"></a><span class="sd">    Parameters</span>
+<a id="__codelineno-0-87" name="__codelineno-0-87"></a><span class="sd">    ----------</span>
+<a id="__codelineno-0-88" name="__codelineno-0-88"></a><span class="sd">    campsites: List[AvailableCampsite]</span>
+<a id="__codelineno-0-89" name="__codelineno-0-89"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a id="__codelineno-0-90" name="__codelineno-0-90"></a>    <span class="k">for</span> <span class="n">provider</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">providers</span><span class="p">:</span>
+<a id="__codelineno-0-91" name="__codelineno-0-91"></a>        <span class="n">provider</span><span class="o">.</span><span class="n">send_campsites</span><span class="p">(</span><span class="n">campsites</span><span class="o">=</span><span class="n">campsites</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
       </details>
   </div>
@@ -2869,9 +3229,7 @@ strings</p></td>
 
       <details class="quote">
         <summary>Source code in <code>camply/notifications/multi_provider_notifications.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-66">66</a></span>
-<span class="normal"><a href="#__codelineno-0-67">67</a></span>
-<span class="normal"><a href="#__codelineno-0-68">68</a></span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-68">68</a></span>
 <span class="normal"><a href="#__codelineno-0-69">69</a></span>
 <span class="normal"><a href="#__codelineno-0-70">70</a></span>
 <span class="normal"><a href="#__codelineno-0-71">71</a></span>
@@ -2881,19 +3239,21 @@ strings</p></td>
 <span class="normal"><a href="#__codelineno-0-75">75</a></span>
 <span class="normal"><a href="#__codelineno-0-76">76</a></span>
 <span class="normal"><a href="#__codelineno-0-77">77</a></span>
-<span class="normal"><a href="#__codelineno-0-78">78</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-66" name="__codelineno-0-66"></a><span class="k">def</span> <span class="nf">send_message</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-<a id="__codelineno-0-67" name="__codelineno-0-67"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<a id="__codelineno-0-68" name="__codelineno-0-68"></a><span class="sd">    Send a message</span>
-<a id="__codelineno-0-69" name="__codelineno-0-69"></a>
-<a id="__codelineno-0-70" name="__codelineno-0-70"></a><span class="sd">    Parameters</span>
-<a id="__codelineno-0-71" name="__codelineno-0-71"></a><span class="sd">    ----------</span>
-<a id="__codelineno-0-72" name="__codelineno-0-72"></a><span class="sd">    message: str</span>
-<a id="__codelineno-0-73" name="__codelineno-0-73"></a><span class="sd">        Message Text</span>
-<a id="__codelineno-0-74" name="__codelineno-0-74"></a><span class="sd">    **kwargs</span>
-<a id="__codelineno-0-75" name="__codelineno-0-75"></a><span class="sd">        All kwargs passed to underlying notification method</span>
-<a id="__codelineno-0-76" name="__codelineno-0-76"></a><span class="sd">    &quot;&quot;&quot;</span>
-<a id="__codelineno-0-77" name="__codelineno-0-77"></a>    <span class="k">for</span> <span class="n">provider</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">providers</span><span class="p">:</span>
-<a id="__codelineno-0-78" name="__codelineno-0-78"></a>        <span class="n">provider</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span><span class="n">message</span><span class="o">=</span><span class="n">message</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="normal"><a href="#__codelineno-0-78">78</a></span>
+<span class="normal"><a href="#__codelineno-0-79">79</a></span>
+<span class="normal"><a href="#__codelineno-0-80">80</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-68" name="__codelineno-0-68"></a><span class="k">def</span> <span class="nf">send_message</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<a id="__codelineno-0-69" name="__codelineno-0-69"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-70" name="__codelineno-0-70"></a><span class="sd">    Send a message</span>
+<a id="__codelineno-0-71" name="__codelineno-0-71"></a>
+<a id="__codelineno-0-72" name="__codelineno-0-72"></a><span class="sd">    Parameters</span>
+<a id="__codelineno-0-73" name="__codelineno-0-73"></a><span class="sd">    ----------</span>
+<a id="__codelineno-0-74" name="__codelineno-0-74"></a><span class="sd">    message: str</span>
+<a id="__codelineno-0-75" name="__codelineno-0-75"></a><span class="sd">        Message Text</span>
+<a id="__codelineno-0-76" name="__codelineno-0-76"></a><span class="sd">    **kwargs</span>
+<a id="__codelineno-0-77" name="__codelineno-0-77"></a><span class="sd">        All kwargs passed to underlying notification method</span>
+<a id="__codelineno-0-78" name="__codelineno-0-78"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a id="__codelineno-0-79" name="__codelineno-0-79"></a>    <span class="k">for</span> <span class="n">provider</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">providers</span><span class="p">:</span>
+<a id="__codelineno-0-80" name="__codelineno-0-80"></a>        <span class="n">provider</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span><span class="n">message</span><span class="o">=</span><span class="n">message</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
       </details>
   </div>
