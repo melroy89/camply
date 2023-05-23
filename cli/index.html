@@ -1624,12 +1624,6 @@ camply sends you a notification to book your spot!</p>
 </thead>
 <tbody>
 <tr>
-<td><code>--version</code></td>
-<td>boolean</td>
-<td>Show the version and exit.</td>
-<td><code>False</code></td>
-</tr>
-<tr>
 <td><code>--debug</code> / <code>--no-debug</code></td>
 <td>boolean</td>
 <td>Enable extra debugging output</td>
@@ -1640,6 +1634,12 @@ camply sends you a notification to book your spot!</p>
 <td>choice (<code>RecreationDotGov</code> &#x7C; <code>Yellowstone</code> &#x7C; <code>GoingToCamp</code> &#x7C; <code>ReserveCalifornia</code> &#x7C; <code>RecreationDotGovTicket</code> &#x7C; <code>RecreationDotGovTimedEntry</code> &#x7C; <code>RecreationDotGovDailyTicket</code> &#x7C; <code>RecreationDotGovDailyTimedEntry</code>)</td>
 <td>Camping Search Provider. Defaults to 'RecreationDotGov'</td>
 <td>None</td>
+</tr>
+<tr>
+<td><code>--version</code></td>
+<td>boolean</td>
+<td>Show the version and exit.</td>
+<td><code>False</code></td>
 </tr>
 <tr>
 <td><code>--help</code></td>
@@ -1659,6 +1659,7 @@ camply sends you a notification to book your spot!</p>
 <li><em><a href="#camply-providers">providers</a></em>: </li>
 <li><em><a href="#camply-recreation-areas">recreation-areas</a></em>: </li>
 <li><em><a href="#camply-test-notifications">test-notifications</a></em>: </li>
+<li><em><a href="#camply-tui">tui</a></em>: Open Textual TUI.</li>
 </ul>
 <h2 id="camply-campgrounds">camply campgrounds<a class="headerlink" href="#camply-campgrounds" title="Permanent link">#</a></h2>
 <p>Search for Campgrounds (inside of Recreation Areas) and list them</p>
@@ -1753,27 +1754,63 @@ functionality can be enabled with  <code>--continuous</code> and notifications c
 </thead>
 <tbody>
 <tr>
-<td><code>--yaml-config</code>, <code>--yml-config</code></td>
-<td>file</td>
-<td>Rather than provide arguments to the command line utility, instead pass a file path to a YAML configuration file. See the documentation for more information on how to structure your configuration file.</td>
+<td><code>--rec-area</code></td>
+<td>text</td>
+<td>Add Recreation Areas (comprised of campgrounds) by ID.</td>
 <td>None</td>
 </tr>
 <tr>
-<td><code>--offline-search-path</code></td>
-<td>file</td>
-<td>Enables offline search. This is the name of the file to be saved/loaded. Campsites can be saved as a serialized pickle file or a JSON file, depending on the file extension. When not specified, the filename will default to <code>camply_campsites.json</code></td>
+<td><code>--campground</code></td>
+<td>text</td>
+<td>Add individual Campgrounds by ID.</td>
 <td>None</td>
 </tr>
 <tr>
-<td><code>--offline-search</code></td>
+<td><code>--campsite</code></td>
+<td>text</td>
+<td>Add individual Campsites by ID.</td>
+<td>None</td>
+</tr>
+<tr>
+<td><code>--start-date</code></td>
+<td>text</td>
+<td>(YYYY-MM-DD) Start of Search window. You will be arriving this day.</td>
+<td>None</td>
+</tr>
+<tr>
+<td><code>--end-date</code></td>
+<td>text</td>
+<td>(YYYY-MM-DD) End of Search window. You will be checking out this day.</td>
+<td>None</td>
+</tr>
+<tr>
+<td><code>--nights</code></td>
+<td>integer</td>
+<td>Search for campsite stays with consecutive nights. Defaults to 1 which returns all campsites found.</td>
+<td><code>1</code></td>
+</tr>
+<tr>
+<td><code>--weekends</code></td>
 <td>boolean</td>
-<td>When set to True, the campsite search will both save the results of the campsites it's found, but also load those campsites before beginning a search for other campsites.</td>
+<td>Only search for weekend bookings (Fri/Sat nights).</td>
 <td><code>False</code></td>
 </tr>
 <tr>
-<td><code>--search-once</code></td>
+<td><code>--day</code></td>
+<td>choice (<code>Monday</code> &#x7C; <code>Tuesday</code> &#x7C; <code>Wednesday</code> &#x7C; <code>Thursday</code> &#x7C; <code>Friday</code> &#x7C; <code>Saturday</code> &#x7C; <code>Sunday</code> &#x7C; <code>MON</code> &#x7C; <code>TUE</code> &#x7C; <code>TUES</code> &#x7C; <code>WED</code> &#x7C; <code>THU</code> &#x7C; <code>THUR</code> &#x7C; <code>THURS</code> &#x7C; <code>FRI</code> &#x7C; <code>SAT</code> &#x7C; <code>SUN</code>)</td>
+<td>Day(s) of the Week to search.</td>
+<td>None</td>
+</tr>
+<tr>
+<td><code>--notifications</code></td>
+<td>choice (<code>pushover</code> &#x7C; <code>email</code> &#x7C; <code>ntfy</code> &#x7C; <code>apprise</code> &#x7C; <code>pushbullet</code> &#x7C; <code>slack</code> &#x7C; <code>telegram</code> &#x7C; <code>twilio</code> &#x7C; <code>silent</code>)</td>
+<td>Enables continuous searching. Types of notifications to receive. Options available are <code>pushover</code>, <code>email</code>, <code>ntfy</code>, <code>apprise</code>, <code>pushbullet</code>, <code>slack</code>, <code>telegram</code>, <code>twilio</code>, <code>silent</code>. Defaults to <code>silent</code> - which just logs messages to console.</td>
+<td><code>[]</code></td>
+</tr>
+<tr>
+<td><code>--continuous</code></td>
 <td>boolean</td>
-<td>Enables continuous searching features - but doesn't actually search continuously. This option is only useful when you want to run camply periodically in a CRON job fashion but still receive notifications - it's strongly recommended you enable offline searching as well to save results between searches.</td>
+<td>Continuously check for a campsite to become available, and quit once at least one campsite is found.</td>
 <td><code>False</code></td>
 </tr>
 <tr>
@@ -1783,16 +1820,28 @@ functionality can be enabled with  <code>--continuous</code> and notifications c
 <td><code>False</code></td>
 </tr>
 <tr>
-<td><code>--notify-first-try</code></td>
-<td>text</td>
-<td>Enables continuous searching. Whether to send all non-silent notifications if more than 5 matching campsites are found on the first try. Defaults to False which only sends the first 5.</td>
+<td><code>--yaml-config</code>, <code>--yml-config</code></td>
+<td>file</td>
+<td>Rather than provide arguments to the command line utility, instead pass a file path to a YAML configuration file. See the documentation for more information on how to structure your configuration file.</td>
+<td>None</td>
+</tr>
+<tr>
+<td><code>--offline-search</code></td>
+<td>boolean</td>
+<td>When set to True, the campsite search will both save the results of the campsites it's found, but also load those campsites before beginning a search for other campsites.</td>
 <td><code>False</code></td>
 </tr>
 <tr>
-<td><code>--notifications</code></td>
-<td>choice (<code>pushover</code> &#x7C; <code>email</code> &#x7C; <code>ntfy</code> &#x7C; <code>apprise</code> &#x7C; <code>pushbullet</code> &#x7C; <code>slack</code> &#x7C; <code>telegram</code> &#x7C; <code>twilio</code> &#x7C; <code>silent</code>)</td>
-<td>Enables continuous searching. Types of notifications to receive. Options available are <code>pushover</code>, <code>email</code>, <code>ntfy</code>, <code>apprise</code>, <code>pushbullet</code>, <code>slack</code>, <code>telegram</code>, <code>twilio</code>, <code>silent</code>. Defaults to <code>silent</code> - which just logs messages to console.</td>
-<td><code>[]</code></td>
+<td><code>--offline-search-path</code></td>
+<td>file</td>
+<td>Enables offline search. This is the name of the file to be saved/loaded. Campsites can be saved as a serialized pickle file or a JSON file, depending on the file extension. When not specified, the filename will default to <code>camply_campsites.json</code></td>
+<td>None</td>
+</tr>
+<tr>
+<td><code>--search-once</code></td>
+<td>boolean</td>
+<td>Enables continuous searching features - but doesn't actually search continuously. This option is only useful when you want to run camply periodically in a CRON job fashion but still receive notifications - it's strongly recommended you enable offline searching as well to save results between searches.</td>
+<td><code>False</code></td>
 </tr>
 <tr>
 <td><code>--polling-interval</code></td>
@@ -1801,9 +1850,9 @@ functionality can be enabled with  <code>--continuous</code> and notifications c
 <td>None</td>
 </tr>
 <tr>
-<td><code>--continuous</code></td>
-<td>boolean</td>
-<td>Continuously check for a campsite to become available, and quit once at least one campsite is found.</td>
+<td><code>--notify-first-try</code></td>
+<td>text</td>
+<td>Enables continuous searching. Whether to send all non-silent notifications if more than 5 matching campsites are found on the first try. Defaults to False which only sends the first 5.</td>
 <td><code>False</code></td>
 </tr>
 <tr>
@@ -1819,57 +1868,9 @@ functionality can be enabled with  <code>--continuous</code> and notifications c
 <td>None</td>
 </tr>
 <tr>
-<td><code>--nights</code></td>
-<td>integer</td>
-<td>Search for campsite stays with consecutive nights. Defaults to 1 which returns all campsites found.</td>
-<td><code>1</code></td>
-</tr>
-<tr>
 <td><code>--provider</code></td>
 <td>choice (<code>RecreationDotGov</code> &#x7C; <code>Yellowstone</code> &#x7C; <code>GoingToCamp</code> &#x7C; <code>ReserveCalifornia</code> &#x7C; <code>RecreationDotGovTicket</code> &#x7C; <code>RecreationDotGovTimedEntry</code> &#x7C; <code>RecreationDotGovDailyTicket</code> &#x7C; <code>RecreationDotGovDailyTimedEntry</code>)</td>
 <td>Camping Search Provider. Defaults to 'RecreationDotGov'</td>
-<td>None</td>
-</tr>
-<tr>
-<td><code>--weekends</code></td>
-<td>boolean</td>
-<td>Only search for weekend bookings (Fri/Sat nights).</td>
-<td><code>False</code></td>
-</tr>
-<tr>
-<td><code>--day</code></td>
-<td>choice (<code>Monday</code> &#x7C; <code>Tuesday</code> &#x7C; <code>Wednesday</code> &#x7C; <code>Thursday</code> &#x7C; <code>Friday</code> &#x7C; <code>Saturday</code> &#x7C; <code>Sunday</code> &#x7C; <code>MON</code> &#x7C; <code>TUE</code> &#x7C; <code>TUES</code> &#x7C; <code>WED</code> &#x7C; <code>THU</code> &#x7C; <code>THUR</code> &#x7C; <code>THURS</code> &#x7C; <code>FRI</code> &#x7C; <code>SAT</code> &#x7C; <code>SUN</code>)</td>
-<td>Day(s) of the Week to search.</td>
-<td>None</td>
-</tr>
-<tr>
-<td><code>--end-date</code></td>
-<td>text</td>
-<td>(YYYY-MM-DD) End of Search window. You will be checking out this day.</td>
-<td>None</td>
-</tr>
-<tr>
-<td><code>--start-date</code></td>
-<td>text</td>
-<td>(YYYY-MM-DD) Start of Search window. You will be arriving this day.</td>
-<td>None</td>
-</tr>
-<tr>
-<td><code>--campsite</code></td>
-<td>text</td>
-<td>Add individual Campsites by ID.</td>
-<td>None</td>
-</tr>
-<tr>
-<td><code>--campground</code></td>
-<td>text</td>
-<td>Add individual Campgrounds by ID.</td>
-<td>None</td>
-</tr>
-<tr>
-<td><code>--rec-area</code></td>
-<td>text</td>
-<td>Add Recreation Areas (comprised of campgrounds) by ID.</td>
 <td>None</td>
 </tr>
 <tr>
@@ -1977,9 +1978,9 @@ and recreation areas have different types of equipment for which reservations ca
 </thead>
 <tbody>
 <tr>
-<td><code>--debug</code> / <code>--no-debug</code></td>
-<td>boolean</td>
-<td>Enable extra debugging output</td>
+<td><code>--rec-area</code></td>
+<td>text</td>
+<td>Add Recreation Areas (comprised of campgrounds) by ID.</td>
 <td>None</td>
 </tr>
 <tr>
@@ -1989,15 +1990,15 @@ and recreation areas have different types of equipment for which reservations ca
 <td>None</td>
 </tr>
 <tr>
-<td><code>--rec-area</code></td>
-<td>text</td>
-<td>Add Recreation Areas (comprised of campgrounds) by ID.</td>
-<td>None</td>
-</tr>
-<tr>
 <td><code>--provider</code></td>
 <td>choice (<code>RecreationDotGov</code> &#x7C; <code>Yellowstone</code> &#x7C; <code>GoingToCamp</code> &#x7C; <code>ReserveCalifornia</code> &#x7C; <code>RecreationDotGovTicket</code> &#x7C; <code>RecreationDotGovTimedEntry</code> &#x7C; <code>RecreationDotGovDailyTicket</code> &#x7C; <code>RecreationDotGovDailyTimedEntry</code>)</td>
 <td>Camping Search Provider. Defaults to 'RecreationDotGov'</td>
+<td>None</td>
+</tr>
+<tr>
+<td><code>--debug</code> / <code>--no-debug</code></td>
+<td>boolean</td>
+<td>Enable extra debugging output</td>
 <td>None</td>
 </tr>
 <tr>
@@ -2105,17 +2106,41 @@ National Parks and National Forests that can contain one or many campgrounds.</p
 </thead>
 <tbody>
 <tr>
+<td><code>--notifications</code></td>
+<td>choice (<code>pushover</code> &#x7C; <code>email</code> &#x7C; <code>ntfy</code> &#x7C; <code>apprise</code> &#x7C; <code>pushbullet</code> &#x7C; <code>slack</code> &#x7C; <code>telegram</code> &#x7C; <code>twilio</code> &#x7C; <code>silent</code>)</td>
+<td>Types of notifications to receive. Options available are <code>pushover</code>, <code>email</code>, <code>ntfy</code>, <code>apprise</code>, <code>pushbullet</code>, <code>slack</code>, <code>telegram</code>, <code>twilio</code>, <code>silent</code>. Defaults to <code>silent</code> - which just logs messages to console.</td>
+<td>_required</td>
+</tr>
+<tr>
 <td><code>--debug</code> / <code>--no-debug</code></td>
 <td>boolean</td>
 <td>Enable extra debugging output</td>
 <td>None</td>
 </tr>
 <tr>
-<td><code>--notifications</code></td>
-<td>choice (<code>pushover</code> &#x7C; <code>email</code> &#x7C; <code>ntfy</code> &#x7C; <code>apprise</code> &#x7C; <code>pushbullet</code> &#x7C; <code>slack</code> &#x7C; <code>telegram</code> &#x7C; <code>twilio</code> &#x7C; <code>silent</code>)</td>
-<td>Types of notifications to receive. Options available are <code>pushover</code>, <code>email</code>, <code>ntfy</code>, <code>apprise</code>, <code>pushbullet</code>, <code>slack</code>, <code>telegram</code>, <code>twilio</code>, <code>silent</code>. Defaults to <code>silent</code> - which just logs messages to console.</td>
-<td>_required</td>
+<td><code>--help</code></td>
+<td>boolean</td>
+<td>Show this message and exit.</td>
+<td><code>False</code></td>
 </tr>
+</tbody>
+</table>
+<h2 id="camply-tui">camply tui<a class="headerlink" href="#camply-tui" title="Permanent link">#</a></h2>
+<p>Open Textual TUI.</p>
+<p><strong>Usage:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>camply tui [OPTIONS]
+</code></pre></div>
+<p><strong>Options:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
 <tr>
 <td><code>--help</code></td>
 <td>boolean</td>
