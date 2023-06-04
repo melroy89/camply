@@ -705,6 +705,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../containers/usedirect/" class="md-nav__link">
+        usedirect
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -1121,7 +1135,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../providers/reserve_california/">reserve_california</a>
+          <a href="../../providers/usedirect/">usedirect</a>
           
             <label for="__nav_9_1_7_4">
               <span class="md-nav__icon md-icon"></span>
@@ -1132,7 +1146,7 @@
       <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_9_1_7_4_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_9_1_7_4">
           <span class="md-nav__icon md-icon"></span>
-          reserve_california
+          usedirect
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -1142,8 +1156,22 @@
   
   
     <li class="md-nav__item">
-      <a href="../../providers/reserve_california/reserve_california/" class="md-nav__link">
-        reserve_california
+      <a href="../../providers/usedirect/usedirect/" class="md-nav__link">
+        usedirect
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../providers/usedirect/variations/" class="md-nav__link">
+        variations
       </a>
     </li>
   
@@ -1379,8 +1407,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../search_reserve_california/" class="md-nav__link">
-        search_reserve_california
+      <a href="../search_usedirect/" class="md-nav__link">
+        search_usedirect
       </a>
     </li>
   
@@ -1963,7 +1991,7 @@
 <a id="__codelineno-0-27" name="__codelineno-0-27"></a><span class="sd">    Searches on GoingToCamp.com for Campsites</span>
 <a id="__codelineno-0-28" name="__codelineno-0-28"></a><span class="sd">    &quot;&quot;&quot;</span>
 <a id="__codelineno-0-29" name="__codelineno-0-29"></a>
-<a id="__codelineno-0-30" name="__codelineno-0-30"></a>    <span class="n">provider_class</span> <span class="o">=</span> <span class="n">GoingToCampProvider</span>
+<a id="__codelineno-0-30" name="__codelineno-0-30"></a>    <span class="n">provider_class</span> <span class="o">=</span> <span class="n">GoingToCamp</span>
 <a id="__codelineno-0-31" name="__codelineno-0-31"></a>    <span class="n">list_campsites_supported</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
 <a id="__codelineno-0-32" name="__codelineno-0-32"></a>
 <a id="__codelineno-0-33" name="__codelineno-0-33"></a>    <span class="nd">@classmethod</span>
@@ -1973,7 +2001,7 @@
 <a id="__codelineno-0-37" name="__codelineno-0-37"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <a id="__codelineno-0-38" name="__codelineno-0-38"></a><span class="sd">        Return the GoingToCamp Recreation Areas</span>
 <a id="__codelineno-0-39" name="__codelineno-0-39"></a><span class="sd">        &quot;&quot;&quot;</span>
-<a id="__codelineno-0-40" name="__codelineno-0-40"></a>        <span class="k">return</span> <span class="n">GoingToCampProvider</span><span class="o">.</span><span class="n">find_recreation_areas</span><span class="p">(</span><span class="n">search_string</span><span class="o">=</span><span class="n">search_string</span><span class="p">)</span>
+<a id="__codelineno-0-40" name="__codelineno-0-40"></a>        <span class="k">return</span> <span class="n">GoingToCamp</span><span class="o">.</span><span class="n">find_recreation_areas</span><span class="p">(</span><span class="n">search_string</span><span class="o">=</span><span class="n">search_string</span><span class="p">)</span>
 <a id="__codelineno-0-41" name="__codelineno-0-41"></a>
 <a id="__codelineno-0-42" name="__codelineno-0-42"></a>    <span class="c1"># noinspection PyUnusedLocal</span>
 <a id="__codelineno-0-43" name="__codelineno-0-43"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
@@ -2006,7 +2034,7 @@
 <a id="__codelineno-0-70" name="__codelineno-0-70"></a><span class="sd">        nights: int</span>
 <a id="__codelineno-0-71" name="__codelineno-0-71"></a><span class="sd">            minimum number of consecutive nights to search per campsite,defaults to 1</span>
 <a id="__codelineno-0-72" name="__codelineno-0-72"></a><span class="sd">        &quot;&quot;&quot;</span>
-<a id="__codelineno-0-73" name="__codelineno-0-73"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">provider</span> <span class="o">=</span> <span class="n">GoingToCampProvider</span>
+<a id="__codelineno-0-73" name="__codelineno-0-73"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">provider</span> <span class="o">=</span> <span class="n">GoingToCamp</span>
 <a id="__codelineno-0-74" name="__codelineno-0-74"></a>        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
 <a id="__codelineno-0-75" name="__codelineno-0-75"></a>            <span class="n">search_window</span><span class="o">=</span><span class="n">search_window</span><span class="p">,</span>
 <a id="__codelineno-0-76" name="__codelineno-0-76"></a>            <span class="n">weekends_only</span><span class="o">=</span><span class="n">weekends_only</span><span class="p">,</span>
@@ -2377,7 +2405,7 @@ Saturday nights)</p></td>
 <a id="__codelineno-0-70" name="__codelineno-0-70"></a><span class="sd">    nights: int</span>
 <a id="__codelineno-0-71" name="__codelineno-0-71"></a><span class="sd">        minimum number of consecutive nights to search per campsite,defaults to 1</span>
 <a id="__codelineno-0-72" name="__codelineno-0-72"></a><span class="sd">    &quot;&quot;&quot;</span>
-<a id="__codelineno-0-73" name="__codelineno-0-73"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">provider</span> <span class="o">=</span> <span class="n">GoingToCampProvider</span>
+<a id="__codelineno-0-73" name="__codelineno-0-73"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">provider</span> <span class="o">=</span> <span class="n">GoingToCamp</span>
 <a id="__codelineno-0-74" name="__codelineno-0-74"></a>    <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
 <a id="__codelineno-0-75" name="__codelineno-0-75"></a>        <span class="n">search_window</span><span class="o">=</span><span class="n">search_window</span><span class="p">,</span>
 <a id="__codelineno-0-76" name="__codelineno-0-76"></a>        <span class="n">weekends_only</span><span class="o">=</span><span class="n">weekends_only</span><span class="p">,</span>
@@ -2443,7 +2471,7 @@ Saturday nights)</p></td>
 <a id="__codelineno-0-37" name="__codelineno-0-37"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <a id="__codelineno-0-38" name="__codelineno-0-38"></a><span class="sd">    Return the GoingToCamp Recreation Areas</span>
 <a id="__codelineno-0-39" name="__codelineno-0-39"></a><span class="sd">    &quot;&quot;&quot;</span>
-<a id="__codelineno-0-40" name="__codelineno-0-40"></a>    <span class="k">return</span> <span class="n">GoingToCampProvider</span><span class="o">.</span><span class="n">find_recreation_areas</span><span class="p">(</span><span class="n">search_string</span><span class="o">=</span><span class="n">search_string</span><span class="p">)</span>
+<a id="__codelineno-0-40" name="__codelineno-0-40"></a>    <span class="k">return</span> <span class="n">GoingToCamp</span><span class="o">.</span><span class="n">find_recreation_areas</span><span class="p">(</span><span class="n">search_string</span><span class="o">=</span><span class="n">search_string</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
       </details>
   </div>
