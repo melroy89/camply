@@ -1921,12 +1921,12 @@
 <a id="__codelineno-0-288" name="__codelineno-0-288"></a>    <span class="n">AmenityId</span><span class="p">:</span> <span class="nb">int</span>
 <a id="__codelineno-0-289" name="__codelineno-0-289"></a>    <span class="n">Name</span><span class="p">:</span> <span class="nb">str</span>
 <a id="__codelineno-0-290" name="__codelineno-0-290"></a>    <span class="n">ShortName</span><span class="p">:</span> <span class="nb">str</span>
-<a id="__codelineno-0-291" name="__codelineno-0-291"></a>    <span class="n">AmenityType</span><span class="p">:</span> <span class="nb">int</span>
-<a id="__codelineno-0-292" name="__codelineno-0-292"></a>    <span class="n">IsSearchable</span><span class="p">:</span> <span class="nb">bool</span>
+<a id="__codelineno-0-291" name="__codelineno-0-291"></a>    <span class="n">AmenityType</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
+<a id="__codelineno-0-292" name="__codelineno-0-292"></a>    <span class="n">IsSearchable</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span>
 <a id="__codelineno-0-293" name="__codelineno-0-293"></a>    <span class="n">Description</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
-<a id="__codelineno-0-294" name="__codelineno-0-294"></a>    <span class="n">OrderBy</span><span class="p">:</span> <span class="nb">int</span>
-<a id="__codelineno-0-295" name="__codelineno-0-295"></a>    <span class="n">IDate</span><span class="p">:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span>
-<a id="__codelineno-0-296" name="__codelineno-0-296"></a>    <span class="n">UDate</span><span class="p">:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span>
+<a id="__codelineno-0-294" name="__codelineno-0-294"></a>    <span class="n">OrderBy</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span>
+<a id="__codelineno-0-295" name="__codelineno-0-295"></a>    <span class="n">IDate</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">]</span>
+<a id="__codelineno-0-296" name="__codelineno-0-296"></a>    <span class="n">UDate</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">]</span>
 <a id="__codelineno-0-297" name="__codelineno-0-297"></a>    <span class="n">ImagePath</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
 <a id="__codelineno-0-298" name="__codelineno-0-298"></a>    <span class="n">UCashierName</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
 <a id="__codelineno-0-299" name="__codelineno-0-299"></a>    <span class="n">UStoreId</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span>
@@ -2008,13 +2008,13 @@
 <a id="__codelineno-0-193" name="__codelineno-0-193"></a>    <span class="n">FacilityImageVBT</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
 <a id="__codelineno-0-194" name="__codelineno-0-194"></a>    <span class="n">DatesInSeason</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span>
 <a id="__codelineno-0-195" name="__codelineno-0-195"></a>    <span class="n">DatesOutOfSeason</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span>
-<a id="__codelineno-0-196" name="__codelineno-0-196"></a>    <span class="n">SeasonDates</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">,</span> <span class="nb">bool</span><span class="p">]</span>
-<a id="__codelineno-0-197" name="__codelineno-0-197"></a>    <span class="n">TrafficStatuses</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span>
-<a id="__codelineno-0-198" name="__codelineno-0-198"></a>    <span class="n">UnitCount</span><span class="p">:</span> <span class="nb">int</span>
-<a id="__codelineno-0-199" name="__codelineno-0-199"></a>    <span class="n">AvailableUnitCount</span><span class="p">:</span> <span class="nb">int</span>
-<a id="__codelineno-0-200" name="__codelineno-0-200"></a>    <span class="n">SliceCount</span><span class="p">:</span> <span class="nb">int</span>
-<a id="__codelineno-0-201" name="__codelineno-0-201"></a>    <span class="n">AvailableSliceCount</span><span class="p">:</span> <span class="nb">int</span>
-<a id="__codelineno-0-202" name="__codelineno-0-202"></a>    <span class="n">TimebaseMaxHours</span><span class="p">:</span> <span class="nb">int</span>
+<a id="__codelineno-0-196" name="__codelineno-0-196"></a>    <span class="n">SeasonDates</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">,</span> <span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+<a id="__codelineno-0-197" name="__codelineno-0-197"></a>    <span class="n">TrafficStatuses</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+<a id="__codelineno-0-198" name="__codelineno-0-198"></a>    <span class="n">UnitCount</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span>
+<a id="__codelineno-0-199" name="__codelineno-0-199"></a>    <span class="n">AvailableUnitCount</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span>
+<a id="__codelineno-0-200" name="__codelineno-0-200"></a>    <span class="n">SliceCount</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span>
+<a id="__codelineno-0-201" name="__codelineno-0-201"></a>    <span class="n">AvailableSliceCount</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span>
+<a id="__codelineno-0-202" name="__codelineno-0-202"></a>    <span class="n">TimebaseMaxHours</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span>
 <a id="__codelineno-0-203" name="__codelineno-0-203"></a>    <span class="n">TimebaseMinHours</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span>
 <a id="__codelineno-0-204" name="__codelineno-0-204"></a>    <span class="n">TimebaseDuration</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span>
 <a id="__codelineno-0-205" name="__codelineno-0-205"></a>    <span class="n">IsReservationDraw</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span>
@@ -2095,25 +2095,25 @@
 <a id="__codelineno-0-214" name="__codelineno-0-214"></a><span class="sd">    &quot;&quot;&quot;</span>
 <a id="__codelineno-0-215" name="__codelineno-0-215"></a>
 <a id="__codelineno-0-216" name="__codelineno-0-216"></a>    <span class="n">Message</span><span class="p">:</span> <span class="nb">str</span>
-<a id="__codelineno-0-217" name="__codelineno-0-217"></a>    <span class="n">Filters</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span>
+<a id="__codelineno-0-217" name="__codelineno-0-217"></a>    <span class="n">Filters</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
 <a id="__codelineno-0-218" name="__codelineno-0-218"></a>    <span class="n">UnitTypeId</span><span class="p">:</span> <span class="nb">int</span>
-<a id="__codelineno-0-219" name="__codelineno-0-219"></a>    <span class="n">StartDate</span><span class="p">:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">date</span>
-<a id="__codelineno-0-220" name="__codelineno-0-220"></a>    <span class="n">EndDate</span><span class="p">:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">date</span>
-<a id="__codelineno-0-221" name="__codelineno-0-221"></a>    <span class="n">NightsRequested</span><span class="p">:</span> <span class="nb">int</span>
-<a id="__codelineno-0-222" name="__codelineno-0-222"></a>    <span class="n">NightsActual</span><span class="p">:</span> <span class="nb">int</span>
-<a id="__codelineno-0-223" name="__codelineno-0-223"></a>    <span class="n">TodayDate</span><span class="p">:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">date</span>
-<a id="__codelineno-0-224" name="__codelineno-0-224"></a>    <span class="n">TimeZone</span><span class="p">:</span> <span class="nb">str</span>
-<a id="__codelineno-0-225" name="__codelineno-0-225"></a>    <span class="n">TimeStamp</span><span class="p">:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span>
-<a id="__codelineno-0-226" name="__codelineno-0-226"></a>    <span class="n">MinDate</span><span class="p">:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">date</span>
-<a id="__codelineno-0-227" name="__codelineno-0-227"></a>    <span class="n">MaxDate</span><span class="p">:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">date</span>
-<a id="__codelineno-0-228" name="__codelineno-0-228"></a>    <span class="n">AvailableUnitsOnly</span><span class="p">:</span> <span class="nb">bool</span>
-<a id="__codelineno-0-229" name="__codelineno-0-229"></a>    <span class="n">UnitSort</span><span class="p">:</span> <span class="nb">str</span>
-<a id="__codelineno-0-230" name="__codelineno-0-230"></a>    <span class="n">TimeGrid</span><span class="p">:</span> <span class="nb">bool</span>
-<a id="__codelineno-0-231" name="__codelineno-0-231"></a>    <span class="n">ForUnit</span><span class="p">:</span> <span class="nb">bool</span>
-<a id="__codelineno-0-232" name="__codelineno-0-232"></a>    <span class="n">UnitId</span><span class="p">:</span> <span class="nb">int</span>
-<a id="__codelineno-0-233" name="__codelineno-0-233"></a>    <span class="n">TimeBetween</span><span class="p">:</span> <span class="nb">str</span>
-<a id="__codelineno-0-234" name="__codelineno-0-234"></a>    <span class="n">TimeBetweenEval</span><span class="p">:</span> <span class="nb">str</span>
-<a id="__codelineno-0-235" name="__codelineno-0-235"></a>    <span class="n">Facility</span><span class="p">:</span> <span class="n">UseDirectAvailabilityFacility</span>
+<a id="__codelineno-0-219" name="__codelineno-0-219"></a>    <span class="n">StartDate</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">]</span>
+<a id="__codelineno-0-220" name="__codelineno-0-220"></a>    <span class="n">EndDate</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">]</span>
+<a id="__codelineno-0-221" name="__codelineno-0-221"></a>    <span class="n">NightsRequested</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span>
+<a id="__codelineno-0-222" name="__codelineno-0-222"></a>    <span class="n">NightsActual</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span>
+<a id="__codelineno-0-223" name="__codelineno-0-223"></a>    <span class="n">TodayDate</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">]</span>
+<a id="__codelineno-0-224" name="__codelineno-0-224"></a>    <span class="n">TimeZone</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
+<a id="__codelineno-0-225" name="__codelineno-0-225"></a>    <span class="n">TimeStamp</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">]</span>
+<a id="__codelineno-0-226" name="__codelineno-0-226"></a>    <span class="n">MinDate</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">]</span>
+<a id="__codelineno-0-227" name="__codelineno-0-227"></a>    <span class="n">MaxDate</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">]</span>
+<a id="__codelineno-0-228" name="__codelineno-0-228"></a>    <span class="n">AvailableUnitsOnly</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span>
+<a id="__codelineno-0-229" name="__codelineno-0-229"></a>    <span class="n">UnitSort</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
+<a id="__codelineno-0-230" name="__codelineno-0-230"></a>    <span class="n">TimeGrid</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span>
+<a id="__codelineno-0-231" name="__codelineno-0-231"></a>    <span class="n">ForUnit</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span>
+<a id="__codelineno-0-232" name="__codelineno-0-232"></a>    <span class="n">UnitId</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span>
+<a id="__codelineno-0-233" name="__codelineno-0-233"></a>    <span class="n">TimeBetween</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
+<a id="__codelineno-0-234" name="__codelineno-0-234"></a>    <span class="n">TimeBetweenEval</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
+<a id="__codelineno-0-235" name="__codelineno-0-235"></a>    <span class="n">Facility</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">UseDirectAvailabilityFacility</span><span class="p">]</span>
 </code></pre></div></td></tr></table></div>
         </details>
 
@@ -2177,11 +2177,11 @@
 <a id="__codelineno-0-46" name="__codelineno-0-46"></a>
 <a id="__codelineno-0-47" name="__codelineno-0-47"></a>    <span class="n">Date</span><span class="p">:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">date</span>
 <a id="__codelineno-0-48" name="__codelineno-0-48"></a>    <span class="n">IsFree</span><span class="p">:</span> <span class="nb">bool</span>
-<a id="__codelineno-0-49" name="__codelineno-0-49"></a>    <span class="n">IsBlocked</span><span class="p">:</span> <span class="nb">bool</span>
-<a id="__codelineno-0-50" name="__codelineno-0-50"></a>    <span class="n">IsWalkin</span><span class="p">:</span> <span class="nb">bool</span>
-<a id="__codelineno-0-51" name="__codelineno-0-51"></a>    <span class="n">ReservationId</span><span class="p">:</span> <span class="nb">int</span>
+<a id="__codelineno-0-49" name="__codelineno-0-49"></a>    <span class="n">IsBlocked</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span>
+<a id="__codelineno-0-50" name="__codelineno-0-50"></a>    <span class="n">IsWalkin</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span>
+<a id="__codelineno-0-51" name="__codelineno-0-51"></a>    <span class="n">ReservationId</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span>
 <a id="__codelineno-0-52" name="__codelineno-0-52"></a>    <span class="n">Lock</span><span class="p">:</span> <span class="n">Any</span>
-<a id="__codelineno-0-53" name="__codelineno-0-53"></a>    <span class="n">MinStay</span><span class="p">:</span> <span class="nb">int</span>
+<a id="__codelineno-0-53" name="__codelineno-0-53"></a>    <span class="n">MinStay</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span>
 <a id="__codelineno-0-54" name="__codelineno-0-54"></a>    <span class="n">IsReservationDraw</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span>
 </code></pre></div></td></tr></table></div>
         </details>
@@ -2351,7 +2351,7 @@
 <a id="__codelineno-0-327" name="__codelineno-0-327"></a>    <span class="n">IsActive</span><span class="p">:</span> <span class="nb">bool</span>
 <a id="__codelineno-0-328" name="__codelineno-0-328"></a>    <span class="n">EntityType</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
 <a id="__codelineno-0-329" name="__codelineno-0-329"></a>    <span class="n">EnterpriseId</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span>
-<a id="__codelineno-0-330" name="__codelineno-0-330"></a>    <span class="n">ParkSize</span><span class="p">:</span> <span class="nb">str</span>
+<a id="__codelineno-0-330" name="__codelineno-0-330"></a>    <span class="n">ParkSize</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
 <a id="__codelineno-0-331" name="__codelineno-0-331"></a>    <span class="n">PlaceId</span><span class="p">:</span> <span class="nb">int</span>
 </code></pre></div></td></tr></table></div>
         </details>
@@ -2441,33 +2441,33 @@
 <a id="__codelineno-0-154" name="__codelineno-0-154"></a>    <span class="n">Name</span><span class="p">:</span> <span class="nb">str</span>
 <a id="__codelineno-0-155" name="__codelineno-0-155"></a>    <span class="n">Description</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
 <a id="__codelineno-0-156" name="__codelineno-0-156"></a>    <span class="n">ParkSize</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
-<a id="__codelineno-0-157" name="__codelineno-0-157"></a>    <span class="n">Latitude</span><span class="p">:</span> <span class="nb">float</span>
-<a id="__codelineno-0-158" name="__codelineno-0-158"></a>    <span class="n">Longitude</span><span class="p">:</span> <span class="nb">float</span>
+<a id="__codelineno-0-157" name="__codelineno-0-157"></a>    <span class="n">Latitude</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span>
+<a id="__codelineno-0-158" name="__codelineno-0-158"></a>    <span class="n">Longitude</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span>
 <a id="__codelineno-0-159" name="__codelineno-0-159"></a>    <span class="n">ParkCategoryId</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span>
-<a id="__codelineno-0-160" name="__codelineno-0-160"></a>    <span class="n">ParkActivity</span><span class="p">:</span> <span class="nb">int</span>
-<a id="__codelineno-0-161" name="__codelineno-0-161"></a>    <span class="n">ParkPopularity</span><span class="p">:</span> <span class="nb">int</span>
-<a id="__codelineno-0-162" name="__codelineno-0-162"></a>    <span class="n">IsAvailableForGreatwalk</span><span class="p">:</span> <span class="nb">bool</span>
+<a id="__codelineno-0-160" name="__codelineno-0-160"></a>    <span class="n">ParkActivity</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span>
+<a id="__codelineno-0-161" name="__codelineno-0-161"></a>    <span class="n">ParkPopularity</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span>
+<a id="__codelineno-0-162" name="__codelineno-0-162"></a>    <span class="n">IsAvailableForGreatwalk</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span>
 <a id="__codelineno-0-163" name="__codelineno-0-163"></a>    <span class="n">FacilityDefaultZoom</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span>
-<a id="__codelineno-0-164" name="__codelineno-0-164"></a>    <span class="n">RegionId</span><span class="p">:</span> <span class="nb">int</span>
-<a id="__codelineno-0-165" name="__codelineno-0-165"></a>    <span class="n">ShortName</span><span class="p">:</span> <span class="nb">str</span>
-<a id="__codelineno-0-166" name="__codelineno-0-166"></a>    <span class="n">OrderBy</span><span class="p">:</span> <span class="nb">int</span>
-<a id="__codelineno-0-167" name="__codelineno-0-167"></a>    <span class="n">AllowWebBooking</span><span class="p">:</span> <span class="nb">bool</span>
-<a id="__codelineno-0-168" name="__codelineno-0-168"></a>    <span class="n">InventoryLocking</span><span class="p">:</span> <span class="nb">bool</span>
-<a id="__codelineno-0-169" name="__codelineno-0-169"></a>    <span class="n">InventoryLockDuration</span><span class="p">:</span> <span class="nb">int</span>
-<a id="__codelineno-0-170" name="__codelineno-0-170"></a>    <span class="n">UsePrepend</span><span class="p">:</span> <span class="nb">bool</span>
-<a id="__codelineno-0-171" name="__codelineno-0-171"></a>    <span class="n">PrependCode</span><span class="p">:</span> <span class="nb">str</span>
-<a id="__codelineno-0-172" name="__codelineno-0-172"></a>    <span class="n">Address1</span><span class="p">:</span> <span class="nb">str</span>
+<a id="__codelineno-0-164" name="__codelineno-0-164"></a>    <span class="n">RegionId</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span>
+<a id="__codelineno-0-165" name="__codelineno-0-165"></a>    <span class="n">ShortName</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
+<a id="__codelineno-0-166" name="__codelineno-0-166"></a>    <span class="n">OrderBy</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span>
+<a id="__codelineno-0-167" name="__codelineno-0-167"></a>    <span class="n">AllowWebBooking</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span>
+<a id="__codelineno-0-168" name="__codelineno-0-168"></a>    <span class="n">InventoryLocking</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span>
+<a id="__codelineno-0-169" name="__codelineno-0-169"></a>    <span class="n">InventoryLockDuration</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span>
+<a id="__codelineno-0-170" name="__codelineno-0-170"></a>    <span class="n">UsePrepend</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span>
+<a id="__codelineno-0-171" name="__codelineno-0-171"></a>    <span class="n">PrependCode</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
+<a id="__codelineno-0-172" name="__codelineno-0-172"></a>    <span class="n">Address1</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
 <a id="__codelineno-0-173" name="__codelineno-0-173"></a>    <span class="n">Address2</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
-<a id="__codelineno-0-174" name="__codelineno-0-174"></a>    <span class="n">City</span><span class="p">:</span> <span class="nb">str</span>
-<a id="__codelineno-0-175" name="__codelineno-0-175"></a>    <span class="n">State</span><span class="p">:</span> <span class="nb">str</span>
-<a id="__codelineno-0-176" name="__codelineno-0-176"></a>    <span class="n">Zip</span><span class="p">:</span> <span class="nb">str</span>
+<a id="__codelineno-0-174" name="__codelineno-0-174"></a>    <span class="n">City</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
+<a id="__codelineno-0-175" name="__codelineno-0-175"></a>    <span class="n">State</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
+<a id="__codelineno-0-176" name="__codelineno-0-176"></a>    <span class="n">Zip</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
 <a id="__codelineno-0-177" name="__codelineno-0-177"></a>    <span class="n">VoicePhone</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
 <a id="__codelineno-0-178" name="__codelineno-0-178"></a>    <span class="n">UDate</span><span class="p">:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span>
-<a id="__codelineno-0-179" name="__codelineno-0-179"></a>    <span class="n">UserId</span><span class="p">:</span> <span class="nb">int</span>
-<a id="__codelineno-0-180" name="__codelineno-0-180"></a>    <span class="n">RowGuid</span><span class="p">:</span> <span class="nb">str</span>
-<a id="__codelineno-0-181" name="__codelineno-0-181"></a>    <span class="n">IsWebViewable</span><span class="p">:</span> <span class="nb">bool</span>
-<a id="__codelineno-0-182" name="__codelineno-0-182"></a>    <span class="n">WeekdayCheckdays</span><span class="p">:</span> <span class="nb">int</span>
-<a id="__codelineno-0-183" name="__codelineno-0-183"></a>    <span class="n">WeekendCheckdays</span><span class="p">:</span> <span class="nb">int</span>
+<a id="__codelineno-0-179" name="__codelineno-0-179"></a>    <span class="n">UserId</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span>
+<a id="__codelineno-0-180" name="__codelineno-0-180"></a>    <span class="n">RowGuid</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
+<a id="__codelineno-0-181" name="__codelineno-0-181"></a>    <span class="n">IsWebViewable</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span>
+<a id="__codelineno-0-182" name="__codelineno-0-182"></a>    <span class="n">WeekdayCheckdays</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span>
+<a id="__codelineno-0-183" name="__codelineno-0-183"></a>    <span class="n">WeekendCheckdays</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span>
 </code></pre></div></td></tr></table></div>
         </details>
 
@@ -2544,17 +2544,17 @@
 <a id="__codelineno-0-90" name="__codelineno-0-90"></a><span class="sd">    &quot;&quot;&quot;</span>
 <a id="__codelineno-0-91" name="__codelineno-0-91"></a>
 <a id="__codelineno-0-92" name="__codelineno-0-92"></a>    <span class="n">FacilityId</span><span class="p">:</span> <span class="nb">int</span>
-<a id="__codelineno-0-93" name="__codelineno-0-93"></a>    <span class="n">Name</span><span class="p">:</span> <span class="nb">str</span>
-<a id="__codelineno-0-94" name="__codelineno-0-94"></a>    <span class="n">Description</span><span class="p">:</span> <span class="nb">str</span>
+<a id="__codelineno-0-93" name="__codelineno-0-93"></a>    <span class="n">Name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
+<a id="__codelineno-0-94" name="__codelineno-0-94"></a>    <span class="n">Description</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
 <a id="__codelineno-0-95" name="__codelineno-0-95"></a>    <span class="n">RateMessage</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
 <a id="__codelineno-0-96" name="__codelineno-0-96"></a>    <span class="n">FacilityType</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span>
 <a id="__codelineno-0-97" name="__codelineno-0-97"></a>    <span class="n">FacilityTypeNew</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span>
 <a id="__codelineno-0-98" name="__codelineno-0-98"></a>    <span class="n">InSeason</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span>
 <a id="__codelineno-0-99" name="__codelineno-0-99"></a>    <span class="n">Available</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span>
 <a id="__codelineno-0-100" name="__codelineno-0-100"></a>    <span class="n">AvailableFiltered</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span>
-<a id="__codelineno-0-101" name="__codelineno-0-101"></a>    <span class="n">Restrictions</span><span class="p">:</span> <span class="n">UseDirectRestrictions</span>
-<a id="__codelineno-0-102" name="__codelineno-0-102"></a>    <span class="n">Latitude</span><span class="p">:</span> <span class="nb">float</span>
-<a id="__codelineno-0-103" name="__codelineno-0-103"></a>    <span class="n">Longitude</span><span class="p">:</span> <span class="nb">float</span>
+<a id="__codelineno-0-101" name="__codelineno-0-101"></a>    <span class="n">Restrictions</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">UseDirectRestrictions</span><span class="p">]</span>
+<a id="__codelineno-0-102" name="__codelineno-0-102"></a>    <span class="n">Latitude</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span>
+<a id="__codelineno-0-103" name="__codelineno-0-103"></a>    <span class="n">Longitude</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span>
 <a id="__codelineno-0-104" name="__codelineno-0-104"></a>    <span class="n">Category</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
 <a id="__codelineno-0-105" name="__codelineno-0-105"></a>    <span class="n">EnableCheckOccupancy</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span>
 <a id="__codelineno-0-106" name="__codelineno-0-106"></a>    <span class="n">AvailableOccupancy</span><span class="p">:</span> <span class="n">Any</span>
@@ -2645,25 +2645,25 @@
 <a id="__codelineno-0-337" name="__codelineno-0-337"></a><span class="sd">    &quot;&quot;&quot;</span>
 <a id="__codelineno-0-338" name="__codelineno-0-338"></a>
 <a id="__codelineno-0-339" name="__codelineno-0-339"></a>    <span class="n">FacilityId</span><span class="p">:</span> <span class="nb">int</span>
-<a id="__codelineno-0-340" name="__codelineno-0-340"></a>    <span class="n">RegionId</span><span class="p">:</span> <span class="nb">int</span>
+<a id="__codelineno-0-340" name="__codelineno-0-340"></a>    <span class="n">RegionId</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span>
 <a id="__codelineno-0-341" name="__codelineno-0-341"></a>    <span class="n">PlaceId</span><span class="p">:</span> <span class="nb">int</span>
 <a id="__codelineno-0-342" name="__codelineno-0-342"></a>    <span class="n">Name</span><span class="p">:</span> <span class="nb">str</span>
-<a id="__codelineno-0-343" name="__codelineno-0-343"></a>    <span class="n">ShortName</span><span class="p">:</span> <span class="nb">str</span>
+<a id="__codelineno-0-343" name="__codelineno-0-343"></a>    <span class="n">ShortName</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
 <a id="__codelineno-0-344" name="__codelineno-0-344"></a>    <span class="n">Description</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
-<a id="__codelineno-0-345" name="__codelineno-0-345"></a>    <span class="n">OrderBy</span><span class="p">:</span> <span class="nb">int</span>
-<a id="__codelineno-0-346" name="__codelineno-0-346"></a>    <span class="n">FacilityType</span><span class="p">:</span> <span class="nb">int</span>
-<a id="__codelineno-0-347" name="__codelineno-0-347"></a>    <span class="n">UsePrepend</span><span class="p">:</span> <span class="nb">bool</span>
-<a id="__codelineno-0-348" name="__codelineno-0-348"></a>    <span class="n">PrependCode</span><span class="p">:</span> <span class="nb">str</span>
-<a id="__codelineno-0-349" name="__codelineno-0-349"></a>    <span class="n">AllowWebBooking</span><span class="p">:</span> <span class="nb">bool</span>
-<a id="__codelineno-0-350" name="__codelineno-0-350"></a>    <span class="n">AutoOpenInventory</span><span class="p">:</span> <span class="nb">bool</span>
-<a id="__codelineno-0-351" name="__codelineno-0-351"></a>    <span class="n">UDate</span><span class="p">:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span>
-<a id="__codelineno-0-352" name="__codelineno-0-352"></a>    <span class="n">RowGuid</span><span class="p">:</span> <span class="nb">str</span>
+<a id="__codelineno-0-345" name="__codelineno-0-345"></a>    <span class="n">OrderBy</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span>
+<a id="__codelineno-0-346" name="__codelineno-0-346"></a>    <span class="n">FacilityType</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span>
+<a id="__codelineno-0-347" name="__codelineno-0-347"></a>    <span class="n">UsePrepend</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span>
+<a id="__codelineno-0-348" name="__codelineno-0-348"></a>    <span class="n">PrependCode</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
+<a id="__codelineno-0-349" name="__codelineno-0-349"></a>    <span class="n">AllowWebBooking</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span>
+<a id="__codelineno-0-350" name="__codelineno-0-350"></a>    <span class="n">AutoOpenInventory</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span>
+<a id="__codelineno-0-351" name="__codelineno-0-351"></a>    <span class="n">UDate</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">]</span>
+<a id="__codelineno-0-352" name="__codelineno-0-352"></a>    <span class="n">RowGuid</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
 <a id="__codelineno-0-353" name="__codelineno-0-353"></a>    <span class="n">FacilityTypeNew</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span>
-<a id="__codelineno-0-354" name="__codelineno-0-354"></a>    <span class="n">MaxPersonOccupancy</span><span class="p">:</span> <span class="nb">int</span>
-<a id="__codelineno-0-355" name="__codelineno-0-355"></a>    <span class="n">IsAvailableForGroup</span><span class="p">:</span> <span class="nb">bool</span>
+<a id="__codelineno-0-354" name="__codelineno-0-354"></a>    <span class="n">MaxPersonOccupancy</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span>
+<a id="__codelineno-0-355" name="__codelineno-0-355"></a>    <span class="n">IsAvailableForGroup</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span>
 <a id="__codelineno-0-356" name="__codelineno-0-356"></a>    <span class="n">IsAvailableForEducationalGroup</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span>
 <a id="__codelineno-0-357" name="__codelineno-0-357"></a>    <span class="n">IsAvailableForCto</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span>
-<a id="__codelineno-0-358" name="__codelineno-0-358"></a>    <span class="n">IsCaptcha</span><span class="p">:</span> <span class="nb">bool</span>
+<a id="__codelineno-0-358" name="__codelineno-0-358"></a>    <span class="n">IsCaptcha</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span>
 <a id="__codelineno-0-359" name="__codelineno-0-359"></a>    <span class="n">FacilityBehaviourType</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span>
 <a id="__codelineno-0-360" name="__codelineno-0-360"></a>    <span class="n">EnableCheckOccupancy</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span>
 <a id="__codelineno-0-361" name="__codelineno-0-361"></a>    <span class="n">IsTrail</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span>
@@ -2731,12 +2731,12 @@
 <a id="__codelineno-0-307" name="__codelineno-0-307"></a><span class="sd">    &quot;&quot;&quot;</span>
 <a id="__codelineno-0-308" name="__codelineno-0-308"></a>
 <a id="__codelineno-0-309" name="__codelineno-0-309"></a>    <span class="n">Message</span><span class="p">:</span> <span class="nb">str</span>
-<a id="__codelineno-0-310" name="__codelineno-0-310"></a>    <span class="n">UnitCategories</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">UseDirectUnitCategory</span><span class="p">]</span>
-<a id="__codelineno-0-311" name="__codelineno-0-311"></a>    <span class="n">NightlySleepingUnits</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">UseDirectNightlySleepingUnit</span><span class="p">]</span>
-<a id="__codelineno-0-312" name="__codelineno-0-312"></a>    <span class="n">MinVehicleLengths</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">UseDirectMinVehicleLength</span><span class="p">]</span>
-<a id="__codelineno-0-313" name="__codelineno-0-313"></a>    <span class="n">UnitTypesGroups</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">UseDirectUnitTypeGroup</span><span class="p">]</span>
-<a id="__codelineno-0-314" name="__codelineno-0-314"></a>    <span class="n">PlaceHighlights</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Any</span><span class="p">]</span>
-<a id="__codelineno-0-315" name="__codelineno-0-315"></a>    <span class="n">AllAmenity</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">UseDirectAmenity</span><span class="p">]</span>
+<a id="__codelineno-0-310" name="__codelineno-0-310"></a>    <span class="n">UnitCategories</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">UseDirectUnitCategory</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+<a id="__codelineno-0-311" name="__codelineno-0-311"></a>    <span class="n">NightlySleepingUnits</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">UseDirectNightlySleepingUnit</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+<a id="__codelineno-0-312" name="__codelineno-0-312"></a>    <span class="n">MinVehicleLengths</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">UseDirectMinVehicleLength</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+<a id="__codelineno-0-313" name="__codelineno-0-313"></a>    <span class="n">UnitTypesGroups</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">UseDirectUnitTypeGroup</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+<a id="__codelineno-0-314" name="__codelineno-0-314"></a>    <span class="n">PlaceHighlights</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+<a id="__codelineno-0-315" name="__codelineno-0-315"></a>    <span class="n">AllAmenity</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">UseDirectAmenity</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
 </code></pre></div></td></tr></table></div>
         </details>
 
@@ -2859,7 +2859,7 @@
 <a id="__codelineno-0-254" name="__codelineno-0-254"></a>    <span class="n">UnitCategoryId</span><span class="p">:</span> <span class="nb">int</span>
 <a id="__codelineno-0-255" name="__codelineno-0-255"></a>    <span class="n">SleepingUnitId</span><span class="p">:</span> <span class="nb">int</span>
 <a id="__codelineno-0-256" name="__codelineno-0-256"></a>    <span class="n">SleepingUnitName</span><span class="p">:</span> <span class="nb">str</span>
-<a id="__codelineno-0-257" name="__codelineno-0-257"></a>    <span class="n">IsWheeled</span><span class="p">:</span> <span class="nb">bool</span>
+<a id="__codelineno-0-257" name="__codelineno-0-257"></a>    <span class="n">IsWheeled</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span>
 <a id="__codelineno-0-258" name="__codelineno-0-258"></a>    <span class="n">Icon</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
 </code></pre></div></td></tr></table></div>
         </details>
@@ -2941,28 +2941,28 @@
 <a id="__codelineno-0-120" name="__codelineno-0-120"></a>
 <a id="__codelineno-0-121" name="__codelineno-0-121"></a>    <span class="n">PlaceId</span><span class="p">:</span> <span class="nb">int</span>
 <a id="__codelineno-0-122" name="__codelineno-0-122"></a>    <span class="n">Name</span><span class="p">:</span> <span class="nb">str</span>
-<a id="__codelineno-0-123" name="__codelineno-0-123"></a>    <span class="n">Description</span><span class="p">:</span> <span class="nb">str</span>
-<a id="__codelineno-0-124" name="__codelineno-0-124"></a>    <span class="n">HasAlerts</span><span class="p">:</span> <span class="nb">bool</span>
-<a id="__codelineno-0-125" name="__codelineno-0-125"></a>    <span class="n">IsFavourite</span><span class="p">:</span> <span class="nb">bool</span>
-<a id="__codelineno-0-126" name="__codelineno-0-126"></a>    <span class="n">Allhighlights</span><span class="p">:</span> <span class="nb">str</span>
-<a id="__codelineno-0-127" name="__codelineno-0-127"></a>    <span class="n">Url</span><span class="p">:</span> <span class="nb">str</span>
-<a id="__codelineno-0-128" name="__codelineno-0-128"></a>    <span class="n">ImageUrl</span><span class="p">:</span> <span class="nb">str</span>
-<a id="__codelineno-0-129" name="__codelineno-0-129"></a>    <span class="n">BannerUrl</span><span class="p">:</span> <span class="nb">str</span>
-<a id="__codelineno-0-130" name="__codelineno-0-130"></a>    <span class="n">ParkSize</span><span class="p">:</span> <span class="nb">str</span>
-<a id="__codelineno-0-131" name="__codelineno-0-131"></a>    <span class="n">Latitude</span><span class="p">:</span> <span class="nb">float</span>
-<a id="__codelineno-0-132" name="__codelineno-0-132"></a>    <span class="n">Longitude</span><span class="p">:</span> <span class="nb">float</span>
-<a id="__codelineno-0-133" name="__codelineno-0-133"></a>    <span class="n">TimeZone</span><span class="p">:</span> <span class="nb">str</span>
-<a id="__codelineno-0-134" name="__codelineno-0-134"></a>    <span class="n">TimeStamp</span><span class="p">:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span>
-<a id="__codelineno-0-135" name="__codelineno-0-135"></a>    <span class="n">MilesFromSelected</span><span class="p">:</span> <span class="nb">int</span>
+<a id="__codelineno-0-123" name="__codelineno-0-123"></a>    <span class="n">Description</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
+<a id="__codelineno-0-124" name="__codelineno-0-124"></a>    <span class="n">HasAlerts</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span>
+<a id="__codelineno-0-125" name="__codelineno-0-125"></a>    <span class="n">IsFavourite</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span>
+<a id="__codelineno-0-126" name="__codelineno-0-126"></a>    <span class="n">Allhighlights</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
+<a id="__codelineno-0-127" name="__codelineno-0-127"></a>    <span class="n">Url</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
+<a id="__codelineno-0-128" name="__codelineno-0-128"></a>    <span class="n">ImageUrl</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
+<a id="__codelineno-0-129" name="__codelineno-0-129"></a>    <span class="n">BannerUrl</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
+<a id="__codelineno-0-130" name="__codelineno-0-130"></a>    <span class="n">ParkSize</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
+<a id="__codelineno-0-131" name="__codelineno-0-131"></a>    <span class="n">Latitude</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span>
+<a id="__codelineno-0-132" name="__codelineno-0-132"></a>    <span class="n">Longitude</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span>
+<a id="__codelineno-0-133" name="__codelineno-0-133"></a>    <span class="n">TimeZone</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
+<a id="__codelineno-0-134" name="__codelineno-0-134"></a>    <span class="n">TimeStamp</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">]</span>
+<a id="__codelineno-0-135" name="__codelineno-0-135"></a>    <span class="n">MilesFromSelected</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span>
 <a id="__codelineno-0-136" name="__codelineno-0-136"></a>    <span class="n">Available</span><span class="p">:</span> <span class="nb">bool</span>
-<a id="__codelineno-0-137" name="__codelineno-0-137"></a>    <span class="n">AvailableFiltered</span><span class="p">:</span> <span class="nb">bool</span>
-<a id="__codelineno-0-138" name="__codelineno-0-138"></a>    <span class="n">ParkCategoryId</span><span class="p">:</span> <span class="nb">int</span>
-<a id="__codelineno-0-139" name="__codelineno-0-139"></a>    <span class="n">ParkActivity</span><span class="p">:</span> <span class="nb">int</span>
-<a id="__codelineno-0-140" name="__codelineno-0-140"></a>    <span class="n">ParkPopularity</span><span class="p">:</span> <span class="nb">int</span>
-<a id="__codelineno-0-141" name="__codelineno-0-141"></a>    <span class="n">AvailableUnitCount</span><span class="p">:</span> <span class="nb">int</span>
-<a id="__codelineno-0-142" name="__codelineno-0-142"></a>    <span class="n">Restrictions</span><span class="p">:</span> <span class="n">UseDirectRestrictions</span>
-<a id="__codelineno-0-143" name="__codelineno-0-143"></a>    <span class="n">Facilities</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">UseDirectFacility</span><span class="p">]</span>
-<a id="__codelineno-0-144" name="__codelineno-0-144"></a>    <span class="n">IsAvailableForGreatwalk</span><span class="p">:</span> <span class="nb">bool</span>
+<a id="__codelineno-0-137" name="__codelineno-0-137"></a>    <span class="n">AvailableFiltered</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span>
+<a id="__codelineno-0-138" name="__codelineno-0-138"></a>    <span class="n">ParkCategoryId</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span>
+<a id="__codelineno-0-139" name="__codelineno-0-139"></a>    <span class="n">ParkActivity</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span>
+<a id="__codelineno-0-140" name="__codelineno-0-140"></a>    <span class="n">ParkPopularity</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span>
+<a id="__codelineno-0-141" name="__codelineno-0-141"></a>    <span class="n">AvailableUnitCount</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span>
+<a id="__codelineno-0-142" name="__codelineno-0-142"></a>    <span class="n">Restrictions</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">UseDirectRestrictions</span><span class="p">]</span>
+<a id="__codelineno-0-143" name="__codelineno-0-143"></a>    <span class="n">Facilities</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">UseDirectFacility</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+<a id="__codelineno-0-144" name="__codelineno-0-144"></a>    <span class="n">IsAvailableForGreatwalk</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span>
 <a id="__codelineno-0-145" name="__codelineno-0-145"></a>    <span class="n">FacilityDefaultZoom</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span>
 </code></pre></div></td></tr></table></div>
         </details>
@@ -3023,11 +3023,11 @@
 <a id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="sd">    UseDirect: Campsite Restrictions</span>
 <a id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="sd">    &quot;&quot;&quot;</span>
 <a id="__codelineno-0-15" name="__codelineno-0-15"></a>
-<a id="__codelineno-0-16" name="__codelineno-0-16"></a>    <span class="n">FutureBookingStarts</span><span class="p">:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span>
-<a id="__codelineno-0-17" name="__codelineno-0-17"></a>    <span class="n">FutureBookingEnds</span><span class="p">:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span>
-<a id="__codelineno-0-18" name="__codelineno-0-18"></a>    <span class="n">MinimumStay</span><span class="p">:</span> <span class="nb">int</span>
-<a id="__codelineno-0-19" name="__codelineno-0-19"></a>    <span class="n">MaximumStay</span><span class="p">:</span> <span class="nb">int</span>
-<a id="__codelineno-0-20" name="__codelineno-0-20"></a>    <span class="n">IsRestrictionValid</span><span class="p">:</span> <span class="nb">bool</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16"></a>    <span class="n">FutureBookingStarts</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">]</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17"></a>    <span class="n">FutureBookingEnds</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">]</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18"></a>    <span class="n">MinimumStay</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19"></a>    <span class="n">MaximumStay</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20"></a>    <span class="n">IsRestrictionValid</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span>
 <a id="__codelineno-0-21" name="__codelineno-0-21"></a>    <span class="n">Time</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
 </code></pre></div></td></tr></table></div>
         </details>
@@ -3088,7 +3088,7 @@
 <a id="__codelineno-0-242" name="__codelineno-0-242"></a>
 <a id="__codelineno-0-243" name="__codelineno-0-243"></a>    <span class="n">UnitCategoryId</span><span class="p">:</span> <span class="nb">int</span>
 <a id="__codelineno-0-244" name="__codelineno-0-244"></a>    <span class="n">UnitCategoryName</span><span class="p">:</span> <span class="nb">str</span>
-<a id="__codelineno-0-245" name="__codelineno-0-245"></a>    <span class="n">HasEquipment</span><span class="p">:</span> <span class="nb">bool</span>
+<a id="__codelineno-0-245" name="__codelineno-0-245"></a>    <span class="n">HasEquipment</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span>
 <a id="__codelineno-0-246" name="__codelineno-0-246"></a>    <span class="n">Icon</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
 </code></pre></div></td></tr></table></div>
         </details>
@@ -3158,13 +3158,13 @@
 <a id="__codelineno-0-30" name="__codelineno-0-30"></a>    <span class="n">UseType</span><span class="p">:</span> <span class="nb">int</span>
 <a id="__codelineno-0-31" name="__codelineno-0-31"></a>    <span class="n">Name</span><span class="p">:</span> <span class="nb">str</span>
 <a id="__codelineno-0-32" name="__codelineno-0-32"></a>    <span class="n">Available</span><span class="p">:</span> <span class="nb">bool</span>
-<a id="__codelineno-0-33" name="__codelineno-0-33"></a>    <span class="n">AvailableFiltered</span><span class="p">:</span> <span class="nb">bool</span>
-<a id="__codelineno-0-34" name="__codelineno-0-34"></a>    <span class="n">UnitCategoryId</span><span class="p">:</span> <span class="nb">int</span>
-<a id="__codelineno-0-35" name="__codelineno-0-35"></a>    <span class="n">UnitTypeGroupId</span><span class="p">:</span> <span class="nb">int</span>
-<a id="__codelineno-0-36" name="__codelineno-0-36"></a>    <span class="n">MaxVehicleLength</span><span class="p">:</span> <span class="nb">int</span>
-<a id="__codelineno-0-37" name="__codelineno-0-37"></a>    <span class="n">HasAda</span><span class="p">:</span> <span class="nb">bool</span>
+<a id="__codelineno-0-33" name="__codelineno-0-33"></a>    <span class="n">AvailableFiltered</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span>
+<a id="__codelineno-0-34" name="__codelineno-0-34"></a>    <span class="n">UnitCategoryId</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span>
+<a id="__codelineno-0-35" name="__codelineno-0-35"></a>    <span class="n">UnitTypeGroupId</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span>
+<a id="__codelineno-0-36" name="__codelineno-0-36"></a>    <span class="n">MaxVehicleLength</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span>
+<a id="__codelineno-0-37" name="__codelineno-0-37"></a>    <span class="n">HasAda</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span>
 <a id="__codelineno-0-38" name="__codelineno-0-38"></a>    <span class="n">Restrictions</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Any</span><span class="p">]</span>
-<a id="__codelineno-0-39" name="__codelineno-0-39"></a>    <span class="n">AvailableCount</span><span class="p">:</span> <span class="nb">int</span>
+<a id="__codelineno-0-39" name="__codelineno-0-39"></a>    <span class="n">AvailableCount</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span>
 </code></pre></div></td></tr></table></div>
         </details>
 
