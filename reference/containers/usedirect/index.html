@@ -11,7 +11,7 @@
       
       
       
-        <link rel="prev" href="../reserve_california/">
+        <link rel="prev" href="../gtc_api_responses/">
       
       
         <link rel="next" href="../../exceptions/">
@@ -687,20 +687,6 @@
     <li class="md-nav__item">
       <a href="../gtc_api_responses/" class="md-nav__link">
         gtc_api_responses
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../reserve_california/" class="md-nav__link">
-        reserve_california
       </a>
     </li>
   
@@ -2194,7 +2180,7 @@
 <a id="__codelineno-0-51" name="__codelineno-0-51"></a>    <span class="n">ReservationId</span><span class="p">:</span> <span class="nb">int</span>
 <a id="__codelineno-0-52" name="__codelineno-0-52"></a>    <span class="n">Lock</span><span class="p">:</span> <span class="n">Any</span>
 <a id="__codelineno-0-53" name="__codelineno-0-53"></a>    <span class="n">MinStay</span><span class="p">:</span> <span class="nb">int</span>
-<a id="__codelineno-0-54" name="__codelineno-0-54"></a>    <span class="n">IsReservationDraw</span><span class="p">:</span> <span class="nb">bool</span>
+<a id="__codelineno-0-54" name="__codelineno-0-54"></a>    <span class="n">IsReservationDraw</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span>
 </code></pre></div></td></tr></table></div>
         </details>
 
@@ -2277,7 +2263,7 @@
 <a id="__codelineno-0-65" name="__codelineno-0-65"></a>    <span class="n">RecentPopups</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span>
 <a id="__codelineno-0-66" name="__codelineno-0-66"></a>    <span class="n">IsAda</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span>
 <a id="__codelineno-0-67" name="__codelineno-0-67"></a>    <span class="n">AllowWebBooking</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span>
-<a id="__codelineno-0-68" name="__codelineno-0-68"></a>    <span class="n">MapInfo</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+<a id="__codelineno-0-68" name="__codelineno-0-68"></a>    <span class="n">MapInfo</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]</span> <span class="o">=</span> <span class="p">{}</span>
 <a id="__codelineno-0-69" name="__codelineno-0-69"></a>    <span class="n">IsWebViewable</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span>
 <a id="__codelineno-0-70" name="__codelineno-0-70"></a>    <span class="n">IsFiltered</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span>
 <a id="__codelineno-0-71" name="__codelineno-0-71"></a>    <span class="n">UnitCategoryId</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span>
@@ -3040,7 +3026,7 @@
 <a id="__codelineno-0-18" name="__codelineno-0-18"></a>    <span class="n">MinimumStay</span><span class="p">:</span> <span class="nb">int</span>
 <a id="__codelineno-0-19" name="__codelineno-0-19"></a>    <span class="n">MaximumStay</span><span class="p">:</span> <span class="nb">int</span>
 <a id="__codelineno-0-20" name="__codelineno-0-20"></a>    <span class="n">IsRestrictionValid</span><span class="p">:</span> <span class="nb">bool</span>
-<a id="__codelineno-0-21" name="__codelineno-0-21"></a>    <span class="n">Time</span><span class="p">:</span> <span class="nb">str</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21"></a>    <span class="n">Time</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
 </code></pre></div></td></tr></table></div>
         </details>
 
