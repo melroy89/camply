@@ -753,6 +753,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#camply.containers.search_model.YamlSearchFile.validate_equipment" class="md-nav__link">
+    validate_equipment()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#camply.containers.search_model.YamlSearchFile.validate_provider" class="md-nav__link">
     validate_provider()
   </a>
@@ -1654,6 +1661,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#camply.containers.search_model.YamlSearchFile.validate_equipment" class="md-nav__link">
+    validate_equipment()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#camply.containers.search_model.YamlSearchFile.validate_provider" class="md-nav__link">
     validate_provider()
   </a>
@@ -1725,13 +1739,13 @@
 
         <details class="quote">
           <summary>Source code in <code>camply/containers/search_model.py</code></summary>
-          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-20">20</a></span>
-<span class="normal"><a href="#__codelineno-0-21">21</a></span>
-<span class="normal"><a href="#__codelineno-0-22">22</a></span>
-<span class="normal"><a href="#__codelineno-0-23">23</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-20" name="__codelineno-0-20"></a><span class="k">class</span> <span class="nc">StrEnum</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">Enum</span><span class="p">):</span>
-<a id="__codelineno-0-21" name="__codelineno-0-21"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<a id="__codelineno-0-22" name="__codelineno-0-22"></a><span class="sd">    String Enum</span>
-<a id="__codelineno-0-23" name="__codelineno-0-23"></a><span class="sd">    &quot;&quot;&quot;</span>
+          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-22">22</a></span>
+<span class="normal"><a href="#__codelineno-0-23">23</a></span>
+<span class="normal"><a href="#__codelineno-0-24">24</a></span>
+<span class="normal"><a href="#__codelineno-0-25">25</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-22" name="__codelineno-0-22"></a><span class="k">class</span> <span class="nc">StrEnum</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">Enum</span><span class="p">):</span>
+<a id="__codelineno-0-23" name="__codelineno-0-23"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-24" name="__codelineno-0-24"></a><span class="sd">    String Enum</span>
+<a id="__codelineno-0-25" name="__codelineno-0-25"></a><span class="sd">    &quot;&quot;&quot;</span>
 </code></pre></div></td></tr></table></div>
         </details>
 
@@ -1760,9 +1774,7 @@
 
         <details class="quote">
           <summary>Source code in <code>camply/containers/search_model.py</code></summary>
-          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-32">32</a></span>
-<span class="normal"><a href="#__codelineno-0-33">33</a></span>
-<span class="normal"><a href="#__codelineno-0-34">34</a></span>
+          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-34">34</a></span>
 <span class="normal"><a href="#__codelineno-0-35">35</a></span>
 <span class="normal"><a href="#__codelineno-0-36">36</a></span>
 <span class="normal"><a href="#__codelineno-0-37">37</a></span>
@@ -1797,44 +1809,76 @@
 <span class="normal"><a href="#__codelineno-0-66">66</a></span>
 <span class="normal"><a href="#__codelineno-0-67">67</a></span>
 <span class="normal"><a href="#__codelineno-0-68">68</a></span>
-<span class="normal"><a href="#__codelineno-0-69">69</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-32" name="__codelineno-0-32"></a><span class="k">class</span> <span class="nc">YamlSearchFile</span><span class="p">(</span><span class="n">CamplyModel</span><span class="p">):</span>
-<a id="__codelineno-0-33" name="__codelineno-0-33"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<a id="__codelineno-0-34" name="__codelineno-0-34"></a><span class="sd">    Campsite Search Data Model</span>
-<a id="__codelineno-0-35" name="__codelineno-0-35"></a><span class="sd">    &quot;&quot;&quot;</span>
-<a id="__codelineno-0-36" name="__codelineno-0-36"></a>
-<a id="__codelineno-0-37" name="__codelineno-0-37"></a>    <span class="n">provider</span><span class="p">:</span> <span class="n">ProviderEnum</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span>
-<a id="__codelineno-0-38" name="__codelineno-0-38"></a>        <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Campsite provider&quot;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s2">&quot;RecreationDotGov&quot;</span>
-<a id="__codelineno-0-39" name="__codelineno-0-39"></a>    <span class="p">)</span>
-<a id="__codelineno-0-40" name="__codelineno-0-40"></a>    <span class="n">recreation_area</span><span class="p">:</span> <span class="n">ArrayOrSingle</span> <span class="o">=</span> <span class="kc">None</span>
-<a id="__codelineno-0-41" name="__codelineno-0-41"></a>    <span class="n">campgrounds</span><span class="p">:</span> <span class="n">ArrayOrSingle</span> <span class="o">=</span> <span class="kc">None</span>
-<a id="__codelineno-0-42" name="__codelineno-0-42"></a>    <span class="n">campsites</span><span class="p">:</span> <span class="n">ArrayOrSingle</span> <span class="o">=</span> <span class="kc">None</span>
-<a id="__codelineno-0-43" name="__codelineno-0-43"></a>    <span class="n">start_date</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">]]</span>
-<a id="__codelineno-0-44" name="__codelineno-0-44"></a>    <span class="n">end_date</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">]]</span>
-<a id="__codelineno-0-45" name="__codelineno-0-45"></a>    <span class="n">days</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span>
-<a id="__codelineno-0-46" name="__codelineno-0-46"></a>    <span class="n">weekends</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
-<a id="__codelineno-0-47" name="__codelineno-0-47"></a>    <span class="n">nights</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span>
-<a id="__codelineno-0-48" name="__codelineno-0-48"></a>    <span class="n">continuous</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span>
-<a id="__codelineno-0-49" name="__codelineno-0-49"></a>    <span class="n">polling_interval</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">SearchConfig</span><span class="o">.</span><span class="n">RECOMMENDED_POLLING_INTERVAL</span>
-<a id="__codelineno-0-50" name="__codelineno-0-50"></a>    <span class="n">notifications</span><span class="p">:</span> <span class="n">ArrayOrSingleStr</span> <span class="o">=</span> <span class="s2">&quot;silent&quot;</span>
-<a id="__codelineno-0-51" name="__codelineno-0-51"></a>    <span class="n">search_forever</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
-<a id="__codelineno-0-52" name="__codelineno-0-52"></a>    <span class="n">search_once</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
-<a id="__codelineno-0-53" name="__codelineno-0-53"></a>    <span class="n">notify_first_try</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
-<a id="__codelineno-0-54" name="__codelineno-0-54"></a>    <span class="n">equipment</span><span class="p">:</span> <span class="n">ArrayOrSingle</span> <span class="o">=</span> <span class="kc">None</span>
-<a id="__codelineno-0-55" name="__codelineno-0-55"></a>    <span class="n">offline_search</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
-<a id="__codelineno-0-56" name="__codelineno-0-56"></a>    <span class="n">offline_search_path</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
-<a id="__codelineno-0-57" name="__codelineno-0-57"></a>
-<a id="__codelineno-0-58" name="__codelineno-0-58"></a>    <span class="nd">@validator</span><span class="p">(</span><span class="s2">&quot;provider&quot;</span><span class="p">,</span> <span class="n">pre</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<a id="__codelineno-0-59" name="__codelineno-0-59"></a>    <span class="k">def</span> <span class="nf">validate_provider</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
-<a id="__codelineno-0-60" name="__codelineno-0-60"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<a id="__codelineno-0-61" name="__codelineno-0-61"></a><span class="sd">        Validate provider</span>
-<a id="__codelineno-0-62" name="__codelineno-0-62"></a><span class="sd">        &quot;&quot;&quot;</span>
-<a id="__codelineno-0-63" name="__codelineno-0-63"></a>        <span class="n">lowercase_enum_dict</span> <span class="o">=</span> <span class="p">{</span>
-<a id="__codelineno-0-64" name="__codelineno-0-64"></a>            <span class="n">key</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span> <span class="n">key</span> <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">ProviderEnum</span><span class="o">.</span><span class="n">__members__</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
-<a id="__codelineno-0-65" name="__codelineno-0-65"></a>        <span class="p">}</span>
-<a id="__codelineno-0-66" name="__codelineno-0-66"></a>        <span class="k">if</span> <span class="n">value</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">in</span> <span class="n">lowercase_enum_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
-<a id="__codelineno-0-67" name="__codelineno-0-67"></a>            <span class="k">return</span> <span class="n">lowercase_enum_dict</span><span class="p">[</span><span class="n">value</span><span class="o">.</span><span class="n">lower</span><span class="p">()]</span>
-<a id="__codelineno-0-68" name="__codelineno-0-68"></a>        <span class="k">else</span><span class="p">:</span>
-<a id="__codelineno-0-69" name="__codelineno-0-69"></a>            <span class="k">return</span> <span class="n">value</span>
+<span class="normal"><a href="#__codelineno-0-69">69</a></span>
+<span class="normal"><a href="#__codelineno-0-70">70</a></span>
+<span class="normal"><a href="#__codelineno-0-71">71</a></span>
+<span class="normal"><a href="#__codelineno-0-72">72</a></span>
+<span class="normal"><a href="#__codelineno-0-73">73</a></span>
+<span class="normal"><a href="#__codelineno-0-74">74</a></span>
+<span class="normal"><a href="#__codelineno-0-75">75</a></span>
+<span class="normal"><a href="#__codelineno-0-76">76</a></span>
+<span class="normal"><a href="#__codelineno-0-77">77</a></span>
+<span class="normal"><a href="#__codelineno-0-78">78</a></span>
+<span class="normal"><a href="#__codelineno-0-79">79</a></span>
+<span class="normal"><a href="#__codelineno-0-80">80</a></span>
+<span class="normal"><a href="#__codelineno-0-81">81</a></span>
+<span class="normal"><a href="#__codelineno-0-82">82</a></span>
+<span class="normal"><a href="#__codelineno-0-83">83</a></span>
+<span class="normal"><a href="#__codelineno-0-84">84</a></span>
+<span class="normal"><a href="#__codelineno-0-85">85</a></span>
+<span class="normal"><a href="#__codelineno-0-86">86</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-34" name="__codelineno-0-34"></a><span class="k">class</span> <span class="nc">YamlSearchFile</span><span class="p">(</span><span class="n">CamplyModel</span><span class="p">):</span>
+<a id="__codelineno-0-35" name="__codelineno-0-35"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-36" name="__codelineno-0-36"></a><span class="sd">    Campsite Search Data Model</span>
+<a id="__codelineno-0-37" name="__codelineno-0-37"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a id="__codelineno-0-38" name="__codelineno-0-38"></a>
+<a id="__codelineno-0-39" name="__codelineno-0-39"></a>    <span class="n">provider</span><span class="p">:</span> <span class="n">ProviderEnum</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span>
+<a id="__codelineno-0-40" name="__codelineno-0-40"></a>        <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Campsite provider&quot;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s2">&quot;RecreationDotGov&quot;</span>
+<a id="__codelineno-0-41" name="__codelineno-0-41"></a>    <span class="p">)</span>
+<a id="__codelineno-0-42" name="__codelineno-0-42"></a>    <span class="n">recreation_area</span><span class="p">:</span> <span class="n">ArrayOrSingle</span> <span class="o">=</span> <span class="kc">None</span>
+<a id="__codelineno-0-43" name="__codelineno-0-43"></a>    <span class="n">campgrounds</span><span class="p">:</span> <span class="n">ArrayOrSingle</span> <span class="o">=</span> <span class="kc">None</span>
+<a id="__codelineno-0-44" name="__codelineno-0-44"></a>    <span class="n">campsites</span><span class="p">:</span> <span class="n">ArrayOrSingle</span> <span class="o">=</span> <span class="kc">None</span>
+<a id="__codelineno-0-45" name="__codelineno-0-45"></a>    <span class="n">start_date</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">]]</span>
+<a id="__codelineno-0-46" name="__codelineno-0-46"></a>    <span class="n">end_date</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">]]</span>
+<a id="__codelineno-0-47" name="__codelineno-0-47"></a>    <span class="n">days</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span>
+<a id="__codelineno-0-48" name="__codelineno-0-48"></a>    <span class="n">weekends</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
+<a id="__codelineno-0-49" name="__codelineno-0-49"></a>    <span class="n">nights</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span>
+<a id="__codelineno-0-50" name="__codelineno-0-50"></a>    <span class="n">continuous</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span>
+<a id="__codelineno-0-51" name="__codelineno-0-51"></a>    <span class="n">polling_interval</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">SearchConfig</span><span class="o">.</span><span class="n">RECOMMENDED_POLLING_INTERVAL</span>
+<a id="__codelineno-0-52" name="__codelineno-0-52"></a>    <span class="n">notifications</span><span class="p">:</span> <span class="n">ArrayOrSingleStr</span> <span class="o">=</span> <span class="s2">&quot;silent&quot;</span>
+<a id="__codelineno-0-53" name="__codelineno-0-53"></a>    <span class="n">search_forever</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
+<a id="__codelineno-0-54" name="__codelineno-0-54"></a>    <span class="n">search_once</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
+<a id="__codelineno-0-55" name="__codelineno-0-55"></a>    <span class="n">notify_first_try</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
+<a id="__codelineno-0-56" name="__codelineno-0-56"></a>    <span class="n">equipment</span><span class="p">:</span> <span class="n">ArrayOrSingleEquipment</span> <span class="o">=</span> <span class="kc">None</span>
+<a id="__codelineno-0-57" name="__codelineno-0-57"></a>    <span class="n">offline_search</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
+<a id="__codelineno-0-58" name="__codelineno-0-58"></a>    <span class="n">offline_search_path</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+<a id="__codelineno-0-59" name="__codelineno-0-59"></a>
+<a id="__codelineno-0-60" name="__codelineno-0-60"></a>    <span class="nd">@validator</span><span class="p">(</span><span class="s2">&quot;provider&quot;</span><span class="p">,</span> <span class="n">pre</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<a id="__codelineno-0-61" name="__codelineno-0-61"></a>    <span class="k">def</span> <span class="nf">validate_provider</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+<a id="__codelineno-0-62" name="__codelineno-0-62"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-63" name="__codelineno-0-63"></a><span class="sd">        Validate provider</span>
+<a id="__codelineno-0-64" name="__codelineno-0-64"></a><span class="sd">        &quot;&quot;&quot;</span>
+<a id="__codelineno-0-65" name="__codelineno-0-65"></a>        <span class="n">lowercase_enum_dict</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-0-66" name="__codelineno-0-66"></a>            <span class="n">key</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span> <span class="n">key</span> <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">ProviderEnum</span><span class="o">.</span><span class="n">__members__</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+<a id="__codelineno-0-67" name="__codelineno-0-67"></a>        <span class="p">}</span>
+<a id="__codelineno-0-68" name="__codelineno-0-68"></a>        <span class="k">if</span> <span class="n">value</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">in</span> <span class="n">lowercase_enum_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+<a id="__codelineno-0-69" name="__codelineno-0-69"></a>            <span class="k">return</span> <span class="n">lowercase_enum_dict</span><span class="p">[</span><span class="n">value</span><span class="o">.</span><span class="n">lower</span><span class="p">()]</span>
+<a id="__codelineno-0-70" name="__codelineno-0-70"></a>        <span class="k">else</span><span class="p">:</span>
+<a id="__codelineno-0-71" name="__codelineno-0-71"></a>            <span class="k">return</span> <span class="n">value</span>
+<a id="__codelineno-0-72" name="__codelineno-0-72"></a>
+<a id="__codelineno-0-73" name="__codelineno-0-73"></a>    <span class="nd">@validator</span><span class="p">(</span><span class="s2">&quot;equipment&quot;</span><span class="p">,</span> <span class="n">pre</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<a id="__codelineno-0-74" name="__codelineno-0-74"></a>    <span class="k">def</span> <span class="nf">validate_equipment</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ArrayOrSingleEquipment</span><span class="p">:</span>
+<a id="__codelineno-0-75" name="__codelineno-0-75"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-76" name="__codelineno-0-76"></a><span class="sd">        Validate equipment</span>
+<a id="__codelineno-0-77" name="__codelineno-0-77"></a><span class="sd">        &quot;&quot;&quot;</span>
+<a id="__codelineno-0-78" name="__codelineno-0-78"></a>        <span class="n">equipment_tuple_length</span> <span class="o">=</span> <span class="mi">2</span>
+<a id="__codelineno-0-79" name="__codelineno-0-79"></a>        <span class="k">if</span> <span class="p">(</span>
+<a id="__codelineno-0-80" name="__codelineno-0-80"></a>            <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span>
+<a id="__codelineno-0-81" name="__codelineno-0-81"></a>            <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="o">==</span> <span class="n">equipment_tuple_length</span>
+<a id="__codelineno-0-82" name="__codelineno-0-82"></a>            <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="nb">str</span><span class="p">)</span>
+<a id="__codelineno-0-83" name="__codelineno-0-83"></a>        <span class="p">):</span>
+<a id="__codelineno-0-84" name="__codelineno-0-84"></a>            <span class="k">return</span> <span class="p">[</span><span class="nb">tuple</span><span class="p">(</span><span class="n">value</span><span class="p">)]</span>
+<a id="__codelineno-0-85" name="__codelineno-0-85"></a>        <span class="k">else</span><span class="p">:</span>
+<a id="__codelineno-0-86" name="__codelineno-0-86"></a>            <span class="k">return</span> <span class="n">value</span>
 </code></pre></div></td></tr></table></div>
         </details>
 
@@ -1854,6 +1898,55 @@
 
 
 
+<h3 id="camply.containers.search_model.YamlSearchFile.validate_equipment" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">validate_equipment</span><span class="p">(</span><span class="n">value</span><span class="p">)</span></code>
+
+<a href="#camply.containers.search_model.YamlSearchFile.validate_equipment" class="headerlink" title="Permanent link">#</a></h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Validate equipment</p>
+
+      <details class="quote">
+        <summary>Source code in <code>camply/containers/search_model.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-73">73</a></span>
+<span class="normal"><a href="#__codelineno-0-74">74</a></span>
+<span class="normal"><a href="#__codelineno-0-75">75</a></span>
+<span class="normal"><a href="#__codelineno-0-76">76</a></span>
+<span class="normal"><a href="#__codelineno-0-77">77</a></span>
+<span class="normal"><a href="#__codelineno-0-78">78</a></span>
+<span class="normal"><a href="#__codelineno-0-79">79</a></span>
+<span class="normal"><a href="#__codelineno-0-80">80</a></span>
+<span class="normal"><a href="#__codelineno-0-81">81</a></span>
+<span class="normal"><a href="#__codelineno-0-82">82</a></span>
+<span class="normal"><a href="#__codelineno-0-83">83</a></span>
+<span class="normal"><a href="#__codelineno-0-84">84</a></span>
+<span class="normal"><a href="#__codelineno-0-85">85</a></span>
+<span class="normal"><a href="#__codelineno-0-86">86</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-73" name="__codelineno-0-73"></a><span class="nd">@validator</span><span class="p">(</span><span class="s2">&quot;equipment&quot;</span><span class="p">,</span> <span class="n">pre</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<a id="__codelineno-0-74" name="__codelineno-0-74"></a><span class="k">def</span> <span class="nf">validate_equipment</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ArrayOrSingleEquipment</span><span class="p">:</span>
+<a id="__codelineno-0-75" name="__codelineno-0-75"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-76" name="__codelineno-0-76"></a><span class="sd">    Validate equipment</span>
+<a id="__codelineno-0-77" name="__codelineno-0-77"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a id="__codelineno-0-78" name="__codelineno-0-78"></a>    <span class="n">equipment_tuple_length</span> <span class="o">=</span> <span class="mi">2</span>
+<a id="__codelineno-0-79" name="__codelineno-0-79"></a>    <span class="k">if</span> <span class="p">(</span>
+<a id="__codelineno-0-80" name="__codelineno-0-80"></a>        <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span>
+<a id="__codelineno-0-81" name="__codelineno-0-81"></a>        <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="o">==</span> <span class="n">equipment_tuple_length</span>
+<a id="__codelineno-0-82" name="__codelineno-0-82"></a>        <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="nb">str</span><span class="p">)</span>
+<a id="__codelineno-0-83" name="__codelineno-0-83"></a>    <span class="p">):</span>
+<a id="__codelineno-0-84" name="__codelineno-0-84"></a>        <span class="k">return</span> <span class="p">[</span><span class="nb">tuple</span><span class="p">(</span><span class="n">value</span><span class="p">)]</span>
+<a id="__codelineno-0-85" name="__codelineno-0-85"></a>    <span class="k">else</span><span class="p">:</span>
+<a id="__codelineno-0-86" name="__codelineno-0-86"></a>        <span class="k">return</span> <span class="n">value</span>
+</code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
 <h3 id="camply.containers.search_model.YamlSearchFile.validate_provider" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">validate_provider</span><span class="p">(</span><span class="n">value</span><span class="p">)</span></code>
 
@@ -1866,9 +1959,7 @@
 
       <details class="quote">
         <summary>Source code in <code>camply/containers/search_model.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-58">58</a></span>
-<span class="normal"><a href="#__codelineno-0-59">59</a></span>
-<span class="normal"><a href="#__codelineno-0-60">60</a></span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-60">60</a></span>
 <span class="normal"><a href="#__codelineno-0-61">61</a></span>
 <span class="normal"><a href="#__codelineno-0-62">62</a></span>
 <span class="normal"><a href="#__codelineno-0-63">63</a></span>
@@ -1877,18 +1968,20 @@
 <span class="normal"><a href="#__codelineno-0-66">66</a></span>
 <span class="normal"><a href="#__codelineno-0-67">67</a></span>
 <span class="normal"><a href="#__codelineno-0-68">68</a></span>
-<span class="normal"><a href="#__codelineno-0-69">69</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-58" name="__codelineno-0-58"></a><span class="nd">@validator</span><span class="p">(</span><span class="s2">&quot;provider&quot;</span><span class="p">,</span> <span class="n">pre</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<a id="__codelineno-0-59" name="__codelineno-0-59"></a><span class="k">def</span> <span class="nf">validate_provider</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
-<a id="__codelineno-0-60" name="__codelineno-0-60"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<a id="__codelineno-0-61" name="__codelineno-0-61"></a><span class="sd">    Validate provider</span>
-<a id="__codelineno-0-62" name="__codelineno-0-62"></a><span class="sd">    &quot;&quot;&quot;</span>
-<a id="__codelineno-0-63" name="__codelineno-0-63"></a>    <span class="n">lowercase_enum_dict</span> <span class="o">=</span> <span class="p">{</span>
-<a id="__codelineno-0-64" name="__codelineno-0-64"></a>        <span class="n">key</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span> <span class="n">key</span> <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">ProviderEnum</span><span class="o">.</span><span class="n">__members__</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
-<a id="__codelineno-0-65" name="__codelineno-0-65"></a>    <span class="p">}</span>
-<a id="__codelineno-0-66" name="__codelineno-0-66"></a>    <span class="k">if</span> <span class="n">value</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">in</span> <span class="n">lowercase_enum_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
-<a id="__codelineno-0-67" name="__codelineno-0-67"></a>        <span class="k">return</span> <span class="n">lowercase_enum_dict</span><span class="p">[</span><span class="n">value</span><span class="o">.</span><span class="n">lower</span><span class="p">()]</span>
-<a id="__codelineno-0-68" name="__codelineno-0-68"></a>    <span class="k">else</span><span class="p">:</span>
-<a id="__codelineno-0-69" name="__codelineno-0-69"></a>        <span class="k">return</span> <span class="n">value</span>
+<span class="normal"><a href="#__codelineno-0-69">69</a></span>
+<span class="normal"><a href="#__codelineno-0-70">70</a></span>
+<span class="normal"><a href="#__codelineno-0-71">71</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-60" name="__codelineno-0-60"></a><span class="nd">@validator</span><span class="p">(</span><span class="s2">&quot;provider&quot;</span><span class="p">,</span> <span class="n">pre</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<a id="__codelineno-0-61" name="__codelineno-0-61"></a><span class="k">def</span> <span class="nf">validate_provider</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+<a id="__codelineno-0-62" name="__codelineno-0-62"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-63" name="__codelineno-0-63"></a><span class="sd">    Validate provider</span>
+<a id="__codelineno-0-64" name="__codelineno-0-64"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a id="__codelineno-0-65" name="__codelineno-0-65"></a>    <span class="n">lowercase_enum_dict</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-0-66" name="__codelineno-0-66"></a>        <span class="n">key</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span> <span class="n">key</span> <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">ProviderEnum</span><span class="o">.</span><span class="n">__members__</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+<a id="__codelineno-0-67" name="__codelineno-0-67"></a>    <span class="p">}</span>
+<a id="__codelineno-0-68" name="__codelineno-0-68"></a>    <span class="k">if</span> <span class="n">value</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">in</span> <span class="n">lowercase_enum_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+<a id="__codelineno-0-69" name="__codelineno-0-69"></a>        <span class="k">return</span> <span class="n">lowercase_enum_dict</span><span class="p">[</span><span class="n">value</span><span class="o">.</span><span class="n">lower</span><span class="p">()]</span>
+<a id="__codelineno-0-70" name="__codelineno-0-70"></a>    <span class="k">else</span><span class="p">:</span>
+<a id="__codelineno-0-71" name="__codelineno-0-71"></a>        <span class="k">return</span> <span class="n">value</span>
 </code></pre></div></td></tr></table></div>
       </details>
   </div>
